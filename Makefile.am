@@ -7,6 +7,7 @@ klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp \
                  ballpainter.cpp klines.cpp main.cpp prefs.kcfgc
 klines_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 klines_LDADD = $(LIB_KDEGAMES)
+klines_DEPENDENCIES = $(LIB_KDEGAMES_DEP)
 
 picsdir = $(kde_datadir)/klines/
 pics_DATA = balls.jpg field.jpg fire.jpg
