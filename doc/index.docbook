@@ -74,11 +74,11 @@ the &kde; games standard.</para>
 
 <para>The main rules of game is as simple as possible: you move (using
 mouse) marbles from cell to cell and build lines (horizontal, vertical
-or diagonal).  When a line contains 5 or more marbels - they are removed
+or diagonal).  When a line contains 5 or more marbles - they are removed
 from the field and your score grows. After each of your turns computer
 drops three more marbles onto the field.</para>
 
-<para> The increase in score dependeds on the amount of erased marbles
+<para> The increase in score depends on the amount of erased marbles
 and if &kolorlines; shows the next balls.  The increase will be smaller if
 you use the information of what's next.</para>
 
@@ -238,18 +238,18 @@ testing and discussions.</para>
 
 </sect1>
 
-<sect1 id="customise">
+<sect1 id="customize">
 <title>Generating marbles with <application>Povray</application></title>
 
 <para>All pictures (<filename>klines/*.jpg</filename>) are
 rendered with <application>Povray</application> 3.0 and manipulated 
 with <application>ImageMagick</application>.
 Povray &amp; bash scripts are in the directory <filename class="directory">>klines/povray</filename>.
-Customise <filename>balls.pov</filename> as you want, 
+Customize <filename>balls.pov</filename> as you want, 
 render and install it.</para>
 
 <note><para>You need Povray 3.0 to render. In newer Versions &ie; 3.1
-<quote>halo</quote> is supressed. </para></note>
+<quote>halo</quote> is suppressed. </para></note>
 
 <para>In order to generate marbles on your system, type the following
 in the base directory of the &package; distribution:</para>
