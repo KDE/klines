@@ -11,7 +11,7 @@ desktopdir = $(kde_appsdir)/Games/TacticStrategy
 desktop_DATA = klines.desktop
 
 # set the include path for X, qt and KDE
-INCLUDES= $(all_includes)
+INCLUDES= -I$(top_srcdir)/libkdegames $(all_includes)
 
 METASOURCES = AUTO
 
