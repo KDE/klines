@@ -29,7 +29,7 @@
 
 #include "klines.h"
 
-static const char *description = I18N_NOOP("Kolor Lines - a little game about balls and how to get rid of them");
+static const char description[] = I18N_NOOP("Kolor Lines - a little game about balls and how to get rid of them");
 
 int main( int argc, char **argv )
 {
