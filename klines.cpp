@@ -111,7 +111,7 @@ void KLines::slotConfigureKeys()
 */
 void KLines::initKAction()
 {
-    KStdAction::keyBindings( this, SLOT( slotConfigureKeys() ), actionCollection() );
+  KStdAction::keyBindings( this, SLOT( slotConfigureKeys() ), actionCollection() );
   KStdGameAction::gameNew(this, SLOT(startGame()), actionCollection());
   act_demo = KStdGameAction::demo(this, SLOT(startDemo()), actionCollection());
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
@@ -148,7 +148,7 @@ void KLines::startGame()
     bFirst = true;
 
     int level = levelAction->currentItem()-2;
-    statusBar()->changeItem(i18n(" Level: %1").arg(i18n(LEVEL[level])), 0);
+    statusBar()->changeItem(i18n(" Level: %1").arg(i18n(LEVEL[level+2])), 0);
 
     lsb->setLevel(level);
     lsb->setGameOver(false);
