@@ -23,7 +23,6 @@
 // The implementation of the KLines widget
 //
 
-#include <qpopupmenu.h>
 #include <qkeycode.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
@@ -37,9 +36,11 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kmenubar.h>
+#include <kpopupmenu.h>
 
 
 #include "cfg.h"
+#include <kstatusbar.h>
 #include "klines.moc"
 
 
