@@ -195,12 +195,12 @@ void LinesBoard::paintEvent( QPaintEvent* )
         for( int x=0; x < NUMCELLSW; x++ ){
           if( getBall(x,y) == NOBALL )
 					{
-            paint->drawPixmap(x*CELLSIZE, y*CELLSIZE, *(bPainter->GetBackgroundPix()) );
+            paint->drawPixmap(x*CELLSIZE, y*CELLSIZE, bPainter->GetBackgroundPix() );
 					}
           else
           {
             paint->drawPixmap(x*CELLSIZE, y*CELLSIZE,
-              *(bPainter->GetBall(getBall(x,y),animstep,getAnim(x,y))));
+              bPainter->GetBall(getBall(x,y),animstep,getAnim(x,y)));
           }
         }
     }

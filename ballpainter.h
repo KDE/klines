@@ -38,11 +38,9 @@ public:
   BallPainter();
   ~BallPainter();
 
-
-//  QPixmap* GetAnimatedBall(int color, int shot);
-  QPixmap* GetBall( int color, int animstep, int panim );
-  QPixmap* GetNormalBall(int color) {return GetBall(color,0,ANIM_NO);}
-  QPixmap* GetBackgroundPix() { return GetBall(NOBALL,0,ANIM_NO);}
+  QPixmap GetBall( int color, int animstep, int panim );
+  QPixmap GetNormalBall(int color) { return GetBall(color,0,ANIM_NO); }
+  QPixmap GetBackgroundPix() { return GetBall(NOBALL,0,ANIM_NO); }
 
 };
 

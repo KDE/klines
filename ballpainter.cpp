@@ -17,14 +17,15 @@
  *                                                                         *
  ***************************************************************************/
 #include <kapplication.h>
-#include "ballpainter.moc"
+#include <kmessagebox.h>
 //#include "shotcounter.h"
 #include <qpainter.h>
 #include "linesboard.h"
 //#include <qcolor.h>
 #include <qjpegio.h>
 #include <kstandarddirs.h>
-
+#include <klocale.h>
+#include <stdlib.h>
 
 #define PIXSIZE (CELLSIZE - 2)
 
@@ -47,6 +48,7 @@ BallPainter::~BallPainter()
   delete imgCash;
   delete firePix;
 }
+
 void BallPainter::createPixmap()
 {
   backgroundPix = new QPixmap(
@@ -55,8 +57,11 @@ void BallPainter::createPixmap()
 		locate( "appdata", "balls.jpg" ));
   QPixmap *fire = new QPixmap(
 		locate( "appdata", "fire.jpg" ));
-  if (balls->isNull() ||backgroundPix->isNull() || fire->isNull() )
-     return; // Error
+  if (balls->isNull() ||backgroundPix->isNull() || fire->isNull() ) {
+      KMessageBox::error(0, i18n("Couldn't find graphics. Check your installation."), i18n("Error"));
+      exit(1);
+      return; // Error
+  }
 
   for(int c=0; c<NCOLORS; c++)
   {
@@ -80,35 +85,37 @@ void BallPainter::createPixmap()
 }
 
 
-QPixmap* BallPainter::GetBall(int color, int animstep, int panim)
+QPixmap BallPainter::GetBall(int color, int animstep, int panim)
 {
 //    return backgroundPix;
 
     if( (color<0) || (color>=NCOLORS) || (animstep<0) || color == NOBALL ){
-       return backgroundPix;
+       return *backgroundPix;
     }
     if ( panim == ANIM_JUMP )
     {
       if ( ( animstep < 0 ) || ( animstep >= PIXTIME ) )
-        return backgroundPix;
+        return *backgroundPix;
       else
-        return imgCash[color][animstep];
+        return *imgCash[color][animstep];
     }
     else if ( panim == ANIM_BURN )
     {
         if ( animstep < FIREBALLS )
-          return imgCash[color][animstep + PIXTIME + BOOMBALLS + 1];
+          return *imgCash[color][animstep + PIXTIME + BOOMBALLS + 1];
         else if ( animstep < FIREBALLS + FIREPIX )
-          return firePix[animstep - FIREBALLS];
+          return *firePix[animstep - FIREBALLS];
     }
     else if ( panim == ANIM_BORN )
     {
         if ( animstep < BOOMBALLS )
-          return imgCash[color][animstep + PIXTIME];
+          return *imgCash[color][animstep + PIXTIME];
         else
-          return imgCash[color][NORMALBALL];
+          return *imgCash[color][NORMALBALL];
     }
     // rest is not imlemented yet
-    return imgCash[color][NORMALBALL];
+    return *imgCash[color][NORMALBALL];
 
 }
+
+#include "ballpainter.moc"

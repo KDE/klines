@@ -52,14 +52,14 @@ void LinesPrompt::paintEvent( QPaintEvent* )
 {
   QPainter paint( this );
   if(PromptEnabled){
-    paint.drawPixmap(0,          0, *(bPainter->GetNormalBall(cb[0])) );
-    paint.drawPixmap(CELLSIZE,   0, *(bPainter->GetNormalBall(cb[1])) );
-    paint.drawPixmap(2*CELLSIZE, 0, *(bPainter->GetNormalBall(cb[2])) );
+    paint.drawPixmap(0,          0, bPainter->GetNormalBall(cb[0]) );
+    paint.drawPixmap(CELLSIZE,   0, bPainter->GetNormalBall(cb[1]) );
+    paint.drawPixmap(2*CELLSIZE, 0, bPainter->GetNormalBall(cb[2]) );
   }
   else{
-    paint.drawPixmap(0,          0, *(bPainter->GetBackgroundPix()) );
-    paint.drawPixmap(CELLSIZE,   0, *(bPainter->GetBackgroundPix()) );
-    paint.drawPixmap(2*CELLSIZE, 0, *(bPainter->GetBackgroundPix()) );
+    paint.drawPixmap(0,          0, bPainter->GetBackgroundPix() );
+    paint.drawPixmap(CELLSIZE,   0, bPainter->GetBackgroundPix() );
+    paint.drawPixmap(2*CELLSIZE, 0, bPainter->GetBackgroundPix() );
   }
 }
 
