@@ -72,8 +72,6 @@ KLines::KLines()
 
   lPrompt = mwidget->GetPrompt();
 
-  initKAction();
-
   score = 0;
   score_undo = 0;
 
@@ -81,6 +79,8 @@ KLines::KLines()
   statusBar()->setItemAlignment(1, AlignVCenter | AlignLeft);
   statusBar()->insertItem(i18n(" Level: "), 0, 1);
   statusBar()->setItemAlignment(0, AlignVCenter | AlignLeft);
+ 
+  initKAction();
 
   connect(&demoTimer, SIGNAL(timeout()), this, SLOT(slotDemo()));
 
@@ -104,8 +104,6 @@ KLines::~KLines()
 */
 void KLines::initKAction()
 {
-  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
-actionCollection());
   KStdGameAction::gameNew(this, SLOT(startGame()), actionCollection());
   act_demo = KStdGameAction::demo(this, SLOT(startDemo()), actionCollection());
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
@@ -129,7 +127,7 @@ actionCollection());
   showNumberedAction->setChecked(Prefs::numberedBalls());
   lPrompt->setPrompt(Prefs::showNext());
 
-  createGUI();
+  setupGUI( KMainWindow::Save | Keys | StatusBar | Create );
 }
 
 void KLines::startGame()
