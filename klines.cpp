@@ -74,10 +74,10 @@ KLines::KLines() : KTMainWindow()
            + "Roman Razilov"
            + " (Roman.Razilov@gmx.de)" );
 
-  CHECK_PTR( edit );
-  CHECK_PTR( game );
-  CHECK_PTR( help );
-  CHECK_PTR( menu );
+  Q_CHECK_PTR( edit );
+  Q_CHECK_PTR( game );
+  Q_CHECK_PTR( help );
+  Q_CHECK_PTR( menu );
 
 
 
