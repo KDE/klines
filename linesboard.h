@@ -27,6 +27,9 @@
 //#include "shotcounter.h"
 #include "ballpainter.h"
 
+#define debug qDebug
+#define fatal qFatal
+#define warning qWarning
 
 class LinesBoard : public Field
 {

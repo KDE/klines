@@ -17,9 +17,10 @@
  *                                                                         *
  ***************************************************************************/
 #include <kapp.h>
-#include "ballpainter.h"
+#include "ballpainter.moc"
 //#include "shotcounter.h"
 #include <qpainter.h>
+#include "linesboard.h"
 //#include <qcolor.h>
 #include <qjpegio.h>
 #include <kstddirs.h>

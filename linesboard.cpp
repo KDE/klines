@@ -22,7 +22,7 @@
 #include <qkeycode.h>
 #include <stdlib.h>
 
-#include "linesboard.h"
+#include "linesboard.moc"
 
 /*
    Constructs a LinesBoard widget.

@@ -18,7 +18,7 @@
  ***************************************************************************/
 #include <stdlib.h>
 #include "cfg.h"
-#include "field.h"
+#include "field.moc"
 
 Field::Field(QWidget* parent, const char* name)
     : QWidget( parent, name )

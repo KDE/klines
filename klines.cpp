@@ -40,7 +40,7 @@
 
 
 #include "cfg.h"
-#include "klines.h"
+#include "klines.moc"
 
 
 /*
@@ -110,9 +110,9 @@ KLines::KLines() : KTMainWindow()
   QString s;
   stat = new KStatusBar(this);
   s = i18n(" score: xxxx ");
-  stat->insertItem((const char*)s, LSCORE);
+  stat->insertItem(s, LSCORE);
   s = i18n(" highscore: xxxx ");
-  stat->insertItem((const char*)s, LRECORD);
+  stat->insertItem(s, LRECORD);
 	stat->show();
 
   startGame();
@@ -215,11 +215,8 @@ void KLines::addScore(int ballsErased)
 
 void KLines::updateStat()
 {
-    QString s;
-    s.sprintf(i18n(" score: %i "), score);
-    stat->changeItem((const char*)s, LSCORE);
-    s.sprintf(i18n(" highscore: %i "), hs->getMaxScore());
-    stat->changeItem((const char*)s, LRECORD);
+    stat->changeItem(i18n(" score: %1 ").arg(score), LSCORE);
+    stat->changeItem(i18n(" highscore: %1 ").arg(hs->getMaxScore()), LRECORD);
 }
 
 void KLines::endGame()

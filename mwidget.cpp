@@ -16,7 +16,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include "mwidget.h"
+#include "mwidget.moc"
 #include <qlayout.h>
 #include "ballpainter.h"
 

@@ -25,7 +25,7 @@
 #include <kconfig.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "highscore.h"
+#include "highscore.moc"
 #include <klocale.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -58,16 +58,16 @@ void HScore::slotEndOfGame(int score) {
 			writeHighscore();
       showHighscore(rank);
     } else {
-      QString s;
-      s.sprintf( i18n("Congratulations! You score is %i"), score );
+      QString s = i18n("Congratulations! You score is %1").arg(score);
 
-      KMessageBox::information(NULL, s.data(), i18n("Game over"));
+      KMessageBox::information(NULL, s, i18n("Game over"));
 //      KMsgBox::message(this, locale->translate("End of game"), s.data());
     }
 }
 
 QString HScore::getPlayerName() {
-  QDialog *dlg = new QDialog(NULL, i18n("Hall Of Fame"), TRUE);
+  QDialog *dlg = new QDialog(NULL, "halloffame", TRUE);
+  dlg->setCaption(i18n("Hall Of Fame"));
 
   QLabel  *l1  = new QLabel(i18n("You've made in into the \"Hall Of Fame\".Type in\nyour name so mankind will always remember\nyour cool rating."), dlg);
 //  QLabel  *l1  = new QLabel(locale->translate("You've made in into the \"Hall Of Fame\".Type in\nyour name so mankind will always remember\nyour cool rating."), dlg);
@@ -200,7 +200,8 @@ void HScore::writeHighscore() {
 
 void HScore::showHighscore(int focusitem)  {
   // this may look a little bit confusing...
-  QDialog *dlg = new QDialog(0, i18n("Highscore"), TRUE);
+  QDialog *dlg = new QDialog(0, "highscore", TRUE);
+  dlg->setCaption(i18n("Highscore"));
 //  QDialog *dlg = new QDialog(0, locale->translate("Hall Of Fame"), TRUE);
 
   dlg->setCaption(i18n("Lines: Highscore"));
@@ -263,7 +264,7 @@ void HScore::showHighscore(int focusitem)  {
     
     // insert rank    
     s.sprintf("%d", i+1);
-    e[i][0] = new QLabel(s.data(), dlg);
+    e[i][0] = new QLabel(s, dlg);
 
     // insert name
     if(i < hiscore_used)
@@ -274,7 +275,7 @@ void HScore::showHighscore(int focusitem)  {
     // insert score
     if(i < hiscore_used) {
       s.sprintf("%i", hs.score);
-      e[i][2] = new QLabel(s.data(), dlg);
+      e[i][2] = new QLabel(s, dlg);
     } else
       e[i][2] = new QLabel("", dlg);
       e[i][2]->setAlignment(AlignRight);
