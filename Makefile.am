@@ -1,7 +1,6 @@
 
 INCLUDES= -I$(top_srcdir)/libkdegames -I$(top_srcdir)/libkdegames/highscore $(all_includes)
 METASOURCES = AUTO
-KDE_ICON = klines
 
 bin_PROGRAMS = klines
 klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp \
@@ -16,6 +15,8 @@ xdg_apps_DATA = klines.desktop
 kde_kcfg_DATA = klines.kcfg
 
 EXTRA_DIST = $(pics_DATA)
+
+KDE_ICON = klines
 
 rcdir = $(kde_datadir)/klines
 rc_DATA = klinesui.rc
