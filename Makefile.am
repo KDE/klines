@@ -15,7 +15,7 @@ install-data-local:
 	$(mkinstalldirs) $(kde_icondir)/hicolor/16x16/apps/
 	$(INSTALL_DATA) $(srcdir)/hi16-app-klines.png $(kde_icondir)/hicolor/16x16/apps/klines.png
 	$(mkinstalldirs) $(kde_datadir)/klines/
-	$(INSTALL_DATA) $(srcdir)/balls.jpg $(kde_datadir)/klines/ball.jpg
+	$(INSTALL_DATA) $(srcdir)/balls.jpg $(kde_datadir)/klines/balls.jpg
 	$(mkinstalldirs) $(kde_datadir)/klines/
 	$(INSTALL_DATA) $(srcdir)/field.jpg $(kde_datadir)/klines/field.jpg
 	$(mkinstalldirs) $(kde_datadir)/klines/
