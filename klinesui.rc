@@ -2,11 +2,14 @@
 <kpartgui name="klines" version="1.0">
 <MenuBar>
   <Menu name="game"><text>&amp;Game</text>
-    <Action name="game_next"/>
-    <Separator/>
-    <Action name="game_show_next"/>
+    <Action name="game_demo"/>
+  </Menu>
+  <Menu name="edit">
+    <Action name="next_turn"/>
   </Menu>
   <Menu name="settings">
+    <Action name="show_next"/>
+    <Separator/>
     <Action name="settings_level1"/>
     <Action name="settings_level2"/>
     <Action name="settings_level3"/>

@@ -61,3 +61,5 @@ LinesPrompt * MainWidget::GetPrompt()
 {
     return lPrompt;
 }
+
+

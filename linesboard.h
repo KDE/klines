@@ -22,6 +22,7 @@
 #include <qwidget.h>
 #include <qpixmap.h>
 #include <qtimer.h>
+#include <qlabel.h>
 
 #include <krandomsequence.h>
 
@@ -45,10 +46,16 @@ public:
   void undo();
   bool gameOver() { return bGameOver; }
   void setGameOver(bool b) { bGameOver = b; }
-  int random(int max) { return rnd.getLong(max); }
+  int random(int max) { return (level == DEMO_LEVEL) ? rnd_demo.getLong(max) : rnd.getLong(max); }
   void saveRandomState() { rnd_saved = rnd; }
   void restoreRandomState() { rnd = rnd_saved; }
   void setLevel(int _level) { level = _level; }
+  void startDemoMode();
+  void adjustDemoMode(bool allowMove, bool off);
+  void showDemoText(const QString &);
+  void hideDemoText();
+  void demoClick(int x, int y);
+  void demoAdjust(int a);
 
 signals:
   void endTurn();
@@ -86,6 +93,10 @@ private:
   bool bGameOver;
   KRandomSequence rnd;
   KRandomSequence rnd_saved;
+  KRandomSequence rnd_demo;
+
+  QLabel *demoLabel;
+  bool bAllowMove;
 
   void paintEvent( QPaintEvent* );
   void mousePressEvent( QMouseEvent* );
@@ -102,7 +113,7 @@ private:
 
 protected slots:
   void timerSlot();
-
+  void demoClickStep();
 };
 
 #endif

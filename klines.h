@@ -43,8 +43,12 @@ protected:
   void setLevel(int level);
   int currentLevel(QString *levelStr=0);
 
+  void focusOutEvent(QFocusEvent *);
+  void focusInEvent(QFocusEvent *);
+
 public slots:
   void startGame();
+  void startDemo();
   void stopGame();
   void endGame();
   void makeTurn();
@@ -52,7 +56,8 @@ public slots:
   void addScore(int ballsErased);
   void switchPrompt();
   void undo();
-  
+  void slotDemo();
+
 private slots:
   void viewHighScore();
 
@@ -60,6 +65,7 @@ private:
   LinesBoard* lsb;
   MainWidget *mwidget;
   LinesPrompt *lPrompt;
+  KAction *act_demo;
   KRadioAction *act_level1;
   KRadioAction *act_level2;
   KRadioAction *act_level3;
@@ -76,6 +82,11 @@ private:
   int nextBalls_undo[BALLSDROP];
   int nextBalls_redo[BALLSDROP];
   bool bUndo;
+  bool bFirst;
+  bool bDemo;
+  
+  int demoStep;
+  QTimer demoTimer;
 
   void searchBallsLine();
   void generateRandomBalls();

@@ -18,9 +18,12 @@
  ***************************************************************************/
 #include <qpainter.h>
 #include <qcolor.h>
+#include <qcursor.h>
 #include <qkeycode.h>
+#include <qtooltip.h>
 #include <stdlib.h>
 
+#include <kapp.h>
 #include <klocale.h>
 #include <kpixmap.h>
 #include <kpixmapeffect.h>
@@ -35,6 +38,7 @@
 LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* name )
     : Field( parent, name )
 {
+  demoLabel = 0;
   bGameOver = false;
   anim = ANIM_NO;
 //  waypos = 0;
@@ -66,7 +70,26 @@ LinesBoard::~LinesBoard()
 {
   timer->stop();
   delete timer;
-  delete way;
+  delete [] way;
+}
+
+void LinesBoard::startDemoMode()
+{
+    level = DEMO_LEVEL;
+    rnd_demo = KRandomSequence(DEMO_SEQUENCE);
+    bAllowMove = false;
+}
+
+void LinesBoard::adjustDemoMode(bool allowMove, bool off)
+{
+    bAllowMove = allowMove;
+    if (off)
+       level = -2;
+}
+
+void LinesBoard::demoAdjust(int a)
+{
+    rnd_demo.modulate(a);
 }
 
 
@@ -96,21 +119,29 @@ void LinesBoard::placeBall(  )
     if (empty)
     {
       int color = nextBalls[nextBallToPlace];
-      int best_pos;
-      int best_score = level > 0 ? 1000: -1000;
-      int maxtry = level >= 0 ? level+1 : 1-level;
-      for(int i=0;i<maxtry;i++)
+      int pos = 0;
+      if ((level == DEMO_LEVEL) || (level == 0))
       {
-         int pos  = random(empty);
-         int score = calcPosScore(xx[pos], yy[pos], color) - calcPosScore(xx[pos], yy[pos], NOBALL);
-         if (((level  > 0) && (score < best_score)) ||
-             ((level <= 0) && (score > best_score)))
-         {
-            best_pos = pos;
-            best_score = score;
-         }
+         pos  = random(empty);
       }
-      int pos = best_pos;
+      else
+      {
+         int best_pos = 0;
+         int best_score = level > 0 ? 1000: -1000;
+         int maxtry = level > 0 ? level+1 : 1-level;
+         for(int i=0;i<maxtry;i++)
+         {
+            int pos  = random(empty);
+            int score = calcPosScore(xx[pos], yy[pos], color) - calcPosScore(xx[pos], yy[pos], NOBALL);
+            if (((level > 0) && (score < best_score)) ||
+                ((level < 0) && (score > best_score)))
+            {
+               best_pos = pos;
+               best_score = score;
+            }
+         }
+         pos = best_pos;
+      }
       
       putBall( xx[pos], yy[pos], color );		
       clearAnim();
@@ -200,6 +231,7 @@ void LinesBoard::paintEvent( QPaintEvent* )
 void LinesBoard::mousePressEvent( QMouseEvent* e )
 {
   if (bGameOver) return;
+  if ((level == DEMO_LEVEL) && (!bAllowMove) && e->spontaneous()) return;
   
   int curRow = e->y() / CELLSIZE;
   int curCol = e->x() / CELLSIZE;
@@ -596,3 +628,54 @@ void LinesBoard::undo()
   repaint( FALSE );
 }
 
+void LinesBoard::showDemoText(const QString &text)
+{
+  if (!demoLabel)
+  {
+     demoLabel = new QLabel(0, "demoTip", WStyle_StaysOnTop | WStyle_Customize | WStyle_NoBorder | WStyle_Tool | WX11BypassWM );
+     demoLabel->setMargin(1);
+     demoLabel->setIndent(0);
+     demoLabel->setAutoMask( FALSE );
+     demoLabel->setFrameStyle( QFrame::Plain | QFrame::Box );
+     demoLabel->setLineWidth( 1 );
+     demoLabel->setAlignment( AlignHCenter | AlignTop );
+     demoLabel->setPalette(QToolTip::palette());
+     demoLabel->polish();
+  }
+  demoLabel->setText(text);
+  demoLabel->adjustSize();
+  QSize s = demoLabel->sizeHint();
+  QPoint p = QPoint(x() + (width()-s.width())/2, y() + (height()-s.height())/2);
+  demoLabel->move(mapToGlobal(p));
+  demoLabel->show();
+}
+
+void LinesBoard::hideDemoText()
+{
+  if (demoLabel)
+     demoLabel->hide();
+}
+
+void LinesBoard::demoClick(int x, int y)
+{
+  QPoint lDest = QPoint(x*CELLSIZE+(CELLSIZE/2), y*CELLSIZE+(CELLSIZE/2));
+  QPoint dest = mapToGlobal(lDest);
+  QPoint cur = QCursor::pos();
+  for(int i = 0; i < 25;)
+  {
+     i++;
+     QPoint p = cur + i*(dest-cur) / 25;
+     QCursor::setPos(p);
+     QApplication::flushX();
+     QTimer::singleShot(80, this, SLOT(demoClickStep()));
+     kapp->enter_loop();
+  }
+  QCursor::setPos(dest);
+  QMouseEvent ev(QEvent::MouseButtonPress, lDest, dest, LeftButton, LeftButton);
+  mousePressEvent(&ev);
+}
+
+void LinesBoard::demoClickStep()
+{
+  kapp->exit_loop();
+}

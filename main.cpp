@@ -48,7 +48,7 @@ int main( int argc, char **argv )
 	 aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
 	 KCmdLineArgs::init(argc, argv, &aboutData);
 
-#ifndef _DBG_
+#ifdef NDEBUG
   qInstallMsgHandler( dummyMessageHandler );
 #endif
   KApplication a;

@@ -53,7 +53,7 @@
    Creates the KLines widget and sets saved options (if any).
 */
 
-KLines::KLines() : KMainWindow()
+KLines::KLines() : KMainWindow(0, "klines", WType_TopLevel)
 {
   setCaption(QString("KLines ")+LINESVERSION);
 
@@ -78,6 +78,11 @@ KLines::KLines() : KMainWindow()
   statusBar()->insertItem(i18n(" Level: "), 0, 1);
   statusBar()->setItemAlignment(0, AlignVCenter | AlignLeft);
 
+  connect(&demoTimer, SIGNAL(timeout()), this, SLOT(slotDemo()));
+
+  setFocusPolicy(StrongFocus);
+  setFocus();
+
   startGame();
 }
 
@@ -89,10 +94,8 @@ KLines::~KLines()
   KConfig *config = kapp->config();
   config->setGroup("Game");
   int level = currentLevel();
-qWarning("Level = %d", level);
   config->writeEntry("Level", level);
   bool show_next = lPrompt->getState();
-qWarning("Prompt = %s", show_next ? "true" : "false");
   config->writeEntry("ShowNext", show_next);
 }
 
@@ -108,11 +111,12 @@ qWarning("Prompt = %s", show_next ? "true" : "false");
 void KLines::initKAction()
 {
 // game
-  KStdGameAction::gameNew(this, SLOT(stopGame()), actionCollection());
+  KStdGameAction::gameNew(this, SLOT(startGame()), actionCollection());
+  act_demo = new KAction(i18n("Start &Tutorial"), KShortcut(CTRL+Key_D), this, SLOT(startDemo()), actionCollection(), "game_demo");
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
   KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
-  (void)new KAction(i18n("Ne&xt"), Key_N, this, SLOT(makeTurn()), actionCollection(), "game_next");
-  KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "game_show_next");
+  (void)new KAction(i18n("Ne&xt Turn"), Key_N, this, SLOT(makeTurn()), actionCollection(), "next_turn");
+  KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "show_next");
   act_level1 = new KRadioAction(i18n("Very Easy"), KShortcut(), actionCollection(), "settings_level1");
   act_level2 = new KRadioAction(i18n("Easy"), KShortcut(), actionCollection(), "settings_level2");
   act_level3 = new KRadioAction(i18n("Normal"), KShortcut(), actionCollection(), "settings_level3");
@@ -205,6 +209,9 @@ void KLines::startGame()
     score_undo = 0;
     bUndo = true;
     bNewTurn = true;
+    bDemo = false;
+    act_demo->setText(i18n("Start &Tutorial"));
+    bFirst = true;
 
     int level = currentLevel(&levelStr);
     statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
@@ -216,7 +223,273 @@ void KLines::startGame()
     placeBalls();
     generateRandomBalls();
     actionCollection()->action("edit_undo")->setEnabled(false);
+    actionCollection()->action("next_turn")->setEnabled(true);
     updateStat();
+}
+
+void KLines::startDemo()
+{
+    if (bDemo)
+    {
+       bDemo = false;
+       lsb->hideDemoText();
+       demoTimer.stop();
+       levelStr = i18n("Tutorial - Stopped");
+       statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+       act_demo->setText(i18n("Start &Tutorial"));
+       return;
+    }
+    score = 0;
+    score_undo = 0;
+    bUndo = true;
+    bNewTurn = true;
+    bDemo = true;
+    act_demo->setText(i18n("Stop &Tutorial"));
+    bFirst = true;
+
+    levelStr = i18n("Tutorial");
+    statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+
+    lsb->startDemoMode();
+    lsb->setGameOver(false);
+    lsb->clearField();
+    lsb->update();
+    actionCollection()->action("edit_undo")->setEnabled(false);
+    actionCollection()->action("next_turn")->setEnabled(false);
+    generateRandomBalls();
+  
+    demoStep = 0;
+    demoTimer.start(1000, true);
+}
+
+void KLines::slotDemo()
+{
+    bool newBalls = false;
+    int ballColors = -1;
+    int clickX = 0;
+    int clickY = 0;
+    QString msg;
+    demoStep++;
+    if ((demoStep % 2) == 0)
+    {
+       lsb->hideDemoText();
+       demoTimer.start(1000, true);
+       return;
+    }
+    if (demoStep == 1)
+    {
+       msg = i18n("The goal of the game is to put\n"
+                  "5 balls of the same color in line.");
+    }
+    else if (demoStep == 3)
+    {
+       newBalls = true;
+    }
+    else if (demoStep == 5)
+    {
+       msg = i18n("You can make horizontal, vertical\n"
+                  "and diagonal lines.");
+    }
+    else if (demoStep == 7)
+    {
+       newBalls = true;
+    }
+    else if (demoStep == 9)
+    {
+       msg = i18n("Each turn three new balls are placed on the board.");
+    }
+    else if (demoStep == 11)
+    {
+       newBalls = true;
+    }
+    else if (demoStep == 13)
+    {
+       msg = i18n("Every turn you can move one ball.");
+    }
+    else if (demoStep == 15)
+    {
+       newBalls = true;
+       ballColors = 56;
+    }
+    else if (demoStep == 17)
+    {
+       msg = i18n("To move a ball click on it with the mouse,\n"
+                  "then click where you want the ball to go.");
+    }
+    else if (demoStep == 19)
+    {
+       clickX = 6;
+       clickY = 6;
+    }
+    else if (demoStep == 21)
+    {
+       clickX = 6;
+       clickY = 9;
+    }
+    else if (demoStep == 23)
+    {
+       msg = i18n("You just moved the blue ball!");
+    }
+    else if (demoStep == 25)
+    {
+       newBalls = true;
+    }
+    else if (demoStep == 27)
+    {
+       msg = i18n("Balls can be moved to every position on the board\n"
+                  "as long as there are no other balls in their way.");
+    }
+    else if (demoStep == 29)
+    {
+       clickX = 4;
+       clickY = 3;
+       demoStep++;
+    }
+    else if (demoStep == 31)
+    {
+       clickX = 7;
+       clickY = 9;
+    }
+    else if (demoStep == 33)
+    {
+       msg = i18n("Now we only need one more blue ball.");
+    }
+    else if (demoStep == 35)
+    {
+       newBalls = true;
+    }
+    else if (demoStep == 37)
+    {
+       msg = i18n("It seems to be our lucky day!");
+    }
+    else if (demoStep == 39)
+    {
+       clickX = 8;
+       clickY = 2;
+       demoStep++;
+    }
+    else if (demoStep == 41)
+    {
+       clickX = 8;
+       clickY = 9;
+    }
+    else if (demoStep == 43)
+    {
+       msg = i18n("Hurray! And away they are!\n"
+                  "Now lets try the green balls.");
+    }
+    else if (demoStep == 45)
+    {
+       clickX = 8;
+       clickY = 7;
+       demoStep++;
+    }
+    else if (demoStep == 47)
+    {
+       clickX = 4;
+       clickY = 5;
+       lsb->demoAdjust(42);
+    }
+    else if (demoStep == 49)
+    {
+       newBalls = true;
+    }
+    else if (demoStep == 51)
+    {
+       msg = i18n("Now you try!\n"
+                  "Click on the green ball and move it to the others!");
+       demoStep++;
+    }
+    else if (demoStep == 53)
+    {
+       lsb->hideDemoText();
+       lsb->adjustDemoMode(true, false);
+       demoStep++;
+    }
+    else if (demoStep == 55)
+    {
+       msg = i18n("Almost, try again!");
+       demoStep -= 4;
+    }
+    else if (demoStep == 57)
+    {
+       msg = i18n("Very good!");
+    }
+    else if (demoStep == 59)
+    {
+       msg = i18n("Whenever you complete a line you get an extra turn.");
+    }
+    else if (demoStep == 61)
+    {
+       msg = i18n("This is the end of this tutorial.\n"
+                  "Feel free to finish the game!");
+       demoStep++;
+    }
+    else if (demoStep == 63)
+    {
+       lsb->hideDemoText();
+       lsb->adjustDemoMode(true, true);
+       bDemo = false;
+       act_demo->setText(i18n("Start &Tutorial"));
+    }
+
+    if (!msg.isEmpty())
+    {
+       lsb->showDemoText(msg);
+       demoTimer.start(3500 + msg.contains("\n")*1500, true);
+       return;
+    }
+    if (newBalls)
+    {
+       placeBalls();
+       if (ballColors == -1)
+       {
+          generateRandomBalls();
+       }
+       else
+       {
+          for( int i = 0 ; i < BALLSDROP ; i++ )
+          {
+             nextBalls[i] = ballColors % 10;
+             ballColors = ballColors / 10;
+             lPrompt->SetBalls(nextBalls);
+          }
+       }
+          
+       updateStat();
+       demoTimer.start(1000, true);
+       return;
+    }
+    if (clickX)
+    {
+       lsb->demoClick(clickX-1, clickY-1);
+       if (hasFocus())
+          demoTimer.start(1000, true);
+       return;
+    }
+}
+
+void KLines::focusOutEvent(QFocusEvent *ev)
+{
+   if (bDemo)
+   {
+      lsb->hideDemoText();
+      demoTimer.stop();
+      levelStr = i18n("Tutorial - Paused");
+      statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+   }
+   KMainWindow::focusOutEvent(ev);
+}
+
+void KLines::focusInEvent(QFocusEvent *ev)
+{
+   if (bDemo)
+   {
+      levelStr = i18n("Tutorial");
+      statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+      slotDemo();
+   }
+   KMainWindow::focusInEvent(ev);
 }
 
 void KLines::stopGame()
@@ -268,9 +541,15 @@ void KLines::undo()
 
 void KLines::makeTurn()
 {
+    if (bDemo)
+    {
+       lsb->adjustDemoMode(false, false);
+       demoTimer.start(100, true);
+    }
     if (lsb->gameOver())
        return;
-    placeBalls();
+    if (!bDemo)
+       placeBalls();
     bNewTurn = true;
 }
 
@@ -279,9 +558,12 @@ void KLines::userTurn()
     if(bNewTurn)
     {
        bNewTurn = false;
-       generateRandomBalls();
-       switchUndo(TRUE);
+       if (!bDemo)
+          generateRandomBalls();
+       if (!bFirst && !bDemo)
+          switchUndo(true);
     }
+    bFirst = false;
 }
 
 void KLines::addScore(int ballsErased)
@@ -290,6 +572,13 @@ void KLines::addScore(int ballsErased)
       if( !lPrompt->getState() ) score+= 1;
       updateStat();
     };
+    if (bDemo)
+    {
+      lsb->adjustDemoMode(false, false);
+      demoStep += 2;
+      if (hasFocus())
+         demoTimer.start(100, true);
+    }
 }
 
 void KLines::updateStat()
@@ -308,6 +597,9 @@ void KLines::endGame()
     lsb->setGameOver(true);
     lsb->repaint(false);
 
+    if (bDemo)
+       return;
+       
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score | KScoreDialog::Level, this);
     KScoreDialog::FieldInfo scoreInfo;
     scoreInfo.insert(KScoreDialog::Level, levelStr);
@@ -318,7 +610,7 @@ void KLines::endGame()
 void KLines::switchPrompt()
 {
     lPrompt->setPrompt(!lPrompt->getState());
-    ((KToggleAction*)actionCollection()->action("game_show_next"))->setChecked(lPrompt->getState());
+    ((KToggleAction*)actionCollection()->action("show_next"))->setChecked(lPrompt->getState());
 }
 
 void KLines::switchUndo(bool bu)

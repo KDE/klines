@@ -30,6 +30,8 @@
 #define STEPTIME 3
 #define NORMALBALL PIXTIME + BOOMBALLS
 #define TIMERCLOCK 25
+#define DEMO_LEVEL -100
+#define DEMO_SEQUENCE 42
 
 enum Anim
 {
