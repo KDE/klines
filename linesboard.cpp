@@ -22,6 +22,7 @@
 #include <qkeycode.h>
 #include <stdlib.h>
 
+#include "linesboard.h"
 #include "linesboard.moc"
 
 /*

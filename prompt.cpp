@@ -17,6 +17,7 @@
  *                                                                         *
  ***************************************************************************/
 #include <qpainter.h>
+#include "prompt.h"
 #include "prompt.moc"
 
 LinesPrompt::LinesPrompt( BallPainter * abPainter, QWidget* parent, const char* name )
