@@ -1,0 +1,12 @@
+# KDE Config File  
+[Desktop Entry]
+Type=Application
+Exec=klines -caption "%c" %i %m  
+Icon=klines.png
+MiniIcon=klines.png
+DocPath=klines/index.html
+Comment=
+Comment[de]=
+Terminal=0
+Name=Klines
+Name[de]=Klines
