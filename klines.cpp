@@ -84,13 +84,13 @@ KLines::KLines() : KMainWindow()
 
 
 
-  game->insertItem(SmallIcon("filenew"),  i18n("&New game"), this, SLOT(stopGame()), CTRL+Key_N );
+  game->insertItem(SmallIcon("filenew"),  i18n("&New Game"), this, SLOT(stopGame()), CTRL+Key_N );
   game->insertSeparator();
   game->insertItem(SmallIcon("next"),  i18n("Ne&xt"), this, SLOT(makeTurn()), Key_N );
   game->insertSeparator();
-  game->insertItem( i18n("Show &highscore"), hs, SLOT(viewHighScore()), CTRL+Key_H );
+  game->insertItem( i18n("Show &Highscore"), hs, SLOT(viewHighScore()), CTRL+Key_H );
   game->insertSeparator();
-  idMenuPrompt = game->insertItem( i18n("&Show next"), this, SLOT(switchPrompt()), CTRL+Key_P );
+  idMenuPrompt = game->insertItem( i18n("&Show Next"), this, SLOT(switchPrompt()), CTRL+Key_P );
   game->setCheckable(true);
   game->setItemChecked(idMenuPrompt, lPrompt->getState());
   game->insertSeparator();
