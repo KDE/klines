@@ -58,12 +58,13 @@ private:
   MainWidget *mwidget;
   LinesPrompt *lPrompt;
 
-  int score, prev_score;
+  int score;
+  int score_undo;
 
   int nextBalls[BALLSDROP];
-	int nextBalls_undo[BALLSDROP];
-	int nextBalls_redo[BALLSDROP];
-	bool bUndo;
+  int nextBalls_undo[BALLSDROP];
+  int nextBalls_redo[BALLSDROP];
+  bool bUndo;
 
   void searchBallsLine();
   void generateRandomBalls();

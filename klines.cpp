@@ -105,7 +105,7 @@ KLines::KLines() : KMainWindow()
   menu->show();
 
   score = 0;
-  prev_score = 0;
+  score_undo = 0;
 
   statusBar()->insertItem(i18n(" Score:"), 0, 1);
   statusBar()->setItemAlignment(0, AlignVCenter | AlignLeft);
@@ -128,7 +128,7 @@ KLines::~KLines()
 void KLines::startGame()
 {
     score = 0;
-    prev_score = 0;
+    score_undo = 0;
     bUndo=TRUE;
 
     lsb->clearField();
@@ -150,7 +150,7 @@ void KLines::searchBallsLine()
 
 void KLines::generateRandomBalls()
 {
-  
+    score_undo = score;
     for( int i = 0 ; i < BALLSDROP ; i++ )
     {
       nextBalls_undo[i] = nextBalls[i];    
@@ -177,6 +177,8 @@ void KLines::undo()
       nextBalls_redo[i] = nextBalls[i];    
       nextBalls[i] = nextBalls_undo[i];
     }
+    score = score_undo;
+    updateStat();
     lPrompt->SetBalls(nextBalls);
     lsb->undo();
     switchUndo(FALSE);
