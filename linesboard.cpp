@@ -215,7 +215,7 @@ void LinesBoard::paintEvent( QPaintEvent* )
        delete pixmap;
 
        QFont gameover_font = font();
-       gameover_font.setPointSize(72);
+       gameover_font.setPointSize(48);
        gameover_font.setBold(true);
        p.setFont(gameover_font);
        p.setPen(Qt::white);
