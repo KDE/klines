@@ -121,7 +121,7 @@ the field is the status bar. Above it is the menu bar.</para>
 <term><menuchoice>
 <shortcut><keycap>N</keycap></shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Ne<accel>x</accel>t</guimenuitem>
+<guimenuitem>Next</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Skip your move</action></para></listitem>
 </varlistentry>
