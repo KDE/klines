@@ -1,7 +1,7 @@
 
 INCLUDES= -I$(top_srcdir)/libkdegames -I$(top_srcdir)/libkdegames/highscore $(all_includes)
 METASOURCES = AUTO
-KDE_ICON = klines;
+KDE_ICON = klines
 
 bin_PROGRAMS = klines
 klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp \
