@@ -23,7 +23,7 @@
 #include <qtooltip.h>
 #include <stdlib.h>
 
-#include <kapp.h>
+#include <kapplication.h>
 #include <klocale.h>
 #include <kpixmap.h>
 #include <kpixmapeffect.h>
