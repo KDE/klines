@@ -17,23 +17,30 @@
  *                                                                         *
  ***************************************************************************/
 #include "mwidget.moc"
+
+#include <klocale.h>
+
+#include <qlabel.h>
 #include <qlayout.h>
+
 #include "ballpainter.h"
 
 MainWidget::MainWidget( QWidget* parent, const char* name )
     : QFrame( parent, name )
 {
-		QBoxLayout *grid = new QHBoxLayout( this, 5 );     //(rows,col)
+    QBoxLayout *grid = new QHBoxLayout( this, 5 );     //(rows,col)
     BallPainter * bPainter = new BallPainter();
 
     lsb = new LinesBoard(bPainter, this);
     grid->addWidget( lsb );
 
-
+    QBoxLayout *right = new QVBoxLayout(grid, 2);
+    QLabel *label = new QLabel(i18n("Next Balls:"), this);
     lPrompt = new LinesPrompt(bPainter, this);
     connect(lPrompt, SIGNAL(PromptPressed()), parent, SLOT(switchPrompt()));
 
-    grid->addWidget( lPrompt );
+    right->addWidget( label, 0, Qt::AlignBottom | Qt::AlignHCenter );
+    right->addWidget( lPrompt, 0, Qt::AlignTop | Qt::AlignHCenter );
 
     grid->activate();
     grid->freeze(0,0);
