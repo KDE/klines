@@ -1,31 +1,27 @@
-bin_PROGRAMS = klines
-klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp ballpainter.cpp klines.cpp main.cpp 
-klines_LDADD   = -lkdeui ../libkdegames/libkdegames.la
 
-KDE_ICON = klines
-
-klinesdir = $(kde_datadir)/klines/
-klines_DATA = balls.jpg field.jpg fire.jpg
-
-desktopdir = $(kde_appsdir)/Games/TacticStrategy
-desktop_DATA = klines.desktop
-
-# set the include path for X, qt and KDE
-INCLUDES= -I$(top_srcdir)/libkdegames $(all_includes)
-
+INCLUDES= -I$(top_srcdir)/libkdegames -I$(top_srcdir)/libkdegames/highscore $(all_includes)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD = $(LIB_KDEGAMES)
 METASOURCES = AUTO
+KDE_ICON = klines;
 
-# the library search path. 
-klines_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+bin_PROGRAMS = klines
+klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp \
+                 ballpainter.cpp klines.cpp main.cpp 
+
+picsdir = $(kde_datadir)/klines/
+pics_DATA = balls.jpg field.jpg fire.jpg
+
+appsdir = $(kde_appsdir)/Games/TacticStrategy
+apps_DATA = klines.desktop
+
+EXTRA_DIST = $(apps_DATA) $(pics_DATA)
 
 rcdir = $(kde_datadir)/klines
 rc_DATA = klinesui.rc
 
 messages: rc.cpp
-	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
-	if test -n "$$LIST"; then \
-	 $(XGETTEXT) rc.cpp $$LIST -o $(podir)/klines.pot; \
-	fi
+	$(XGETTEXT) *.cpp -o $(podir)/klines.pot;
 
 install-data-local:
 	rm -rf $(DESTDIR)$(kde_appsdir)/Games/klines.desktop

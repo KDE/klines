@@ -112,7 +112,7 @@ void KLines::initKAction()
   KStdGameAction::gameNew(this, SLOT(startGame()), actionCollection());
   act_demo = KStdGameAction::demo(this, SLOT(startDemo()), actionCollection());
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
-  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
+  KStdGameAction::quit(this, SLOT(close()), actionCollection());
   endTurnAction = KStdGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
   showNextAction = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P),
                                 this, SLOT(switchPrompt()), actionCollection(), "options_show_next");
