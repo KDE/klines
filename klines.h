@@ -23,12 +23,8 @@
 #include <qpushbutton.h>
 #include <kmainwindow.h>
 #include "linesboard.h"
-#include "highscore.h"
 #include "mwidget.h"
 #include "prompt.h"
-
-#define LSCORE 0
-#define LRECORD 1
 
 class KLines : public KMainWindow
 {
@@ -45,15 +41,10 @@ public slots:
   void addScore(int ballsErased);
   void switchPrompt();
   void help();
-	void undo();
+  void undo();
   
-protected:
-  void resizeEvent( QResizeEvent * );
-
 private slots:
-
-//  bool setSize( int w, int h );
-  void setMinSize();
+  void viewHighScore();
 
 private:
   KMenuBar *menu;
@@ -63,11 +54,9 @@ private:
   QPopupMenu *game;
   QPopupMenu *edit;
   KToolBar *tool;
-  KStatusBar *stat;
   LinesBoard* lsb;
   MainWidget *mwidget;
   LinesPrompt *lPrompt;
-  HScore * hs;
 
   int score, prev_score;
 
@@ -81,7 +70,7 @@ private:
   void placeBalls();
   void updateStat();
   void endGame();
-	void switchUndo( bool bu );
+  void switchUndo( bool bu );
 };
 
 #endif

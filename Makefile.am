@@ -1,6 +1,6 @@
 bin_PROGRAMS = klines
-klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp highscore.cpp field.cpp cell.cpp ballpainter.cpp klines.cpp main.cpp 
-klines_LDADD   = -lkdeui
+klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp ballpainter.cpp klines.cpp main.cpp 
+klines_LDADD   = -lkdeui ../libkdegames/libkdegames.la
 
 KDE_ICON = klines
 

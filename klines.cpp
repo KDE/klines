@@ -37,6 +37,7 @@
 #include <klocale.h>
 #include <kmenubar.h>
 #include <kpopupmenu.h>
+#include <kscoredialog.h>
 
 
 #include "cfg.h"
@@ -56,8 +57,6 @@ KLines::KLines() : KMainWindow()
 
   setCaption(QString("KLines ")+LINESVERSION);
 
-  hs = new HScore();
-
   mwidget = new MainWidget(this);
   setCentralWidget( mwidget );
 
@@ -66,7 +65,7 @@ KLines::KLines() : KMainWindow()
 
   menu              = new KMenuBar(this, "menu");
   game              = new QPopupMenu;
-  edit 							= new QPopupMenu;
+  edit               = new QPopupMenu;
   QPopupMenu * help = helpMenu(QString(i18n("Klines"))
            + " " + LINESVERSION
            + i18n("\n\nOriginal version by Roman Merzlyakov")
@@ -88,7 +87,7 @@ KLines::KLines() : KMainWindow()
   game->insertSeparator();
   game->insertItem(SmallIcon("next"),  i18n("Ne&xt"), this, SLOT(makeTurn()), Key_N );
   game->insertSeparator();
-  game->insertItem( i18n("Show &Highscore"), hs, SLOT(viewHighScore()), CTRL+Key_H );
+  game->insertItem( i18n("Show &Highscore"), this, SLOT(viewHighScore()), CTRL+Key_H );
   game->insertSeparator();
   idMenuPrompt = game->insertItem( i18n("&Show Next"), this, SLOT(switchPrompt()), CTRL+Key_P );
   game->setCheckable(true);
@@ -108,13 +107,8 @@ KLines::KLines() : KMainWindow()
   score = 0;
   prev_score = 0;
 
-  QString s;
-  stat = new KStatusBar(this);
-  s = i18n(" score: xxxx ");
-  stat->insertItem(s, LSCORE);
-  s = i18n(" highscore: xxxx ");
-  stat->insertItem(s, LRECORD);
-	stat->show();
+  statusBar()->insertItem(i18n(" Score:"), 0, 1);
+  statusBar()->setItemAlignment(0, AlignVCenter | AlignLeft);
 
   startGame();
 }
@@ -131,22 +125,11 @@ KLines::~KLines()
    Resize event of the KLines widget.
 */
 
-void KLines::resizeEvent( QResizeEvent *e )
-{
-  KMainWindow::resizeEvent(e);
-}
-
-void KLines::setMinSize()
-{
-//  setMinimumSize( gr->wHint(), gr->hHint() + menu->height() + stat->height() +
-//      tool->height() );
-}
-
 void KLines::startGame()
 {
     score = 0;
     prev_score = 0;
-		bUndo=TRUE;
+    bUndo=TRUE;
 
     lsb->clearField();
     generateRandomBalls();
@@ -167,14 +150,14 @@ void KLines::searchBallsLine()
 
 void KLines::generateRandomBalls()
 {
-	
-		for( int i = 0 ; i < BALLSDROP ; i++ )
-		{
-	    nextBalls_undo[i] = nextBalls[i];		
-	    nextBalls[i] = bUndo ?
-						rand() % NCOLORS:
-						nextBalls_redo[i];
-		}
+  
+    for( int i = 0 ; i < BALLSDROP ; i++ )
+    {
+      nextBalls_undo[i] = nextBalls[i];    
+      nextBalls[i] = bUndo ?
+            rand() % NCOLORS:
+            nextBalls_redo[i];
+    }
     lPrompt->SetBalls(nextBalls);
 }
 
@@ -186,24 +169,24 @@ void KLines::placeBalls()
 
 void KLines::undo()
 {
-		debug("Undo");
-		if (!bUndo)
-			return;
-		for( int i = 0 ; i < BALLSDROP ; i++ )
-		{
-	    nextBalls_redo[i] = nextBalls[i];		
-	    nextBalls[i] = nextBalls_undo[i];
-		}
+    debug("Undo");
+    if (!bUndo)
+      return;
+    for( int i = 0 ; i < BALLSDROP ; i++ )
+    {
+      nextBalls_redo[i] = nextBalls[i];    
+      nextBalls[i] = nextBalls_undo[i];
+    }
     lPrompt->SetBalls(nextBalls);
-		lsb->undo();
-		switchUndo(FALSE);
+    lsb->undo();
+    switchUndo(FALSE);
 }
 
 void KLines::makeTurn()
 {
     placeBalls();
     generateRandomBalls();
-		switchUndo(TRUE);
+    switchUndo(TRUE);
 }
 
 void KLines::addScore(int ballsErased)
@@ -216,14 +199,23 @@ void KLines::addScore(int ballsErased)
 
 void KLines::updateStat()
 {
-    stat->changeItem(i18n(" score: %1 ").arg(score), LSCORE);
-    stat->changeItem(i18n(" highscore: %1 ").arg(hs->getMaxScore()), LRECORD);
+    statusBar()->changeItem(i18n(" Score: %1").arg(score), 0);
+}
+
+void KLines::viewHighScore()
+{
+    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+    d.exec();
 }
 
 void KLines::endGame()
 {
-    if(score > hs->getMaxScore() ) updateStat();
-    hs->slotEndOfGame(score);
+//    if(score > hs->getMaxScore() ) updateStat();
+    
+    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+    KScoreDialog::FieldInfo scoreInfo;
+    if (d.addScore(score, scoreInfo, true))
+        d.exec();
 
     startGame();
 }
@@ -236,7 +228,7 @@ void KLines::switchPrompt()
 
 void KLines::switchUndo(bool bu)
 {
-		bUndo = bu;
+    bUndo = bu;
     edit->setItemEnabled(idMenuUndo, bUndo );
 }
 
