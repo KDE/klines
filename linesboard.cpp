@@ -72,20 +72,26 @@ LinesBoard::~LinesBoard()
 
 void LinesBoard::placeBalls(int pnextBalls[BALLSDROP])
 {
+    int empty=0;
+    for(int y=0; y<NUMCELLSH; y++)
+      for(int x=0; x<NUMCELLSW; x++)
+        if( getBall(x,y) == NOBALL )
+          empty++;
+
     for(int i=0; i < BALLSDROP; i++){
       nextBalls[i] = pnextBalls[i];
+      nextBallsPos[i] = empty ? random(empty) : 0;
+      empty--;
     }
     nextBallToPlace = 0;
     placeBall();
 }
+
 void LinesBoard::placeBall(  )
 {
-		int color = nextBalls[nextBallToPlace];
     char* xx = (char*)malloc( sizeof(char)*NUMCELLSW*NUMCELLSH );
     char* yy = (char*)malloc( sizeof(char)*NUMCELLSW*NUMCELLSH );
-//    int nb=3;
-//    if( freeSpace() < 3) nb = freeSpace();
-    int empty=0;
+    int empty = 0;
     for(int y=0; y<NUMCELLSH; y++)
       for(int x=0; x<NUMCELLSW; x++)
         if( getBall(x,y) == NOBALL )
@@ -94,9 +100,10 @@ void LinesBoard::placeBall(  )
           yy[empty] = y;
           empty++;
         };
-    if ( empty >  0)
+    int pos = nextBallsPos[nextBallToPlace];
+    if (pos >= 0)
     {
-      int pos = random(empty);
+      int color = nextBalls[nextBallToPlace];
       putBall( xx[pos], yy[pos], color );		
       clearAnim();
       setAnim( xx[pos], yy[pos], ANIM_BORN );
@@ -199,10 +206,15 @@ void LinesBoard::mousePressEvent( QMouseEvent* e )
     if ( getBall(curCol,curRow) == NOBALL )
     {
       if(existPath(jumpingCol, jumpingRow, curCol, curRow))
-			{
-				saveUndo();
+      {
+        saveRandomState();
+        rnd.modulate(jumpingCol);
+        rnd.modulate(jumpingRow);
+        rnd.modulate(curCol);
+        rnd.modulate(curRow);
+        saveUndo();
         AnimStart(ANIM_RUN);
-			}
+      }
     }
     else
       AnimJump(curCol,curRow);
@@ -210,6 +222,7 @@ void LinesBoard::mousePressEvent( QMouseEvent* e )
   else
     AnimJump(curCol,curRow);
 }
+
 void LinesBoard::AnimJump(int x, int y ) {
   if ( getBall(x,y) != NOBALL )
     if (!( anim == ANIM_JUMP &&  jumpingCol == x && jumpingRow == y ))
@@ -255,6 +268,7 @@ void LinesBoard::AnimStart(int panim) {
   anim = panim;
   animdelaycount = animdelaystart;
 }
+
 int LinesBoard::AnimEnd( )
 {
   if (anim == ANIM_NO ) return true;
@@ -319,6 +333,7 @@ int LinesBoard::AnimEnd( )
   }
   return true;
 }
+
 void LinesBoard::AnimNext() {
   if ( anim != ANIM_NO )
   {
@@ -566,8 +581,9 @@ bool LinesBoard::existPath(int bx, int by, int ax, int ay)
 
 void LinesBoard::undo()
 {
-	AnimEnd();
-	restoreUndo();
-	repaint( FALSE );
+  AnimEnd();
+  restoreUndo();
+  restoreRandomState();
+  repaint( FALSE );
 }
 

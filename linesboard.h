@@ -46,6 +46,8 @@ public:
   bool gameOver() { return bGameOver; }
   void setGameOver(bool b) { bGameOver = b; }
   int random(int max) { return rnd.getLong(max); }
+  void saveRandomState() { rnd_saved = rnd; }
+  void restoreRandomState() { rnd = rnd_saved; }
 
 signals:
   void endTurn();
@@ -58,7 +60,8 @@ private:
   struct Waypoints {
         int x,y;
   } *way;
-	int nextBalls[BALLSDROP];
+  int nextBalls[BALLSDROP];
+  int nextBallsPos[BALLSDROP];
 
   int animmax;
 
@@ -80,6 +83,7 @@ private:
   BallPainter* bPainter;
   bool bGameOver;
   KRandomSequence rnd;
+  KRandomSequence rnd_saved;
 
   void paintEvent( QPaintEvent* );
   void mousePressEvent( QMouseEvent* );
