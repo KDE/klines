@@ -28,4 +28,4 @@ messages: rc.cpp
 	fi
 
 install-data-local:
-	rm -rf $(kde_appsdir)/Games/klines.desktop
+	rm -rf $(DESTDIR)$(kde_appsdir)/Games/klines.desktop
