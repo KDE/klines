@@ -16,6 +16,10 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
+#ifndef MWIDGET_H
+#define MWIDGET_H
+
 #include <qwidget.h>
 #include <qpixmap.h>
 #include <qtimer.h>
@@ -35,3 +39,5 @@ public:
   LinesBoard * GetLsb();
   LinesPrompt * GetPrompt();
 };
+
+#endif

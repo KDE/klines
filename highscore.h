@@ -16,6 +16,10 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
+#ifndef HIGHSCORE_H
+#define HIGHSCORE_H
+
 #include <kapp.h>
 
 
@@ -73,4 +77,4 @@ public slots:
 
 };
 
-
+#endif
