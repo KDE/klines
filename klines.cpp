@@ -51,16 +51,16 @@
 
 KLines::KLines() : KMainWindow()
 {
-  time_t t;
-  time(&t);
-  srand((unsigned int)t + getpid());
-
   setCaption(QString("KLines ")+LINESVERSION);
 
   mwidget = new MainWidget(this);
   setCentralWidget( mwidget );
 
   lsb = mwidget->GetLsb();
+  connect(lsb, SIGNAL(endTurn()), this, SLOT(makeTurn()));
+  connect(lsb, SIGNAL(eraseLine(int)), this, SLOT(addScore(int)));
+  connect(lsb, SIGNAL(endGame()), this, SLOT(endGame()));
+
   lPrompt = mwidget->GetPrompt();
 
   menu              = new KMenuBar(this, "menu");
@@ -78,11 +78,7 @@ KLines::KLines() : KMainWindow()
   Q_CHECK_PTR( game );
   Q_CHECK_PTR( help );
   Q_CHECK_PTR( menu );
-
-
-
-
-
+  
   game->insertItem(SmallIcon("filenew"),  i18n("&New Game"), this, SLOT(stopGame()), CTRL+Key_N );
   game->insertSeparator();
   game->insertItem(SmallIcon("next"),  i18n("Ne&xt"), this, SLOT(makeTurn()), Key_N );
@@ -131,6 +127,7 @@ void KLines::startGame()
     score_undo = 0;
     bUndo=TRUE;
 
+    lsb->setGameOver(false);
     lsb->clearField();
     generateRandomBalls();
     placeBalls();
@@ -138,10 +135,12 @@ void KLines::startGame()
     edit->setItemEnabled(idMenuUndo, FALSE );
     updateStat();
 }
+
 void KLines::stopGame()
 {
-  debug("Klines::stopGame");
-  endGame();
+    if (!lsb->gameOver())
+       endGame();
+    startGame();
 }
 
 void KLines::searchBallsLine()
@@ -155,7 +154,7 @@ void KLines::generateRandomBalls()
     {
       nextBalls_undo[i] = nextBalls[i];    
       nextBalls[i] = bUndo ?
-            rand() % NCOLORS:
+            lsb->random(NCOLORS) :
             nextBalls_redo[i];
     }
     lPrompt->SetBalls(nextBalls);
@@ -164,12 +163,12 @@ void KLines::generateRandomBalls()
 void KLines::placeBalls()
 {
     lsb->placeBalls(nextBalls);
-    debug("exit from placeBalls");
 }
 
 void KLines::undo()
 {
-    debug("Undo");
+    if (lsb->gameOver())
+       return;
     if (!bUndo)
       return;
     for( int i = 0 ; i < BALLSDROP ; i++ )
@@ -186,6 +185,8 @@ void KLines::undo()
 
 void KLines::makeTurn()
 {
+    if (lsb->gameOver())
+       return;
     placeBalls();
     generateRandomBalls();
     switchUndo(TRUE);
@@ -212,14 +213,13 @@ void KLines::viewHighScore()
 
 void KLines::endGame()
 {
-//    if(score > hs->getMaxScore() ) updateStat();
-    
+    lsb->setGameOver(true);
+    lsb->repaint(false);
+
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
     KScoreDialog::FieldInfo scoreInfo;
     if (d.addScore(score, scoreInfo, true))
         d.exec();
-
-    startGame();
 }
 
 void KLines::switchPrompt()
@@ -239,4 +239,13 @@ void KLines::help()
 //  KApplication::getKApplication()->invokeHTMLHelp("", "");
 }
 
-
+void KLines::keyPressEvent(QKeyEvent *e)
+{
+    if (lsb->gameOver() && (e->key() == Qt::Key_Space))
+    {
+        e->accept();
+        startGame();
+        return;
+    }
+    KMainWindow::keyPressEvent(e);
+}

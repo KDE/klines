@@ -46,7 +46,6 @@ BallPainter::~BallPainter()
 }
 void BallPainter::createPixmap()
 {
-//  warning( kapp->kde_datadir() +"/klines/data/balls.bmp");
   backgroundPix = new QPixmap(
 		locate( "appdata", "field.jpg" ));
   QPixmap *balls = new QPixmap(
@@ -54,9 +53,8 @@ void BallPainter::createPixmap()
   QPixmap *fire = new QPixmap(
 		locate( "appdata", "fire.jpg" ));
   if (balls->isNull() ||backgroundPix->isNull() || fire->isNull() )
-     fatal("Cannot open data files.\nHave you correctly installed klines?"); 	
+     return; // Error
 
-  warning("Pixsize %i", PIXSIZE);
   for(int c=0; c<NCOLORS; c++)
   {
     for(int t=0; t<PIXTIME + FIREBALLS + BOOMBALLS + 1 ; t++)
@@ -84,7 +82,6 @@ QPixmap* BallPainter::GetBall(int color, int animstep, int panim)
 //    return backgroundPix;
 
     if( (color<0) || (color>=NCOLORS) || (animstep<0) || color == NOBALL ){
-       // warning("BallPainter::Background");
        return backgroundPix;
     }
     if ( panim == ANIM_JUMP )

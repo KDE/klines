@@ -17,10 +17,13 @@
  *                                                                         *
  ***************************************************************************/
 #include <qpainter.h>
-#include <qpixmap.h>
 #include <qcolor.h>
 #include <qkeycode.h>
 #include <stdlib.h>
+
+#include <klocale.h>
+#include <kpixmap.h>
+#include <kpixmapeffect.h>
 
 #include "linesboard.h"
 #include "linesboard.moc"
@@ -32,6 +35,7 @@
 LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* name )
     : Field( parent, name )
 {
+  bGameOver = false;
   anim = ANIM_NO;
 //  waypos = 0;
 //  waylen = 0;
@@ -60,7 +64,6 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* na
 
 LinesBoard::~LinesBoard()
 {
-  // debug("stop");
   timer->stop();
   delete timer;
   delete way;
@@ -69,18 +72,15 @@ LinesBoard::~LinesBoard()
 
 void LinesBoard::placeBalls(int pnextBalls[BALLSDROP])
 {
-    debug("LinesBoard::placeBalls( )");
     for(int i=0; i < BALLSDROP; i++){
       nextBalls[i] = pnextBalls[i];
     }
     nextBallToPlace = 0;
     placeBall();
-    debug("LinesBoard::placeBalls End ");
 }
 void LinesBoard::placeBall(  )
 {
 		int color = nextBalls[nextBallToPlace];
-    debug("LinesBoard::placeBall( ) color=%i, nextBallToPlace = %i", color, nextBallToPlace);
     char* xx = (char*)malloc( sizeof(char)*NUMCELLSW*NUMCELLSH );
     char* yy = (char*)malloc( sizeof(char)*NUMCELLSW*NUMCELLSH );
 //    int nb=3;
@@ -94,10 +94,9 @@ void LinesBoard::placeBall(  )
           yy[empty] = y;
           empty++;
         };
-//      debug("empty = %i",empty);
     if ( empty >  0)
     {
-      int pos = rand()%empty;
+      int pos = random(empty);
       putBall( xx[pos], yy[pos], color );		
       clearAnim();
       setAnim( xx[pos], yy[pos], ANIM_BORN );
@@ -112,7 +111,6 @@ void LinesBoard::placeBall(  )
       free(yy);
       emit endGame();
     }
-    debug("LinesBoard::placeBall END");
 }
 
 
@@ -134,25 +132,51 @@ int LinesBoard::hHint() { return height(); }
 
 void LinesBoard::paintEvent( QPaintEvent* )
 {
-//  debug("LinesBoard::paintEvent ");
-  QPainter paint( this );
+    QPainter *paint;
+    KPixmap *pixmap = 0;
+    if (bGameOver)
+    {
+       pixmap = new KPixmap();
+       pixmap->resize(width(), height());
+       paint = new QPainter( pixmap );
+    }
+    else
+    {
+       paint = new QPainter( this );
+    }
 
     for( int y=0; y < NUMCELLSH; y++ ){
         for( int x=0; x < NUMCELLSW; x++ ){
           if( getBall(x,y) == NOBALL )
 					{
-//            debug("draw empty  %i %i", x, y );
-            paint.drawPixmap(x*CELLSIZE, y*CELLSIZE, *(bPainter->GetBackgroundPix()) );
+            paint->drawPixmap(x*CELLSIZE, y*CELLSIZE, *(bPainter->GetBackgroundPix()) );
 					}
           else
           {
-//            debug("draw empty  %i %i %c", x, y, getBall(x,y) );
-            paint.drawPixmap(x*CELLSIZE, y*CELLSIZE,
+            paint->drawPixmap(x*CELLSIZE, y*CELLSIZE,
               *(bPainter->GetBall(getBall(x,y),animstep,getAnim(x,y))));
           }
         }
     }
-//  debug("LinesBoard::paintEvent END");
+    if (bGameOver)
+    {
+       paint->end();
+       
+       KPixmapEffect::fade(*pixmap, 0.5, Qt::black);
+
+       QPainter p(this);
+       p.drawPixmap(0,0, *pixmap);
+       delete pixmap;
+
+       QFont gameover_font = font();
+       gameover_font.setPointSize(72);
+       gameover_font.setBold(true);
+       p.setFont(gameover_font);
+       p.setPen(Qt::white);
+       QString gameover_text = i18n("Game Over");
+       p.drawText(0, 0, width(), height(), AlignCenter, gameover_text);
+    }
+    delete paint; 
 }
 
 /*
@@ -160,11 +184,10 @@ void LinesBoard::paintEvent( QPaintEvent* )
 */
 void LinesBoard::mousePressEvent( QMouseEvent* e )
 {
-  debug("LinesBoard::mousePressEvent START");
+  if (bGameOver) return;
+  
   int curRow = e->y() / CELLSIZE;
   int curCol = e->x() / CELLSIZE;
-  //debug
-  debug("Mouse pressed: curRow=%i, curCol=%i", curRow, curCol);
 
   //check range
   if (!checkBounds( curCol, curRow ) )
@@ -186,10 +209,8 @@ void LinesBoard::mousePressEvent( QMouseEvent* e )
   }
   else
     AnimJump(curCol,curRow);
-  debug("LinesBoard::mousePressEvent END");
 }
 void LinesBoard::AnimJump(int x, int y ) {
-  debug("LinesBoard::AnimJump( %i,%i)", x,y );
   if ( getBall(x,y) != NOBALL )
     if (!( anim == ANIM_JUMP &&  jumpingCol == x && jumpingRow == y ))
       if ( AnimEnd() )
@@ -200,10 +221,8 @@ void LinesBoard::AnimJump(int x, int y ) {
         jumpingRow = y;
         AnimStart(ANIM_JUMP);
       }
-  debug("LinesBoard::AnimJump END");
 }
 void LinesBoard::AnimStart(int panim) {
-  debug("LinesBoard::AnimStart( %i )", panim);
   if (anim != ANIM_NO)
     AnimEnd();
   animstep = 0;
@@ -212,7 +231,6 @@ void LinesBoard::AnimStart(int panim) {
     case ANIM_NO:
         break;
     case ANIM_BORN:
-        debug("LinesBoard::AnimStart( ANIM_BORN )");
         animdelaystart=1;
         animmax = BOOMBALLS;
         break;
@@ -236,11 +254,9 @@ void LinesBoard::AnimStart(int panim) {
   }
   anim = panim;
   animdelaycount = animdelaystart;
-  debug("LinesBoard::AnimStart END");
 }
 int LinesBoard::AnimEnd( )
 {
-  debug("LinesBoard::AnimEnd( %i )",anim );
   if (anim == ANIM_NO ) return true;
   int oldanim = anim;
   anim = ANIM_NO;
@@ -249,13 +265,10 @@ int LinesBoard::AnimEnd( )
       moveBall(way[animstep].x,way[animstep].y,way[animmax].x,way[animmax].y);
  	  }
  	  if ( erase5Balls() == 0 ) {
- 	    // debug("end turn");
  	    emit endTurn();
-		  debug("LinesBoard::AnimEnd END true 1");
  	    return true;
  	  }
  	  else
-		  debug("LinesBoard::AnimEnd END false 2");
  	    return false;
  	} else if ( oldanim == ANIM_BURN )
  	{
@@ -265,13 +278,11 @@ int LinesBoard::AnimEnd( )
     {
       placeBall();
       // continue with born
-		  debug("LinesBoard::AnimEnd END false 3");
       return false;
     }
     else
     {
       // emit endTurn();
-		  debug("LinesBoard::AnimEnd END true 4");
       return true;
     }
   } else if ( oldanim == ANIM_BORN )
@@ -283,33 +294,27 @@ int LinesBoard::AnimEnd( )
         if ( nextBallToPlace < BALLSDROP )
         {
           placeBall();
-  			  debug("LinesBoard::AnimEnd END false 5");
           return false;
         }
         else
         {
-  			  debug("LinesBoard::AnimEnd END true 6");
           return true;
         }
       }
       else
       {
- 			  debug("emit endGame");
         emit endGame();
- 			  debug("LinesBoard::AnimEnd END false 7");
         return false;
       }
     }
     else
     {
       // wait for user input
-		  debug("LinesBoard::AnimEnd END true 8");
       return true;
     }
   }
   else
   {
-	  debug("LinesBoard::AnimEnd END true");
     return true;
   }
   return true;
@@ -317,7 +322,6 @@ int LinesBoard::AnimEnd( )
 void LinesBoard::AnimNext() {
   if ( anim != ANIM_NO )
   {
-    debug("LinesBoard::AnimNext( ) anim %i animstep %i",anim,animstep);
     if ( anim == ANIM_JUMP ) {
       if ( (direction > 0 && animstep == animmax) || ( direction < 0 && animstep == 0))
         direction = -direction;
@@ -329,7 +333,6 @@ void LinesBoard::AnimNext() {
       else {
         animdelaycount--;
         if (animdelaycount <= 0) {
-          debug("LinesBoard::AnimNext step %i", animstep);
           if ( anim == ANIM_RUN )
             moveBall(way[animstep].x,way[animstep].y,way[animstep+1].x,way[animstep+1].y);
           animstep++;
@@ -338,26 +341,20 @@ void LinesBoard::AnimNext() {
         }
       }
     }
-    debug("LinesBoard::AnimNext END");
   }
 }
 int LinesBoard::getAnim( int x, int y )
 {
-//   debug("LinesBoard::getAnim( %i,%i )",x,y);
   return (( Field::getAnim(x,y) != ANIM_NO )? anim : ANIM_NO);
 }
 
 void LinesBoard::timerSlot()
 {
-//  debug("LinesBoard::Timer()  anim = %i",anim );
   AnimNext();
 }
 
 int LinesBoard::erase5Balls()
 {
-    //debug
-    debug("LinesBoard::erase5Balls()");
-
     int nb=5;  // minimum balls for erasure
 
     bool bit_erase[NUMCELLSH][NUMCELLSW]; //bool array for balls, that must be erased
@@ -368,7 +365,6 @@ int LinesBoard::erase5Balls()
     int color,newcolor;
     int count;
     //for horisontal
-    //debug("entering to horiz");
 
     for(int y=0; y<NUMCELLSH; y++) {
       count = 1;
@@ -391,7 +387,6 @@ int LinesBoard::erase5Balls()
     }
 
     //for vertical
-    //debug("entering to vert");
     for(int x=0; x<NUMCELLSW; x++) {
       count = 0;
       color = NOBALL;
@@ -413,7 +408,6 @@ int LinesBoard::erase5Balls()
     }
 
 
-    //  debug("entering to diag1");
     //for left-down to rigth-up diagonal
     for ( int xs = NUMCELLSW-1,ys = NUMCELLSH-nb; xs >= nb-1; ) {
         count = 0;
@@ -436,7 +430,6 @@ int LinesBoard::erase5Balls()
         if ( ys > 0 ) ys--; else xs--;
     }
 
-    //debug("entering to diag2");
 
     //for left-up to rigth-down diagonal
     for ( int xs = 0,ys = NUMCELLSH-nb; xs <= NUMCELLSW-nb; )
@@ -482,16 +475,12 @@ int LinesBoard::erase5Balls()
           	setAnim(x,y,ANIM_NO);
         }
       }
-    //debug
-    debug("LinesBoard::erase5Balls marked %i balls", cb);
     if ( cb > 0 )
     {
       AnimStart(ANIM_BURN);
       //emit eraseLine(cb);
     }
 
-    //debug
-    debug("LinesBoard::erase5Balls END");
     return cb;
 }
 
@@ -503,11 +492,9 @@ int LinesBoard::erase5Balls()
 
 bool LinesBoard::existPath(int bx, int by, int ax, int ay)
 {
-  debug("LinesBoard::existPath( %i, %i, %i, %i )", bx, by, ax, ay);
   int dx[4]={1,-1, 0, 0};
   int dy[4]={0, 0, 1,-1};
 
-  // debug("path %i %i %i %i",bx,by,ax,ay);
   if (getBall(ax,ay) != NOBALL)
     return false;
 
@@ -558,10 +545,8 @@ bool LinesBoard::existPath(int bx, int by, int ax, int ay)
     }
     nextchanged = nextchanged ^ 1;
     currentchanged = nextchanged ^ 1;
-    //      debug("currentchanged %i lastChangedCount[currentchanged] %i",
     //      currentchanged,lastChangedCount[currentchanged]);
   } while(!B_reached && lastChangedCount[currentchanged] != 0);
-  //debug("B_reached %i ", B_reached );
 
   if (B_reached) {
     AnimStart( ANIM_BLOCK);
@@ -571,13 +556,11 @@ bool LinesBoard::existPath(int bx, int by, int ax, int ay)
     for( x = bx, y = by,dir; (dir = pf[y][x]) != GO_A;x -=dx[dir],y -= dy[dir]) {
      	way[animmax].x = x;
      	way[animmax].y = y;
-    	//debug("%i %i %i %i",dir,waylen,x,y);
     	animmax++;
     }
     way[animmax].x = x;
     way[animmax].y = y;
   }
-  debug("LinesBoard::existPath END %s", B_reached?"true":"false" );
   return B_reached;
 }
 

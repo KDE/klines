@@ -27,9 +27,6 @@ MainWidget::MainWidget( QWidget* parent, const char* name )
     BallPainter * bPainter = new BallPainter();
 
     lsb = new LinesBoard(bPainter, this);
-    connect(lsb, SIGNAL(endTurn()), parent, SLOT(makeTurn()));
-    connect(lsb, SIGNAL(eraseLine(int)), parent, SLOT(addScore(int)));
-    connect(lsb, SIGNAL(endGame()), parent, SLOT(stopGame()));
     grid->addWidget( lsb );
 
 

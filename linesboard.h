@@ -23,13 +23,11 @@
 #include <qpixmap.h>
 #include <qtimer.h>
 
+#include <krandomsequence.h>
+
 #include "field.h"
 //#include "shotcounter.h"
 #include "ballpainter.h"
-
-#define debug qDebug
-#define fatal qFatal
-#define warning qWarning
 
 class LinesBoard : public Field
 {
@@ -44,7 +42,10 @@ public:
   int hHint();
 //  void doAfterBalls();
   void placeBalls(int nextBalls[BALLSDROP]);
-	void undo();
+  void undo();
+  bool gameOver() { return bGameOver; }
+  void setGameOver(bool b) { bGameOver = b; }
+  int random(int max) { return rnd.getLong(max); }
 
 signals:
   void endTurn();
@@ -77,6 +78,8 @@ private:
   QTimer* timer;
 //  ShotCounter* shCounter;
   BallPainter* bPainter;
+  bool bGameOver;
+  KRandomSequence rnd;
 
   void paintEvent( QPaintEvent* );
   void mousePressEvent( QMouseEvent* );

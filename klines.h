@@ -33,10 +33,13 @@ public:
   KLines();
   ~KLines();
 
+protected:
+  void keyPressEvent(QKeyEvent *e);
 
 public slots:
   void startGame();
   void stopGame();
+  void endGame();
   void makeTurn();
   void addScore(int ballsErased);
   void switchPrompt();
@@ -70,7 +73,6 @@ private:
   void generateRandomBalls();
   void placeBalls();
   void updateStat();
-  void endGame();
   void switchUndo( bool bu );
 };
 

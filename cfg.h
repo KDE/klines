@@ -17,7 +17,7 @@
 #ifndef __CFG_H
 #define __CFG_H 1
 
-#define LINESVERSION "0.6.1"
+#define LINESVERSION "1.0"
 
 #define NCOLORS 7
 #define BALLSDROP 3

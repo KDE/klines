@@ -55,7 +55,6 @@ int main( int argc, char **argv )
   KLines *v = new KLines;
 
   a.setMainWidget( v );
-//  debug( "Thank you for running Lines, version %s", LINESVERSION );
   v->show();
   return a.exec();
 }
