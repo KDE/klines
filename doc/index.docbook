@@ -24,6 +24,8 @@
 <address><email>roman@sbrf.barrt.ru</email></address>
 </affiliation>
 </author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
 </authorgroup>
 
 <copyright>
@@ -243,7 +245,7 @@ information.</para></listitem>
 <para>&klines;</para>
 
 <para>Program copyright 2000 Roman Merzlyakov
-<email>kreutzbe@informatik.mu-luebeck.de</email></para>
+<email>roman@sbrf.barrt.ru</email></para>
 <para>Contributors:</para>
 <itemizedlist>
 <listitem><para>Roman Razilov <email>Roman.Razilov@gmx.de</email>
@@ -255,6 +257,8 @@ testing and discussions.</para>
 
 <para>Documentation copyright 2001 Roman Razilov
 <email>Roman.Razilov@gmx.de</email></para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;               <!-- FDL: do not remove -->
 
