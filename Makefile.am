@@ -14,7 +14,7 @@ pics_DATA = balls.jpg field.jpg fire.jpg
 
 xdg_apps_DATA = klines.desktop
 
-EXTRA_DIST = $(xdg_apps_DATA) $(pics_DATA)
+EXTRA_DIST = $(pics_DATA)
 
 rcdir = $(kde_datadir)/klines
 rc_DATA = klinesui.rc
