@@ -487,8 +487,11 @@ void KLines::makeTurn()
     }
     if (lsb->gameOver())
        return;
-    if (!bDemo)
+    if (!bDemo){
        placeBalls();
+       if(sender() != lsb)
+         lsb->saveUndo();
+    }
     bNewTurn = true;
 }
 
