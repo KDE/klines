@@ -609,7 +609,7 @@ bool LinesBoard::existPath(int bx, int by, int ax, int ay)
     animmax = 0;
 //    waypos = 0;
     int x, y,dir;
-    for( x = bx, y = by,dir; (dir = pf[y][x]) != GO_A;x -=dx[dir],y -= dy[dir]) {
+    for( x = bx, y = by; (dir = pf[y][x]) != GO_A;x -=dx[dir],y -= dy[dir]) {
      	way[animmax].x = x;
      	way[animmax].y = y;
     	animmax++;
