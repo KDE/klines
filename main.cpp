@@ -23,6 +23,7 @@
 
 
 #include <kapplication.h>
+#include <kglobal.h>
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
@@ -52,6 +53,7 @@ int main( int argc, char **argv )
   qInstallMsgHandler( dummyMessageHandler );
 #endif
   KApplication a;
+  KGlobal::locale()->insertCatalogue("libkdegames");
   KLines *v = new KLines;
 
   a.setMainWidget( v );
