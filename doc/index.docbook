@@ -119,36 +119,17 @@ the field is the status bar. Above it is the menu bar.</para>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycap>N</keycap></shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Next</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Skip your move</action></para></listitem>
-</varlistentry>
-
-
-<varlistentry>
-<term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
 </shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Show Highscore</guimenuitem>
+<guimenuitem>Show Highscores</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Displays the high score table</action></para></listitem>
 </varlistentry>
+<!-- 
 
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Show next</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles the information on next marbles</action></para></listitem>
-</varlistentry>
-
+-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -164,7 +145,7 @@ the field is the status bar. Above it is the menu bar.</para>
 </sect2>
 
 <sect2>
-<title>The <guimenu>Edit</guimenu> Menu</title>
+<title>The <guimenu>Move</guimenu> Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -172,15 +153,79 @@ the field is the status bar. Above it is the menu bar.</para>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
 </shortcut>
-<guimenu>Edit</guimenu>
+<guimenu>Move</guimenu>
 <guimenuitem>Undo</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>This will undo the last move.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Move</guimenu><guimenuitem>End Turn</guimenuitem></menuchoice>
+</term>
+<listitem>
+<para>Skip your move, immediately play the next marbles without you moving
+any.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycap>D</keycap></shortcut>
+<guimenu>Move</guimenu>
+<guimenuitem>Start Tutorial</guimenuitem>
+</menuchoice></term>
+<listitem><para>Show a short, animated, non-interactive demonstration of how
+to play the game.  If the tutorial is running, the statusbar will show
+<guilabel>Level: Tutorial</guilabel>, and this menu entry will now show
+<guimenuitem>Stop Tutorial</guimenuitem>.</para></listitem>
 </varlistentry>
 </variablelist>
 
 </sect2>
 
+<sect2>
+<title>The <guimenu>Settings</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
+</shortcut>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Next</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles the information on next
+marbles</action></para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Use Numbered Balls</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Number the balls according to color.  This may be of assistance to
+players who are color blind, have other vision impairments that make the
+colors hard to distinguish, or those of you who simply like the look.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice><guimenu>Settings</guimenu><guisubmenu>Choose Game
+Type</guisubmenu></menuchoice></term>
+<listitem>
+<para>Choose a difficulty level, from <guimenuitem>Very Easy</guimenuitem>
+through <guimenuitem>Very Hard</guimenuitem>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
+Shortcuts</guimenuitem></menuchoice></term>
+<listitem>
+<para>Displays a standard &kde; shortcut configuration dialog, allowing you
+to customize the keys used in the game.</para></listitem>
+</varlistentry>
+</variablelist>
+</sect2>
 
 <sect2>
 <title>The <guimenu>Help</guimenu> Menu</title>
