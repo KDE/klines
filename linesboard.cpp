@@ -41,6 +41,8 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* na
   demoLabel = 0;
   bGameOver = false;
   anim = ANIM_NO;
+  focusX = -1;
+  focusY = -1;
 //  waypos = 0;
 //  waylen = 0;
 //  jumpingRow = -1;
@@ -50,7 +52,8 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* na
 
   bPainter = abPainter;
 
-  setFocusPolicy( NoFocus );
+  setFocusPolicy( StrongFocus );
+  setFocus();
   setBackgroundColor( gray );
 
   setMouseTracking( FALSE );
@@ -174,6 +177,12 @@ int LinesBoard::height() { return CELLSIZE * NUMCELLSH; }
 int LinesBoard::wHint() { return width(); }
 int LinesBoard::hHint() { return height(); }
 
+void LinesBoard::setGameOver(bool b)
+{
+  bGameOver = b;
+  focusX = -1;
+  focusY = -1;
+}
 
 
 void LinesBoard::paintEvent( QPaintEvent* )
@@ -222,6 +231,20 @@ void LinesBoard::paintEvent( QPaintEvent* )
        QString gameover_text = i18n("Game Over");
        p.drawText(0, 0, width(), height(), AlignCenter|Qt::WordBreak, gameover_text);
     }
+    else
+    {
+      if ((focusX >= 0) && (focusX < NUMCELLSW) &&
+          (focusY >= 0) && (focusY < NUMCELLSH))
+      {
+        QRect r;
+        r.setX(focusX*CELLSIZE+2);
+        r.setY(focusY*CELLSIZE+2);
+        r.setWidth(CELLSIZE-4);
+        r.setHeight(CELLSIZE-4);
+        paint->setPen(QPen(Qt::DotLine));
+        paint->drawRect(r);
+      }
+    }
     delete paint;
 }
 
@@ -236,6 +259,11 @@ void LinesBoard::mousePressEvent( QMouseEvent* e )
   int curRow = e->y() / CELLSIZE;
   int curCol = e->x() / CELLSIZE;
 
+  placePlayerBall(curCol, curRow);
+}
+
+void LinesBoard::placePlayerBall(int curCol, int curRow)
+{
   //check range
   if (!checkBounds( curCol, curRow ) )
     return;
@@ -261,6 +289,53 @@ void LinesBoard::mousePressEvent( QMouseEvent* e )
   }
   else
     AnimJump(curCol,curRow);
+}
+
+/*
+   Move focus thingy
+*/
+void LinesBoard::moveFocus(int dx, int dy)
+{
+  if (bGameOver) return;
+  if ((level == DEMO_LEVEL) && (!bAllowMove)) return;
+  if (focusX == -1)
+  {
+    focusX = 0;
+    focusY = 0;
+  }
+  else
+  {
+    focusX = (focusX + dx + NUMCELLSW) % NUMCELLSW;
+    focusY = (focusY + dy + NUMCELLSH) % NUMCELLSH;
+  }
+  repaint(FALSE);
+} 
+
+void LinesBoard::moveLeft()
+{
+  moveFocus(-1, 0);
+} 
+
+void LinesBoard::moveRight()
+{
+  moveFocus(1, 0);
+}
+
+void LinesBoard::moveUp()
+{
+  moveFocus(0, -1);
+}
+
+void LinesBoard::moveDown()
+{
+  moveFocus(0, 1);
+}
+
+void LinesBoard::placePlayerBall()
+{
+  if (bGameOver) return;
+  if ((level == DEMO_LEVEL) && (!bAllowMove)) return;
+  placePlayerBall(focusX, focusY);
 }
 
 void LinesBoard::AnimJump(int x, int y ) {

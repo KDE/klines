@@ -45,7 +45,7 @@ public:
   void placeBalls(int nextBalls[BALLSDROP]);
   void undo();
   bool gameOver() { return bGameOver; }
-  void setGameOver(bool b) { bGameOver = b; }
+  void setGameOver(bool b);
   int random(int max) { return (level == DEMO_LEVEL) ? rnd_demo.getLong(max) : rnd.getLong(max); }
   void saveRandomState() { rnd_saved = rnd; }
   void restoreRandomState() { rnd = rnd_saved; }
@@ -85,6 +85,9 @@ private:
   int jumpingCol;
   int jumpingRow;
 
+  int focusX;
+  int focusY;
+
   int level;
 
   QTimer* timer;
@@ -109,7 +112,16 @@ private:
 
   int  erase5Balls();
   bool existPath(int ax, int ay, int bx, int by);
-  void  placeBall();
+  void placeBall();
+  void placePlayerBall(int col, int row);
+  void moveFocus(int dx, int dy);
+
+public slots:
+  void moveLeft();
+  void moveRight();
+  void moveUp();
+  void moveDown();
+  void placePlayerBall();
 
 protected slots:
   void timerSlot();

@@ -127,6 +127,12 @@ void KLines::initKAction()
   showNumberedAction->setChecked(Prefs::numberedBalls());
   lPrompt->setPrompt(Prefs::showNext());
 
+  (void)new KAction(i18n("Move Left"), Key_Left, lsb, SLOT(moveLeft()), actionCollection(), "left");
+  (void)new KAction(i18n("Move Right"), Key_Right, lsb, SLOT(moveRight()), actionCollection(), "right");
+  (void)new KAction(i18n("Move Up"), Key_Up, lsb, SLOT(moveUp()), actionCollection(), "up");
+  (void)new KAction(i18n("Move Down"), Key_Down, lsb, SLOT(moveDown()), actionCollection(), "down");
+  (void)new KAction(i18n("Move Ball"), Key_Space, lsb, SLOT(placePlayerBall()), actionCollection(), "place_ball");
+
   setupGUI( KMainWindow::Save | Keys | StatusBar | Create );
 }
 
