@@ -43,6 +43,9 @@ BallPainter::BallPainter()
 
 BallPainter::~BallPainter()
 {
+  delete backgroundPix;
+  delete imgCash;
+  delete firePix;
 }
 void BallPainter::createPixmap()
 {
