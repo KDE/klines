@@ -72,17 +72,9 @@ LinesBoard::~LinesBoard()
 
 void LinesBoard::placeBalls(int pnextBalls[BALLSDROP])
 {
-    int empty=0;
-    for(int y=0; y<NUMCELLSH; y++)
-      for(int x=0; x<NUMCELLSW; x++)
-        if( getBall(x,y) == NOBALL )
-          empty++;
-
-    for(int i=0; i < BALLSDROP; i++){
+    for(int i=0; i < BALLSDROP; i++)
       nextBalls[i] = pnextBalls[i];
-      nextBallsPos[i] = empty ? random(empty) : 0;
-      empty--;
-    }
+      
     nextBallToPlace = 0;
     placeBall();
 }
@@ -100,9 +92,10 @@ void LinesBoard::placeBall(  )
           yy[empty] = y;
           empty++;
         };
-    int pos = nextBallsPos[nextBallToPlace];
-    if (pos >= 0)
+
+    if (empty)
     {
+      int pos = random(empty);
       int color = nextBalls[nextBallToPlace];
       putBall( xx[pos], yy[pos], color );		
       clearAnim();
@@ -277,15 +270,16 @@ int LinesBoard::AnimEnd( )
   if (oldanim == ANIM_RUN) {
     if (animstep != animmax) {
       moveBall(way[animstep].x,way[animstep].y,way[animmax].x,way[animmax].y);
- 	  }
- 	  if ( erase5Balls() == 0 ) {
- 	    emit endTurn();
- 	    return true;
- 	  }
- 	  else
- 	    return false;
- 	} else if ( oldanim == ANIM_BURN )
- 	{
+    }
+    if ( erase5Balls() == 0 ) {
+      emit endTurn();
+      return true;
+    }
+    else
+      return false;
+  } 
+  else if ( oldanim == ANIM_BURN )
+  {
     emit eraseLine( deleteAnimatedBalls() );
     repaint(FALSE);
     if ( nextBallToPlace < BALLSDROP )
@@ -296,15 +290,16 @@ int LinesBoard::AnimEnd( )
     }
     else
     {
-      // emit endTurn();
+      emit userTurn();
       return true;
     }
-  } else if ( oldanim == ANIM_BORN )
+  } 
+  else if ( oldanim == ANIM_BORN )
   {
- 	  if ( erase5Balls() == 0 )
- 	  {
- 	    if ( freeSpace() > 0)
- 	    {
+    if ( erase5Balls() == 0 )
+    {
+      if ( freeSpace() > 0)
+      {
         if ( nextBallToPlace < BALLSDROP )
         {
           placeBall();
@@ -312,6 +307,7 @@ int LinesBoard::AnimEnd( )
         }
         else
         {
+          emit userTurn();
           return true;
         }
       }
@@ -324,13 +320,11 @@ int LinesBoard::AnimEnd( )
     else
     {
       // wait for user input
+      emit userTurn();
       return true;
     }
   }
-  else
-  {
-    return true;
-  }
+  emit userTurn();
   return true;
 }
 

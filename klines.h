@@ -41,6 +41,7 @@ public slots:
   void stopGame();
   void endGame();
   void makeTurn();
+  void userTurn();
   void addScore(int ballsErased);
   void switchPrompt();
   void help();
@@ -60,6 +61,8 @@ private:
   LinesBoard* lsb;
   MainWidget *mwidget;
   LinesPrompt *lPrompt;
+
+  bool bNewTurn;
 
   int score;
   int score_undo;

@@ -53,6 +53,7 @@ signals:
   void endTurn();
   void endGame();
   void eraseLine(int nb);
+  void userTurn();
 
 private:
   int anim;
@@ -61,7 +62,6 @@ private:
         int x,y;
   } *way;
   int nextBalls[BALLSDROP];
-  int nextBallsPos[BALLSDROP];
 
   int animmax;
 

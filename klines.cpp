@@ -60,6 +60,7 @@ KLines::KLines() : KMainWindow()
   connect(lsb, SIGNAL(endTurn()), this, SLOT(makeTurn()));
   connect(lsb, SIGNAL(eraseLine(int)), this, SLOT(addScore(int)));
   connect(lsb, SIGNAL(endGame()), this, SLOT(endGame()));
+  connect(lsb, SIGNAL(userTurn()), this, SLOT(userTurn()));
 
   lPrompt = mwidget->GetPrompt();
 
@@ -125,7 +126,8 @@ void KLines::startGame()
 {
     score = 0;
     score_undo = 0;
-    bUndo=TRUE;
+    bUndo = true;
+    bNewTurn = true;
 
     lsb->setGameOver(false);
     lsb->clearField();
@@ -188,8 +190,17 @@ void KLines::makeTurn()
     if (lsb->gameOver())
        return;
     placeBalls();
-    generateRandomBalls();
-    switchUndo(TRUE);
+    bNewTurn = true;
+}
+
+void KLines::userTurn()
+{
+    if(bNewTurn)
+    {
+       bNewTurn = false;
+       generateRandomBalls();
+       switchUndo(TRUE);
+    }
 }
 
 void KLines::addScore(int ballsErased)
