@@ -20,7 +20,7 @@
 #include <qwidget.h>
 #include <qmenubar.h> 
 #include <qlabel.h>
-#include <qpushbt.h>
+#include <qpushbutton.h>
 #include <kmainwindow.h>
 #include "linesboard.h"
 #include "highscore.h"

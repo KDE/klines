@@ -20,7 +20,7 @@
 #ifndef HIGHSCORE_H
 #define HIGHSCORE_H
 
-#include <kapp.h>
+#include <kapplication.h>
 
 
 const int HIGHSCORE_MAX = 10;
