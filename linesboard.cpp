@@ -52,8 +52,7 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* na
 
   bPainter = abPainter;
 
-  setFocusPolicy( StrongFocus );
-  setFocus();
+  setFocusPolicy( NoFocus );
   setBackgroundColor( gray );
 
   setMouseTracking( FALSE );
