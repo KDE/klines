@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
-  <!ENTITY kappname "&klines;">
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "&kolorlines;">
   <!ENTITY package "kdegames">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
@@ -9,7 +9,7 @@
 <book lang="&language;">
 
 <bookinfo>
-<title>The &klines; Handbook</title>
+<title>The &kolorlines; Handbook</title>
 
 <authorgroup>
 <author>
@@ -41,7 +41,7 @@
 <date>2001-05-20</date>
 <releaseinfo>1.00.00</releaseinfo>
 
-<abstract><para>&klines; is a nice little game meant to amuse you for
+<abstract><para>&kolorlines; is a nice little game meant to amuse you for
 anywhere from 3 minutes to 6 days(straight).</para></abstract>
 
 <keywordset>
@@ -55,7 +55,7 @@ anywhere from 3 minutes to 6 days(straight).</para></abstract>
 <chapter id="introduction">
 <title>Introduction</title>
 
-<para>&klines; is a simple game. It is played by one player, so there is
+<para>&kolorlines; is a simple game. It is played by one player, so there is
 only one winner :-) You play for fun and against the high score. It has
 been inspired by well known game - <application>Color
 lines</application>, written for DOS by Olga Demina, Igor Ivkin and
@@ -70,7 +70,7 @@ the &kde; games standard.</para>
 
 
 <chapter id="using-klines">
-<title>Using &klines;</title>
+<title>Using &kolorlines;</title>
 
 <para>The main rules of game is as simple as possible: you move (using
 mouse) marbles from cell to cell and build lines (horizontal, vertical
@@ -79,13 +79,13 @@ from the field and your score grows. After each of your turns computer
 drops three more marbles onto the field.</para>
 
 <para> The increase in score dependeds on the amount of erased marbles
-and if &klines; shows the next balls.  The increase will be smaller if
+and if &kolorlines; shows the next balls.  The increase will be smaller if
 you use the information of what's next.</para>
 
 <sect1 id="klines-features">
-<title>More &klines; features</title>
+<title>More &kolorlines; features</title>
 
-<para>&klines; is wonderful in that it will allow you to kill 5 minutes
+<para>&kolorlines; is wonderful in that it will allow you to kill 5 minutes
 while you wait for that program to compile.</para> <para>Or, if nothing
 else, it will allow you to kill 5 minutes.</para>
 
@@ -96,7 +96,7 @@ else, it will allow you to kill 5 minutes.</para>
 <title>Command Reference</title>
 
 <sect1 id="klines-mainwindow">
-<title>The main &klines; window</title>
+<title>The main &kolorlines; window</title>
 
 <para>There is a large area with marbles.  At the right side a bar
 showing the next three marbles to be dropped on the field. Underneath
@@ -157,7 +157,7 @@ the field is the status bar. Above it is the menu bar.</para>
 <guimenu>Game</guimenu>
 <guimenuitem>Quit</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Quits</action> &klines;</para></listitem>
+<listitem><para><action>Quits</action> &kolorlines;</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -196,7 +196,7 @@ the field is the status bar. Above it is the menu bar.</para>
 
 <title>Credits and License</title>
 
-<para>&klines;</para>
+<para>&kolorlines;</para>
 
 <para>Program copyright 2000 Roman Merzlyakov
 <email>roman@sbrf.barrt.ru</email></para>
@@ -225,7 +225,7 @@ testing and discussions.</para>
 <title>Installation</title>
 
 <sect1 id="getting-klines">
-<title>How to obtain &klines;</title>
+<title>How to obtain &kolorlines;</title>
 
 &install.intro.documentation;
 
