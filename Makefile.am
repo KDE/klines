@@ -12,10 +12,9 @@ klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp \
 picsdir = $(kde_datadir)/klines/
 pics_DATA = balls.jpg field.jpg fire.jpg
 
-appsdir = $(kde_appsdir)/Games/TacticStrategy
-apps_DATA = klines.desktop
+xdg_apps_DATA = klines.desktop
 
-EXTRA_DIST = $(apps_DATA) $(pics_DATA)
+EXTRA_DIST = $(xdg_apps_DATA) $(pics_DATA)
 
 rcdir = $(kde_datadir)/klines
 rc_DATA = klinesui.rc
@@ -23,5 +22,3 @@ rc_DATA = klinesui.rc
 messages: rc.cpp
 	$(XGETTEXT) *.cpp -o $(podir)/klines.pot;
 
-install-data-local:
-	rm -rf $(DESTDIR)$(kde_appsdir)/Games/klines.desktop
