@@ -131,3 +131,65 @@ void Field::restoreUndo()
     for(int x=0; x<NUMCELLSW; x++)
       field[y][x] = field_undo[y][x];
 }
+
+int Field::calcRun(int sx, int sy, int dx, int dy)
+{
+  int ix = sx;
+  int iy = sy;
+  int run = 0;
+  int score = 0;
+  int current_color = NOBALL;
+  int lpr = 0;
+  int lprscore = 0;
+  int empty = 0;
+  for(int i = 0; i < 9; i++, ix += dx, iy += dy)
+  {
+    if ((ix < 0) || (iy < 0) || (ix >= NUMCELLSW) || (iy >= NUMCELLSH))
+       continue;
+    int b = field[iy][ix].getColor();
+//printf("[%d,%d]%d", ix,iy,b);
+    if (b == NOBALL)
+    {
+       run++;
+       empty++;
+    }
+    else if (b == current_color)
+    {
+       run++;
+       score++;
+       empty = 0;
+    }
+    else
+    {
+       run = empty+1;
+       score = 1;
+       current_color = b;
+       empty = 0;
+    }
+    if (run > lpr)
+    {
+       lpr = run;
+       lprscore = score;
+    }
+  }
+  if (lpr < 5)
+    lprscore = -10;
+  else 
+    lprscore = lprscore*lprscore;
+//  printf("= %d\n", lprscore); 
+  return lprscore;
+}
+
+int Field::calcPosScore(int x, int y, int whatIf)
+{
+   int score = -10;
+   int color = field[y][x].getColor();
+   field[y][x].setColor(whatIf);
+   score = QMAX(score, calcRun(x, y-4, 0, 1));
+   score = QMAX(score, calcRun(x-4, y-4, 1, 1));
+   score = QMAX(score, calcRun(x-4, y, 1, 0));
+   score = QMAX(score, calcRun(x-4, y+4, 1, -1));
+   field[y][x].setColor(color);
+   return score;
+}
+

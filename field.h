@@ -32,6 +32,8 @@ class Field: public QWidget
 public:
   void clearField();
 
+  int calcPosScore(int x, int y, int whatIf);
+
 protected:
   Field(QWidget* parent, const char* name);
   ~Field();
@@ -45,6 +47,8 @@ protected:
   void clearAnim();
   int deleteAnimatedBalls();
   void moveBall(int xa, int ya, int xb, int yb);
+  int calcRun(int sx, int sy, int dx, int dy);
+  
 
   bool checkBounds( int x, int y );
 //  virtual int erase5Balls(){ return 0;}

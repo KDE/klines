@@ -48,6 +48,7 @@ public:
   int random(int max) { return rnd.getLong(max); }
   void saveRandomState() { rnd_saved = rnd; }
   void restoreRandomState() { rnd = rnd_saved; }
+  void setLevel(int _level) { level = _level; }
 
 signals:
   void endTurn();
@@ -77,6 +78,7 @@ private:
   int jumpingCol;
   int jumpingRow;
 
+  int level;
 
   QTimer* timer;
 //  ShotCounter* shCounter;

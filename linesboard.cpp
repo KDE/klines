@@ -95,8 +95,23 @@ void LinesBoard::placeBall(  )
 
     if (empty)
     {
-      int pos = random(empty);
       int color = nextBalls[nextBallToPlace];
+      int best_pos;
+      int best_score = level > 0 ? 1000: -1000;
+      int maxtry = level >= 0 ? level+1 : 1-level;
+      for(int i=0;i<maxtry;i++)
+      {
+         int pos  = random(empty);
+         int score = calcPosScore(xx[pos], yy[pos], color) - calcPosScore(xx[pos], yy[pos], NOBALL);
+         if (((level  > 0) && (score < best_score)) ||
+             ((level <= 0) && (score > best_score)))
+         {
+            best_pos = pos;
+            best_score = score;
+         }
+      }
+      int pos = best_pos;
+      
       putBall( xx[pos], yy[pos], color );		
       clearAnim();
       setAnim( xx[pos], yy[pos], ANIM_BORN );

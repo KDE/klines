@@ -6,4 +6,11 @@
     <Separator/>
     <Action name="game_show_next"/>
   </Menu>
+  <Menu name="settings">
+    <Action name="settings_level1"/>
+    <Action name="settings_level2"/>
+    <Action name="settings_level3"/>
+    <Action name="settings_level4"/>
+    <Action name="settings_level5"/>
+  </Menu>
 </MenuBar>

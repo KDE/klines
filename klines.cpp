@@ -72,7 +72,9 @@ KLines::KLines() : KMainWindow()
   score = 0;
   score_undo = 0;
 
-  statusBar()->insertItem(i18n(" Score:"), 0, 1);
+  statusBar()->insertItem(i18n(" Score:"), 1, 1);
+  statusBar()->setItemAlignment(1, AlignVCenter | AlignLeft);
+  statusBar()->insertItem(i18n(" Level: "), 0, 1);
   statusBar()->setItemAlignment(0, AlignVCenter | AlignLeft);
 
   startGame();
@@ -102,6 +104,18 @@ void KLines::initKAction()
   (void)new KAction(i18n("Ne&xt"), Key_N, this, SLOT(makeTurn()), actionCollection(), "game_next");
   KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "game_show_next");
   a->setChecked(lPrompt->getState());
+  act_level1 = new KRadioAction(i18n("Very Easy"), KShortcut(), actionCollection(), "settings_level1");
+  act_level2 = new KRadioAction(i18n("Easy"), KShortcut(), actionCollection(), "settings_level2");
+  act_level3 = new KRadioAction(i18n("Normal"), KShortcut(), actionCollection(), "settings_level3");
+  act_level4 = new KRadioAction(i18n("Hard"), KShortcut(), actionCollection(), "settings_level4");
+  act_level5 = new KRadioAction(i18n("Very Hard"), KShortcut(), actionCollection(), "settings_level5");
+  act_level1->setExclusiveGroup("levels"); 
+  act_level2->setExclusiveGroup("levels"); 
+  act_level3->setExclusiveGroup("levels"); 
+  act_level4->setExclusiveGroup("levels"); 
+  act_level5->setExclusiveGroup("levels"); 
+
+  act_level3->setChecked(true); // Configure
 
 // edit
   KStdAction::undo(this, SLOT(undo()), actionCollection());
@@ -116,7 +130,36 @@ void KLines::startGame()
     score_undo = 0;
     bUndo = true;
     bNewTurn = true;
+    int level;
+    if (act_level2->isChecked())
+    {
+       level = -1;
+       levelStr = act_level2->text();
+    }
+    else if (act_level3->isChecked())
+    {
+       level = 0;
+       levelStr = act_level3->text();
+    }
+    else if (act_level4->isChecked())
+    {
+       level = 1;
+       levelStr = act_level4->text();
+    }
+    else if (act_level5->isChecked())
+    {
+       level = 2;
+       levelStr = act_level5->text();
+    }
+    else
+    {
+       level = -2;
+       levelStr = act_level1->text();
+    }
 
+    statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+
+    lsb->setLevel(level);
     lsb->setGameOver(false);
     lsb->clearField();
     generateRandomBalls();
@@ -201,12 +244,12 @@ void KLines::addScore(int ballsErased)
 
 void KLines::updateStat()
 {
-    statusBar()->changeItem(i18n(" Score: %1").arg(score), 0);
+    statusBar()->changeItem(i18n(" Score: %1").arg(score), 1);
 }
 
 void KLines::viewHighScore()
 {
-    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score | KScoreDialog::Level, this);
     d.exec();
 }
 
@@ -215,8 +258,9 @@ void KLines::endGame()
     lsb->setGameOver(true);
     lsb->repaint(false);
 
-    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score | KScoreDialog::Level, this);
     KScoreDialog::FieldInfo scoreInfo;
+    scoreInfo.insert(KScoreDialog::Level, levelStr);
     if (d.addScore(score, scoreInfo, true))
         d.exec();
 }

@@ -21,10 +21,14 @@
 #include <qmenubar.h> 
 #include <qlabel.h>
 #include <qpushbutton.h>
+
 #include <kmainwindow.h>
+
 #include "linesboard.h"
 #include "mwidget.h"
 #include "prompt.h"
+
+class KRadioAction;
 
 class KLines : public KMainWindow
 {
@@ -54,6 +58,12 @@ private:
   LinesBoard* lsb;
   MainWidget *mwidget;
   LinesPrompt *lPrompt;
+  KRadioAction *act_level1;
+  KRadioAction *act_level2;
+  KRadioAction *act_level3;
+  KRadioAction *act_level4;
+  KRadioAction *act_level5;
+  QString levelStr;
 
   bool bNewTurn;
 
