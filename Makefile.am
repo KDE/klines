@@ -9,7 +9,7 @@ EXTRA_DIST = main.cpp klines.cpp klines.h klines.desktop hi32-app-klines.png hi1
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/
-	$(INSTALL_DATA) $(srcdir)/klines.desktop $(kde_appsdir)/Applications/klines.desktop
+	$(INSTALL_DATA) $(srcdir)/klines.desktop $(kde_appsdir)/Games/TacticStrategy/klines.desktop
 	$(mkinstalldirs) $(kde_icondir)/hicolor/32x32/apps/
 	$(INSTALL_DATA) $(srcdir)/hi32-app-klines.png $(kde_icondir)/hicolor/32x32/apps/klines.png
 	$(mkinstalldirs) $(kde_icondir)/hicolor/16x16/apps/
