@@ -27,8 +27,6 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 
-// #include <qimageio.h>
-
 #include "klines.h"
 
 static const char *description = I18N_NOOP("Kolor Lines - a little game about balls and how to get rid of them");
@@ -36,18 +34,20 @@ static const char *description = I18N_NOOP("Kolor Lines - a little game about ba
 int main( int argc, char **argv )
 {
 	KAboutData aboutData("klines", I18N_NOOP("Kolor Lines"), LINESVERSION,
-						  description, KAboutData::License_GPL);
-	 aboutData.addAuthor("Roman Merzlyakov", I18N_NOOP("Original author"), "roman@sbrf.barrt.ru");
-	 aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
-	 KCmdLineArgs::init(argc, argv, &aboutData);
+                         description, KAboutData::License_GPL);
+    aboutData.addAuthor("Roman Merzlyakov", I18N_NOOP("Original author"), "roman@sbrf.barrt.ru");
+    aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
+    KCmdLineArgs::init(argc, argv, &aboutData);
 
-  KApplication a;
-  KGlobal::locale()->insertCatalogue("libkdegames");
-  KLines *v = new KLines;
+    KApplication a;
+    KGlobal::locale()->insertCatalogue("libkdegames");
 
-  a.setMainWidget( v );
-  v->show();
-  a.exec();
-  delete v;
-  return 0;
+    if (a.isRestored())
+        RESTORE(KLines)
+    else {
+        KLines *w = new KLines;
+        a.setMainWidget(w);
+        w->show();
+    }
+    return a.exec();
 }

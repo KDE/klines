@@ -17,18 +17,15 @@
 #ifndef KLINES_H
 #define KLINES_H
 
-#include <qwidget.h>
-#include <qmenubar.h> 
-#include <qlabel.h>
-#include <qpushbutton.h>
-
 #include <kmainwindow.h>
 
 #include "linesboard.h"
 #include "mwidget.h"
 #include "prompt.h"
 
-class KRadioAction;
+class KSelectAction;
+class KAction;
+class KToggleAction;
 
 class KLines : public KMainWindow
 {
@@ -41,7 +38,6 @@ protected:
   void keyPressEvent(QKeyEvent *e);
   void initKAction();
   void setLevel(int level);
-  int currentLevel(QString *levelStr=0);
 
   void focusOutEvent(QFocusEvent *);
   void focusInEvent(QFocusEvent *);
@@ -65,12 +61,9 @@ private:
   LinesBoard* lsb;
   MainWidget *mwidget;
   LinesPrompt *lPrompt;
-  KAction *act_demo;
-  KRadioAction *act_level1;
-  KRadioAction *act_level2;
-  KRadioAction *act_level3;
-  KRadioAction *act_level4;
-  KRadioAction *act_level5;
+  KAction *act_demo, *undoAction, *endTurnAction;
+  KSelectAction *levelAction;
+  KToggleAction *showNextAction;
   QString levelStr;
 
   bool bNewTurn;
@@ -84,7 +77,7 @@ private:
   bool bUndo;
   bool bFirst;
   bool bDemo;
-  
+
   int demoStep;
   QTimer demoTimer;
 

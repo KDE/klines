@@ -48,15 +48,19 @@
 #include <kstatusbar.h>
 #include "klines.moc"
 
+enum { Nb_Levels = 5 };
+static const char *LEVEL[Nb_Levels] = {
+    I18N_NOOP("Very Easy"), I18N_NOOP("Easy"), I18N_NOOP("Normal"), I18N_NOOP("Hard"),
+    I18N_NOOP("Very Hard")
+};
+
 
 /*
    Creates the KLines widget and sets saved options (if any).
 */
 
-KLines::KLines() : KMainWindow(0, "klines", WType_TopLevel)
+KLines::KLines()
 {
-  setCaption(QString("KLines ")+LINESVERSION);
-
   mwidget = new MainWidget(this);
   setCentralWidget( mwidget );
 
@@ -93,114 +97,43 @@ KLines::~KLines()
 {
   KConfig *config = kapp->config();
   config->setGroup("Game");
-  int level = currentLevel();
+  int level = levelAction->currentItem()-2;
   config->writeEntry("Level", level);
   bool show_next = lPrompt->getState();
   config->writeEntry("ShowNext", show_next);
 }
 
 
-
-/*
-   Resize event of the KLines widget.
-*/
-
 /*
    Init KAction objects (menubar, toolbar, shortcuts)
 */
 void KLines::initKAction()
 {
-// game
   KStdGameAction::gameNew(this, SLOT(startGame()), actionCollection());
-  act_demo = new KAction(i18n("Start &Tutorial"), KShortcut(CTRL+Key_D), this, SLOT(startDemo()), actionCollection(), "game_demo");
+  act_demo = KStdGameAction::demo(this, SLOT(startDemo()), actionCollection());
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
   KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
-  (void)new KAction(i18n("Ne&xt Turn"), Key_N, this, SLOT(makeTurn()), actionCollection(), "next_turn");
-  KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "show_next");
-  act_level1 = new KRadioAction(i18n("Very Easy"), KShortcut(), actionCollection(), "settings_level1");
-  act_level2 = new KRadioAction(i18n("Easy"), KShortcut(), actionCollection(), "settings_level2");
-  act_level3 = new KRadioAction(i18n("Normal"), KShortcut(), actionCollection(), "settings_level3");
-  act_level4 = new KRadioAction(i18n("Hard"), KShortcut(), actionCollection(), "settings_level4");
-  act_level5 = new KRadioAction(i18n("Very Hard"), KShortcut(), actionCollection(), "settings_level5");
-  act_level1->setExclusiveGroup("levels"); 
-  act_level2->setExclusiveGroup("levels"); 
-  act_level3->setExclusiveGroup("levels"); 
-  act_level4->setExclusiveGroup("levels"); 
-  act_level5->setExclusiveGroup("levels"); 
+  endTurnAction = KStdGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
+  showNextAction = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P),
+                                this, SLOT(switchPrompt()), actionCollection(), "options_show_next");
+  undoAction = KStdGameAction::undo(this, SLOT(undo()), actionCollection());
+
+  levelAction = KStdGameAction::chooseGameType(0, 0, actionCollection());
+  QStringList items;
+  for (uint i=0; i<Nb_Levels; i++)
+      items.append( i18n(LEVEL[i]) );
+  levelAction->setItems(items);
 
   KConfig *config = kapp->config();
   config->setGroup("Game");
-  int level = config->readNumEntry("Level", 0);
+  int l = config->readNumEntry("Level", 0);
   bool show_next = config->readBoolEntry("ShowNext", true);
-  setLevel(level);
-  a->setChecked(show_next);
+  if ( l<-2 || l>=Nb_Levels ) l = -2;
+  levelAction->setCurrentItem(l+2);
+  showNextAction->setChecked(show_next);
   lPrompt->setPrompt(show_next);
-  
-// edit
-  KStdAction::undo(this, SLOT(undo()), actionCollection());
 
-// init using klinesui.rc
   createGUI();
-}
-
-
-
-void KLines::setLevel(int level)
-{
-    switch(level)
-    {
-       case -1:
-       	 act_level2->setChecked(true);
-       	 break;
-       case 0:
-       	 act_level3->setChecked(true);
-       	 break;
-       case 1:
-       	 act_level4->setChecked(true);
-       	 break;
-       case 2:
-       	 act_level5->setChecked(true);
-       	 break;
-       default:
-       	 act_level1->setChecked(true);
-       	 break;
-    }
-}
-
-int KLines::currentLevel(QString *levelStr)
-{
-    int level;
-    if (act_level2->isChecked())
-    {
-       level = -1;
-       if (levelStr)
-           *levelStr = act_level2->text();
-    }
-    else if (act_level3->isChecked())
-    {
-       level = 0;
-       if (levelStr)
-          *levelStr = act_level3->text();
-    }
-    else if (act_level4->isChecked())
-    {
-       level = 1;
-       if (levelStr)
-          *levelStr = act_level4->text();
-    }
-    else if (act_level5->isChecked())
-    {
-       level = 2;
-       if (levelStr)
-          *levelStr = act_level5->text();
-    }
-    else
-    {
-       level = -2;
-       if (levelStr)
-          *levelStr = act_level1->text();
-    }
-    return level;
 }
 
 void KLines::startGame()
@@ -213,8 +146,8 @@ void KLines::startGame()
     act_demo->setText(i18n("Start &Tutorial"));
     bFirst = true;
 
-    int level = currentLevel(&levelStr);
-    statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+    int level = levelAction->currentItem()-2;
+    statusBar()->changeItem(i18n(" Level: %1").arg(i18n(LEVEL[level])), 0);
 
     lsb->setLevel(level);
     lsb->setGameOver(false);
@@ -222,8 +155,8 @@ void KLines::startGame()
     generateRandomBalls();
     placeBalls();
     generateRandomBalls();
-    actionCollection()->action("edit_undo")->setEnabled(false);
-    actionCollection()->action("next_turn")->setEnabled(true);
+    undoAction->setEnabled(false);
+    endTurnAction->setEnabled(true);
     updateStat();
 }
 
@@ -254,10 +187,10 @@ void KLines::startDemo()
     lsb->setGameOver(false);
     lsb->clearField();
     lsb->update();
-    actionCollection()->action("edit_undo")->setEnabled(false);
-    actionCollection()->action("next_turn")->setEnabled(false);
+    undoAction->setEnabled(false);
+    endTurnAction->setEnabled(false);
     generateRandomBalls();
-  
+
     demoStep = 0;
     demoTimer.start(1000, true);
 }
@@ -455,7 +388,7 @@ void KLines::slotDemo()
              lPrompt->SetBalls(nextBalls);
           }
        }
-          
+
        updateStat();
        demoTimer.start(1000, true);
        return;
@@ -508,7 +441,7 @@ void KLines::generateRandomBalls()
     score_undo = score;
     for( int i = 0 ; i < BALLSDROP ; i++ )
     {
-      nextBalls_undo[i] = nextBalls[i];    
+      nextBalls_undo[i] = nextBalls[i];
       nextBalls[i] = bUndo ?
             lsb->random(NCOLORS) :
             nextBalls_redo[i];
@@ -529,7 +462,7 @@ void KLines::undo()
       return;
     for( int i = 0 ; i < BALLSDROP ; i++ )
     {
-      nextBalls_redo[i] = nextBalls[i];    
+      nextBalls_redo[i] = nextBalls[i];
       nextBalls[i] = nextBalls_undo[i];
     }
     score = score_undo;
@@ -599,7 +532,7 @@ void KLines::endGame()
 
     if (bDemo)
        return;
-       
+
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score | KScoreDialog::Level, this);
     KScoreDialog::FieldInfo scoreInfo;
     scoreInfo.insert(KScoreDialog::Level, levelStr);
@@ -610,13 +543,13 @@ void KLines::endGame()
 void KLines::switchPrompt()
 {
     lPrompt->setPrompt(!lPrompt->getState());
-    ((KToggleAction*)actionCollection()->action("show_next"))->setChecked(lPrompt->getState());
+    showNextAction->setChecked(lPrompt->getState());
 }
 
 void KLines::switchUndo(bool bu)
 {
     bUndo = bu;
-    actionCollection()->action("edit_undo")->setEnabled(bu);
+    undoAction->setEnabled(bu);
 }
 
 void KLines::keyPressEvent(QKeyEvent *e)
