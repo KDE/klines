@@ -66,7 +66,7 @@ void LinesPrompt::paintEvent( QPaintEvent* )
 /*
    Handles mouse press events for the LinesPrompt widget.
 */
-void LinesPrompt::mousePressEvent( QMouseEvent* e )
+void LinesPrompt::mousePressEvent( QMouseEvent*  )
 {
     emit PromptPressed();
 }

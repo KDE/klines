@@ -97,7 +97,7 @@ void LinesBoard::placeBalls(int pnextBalls[BALLSDROP])
 {
     for(int i=0; i < BALLSDROP; i++)
       nextBalls[i] = pnextBalls[i];
-      
+
     nextBallToPlace = 0;
     placeBall();
 }
@@ -142,8 +142,8 @@ void LinesBoard::placeBall(  )
          }
          pos = best_pos;
       }
-      
-      putBall( xx[pos], yy[pos], color );		
+
+      putBall( xx[pos], yy[pos], color );
       clearAnim();
       setAnim( xx[pos], yy[pos], ANIM_BORN );
 			nextBallToPlace++;
@@ -207,7 +207,7 @@ void LinesBoard::paintEvent( QPaintEvent* )
     if (bGameOver)
     {
        paint->end();
-       
+
        KPixmapEffect::fade(*pixmap, 0.5, Qt::black);
 
        QPainter p(this);
@@ -220,9 +220,9 @@ void LinesBoard::paintEvent( QPaintEvent* )
        p.setFont(gameover_font);
        p.setPen(Qt::white);
        QString gameover_text = i18n("Game Over");
-       p.drawText(0, 0, width(), height(), AlignCenter, gameover_text);
+       p.drawText(0, 0, width(), height(), AlignCenter|Qt::WordBreak, gameover_text);
     }
-    delete paint; 
+    delete paint;
 }
 
 /*
@@ -232,7 +232,7 @@ void LinesBoard::mousePressEvent( QMouseEvent* e )
 {
   if (bGameOver) return;
   if ((level == DEMO_LEVEL) && (!bAllowMove) && e->spontaneous()) return;
-  
+
   int curRow = e->y() / CELLSIZE;
   int curCol = e->x() / CELLSIZE;
 
@@ -324,7 +324,7 @@ int LinesBoard::AnimEnd( )
     }
     else
       return false;
-  } 
+  }
   else if ( oldanim == ANIM_BURN )
   {
     emit eraseLine( deleteAnimatedBalls() );
@@ -340,7 +340,7 @@ int LinesBoard::AnimEnd( )
       emit userTurn();
       return true;
     }
-  } 
+  }
   else if ( oldanim == ANIM_BORN )
   {
     if ( erase5Balls() == 0 )

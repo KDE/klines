@@ -30,14 +30,7 @@
 // #include <qimageio.h>
 
 #include "klines.h"
-void dummyMessageHandler( QtMsgType type, const char *msg )
-{
-}
-/*
-#ifndef _DBG_
-#define _DBG_
-#endif
-*/
+
 static const char *description = I18N_NOOP("Kolor Lines - a little game about balls and how to get rid of them");
 
 int main( int argc, char **argv )
@@ -48,9 +41,6 @@ int main( int argc, char **argv )
 	 aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
 	 KCmdLineArgs::init(argc, argv, &aboutData);
 
-#ifdef NDEBUG
-  qInstallMsgHandler( dummyMessageHandler );
-#endif
   KApplication a;
   KGlobal::locale()->insertCatalogue("libkdegames");
   KLines *v = new KLines;
