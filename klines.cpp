@@ -119,6 +119,7 @@ void KLines::initKAction()
   endTurnAction = KStdGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
   showNextAction = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P),
                                 this, SLOT(switchPrompt()), actionCollection(), "options_show_next");
+  showNextAction->setCheckedState(i18n("Hide Next"));
   showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), KShortcut(),
                                 this, SLOT(switchNumbered()), actionCollection(), "options_show_numbered");
   undoAction = KStdGameAction::undo(this, SLOT(undo()), actionCollection());
