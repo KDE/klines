@@ -39,7 +39,7 @@
 <legalnotice>&FDLNotice;</legalnotice>
 
 <date>2001-05-20</date>
-<releaseinfo>0.6.10</releaseinfo>
+<releaseinfo>1.00.00</releaseinfo>
 
 <abstract><para>&klines; is a nice little game meant to amuse you for
 anywhere from 3 minutes to 6 days(straight).</para></abstract>
@@ -126,6 +126,18 @@ the field is the status bar. Above it is the menu bar.</para>
 <listitem><para><action>Skip your move</action></para></listitem>
 </varlistentry>
 
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Show Highscore</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Displays the high score table</action></para></listitem>
+</varlistentry>
+
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -135,18 +147,6 @@ the field is the status bar. Above it is the menu bar.</para>
 <guimenuitem>Show next</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggles the information on next marbles</action></para></listitem>
-</varlistentry>
-
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Show highscore</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Displays the high score table</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
