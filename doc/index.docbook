@@ -1,9 +1,7 @@
-<!DOCTYPE book PUBLIC  "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
-  <!ENTITY kappname "&klines;">
+<?xml version="1.0" ?><!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+  <!ENTITY klines "<application>Kolor Lines</application>">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
-  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
-  %ents;
 ]>
 
 <book lang="&language;">
@@ -60,7 +58,7 @@ Olga Demina, Igor Ivkin and Gennady Denisov back at 1992.</para>
 
 <para>In 2000 Roman Merzlyakov wrote a original version for KDE. Roman Roazilov
 added to it a cool povray generated animation. Later in 2001 he ported it too KDE2
-and made it &kde games conform.</para>
+and made it &kde; games conform.</para>
 
 </chapter>
 
@@ -186,7 +184,7 @@ wait for that program to compile.</para>
 <title>The <guimenu>Help</guimenu> Menu</title>
 <variablelist>
 <varlistentry>
-<term><anchor id="contents"><menuchoice>
+<term><anchor id="contents"/><menuchoice>
 <shortcut><keycombo><keycap>F1</keycap></keycombo></shortcut>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>C</accel>ontents</guimenuitem></menuchoice></term>
 <listitem><para>This invokes the KDE help system starting at the the top of this
@@ -312,7 +310,7 @@ lists.</para>
 
 <para>All pictures ((klines-source-root)/klines/*.jpg )
 rendered with Povray 3.0 and manipulated with ImageMagick.
-Povray & bash scripts are in sirectory (klines-source-root)/klines/povray.
+Povray &amp; bash scripts are in sirectory (klines-source-root)/klines/povray.
 Customise balls.pov as your want, render and install it with </para>
 
 <para>Important ! You need Povray 3.0 to render. In newer Versions i.e. 3.1
@@ -334,7 +332,7 @@ in the base directory of the kdegames distribution:</para>
 </appendix>
 
 
-&kdedocindex;
+&documentation.index;
 </book>
 <!--
 Local Variables:
@@ -342,3 +340,4 @@ sgml-minimize-attributes: nil
 sgml-general-insert-case: lower
 End:
 -->
+
