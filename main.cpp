@@ -57,5 +57,7 @@ int main( int argc, char **argv )
 
   a.setMainWidget( v );
   v->show();
-  return a.exec();
+  a.exec();
+  delete v;
+  return 0;
 }

@@ -35,6 +35,7 @@
 #include <kapplication.h>
 #include <kiconloader.h>
 #include <klocale.h>
+#include <kconfig.h>
 #include <kmenubar.h>
 #include <kpopupmenu.h>
 #include <kscoredialog.h>
@@ -83,10 +84,19 @@ KLines::KLines() : KMainWindow()
 /*
    Saves the options and destroys the KLines widget.
 */
-
 KLines::~KLines()
 {
+  KConfig *config = kapp->config();
+  config->setGroup("Game");
+  int level = currentLevel();
+qWarning("Level = %d", level);
+  config->writeEntry("Level", level);
+  bool show_next = lPrompt->getState();
+qWarning("Prompt = %s", show_next ? "true" : "false");
+  config->writeEntry("ShowNext", show_next);
 }
+
+
 
 /*
    Resize event of the KLines widget.
@@ -103,7 +113,6 @@ void KLines::initKAction()
   KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
   (void)new KAction(i18n("Ne&xt"), Key_N, this, SLOT(makeTurn()), actionCollection(), "game_next");
   KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "game_show_next");
-  a->setChecked(lPrompt->getState());
   act_level1 = new KRadioAction(i18n("Very Easy"), KShortcut(), actionCollection(), "settings_level1");
   act_level2 = new KRadioAction(i18n("Easy"), KShortcut(), actionCollection(), "settings_level2");
   act_level3 = new KRadioAction(i18n("Normal"), KShortcut(), actionCollection(), "settings_level3");
@@ -115,13 +124,79 @@ void KLines::initKAction()
   act_level4->setExclusiveGroup("levels"); 
   act_level5->setExclusiveGroup("levels"); 
 
-  act_level3->setChecked(true); // Configure
-
+  KConfig *config = kapp->config();
+  config->setGroup("Game");
+  int level = config->readNumEntry("Level", 0);
+  bool show_next = config->readBoolEntry("ShowNext", true);
+  setLevel(level);
+  a->setChecked(show_next);
+  lPrompt->setPrompt(show_next);
+  
 // edit
   KStdAction::undo(this, SLOT(undo()), actionCollection());
 
 // init using klinesui.rc
   createGUI();
+}
+
+
+
+void KLines::setLevel(int level)
+{
+    switch(level)
+    {
+       case -1:
+       	 act_level2->setChecked(true);
+       	 break;
+       case 0:
+       	 act_level3->setChecked(true);
+       	 break;
+       case 1:
+       	 act_level4->setChecked(true);
+       	 break;
+       case 2:
+       	 act_level5->setChecked(true);
+       	 break;
+       default:
+       	 act_level1->setChecked(true);
+       	 break;
+    }
+}
+
+int KLines::currentLevel(QString *levelStr)
+{
+    int level;
+    if (act_level2->isChecked())
+    {
+       level = -1;
+       if (levelStr)
+           *levelStr = act_level2->text();
+    }
+    else if (act_level3->isChecked())
+    {
+       level = 0;
+       if (levelStr)
+          *levelStr = act_level3->text();
+    }
+    else if (act_level4->isChecked())
+    {
+       level = 1;
+       if (levelStr)
+          *levelStr = act_level4->text();
+    }
+    else if (act_level5->isChecked())
+    {
+       level = 2;
+       if (levelStr)
+          *levelStr = act_level5->text();
+    }
+    else
+    {
+       level = -2;
+       if (levelStr)
+          *levelStr = act_level1->text();
+    }
+    return level;
 }
 
 void KLines::startGame()
@@ -130,33 +205,8 @@ void KLines::startGame()
     score_undo = 0;
     bUndo = true;
     bNewTurn = true;
-    int level;
-    if (act_level2->isChecked())
-    {
-       level = -1;
-       levelStr = act_level2->text();
-    }
-    else if (act_level3->isChecked())
-    {
-       level = 0;
-       levelStr = act_level3->text();
-    }
-    else if (act_level4->isChecked())
-    {
-       level = 1;
-       levelStr = act_level4->text();
-    }
-    else if (act_level5->isChecked())
-    {
-       level = 2;
-       levelStr = act_level5->text();
-    }
-    else
-    {
-       level = -2;
-       levelStr = act_level1->text();
-    }
 
+    int level = currentLevel(&levelStr);
     statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
 
     lsb->setLevel(level);

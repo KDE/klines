@@ -40,6 +40,8 @@ public:
 protected:
   void keyPressEvent(QKeyEvent *e);
   void initKAction();
+  void setLevel(int level);
+  int currentLevel(QString *levelStr=0);
 
 public slots:
   void startGame();
