@@ -35,6 +35,7 @@ public:
 
 protected:
   void keyPressEvent(QKeyEvent *e);
+  void initKAction();
 
 public slots:
   void startGame();
@@ -44,20 +45,12 @@ public slots:
   void userTurn();
   void addScore(int ballsErased);
   void switchPrompt();
-  void help();
   void undo();
   
 private slots:
   void viewHighScore();
 
 private:
-  KMenuBar *menu;
-  int idMenuPrompt;
-  int idMenuUndo;
-
-  QPopupMenu *game;
-  QPopupMenu *edit;
-  KToolBar *tool;
   LinesBoard* lsb;
   MainWidget *mwidget;
   LinesPrompt *lPrompt;

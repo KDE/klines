@@ -1,0 +1,9 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="klines" version="1.0">
+<MenuBar>
+  <Menu name="game"><text>&amp;Game</text>
+    <Action name="game_next"/>
+    <Separator/>
+    <Action name="game_show_next"/>
+  </Menu>
+</MenuBar>

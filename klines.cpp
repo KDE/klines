@@ -38,6 +38,9 @@
 #include <kmenubar.h>
 #include <kpopupmenu.h>
 #include <kscoredialog.h>
+#include <kaction.h>
+#include <kstdaction.h>
+#include <kstdgameaction.h>
 
 
 #include "cfg.h"
@@ -64,42 +67,7 @@ KLines::KLines() : KMainWindow()
 
   lPrompt = mwidget->GetPrompt();
 
-  menu              = new KMenuBar(this, "menu");
-  game              = new QPopupMenu;
-  edit               = new QPopupMenu;
-  QPopupMenu * help = helpMenu(QString(i18n("Klines"))
-           + " " + LINESVERSION
-           + i18n("\n\nOriginal version by Roman Merzlyakov")
-           + " (roman@sbrf.barrt.ru)"
-           + i18n("\n\nRewritten and extended by ")
-           + "Roman Razilov"
-           + " (Roman.Razilov@gmx.de)" );
-
-  Q_CHECK_PTR( edit );
-  Q_CHECK_PTR( game );
-  Q_CHECK_PTR( help );
-  Q_CHECK_PTR( menu );
-  
-  game->insertItem(SmallIcon("filenew"),  i18n("&New Game"), this, SLOT(stopGame()), CTRL+Key_N );
-  game->insertSeparator();
-  game->insertItem(SmallIcon("next"),  i18n("Ne&xt"), this, SLOT(makeTurn()), Key_N );
-  game->insertSeparator();
-  game->insertItem( i18n("Show &Highscore"), this, SLOT(viewHighScore()), CTRL+Key_H );
-  game->insertSeparator();
-  idMenuPrompt = game->insertItem( i18n("&Show Next"), this, SLOT(switchPrompt()), CTRL+Key_P );
-  game->setCheckable(true);
-  game->setItemChecked(idMenuPrompt, lPrompt->getState());
-  game->insertSeparator();
-  game->insertItem(SmallIcon("exit"),  i18n("&Quit"), kapp, SLOT(quit()), CTRL+Key_Q );
-
-  idMenuUndo = edit->insertItem(SmallIcon("undo"),  i18n("Und&o"), this, SLOT(undo()), CTRL+Key_Z );
-
-  menu->insertItem( i18n("&Game"), game );
-  menu->insertItem( i18n("&Edit"), edit );
-  menu->insertSeparator();
-  menu->insertItem( i18n("&Help"), help );
-
-  menu->show();
+  initKAction();
 
   score = 0;
   score_undo = 0;
@@ -108,6 +76,20 @@ KLines::KLines() : KMainWindow()
   statusBar()->setItemAlignment(0, AlignVCenter | AlignLeft);
 
   startGame();
+}
+
+void KLines::initKAction()
+{
+  KStdGameAction::gameNew(this, SLOT(stopGame()), actionCollection());
+  KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
+  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
+  (void)new KAction(i18n("Ne&xt"), Key_N, this, SLOT(makeTurn()), actionCollection(), "game_next");
+  KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "game_show_next");
+  a->setChecked(lPrompt->getState());
+
+  KStdAction::undo(this, SLOT(undo()), actionCollection());
+
+  createGUI();
 }
 
 /*
@@ -134,7 +116,7 @@ void KLines::startGame()
     generateRandomBalls();
     placeBalls();
     generateRandomBalls();
-    edit->setItemEnabled(idMenuUndo, FALSE );
+    actionCollection()->action("edit_undo")->setEnabled(false);
     updateStat();
 }
 
@@ -236,18 +218,13 @@ void KLines::endGame()
 void KLines::switchPrompt()
 {
     lPrompt->setPrompt(!lPrompt->getState());
-    game->setItemChecked(idMenuPrompt, lPrompt->getState());
+    ((KToggleAction*)actionCollection()->action("game_show_next"))->setChecked(lPrompt->getState());
 }
 
 void KLines::switchUndo(bool bu)
 {
     bUndo = bu;
-    edit->setItemEnabled(idMenuUndo, bUndo );
-}
-
-void KLines::help()
-{
-//  KApplication::getKApplication()->invokeHTMLHelp("", "");
+    actionCollection()->action("edit_undo")->setEnabled(bu);
 }
 
 void KLines::keyPressEvent(QKeyEvent *e)

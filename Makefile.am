@@ -18,10 +18,13 @@ METASOURCES = AUTO
 # the library search path. 
 klines_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-messages: 
+rcdir = $(kde_datadir)/klines
+rc_DATA = klinesui.rc
+
+messages: rc.cpp
 	LIST=`find . -name \*.h -o -name \*.hh -o -name \*.H -o -name \*.hxx -o -name \*.hpp -o -name \*.cpp -o -name \*.cc -o -name \*.cxx -o -name \*.ecpp -o -name \*.C`; \
 	if test -n "$$LIST"; then \
-	 $(XGETTEXT) $$LIST -o $(podir)/klines.pot; \
+	 $(XGETTEXT) rc.cpp $$LIST -o $(podir)/klines.pot; \
 	fi
 
 install-data-local:

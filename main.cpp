@@ -44,14 +44,15 @@ int main( int argc, char **argv )
 {
 	KAboutData aboutData("klines", I18N_NOOP("Kolor Lines"), LINESVERSION,
 						  description, KAboutData::License_GPL);
-//	 aboutData.addAuthor("Roman Merzlyakov", 0, "roman@sbrf.barrt.ru");
-	 aboutData.addAuthor("Roman Razilov", 0, "Roman.Razilov@gmx.de");
+	 aboutData.addAuthor("Roman Merzlyakov", I18N_NOOP("Original author"), "roman@sbrf.barrt.ru");
+	 aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
 	 KCmdLineArgs::init(argc, argv, &aboutData);
 
 #ifndef _DBG_
   qInstallMsgHandler( dummyMessageHandler );
 #endif
   KApplication a;
+  KGlobal::locale()->insertCatalogue("libkdegames");
   KLines *v = new KLines;
 
   a.setMainWidget( v );
