@@ -1,13 +1,13 @@
 
 INCLUDES= -I$(top_srcdir)/libkdegames -I$(top_srcdir)/libkdegames/highscore $(all_includes)
-LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = $(LIB_KDEGAMES)
 METASOURCES = AUTO
 KDE_ICON = klines;
 
 bin_PROGRAMS = klines
 klines_SOURCES = prompt.cpp mwidget.cpp linesboard.cpp field.cpp cell.cpp \
                  ballpainter.cpp klines.cpp main.cpp 
+klines_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+klines_LDADD = $(LIB_KDEGAMES)
 
 picsdir = $(kde_datadir)/klines/
 pics_DATA = balls.jpg field.jpg fire.jpg
