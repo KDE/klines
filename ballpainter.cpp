@@ -69,7 +69,7 @@ void BallPainter::createPix()
 		locate( "appdata", "fire.jpg" ));
   if (balls->isNull() ||backgroundPix->isNull() || fire->isNull() ) {
       KMessageBox::error(0, i18n("Unable to find graphics. Check your installation."), i18n("Error"));
-      exit(1);
+      qApp->exit(1);
       return; // Error
   }
 
