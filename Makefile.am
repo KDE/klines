@@ -5,15 +5,15 @@ klines_LDADD   = -lkdeui -lkdecore $(LIB_QT) $(LIBSOCKET)
 
 SUBDIRS = povray 
 
-EXTRA_DIST = main.cpp klines.cpp klines.h klines.desktop lo32-app-klines.png lo16-app-klines.png ballpainter.cpp ballpainter.h balls.jpg cell.h cell.cpp cfg.h field.cpp field.h field.jpg fire.jpg highscore.cpp highscore.h linesboard.cpp linesboard.h mwidget.cpp mwidget.h prompt.cpp prompt.h 
+EXTRA_DIST = main.cpp klines.cpp klines.h klines.desktop hi32-app-klines.png hi16-app-klines.png ballpainter.cpp ballpainter.h balls.jpg cell.h cell.cpp cfg.h field.cpp field.h field.jpg fire.jpg highscore.cpp highscore.h linesboard.cpp linesboard.h mwidget.cpp mwidget.h prompt.cpp prompt.h 
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/
 	$(INSTALL_DATA) $(srcdir)/klines.desktop $(kde_appsdir)/Applications/klines.desktop
-	$(mkinstalldirs) $(kde_icondir)/locolor/32x32/apps/
-	$(INSTALL_DATA) $(srcdir)/lo32-app-klines.png $(kde_icondir)/locolor/32x32/apps/klines.png
-	$(mkinstalldirs) $(kde_icondir)/locolor/16x16/apps/
-	$(INSTALL_DATA) $(srcdir)/lo16-app-klines.png $(kde_icondir)/locolor/16x16/apps/klines.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/32x32/apps/
+	$(INSTALL_DATA) $(srcdir)/hi32-app-klines.png $(kde_icondir)/hicolor/32x32/apps/klines.png
+	$(mkinstalldirs) $(kde_icondir)/hicolor/16x16/apps/
+	$(INSTALL_DATA) $(srcdir)/hi16-app-klines.png $(kde_icondir)/hicolor/16x16/apps/klines.png
 	$(mkinstalldirs) $(kde_datadir)/klines/
 	$(INSTALL_DATA) $(srcdir)/balls.jpg $(kde_datadir)/klines/ball.jpg
 	$(mkinstalldirs) $(kde_datadir)/klines/
@@ -23,8 +23,8 @@ install-data-local:
 
 uninstall-local:
 	-rm -f $(kde_appsdir)/Applications/klines.desktop
-	-rm -f $(kde_icondir)/locolor/32x32/apps/klines.png
-	-rm -f $(kde_icondir)/locolor/16x16/apps/klines.png
+	-rm -f $(kde_icondir)/hicolor/32x32/apps/klines.png
+	-rm -f $(kde_icondir)/hicolor/16x16/apps/klines.png
 	-rm -f $(kde_datadir)/klines/ball.jpg
 	-rm -f $(kde_datadir)/klines/field.jpg
 	-rm -f $(kde_datadir)/klines/fire.jpg
