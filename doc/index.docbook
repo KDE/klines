@@ -1,5 +1,5 @@
 <?xml version="1.0" ?><!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
-  <!ENTITY klines "<application>Kolor Lines</application>">
+  <!ENTITY kappname "&klines;">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
@@ -36,10 +36,10 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>20/05/2001</date>
+<date>2001-05-20</date>
 <releaseinfo>0.6.10</releaseinfo>
 
-<abstract><para>&klines; is a nice little program meant to amuse you for
+<abstract><para>&klines; is a nice little game meant to amuse you for
 anywhere from 3 minutes to 6 days(straight).</para></abstract>
 
 <keywordset>
@@ -53,13 +53,16 @@ anywhere from 3 minutes to 6 days(straight).</para></abstract>
 <chapter id="introduction">
 <title>Introduction</title>
 
-<para>&klines; is a simple game. It is played by one player, so there is only one
-winner :-) You play for fun and against the high score. It has been inspired by
-well known game - <quote>Color lines</quote>, written for DOS by
-Olga Demina, Igor Ivkin and Gennady Denisov back at 1992.</para>
+<para>&klines; is a simple game. It is played by one player, so there is
+only one winner :-) You play for fun and against the high score. It has
+been inspired by well known game - <application>Color
+lines</application>, written for DOS by Olga Demina, Igor Ivkin and
+Gennady Denisov back at 1992.</para>
 
-<para>In 2000 Roman Merzlyakov wrote a original version for KDE. Roman Roazilov
-added to it a cool <application>povray</application> generated animation. Later in 2001 he ported it to &kde; 2 and made it conform to the &kde; games standard.</para>
+<para>In 2000 Roman Merzlyakov wrote a original version for &kde;. Roman
+Roazilov added to it a cool <application>povray</application> generated
+animation. Later in 2001 he ported it to &kde; 2 and made it conform to
+the &kde; games standard.</para>
 
 </chapter>
 
@@ -67,23 +70,22 @@ added to it a cool <application>povray</application> generated animation. Later 
 <chapter id="using-klines">
 <title>Using &klines;</title>
 
-<para>The main rules of game is as simple as possible: you move (using mouse)
-marbles from cell to cell and build lines (horizontal, vertical or diagonal).
-When a line contains 5 or more marbels - they are removed from the field
-and your score grows. After each of your turns computer drops three 
-more marbles onto the field.</para>
+<para>The main rules of game is as simple as possible: you move (using
+mouse) marbles from cell to cell and build lines (horizontal, vertical
+or diagonal).  When a line contains 5 or more marbels - they are removed
+from the field and your score grows. After each of your turns computer
+drops three more marbles onto the field.</para>
 
-<para>
-The increase in score dependeds on the amount of erased marbles
-and if &klines; shows the next balls.
-The increase will be smaller if you use the information of what's next.</para>
+<para> The increase in score dependeds on the amount of erased marbles
+and if &klines; shows the next balls.  The increase will be smaller if
+you use the information of what's next.</para>
 
-<sect1 id="kapp-features">
+<sect1 id="klines-features">
 <title>More &klines; features</title>
 
-<para>&klines; is wonderful in that it will allow you to kill 
-5 minutes while you wait for that program to compile.</para>
-<para>Or, if nothing else, it will allow you to kill 5 minutes.</para>
+<para>&klines; is wonderful in that it will allow you to kill 5 minutes
+while you wait for that program to compile.</para> <para>Or, if nothing
+else, it will allow you to kill 5 minutes.</para>
 
 </sect1>
 </chapter>
@@ -94,10 +96,9 @@ The increase will be smaller if you use the information of what's next.</para>
 <sect1 id="klines-mainwindow">
 <title>The main &klines; window</title>
 
-<para>There is a large area with marbles.
-At the right side a bar showing the next three marbles 
-to be dropped on the field. Underneath the field is the
-status bar. Above it is the menu bar.</para>
+<para>There is a large area with marbles.  At the right side a bar
+showing the next three marbles to be dropped on the field. Underneath
+the field is the status bar. Above it is the menu bar.</para>
 
 <sect2>
 <title>The <guimenu>Game</guimenu> Menu</title>
@@ -233,7 +234,6 @@ information.</para></listitem>
 </sect1>
 
 </chapter>
-
 
 <chapter id="credits">
 
