@@ -33,6 +33,7 @@ public:
   void clearField();
 
   int calcPosScore(int x, int y, int whatIf);
+  void saveUndo();
 
 protected:
   Field(QWidget* parent, const char* name);
@@ -53,8 +54,7 @@ protected:
   bool checkBounds( int x, int y );
 //  virtual int erase5Balls(){ return 0;}
   int freeSpace();
-	void saveUndo();
-	void restoreUndo();
+  void restoreUndo();
 
 private:
   Cell field[NUMCELLSH][NUMCELLSW];
