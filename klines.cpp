@@ -42,7 +42,6 @@
 #include <kaction.h>
 #include <kstdaction.h>
 #include <kstdgameaction.h>
-#include <kkeydialog.h>
 
 #include "cfg.h"
 #include "prefs.h"
@@ -100,18 +99,13 @@ KLines::~KLines()
   Prefs::writeConfig();
 }
 
-
-void KLines::slotConfigureKeys()
-{
-  KKeyDialog::configure( actionCollection(), this );
-}
-
 /*
    Init KAction objects (menubar, toolbar, shortcuts)
 */
 void KLines::initKAction()
 {
-  KStdAction::keyBindings( this, SLOT( slotConfigureKeys() ), actionCollection() );
+  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
+actionCollection());
   KStdGameAction::gameNew(this, SLOT(startGame()), actionCollection());
   act_demo = KStdGameAction::demo(this, SLOT(startDemo()), actionCollection());
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());

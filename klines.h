@@ -54,7 +54,6 @@ public slots:
   void switchNumbered();
   void undo();
   void slotDemo();
-  void slotConfigureKeys();
 
 private slots:
   void viewHighScore();
