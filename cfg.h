@@ -1,6 +1,4 @@
 /***************************************************************************
-                          cfg.h  -  description
-                             -------------------
     begin                : Fri May 19 2000
     copyright            : (C) 2000 by Roman Razilov
     email                : Roman.Razilov@gmx.de
@@ -14,8 +12,9 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#ifndef __CFG_H
-#define __CFG_H 1
+
+#ifndef CFG_H
+#define CFG_H 1
 
 #define LINESVERSION "1.1"
 

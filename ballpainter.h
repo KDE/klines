@@ -1,6 +1,4 @@
 /***************************************************************************
-                          ballpainter.h  -  description
-                             -------------------
     begin                : Fri May 19 2000
     copyright            : (C) 2000 by Roman Merzlyakov
     email                : roman@sbrf.barrt.ru
@@ -16,8 +14,9 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#ifndef __BALLPAINTER_H
-#define __BALLPAINTER_H
+
+#ifndef BALLPAINTER_H
+#define BALLPAINTER_H
 
 #include <qobject.h>
 #include <qpixmap.h>

@@ -1,6 +1,4 @@
 /***************************************************************************
-                          field.h  -  description
-                             -------------------
     begin                : Fri May 19 2000
     copyright            : (C) 2000 by Roman Merzlyakov
     email                : roman@sbrf.barrt.ru
@@ -16,8 +14,9 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#ifndef __FIELD_H
-#define __FIELD_H
+
+#ifndef FIELD_H
+#define FIELD_H
 
 #include <qobject.h>
 #include <qwidget.h>

@@ -1,6 +1,4 @@
 /***************************************************************************
-                          cell.cpp  -  description
-                             -------------------
     begin                : Fri May 19 2000
     copyright            : (C) 2000 by Roman Razilov
     email                : Roman.Razilov@gmx.de
@@ -14,6 +12,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
 #include "cell.h"
 
 Cell::Cell()

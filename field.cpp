@@ -1,6 +1,4 @@
 /***************************************************************************
-                          field.cpp  -  description
-                             -------------------
     begin                : Fri May 19 2000
     copyright            : (C) 2000 by Roman Merzlyakov
     email                : roman@sbrf.barrt.ru
@@ -16,6 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+
 #include <stdlib.h>
 #include "cfg.h"
 #include "field.moc"
