@@ -244,7 +244,7 @@ testing and discussions.</para>
 <para>All pictures (<filename>klines/*.jpg</filename>) are
 rendered with <application>Povray</application> 3.0 and manipulated 
 with <application>ImageMagick</application>.
-Povray &amp; bash scripts are in the directory <filename class="directory">>klines/povray</filename>.
+Povray &amp; bash scripts are in the folder <filename class="directory">>klines/povray</filename>.
 Customize <filename>balls.pov</filename> as you want, 
 render and install it.</para>
 
@@ -252,7 +252,7 @@ render and install it.</para>
 <quote>halo</quote> is suppressed. </para></note>
 
 <para>In order to generate marbles on your system, type the following
-in the base directory of the &package; distribution:</para>
+in the base folder of the &package; distribution:</para>
 
 <screen width="40">
 
