@@ -21,7 +21,7 @@
 
 #include <qobject.h>
 #include <qwidget.h>
-#include <cell.h>
+#include "cell.h"
 // size of game field
 #define NUMCELLSW 9
 #define NUMCELLSH 9
