@@ -24,3 +24,5 @@ messages:
 	 $(XGETTEXT) $$LIST -o $(podir)/klines.pot; \
 	fi
 
+install-data-local:
+	rm -rf $(kde_appsdir)/Games/klines.desktop
