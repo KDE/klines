@@ -78,20 +78,6 @@ KLines::KLines() : KMainWindow()
   startGame();
 }
 
-void KLines::initKAction()
-{
-  KStdGameAction::gameNew(this, SLOT(stopGame()), actionCollection());
-  KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
-  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
-  (void)new KAction(i18n("Ne&xt"), Key_N, this, SLOT(makeTurn()), actionCollection(), "game_next");
-  KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "game_show_next");
-  a->setChecked(lPrompt->getState());
-
-  KStdAction::undo(this, SLOT(undo()), actionCollection());
-
-  createGUI();
-}
-
 /*
    Saves the options and destroys the KLines widget.
 */
@@ -103,6 +89,26 @@ KLines::~KLines()
 /*
    Resize event of the KLines widget.
 */
+
+/*
+   Init KAction objects (menubar, toolbar, shortcuts)
+*/
+void KLines::initKAction()
+{
+// game
+  KStdGameAction::gameNew(this, SLOT(stopGame()), actionCollection());
+  KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
+  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
+  (void)new KAction(i18n("Ne&xt"), Key_N, this, SLOT(makeTurn()), actionCollection(), "game_next");
+  KToggleAction* a = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P), this, SLOT(switchPrompt()), actionCollection(), "game_show_next");
+  a->setChecked(lPrompt->getState());
+
+// edit
+  KStdAction::undo(this, SLOT(undo()), actionCollection());
+
+// init using klinesui.rc
+  createGUI();
+}
 
 void KLines::startGame()
 {
