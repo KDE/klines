@@ -47,7 +47,7 @@
    Creates the KLines widget and sets saved options (if any).
 */
 
-KLines::KLines() : KTMainWindow()
+KLines::KLines() : KMainWindow()
 {
   time_t t;
   time(&t);
@@ -132,7 +132,7 @@ KLines::~KLines()
 
 void KLines::resizeEvent( QResizeEvent *e )
 {
-  KTMainWindow::resizeEvent(e);
+  KMainWindow::resizeEvent(e);
 }
 
 void KLines::setMinSize()

@@ -21,7 +21,7 @@
 #include <qmenubar.h> 
 #include <qlabel.h>
 #include <qpushbt.h>
-#include <ktmainwindow.h>
+#include <kmainwindow.h>
 #include "linesboard.h"
 #include "highscore.h"
 #include "mwidget.h"
@@ -30,7 +30,7 @@
 #define LSCORE 0
 #define LRECORD 1
 
-class KLines : public KTMainWindow
+class KLines : public KMainWindow
 {
   Q_OBJECT
 public:
