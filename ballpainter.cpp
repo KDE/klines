@@ -58,7 +58,7 @@ void BallPainter::createPixmap()
   QPixmap *fire = new QPixmap(
 		locate( "appdata", "fire.jpg" ));
   if (balls->isNull() ||backgroundPix->isNull() || fire->isNull() ) {
-      KMessageBox::error(0, i18n("Couldn't find graphics. Check your installation."), i18n("Error"));
+      KMessageBox::error(0, i18n("Unable to find graphics. Check your installation."), i18n("Error"));
       exit(1);
       return; // Error
   }
