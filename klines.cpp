@@ -143,12 +143,14 @@ void KLines::startGame()
     score_undo = 0;
     bUndo = true;
     bNewTurn = true;
-    stopDemo();
-    act_demo->setText(i18n("Start &Tutorial"));
+    if(bDemo) {
+        stopDemo();
+        act_demo->setText(i18n("Start &Tutorial"));
+    }
     bFirst = true;
 
     int level = levelAction->currentItem()-2;
-    statusBar()->changeItem(i18n(" Level: %1").arg(i18n(LEVEL[level+2])), 0);
+    setLevel(level);
 
     lsb->setLevel(level);
     lsb->setGameOver(false);
@@ -159,6 +161,11 @@ void KLines::startGame()
     undoAction->setEnabled(false);
     endTurnAction->setEnabled(true);
     updateStat();
+}
+
+void KLines::setLevel(int level) {
+    levelStr = i18n(LEVEL[level+2]);
+    statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
 }
 
 void KLines::startDemo()
