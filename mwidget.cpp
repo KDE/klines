@@ -35,7 +35,7 @@ MainWidget::MainWidget( QWidget* parent, const char* name )
     grid->addWidget( lsb );
 
     QBoxLayout *right = new QVBoxLayout(grid, 2);
-    QLabel *label = new QLabel(i18n("Next Balls:"), this);
+    QLabel *label = new QLabel(i18n("Next balls:"), this);
     lPrompt = new LinesPrompt(bPainter, this);
     connect(lPrompt, SIGNAL(PromptPressed()), parent, SLOT(switchPrompt()));
 
