@@ -224,7 +224,7 @@ testing and discussions.</para>
 <appendix id="installation">
 <title>Installation</title>
 
-<sect1 id="getting-kapp">
+<sect1 id="getting-klines">
 <title>How to obtain &klines;</title>
 
 &install.intro.documentation;
