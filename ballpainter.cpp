@@ -16,14 +16,14 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include <kapp.h>
+#include <kapplication.h>
 #include "ballpainter.moc"
 //#include "shotcounter.h"
 #include <qpainter.h>
 #include "linesboard.h"
 //#include <qcolor.h>
 #include <qjpegio.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 
 
 #define PIXSIZE (CELLSIZE - 2)

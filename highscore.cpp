@@ -29,7 +29,7 @@
 #include <klocale.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <ksimpleconfig.h>
 
 HScore::HScore():QObject() {
