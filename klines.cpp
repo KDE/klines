@@ -296,7 +296,7 @@ void KLines::slotDemo()
     }
     else if (demoStep == 9)
     {
-       msg = i18n("Each turn three new balls are placed on the board.");
+       msg = i18n("Each turn, three new balls are placed on the board.");
     }
     else if (demoStep == 11)
     {
@@ -304,7 +304,7 @@ void KLines::slotDemo()
     }
     else if (demoStep == 13)
     {
-       msg = i18n("Every turn you can move one ball.");
+       msg = i18n("Every turn, you can move one ball.");
     }
     else if (demoStep == 15)
     {
@@ -313,7 +313,7 @@ void KLines::slotDemo()
     }
     else if (demoStep == 17)
     {
-       msg = i18n("To move a ball click on it with the mouse,\n"
+       msg = i18n("To move a ball, click on it with the mouse,\n"
                   "then click where you want the ball to go.");
     }
     else if (demoStep == 19)
@@ -336,7 +336,7 @@ void KLines::slotDemo()
     }
     else if (demoStep == 27)
     {
-       msg = i18n("Balls can be moved to every position on the board\n"
+       msg = i18n("Balls can be moved to every position on the board,\n"
                   "as long as there are no other balls in their way.");
     }
     else if (demoStep == 29)
@@ -375,7 +375,7 @@ void KLines::slotDemo()
     }
     else if (demoStep == 43)
     {
-       msg = i18n("Hurray! And away they are!\n"
+       msg = i18n("Hurray! And away they go!\n"
                   "Now lets try the green balls.");
     }
     else if (demoStep == 45)
