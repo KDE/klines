@@ -25,7 +25,7 @@
 // size of game field
 #define NUMCELLSW 9
 #define NUMCELLSH 9
-;
+
 class Field: public QWidget
 {
   Q_OBJECT
