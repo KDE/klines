@@ -148,7 +148,7 @@ void KLines::startGame()
     score_undo = 0;
     bUndo = true;
     bNewTurn = true;
-    bDemo = false;
+    stopDemo();
     act_demo->setText(i18n("Start &Tutorial"));
     bFirst = true;
 
@@ -170,12 +170,7 @@ void KLines::startDemo()
 {
     if (bDemo)
     {
-       bDemo = false;
-       lsb->hideDemoText();
-       demoTimer.stop();
-       levelStr = i18n("Tutorial - Stopped");
-       statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
-       act_demo->setText(i18n("Start &Tutorial"));
+       stopDemo();
        return;
     }
     score = 0;
@@ -199,6 +194,16 @@ void KLines::startDemo()
 
     demoStep = 0;
     demoTimer.start(1000, true);
+}
+
+void KLines::stopDemo()
+{
+    bDemo = false;
+    lsb->hideDemoText();
+    demoTimer.stop();
+    levelStr = i18n("Tutorial - Stopped");
+    statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+    act_demo->setText(i18n("Start &Tutorial"));
 }
 
 void KLines::slotDemo()

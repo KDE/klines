@@ -53,7 +53,7 @@ public slots:
   void switchPrompt();
   void undo();
   void slotDemo();
-    void slotConfigureKeys();
+  void slotConfigureKeys();
 
 private slots:
   void viewHighScore();
@@ -87,6 +87,7 @@ private:
   void placeBalls();
   void updateStat();
   void switchUndo( bool bu );
+  void stopDemo();
 };
 
 #endif
