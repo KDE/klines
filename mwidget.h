@@ -27,17 +27,21 @@
 #include "linesboard.h"
 #include "prompt.h"
 
+class BallPainter;
+
 class MainWidget : public QFrame
 {
   Q_OBJECT
   LinesBoard * lsb;
   LinesPrompt * lPrompt;
+  BallPainter *bPainter;
 
 public:
   MainWidget( QWidget* parent=0, const char* name=0 );
   ~MainWidget();
   LinesBoard * GetLsb();
   LinesPrompt * GetPrompt();
+  void updatePix();
 };
 
 #endif

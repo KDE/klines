@@ -27,6 +27,8 @@
 #include <klocale.h>
 #include <stdlib.h>
 
+#include "prefs.h"
+
 #define PIXSIZE (CELLSIZE - 2)
 
 int colorLinesArr[NCOLORS] =
@@ -37,19 +39,27 @@ int colorLinesArr[NCOLORS] =
 
 
 BallPainter::BallPainter()
-    : QObject()
+    : QObject(), backgroundPix(0)
 {
-    createPixmap();
+  createPix();
 }
 
 BallPainter::~BallPainter()
 {
-  delete backgroundPix;
-  delete imgCash;
-  delete firePix;
+  deletePix();
 }
 
-void BallPainter::createPixmap()
+void BallPainter::deletePix()
+{
+  delete backgroundPix;
+  for(int c=0; c<NCOLORS; c++)
+    for(int t=0; t<PIXTIME + FIREBALLS + BOOMBALLS + 1 ; t++)
+      delete imgCash[c][t];
+  for(int t=0; t < FIREPIX ; t++)
+    delete firePix[t];
+}
+
+void BallPainter::createPix()
 {
   backgroundPix = new QPixmap(
 		locate( "appdata", "field.jpg" ));
@@ -71,14 +81,25 @@ void BallPainter::createPixmap()
       QPainter p(imgCash[c][t]);
       p.drawPixmap(0,0,(*backgroundPix),0,0,CELLSIZE,CELLSIZE);
       p.drawPixmap(1,1,(*balls),t*PIXSIZE,c*PIXSIZE,PIXSIZE,PIXSIZE);
+      if (Prefs::numberedBalls() && (t == NORMALBALL))
+      {
+        if ((c == 2) || (c == 3) || (c == 6))
+          p.setPen(Qt::black);
+        else
+          p.setPen(Qt::white);
+        QString tmp;
+        tmp.setNum(c+1);
+        p.drawText(QRect(0,0,CELLSIZE,CELLSIZE), Qt::AlignCenter, tmp);
+      }
+      
     }
-    for(int t=0; t < FIREPIX ; t++)
-    {
-      firePix[t] = new QPixmap(CELLSIZE, CELLSIZE);
-      QPainter p(firePix[t]);
-      p.drawPixmap(0,0,(*backgroundPix),0,0,CELLSIZE,CELLSIZE);
-      p.drawPixmap(1,1,(*fire),t*PIXSIZE,0,PIXSIZE,PIXSIZE);
-    }
+  }
+  for(int t=0; t < FIREPIX ; t++)
+  {
+    firePix[t] = new QPixmap(CELLSIZE, CELLSIZE);
+    QPainter p(firePix[t]);
+    p.drawPixmap(0,0,(*backgroundPix),0,0,CELLSIZE,CELLSIZE);
+    p.drawPixmap(1,1,(*fire),t*PIXSIZE,0,PIXSIZE,PIXSIZE);
   }
   delete balls;
   delete fire;

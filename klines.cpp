@@ -45,6 +45,7 @@
 #include <kkeydialog.h>
 
 #include "cfg.h"
+#include "prefs.h"
 #include <kstatusbar.h>
 #include "klines.moc"
 
@@ -95,12 +96,8 @@ KLines::KLines()
 */
 KLines::~KLines()
 {
-  KConfig *config = kapp->config();
-  config->setGroup("Game");
-  int level = levelAction->currentItem()-2;
-  config->writeEntry("Level", level);
-  bool show_next = lPrompt->getState();
-  config->writeEntry("ShowNext", show_next);
+  Prefs::setLevel(levelAction->currentItem()-2);
+  Prefs::writeConfig();
 }
 
 
@@ -122,6 +119,8 @@ void KLines::initKAction()
   endTurnAction = KStdGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
   showNextAction = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P),
                                 this, SLOT(switchPrompt()), actionCollection(), "options_show_next");
+  showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), KShortcut(),
+                                this, SLOT(switchNumbered()), actionCollection(), "options_show_numbered");
   undoAction = KStdGameAction::undo(this, SLOT(undo()), actionCollection());
 
   levelAction = KStdGameAction::chooseGameType(0, 0, actionCollection());
@@ -130,14 +129,10 @@ void KLines::initKAction()
       items.append( i18n(LEVEL[i]) );
   levelAction->setItems(items);
 
-  KConfig *config = kapp->config();
-  config->setGroup("Game");
-  int l = config->readNumEntry("Level", 0);
-  bool show_next = config->readBoolEntry("ShowNext", true);
-  if ( l<-2 || l>=Nb_Levels ) l = -2;
-  levelAction->setCurrentItem(l+2);
-  showNextAction->setChecked(show_next);
-  lPrompt->setPrompt(show_next);
+  levelAction->setCurrentItem(Prefs::level()+2);
+  showNextAction->setChecked(Prefs::showNext());
+  showNumberedAction->setChecked(Prefs::numberedBalls());
+  lPrompt->setPrompt(Prefs::showNext());
 
   createGUI();
 }
@@ -553,8 +548,17 @@ void KLines::endGame()
 
 void KLines::switchPrompt()
 {
-    lPrompt->setPrompt(!lPrompt->getState());
-    showNextAction->setChecked(lPrompt->getState());
+    Prefs::setShowNext(!Prefs::showNext());
+    lPrompt->setPrompt(Prefs::showNext());
+    showNextAction->setChecked(Prefs::showNext());
+}
+
+void KLines::switchNumbered()
+{
+    Prefs::setNumberedBalls(!Prefs::numberedBalls());
+    lPrompt->setPrompt(Prefs::showNext());
+    showNumberedAction->setChecked(Prefs::numberedBalls());
+    mwidget->updatePix();
 }
 
 void KLines::switchUndo(bool bu)

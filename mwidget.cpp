@@ -29,7 +29,7 @@ MainWidget::MainWidget( QWidget* parent, const char* name )
     : QFrame( parent, name )
 {
     QBoxLayout *grid = new QHBoxLayout( this, 5 );     //(rows,col)
-    BallPainter * bPainter = new BallPainter();
+    bPainter = new BallPainter();
 
     lsb = new LinesBoard(bPainter, this);
     grid->addWidget( lsb );
@@ -69,4 +69,10 @@ LinesPrompt * MainWidget::GetPrompt()
     return lPrompt;
 }
 
-
+void MainWidget::updatePix()
+{
+    bPainter->deletePix();
+    bPainter->createPix();
+    lPrompt->update();
+    lsb->update();
+}

@@ -1,9 +1,10 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="klines" version="3">
+<kpartgui name="klines" version="4">
 
 <MenuBar>
   <Menu name="settings"><text>&amp;Settings</text>
     <Action name="options_show_next" append="show_merge"/>
+    <Action name="options_show_numbered" append="show_merge"/>
   </Menu>
 </MenuBar>
 

@@ -51,6 +51,7 @@ public slots:
   void userTurn();
   void addScore(int ballsErased);
   void switchPrompt();
+  void switchNumbered();
   void undo();
   void slotDemo();
   void slotConfigureKeys();
@@ -65,6 +66,7 @@ private:
   KAction *act_demo, *undoAction, *endTurnAction;
   KSelectAction *levelAction;
   KToggleAction *showNextAction;
+  KToggleAction *showNumberedAction;
   QString levelStr;
 
   bool bNewTurn;

@@ -32,16 +32,17 @@ class BallPainter : public QObject
   QPixmap* backgroundPix;
   QPixmap* firePix[FIREPIX];
 
-  void createPixmap();
 
 public:
   BallPainter();
   ~BallPainter();
+  
+  void deletePix();
+  void createPix();
 
   QPixmap GetBall( int color, int animstep, int panim );
   QPixmap GetNormalBall(int color) { return GetBall(color,0,ANIM_NO); }
   QPixmap GetBackgroundPix() { return GetBall(NOBALL,0,ANIM_NO); }
-
 };
 
 #endif
