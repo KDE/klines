@@ -20,7 +20,6 @@
 #include <qpainter.h>
 #include "linesboard.h"
 //#include <qcolor.h>
-#include <qjpegio.h>
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <stdlib.h>
