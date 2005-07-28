@@ -22,7 +22,6 @@
 // The implementation of the KLines widget
 //
 
-#include <qkeycode.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
@@ -76,15 +75,15 @@ KLines::KLines()
   bDemo = false;
 
   statusBar()->insertItem(i18n(" Score:"), 1, 1);
-  statusBar()->setItemAlignment(1, AlignVCenter | AlignLeft);
+  statusBar()->setItemAlignment(1, Qt::AlignVCenter | Qt::AlignLeft);
   statusBar()->insertItem(i18n(" Level: "), 0, 1);
-  statusBar()->setItemAlignment(0, AlignVCenter | AlignLeft);
+  statusBar()->setItemAlignment(0, Qt::AlignVCenter | Qt::AlignLeft);
  
   initKAction();
 
   connect(&demoTimer, SIGNAL(timeout()), this, SLOT(slotDemo()));
 
-  setFocusPolicy(StrongFocus);
+  setFocusPolicy(Qt::StrongFocus);
   setFocus();
 
   startGame();
@@ -110,7 +109,7 @@ void KLines::initKAction()
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
   KStdGameAction::quit(this, SLOT(close()), actionCollection());
   endTurnAction = KStdGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
-  showNextAction = new KToggleAction(i18n("&Show Next"), KShortcut(CTRL+Key_P),
+  showNextAction = new KToggleAction(i18n("&Show Next"), KShortcut(Qt::CTRL+Qt::Key_P),
                                 this, SLOT(switchPrompt()), actionCollection(), "options_show_next");
   showNextAction->setCheckedState(i18n("Hide Next"));
   showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), KShortcut(),
@@ -128,11 +127,11 @@ void KLines::initKAction()
   showNumberedAction->setChecked(Prefs::numberedBalls());
   lPrompt->setPrompt(Prefs::showNext());
 
-  (void)new KAction(i18n("Move Left"), Key_Left, lsb, SLOT(moveLeft()), actionCollection(), "left");
-  (void)new KAction(i18n("Move Right"), Key_Right, lsb, SLOT(moveRight()), actionCollection(), "right");
-  (void)new KAction(i18n("Move Up"), Key_Up, lsb, SLOT(moveUp()), actionCollection(), "up");
-  (void)new KAction(i18n("Move Down"), Key_Down, lsb, SLOT(moveDown()), actionCollection(), "down");
-  (void)new KAction(i18n("Move Ball"), Key_Space, lsb, SLOT(placePlayerBall()), actionCollection(), "place_ball");
+  (void)new KAction(i18n("Move Left"), Qt::Key_Left, lsb, SLOT(moveLeft()), actionCollection(), "left");
+  (void)new KAction(i18n("Move Right"), Qt::Key_Right, lsb, SLOT(moveRight()), actionCollection(), "right");
+  (void)new KAction(i18n("Move Up"), Qt::Key_Up, lsb, SLOT(moveUp()), actionCollection(), "up");
+  (void)new KAction(i18n("Move Down"), Qt::Key_Down, lsb, SLOT(moveDown()), actionCollection(), "down");
+  (void)new KAction(i18n("Move Ball"), Qt::Key_Space, lsb, SLOT(placePlayerBall()), actionCollection(), "place_ball");
 
   setupGUI( KMainWindow::Save | Keys | StatusBar | Create );
 }
@@ -380,7 +379,7 @@ void KLines::slotDemo()
     if (!msg.isEmpty())
     {
        lsb->showDemoText(msg);
-       demoTimer.start(3500 + msg.contains("\n")*1500, true);
+       demoTimer.start(3500 + msg.count("\n")*1500, true);
        return;
     }
     if (newBalls)

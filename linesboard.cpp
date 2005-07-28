@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <qevent.h>
 #include <qpainter.h>
 #include <qcolor.h>
 #include <qcursor.h>
-#include <qkeycode.h>
 #include <qtooltip.h>
 #include <stdlib.h>
 
@@ -51,8 +51,8 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* na
 
   bPainter = abPainter;
 
-  setFocusPolicy( NoFocus );
-  setBackgroundColor( gray );
+  setFocusPolicy( Qt::NoFocus );
+  setBackgroundColor( Qt::gray );
 
   setMouseTracking( FALSE );
   setFixedSize(wHint(), hHint());
@@ -227,7 +227,7 @@ void LinesBoard::paintEvent( QPaintEvent* )
        p.setFont(gameover_font);
        p.setPen(Qt::white);
        QString gameover_text = i18n("Game Over");
-       p.drawText(0, 0, width(), height(), AlignCenter|Qt::WordBreak, gameover_text);
+       p.drawText(0, 0, width(), height(), Qt::AlignCenter|Qt::WordBreak, gameover_text);
     }
     else
     {
@@ -705,13 +705,12 @@ void LinesBoard::showDemoText(const QString &text)
 {
   if (!demoLabel)
   {
-     demoLabel = new QLabel(0, "demoTip", WStyle_StaysOnTop | WStyle_Customize | WStyle_NoBorder | WStyle_Tool | WX11BypassWM );
+     demoLabel = new QLabel(0, "demoTip", Qt::WStyle_StaysOnTop | Qt::WStyle_Customize | Qt::WStyle_NoBorder | Qt::WStyle_Tool | Qt::WX11BypassWM );
      demoLabel->setMargin(1);
      demoLabel->setIndent(0);
-     demoLabel->setAutoMask( FALSE );
      demoLabel->setFrameStyle( QFrame::Plain | QFrame::Box );
      demoLabel->setLineWidth( 1 );
-     demoLabel->setAlignment( AlignHCenter | AlignTop );
+     demoLabel->setAlignment( Qt::AlignHCenter | Qt::AlignTop );
      demoLabel->setPalette(QToolTip::palette());
      demoLabel->polish();
   }
@@ -744,7 +743,7 @@ void LinesBoard::demoClick(int x, int y)
      kapp->enter_loop();
   }
   QCursor::setPos(dest);
-  QMouseEvent ev(QEvent::MouseButtonPress, lDest, dest, LeftButton, LeftButton);
+  QMouseEvent ev(QEvent::MouseButtonPress, lDest, dest, Qt::LeftButton, Qt::LeftButton);
   mousePressEvent(&ev);
 }
 
