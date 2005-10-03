@@ -35,7 +35,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kmenubar.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <kscoredialog.h>
 #include <kaction.h>
 #include <kstdaction.h>

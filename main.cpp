@@ -43,7 +43,7 @@ int main( int argc, char **argv )
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KApplication a;
-    KGlobal::locale()->insertCatalogue("libkdegames");
+    KGlobal::locale()->insertCatalog("libkdegames");
 
     if (a.isRestored())
         RESTORE(KLines)
