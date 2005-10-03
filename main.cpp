@@ -24,6 +24,7 @@
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
+#include <kglobal.h>
 
 #include "klines.h"
 
