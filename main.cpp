@@ -43,15 +43,14 @@ int main( int argc, char **argv )
     aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
     KCmdLineArgs::init(argc, argv, &aboutData);
 
-    KApplication a;
+    KApplication application;
     KGlobal::locale()->insertCatalog("libkdegames");
 
-    if (a.isRestored())
+    if (application.isSessionRestored())
         RESTORE(KLines)
     else {
-        KLines *w = new KLines;
-        a.setMainWidget(w);
-        w->show();
+        KLines window;
+        window.show();
     }
-    return a.exec();
+    return application.exec();
 }
