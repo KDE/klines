@@ -49,8 +49,8 @@ int main( int argc, char **argv )
     if (application.isSessionRestored())
         RESTORE(KLines)
     else {
-        KLines window;
-        window.show();
+        KLines *window = new KLines;
+        window->show();
     }
     return application.exec();
 }
