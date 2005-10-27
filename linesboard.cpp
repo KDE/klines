@@ -227,7 +227,7 @@ void LinesBoard::paintEvent( QPaintEvent* )
        p.setFont(gameover_font);
        p.setPen(Qt::white);
        QString gameover_text = i18n("Game Over");
-       p.drawText(0, 0, width(), height(), Qt::AlignCenter|Qt::WordBreak, gameover_text);
+       p.drawText(0, 0, width(), height(), Qt::AlignCenter|Qt::TextWordWrap, gameover_text);
     }
     else
     {
