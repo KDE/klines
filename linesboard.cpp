@@ -738,7 +738,7 @@ void LinesBoard::demoClick(int x, int y)
      i++;
      QPoint p = cur + i*(dest-cur) / 25;
      QCursor::setPos(p);
-     QApplication::flushX();
+     QApplication::flush();
      QTimer::singleShot(80, this, SLOT(demoClickStep()));
      kapp->enter_loop();
   }
