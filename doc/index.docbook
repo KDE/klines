@@ -190,6 +190,13 @@ to play the game.  If the tutorial is running, the statusbar will show
 <variablelist>
 <varlistentry>
 <term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Statusbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggles the display of the statusbar.</action></para></listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
 </shortcut>
@@ -197,14 +204,14 @@ to play the game.  If the tutorial is running, the statusbar will show
 <guimenuitem>Show Next</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Toggles the information on next
-marbles</action></para></listitem>
+marbles.</action></para></listitem>
 </varlistentry>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Use Numbered Balls</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>Number the balls according to color.  This may be of assistance to
+<para>Number the balls according to color. This may be of assistance to
 players who are color blind, have other vision impairments that make the
 colors hard to distinguish, or those of you who simply like the look.</para>
 </listitem>
