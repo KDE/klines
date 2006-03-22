@@ -21,7 +21,7 @@ kde4_add_kcfg_files(klines_SRCS prefs.kcfgc )
 
 kde4_add_executable(klines ${klines_SRCS})
 
-target_link_libraries(klines  ${KDE4_KDEUI_LIBRARIES} kdegames )
+target_link_libraries(klines  ${KDE4_KDEUI_LIBS} kdegames )
 
 install_targets(/bin klines )
 
