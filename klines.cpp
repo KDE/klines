@@ -163,7 +163,7 @@ void KLines::startGame()
 
 void KLines::setLevel(int level) {
     levelStr = i18n(LEVEL[level+2]);
-    statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+    statusBar()->changeItem(i18n(" Level: %1", levelStr), 0);
 }
 
 void KLines::startDemo()
@@ -182,7 +182,7 @@ void KLines::startDemo()
     bFirst = true;
 
     levelStr = i18n("Tutorial");
-    statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+    statusBar()->changeItem(i18n(" Level: %1", levelStr), 0);
 
     lsb->startDemoMode();
     lsb->setGameOver(false);
@@ -201,7 +201,7 @@ void KLines::stopDemo()
     bDemo = false;
     lsb->hideDemoText();
     demoTimer.stop();
-    statusBar()->changeItem(i18n(" Level: %1").arg(i18n("Tutorial - Stopped")), 0);
+    statusBar()->changeItem(i18n(" Level: %1", i18n("Tutorial - Stopped")), 0);
     act_demo->setText(i18n("Start &Tutorial"));
 }
 
@@ -418,7 +418,7 @@ void KLines::focusOutEvent(QFocusEvent *ev)
    {
       lsb->hideDemoText();
       demoTimer.stop();
-      statusBar()->changeItem(i18n(" Level: %1").arg(i18n("Tutorial - Paused")), 0);
+      statusBar()->changeItem(i18n(" Level: %1", i18n("Tutorial - Paused")), 0);
    }
    KMainWindow::focusOutEvent(ev);
 }
@@ -427,7 +427,7 @@ void KLines::focusInEvent(QFocusEvent *ev)
 {
    if (bDemo)
    {
-      statusBar()->changeItem(i18n(" Level: %1").arg(levelStr), 0);
+      statusBar()->changeItem(i18n(" Level: %1", levelStr), 0);
       slotDemo();
    }
    KMainWindow::focusInEvent(ev);
@@ -527,7 +527,7 @@ void KLines::addScore(int ballsErased)
 
 void KLines::updateStat()
 {
-    statusBar()->changeItem(i18n(" Score: %1").arg(score), 1);
+    statusBar()->changeItem(i18n(" Score: %1", score), 1);
 }
 
 void KLines::viewHighScore()
