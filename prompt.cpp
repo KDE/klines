@@ -19,8 +19,8 @@
 #include "prompt.h"
 #include "prompt.moc"
 
-LinesPrompt::LinesPrompt( BallPainter * abPainter, QWidget* parent, const char* name )
-    : QWidget( parent, name )
+LinesPrompt::LinesPrompt( BallPainter * abPainter, QWidget* parent )
+    : QWidget( parent )
 {
 
   bPainter = abPainter;

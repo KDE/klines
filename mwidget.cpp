@@ -24,16 +24,18 @@
 
 #include "ballpainter.h"
 
-MainWidget::MainWidget( QWidget* parent, const char* name )
-    : QFrame( parent, name )
+MainWidget::MainWidget( QWidget* parent )
+    : QFrame( parent )
 {
-    QBoxLayout *grid = new QHBoxLayout( this, 5 );     //(rows,col)
+    QBoxLayout *grid = new QHBoxLayout( this );     //(rows,col)
+    grid->setMargin( 5 );
     bPainter = new BallPainter();
 
     lsb = new LinesBoard(bPainter, this);
     grid->addWidget( lsb );
 
-    QBoxLayout *right = new QVBoxLayout(grid, 2);
+    QBoxLayout *right = new QVBoxLayout(grid);
+    right->setMargin(2);
     QLabel *label = new QLabel(i18n("Next balls:"), this);
     lPrompt = new LinesPrompt(bPainter, this);
     connect(lPrompt, SIGNAL(PromptPressed()), parent, SLOT(switchPrompt()));

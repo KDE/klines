@@ -34,8 +34,8 @@
    Constructs a LinesBoard widget.
 */
 
-LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* name )
-    : Field( parent, name )
+LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent )
+    : Field( parent )
 {
   demoLabel = 0;
   bGameOver = false;
@@ -59,7 +59,7 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent, const char* na
 
   timer = new QTimer(this);
   connect( timer, SIGNAL(timeout()), SLOT(timerSlot()) );
-  timer->start( TIMERCLOCK, FALSE );
+  timer->start( TIMERCLOCK );
 
 }
 
@@ -306,7 +306,7 @@ void LinesBoard::moveFocus(int dx, int dy)
     focusX = (focusX + dx + NUMCELLSW) % NUMCELLSW;
     focusY = (focusY + dy + NUMCELLSH) % NUMCELLSH;
   }
-  repaint(FALSE);
+  repaint();
 } 
 
 void LinesBoard::moveLeft()
@@ -401,7 +401,7 @@ int LinesBoard::AnimEnd( )
   else if ( oldanim == ANIM_BURN )
   {
     emit eraseLine( deleteAnimatedBalls() );
-    repaint(FALSE);
+    repaint();
     if ( nextBallToPlace < BALLSDROP )
     {
       placeBall();
@@ -455,7 +455,7 @@ void LinesBoard::AnimNext() {
       if ( (direction > 0 && animstep == animmax) || ( direction < 0 && animstep == 0))
         direction = -direction;
       animstep += direction;
-      repaint(FALSE);
+      repaint();
     } else {
       if ( animstep >= animmax )
         AnimEnd();
@@ -466,7 +466,7 @@ void LinesBoard::AnimNext() {
             moveBall(way[animstep].x,way[animstep].y,way[animstep+1].x,way[animstep+1].y);
           animstep++;
           animdelaycount = animdelaystart;
-          repaint( FALSE );
+          repaint();
         }
       }
     }
@@ -698,14 +698,15 @@ void LinesBoard::undo()
   AnimEnd();
   restoreUndo();
   restoreRandomState();
-  repaint( FALSE );
+  repaint();
 }
 
 void LinesBoard::showDemoText(const QString &text)
 {
   if (!demoLabel)
   {
-     demoLabel = new QLabel(0, "demoTip", Qt::WStyle_StaysOnTop | Qt::WStyle_Customize | Qt::WStyle_NoBorder | Qt::WStyle_Tool | Qt::WX11BypassWM );
+     demoLabel = new QLabel(0, Qt::WStyle_StaysOnTop | Qt::WStyle_Customize | Qt::WStyle_NoBorder | Qt::WStyle_Tool | Qt::WX11BypassWM );
+     demoLabel->setObjectName("demoTip");
      demoLabel->setMargin(1);
      demoLabel->setIndent(0);
      demoLabel->setFrameStyle( QFrame::Plain | QFrame::Box );

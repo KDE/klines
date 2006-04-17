@@ -35,7 +35,7 @@ public:
   void saveUndo();
 
 protected:
-  Field(QWidget* parent, const char* name);
+  Field(QWidget* parent);
   ~Field();
 
   void putBall(int x, int y, int color);

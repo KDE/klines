@@ -35,7 +35,7 @@ class MainWidget : public QFrame
   BallPainter *bPainter;
 
 public:
-  MainWidget( QWidget* parent=0, const char* name=0 );
+  MainWidget( QWidget* parent=0 );
   ~MainWidget();
   LinesBoard * GetLsb();
   LinesPrompt * GetPrompt();

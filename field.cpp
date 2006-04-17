@@ -19,8 +19,8 @@
 #include "cfg.h"
 #include "field.moc"
 
-Field::Field(QWidget* parent, const char* name)
-    : QWidget( parent, name )
+Field::Field(QWidget* parent)
+    : QWidget( parent )
 {
   clearField();
 }

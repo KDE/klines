@@ -193,7 +193,8 @@ void KLines::startDemo()
     generateRandomBalls();
 
     demoStep = 0;
-    demoTimer.start(1000, true);
+    demoTimer.setSingleShot(true);
+    demoTimer.start(1000);
 }
 
 void KLines::stopDemo()
@@ -216,7 +217,8 @@ void KLines::slotDemo()
     if ((demoStep % 2) == 0)
     {
        lsb->hideDemoText();
-       demoTimer.start(1000, true);
+       demoTimer.setSingleShot(true);
+       demoTimer.start(1000);
        return;
     }
     if (demoStep == 1)
@@ -379,7 +381,8 @@ void KLines::slotDemo()
     if (!msg.isEmpty())
     {
        lsb->showDemoText(msg);
-       demoTimer.start(3500 + msg.count("\n")*1500, true);
+       demoTimer.setSingleShot(true);
+       demoTimer.start(3500 + msg.count("\n")*1500);
        return;
     }
     if (newBalls)
@@ -400,14 +403,18 @@ void KLines::slotDemo()
        }
 
        updateStat();
-       demoTimer.start(1000, true);
+       demoTimer.setSingleShot(true);
+       demoTimer.start(1000);
        return;
     }
     if (clickX)
     {
        lsb->demoClick(clickX-1, clickY-1);
        if (hasFocus())
-          demoTimer.start(1000, true);
+       {
+           demoTimer.setSingleShot(true);
+           demoTimer.start(1000);
+       }
        return;
     }
 }
@@ -485,7 +492,8 @@ void KLines::makeTurn()
     if (bDemo)
     {
        lsb->adjustDemoMode(false, false);
-       demoTimer.start(100, true);
+       demoTimer.setSingleShot(true);
+       demoTimer.start(100);
     }
     if (lsb->gameOver())
        return;
@@ -521,7 +529,10 @@ void KLines::addScore(int ballsErased)
       lsb->adjustDemoMode(false, false);
       demoStep += 2;
       if (hasFocus())
-         demoTimer.start(100, true);
+      {
+          demoTimer.setSingleShot(true);
+          demoTimer.start(100);
+      }
     }
 }
 
@@ -539,7 +550,7 @@ void KLines::viewHighScore()
 void KLines::endGame()
 {
     lsb->setGameOver(true);
-    lsb->repaint(false);
+    lsb->repaint();
 
     if (bDemo)
        return;
