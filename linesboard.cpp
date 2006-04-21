@@ -52,7 +52,9 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent )
   bPainter = abPainter;
 
   setFocusPolicy( Qt::NoFocus );
-  setBackgroundColor( Qt::gray );
+  QPalette palette;
+  palette.setColor( backgroundRole(), Qt::gray );
+  setPalette(palette);
 
   setMouseTracking( FALSE );
   setFixedSize(wHint(), hHint());
@@ -713,7 +715,7 @@ void LinesBoard::showDemoText(const QString &text)
      demoLabel->setLineWidth( 1 );
      demoLabel->setAlignment( Qt::AlignHCenter | Qt::AlignTop );
      demoLabel->setPalette(QToolTip::palette());
-     demoLabel->polish();
+     demoLabel->ensurePolished();
   }
   demoLabel->setText(text);
   demoLabel->adjustSize();
@@ -744,7 +746,8 @@ void LinesBoard::demoClick(int x, int y)
      kapp->enter_loop();
   }
   QCursor::setPos(dest);
-  QMouseEvent ev(QEvent::MouseButtonPress, lDest, dest, Qt::LeftButton, Qt::LeftButton);
+  QMouseEvent ev(QEvent::MouseButtonPress, lDest, dest,
+		  Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
   mousePressEvent(&ev);
 }
 

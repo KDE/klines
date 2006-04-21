@@ -34,7 +34,8 @@ MainWidget::MainWidget( QWidget* parent )
     lsb = new LinesBoard(bPainter, this);
     grid->addWidget( lsb );
 
-    QBoxLayout *right = new QVBoxLayout(grid);
+    QBoxLayout *right = new QVBoxLayout;
+    grid->addLayout(right);
     right->setMargin(2);
     QLabel *label = new QLabel(i18n("Next balls:"), this);
     lPrompt = new LinesPrompt(bPainter, this);
@@ -44,7 +45,7 @@ MainWidget::MainWidget( QWidget* parent )
     right->addWidget( lPrompt, 0, Qt::AlignTop | Qt::AlignHCenter );
 
     grid->activate();
-    grid->freeze(0,0);
+    grid->setSizeConstraint( QLayout::SetFixedSize );
 
 //    warning("width: %i height: %i", width(), height() );
 

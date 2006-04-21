@@ -26,7 +26,9 @@ LinesPrompt::LinesPrompt( BallPainter * abPainter, QWidget* parent )
   bPainter = abPainter;
 
   setFocusPolicy( Qt::NoFocus );
-  setBackgroundColor( Qt::gray );
+  QPalette palette;
+  palette.setColor( backgroundRole(), Qt::gray );
+  setPalette( palette );
 
   setMouseTracking( FALSE );
   setFixedSize(wPrompt(), hPrompt());
