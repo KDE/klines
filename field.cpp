@@ -184,10 +184,10 @@ int Field::calcPosScore(int x, int y, int whatIf)
    int score = -10;
    int color = field[y][x].getColor();
    field[y][x].setColor(whatIf);
-   score = QMAX(score, calcRun(x, y-4, 0, 1));
-   score = QMAX(score, calcRun(x-4, y-4, 1, 1));
-   score = QMAX(score, calcRun(x-4, y, 1, 0));
-   score = QMAX(score, calcRun(x-4, y+4, 1, -1));
+   score = qMax(score, calcRun(x, y-4, 0, 1));
+   score = qMax(score, calcRun(x-4, y-4, 1, 1));
+   score = qMax(score, calcRun(x-4, y, 1, 0));
+   score = qMax(score, calcRun(x-4, y+4, 1, -1));
    field[y][x].setColor(color);
    return score;
 }
