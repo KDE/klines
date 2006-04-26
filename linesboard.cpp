@@ -191,8 +191,7 @@ void LinesBoard::paintEvent( QPaintEvent* )
     KPixmap *pixmap = 0;
     if (bGameOver)
     {
-       pixmap = new KPixmap();
-       pixmap->resize(width(), height());
+       pixmap = new KPixmap( width(), height() );
        paint = new QPainter( pixmap );
     }
     else
@@ -309,12 +308,12 @@ void LinesBoard::moveFocus(int dx, int dy)
     focusY = (focusY + dy + NUMCELLSH) % NUMCELLSH;
   }
   repaint();
-} 
+}
 
 void LinesBoard::moveLeft()
 {
   moveFocus(-1, 0);
-} 
+}
 
 void LinesBoard::moveRight()
 {
