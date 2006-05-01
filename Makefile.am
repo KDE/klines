@@ -22,6 +22,4 @@ KDE_ICON = klines
 rcdir = $(kde_datadir)/klines
 rc_DATA = klinesui.rc
 
-messages: rc.cpp
-	$(XGETTEXT) *.cpp -o $(podir)/klines.pot;
 
