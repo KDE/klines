@@ -127,11 +127,21 @@ void KLines::initKAction()
   showNumberedAction->setChecked(Prefs::numberedBalls());
   lPrompt->setPrompt(Prefs::showNext());
 
-  (void)new KAction(i18n("Move Left"), Qt::Key_Left, lsb, SLOT(moveLeft()), actionCollection(), "left");
-  (void)new KAction(i18n("Move Right"), Qt::Key_Right, lsb, SLOT(moveRight()), actionCollection(), "right");
-  (void)new KAction(i18n("Move Up"), Qt::Key_Up, lsb, SLOT(moveUp()), actionCollection(), "up");
-  (void)new KAction(i18n("Move Down"), Qt::Key_Down, lsb, SLOT(moveDown()), actionCollection(), "down");
-  (void)new KAction(i18n("Move Ball"), Qt::Key_Space, lsb, SLOT(placePlayerBall()), actionCollection(), "place_ball");
+  KAction *action = new KAction(i18n("Move Left"), actionCollection(), "left");
+  connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveLeft()));
+  action->setShortcut(Qt::Key_Left);
+  action = new KAction(i18n("Move Right"), actionCollection(), "right");
+  connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveRight()));
+  action->setShortcut(Qt::Key_Right);
+  action = new KAction(i18n("Move Up"), actionCollection(), "up");
+  connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveUp()));
+  action->setShortcut(Qt::Key_Up);
+  action = new KAction(i18n("Move Down"), actionCollection(), "down");
+  connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveDown()));
+  action->setShortcut(Qt::Key_Down);
+  action = new KAction(i18n("Move Ball"), actionCollection(), "place_ball");
+  connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(placePlayerBall()));
+  action->setShortcut(Qt::Key_Space);
 
   setupGUI( KMainWindow::Save | Keys | StatusBar | Create );
 }
