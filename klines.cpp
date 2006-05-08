@@ -40,6 +40,7 @@
 #include <kaction.h>
 #include <kstdaction.h>
 #include <kstdgameaction.h>
+#include <ktoggleaction.h>
 
 #include "cfg.h"
 #include "prefs.h"
