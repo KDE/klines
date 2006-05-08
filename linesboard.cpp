@@ -188,10 +188,10 @@ void LinesBoard::setGameOver(bool b)
 void LinesBoard::paintEvent( QPaintEvent* )
 {
     QPainter *paint;
-    KPixmap *pixmap = 0;
+    QPixmap *pixmap = 0;
     if (bGameOver)
     {
-       pixmap = new KPixmap( width(), height() );
+       pixmap = new QPixmap( width(), height() );
        paint = new QPainter( pixmap );
     }
     else
