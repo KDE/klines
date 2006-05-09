@@ -22,10 +22,10 @@
 // The implementation of the KLines widget
 //
 
-#include <qlabel.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
-#include <qstring.h>
+#include <QLabel>
+#include <QPushButton>
+#include <QToolTip>
+#include <QString>
 #include <stdlib.h>
 #include <unistd.h>
 #include <time.h>

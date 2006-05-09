@@ -17,9 +17,9 @@
 
 #include <qevent.h>
 #include <qpainter.h>
-#include <qcolor.h>
+#include <QColor>
 #include <qcursor.h>
-#include <qtooltip.h>
+#include <QToolTip>
 #include <stdlib.h>
 
 #include <kapplication.h>

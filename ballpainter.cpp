@@ -19,7 +19,7 @@
 //#include "shotcounter.h"
 #include <qpainter.h>
 #include "linesboard.h"
-//#include <qcolor.h>
+//#include <QColor>
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <stdlib.h>

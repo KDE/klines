@@ -18,7 +18,7 @@
 #ifndef PROMPT_H
 #define PROMPT_H
 
-#include <qwidget.h>
+#include <QWidget>
 #include "ballpainter.h"
 
 class LinesPrompt : public QWidget

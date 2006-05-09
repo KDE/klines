@@ -18,7 +18,7 @@
 #ifndef MWIDGET_H
 #define MWIDGET_H
 
-#include <qwidget.h>
+#include <QWidget>
 #include <qpixmap.h>
 #include <qtimer.h>
 #include <qframe.h>

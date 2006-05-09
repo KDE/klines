@@ -18,10 +18,10 @@
 #ifndef linesboard_h
 #define linesboard_h
 
-#include <qwidget.h>
+#include <QWidget>
 #include <qpixmap.h>
 #include <qtimer.h>
-#include <qlabel.h>
+#include <QLabel>
 
 #include <krandomsequence.h>
 
