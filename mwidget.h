@@ -20,7 +20,7 @@
 
 #include <QWidget>
 #include <qpixmap.h>
-#include <qtimer.h>
+#include <QTimer>
 #include <qframe.h>
 #include "linesboard.h"
 #include "prompt.h"

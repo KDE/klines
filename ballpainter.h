@@ -18,7 +18,7 @@
 #ifndef BALLPAINTER_H
 #define BALLPAINTER_H
 
-#include <qobject.h>
+#include <QObject>
 #include <qpixmap.h>
 #include "cfg.h"
 
