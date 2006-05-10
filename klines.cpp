@@ -110,11 +110,12 @@ void KLines::initKAction()
   KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
   KStdGameAction::quit(this, SLOT(close()), actionCollection());
   endTurnAction = KStdGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
-  showNextAction = new KToggleAction(i18n("&Show Next"), KShortcut(Qt::CTRL+Qt::Key_P),
-                                this, SLOT(switchPrompt()), actionCollection(), "options_show_next");
+  showNextAction = new KToggleAction(i18n("&Show Next"), actionCollection(), "options_show_next");
+  connect(showNextAction, SIGNAL(triggered(bool) ), SLOT(switchPrompt()));
+  showNextAction->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
   showNextAction->setCheckedState(i18n("Hide Next"));
-  showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), KShortcut(),
-                                this, SLOT(switchNumbered()), actionCollection(), "options_show_numbered");
+  showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), actionCollection(), "options_show_numbered");
+  connect(showNumberedAction, SIGNAL(triggered(bool) ), SLOT(switchNumbered()));
   undoAction = KStdGameAction::undo(this, SLOT(undo()), actionCollection());
 
   levelAction = KStdGameAction::chooseGameType(0, 0, actionCollection());
