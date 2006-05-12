@@ -1,4 +1,3 @@
-kde4_header()
 project(klines)
 include_directories( ${CMAKE_SOURCE_DIR}/libkdegames ${CMAKE_SOURCE_DIR}/libkdegames/highscore  )
 
@@ -35,7 +34,6 @@ install_files( ${DATA_INSTALL_DIR}/klines FILES klinesui.rc )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 
-kde4_footer()
 
 
 
