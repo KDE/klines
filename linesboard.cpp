@@ -24,7 +24,6 @@
 
 #include <kapplication.h>
 #include <klocale.h>
-#include <kpixmap.h>
 #include <kpixmapeffect.h>
 
 #include "linesboard.h"
