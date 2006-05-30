@@ -26,6 +26,7 @@
 #include <QPushButton>
 #include <QToolTip>
 #include <QString>
+#include <QKeyEvent>
 #include <stdlib.h>
 #include <unistd.h>
 #include <time.h>
