@@ -497,7 +497,7 @@ void KLines::undo()
     updateStat();
     lPrompt->SetBalls(nextBalls);
     lsb->undo();
-    switchUndo(FALSE);
+    switchUndo(false);
 }
 
 void KLines::makeTurn()

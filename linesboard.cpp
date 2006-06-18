@@ -55,7 +55,7 @@ LinesBoard::LinesBoard( BallPainter * abPainter, QWidget* parent )
   palette.setColor( backgroundRole(), Qt::gray );
   setPalette(palette);
 
-  setMouseTracking( FALSE );
+  setMouseTracking( false );
   setFixedSize(wHint(), hHint());
 
   timer = new QTimer(this);

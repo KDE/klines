@@ -30,7 +30,7 @@ LinesPrompt::LinesPrompt( BallPainter * abPainter, QWidget* parent )
   palette.setColor( backgroundRole(), Qt::gray );
   setPalette( palette );
 
-  setMouseTracking( FALSE );
+  setMouseTracking( false );
   setFixedSize(wPrompt(), hPrompt());
 
   PromptEnabled = true;
