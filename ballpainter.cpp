@@ -58,8 +58,7 @@ void BallPainter::deletePix()
 
 void BallPainter::createPix()
 {
-  backgroundPix = new QPixmap(
-		locate( "appdata", "field.jpg" ));
+  backgroundPix = new QPixmap( KStandardDirs::locate( "appdata", "field.jpg" ));
   QPixmap *balls = new QPixmap(
 		locate( "appdata", "balls.jpg" ));
   QPixmap *fire = new QPixmap(
