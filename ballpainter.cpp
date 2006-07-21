@@ -14,16 +14,16 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include <kapplication.h>
 #include <kmessagebox.h>
-//#include "shotcounter.h"
-#include <qpainter.h>
-#include "linesboard.h"
-//#include <QColor>
 #include <kstandarddirs.h>
+#include <kapplication.h>
 #include <klocale.h>
-#include <stdlib.h>
 
+#include <QPainter>
+#include <QPixmap>
+
+#include "linesboard.h"
+#include "ballpainter.h"
 #include "prefs.h"
 
 #define PIXSIZE (CELLSIZE - 2)
@@ -65,7 +65,7 @@ void BallPainter::createPix()
 		KStandardDirs::locate( "appdata", "fire.jpg" ));
   if (balls->isNull() ||backgroundPix->isNull() || fire->isNull() ) {
       KMessageBox::error(0, i18n("Unable to find graphics. Check your installation."), i18n("Error"));
-      qApp->exit(1);
+      kapp->exit(1);
       return; // Error
   }
 

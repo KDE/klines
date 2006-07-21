@@ -19,10 +19,11 @@
 #define BALLPAINTER_H
 
 #include <QObject>
-#include <qpixmap.h>
 #include "cfg.h"
 
 #define CELLSIZE 32
+
+class QPixmap;
 
 class BallPainter : public QObject
 {

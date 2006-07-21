@@ -18,16 +18,13 @@
 #ifndef linesboard_h
 #define linesboard_h
 
-#include <QWidget>
-#include <qpixmap.h>
-#include <QTimer>
-#include <QLabel>
-
 #include <krandomsequence.h>
 
 #include "field.h"
-//#include "shotcounter.h"
-#include "ballpainter.h"
+
+class QTimer;
+class QLabel;
+class BallPainter;
 
 class LinesBoard : public Field
 {
@@ -124,7 +121,6 @@ public slots:
 
 protected slots:
   void timerSlot();
-  void demoClickStep();
 };
 
 #endif

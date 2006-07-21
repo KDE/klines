@@ -15,17 +15,20 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <qevent.h>
-#include <qpainter.h>
+#include <QMouseEvent>
+#include <QEventLoop>
+#include <QPainter>
 #include <QColor>
-#include <qcursor.h>
+#include <QCursor>
 #include <QToolTip>
-#include <stdlib.h>
+#include <QTimer>
+#include <QLabel>
 
 #include <kapplication.h>
 #include <klocale.h>
 #include <kpixmapeffect.h>
 
+#include "ballpainter.h"
 #include "linesboard.h"
 #include "linesboard.moc"
 
@@ -740,16 +743,12 @@ void LinesBoard::demoClick(int x, int y)
      QPoint p = cur + i*(dest-cur) / 25;
      QCursor::setPos(p);
      QApplication::flush();
-     QTimer::singleShot(80, this, SLOT(demoClickStep()));
-     kapp->enter_loop();
+     QEventLoop loop(this);
+     QTimer::singleShot(80, &loop, SLOT(quit()));
+     loop.exec();
   }
   QCursor::setPos(dest);
   QMouseEvent ev(QEvent::MouseButtonPress, lDest, dest,
 		  Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
   mousePressEvent(&ev);
-}
-
-void LinesBoard::demoClickStep()
-{
-  kapp->exit_loop();
 }

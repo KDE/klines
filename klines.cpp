@@ -22,30 +22,19 @@
 // The implementation of the KLines widget
 //
 
-#include <QLabel>
-#include <QPushButton>
-#include <QToolTip>
-#include <QString>
 #include <QKeyEvent>
-#include <stdlib.h>
-#include <unistd.h>
-#include <time.h>
 
-#include <kapplication.h>
-#include <kiconloader.h>
-#include <klocale.h>
 #include <kconfig.h>
-#include <kmenubar.h>
-#include <kmenu.h>
+#include <klocale.h>
 #include <kscoredialog.h>
 #include <kaction.h>
 #include <kstdaction.h>
 #include <kstdgameaction.h>
 #include <ktoggleaction.h>
+#include <kstatusbar.h>
 
 #include "cfg.h"
 #include "prefs.h"
-#include <kstatusbar.h>
 #include "klines.moc"
 
 enum { Nb_Levels = 5 };
@@ -133,18 +122,23 @@ void KLines::initKAction()
   KAction *action = new KAction(i18n("Move Left"), actionCollection(), "left");
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveLeft()));
   action->setShortcut(Qt::Key_Left);
+  addAction(action);
   action = new KAction(i18n("Move Right"), actionCollection(), "right");
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveRight()));
   action->setShortcut(Qt::Key_Right);
+  addAction(action);
   action = new KAction(i18n("Move Up"), actionCollection(), "up");
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveUp()));
   action->setShortcut(Qt::Key_Up);
+  addAction(action);
   action = new KAction(i18n("Move Down"), actionCollection(), "down");
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveDown()));
   action->setShortcut(Qt::Key_Down);
+  addAction(action);
   action = new KAction(i18n("Move Ball"), actionCollection(), "place_ball");
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(placePlayerBall()));
   action->setShortcut(Qt::Key_Space);
+  addAction(action);
 
   setupGUI( KMainWindow::Save | Keys | StatusBar | Create );
 }
