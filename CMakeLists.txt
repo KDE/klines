@@ -16,7 +16,7 @@ set(klines_SRCS
 
 kde4_automoc(klines ${klines_SRCS})
 
-kde4_add_kcfg_files(klines_SRCS prefs.kcfgc )
+kde4_add_kcfg_files(klines klines_SRCS prefs.kcfgc )
 
 kde4_add_executable(klines ${klines_SRCS})
 
