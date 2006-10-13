@@ -14,7 +14,7 @@ set(klines_SRCS
    klines.cpp 
    main.cpp )
 
-kde4_automoc(${klines_SRCS})
+kde4_automoc(klines ${klines_SRCS})
 
 kde4_add_kcfg_files(klines_SRCS prefs.kcfgc )
 
