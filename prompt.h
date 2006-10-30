@@ -33,7 +33,7 @@ class LinesPrompt : public QWidget
   void mousePressEvent( QMouseEvent* );
 
 public:
-  LinesPrompt( BallPainter * abPainter, QWidget * parent=0 );
+  explicit LinesPrompt( BallPainter * abPainter, QWidget * parent=0 );
   ~LinesPrompt();
 
   void setPrompt(bool enabled);

@@ -30,7 +30,7 @@ class LinesBoard : public Field
 {
   Q_OBJECT
 public:
-  LinesBoard( BallPainter * abPainter, QWidget* parent=0 );
+  explicit LinesBoard( BallPainter * abPainter, QWidget* parent=0 );
   ~LinesBoard();
 
   int width();
