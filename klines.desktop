@@ -12,5 +12,5 @@ Terminal=false
 Name=Kolor Lines
 Name[fr]=KLines
 Name[x-test]=xxKolor Linesxx
-X-DCOP-ServiceType=Multi
+X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;StrategyGame;
