@@ -19,7 +19,9 @@
 #define PROMPT_H
 
 #include <QWidget>
-#include "ballpainter.h"
+#include "cfg.h"
+
+class BallPainter;
 
 class LinesPrompt : public QWidget
 {
@@ -31,7 +33,6 @@ class LinesPrompt : public QWidget
 
   void paintEvent( QPaintEvent* );
   void mousePressEvent( QMouseEvent* );
-
 public:
   explicit LinesPrompt( BallPainter * abPainter, QWidget * parent=0 );
   ~LinesPrompt();
@@ -40,14 +41,13 @@ public:
   bool getState();  // enabled = true
   void SetBalls( int *pcb );
 
-  int width();
-  int height();
-  int wPrompt();
-  int hPrompt();
+  int width()  const { return CELLSIZE * 3 ; }
+  int height() const { return CELLSIZE ;  }
 
+  int wPrompt() const { return CELLSIZE * 3 ; }
+  int hPrompt() const { return CELLSIZE ;  }
 signals:
   void PromptPressed();
-
 };
 
 #endif

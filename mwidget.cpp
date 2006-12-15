@@ -14,15 +14,15 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-
-#include "mwidget.moc"
-
 #include <klocale.h>
 
 #include <QLabel>
 #include <QLayout>
 
+#include "mwidget.h"
 #include "ballpainter.h"
+#include "linesboard.h"
+#include "prompt.h"
 
 MainWidget::MainWidget( QWidget* parent )
     : QFrame( parent )

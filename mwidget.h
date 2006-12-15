@@ -18,18 +18,14 @@
 #ifndef MWIDGET_H
 #define MWIDGET_H
 
-#include <QWidget>
-#include <qpixmap.h>
-#include <QTimer>
-#include <qframe.h>
-#include "linesboard.h"
-#include "prompt.h"
+#include <QFrame>
 
 class BallPainter;
+class LinesBoard;
+class LinesPrompt;
 
 class MainWidget : public QFrame
 {
-  Q_OBJECT
   LinesBoard * lsb;
   LinesPrompt * lPrompt;
   BallPainter *bPainter;

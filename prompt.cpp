@@ -18,6 +18,7 @@
 #include <qpainter.h>
 #include "prompt.h"
 #include "prompt.moc"
+#include "ballpainter.h"
 
 LinesPrompt::LinesPrompt( BallPainter * abPainter, QWidget* parent )
     : QWidget( parent )
@@ -42,12 +43,6 @@ LinesPrompt::LinesPrompt( BallPainter * abPainter, QWidget* parent )
 LinesPrompt::~LinesPrompt()
 {
 }
-
-int LinesPrompt::width() { return CELLSIZE * 3 ; }
-int LinesPrompt::height() { return CELLSIZE ;  }
-
-int LinesPrompt::wPrompt() { return CELLSIZE * 3 ; }
-int LinesPrompt::hPrompt() { return CELLSIZE ;  }
 
 void LinesPrompt::paintEvent( QPaintEvent* )
 {
