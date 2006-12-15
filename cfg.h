@@ -31,6 +31,7 @@
 #define TIMERCLOCK 25
 #define DEMO_LEVEL -100
 #define DEMO_SEQUENCE 42
+#define CELLSIZE 32
 
 enum Anim
 {

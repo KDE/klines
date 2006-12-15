@@ -23,6 +23,7 @@
 //
 
 #include <QKeyEvent>
+#include <QTimer>
 
 #include <kconfig.h>
 #include <klocale.h>
@@ -33,9 +34,11 @@
 #include <ktoggleaction.h>
 #include <kstatusbar.h>
 
-#include "cfg.h"
+#include "klines.h"
 #include "prefs.h"
-#include "klines.moc"
+#include "linesboard.h"
+#include "mwidget.h"
+#include "prompt.h"
 
 enum { Nb_Levels = 5 };
 static const char *LEVEL[Nb_Levels] = {
@@ -72,7 +75,8 @@ KLines::KLines()
  
   initKAction();
 
-  connect(&demoTimer, SIGNAL(timeout()), this, SLOT(slotDemo()));
+  demoTimer = new QTimer(this);
+  connect(demoTimer, SIGNAL(timeout()), this, SLOT(slotDemo()));
 
   setFocusPolicy(Qt::StrongFocus);
   setFocus();
@@ -140,7 +144,7 @@ void KLines::initKAction()
   action->setShortcut(Qt::Key_Space);
   addAction(action);
 
-  setupGUI( KMainWindow::Save | Keys | StatusBar | Create );
+  setupGUI( Save | Keys | StatusBar | Create );
 }
 
 void KLines::startGame()
@@ -200,15 +204,15 @@ void KLines::startDemo()
     generateRandomBalls();
 
     demoStep = 0;
-    demoTimer.setSingleShot(true);
-    demoTimer.start(1000);
+    demoTimer->setSingleShot(true);
+    demoTimer->start(1000);
 }
 
 void KLines::stopDemo()
 {
     bDemo = false;
     lsb->hideDemoText();
-    demoTimer.stop();
+    demoTimer->stop();
     statusBar()->changeItem(i18n(" Level: %1", i18n("Tutorial - Stopped")), 0);
     act_demo->setText(i18n("Start &Tutorial"));
 }
@@ -224,8 +228,8 @@ void KLines::slotDemo()
     if ((demoStep % 2) == 0)
     {
        lsb->hideDemoText();
-       demoTimer.setSingleShot(true);
-       demoTimer.start(1000);
+       demoTimer->setSingleShot(true);
+       demoTimer->start(1000);
        return;
     }
     if (demoStep == 1)
@@ -388,8 +392,8 @@ void KLines::slotDemo()
     if (!msg.isEmpty())
     {
        lsb->showDemoText(msg);
-       demoTimer.setSingleShot(true);
-       demoTimer.start(3500 + msg.count("\n")*1500);
+       demoTimer->setSingleShot(true);
+       demoTimer->start(3500 + msg.count("\n")*1500);
        return;
     }
     if (newBalls)
@@ -410,8 +414,8 @@ void KLines::slotDemo()
        }
 
        updateStat();
-       demoTimer.setSingleShot(true);
-       demoTimer.start(1000);
+       demoTimer->setSingleShot(true);
+       demoTimer->start(1000);
        return;
     }
     if (clickX)
@@ -419,8 +423,8 @@ void KLines::slotDemo()
        lsb->demoClick(clickX-1, clickY-1);
        if (hasFocus())
        {
-           demoTimer.setSingleShot(true);
-           demoTimer.start(1000);
+           demoTimer->setSingleShot(true);
+           demoTimer->start(1000);
        }
        return;
     }
@@ -431,7 +435,7 @@ void KLines::focusOutEvent(QFocusEvent *ev)
    if (bDemo)
    {
       lsb->hideDemoText();
-      demoTimer.stop();
+      demoTimer->stop();
       statusBar()->changeItem(i18n(" Level: %1", i18n("Tutorial - Paused")), 0);
    }
    KMainWindow::focusOutEvent(ev);
@@ -499,8 +503,8 @@ void KLines::makeTurn()
     if (bDemo)
     {
        lsb->adjustDemoMode(false, false);
-       demoTimer.setSingleShot(true);
-       demoTimer.start(100);
+       demoTimer->setSingleShot(true);
+       demoTimer->start(100);
     }
     if (lsb->gameOver())
        return;
@@ -537,8 +541,8 @@ void KLines::addScore(int ballsErased)
       demoStep += 2;
       if (hasFocus())
       {
-          demoTimer.setSingleShot(true);
-          demoTimer.start(100);
+          demoTimer->setSingleShot(true);
+          demoTimer->start(100);
       }
     }
 }
@@ -600,3 +604,5 @@ void KLines::keyPressEvent(QKeyEvent *e)
     }
     KMainWindow::keyPressEvent(e);
 }
+
+#include "klines.moc"

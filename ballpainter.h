@@ -21,7 +21,6 @@
 #include <QObject>
 #include "cfg.h"
 
-#define CELLSIZE 32
 
 class QPixmap;
 

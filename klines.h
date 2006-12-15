@@ -17,14 +17,15 @@
 #define KLINES_H
 
 #include <kmainwindow.h>
-
-#include "linesboard.h"
-#include "mwidget.h"
-#include "prompt.h"
+#include "cfg.h"
 
 class KSelectAction;
 class KAction;
 class KToggleAction;
+class QTimer;
+class LinesBoard;
+class LinesPrompt;
+class MainWidget;
 
 class KLines : public KMainWindow
 {
@@ -80,7 +81,7 @@ private:
   bool bDemo;
 
   int demoStep;
-  QTimer demoTimer;
+  QTimer *demoTimer;
 
   void searchBallsLine();
   void generateRandomBalls();

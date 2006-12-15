@@ -21,6 +21,7 @@
 #include <krandomsequence.h>
 
 #include "field.h"
+#include "cfg.h"
 
 class QTimer;
 class QLabel;
@@ -33,19 +34,21 @@ public:
   explicit LinesBoard( BallPainter * abPainter, QWidget* parent=0 );
   ~LinesBoard();
 
-  int width();
-  int height();
-  int wHint();
-  int hHint();
+  int width() const { return CELLSIZE * NUMCELLSW; }
+  int height() const { return CELLSIZE * NUMCELLSH; }
+  int wHint() const { return width(); }
+  int hHint() const { return height(); }
+
 //  void doAfterBalls();
   void placeBalls(int nextBalls[BALLSDROP]);
   void undo();
-  bool gameOver() { return bGameOver; }
+  bool gameOver() const { return bGameOver; }
   void setGameOver(bool b);
   int random(int max) { return (level == DEMO_LEVEL) ? rnd_demo.getLong(max) : rnd.getLong(max); }
   void saveRandomState() { rnd_saved = rnd; }
   void restoreRandomState() { rnd = rnd_saved; }
   void setLevel(int _level) { level = _level; }
+
   void startDemoMode();
   void adjustDemoMode(bool allowMove, bool off);
   void showDemoText(const QString &);

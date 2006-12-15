@@ -15,9 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <stdlib.h>
 #include "cfg.h"
-#include "field.moc"
+#include "field.h"
 
 Field::Field(QWidget* parent)
     : QWidget( parent )
@@ -192,3 +191,4 @@ int Field::calcPosScore(int x, int y, int whatIf)
    return score;
 }
 
+#include "field.moc"

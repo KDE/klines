@@ -18,7 +18,6 @@
 #ifndef FIELD_H
 #define FIELD_H
 
-#include <QObject>
 #include <QWidget>
 #include "cell.h"
 // size of game field

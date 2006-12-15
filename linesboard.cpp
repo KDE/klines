@@ -30,7 +30,6 @@
 
 #include "ballpainter.h"
 #include "linesboard.h"
-#include "linesboard.moc"
 
 /*
    Constructs a LinesBoard widget.
@@ -170,14 +169,6 @@ void LinesBoard::placeBall(  )
   repaint(FALSE);
 }
 */
-/*
-   Sets the size of the table
-*/
-
-int LinesBoard::width() { return CELLSIZE * NUMCELLSW; }
-int LinesBoard::height() { return CELLSIZE * NUMCELLSH; }
-int LinesBoard::wHint() { return width(); }
-int LinesBoard::hHint() { return height(); }
 
 void LinesBoard::setGameOver(bool b)
 {
@@ -752,3 +743,5 @@ void LinesBoard::demoClick(int x, int y)
 		  Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
   mousePressEvent(&ev);
 }
+
+#include "linesboard.moc"
