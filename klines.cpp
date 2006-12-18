@@ -29,7 +29,7 @@
 #include <klocale.h>
 #include <kscoredialog.h>
 #include <kaction.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kstdgameaction.h>
 #include <ktoggleaction.h>
 #include <kstatusbar.h>
