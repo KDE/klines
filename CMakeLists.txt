@@ -12,7 +12,10 @@ set(klines_SRCS
    cell.cpp 
    ballpainter.cpp 
    klines.cpp 
-   main.cpp )
+   main.cpp
+   scene.cpp
+   renderer.cpp
+   ballitem.cpp)
 
 kde4_automoc(${klines_SRCS})
 

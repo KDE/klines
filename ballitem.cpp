@@ -20,43 +20,11 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#ifndef BALL_ITEM_H
-#define BALL_ITEM_H
+#include "ballitem.h"
+#include "renderer.h"
 
-#include <QGraphicsPixmapItem>
-#include "commondefs.h"
-
-class QTimeLine;
-class KLinesRenderer;
-
-class BallItem : public QObject, public QGraphicsPixmapItem
+void BallItem::setColor( BallColor c )
 {
-public:
-    BallItem( QGraphicsScene* parent, KLinesRenderer* r );
-
-    void setColor( BallColor c );
-    BallColor color() const { return m_color; }
-    /**
-     *  Starts animation
-     *  @param type type of animation sequence to play
-     */
-    void startAnimation( BallAnimationType type );
-    void stopAnimation();
-private slots:
-    void animFrameChanged(int);
-private:
-    /**
-     *  Renderer used to render ball's pixmaps
-     */
-    KLinesRenderer* m_renderer;
-    /**
-     *  Timeline for controlling animations
-     */
-    QTimeLine *m_timeLine;
-    /**
-     *  Color of the ball
-     */
-    BallColor m_color;
-};
-
-#endif
+    m_color = c;
+    setPixmap( m_renderer->ballPixmap(c) );
+}

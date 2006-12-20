@@ -20,43 +20,37 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#ifndef BALL_ITEM_H
-#define BALL_ITEM_H
+#ifndef KL_SCENE_H
+#define KL_SCENE_H
 
-#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 #include "commondefs.h"
 
-class QTimeLine;
+static const int FIELD_SIZE=9;
+
 class KLinesRenderer;
 
-class BallItem : public QObject, public QGraphicsPixmapItem
+class KLinesScene : public QGraphicsScene
 {
 public:
-    BallItem( QGraphicsScene* parent, KLinesRenderer* r );
+    KLinesScene( QObject *parent );
+    ~KLinesScene();
 
-    void setColor( BallColor c );
-    BallColor color() const { return m_color; }
-    /**
-     *  Starts animation
-     *  @param type type of animation sequence to play
-     */
-    void startAnimation( BallAnimationType type );
-    void stopAnimation();
-private slots:
-    void animFrameChanged(int);
+    void resizeScene( int width, int height );
 private:
-    /**
-     *  Renderer used to render ball's pixmaps
-     */
+    virtual void drawBackground( QPainter*, const QRectF& );
+
+    BallColor m_field[FIELD_SIZE][FIELD_SIZE];
     KLinesRenderer* m_renderer;
-    /**
-     *  Timeline for controlling animations
-     */
-    QTimeLine *m_timeLine;
-    /**
-     *  Color of the ball
-     */
-    BallColor m_color;
+};
+
+class KLinesView : public QGraphicsView
+{
+public:
+    KLinesView( KLinesScene* scene, QWidget *parent );
+private:
+    void resizeEvent(QResizeEvent *);
 };
 
 #endif

@@ -23,13 +23,20 @@
 #ifndef KL_RENDERER_H
 #define KL_RENDERER_H
 
+#include <QPixmap>
+
+#include "commondefs.h"
+
 class KLinesRenderer
 {
 public:
     KLinesRenderer();
-    ~KLinesRenderer();
-    QPixmap ballPixmap( BallItem::Color c ) const;
-    QPixmap animationFrame( BallItem::Color c, BallItem::AnimType t, int frameNo ) const;
+    QPixmap ballPixmap( BallColor c ) const;
+    QPixmap animationFrame( BallColor c, BallAnimationType t, int frameNo ) const;
+    QPixmap backgroundTilePixmap() const;
+private:
+    QPixmap m_ballsPix; // to be removed when SVG comes to us
+    QPixmap m_fieldPix; // to be removed when SVG comes to us
 };
 
 #endif

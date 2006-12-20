@@ -24,6 +24,8 @@
 #include "linesboard.h"
 #include "prompt.h"
 
+#include "scene.h"
+
 MainWidget::MainWidget( QWidget* parent )
     : QFrame( parent )
 {
@@ -32,7 +34,9 @@ MainWidget::MainWidget( QWidget* parent )
     bPainter = new BallPainter();
 
     lsb = new LinesBoard(bPainter, this);
-    grid->addWidget( lsb );
+//    grid->addWidget( lsb );
+    lsb->hide();
+    grid->addWidget( new KLinesView( new KLinesScene(this), this ) );
 
     QBoxLayout *right = new QVBoxLayout;
     grid->addLayout(right);
@@ -43,9 +47,6 @@ MainWidget::MainWidget( QWidget* parent )
 
     right->addWidget( label, 0, Qt::AlignBottom | Qt::AlignHCenter );
     right->addWidget( lPrompt, 0, Qt::AlignTop | Qt::AlignHCenter );
-
-    grid->activate();
-    grid->setSizeConstraint( QLayout::SetFixedSize );
 
 //    warning("width: %i height: %i", width(), height() );
 

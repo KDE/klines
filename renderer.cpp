@@ -20,43 +20,21 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#ifndef BALL_ITEM_H
-#define BALL_ITEM_H
+#include <KStandardDirs>
 
-#include <QGraphicsPixmapItem>
-#include "commondefs.h"
+#include "renderer.h"
 
-class QTimeLine;
-class KLinesRenderer;
-
-class BallItem : public QObject, public QGraphicsPixmapItem
+KLinesRenderer::KLinesRenderer()
 {
-public:
-    BallItem( QGraphicsScene* parent, KLinesRenderer* r );
+    m_fieldPix = QPixmap( KStandardDirs::locate( "appdata", "field.jpg" ));
+}
 
-    void setColor( BallColor c );
-    BallColor color() const { return m_color; }
-    /**
-     *  Starts animation
-     *  @param type type of animation sequence to play
-     */
-    void startAnimation( BallAnimationType type );
-    void stopAnimation();
-private slots:
-    void animFrameChanged(int);
-private:
-    /**
-     *  Renderer used to render ball's pixmaps
-     */
-    KLinesRenderer* m_renderer;
-    /**
-     *  Timeline for controlling animations
-     */
-    QTimeLine *m_timeLine;
-    /**
-     *  Color of the ball
-     */
-    BallColor m_color;
-};
+QPixmap KLinesRenderer::ballPixmap(BallColor) const
+{
+    return QPixmap();
+}
 
-#endif
+QPixmap KLinesRenderer::backgroundTilePixmap() const
+{
+    return m_fieldPix;
+}
