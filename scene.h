@@ -25,11 +25,14 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <KRandomSequence>
+
 #include "commondefs.h"
 
 static const int FIELD_SIZE=9;
 
 class KLinesRenderer;
+class BallItem;
 
 class KLinesScene : public QGraphicsScene
 {
@@ -38,11 +41,37 @@ public:
     ~KLinesScene();
 
     void resizeScene( int width, int height );
+    /**
+     *  Brings in next three balls to scene
+     */
+    void nextThreeBalls();
+    /**
+     *  Creates a ball of random color and places it in random free cell
+     */
+    void placeRandomBall();
+
+    /**
+     *  Field coords to pixel coords
+     */
+    inline QPointF fieldToPix(int fieldX, int fieldY) const {
+        return QPointF( fieldX*32+2, fieldY*32+2 );
+    }
 private:
     virtual void drawBackground( QPainter*, const QRectF& );
+    virtual void mouseReleaseEvent( QGraphicsSceneMouseEvent* );
 
-    BallColor m_field[FIELD_SIZE][FIELD_SIZE];
+    /**
+     *  This array represents the play field.
+     *  Each cell holds the pointer to BallItem
+     *  or 0 if there's no ball in that cell
+     */
+    BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
     KLinesRenderer* m_renderer;
+    KRandomSequence m_randomSeq;
+    /**
+     *  Number of balls currently in field
+     */
+    int m_numBalls;
 };
 
 class KLinesView : public QGraphicsView

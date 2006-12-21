@@ -24,39 +24,59 @@
 #define BALL_ITEM_H
 
 #include <QGraphicsPixmapItem>
+#include <QTimeLine>
+
 #include "commondefs.h"
 
-class QTimeLine;
 class KLinesRenderer;
 
 class BallItem : public QObject, public QGraphicsPixmapItem
 {
+    Q_OBJECT
 public:
-    BallItem( QGraphicsScene* parent, KLinesRenderer* r );
+    BallItem( QGraphicsScene* parent, const KLinesRenderer* r );
 
     void setColor( BallColor c );
     BallColor color() const { return m_color; }
     /**
-     *  Starts animation
+     *  Starts animation.
+     *  When animation will finish, animationFinished() signal 
+     *  will be emitted (except for animation types which are looped)
+     *
      *  @param type type of animation sequence to play
      */
     void startAnimation( BallAnimationType type );
+    /**
+     *  Interrupts current animation
+     */
     void stopAnimation();
+signals:
+    /**
+     *  Emitted when animation finishes.
+     *  If current animation type is looped, this signal won't be emitted
+     */
+    // FIXME dimsuz: implement
+    void animationFinished();
 private slots:
     void animFrameChanged(int);
 private:
     /**
      *  Renderer used to render ball's pixmaps
      */
-    KLinesRenderer* m_renderer;
+    const KLinesRenderer* m_renderer;
     /**
      *  Timeline for controlling animations
      */
-    QTimeLine *m_timeLine;
+    QTimeLine m_timeLine;
     /**
      *  Color of the ball
      */
     BallColor m_color;
+    /**
+     *  Type of running animation
+     * FIXME dimsuz: reset to something like NoAnimation when it isnt running
+     */
+    BallAnimationType m_curAnim;
 };
 
 #endif

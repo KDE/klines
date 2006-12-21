@@ -36,7 +36,10 @@ MainWidget::MainWidget( QWidget* parent )
     lsb = new LinesBoard(bPainter, this);
 //    grid->addWidget( lsb );
     lsb->hide();
-    grid->addWidget( new KLinesView( new KLinesScene(this), this ) );
+    KLinesScene* klscene = new KLinesScene(this);
+    KLinesView* klview = new KLinesView( klscene, this );
+    klview->setCacheMode( QGraphicsView::CacheBackground );
+    grid->addWidget( klview );
 
     QBoxLayout *right = new QVBoxLayout;
     grid->addLayout(right);

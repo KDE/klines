@@ -20,11 +20,46 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
+
 #include "ballitem.h"
 #include "renderer.h"
+
+BallItem::BallItem( QGraphicsScene* parent, const KLinesRenderer* renderer )
+    : QGraphicsPixmapItem( 0, parent ), m_renderer(renderer)
+{
+    m_color = NumColors; // = uninitialized
+    connect(&m_timeLine, SIGNAL(frameChanged(int)), SLOT(animFrameChanged(int)) );
+}
 
 void BallItem::setColor( BallColor c )
 {
     m_color = c;
     setPixmap( m_renderer->ballPixmap(c) );
 }
+
+void BallItem::startAnimation( BallAnimationType type )
+{
+    m_curAnim = type;
+    switch(type)
+    {
+        case SelectedAnimation:
+            m_timeLine.setDuration(500);
+            m_timeLine.setLoopCount(0);
+            m_timeLine.setFrameRange(0, 9);
+            m_timeLine.setCurveShape( QTimeLine::LinearCurve );
+            break;
+    }
+    m_timeLine.start();
+}
+
+void BallItem::animFrameChanged(int frame)
+{
+    switch(m_curAnim)
+    {
+        case SelectedAnimation:
+            setPixmap(m_renderer->animationFrame( m_color, m_curAnim, frame ));
+            break;
+    }
+}
+
+#include "ballitem.moc"

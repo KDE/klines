@@ -24,6 +24,6 @@
 #define COMMON_DEFINES_H
 
 enum BallAnimationType { SelectedAnimation, BornAnimation, BurnAnimation };
-enum BallColor { Red, Green, Blue, Yellow, Violet, Cyan, Brown };
+enum BallColor { Blue=0, Brown, Cyan, Green, Red, Violet, Yellow, NumColors };
 
 #endif

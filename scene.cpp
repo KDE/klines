@@ -25,6 +25,7 @@
 #include <kdebug.h>
 
 #include "scene.h"
+#include "ballitem.h"
 #include "renderer.h"
 
 KLinesView::KLinesView( KLinesScene* scene, QWidget* parent )
@@ -41,10 +42,14 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent)
+    : QGraphicsScene(parent), m_numBalls(0)
 {
     m_renderer = new KLinesRenderer;
+    nextThreeBalls();
 
+    for(int x=0; x<FIELD_SIZE; ++x)
+        for(int y=0; y<FIELD_SIZE; ++y)
+            m_field[x][y] = 0;
 }
 
 KLinesScene::~KLinesScene()
@@ -56,6 +61,47 @@ void KLinesScene::resizeScene(int width,int height)
 {
     kDebug() << "resize:" << width << "," << height << endl;
     setSceneRect( 0, 0, width, height );
+}
+
+void KLinesScene::nextThreeBalls()
+{
+    placeRandomBall();
+    placeRandomBall();
+    placeRandomBall();
+    kDebug() << "=======" << endl;
+}
+
+void KLinesScene::placeRandomBall()
+{
+    int posx = -1, posy = -1;
+    // let's find random free cell
+    do
+    {
+        // FIXME dimsuz: debug temp
+        if( posx != -1 )
+            kDebug() << "pos x:" << posx << " y:" << posy << " isn't free!" << endl;
+        posx = m_randomSeq.getLong(FIELD_SIZE);
+        posy = m_randomSeq.getLong(FIELD_SIZE);
+        kDebug() << "trying x:" << posx << " y:" << posy << endl;
+    } while( m_field[posx][posy] != 0 );
+
+    kDebug() << "found x:" << posx << " y:" << posy << endl;
+    // random color
+    BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
+
+    BallItem* newBall = new BallItem( this, m_renderer );
+    newBall->setColor(c);
+    newBall->setPos( fieldToPix(posx,posy) );
+    m_field[posx][posy] = newBall;
+
+    //newBall->startAnimation( BornAnimation );
+    newBall->startAnimation( SelectedAnimation );
+    m_numBalls++;
+}
+
+void KLinesScene::mouseReleaseEvent( QGraphicsSceneMouseEvent* )
+{
+    nextThreeBalls();
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)

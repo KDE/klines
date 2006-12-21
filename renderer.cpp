@@ -27,11 +27,32 @@
 KLinesRenderer::KLinesRenderer()
 {
     m_fieldPix = QPixmap( KStandardDirs::locate( "appdata", "field.jpg" ));
+    m_ballsPix = QPixmap( KStandardDirs::locate( "appdata", "balls.jpg" ));
 }
 
-QPixmap KLinesRenderer::ballPixmap(BallColor) const
+QPixmap KLinesRenderer::ballPixmap(BallColor color) const
 {
-    return QPixmap();
+    // FIXME dimsuz: copying every time: not very efficient.
+    // FIXME dimsuz: hardcoded "magic" numbers
+    // Switching to svg will make this fixmes obsolete
+    
+    // col, row, width, height - hardcoded. balls.jpg has such a format.
+    return m_ballsPix.copy( 9*30, static_cast<int>(color)*30, 30, 30 );
+}
+
+QPixmap KLinesRenderer::animationFrame( BallColor color, BallAnimationType type, int frameNo ) const
+{
+    // FIXME dimsuz: copying every time: not very efficient.
+    // FIXME dimsuz: hardcoded "magic" numbers
+    // Switching to svg will make this fixmes obsolete
+
+    switch(type)
+    {
+        case SelectedAnimation:
+            return m_ballsPix.copy( frameNo*30, static_cast<int>(color)*30, 30, 30 );
+        default:
+            return QPixmap();
+    }
 }
 
 QPixmap KLinesRenderer::backgroundTilePixmap() const
