@@ -56,9 +56,11 @@ public:
     inline QPointF fieldToPix(int fieldX, int fieldY) const {
         return QPointF( fieldX*32+2, fieldY*32+2 );
     }
+    inline int pixToFieldX( const QPointF& p ) const { return static_cast<int>(p.x()/32); }
+    inline int pixToFieldY( const QPointF& p ) const { return static_cast<int>(p.y()/32); }
 private:
     virtual void drawBackground( QPainter*, const QRectF& );
-    virtual void mouseReleaseEvent( QGraphicsSceneMouseEvent* );
+    virtual void mousePressEvent( QGraphicsSceneMouseEvent* );
 
     /**
      *  This array represents the play field.
@@ -68,6 +70,10 @@ private:
     BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
     KLinesRenderer* m_renderer;
     KRandomSequence m_randomSeq;
+    /**
+     *  Currently selected ball (0 if none)
+     */
+    BallItem *m_selectedBall;
     /**
      *  Number of balls currently in field
      */

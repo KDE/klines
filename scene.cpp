@@ -21,6 +21,7 @@
  *
  ********************************************************************/
 #include <QResizeEvent>
+#include <QGraphicsSceneMouseEvent>
 
 #include <kdebug.h>
 
@@ -42,14 +43,15 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent), m_numBalls(0)
+    : QGraphicsScene(parent), m_selectedBall(0), m_numBalls(0)
 {
     m_renderer = new KLinesRenderer;
-    nextThreeBalls();
 
     for(int x=0; x<FIELD_SIZE; ++x)
         for(int y=0; y<FIELD_SIZE; ++y)
             m_field[x][y] = 0;
+    
+    nextThreeBalls();
 }
 
 KLinesScene::~KLinesScene()
@@ -95,13 +97,22 @@ void KLinesScene::placeRandomBall()
     m_field[posx][posy] = newBall;
 
     //newBall->startAnimation( BornAnimation );
-    newBall->startAnimation( SelectedAnimation );
     m_numBalls++;
 }
 
-void KLinesScene::mouseReleaseEvent( QGraphicsSceneMouseEvent* )
+void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 {
-    nextThreeBalls();
+    int fx = pixToFieldX(ev->scenePos());
+    int fy = pixToFieldY(ev->scenePos());
+
+    if( m_field[fx][fy] )
+    {
+        if( m_selectedBall )
+            m_selectedBall->stopAnimation();
+
+        m_field[fx][fy]->startAnimation( SelectedAnimation );
+        m_selectedBall = m_field[fx][fy];
+    }
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
