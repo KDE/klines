@@ -15,7 +15,8 @@ set(klines_SRCS
    main.cpp
    scene.cpp
    renderer.cpp
-   ballitem.cpp)
+   ballitem.cpp
+   animator.cpp)
 
 kde4_automoc(${klines_SRCS})
 

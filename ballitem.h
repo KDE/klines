@@ -50,6 +50,10 @@ public:
      *  Interrupts current animation
      */
     void stopAnimation();
+
+    // enable use of qgraphicsitem_cast
+    enum { Type = UserType + 1 };
+    virtual int type() const { return Type; }
 signals:
     /**
      *  Emitted when animation finishes.

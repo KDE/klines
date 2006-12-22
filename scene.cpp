@@ -27,6 +27,7 @@
 
 #include "scene.h"
 #include "ballitem.h"
+#include "animator.h"
 #include "renderer.h"
 
 KLinesView::KLinesView( KLinesScene* scene, QWidget* parent )
@@ -46,6 +47,8 @@ KLinesScene::KLinesScene( QObject* parent )
     : QGraphicsScene(parent), m_numBalls(0)
 {
     m_renderer = new KLinesRenderer;
+    m_animator = new KLinesAnimator(this);
+    connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
 
     for(int x=0; x<FIELD_SIZE; ++x)
         for(int y=0; y<FIELD_SIZE; ++y)
@@ -57,6 +60,7 @@ KLinesScene::KLinesScene( QObject* parent )
 KLinesScene::~KLinesScene()
 {
     delete m_renderer;
+    delete m_animator;
 }
 
 void KLinesScene::resizeScene(int width,int height)
@@ -70,24 +74,22 @@ void KLinesScene::nextThreeBalls()
     placeRandomBall();
     placeRandomBall();
     placeRandomBall();
-    kDebug() << "=======" << endl;
 }
 
 void KLinesScene::placeRandomBall()
 {
+    // FIXME dimsuz: in old klines ball positon had score and levels of
+    // difficulty were implemented around it. Check this out and consider implementing
+    // as current pos finding isn't very good - theorectically it can search forever :).
+    // @see linesboard.cpp: placeBall()
     int posx = -1, posy = -1;
     // let's find random free cell
     do
     {
-        // FIXME dimsuz: debug temp
-        if( posx != -1 )
-            kDebug() << "pos x:" << posx << " y:" << posy << " isn't free!" << endl;
         posx = m_randomSeq.getLong(FIELD_SIZE);
         posy = m_randomSeq.getLong(FIELD_SIZE);
-        kDebug() << "trying x:" << posx << " y:" << posy << endl;
     } while( m_field[posx][posy] != 0 );
 
-    kDebug() << "found x:" << posx << " y:" << posy << endl;
     // random color
     BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
 
@@ -117,19 +119,35 @@ void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
         if( m_selPos.isValid() && m_field[fpos.x][fpos.y] == 0 )
         {
             // FIXME dimsuz: check if we have a valid path to desired point
-            // FIXME dimsuz: start animating move, rather than placing immediately
             BallItem *selectedBall = m_field[m_selPos.x][m_selPos.y];
             selectedBall->stopAnimation();
-            selectedBall->setPos( fieldToPix(fpos) );
 
-            m_field[m_selPos.x][m_selPos.y] = 0; // no more ball here
-            m_field[fpos.x][fpos.y] = selectedBall;
+            // start move animation
+            FieldPath p;
+            p.append(m_selPos);
+            p.append(fpos);
 
-            m_selPos.x = m_selPos.y = -1; // invalidate position
-
-            nextThreeBalls();
+            m_animator->startMoveAnimation(p);
         }
     }
+}
+
+void KLinesScene::moveAnimFinished()
+{
+    // m_field[m_selPos.x][m_selPos.y] still holds the ball pointer
+    // but animation placed it to new location.
+    // But it updated only pixel position, not the field one
+    // So let's do it here
+    BallItem *movedBall = m_field[m_selPos.x][m_selPos.y];
+    // movedBall has new pixel position - let's find out corresponding field pos
+    FieldPos newpos = pixToField(movedBall->pos());
+
+    m_field[m_selPos.x][m_selPos.y] = 0; // no more ball here
+    m_field[newpos.x][newpos.y] = movedBall;
+
+    m_selPos.x = m_selPos.y = -1; // invalidate position
+
+    nextThreeBalls();
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
@@ -140,3 +158,5 @@ void KLinesScene::drawBackground(QPainter *p, const QRectF&)
         for(int y=0; y<32*FIELD_SIZE;y+=32)
             p->drawPixmap( x, y, m_renderer->backgroundTilePixmap() );
 }
+
+#include "scene.moc"

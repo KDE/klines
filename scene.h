@@ -32,10 +32,12 @@
 static const int FIELD_SIZE=9;
 
 class KLinesRenderer;
+class KLinesAnimator;
 class BallItem;
 
 class KLinesScene : public QGraphicsScene
 {
+    Q_OBJECT
 public:
     KLinesScene( QObject *parent );
     ~KLinesScene();
@@ -45,28 +47,30 @@ public:
      *  Brings in next three balls to scene
      */
     void nextThreeBalls();
-private:
-    struct FieldPos
-    {
-        int x;
-        int y;
-        FieldPos( int _x=-1, int _y=-1) : x(_x), y(_y) { }
-        bool isValid() const { return (x != -1 && y != -1); }
-    };
-
     /**
-     *  Creates a ball of random color and places it in random free cell
+     *  Returns ballitem in field position pos or 0 if there
+     *  is no item there
      */
-    void placeRandomBall();
-
+    BallItem* ballAt( const FieldPos& pos ) { return m_field[pos.x][pos.y]; }
     /**
      *  Field coords to pixel coords
      */
     inline QPointF fieldToPix(const FieldPos& fpos) const {
         return QPointF( fpos.x*32+2, fpos.y*32+2 );
     }
+    /**
+     *  Pixel coords to field coords
+     */
     inline FieldPos pixToField( const QPointF& p ) const { 
         return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
+
+private slots:
+    void moveAnimFinished();
+private:
+    /**
+     *  Creates a ball of random color and places it in random free cell
+     */
+    void placeRandomBall();
 
     virtual void drawBackground( QPainter*, const QRectF& );
     virtual void mousePressEvent( QGraphicsSceneMouseEvent* );
@@ -78,6 +82,7 @@ private:
      */
     BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
     KLinesRenderer* m_renderer;
+    KLinesAnimator* m_animator;
 
     KRandomSequence m_randomSeq;
 
