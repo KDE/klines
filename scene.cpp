@@ -104,6 +104,9 @@ void KLinesScene::placeRandomBall()
 
 void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 {
+    if( m_animator->isAnimating() )
+        return;
+
     FieldPos fpos = pixToField(ev->scenePos());
 
     if( m_field[fpos.x][fpos.y] ) // ball was selected
@@ -123,11 +126,7 @@ void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
             selectedBall->stopAnimation();
 
             // start move animation
-            FieldPath p;
-            p.append(m_selPos);
-            p.append(fpos);
-
-            m_animator->startMoveAnimation(p);
+            m_animator->animateMove(m_selPos, fpos);
         }
     }
 }
@@ -147,7 +146,122 @@ void KLinesScene::moveAnimFinished()
 
     m_selPos.x = m_selPos.y = -1; // invalidate position
 
+    searchAndErase();
+
     nextThreeBalls();
+
+    searchAndErase();
+}
+
+void KLinesScene::searchAndErase()
+{
+    // FIXME dimsuz: put more comments about bounds in for loops
+    
+    // horizontal chunks searching
+    for(int x=0; x<FIELD_SIZE-4; ++x)
+        for(int y=0;y<FIELD_SIZE; ++y)
+        {
+            if(m_field[x][y] == 0)
+                continue;
+
+            BallColor col = m_field[x][y]->color();
+            int tmpx = x+1;
+            while(tmpx < FIELD_SIZE && m_field[tmpx][y] && m_field[tmpx][y]->color() == col)
+                tmpx++;
+            // tmpx-x will be: how much balls of the same color we found
+            if(tmpx-x >= 5)
+            {
+                for(int i=x; i<tmpx;++i)
+                {
+                    delete m_field[i][y];
+                    m_field[i][y] = 0;
+                }
+            }
+            else
+                continue;
+        }
+
+    // vertical chunks searching
+    for(int y=0; y<FIELD_SIZE-4; ++y)
+        for(int x=0;x<FIELD_SIZE; ++x)
+        {
+            if(m_field[x][y] == 0)
+                continue;
+
+            BallColor col = m_field[x][y]->color();
+            int tmpy = y+1;
+            while(tmpy < FIELD_SIZE && m_field[x][tmpy] && m_field[x][tmpy]->color() == col)
+                tmpy++;
+            // tmpy-y will be: how much balls of the same color we found
+            if(tmpy-y >= 5)
+            {
+                for(int j=y; j<tmpy;++j)
+                {
+                    delete m_field[x][j];
+                    m_field[x][j] = 0;
+                }
+            }
+            else
+                continue;
+        }
+
+    // down-right diagonal
+    for(int x=0; x<FIELD_SIZE-4; ++x)
+        for(int y=0;y<FIELD_SIZE-4; ++y)
+        {
+            if(m_field[x][y] == 0)
+                continue;
+
+            BallColor col = m_field[x][y]->color();
+            int tmpx = x+1;
+            int tmpy = y+1;
+            while(tmpx < FIELD_SIZE && tmpy < FIELD_SIZE && 
+                    m_field[tmpx][tmpy] && m_field[tmpx][tmpy]->color() == col)
+            {
+                tmpx++;
+                tmpy++;
+            }
+            // tmpx-x (and tmpy-y too) will be: how much balls of the same color we found
+            if(tmpx-x >= 5)
+            {
+                for(int i=x,j=y; i<tmpx;++i,++j)
+                {
+                    delete m_field[i][j];
+                    m_field[i][j] = 0;
+                }
+            }
+            else
+                continue;
+        }
+
+    // up-right diagonal
+    for(int x=0; x<FIELD_SIZE-4; ++x)
+        for(int y=5; y<FIELD_SIZE; ++y)
+        {
+            if(m_field[x][y] == 0)
+                continue;
+
+            BallColor col = m_field[x][y]->color();
+            int tmpx = x+1;
+            int tmpy = y-1;
+            while(tmpx < FIELD_SIZE && tmpy >=0 && 
+                    m_field[tmpx][tmpy] && m_field[tmpx][tmpy]->color() == col)
+            {
+                tmpx++;
+                tmpy--;
+            }
+            // tmpx-x (and tmpy-y too) will be: how much balls of the same color we found
+            if(tmpx-x >= 5)
+            {
+                for(int i=x,j=y; i<tmpx;++i,--j)
+                {
+                    delete m_field[i][j];
+                    m_field[i][j] = 0;
+                }
+            }
+            else
+                continue;
+        }
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)

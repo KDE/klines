@@ -31,15 +31,16 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     connect(&m_timeLine, SIGNAL(finished()), SIGNAL(moveFinished()));
 }
 
-void KLinesAnimator::startMoveAnimation( const FieldPath& path )
+void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
 {
-    m_path = path;
+    m_from = from;
+    m_to = to;
 
     m_timeLine.setDuration(300);
-    QPointF p1 = m_scene->fieldToPix(path.first());
-    QPointF p2 = m_scene->fieldToPix(path.last());
+    QPointF p1 = m_scene->fieldToPix(m_from);
+    QPointF p2 = m_scene->fieldToPix(m_to);
 
-    m_movingBall = m_scene->ballAt(path.first());
+    m_movingBall = m_scene->ballAt(m_from);
 
     // FIXME dimsuz: comment
     if(p2.x() - p1.x() != 0)
@@ -52,9 +53,9 @@ void KLinesAnimator::startMoveAnimation( const FieldPath& path )
 
 void KLinesAnimator::animFrameChanged(int frame)
 {
-    QPointF p1 = m_scene->fieldToPix(m_path.first());
-    QPointF p2 = m_scene->fieldToPix(m_path.last());
-    qreal x=0, y = 0;
+    QPointF p1 = m_scene->fieldToPix(m_from);
+    QPointF p2 = m_scene->fieldToPix(m_to);
+    qreal x=0, y=0;
     // FIXME dimsuz: comment
     if(p2.x()-p1.x() != 0)
     {

@@ -71,6 +71,10 @@ private:
      *  Creates a ball of random color and places it in random free cell
      */
     void placeRandomBall();
+    /**
+     *  Searches for 5 or more balls in a row and deletes them from field
+     */
+    void searchAndErase();
 
     virtual void drawBackground( QPainter*, const QRectF& );
     virtual void mousePressEvent( QGraphicsSceneMouseEvent* );

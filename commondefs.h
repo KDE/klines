@@ -36,6 +36,4 @@ struct FieldPos
     bool isValid() const { return (x != -1 && y != -1); }
 };
 
-typedef QList<FieldPos> FieldPath;
-
 #endif

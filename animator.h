@@ -34,7 +34,8 @@ class KLinesAnimator : public QObject
     Q_OBJECT
 public:
     KLinesAnimator( KLinesScene *scene );
-    void startMoveAnimation( const FieldPath& path );
+    void animateMove( const FieldPos& from, const FieldPos& to );
+    bool isAnimating() const { return m_timeLine.state() == QTimeLine::Running; }
 signals:
     void moveFinished();
 private slots:
@@ -42,7 +43,8 @@ private slots:
 private:
     QTimeLine m_timeLine;
     KLinesScene* m_scene;
-    FieldPath m_path;
+    FieldPos m_from;
+    FieldPos m_to;
     BallItem* m_movingBall;
 };
 
