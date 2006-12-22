@@ -34,6 +34,20 @@ public:
     QPixmap ballPixmap( BallColor c ) const;
     QPixmap animationFrame( BallColor c, BallAnimationType t, int frameNo ) const;
     QPixmap backgroundTilePixmap() const;
+
+    inline int numAnimationFrames(BallAnimationType t) const
+    {
+        switch(t)
+        {
+            case SelectedAnimation:
+                return 13;
+            case BornAnimation:
+                return 5;
+            case BurnAnimation:
+                return 4;
+        }
+        return 0;
+    }
 private:
     QPixmap m_ballsPix; // to be removed when SVG comes to us
     QPixmap m_fieldPix; // to be removed when SVG comes to us

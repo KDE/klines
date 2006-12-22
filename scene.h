@@ -45,6 +45,15 @@ public:
      *  Brings in next three balls to scene
      */
     void nextThreeBalls();
+private:
+    struct FieldPos
+    {
+        int x;
+        int y;
+        FieldPos( int _x=-1, int _y=-1) : x(_x), y(_y) { }
+        bool isValid() const { return (x != -1 && y != -1); }
+    };
+
     /**
      *  Creates a ball of random color and places it in random free cell
      */
@@ -53,12 +62,12 @@ public:
     /**
      *  Field coords to pixel coords
      */
-    inline QPointF fieldToPix(int fieldX, int fieldY) const {
-        return QPointF( fieldX*32+2, fieldY*32+2 );
+    inline QPointF fieldToPix(const FieldPos& fpos) const {
+        return QPointF( fpos.x*32+2, fpos.y*32+2 );
     }
-    inline int pixToFieldX( const QPointF& p ) const { return static_cast<int>(p.x()/32); }
-    inline int pixToFieldY( const QPointF& p ) const { return static_cast<int>(p.y()/32); }
-private:
+    inline FieldPos pixToField( const QPointF& p ) const { 
+        return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
+
     virtual void drawBackground( QPainter*, const QRectF& );
     virtual void mousePressEvent( QGraphicsSceneMouseEvent* );
 
@@ -69,11 +78,13 @@ private:
      */
     BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
     KLinesRenderer* m_renderer;
+
     KRandomSequence m_randomSeq;
+
     /**
-     *  Currently selected ball (0 if none)
+     *  Position of selected ball (-1,-1) if none
      */
-    BallItem *m_selectedBall;
+    FieldPos m_selPos;
     /**
      *  Number of balls currently in field
      */

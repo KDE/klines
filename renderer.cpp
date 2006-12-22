@@ -37,7 +37,7 @@ QPixmap KLinesRenderer::ballPixmap(BallColor color) const
     // Switching to svg will make this fixmes obsolete
     
     // col, row, width, height - hardcoded. balls.jpg has such a format.
-    return m_ballsPix.copy( 9*30, static_cast<int>(color)*30, 30, 30 );
+    return m_ballsPix.copy( 7*30, static_cast<int>(color)*30, 30, 30 );
 }
 
 QPixmap KLinesRenderer::animationFrame( BallColor color, BallAnimationType type, int frameNo ) const
@@ -48,6 +48,8 @@ QPixmap KLinesRenderer::animationFrame( BallColor color, BallAnimationType type,
 
     switch(type)
     {
+        case BornAnimation:
+            return m_ballsPix.copy( 13*30 + frameNo*30, static_cast<int>(color)*30, 30, 30 );
         case SelectedAnimation:
             return m_ballsPix.copy( frameNo*30, static_cast<int>(color)*30, 30, 30 );
         default:

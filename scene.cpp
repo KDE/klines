@@ -43,7 +43,7 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent), m_selectedBall(0), m_numBalls(0)
+    : QGraphicsScene(parent), m_numBalls(0)
 {
     m_renderer = new KLinesRenderer;
 
@@ -93,25 +93,42 @@ void KLinesScene::placeRandomBall()
 
     BallItem* newBall = new BallItem( this, m_renderer );
     newBall->setColor(c);
-    newBall->setPos( fieldToPix(posx,posy) );
+    newBall->setPos( fieldToPix( FieldPos(posx,posy) ) );
     m_field[posx][posy] = newBall;
 
-    //newBall->startAnimation( BornAnimation );
+    newBall->startAnimation( BornAnimation );
     m_numBalls++;
 }
 
 void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 {
-    int fx = pixToFieldX(ev->scenePos());
-    int fy = pixToFieldY(ev->scenePos());
+    FieldPos fpos = pixToField(ev->scenePos());
 
-    if( m_field[fx][fy] )
+    if( m_field[fpos.x][fpos.y] ) // ball was selected
     {
-        if( m_selectedBall )
-            m_selectedBall->stopAnimation();
+        if( m_selPos.isValid() )
+            m_field[m_selPos.x][m_selPos.y]->stopAnimation();
 
-        m_field[fx][fy]->startAnimation( SelectedAnimation );
-        m_selectedBall = m_field[fx][fy];
+        m_field[fpos.x][fpos.y]->startAnimation( SelectedAnimation );
+        m_selPos = fpos;
+    }
+    else // move selected ball to new location
+    {
+        if( m_selPos.isValid() && m_field[fpos.x][fpos.y] == 0 )
+        {
+            // FIXME dimsuz: check if we have a valid path to desired point
+            // FIXME dimsuz: start animating move, rather than placing immediately
+            BallItem *selectedBall = m_field[m_selPos.x][m_selPos.y];
+            selectedBall->stopAnimation();
+            selectedBall->setPos( fieldToPix(fpos) );
+
+            m_field[m_selPos.x][m_selPos.y] = 0; // no more ball here
+            m_field[fpos.x][fpos.y] = selectedBall;
+
+            m_selPos.x = m_selPos.y = -1; // invalidate position
+
+            nextThreeBalls();
+        }
     }
 }
 
