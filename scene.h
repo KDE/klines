@@ -53,6 +53,10 @@ public:
      */
     BallItem* ballAt( const FieldPos& pos ) { return m_field[pos.x][pos.y]; }
     /**
+     * Overloaded above function
+     */
+    BallItem* ballAt( int x, int y ) { return m_field[x][y]; }
+    /**
      *  Field coords to pixel coords
      */
     inline QPointF fieldToPix(const FieldPos& fpos) const {

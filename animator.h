@@ -41,6 +41,10 @@ signals:
 private slots:
     void animFrameChanged(int);
 private:
+    /**
+     *  Implements A* pathfinding algorithm.
+     */
+    void findPath(const FieldPos& from, const FieldPos& to);
     QTimeLine m_timeLine;
     KLinesScene* m_scene;
     FieldPos m_from;

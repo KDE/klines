@@ -34,6 +34,10 @@ struct FieldPos
     int y;
     FieldPos( int _x=-1, int _y=-1) : x(_x), y(_y) { }
     bool isValid() const { return (x != -1 && y != -1); }
+    bool operator==(const FieldPos& other)
+    {
+        return (x == other.x && y == other.y);
+    }
 };
 
 #endif
