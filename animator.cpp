@@ -39,6 +39,18 @@ struct PathNode
         : pos(fpos), parent(p), G(g), H(h), F(g+h) { }
 };
 
+// helper function - used in findPath()
+// returns:
+//         -1 - if position not found
+//         index of node in list if position is found
+static inline int indexOfNodeWithPos( const FieldPos& pos, const QList<PathNode*>& list )
+{
+    for(int i=0;i<list.count(); ++i)
+        if( list.at(i)->pos == pos )
+            return i;
+
+    return -1;
+}
 
 KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     : m_scene(scene), m_movingBall(0)
@@ -81,6 +93,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 
     PathNode *curNode=0;
     bool pathFound = false;
+    // see exit conditions at the end of while loop below
     while(true)
     {
         // find the square with lowes F(=G+H) on the open list
@@ -110,7 +123,6 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 
         foreach( FieldPos pos, adjasentSquares )
         {
-
             if( m_scene->ballAt(pos) != 0 ) // skip non-walkable cells
             {
                 kDebug() << "node (" << pos.x << "," << pos.y << ") contains ball - skipping" << endl;
@@ -120,32 +132,18 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
             kDebug() << "looking at adjasent node (" << pos.x << "," << pos.y << ")" << endl;
 
             // skip if closed list contains this square
-            bool found=false;
-            for(int i=0;i<closedList.count(); ++i)
-                if( closedList.at(i)->pos == pos )
-                {
-                    found = true;
-                    break;
-                }
-            if(found)
+            if(indexOfNodeWithPos(pos, closedList) != -1)
             {
                 kDebug() << "node (" << pos.x << "," << pos.y << ") is in closed list - skipping" << endl;
                 continue;
             }
 
             // search for node with position 'pos' in openList
-            PathNode *node = 0;
-            for(int i=0;i<openList.count(); ++i)
-                if( openList.at(i)->pos == pos )
-                {
-                    node = openList.at(i);
-                    break;
-                }
-
-            if(!node) // not found
+            int idx = indexOfNodeWithPos(pos, openList);
+            if(idx == -1) // not found
             {
                 kDebug() << "it is not in open list. adding" << endl;
-                node = new PathNode( pos );
+                PathNode *node = new PathNode( pos );
                 node->parent = curNode;
                 node->G = curNode->G + 10;
                 // h is manhattanLength from node to target square
@@ -157,10 +155,12 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
             }
             else
             {
+                PathNode *node = openList.at(idx);
                 // check if this path to square is better
                 kDebug() << "it is in open list. cheking if this path is better..." << endl;
                 if( curNode->G + 10 < node->G )
                 {
+                    kDebug() << "yup, it's better. recalculating..." << endl;
                     // yup, it's better, reparent and recalculate G,F
                     node->parent = curNode;
                     node->G = curNode->G + 10;
@@ -173,18 +173,12 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
         // exit conditions:
         // a) if closeList contains "to"
         // b) we can't find "to" in closedList and openlist is empty => no path exists
-        bool found=false;
-        for(int i=0;i<closedList.count(); ++i)
-            if( closedList.at(i)->pos == to )
-            {
-                found = true;
-                // let's save last node in curNode variable
-                curNode = closedList.at(i);
-                break;
-            }
-        if(found)
+        int idx = indexOfNodeWithPos(to, closedList);
+        if(idx != -1)
         {
             pathFound = true;
+            // let's save last node in curNode variable
+            curNode = closedList.at(idx);
             break; // while
         }
         else if(openList.isEmpty())
