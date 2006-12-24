@@ -25,7 +25,6 @@
 
 #include <QList>
 
-enum BallAnimationType { SelectedAnimation, BornAnimation, BurnAnimation };
 enum BallColor { Blue=0, Brown, Cyan, Green, Red, Violet, Yellow, NumColors };
 
 struct FieldPos

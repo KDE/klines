@@ -35,20 +35,32 @@ class KLinesAnimator : public QObject
 public:
     KLinesAnimator( KLinesScene *scene );
     void animateMove( const FieldPos& from, const FieldPos& to );
-    bool isAnimating() const { return m_timeLine.state() == QTimeLine::Running; }
+    void animateRemove( const QList<BallItem*>& list );
+    void animateBorn( const QList<BallItem*>& list );
+    bool isAnimating() const;
 signals:
     void moveFinished();
+    void removeFinished();
+    void bornFinished();
 private slots:
-    void animFrameChanged(int);
+    void moveAnimationFrame(int);
+    void removeAnimationFrame(int);
+    void bornAnimationFrame(int);
 private:
     /**
      *  Implements A* pathfinding algorithm.
      */
     void findPath(const FieldPos& from, const FieldPos& to);
-    QTimeLine m_timeLine;
+
+    QTimeLine m_moveTimeLine;
+    QTimeLine m_removeTimeLine;
+    QTimeLine m_bornTimeLine;
+
     KLinesScene* m_scene;
     BallItem* m_movingBall;
     QList<FieldPos> m_foundPath;
+    QList<BallItem*> m_removedBalls;
+    QList<BallItem*> m_bornBalls;
 };
 
 #endif

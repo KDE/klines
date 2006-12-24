@@ -39,28 +39,17 @@ public:
     void setColor( BallColor c );
     BallColor color() const { return m_color; }
     /**
-     *  Starts animation.
-     *  When animation will finish, animationFinished() signal 
-     *  will be emitted (except for animation types which are looped)
-     *
-     *  @param type type of animation sequence to play
+     * Starts "Selected" animation
      */
-    void startAnimation( BallAnimationType type );
+    void startSelectedAnimation();
     /**
-     *  Interrupts current animation
+     *  Interrupts animation
      */
     void stopAnimation();
 
     // enable use of qgraphicsitem_cast
     enum { Type = UserType + 1 };
     virtual int type() const { return Type; }
-signals:
-    /**
-     *  Emitted when animation finishes.
-     *  If current animation type is looped, this signal won't be emitted
-     */
-    // FIXME dimsuz: implement
-    void animationFinished();
 private slots:
     void animFrameChanged(int);
 private:
@@ -76,11 +65,6 @@ private:
      *  Color of the ball
      */
     BallColor m_color;
-    /**
-     *  Type of running animation
-     * FIXME dimsuz: reset to something like NoAnimation when it isnt running
-     */
-    BallAnimationType m_curAnim;
 };
 
 #endif

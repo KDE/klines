@@ -23,6 +23,7 @@
 #include "animator.h"
 #include "scene.h"
 #include "ballitem.h"
+#include "renderer.h"
 
 #include <kdebug.h>
 #include <math.h> // for pow, sqrt
@@ -55,8 +56,31 @@ static inline int indexOfNodeWithPos( const FieldPos& pos, const QList<PathNode*
 KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     : m_scene(scene), m_movingBall(0)
 {
-    connect(&m_timeLine, SIGNAL(frameChanged(int)), SLOT(animFrameChanged(int)) );
-    connect(&m_timeLine, SIGNAL(finished()), SIGNAL(moveFinished()));
+    connect(&m_moveTimeLine, SIGNAL(frameChanged(int)), SLOT(moveAnimationFrame(int)) );
+    connect(&m_moveTimeLine, SIGNAL(finished()), SIGNAL(moveFinished()));
+
+    m_removeTimeLine.setDuration(200);
+    m_removeTimeLine.setCurveShape(QTimeLine::LinearCurve);
+    // we setup here one 'empty' frame at the end, because without it
+    // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
+    // that last frame won't get shown in the scene
+    m_removeTimeLine.setFrameRange(0, m_scene->renderer()->numFireFrames());
+
+    connect(&m_removeTimeLine, SIGNAL(frameChanged(int)), SLOT(removeAnimationFrame(int)) );
+    connect(&m_removeTimeLine, SIGNAL(finished()), SIGNAL(removeFinished()));
+
+    m_bornTimeLine.setDuration(200);
+    m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
+    m_bornTimeLine.setFrameRange(0, m_scene->renderer()->numBornFrames()-1);
+
+    connect(&m_bornTimeLine, SIGNAL(frameChanged(int)), SLOT(bornAnimationFrame(int)) );
+    connect(&m_bornTimeLine, SIGNAL(finished()), SIGNAL(bornFinished()));
+}
+
+bool KLinesAnimator::isAnimating() const
+{
+    return (m_moveTimeLine.state() == QTimeLine::Running
+            || m_removeTimeLine.state() == QTimeLine::Running);
 }
 
 void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
@@ -72,15 +96,34 @@ void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
     int numPoints = m_foundPath.count();
     // there will be numPoints-1 intervals of
     // movement (interval=cell). We want each of them to take 100ms
-    m_timeLine.setDuration((numPoints-1)*100);
+    m_moveTimeLine.setDuration((numPoints-1)*100);
     // FIXME dimsuz: 30 <=> m_scene->ballSize() or smth like that
     // each interval will take 30 frames
-    m_timeLine.setFrameRange(0, (numPoints-1)*30);
-    m_timeLine.setCurrentTime(0);
-    m_timeLine.start();
+    m_moveTimeLine.setFrameRange(0, (numPoints-1)*30);
+    m_moveTimeLine.setCurrentTime(0);
+    m_moveTimeLine.start();
 }
 
-void KLinesAnimator::animFrameChanged(int frame)
+void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
+{
+    if(list.isEmpty())
+    {
+        emit removeFinished();
+        return;
+    }
+
+    m_removeTimeLine.stop();
+    m_removedBalls = list;
+    m_removeTimeLine.start();
+}
+
+void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
+{
+    m_bornBalls = list;
+    m_bornTimeLine.start();
+}
+
+void KLinesAnimator::moveAnimationFrame(int frame)
 {
     int intervalNum = frame/30;
 
@@ -113,6 +156,20 @@ void KLinesAnimator::animFrameChanged(int frame)
     QPointF pos = m_scene->fieldToPix(from);
     m_movingBall->setPos( pos.x()+kx*frameWithinInterval,
                           pos.y()+ky*frameWithinInterval );
+}
+
+void KLinesAnimator::removeAnimationFrame(int frame)
+{
+    if(frame == m_scene->renderer()->numFireFrames())
+        return;
+    foreach(BallItem* ball, m_removedBalls)
+        ball->setPixmap( m_scene->renderer()->firePixmap(frame) );
+}
+
+void KLinesAnimator::bornAnimationFrame(int frame)
+{
+    foreach(BallItem* ball, m_bornBalls)
+        ball->setPixmap( m_scene->renderer()->bornPixmap(ball->color(), frame) );
 }
 
 void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )

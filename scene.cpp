@@ -49,6 +49,8 @@ KLinesScene::KLinesScene( QObject* parent )
     m_renderer = new KLinesRenderer;
     m_animator = new KLinesAnimator(this);
     connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
+    connect( m_animator, SIGNAL(removeFinished()), SLOT(removeAnimFinished() ) );
+    connect( m_animator, SIGNAL(bornFinished()), SLOT(bornAnimFinished() ) );
 
     for(int x=0; x<FIELD_SIZE; ++x)
         for(int y=0; y<FIELD_SIZE; ++y)
@@ -71,12 +73,15 @@ void KLinesScene::resizeScene(int width,int height)
 
 void KLinesScene::nextThreeBalls()
 {
-    placeRandomBall();
-    placeRandomBall();
-    placeRandomBall();
+    QList<BallItem*> newItems;
+    newItems.append( placeRandomBall() );
+    newItems.append( placeRandomBall() );
+    newItems.append( placeRandomBall() );
+
+    m_animator->animateBorn( newItems );
 }
 
-void KLinesScene::placeRandomBall()
+BallItem* KLinesScene::placeRandomBall()
 {
     // FIXME dimsuz: in old klines ball positon had score and levels of
     // difficulty were implemented around it. Check this out and consider implementing
@@ -97,9 +102,8 @@ void KLinesScene::placeRandomBall()
     newBall->setColor(c);
     newBall->setPos( fieldToPix( FieldPos(posx,posy) ) );
     m_field[posx][posy] = newBall;
-
-    newBall->startAnimation( BornAnimation );
     m_numBalls++;
+    return newBall;
 }
 
 void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
@@ -114,7 +118,7 @@ void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
         if( m_selPos.isValid() )
             m_field[m_selPos.x][m_selPos.y]->stopAnimation();
 
-        m_field[fpos.x][fpos.y]->startAnimation( SelectedAnimation );
+        m_field[fpos.x][fpos.y]->startSelectedAnimation();
         m_selPos = fpos;
     }
     else // move selected ball to new location
@@ -122,6 +126,7 @@ void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
         if( m_selPos.isValid() && m_field[fpos.x][fpos.y] == 0 )
         {
             // start move animation
+            // slot moveAnimFinished() will be called when it finishes
             m_animator->animateMove(m_selPos, fpos);
         }
     }
@@ -142,10 +147,45 @@ void KLinesScene::moveAnimFinished()
 
     m_selPos.x = m_selPos.y = -1; // invalidate position
 
+    kDebug() << "calling sae1" << endl;
+    m_placeBallsAfterErase = true;
+    // after anim finished, slot removeAnimFinished()
+    // will be called
     searchAndErase();
+}
 
-    nextThreeBalls();
+void KLinesScene::removeAnimFinished()
+{
+    qDeleteAll( m_itemsToDelete );
+    m_itemsToDelete.clear();
 
+    if(m_placeBallsAfterErase)
+        // slot bornAnimFinished() will be called
+        // when born animation finishes
+        nextThreeBalls();
+    else
+    {
+        // it is needed after qDeleteAll()
+        // as an optimisation we may update only rects
+        // in which items from m_itemsToDelete were before
+        // deletion
+        update();
+    }
+}
+
+void KLinesScene::bornAnimFinished()
+{
+    // There's a little trick here:
+    // searchAndErase() will cause m_animator to emit removeFinished()
+    // If there wasn't m_placeBallsAfterErase var
+    // it would cause an infinite loop like this:
+    // SaE()->removeAnimFinished()->next3Balls()->bornAnimFinished()->
+    // SaE()->removeAnimFinished()->next3Balls()->...
+    // etc etc
+    m_placeBallsAfterErase = false;
+    // after placing new balls new 5-in-a-row chunks can occur
+    // so we need to check for them
+    kDebug() << "calling sae2" << endl;
     searchAndErase();
 }
 
@@ -169,7 +209,7 @@ void KLinesScene::searchAndErase()
             {
                 for(int i=x; i<tmpx;++i)
                 {
-                    delete m_field[i][y];
+                    m_itemsToDelete.append(m_field[i][y]);
                     m_field[i][y] = 0;
                 }
             }
@@ -193,7 +233,7 @@ void KLinesScene::searchAndErase()
             {
                 for(int j=y; j<tmpy;++j)
                 {
-                    delete m_field[x][j];
+                    m_itemsToDelete.append(m_field[x][j]);
                     m_field[x][j] = 0;
                 }
             }
@@ -222,7 +262,7 @@ void KLinesScene::searchAndErase()
             {
                 for(int i=x,j=y; i<tmpx;++i,++j)
                 {
-                    delete m_field[i][j];
+                    m_itemsToDelete.append(m_field[i][j]);
                     m_field[i][j] = 0;
                 }
             }
@@ -251,13 +291,16 @@ void KLinesScene::searchAndErase()
             {
                 for(int i=x,j=y; i<tmpx;++i,--j)
                 {
-                    delete m_field[i][j];
+                    m_itemsToDelete.append(m_field[i][j]);
                     m_field[i][j] = 0;
                 }
             }
             else
                 continue;
         }
+
+    // after it finishes slot removeAnimFinished() will be called
+    m_animator->animateRemove( m_itemsToDelete );
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)

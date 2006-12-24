@@ -57,6 +57,10 @@ public:
      */
     BallItem* ballAt( int x, int y ) { return m_field[x][y]; }
     /**
+     *  Returns games' renderer
+     */
+    const KLinesRenderer* renderer() const  { return m_renderer; }
+    /**
      *  Field coords to pixel coords
      */
     inline QPointF fieldToPix(const FieldPos& fpos) const {
@@ -70,11 +74,14 @@ public:
 
 private slots:
     void moveAnimFinished();
+    void removeAnimFinished();
+    void bornAnimFinished();
 private:
     /**
      *  Creates a ball of random color and places it in random free cell
+     *  @return ball placed
      */
-    void placeRandomBall();
+    BallItem* placeRandomBall();
     /**
      *  Searches for 5 or more balls in a row and deletes them from field
      */
@@ -89,7 +96,7 @@ private:
      *  or 0 if there's no ball in that cell
      */
     BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
-    KLinesRenderer* m_renderer;
+    const KLinesRenderer* m_renderer;
     KLinesAnimator* m_animator;
 
     KRandomSequence m_randomSeq;
@@ -102,6 +109,15 @@ private:
      *  Number of balls currently in field
      */
     int m_numBalls;
+    /**
+     *  Varable which is needed for little trick (tm).
+     *  Read more about it in removeAnimFinished() slot
+     */
+    bool m_placeBallsAfterErase;
+    /**
+     *  Items pending for removal after remove-anim finishes
+     */
+    QList<BallItem*> m_itemsToDelete;
 };
 
 class KLinesView : public QGraphicsView
