@@ -121,10 +121,6 @@ void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
     {
         if( m_selPos.isValid() && m_field[fpos.x][fpos.y] == 0 )
         {
-            // FIXME dimsuz: check if we have a valid path to desired point
-            BallItem *selectedBall = m_field[m_selPos.x][m_selPos.y];
-            selectedBall->stopAnimation();
-
             // start move animation
             m_animator->animateMove(m_selPos, fpos);
         }

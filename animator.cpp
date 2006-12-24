@@ -62,22 +62,57 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
 void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
 {
     findPath(from, to);
-    m_from = from;
-    m_to = to;
 
-    m_timeLine.setDuration(300);
-    QPointF p1 = m_scene->fieldToPix(m_from);
-    QPointF p2 = m_scene->fieldToPix(m_to);
+    if(m_foundPath.isEmpty())
+        return;
 
-    m_movingBall = m_scene->ballAt(m_from);
+    m_movingBall = m_scene->ballAt(from);
+    m_movingBall->stopAnimation();
 
-    // FIXME dimsuz: comment
-    if(p2.x() - p1.x() != 0)
-        m_timeLine.setFrameRange(static_cast<int>(p1.x()), static_cast<int>(p2.x()));
-    else
-        m_timeLine.setFrameRange(static_cast<int>(p1.y()), static_cast<int>(p2.y()));
-
+    int numPoints = m_foundPath.count();
+    // there will be numPoints-1 intervals of
+    // movement (interval=cell). We want each of them to take 100ms
+    m_timeLine.setDuration((numPoints-1)*100);
+    // FIXME dimsuz: 30 <=> m_scene->ballSize() or smth like that
+    // each interval will take 30 frames
+    m_timeLine.setFrameRange(0, (numPoints-1)*30);
+    m_timeLine.setCurrentTime(0);
     m_timeLine.start();
+}
+
+void KLinesAnimator::animFrameChanged(int frame)
+{
+    int intervalNum = frame/30;
+
+    if(intervalNum == m_foundPath.count()-1)
+    {
+        m_movingBall->setPos(m_scene->fieldToPix(m_foundPath.last()));
+        return;
+    }
+    // determine direction of movement on this interval
+    int kx=0, ky=0;
+
+    FieldPos from = m_foundPath.at(intervalNum);
+    FieldPos to = m_foundPath.at(intervalNum+1);
+
+    if( to.x - from.x > 0 )
+        kx = 1;
+    else if( to.x - from.x < 0 )
+        kx = -1;
+    else
+        kx = 0;
+
+    if( to.y - from.y > 0 )
+        ky = 1;
+    else if( to.y - from.y < 0 )
+        ky = -1;
+    else
+        ky = 0;
+
+    int frameWithinInterval = frame%30;
+    QPointF pos = m_scene->fieldToPix(from);
+    m_movingBall->setPos( pos.x()+kx*frameWithinInterval,
+                          pos.y()+ky*frameWithinInterval );
 }
 
 void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
@@ -89,6 +124,8 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
     QList<PathNode*> openList;
     QList<PathNode*> closedList;
 
+    m_foundPath.clear();
+
     openList.append( new PathNode(from) );
 
     PathNode *curNode=0;
@@ -99,10 +136,9 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
         // find the square with lowes F(=G+H) on the open list
         PathNode *minF = openList.at(0);
         for(int i=1; i<openList.count(); ++i)
-        {
             if( openList.at(i)->F < minF->F )
                 minF = openList.at(i);
-        }
+
         kDebug() << "minF:" << minF->F << endl;
         // move it to closed list
         closedList.append(minF);
@@ -172,7 +208,8 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 
         // exit conditions:
         // a) if closeList contains "to"
-        // b) we can't find "to" in closedList and openlist is empty => no path exists
+        // b) we can't find "to" in closedList and openlist is empty 
+        //    => no path exists
         int idx = indexOfNodeWithPos(to, closedList);
         if(idx != -1)
         {
@@ -197,30 +234,12 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
         while(node)
         {
             kDebug() << "(" << node->pos.x << "," << node->pos.y << ")" << endl;
+            m_foundPath.prepend( node->pos );
             node = node->parent;
         }
     }
     else
         kDebug() << "no path found!" << endl;
-}
-
-void KLinesAnimator::animFrameChanged(int frame)
-{
-    QPointF p1 = m_scene->fieldToPix(m_from);
-    QPointF p2 = m_scene->fieldToPix(m_to);
-    qreal x=0, y=0;
-    // FIXME dimsuz: comment
-    if(p2.x()-p1.x() != 0)
-    {
-        x = frame;
-        y = (frame-p1.x()) * (p2.y()-p1.y()) / (p2.x()-p1.x()) + p1.y();
-    }
-    else
-    {
-        x = p2.x();
-        y = frame;
-    }
-    m_movingBall->setPos(x,y);
 }
 
 #include "animator.moc"

@@ -47,9 +47,8 @@ private:
     void findPath(const FieldPos& from, const FieldPos& to);
     QTimeLine m_timeLine;
     KLinesScene* m_scene;
-    FieldPos m_from;
-    FieldPos m_to;
     BallItem* m_movingBall;
+    QList<FieldPos> m_foundPath;
 };
 
 #endif
