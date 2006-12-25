@@ -156,15 +156,16 @@ void KLinesScene::moveAnimFinished()
 
 void KLinesScene::removeAnimFinished()
 {
-    qDeleteAll( m_itemsToDelete );
-    m_itemsToDelete.clear();
-
-    if(m_placeBallsAfterErase)
+    if(m_itemsToDelete.isEmpty() && m_placeBallsAfterErase)
+    {
         // slot bornAnimFinished() will be called
         // when born animation finishes
         nextThreeBalls();
+    }
     else
     {
+        qDeleteAll( m_itemsToDelete );
+        m_itemsToDelete.clear();
         // it is needed after qDeleteAll()
         // as an optimisation we may update only rects
         // in which items from m_itemsToDelete were before
@@ -272,7 +273,7 @@ void KLinesScene::searchAndErase()
 
     // up-right diagonal
     for(int x=0; x<FIELD_SIZE-4; ++x)
-        for(int y=5; y<FIELD_SIZE; ++y)
+        for(int y=4; y<FIELD_SIZE; ++y)
         {
             if(m_field[x][y] == 0)
                 continue;

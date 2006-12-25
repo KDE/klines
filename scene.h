@@ -35,13 +35,19 @@ class KLinesRenderer;
 class KLinesAnimator;
 class BallItem;
 
+/**
+ *  Displays and drives the game
+ */
 class KLinesScene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    KLinesScene( QObject *parent );
+    explicit KLinesScene( QObject *parent );
     ~KLinesScene();
 
+    /**
+     *  Resizes scene
+     */
     void resizeScene( int width, int height );
     /**
      *  Brings in next three balls to scene
@@ -96,11 +102,19 @@ private:
      *  or 0 if there's no ball in that cell
      */
     BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
+    /**
+     *  Renderer used to get all the game graphics
+     */
     const KLinesRenderer* m_renderer;
+    /**
+     *  Used to start game animations
+     *  This object knows how to do some ball animations
+     */
     KLinesAnimator* m_animator;
-
+    /**
+     * We need random numbers in this game
+     */
     KRandomSequence m_randomSeq;
-
     /**
      *  Position of selected ball (-1,-1) if none
      */

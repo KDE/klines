@@ -29,14 +29,38 @@
 class KLinesScene;
 class BallItem;
 
+/**
+ *  Drives KLines animations
+ */
 class KLinesAnimator : public QObject
 {
     Q_OBJECT
 public:
-    KLinesAnimator( KLinesScene *scene );
+    explicit KLinesAnimator( KLinesScene *scene );
+    /**
+     *  Starts animation of ball movement.
+     *  When animation finishes moveFinished() signal is emitted
+     *  @param from starting field position
+     *  @param to   target field position
+     */
     void animateMove( const FieldPos& from, const FieldPos& to );
+    /**
+     *  Starts animation of ball deletion from field.
+     *  Note that it doesn't do actual deletion - it just runs
+     *  animation of deletion.
+     *  When animation finishes removeFinished() signal is emitted
+     *  @param list list of balls to 'remove'
+     */
     void animateRemove( const QList<BallItem*>& list );
+    /**
+     *  Starts animation of ball movement.
+     *  When animation finishes bornFinished() signal is emitted
+     *  @param list list of balls to be 'born'
+     */
     void animateBorn( const QList<BallItem*>& list );
+    /**
+     *  @returns whether some animation is in progress
+     */
     bool isAnimating() const;
 signals:
     void moveFinished();
@@ -51,15 +75,37 @@ private:
      *  Implements A* pathfinding algorithm.
      */
     void findPath(const FieldPos& from, const FieldPos& to);
-
+    /**
+     *  Timeline used to control movement animation
+     */
     QTimeLine m_moveTimeLine;
+    /**
+     *  Timeline used to control deletion animation
+     */
     QTimeLine m_removeTimeLine;
+    /**
+     *  Timeline used to control birth animation
+     */
     QTimeLine m_bornTimeLine;
-
+    /**
+     *  Scene on which animations are played
+     */
     KLinesScene* m_scene;
+    /**
+     *  Ball object used while animating movement
+     */
     BallItem* m_movingBall;
+    /**
+     *  findPath() algorithm stores found path in this variable
+     */
     QList<FieldPos> m_foundPath;
+    /**
+     *  Balls for which 'remove' animation is played
+     */
     QList<BallItem*> m_removedBalls;
+    /**
+     *  Balls for which 'born' animation is played
+     */
     QList<BallItem*> m_bornBalls;
 };
 

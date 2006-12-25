@@ -30,13 +30,21 @@
 
 class KLinesRenderer;
 
+/**
+ *  QGraphicsItem for Ball
+ */
 class BallItem : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
     BallItem( QGraphicsScene* parent, const KLinesRenderer* r );
-
+    /**
+     *  Sets ball's color
+     */
     void setColor( BallColor c );
+    /**
+     *  @return color of the ball
+     */
     BallColor color() const { return m_color; }
     /**
      * Starts "Selected" animation
