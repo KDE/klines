@@ -55,6 +55,14 @@ KLinesScene::KLinesScene( QObject* parent )
     for(int x=0; x<FIELD_SIZE; ++x)
         for(int y=0; y<FIELD_SIZE; ++y)
             m_field[x][y] = 0;
+
+    // init m_nextColors
+    for(int i=0; i<3; i++)
+    {
+        // random color
+        BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
+        m_nextColors.append(c);
+    }
     
     nextThreeBalls();
 }
@@ -77,17 +85,26 @@ void KLinesScene::nextThreeBalls()
     BallItem* newBall;
     for(int i=0; i<3; i++)
     {
-        newBall = placeRandomBall();
+        newBall = randomlyPlaceBall( m_nextColors.at(i) );
         if( newBall )
             newItems.append(newBall);
         else
             break; // the field is filled :).
     }
 
+    for(int i=0; i<3; i++)
+    {
+        // random color
+        BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
+        m_nextColors[i] = c;
+    }
+
+    emit nextColorsChanged();
+
     m_animator->animateBorn( newItems );
 }
 
-BallItem* KLinesScene::placeRandomBall()
+BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
 {
     m_numFreeCells--;
     if(m_numFreeCells < 0)
@@ -104,9 +121,6 @@ BallItem* KLinesScene::placeRandomBall()
         posx = m_randomSeq.getLong(FIELD_SIZE);
         posy = m_randomSeq.getLong(FIELD_SIZE);
     } while( m_field[posx][posy] != 0 );
-
-    // random color
-    BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
 
     BallItem* newBall = new BallItem( this, m_renderer );
     newBall->setColor(c);

@@ -50,6 +50,10 @@ public:
      */
     void resizeScene( int width, int height );
     /**
+     *  Returns colors of the 3 balls in the next turn
+     */
+    QList<BallColor> nextColors() const { return m_nextColors; }
+    /**
      *  Brings in next three balls to scene
      */
     void nextThreeBalls();
@@ -79,6 +83,7 @@ public:
         return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
 signals:
     void scoreChanged(int);
+    void nextColorsChanged();
     void gameOver(int);
 private slots:
     void moveAnimFinished();
@@ -86,10 +91,11 @@ private slots:
     void bornAnimFinished();
 private:
     /**
-     *  Creates a ball of random color and places it in random free cell
+     *  Creates a ball and places it in random free cell
+     *  @param c color of the ball
      *  @return ball placed
      */
-    BallItem* placeRandomBall();
+    BallItem* randomlyPlaceBall(BallColor c);
     /**
      *  Searches for 5 or more balls in a row and deletes them from field
      */
@@ -142,6 +148,10 @@ private:
      *  Items pending for removal after remove-anim finishes
      */
     QList<BallItem*> m_itemsToDelete;
+    /**
+     *  Colors of the next turn's balls
+     */
+    QList<BallColor> m_nextColors;
 };
 
 class KLinesView : public QGraphicsView
