@@ -24,18 +24,24 @@ class BallPainter;
 class LinesBoard;
 class LinesPrompt;
 
+class KLinesScene;
+
 class MainWidget : public QFrame
 {
-  LinesBoard * lsb;
-  LinesPrompt * lPrompt;
-  BallPainter *bPainter;
-
 public:
   MainWidget( QWidget* parent=0 );
   ~MainWidget();
   LinesBoard * GetLsb();
   LinesPrompt * GetPrompt();
   void updatePix();
+
+  KLinesScene* scene() { return m_scene; }
+private:
+  LinesBoard * lsb;
+  LinesPrompt * lPrompt;
+  BallPainter *bPainter;
+
+  KLinesScene* m_scene;
 };
 
 #endif

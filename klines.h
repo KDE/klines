@@ -27,6 +27,7 @@ class LinesBoard;
 class LinesPrompt;
 class MainWidget;
 
+// FIXME dimsuz: rename to KLinesMainWindow
 class KLines : public KMainWindow
 {
   Q_OBJECT
@@ -54,9 +55,10 @@ public slots:
   void switchNumbered();
   void undo();
   void slotDemo();
-
 private slots:
   void viewHighScore();
+  void updateScore(int score);
+  void gameOver(int score);
 
 private:
   LinesBoard* lsb;
@@ -86,7 +88,7 @@ private:
   void searchBallsLine();
   void generateRandomBalls();
   void placeBalls();
-  void updateStat();
+  void updateStatusBar();
   void switchUndo( bool bu );
   void stopDemo();
 };

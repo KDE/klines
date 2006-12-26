@@ -44,7 +44,7 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent), m_numBalls(0)
+    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0), m_gameOver(false)
 {
     m_renderer = new KLinesRenderer;
     m_animator = new KLinesAnimator(this);
@@ -74,15 +74,25 @@ void KLinesScene::resizeScene(int width,int height)
 void KLinesScene::nextThreeBalls()
 {
     QList<BallItem*> newItems;
-    newItems.append( placeRandomBall() );
-    newItems.append( placeRandomBall() );
-    newItems.append( placeRandomBall() );
+    BallItem* newBall;
+    for(int i=0; i<3; i++)
+    {
+        newBall = placeRandomBall();
+        if( newBall )
+            newItems.append(newBall);
+        else
+            break; // the field is filled :).
+    }
 
     m_animator->animateBorn( newItems );
 }
 
 BallItem* KLinesScene::placeRandomBall()
 {
+    m_numFreeCells--;
+    if(m_numFreeCells < 0)
+        return 0; // game over, we won't create more balls
+
     // FIXME dimsuz: in old klines ball positon had score and levels of
     // difficulty were implemented around it. Check this out and consider implementing
     // as current pos finding isn't very good - theorectically it can search forever :).
@@ -102,7 +112,6 @@ BallItem* KLinesScene::placeRandomBall()
     newBall->setColor(c);
     newBall->setPos( fieldToPix( FieldPos(posx,posy) ) );
     m_field[posx][posy] = newBall;
-    m_numBalls++;
     return newBall;
 }
 
@@ -147,8 +156,7 @@ void KLinesScene::moveAnimFinished()
 
     m_selPos.x = m_selPos.y = -1; // invalidate position
 
-    kDebug() << "calling sae1" << endl;
-    m_placeBallsAfterErase = true;
+    m_placeBalls = true;
     // after anim finished, slot removeAnimFinished()
     // will be called
     searchAndErase();
@@ -156,7 +164,14 @@ void KLinesScene::moveAnimFinished()
 
 void KLinesScene::removeAnimFinished()
 {
-    if(m_itemsToDelete.isEmpty() && m_placeBallsAfterErase)
+    if( m_itemsToDelete.isEmpty() && m_numFreeCells == 0 )
+    {
+        kDebug() << "GAME OVER" << endl;
+        emit gameOver(m_score);
+        return;
+    }
+
+    if(m_itemsToDelete.isEmpty() && m_placeBalls)
     {
         // slot bornAnimFinished() will be called
         // when born animation finishes
@@ -164,29 +179,50 @@ void KLinesScene::removeAnimFinished()
     }
     else
     {
+        // expression taked from previous code in klines.cpp
+        int numBallsErased = m_itemsToDelete.count();
+        if(numBallsErased)
+            m_score += 2*numBallsErased*numBallsErased - 20*numBallsErased + 60 ;
+
         qDeleteAll( m_itemsToDelete );
         m_itemsToDelete.clear();
+
         // it is needed after qDeleteAll()
         // as an optimisation we may update only rects
         // in which items from m_itemsToDelete were before
         // deletion
         update();
+
+        emit scoreChanged(m_score);
     }
+
 }
 
 void KLinesScene::bornAnimFinished()
 {
+    // note that if m_numFreeCells == 0, we still need to
+    // check for possible 5-in-a-row balls, i.e. call searchAndErase()
+    // So there's another gameOver()-check in removeAnimFinished()
+    if( m_numFreeCells < 0 )
+    {
+        kDebug() << "GAME OVER" << endl;
+        emit gameOver(m_score);
+        return;
+    }
     // There's a little trick here:
     // searchAndErase() will cause m_animator to emit removeFinished()
-    // If there wasn't m_placeBallsAfterErase var
+    // If there wasn't m_placeBalls var
     // it would cause an infinite loop like this:
     // SaE()->removeAnimFinished()->next3Balls()->bornAnimFinished()->
     // SaE()->removeAnimFinished()->next3Balls()->...
     // etc etc
-    m_placeBallsAfterErase = false;
+    m_placeBalls = false;
     // after placing new balls new 5-in-a-row chunks can occur
     // so we need to check for them
-    kDebug() << "calling sae2" << endl;
+    //
+    // And because of that we check for gameOver in removeAnimFinished()
+    // rather than here - there's a chance that searchAndErase() will remove
+    // balls making some free cells to play in
     searchAndErase();
 }
 
@@ -212,6 +248,7 @@ void KLinesScene::searchAndErase()
                 {
                     m_itemsToDelete.append(m_field[i][y]);
                     m_field[i][y] = 0;
+                    m_numFreeCells++;
                 }
             }
             else
@@ -236,6 +273,7 @@ void KLinesScene::searchAndErase()
                 {
                     m_itemsToDelete.append(m_field[x][j]);
                     m_field[x][j] = 0;
+                    m_numFreeCells++;
                 }
             }
             else
@@ -265,6 +303,7 @@ void KLinesScene::searchAndErase()
                 {
                     m_itemsToDelete.append(m_field[i][j]);
                     m_field[i][j] = 0;
+                    m_numFreeCells++;
                 }
             }
             else
@@ -294,6 +333,7 @@ void KLinesScene::searchAndErase()
                 {
                     m_itemsToDelete.append(m_field[i][j]);
                     m_field[i][j] = 0;
+                    m_numFreeCells++;
                 }
             }
             else

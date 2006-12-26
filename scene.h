@@ -77,7 +77,9 @@ public:
      */
     inline FieldPos pixToField( const QPointF& p ) const { 
         return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
-
+signals:
+    void scoreChanged(int);
+    void gameOver(int);
 private slots:
     void moveAnimFinished();
     void removeAnimFinished();
@@ -120,14 +122,22 @@ private:
      */
     FieldPos m_selPos;
     /**
-     *  Number of balls currently in field
+     *  Number of free cells in the field
      */
-    int m_numBalls;
+    int m_numFreeCells;
+    /**
+     *  Current game score
+     */
+    int m_score;
     /**
      *  Varable which is needed for little trick (tm).
      *  Read more about it in removeAnimFinished() slot
      */
-    bool m_placeBallsAfterErase;
+    bool m_placeBalls;
+    /**
+     *  Indicates game is over
+     */
+    bool m_gameOver;
     /**
      *  Items pending for removal after remove-anim finishes
      */

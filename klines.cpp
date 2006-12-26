@@ -38,6 +38,7 @@
 #include "prefs.h"
 #include "linesboard.h"
 #include "mwidget.h"
+#include "scene.h"
 #include "prompt.h"
 
 enum { Nb_Levels = 5 };
@@ -55,6 +56,9 @@ KLines::KLines()
 {
   mwidget = new MainWidget(this);
   setCentralWidget( mwidget );
+
+  connect(mwidget->scene(), SIGNAL(scoreChanged(int)), SLOT(updateScore(int)));
+  connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
 
   lsb = mwidget->GetLsb();
   connect(lsb, SIGNAL(endTurn()), this, SLOT(makeTurn()));
@@ -147,6 +151,19 @@ void KLines::initKAction()
   setupGUI( Save | Keys | StatusBar | Create );
 }
 
+void KLines::updateScore(int score)
+{
+    statusBar()->changeItem(i18n("Score: %1", score), 1);
+}
+
+void KLines::gameOver(int score)
+{
+    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+    KScoreDialog::FieldInfo scoreInfo;
+    if (d.addScore(score, scoreInfo, true))
+        d.exec();
+}
+
 void KLines::startGame()
 {
     score = 0;
@@ -169,7 +186,7 @@ void KLines::startGame()
     generateRandomBalls();
     undoAction->setEnabled(false);
     endTurnAction->setEnabled(true);
-    updateStat();
+    updateStatusBar();
 }
 
 void KLines::setLevel(int level) {
@@ -413,7 +430,7 @@ void KLines::slotDemo()
           }
        }
 
-       updateStat();
+       updateStatusBar();
        demoTimer->setSingleShot(true);
        demoTimer->start(1000);
        return;
@@ -492,7 +509,7 @@ void KLines::undo()
       nextBalls[i] = nextBalls_undo[i];
     }
     score = score_undo;
-    updateStat();
+    updateStatusBar();
     lPrompt->SetBalls(nextBalls);
     lsb->undo();
     switchUndo(false);
@@ -533,7 +550,7 @@ void KLines::addScore(int ballsErased)
 {   if(ballsErased >= 5){
       score += 2*ballsErased*ballsErased - 20*ballsErased + 60 ;
       if( !lPrompt->getState() ) score+= 1;
-      updateStat();
+      updateStatusBar();
     };
     if (bDemo)
     {
@@ -547,7 +564,7 @@ void KLines::addScore(int ballsErased)
     }
 }
 
-void KLines::updateStat()
+void KLines::updateStatusBar()
 {
     statusBar()->changeItem(i18n(" Score: %1", score), 1);
 }
