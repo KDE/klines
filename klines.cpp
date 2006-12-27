@@ -30,7 +30,7 @@
 #include <kscoredialog.h>
 #include <kaction.h>
 #include <kstandardaction.h>
-#include <kstdgameaction.h>
+#include <kstandardgameaction.h>
 #include <ktoggleaction.h>
 #include <kstatusbar.h>
 
@@ -102,21 +102,21 @@ KLines::~KLines()
 */
 void KLines::initKAction()
 {
-  KStdGameAction::gameNew(this, SLOT(startGame()), actionCollection());
-  act_demo = KStdGameAction::demo(this, SLOT(startDemo()), actionCollection());
+  KStandardGameAction::gameNew(this, SLOT(startGame()), actionCollection());
+  act_demo = KStandardGameAction::demo(this, SLOT(startDemo()), actionCollection());
   act_demo->setText(i18n("Start &Tutorial"));
-  KStdGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
-  KStdGameAction::quit(this, SLOT(close()), actionCollection());
-  endTurnAction = KStdGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
+  KStandardGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
+  KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+  endTurnAction = KStandardGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
   showNextAction = new KToggleAction(i18n("&Show Next"), actionCollection(), "options_show_next");
   connect(showNextAction, SIGNAL(triggered(bool) ), SLOT(switchPrompt()));
   showNextAction->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
   showNextAction->setCheckedState(KGuiItem(i18n("Hide Next")));
   showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), actionCollection(), "options_show_numbered");
   connect(showNumberedAction, SIGNAL(triggered(bool) ), SLOT(switchNumbered()));
-  undoAction = KStdGameAction::undo(this, SLOT(undo()), actionCollection());
+  undoAction = KStandardGameAction::undo(this, SLOT(undo()), actionCollection());
 
-  levelAction = KStdGameAction::chooseGameType(0, 0, actionCollection());
+  levelAction = KStandardGameAction::chooseGameType(0, 0, actionCollection());
   QStringList items;
   for (uint i=0; i<Nb_Levels; i++)
       items.append( i18n(LEVEL[i]) );
