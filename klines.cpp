@@ -29,6 +29,7 @@
 #include <klocale.h>
 #include <kscoredialog.h>
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
 #include <ktoggleaction.h>
@@ -76,7 +77,7 @@ KLines::KLines()
   statusBar()->setItemAlignment(1, Qt::AlignVCenter | Qt::AlignLeft);
   statusBar()->insertItem(i18n(" Level: "), 0, 1);
   statusBar()->setItemAlignment(0, Qt::AlignVCenter | Qt::AlignLeft);
- 
+
   initKAction();
 
   demoTimer = new QTimer(this);
@@ -102,21 +103,32 @@ KLines::~KLines()
 */
 void KLines::initKAction()
 {
-  KStandardGameAction::gameNew(this, SLOT(startGame()), actionCollection());
-  act_demo = KStandardGameAction::demo(this, SLOT(startDemo()), actionCollection());
+  QAction *action;
+
+  action = KStandardGameAction::gameNew(this, SLOT(startGame()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  act_demo = KStandardGameAction::demo(this, SLOT(startDemo()), this);
+  actionCollection()->addAction(act_demo->objectName(), act_demo);
   act_demo->setText(i18n("Start &Tutorial"));
-  KStandardGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
-  KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-  endTurnAction = KStandardGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
-  showNextAction = new KToggleAction(i18n("&Show Next"), actionCollection(), "options_show_next");
+  action = KStandardGameAction::highscores(this, SLOT(viewHighScore()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = KStandardGameAction::quit(this, SLOT(close()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action = endTurnAction = KStandardGameAction::endTurn(this, SLOT(makeTurn()), this);
+  actionCollection()->addAction(endTurnAction->objectName(), endTurnAction);
+  showNextAction = new KToggleAction(i18n("&Show Next"), this);
+  actionCollection()->addAction("options_show_next", showNextAction);
   connect(showNextAction, SIGNAL(triggered(bool) ), SLOT(switchPrompt()));
   showNextAction->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
   showNextAction->setCheckedState(KGuiItem(i18n("Hide Next")));
-  showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), actionCollection(), "options_show_numbered");
+  showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), this);
+  actionCollection()->addAction("options_show_numbered", showNumberedAction);
   connect(showNumberedAction, SIGNAL(triggered(bool) ), SLOT(switchNumbered()));
-  undoAction = KStandardGameAction::undo(this, SLOT(undo()), actionCollection());
+  undoAction = KStandardGameAction::undo(this, SLOT(undo()), this);
+  actionCollection()->addAction(undoAction->objectName(), undoAction);
 
-  levelAction = KStandardGameAction::chooseGameType(0, 0, actionCollection());
+  levelAction = KStandardGameAction::chooseGameType(0, 0, this);
+  actionCollection()->addAction(levelAction->objectName(), levelAction);
   QStringList items;
   for (uint i=0; i<Nb_Levels; i++)
       items.append( i18n(LEVEL[i]) );
@@ -127,23 +139,28 @@ void KLines::initKAction()
   showNumberedAction->setChecked(Prefs::numberedBalls());
   lPrompt->setPrompt(Prefs::showNext());
 
-  KAction *action = new KAction(i18n("Move Left"), actionCollection(), "left");
+  action = actionCollection()->addAction("left");
+  action->setText(i18n("Move Left"));
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveLeft()));
   action->setShortcut(Qt::Key_Left);
   addAction(action);
-  action = new KAction(i18n("Move Right"), actionCollection(), "right");
+  action = actionCollection()->addAction("right");
+  action->setText(i18n("Move Right"));
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveRight()));
   action->setShortcut(Qt::Key_Right);
   addAction(action);
-  action = new KAction(i18n("Move Up"), actionCollection(), "up");
+  action = actionCollection()->addAction("up");
+  action->setText(i18n("Move Up"));
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveUp()));
   action->setShortcut(Qt::Key_Up);
   addAction(action);
-  action = new KAction(i18n("Move Down"), actionCollection(), "down");
+  action = actionCollection()->addAction("down");
+  action->setText(i18n("Move Down"));
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(moveDown()));
   action->setShortcut(Qt::Key_Down);
   addAction(action);
-  action = new KAction(i18n("Move Ball"), actionCollection(), "place_ball");
+  action = actionCollection()->addAction("place_ball");
+  action->setText(i18n("Move Ball"));
   connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(placePlayerBall()));
   action->setShortcut(Qt::Key_Space);
   addAction(action);
