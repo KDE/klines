@@ -25,9 +25,11 @@ class LinesBoard;
 class LinesPrompt;
 
 class KLinesScene;
+class BallsPreview;
 
 class MainWidget : public QFrame
 {
+    Q_OBJECT
 public:
   MainWidget( QWidget* parent=0 );
   ~MainWidget();
@@ -36,12 +38,15 @@ public:
   void updatePix();
 
   KLinesScene* scene() { return m_scene; }
+private slots:
+    void updateNextColors();
 private:
   LinesBoard * lsb;
   LinesPrompt * lPrompt;
   BallPainter *bPainter;
 
   KLinesScene* m_scene;
+  BallsPreview* m_preview;
 };
 
 #endif

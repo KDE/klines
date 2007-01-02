@@ -23,6 +23,7 @@
 #include "ballpainter.h"
 #include "linesboard.h"
 #include "prompt.h"
+#include "preview.h"
 
 #include "scene.h"
 
@@ -34,8 +35,10 @@ MainWidget::MainWidget( QWidget* parent )
     bPainter = new BallPainter();
 
     lsb = new LinesBoard(bPainter, this);
-//    grid->addWidget( lsb );
+    // FIXME dimsuz: remove lsb
     lsb->hide();
+//    grid->addWidget( lsb );
+
     m_scene = new KLinesScene(this);
     KLinesView* klview = new KLinesView( m_scene, this );
     klview->setCacheMode( QGraphicsView::CacheBackground );
@@ -48,8 +51,16 @@ MainWidget::MainWidget( QWidget* parent )
     lPrompt = new LinesPrompt(bPainter, this);
     connect(lPrompt, SIGNAL(PromptPressed()), parent, SLOT(switchPrompt()));
 
+    m_preview = new BallsPreview(this);
+    updateNextColors();
+
     right->addWidget( label, 0, Qt::AlignBottom | Qt::AlignHCenter );
-    right->addWidget( lPrompt, 0, Qt::AlignTop | Qt::AlignHCenter );
+    // FIXME dimsuz: remove lPrompt
+    lPrompt->hide();
+    right->addWidget( m_preview );
+    //right->addWidget( lPrompt, 0, Qt::AlignTop | Qt::AlignHCenter );
+
+    connect(m_scene, SIGNAL(nextColorsChanged()), SLOT(updateNextColors()) );
 
 //    warning("width: %i height: %i", width(), height() );
 
@@ -82,3 +93,10 @@ void MainWidget::updatePix()
     lPrompt->update();
     lsb->update();
 }
+
+void MainWidget::updateNextColors() 
+{
+    m_preview->setColors( m_scene->nextColors() );
+}
+
+#include "mwidget.moc"
