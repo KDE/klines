@@ -28,25 +28,24 @@
 BallsPreview::BallsPreview( QWidget* parent )
     : QWidget(parent)
 {
-    m_renderer = new KLinesRenderer;
 }
 
 QSize BallsPreview::sizeHint() const
 {
-    return QSize( m_renderer->backgroundTilePixmap().size().width()*3, m_renderer->backgroundTilePixmap().height() );
+    return QSize( KLinesRenderer::self()->backgroundTilePixmap().size().width()*3, KLinesRenderer::self()->backgroundTilePixmap().height() );
 }
 
 void BallsPreview::paintEvent( QPaintEvent* )
 {
     QPainter p(this);
-    QPixmap pix = m_renderer->backgroundTilePixmap();
-    // FIXME dimsuz: use smth like m_renderer->elementSize()
+    QPixmap pix = KLinesRenderer::self()->backgroundTilePixmap();
+    // FIXME dimsuz: use smth like KLinesRenderer::self()->elementSize()
     int width = pix.size().width();
     for(int i=0; i < 3; i++)
     {
         p.drawPixmap( i*width, 0, pix );
         if( !m_colors.isEmpty() )
             // FIXME dimsuz: "2" - hardcoded
-            p.drawPixmap( i*width+2, 2, m_renderer->ballPixmap( m_colors.at(i) ) );
+            p.drawPixmap( i*width+2, 2, KLinesRenderer::self()->ballPixmap( m_colors.at(i) ) );
     }
 }

@@ -24,6 +24,12 @@
 
 #include "renderer.h"
 
+KLinesRenderer* KLinesRenderer::self()
+{
+    static KLinesRenderer instance;
+    return &instance;
+}
+
 KLinesRenderer::KLinesRenderer()
 {
     m_fieldPix = QPixmap( KStandardDirs::locate( "appdata", "field.jpg" ));

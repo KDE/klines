@@ -26,8 +26,6 @@
 #include <QWidget>
 #include "commondefs.h"
 
-class KLinesRenderer;
-
 /**
  *  Widget for displaying next-turn balls
  */
@@ -45,7 +43,6 @@ public:
 private:
     void paintEvent( QPaintEvent* );
 
-    KLinesRenderer *m_renderer;
     QList<BallColor> m_colors;
 };
 

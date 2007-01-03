@@ -64,14 +64,14 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     // we setup here one 'empty' frame at the end, because without it
     // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
     // that last frame won't get shown in the scene
-    m_removeTimeLine.setFrameRange(0, m_scene->renderer()->numFireFrames());
+    m_removeTimeLine.setFrameRange(0, KLinesRenderer::self()->numFireFrames());
 
     connect(&m_removeTimeLine, SIGNAL(frameChanged(int)), SLOT(removeAnimationFrame(int)) );
     connect(&m_removeTimeLine, SIGNAL(finished()), SIGNAL(removeFinished()));
 
     m_bornTimeLine.setDuration(200);
     m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
-    m_bornTimeLine.setFrameRange(0, m_scene->renderer()->numBornFrames()-1);
+    m_bornTimeLine.setFrameRange(0, KLinesRenderer::self()->numBornFrames()-1);
 
     connect(&m_bornTimeLine, SIGNAL(frameChanged(int)), SLOT(bornAnimationFrame(int)) );
     connect(&m_bornTimeLine, SIGNAL(finished()), SIGNAL(bornFinished()));
@@ -160,16 +160,16 @@ void KLinesAnimator::moveAnimationFrame(int frame)
 
 void KLinesAnimator::removeAnimationFrame(int frame)
 {
-    if(frame == m_scene->renderer()->numFireFrames())
+    if(frame == KLinesRenderer::self()->numFireFrames())
         return;
     foreach(BallItem* ball, m_removedBalls)
-        ball->setPixmap( m_scene->renderer()->firePixmap(frame) );
+        ball->setPixmap( KLinesRenderer::self()->firePixmap(frame) );
 }
 
 void KLinesAnimator::bornAnimationFrame(int frame)
 {
     foreach(BallItem* ball, m_bornBalls)
-        ball->setPixmap( m_scene->renderer()->bornPixmap(ball->color(), frame) );
+        ball->setPixmap( KLinesRenderer::self()->bornPixmap(ball->color(), frame) );
 }
 
 void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )

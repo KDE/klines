@@ -25,15 +25,15 @@
 #include "ballitem.h"
 #include "renderer.h"
 
-BallItem::BallItem( QGraphicsScene* parent, const KLinesRenderer* renderer )
-    : QGraphicsPixmapItem( 0, parent ), m_renderer(renderer)
+BallItem::BallItem( QGraphicsScene* parent )
+    : QGraphicsPixmapItem( 0, parent )
 {
     m_color = NumColors; // = uninitialized
 
     m_timeLine.setCurveShape( QTimeLine::LinearCurve );
     m_timeLine.setDuration(400);
     m_timeLine.setLoopCount(0);
-    m_timeLine.setFrameRange(0, m_renderer->numSelectedFrames()-1);
+    m_timeLine.setFrameRange(0, KLinesRenderer::self()->numSelectedFrames()-1);
     // starting by going lower
     m_timeLine.setCurrentTime( m_timeLine.duration()/2 );
 
@@ -55,12 +55,12 @@ void BallItem::startSelectedAnimation()
 void BallItem::stopAnimation()
 {
     m_timeLine.stop();
-    setPixmap( m_renderer->ballPixmap( m_color ) );
+    setPixmap( KLinesRenderer::self()->ballPixmap( m_color ) );
 }
 
 void BallItem::animFrameChanged(int frame)
 {
-    setPixmap(m_renderer->selectedPixmap( m_color, frame ));
+    setPixmap(KLinesRenderer::self()->selectedPixmap( m_color, frame ));
 }
 
 #include "ballitem.moc"

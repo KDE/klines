@@ -27,12 +27,12 @@
 
 #include "commondefs.h"
 
-// FIXME dimsuz: make singleton - it's used in three classes BallItem, KLinesAnimator, KLinesScene
 // FIXME dimsuz: give {fire,born,selected}Pixmap methods better names
 class KLinesRenderer
 {
 public:
-    KLinesRenderer();
+    static KLinesRenderer* self();
+
     QPixmap ballPixmap( BallColor c ) const;
 
     QPixmap firePixmap( int frame ) const;
@@ -45,6 +45,12 @@ public:
     inline int numBornFrames() const { return 5; }
     inline int numSelectedFrames() const { return 13; }
 private:
+    // disable copy - it's singleton
+    KLinesRenderer();
+    KLinesRenderer( const KLinesRenderer& );
+    KLinesRenderer& operator=( const KLinesRenderer& );
+    ~KLinesRenderer() { }
+
     QPixmap m_ballsPix; // to be removed when SVG comes to us
     QPixmap m_fieldPix; // to be removed when SVG comes to us
     QPixmap m_firePix; // to be removed when SVG comes to us

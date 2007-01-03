@@ -31,7 +31,6 @@
 
 static const int FIELD_SIZE=9;
 
-class KLinesRenderer;
 class KLinesAnimator;
 class BallItem;
 class QGraphicsRectItem;
@@ -68,10 +67,6 @@ public:
      */
     BallItem* ballAt( int x, int y ) { return m_field[x][y]; }
     /**
-     *  Returns games' renderer
-     */
-    const KLinesRenderer* renderer() const  { return m_renderer; }
-    /**
      *  Field coords to pixel coords
      */
     inline QPointF fieldToPix(const FieldPos& fpos) const {
@@ -83,6 +78,10 @@ public:
     inline FieldPos pixToField( const QPointF& p ) const { 
         return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
 public slots:
+    /**
+     *  Starts new game
+     */
+    void startNewGame();
     /**
      *  Moves keyboard-playing focus rect to the left 
      */
@@ -141,10 +140,6 @@ private:
      */
     BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
     /**
-     *  Renderer used to get all the game graphics
-     */
-    const KLinesRenderer* m_renderer;
-    /**
      *  Used to start game animations
      *  This object knows how to do some ball animations
      */
@@ -170,10 +165,6 @@ private:
      *  Read more about it in removeAnimFinished() slot
      */
     bool m_placeBalls;
-    /**
-     *  Indicates game is over
-     */
-    bool m_gameOver;
     /**
      *  Items pending for removal after remove-anim finishes
      */

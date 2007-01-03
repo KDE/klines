@@ -38,7 +38,7 @@ public:
   void updatePix();
 
   KLinesScene* scene() { return m_scene; }
-private slots:
+public slots:
     void updateNextColors();
 private:
   LinesBoard * lsb;

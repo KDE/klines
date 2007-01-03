@@ -28,8 +28,6 @@
 
 #include "commondefs.h"
 
-class KLinesRenderer;
-
 /**
  *  QGraphicsItem for Ball
  */
@@ -37,7 +35,7 @@ class BallItem : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    BallItem( QGraphicsScene* parent, const KLinesRenderer* r );
+    BallItem( QGraphicsScene* parent );
     /**
      *  Sets ball's color
      */
@@ -61,10 +59,6 @@ public:
 private slots:
     void animFrameChanged(int);
 private:
-    /**
-     *  Renderer used to render ball's pixmaps
-     */
-    const KLinesRenderer* m_renderer;
     /**
      *  Timeline for controlling animations
      */

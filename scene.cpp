@@ -44,22 +44,46 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0), m_gameOver(false)
+    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0)
 {
-    m_renderer = new KLinesRenderer;
     m_animator = new KLinesAnimator(this);
     connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
     connect( m_animator, SIGNAL(removeFinished()), SLOT(removeAnimFinished() ) );
     connect( m_animator, SIGNAL(bornFinished()), SLOT(bornAnimFinished() ) );
 
-    for(int x=0; x<FIELD_SIZE; ++x)
-        for(int y=0; y<FIELD_SIZE; ++y)
-            m_field[x][y] = 0;
-
     // FIXME dimsuz: hardcoded size
     m_focusItem = new QGraphicsRectItem( QRectF(0, 0, 32, 32), 0, this );
     m_focusItem->setPen( Qt::DashLine );
+
+    startNewGame();
+}
+
+void KLinesScene::startNewGame()
+{
+    // reset all vars
+    m_selPos = FieldPos();
+    m_numFreeCells = FIELD_SIZE*FIELD_SIZE;
+    m_score = 0;
+    m_placeBalls = true;
+    m_itemsToDelete.clear();
+    m_nextColors.clear();
+    m_focusItem->setPos(0, 0);
     m_focusItem->hide();
+
+    // remove all ball items from the scene
+    QList<QGraphicsItem*> itemlist = items();
+    foreach( QGraphicsItem* item, itemlist )
+    {
+        if( item != m_focusItem )
+        {
+            removeItem(item);
+            delete item;
+        }
+    }
+
+    for(int x=0; x<FIELD_SIZE; ++x)
+        for(int y=0; y<FIELD_SIZE; ++y)
+            m_field[x][y] = 0;
 
     // init m_nextColors
     for(int i=0; i<3; i++)
@@ -68,13 +92,12 @@ KLinesScene::KLinesScene( QObject* parent )
         BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
         m_nextColors.append(c);
     }
-    
+
     nextThreeBalls();
 }
 
 KLinesScene::~KLinesScene()
 {
-    delete m_renderer;
     delete m_animator;
 }
 
@@ -127,7 +150,7 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
         posy = m_randomSeq.getLong(FIELD_SIZE);
     } while( m_field[posx][posy] != 0 );
 
-    BallItem* newBall = new BallItem( this, m_renderer );
+    BallItem* newBall = new BallItem( this );
     newBall->setColor(c);
     newBall->setPos( fieldToPix( FieldPos(posx,posy) ) );
     m_field[posx][posy] = newBall;
@@ -206,7 +229,11 @@ void KLinesScene::removeAnimFinished()
         if(numBallsErased)
             m_score += 2*numBallsErased*numBallsErased - 20*numBallsErased + 60 ;
 
-        qDeleteAll( m_itemsToDelete );
+        foreach( BallItem* item, m_itemsToDelete )
+        {
+            removeItem(item);
+            delete item;
+        }
         m_itemsToDelete.clear();
 
         // it is needed after qDeleteAll()
@@ -448,7 +475,7 @@ void KLinesScene::drawBackground(QPainter *p, const QRectF&)
     // FIXME dimsuz: temp
     for(int x=0; x<32*FIELD_SIZE;x+=32)
         for(int y=0; y<32*FIELD_SIZE;y+=32)
-            p->drawPixmap( x, y, m_renderer->backgroundTilePixmap() );
+            p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
 }
 
 #include "scene.moc"

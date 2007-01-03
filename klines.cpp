@@ -166,27 +166,9 @@ void KLines::gameOver(int score)
 
 void KLines::startGame()
 {
-    score = 0;
-    score_undo = 0;
-    bUndo = true;
-    bNewTurn = true;
-    if(bDemo)
-        stopDemo();
-
-    bFirst = true;
-
-    int level = levelAction->currentItem()-2;
-    setLevel(level);
-
-    lsb->setLevel(level);
-    lsb->setGameOver(false);
-    lsb->clearField();
-    generateRandomBalls();
-    placeBalls();
-    generateRandomBalls();
-    undoAction->setEnabled(false);
-    endTurnAction->setEnabled(true);
-    updateStatusBar();
+    updateScore(0);
+    mwidget->scene()->startNewGame();
+    mwidget->updateNextColors();
 }
 
 void KLines::setLevel(int level) {
