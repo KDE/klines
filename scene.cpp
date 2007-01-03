@@ -56,6 +56,11 @@ KLinesScene::KLinesScene( QObject* parent )
         for(int y=0; y<FIELD_SIZE; ++y)
             m_field[x][y] = 0;
 
+    // FIXME dimsuz: hardcoded size
+    m_focusItem = new QGraphicsRectItem( QRectF(0, 0, 32, 32), 0, this );
+    m_focusItem->setPen( Qt::DashLine );
+    m_focusItem->hide();
+
     // init m_nextColors
     for(int i=0; i<3; i++)
     {
@@ -131,10 +136,13 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
 
 void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 {
+    selectOrMove( pixToField(ev->scenePos()) );
+}
+
+void KLinesScene::selectOrMove( const FieldPos& fpos )
+{
     if( m_animator->isAnimating() )
         return;
-
-    FieldPos fpos = pixToField(ev->scenePos());
 
     if( m_field[fpos.x][fpos.y] ) // ball was selected
     {
@@ -355,7 +363,83 @@ void KLinesScene::searchAndErase()
         }
 
     // after it finishes slot removeAnimFinished() will be called
+    // if m_itemsToDelete is empty removeAnimFinished() will be called immediately
     m_animator->animateRemove( m_itemsToDelete );
+}
+
+// FIXME dimsuz: hardcoded size in 5 functions below
+void KLinesScene::moveFocusLeft()
+{
+    if( !m_focusItem->isVisible() )
+    {
+        m_focusItem->show();
+        // no action for the first time
+        return;
+    }
+
+    QPointF pos = m_focusItem->pos();
+    pos.rx() -= 32;
+    if( pos.x() < 0 )
+        pos.setX( (FIELD_SIZE - 1)*32 );
+    m_focusItem->setPos( pos );
+}
+
+void KLinesScene::moveFocusRight()
+{
+    if( !m_focusItem->isVisible() )
+    {
+        m_focusItem->show();
+        // no action for the first time
+        return;
+    }
+
+    QPointF pos = m_focusItem->pos();
+    pos.rx() += 32;
+    if( pos.x() > (FIELD_SIZE-1)*32 )
+        pos.setX( 0 );
+    m_focusItem->setPos( pos );
+}
+
+void KLinesScene::moveFocusUp()
+{
+    if( !m_focusItem->isVisible() )
+    {
+        m_focusItem->show();
+        // no action for the first time
+        return;
+    }
+
+    QPointF pos = m_focusItem->pos();
+    pos.ry() -= 32;
+    if( pos.y() < 0 )
+        pos.setY( (FIELD_SIZE - 1)*32 );
+    m_focusItem->setPos( pos );
+}
+
+void KLinesScene::moveFocusDown()
+{
+    if( !m_focusItem->isVisible() )
+    {
+        m_focusItem->show();
+        // no action for the first time
+        return;
+    }
+
+    QPointF pos = m_focusItem->pos();
+    pos.ry() += 32;
+    if( pos.y() > (FIELD_SIZE-1)*32 )
+        pos.setY( 0 );
+    m_focusItem->setPos( pos );
+}
+
+void KLinesScene::cellSelected()
+{
+    if( !m_focusItem->isVisible() )
+        m_focusItem->show();
+
+    // FIXME dimsuz: hardcoded
+    // we're taking the center of the cell
+    selectOrMove( pixToField( m_focusItem->pos() + QPointF(16,16) ) );
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)

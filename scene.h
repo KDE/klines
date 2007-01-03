@@ -34,6 +34,7 @@ static const int FIELD_SIZE=9;
 class KLinesRenderer;
 class KLinesAnimator;
 class BallItem;
+class QGraphicsRectItem;
 
 /**
  *  Displays and drives the game
@@ -81,6 +82,27 @@ public:
      */
     inline FieldPos pixToField( const QPointF& p ) const { 
         return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
+public slots:
+    /**
+     *  Moves keyboard-playing focus rect to the left 
+     */
+    void moveFocusLeft();
+    /**
+     *  Moves keyboard-playing focus rect to the right 
+     */
+    void moveFocusRight();
+    /**
+     *  Moves keyboard-playing focus rect to the up 
+     */
+    void moveFocusUp();
+    /**
+     *  Moves keyboard-playing focus rect to the down 
+     */
+    void moveFocusDown();
+    /**
+     *  Takes corresponding action on cell under focus rect
+     */
+    void cellSelected();
 signals:
     void scoreChanged(int);
     void nextColorsChanged();
@@ -100,6 +122,14 @@ private:
      *  Searches for 5 or more balls in a row and deletes them from field
      */
     void searchAndErase();
+    /**
+     *  This fuction takes one of two actions:
+     *  If there's a ball at fpos, it will be selected.
+     *  Otherwise if the cell at fpos is empty and there's 
+     *  a selected ball in some other cell it will be moved to fpos
+     *  (if the move is possible, of course)
+     */
+    void selectOrMove( const FieldPos& fpos );
 
     virtual void drawBackground( QPainter*, const QRectF& );
     virtual void mousePressEvent( QGraphicsSceneMouseEvent* );
@@ -152,6 +182,10 @@ private:
      *  Colors of the next turn's balls
      */
     QList<BallColor> m_nextColors;
+    /**
+     *  Keyboard-playing focus indication
+     */
+    QGraphicsRectItem *m_focusItem;
 };
 
 class KLinesView : public QGraphicsView
