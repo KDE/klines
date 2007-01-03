@@ -26,7 +26,7 @@
 #include "renderer.h"
 
 BallsPreview::BallsPreview( QWidget* parent )
-    : QWidget(parent)
+    : QWidget(parent), m_showColors(true)
 {
 }
 
@@ -44,7 +44,7 @@ void BallsPreview::paintEvent( QPaintEvent* )
     for(int i=0; i < 3; i++)
     {
         p.drawPixmap( i*width, 0, pix );
-        if( !m_colors.isEmpty() )
+        if( !m_colors.isEmpty() && m_showColors)
             // FIXME dimsuz: "2" - hardcoded
             p.drawPixmap( i*width+2, 2, KLinesRenderer::self()->ballPixmap( m_colors.at(i) ) );
     }

@@ -73,6 +73,7 @@ KLines::KLines()
   bDemo = false;
 
   statusBar()->insertItem(i18n("Score:"), 0);
+  updateScore(0);
  
   initKAction();
 
@@ -104,7 +105,7 @@ void KLines::initKAction()
   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
   endTurnAction = KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
   showNextAction = new KToggleAction(i18n("&Show Next"), actionCollection(), "options_show_next");
-  connect(showNextAction, SIGNAL(triggered(bool) ), SLOT(switchPrompt()));
+  connect(showNextAction, SIGNAL(triggered(bool) ), mwidget, SLOT(setShowNextColors(bool)));
   showNextAction->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
   showNextAction->setCheckedState(KGuiItem(i18n("Hide Next")));
   showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), actionCollection(), "options_show_numbered");
@@ -122,6 +123,8 @@ void KLines::initKAction()
 
   levelAction->setCurrentItem(Prefs::level()+2);
   showNextAction->setChecked(Prefs::showNext());
+  mwidget->setShowNextColors(Prefs::showNext());
+
   showNumberedAction->setChecked(Prefs::numberedBalls());
   lPrompt->setPrompt(Prefs::showNext());
 

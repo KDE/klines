@@ -40,6 +40,7 @@ public:
   KLinesScene* scene() { return m_scene; }
 public slots:
     void updateNextColors();
+    void setShowNextColors(bool);
 private:
   LinesBoard * lsb;
   LinesPrompt * lPrompt;

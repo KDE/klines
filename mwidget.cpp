@@ -99,4 +99,9 @@ void MainWidget::updateNextColors()
     m_preview->setColors( m_scene->nextColors() );
 }
 
+void MainWidget::setShowNextColors(bool visible)
+{
+    m_preview->setShowColors(visible);
+}
+
 #include "mwidget.moc"

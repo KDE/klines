@@ -497,6 +497,9 @@ void KLinesScene::saveUndoInfo()
 // Brings m_field and some other vars to the state it was before last turn
 void KLinesScene::undo()
 {
+    if( m_selPos.isValid() )
+        m_field[m_selPos.x][m_selPos.y]->stopAnimation();
+
     BallColor col;
     for(int x=0;x<FIELD_SIZE;++x)
         for(int y=0; y<FIELD_SIZE;++y)
