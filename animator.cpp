@@ -79,7 +79,8 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
 
 bool KLinesAnimator::isAnimating() const
 {
-    return (m_moveTimeLine.state() == QTimeLine::Running
+    return (m_bornTimeLine.state() == QTimeLine::Running 
+            || m_moveTimeLine.state() == QTimeLine::Running
             || m_removeTimeLine.state() == QTimeLine::Running);
 }
 

@@ -107,8 +107,17 @@ void KLinesScene::resizeScene(int width,int height)
     setSceneRect( 0, 0, width, height );
 }
 
+void KLinesScene::endTurn()
+{
+    saveUndoInfo();
+    nextThreeBalls();
+}
+
 void KLinesScene::nextThreeBalls()
 {
+    if( m_animator->isAnimating() )
+        return;
+
     QList<BallItem*> newItems;
     BallItem* newBall;
     for(int i=0; i<3; i++)
@@ -151,7 +160,7 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
     } while( m_field[posx][posy] != 0 );
 
     BallItem* newBall = new BallItem( this );
-    newBall->setColor(c);
+    newBall->setColor(c, false); // pixmap will be set by born animation
     newBall->setPos( fieldToPix( FieldPos(posx,posy) ) );
     m_field[posx][posy] = newBall;
     return newBall;
@@ -179,6 +188,7 @@ void KLinesScene::selectOrMove( const FieldPos& fpos )
     {
         if( m_selPos.isValid() && m_field[fpos.x][fpos.y] == 0 )
         {
+            saveUndoInfo();
             // start move animation
             // slot moveAnimFinished() will be called when it finishes
             m_animator->animateMove(m_selPos, fpos);
@@ -220,13 +230,19 @@ void KLinesScene::removeAnimFinished()
     {
         // slot bornAnimFinished() will be called
         // when born animation finishes
+        // NOTE: removeAnimFinished() will be called again
+        // after new balls will born (because searchAndErase() will be called)
+        // but other if branch will be taken
         nextThreeBalls();
     }
     else
     {
-        // expression taked from previous code in klines.cpp
+        // this is kind of 'things to do after one turn is finished'
+        // place in code :)
+
         int numBallsErased = m_itemsToDelete.count();
         if(numBallsErased)
+            // expression taked from previous code in klines.cpp
             m_score += 2*numBallsErased*numBallsErased - 20*numBallsErased + 60 ;
 
         foreach( BallItem* item, m_itemsToDelete )
@@ -236,13 +252,8 @@ void KLinesScene::removeAnimFinished()
         }
         m_itemsToDelete.clear();
 
-        // it is needed after qDeleteAll()
-        // as an optimisation we may update only rects
-        // in which items from m_itemsToDelete were before
-        // deletion
-        update();
-
-        emit scoreChanged(m_score);
+        if(numBallsErased)
+            emit scoreChanged(m_score);
     }
 
 }
@@ -467,6 +478,65 @@ void KLinesScene::cellSelected()
     // FIXME dimsuz: hardcoded
     // we're taking the center of the cell
     selectOrMove( pixToField( m_focusItem->pos() + QPointF(16,16) ) );
+}
+
+void KLinesScene::saveUndoInfo()
+{
+    // save field state to undoInfo
+    for(int x=0;x<FIELD_SIZE;++x)
+        for(int y=0; y<FIELD_SIZE;++y)
+            // NumColors represents no color
+            m_undoInfo.fcolors[x][y] = ( m_field[x][y] ? m_field[x][y]->color() : NumColors );
+    m_undoInfo.numFreeCells = m_numFreeCells;
+    m_undoInfo.score = m_score;
+    m_undoInfo.nextColors = m_nextColors;
+
+    emit enableUndo(true);
+}
+
+// Brings m_field and some other vars to the state it was before last turn
+void KLinesScene::undo()
+{
+    BallColor col;
+    for(int x=0;x<FIELD_SIZE;++x)
+        for(int y=0; y<FIELD_SIZE;++y)
+        {
+            col = m_undoInfo.fcolors[x][y];
+            if(col == NumColors) // no ball
+            {
+                if( m_field[x][y] )
+                {
+                    removeItem( m_field[x][y] );
+                    delete m_field[x][y];
+                    m_field[x][y] = 0;
+                }
+                continue;
+            }
+
+            if( m_field[x][y] )
+            {
+                if( m_field[x][y]->color() != col )
+                    m_field[x][y]->setColor(col);
+                //else live it as it is
+            }
+            else
+            {
+                BallItem *item = new BallItem(this);
+                item->setColor(col);
+                item->setPos( fieldToPix( FieldPos(x,y) ) );
+                item->show();
+                m_field[x][y] = item;
+            }
+        }
+    m_numFreeCells = m_undoInfo.numFreeCells;
+    m_score = m_undoInfo.score;
+    m_nextColors = m_undoInfo.nextColors;
+
+    m_selPos = FieldPos();
+
+    emit scoreChanged(m_score);
+    emit nextColorsChanged();
+    emit enableUndo(false);
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)

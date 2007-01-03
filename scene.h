@@ -44,19 +44,18 @@ class KLinesScene : public QGraphicsScene
 public:
     explicit KLinesScene( QObject *parent );
     ~KLinesScene();
-
     /**
      *  Resizes scene
      */
     void resizeScene( int width, int height );
     /**
-     *  Returns colors of the 3 balls in the next turn
-     */
-    QList<BallColor> nextColors() const { return m_nextColors; }
-    /**
      *  Brings in next three balls to scene
      */
     void nextThreeBalls();
+    /**
+     *  Returns colors of the 3 balls in the next turn
+     */
+    QList<BallColor> nextColors() const { return m_nextColors; }
     /**
      *  Returns ballitem in field position pos or 0 if there
      *  is no item there
@@ -83,6 +82,14 @@ public slots:
      */
     void startNewGame();
     /**
+     *  Ends current and starts next turn explicitly
+     */
+    void endTurn();
+    /**
+     *  Undoes one move
+     */
+    void undo();
+    /**
      *  Moves keyboard-playing focus rect to the left 
      */
     void moveFocusLeft();
@@ -104,6 +111,7 @@ public slots:
     void cellSelected();
 signals:
     void scoreChanged(int);
+    void enableUndo(bool);
     void nextColorsChanged();
     void gameOver(int);
 private slots:
@@ -129,6 +137,10 @@ private:
      *  (if the move is possible, of course)
      */
     void selectOrMove( const FieldPos& fpos );
+    /**
+     *  Saves game state information to be used during undo
+     */
+    void saveUndoInfo();
 
     virtual void drawBackground( QPainter*, const QRectF& );
     virtual void mousePressEvent( QGraphicsSceneMouseEvent* );
@@ -177,6 +189,22 @@ private:
      *  Keyboard-playing focus indication
      */
     QGraphicsRectItem *m_focusItem;
+
+    /**
+     *  Struct for holding game state - used on undos
+     */
+    struct UndoInfo
+    {
+        int numFreeCells;
+        int score;
+        QList<BallColor> nextColors;
+        BallColor fcolors[FIELD_SIZE][FIELD_SIZE];
+    };
+    /**
+     *  Holds game state for undo.
+     *  It is saved before every new turn
+     */
+    UndoInfo m_undoInfo;
 };
 
 class KLinesView : public QGraphicsView

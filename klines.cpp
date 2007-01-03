@@ -102,14 +102,17 @@ void KLines::initKAction()
   act_demo->setText(i18n("Start &Tutorial"));
   KStandardGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-  endTurnAction = KStandardGameAction::endTurn(this, SLOT(makeTurn()), actionCollection());
+  endTurnAction = KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
   showNextAction = new KToggleAction(i18n("&Show Next"), actionCollection(), "options_show_next");
   connect(showNextAction, SIGNAL(triggered(bool) ), SLOT(switchPrompt()));
   showNextAction->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
   showNextAction->setCheckedState(KGuiItem(i18n("Hide Next")));
   showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), actionCollection(), "options_show_numbered");
   connect(showNumberedAction, SIGNAL(triggered(bool) ), SLOT(switchNumbered()));
-  undoAction = KStandardGameAction::undo(this, SLOT(undo()), actionCollection());
+  undoAction = KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), actionCollection());
+  undoAction->setEnabled(false);
+
+  connect( mwidget->scene(), SIGNAL(enableUndo(bool)), undoAction, SLOT(setEnabled(bool)) );
 
   levelAction = KStandardGameAction::chooseGameType(0, 0, actionCollection());
   QStringList items;

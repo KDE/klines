@@ -38,8 +38,11 @@ public:
     BallItem( QGraphicsScene* parent );
     /**
      *  Sets ball's color
+     *  @param setPix specifies whether to set corresponding ball pixmap to this
+     *  item. In rare cases this may not be needed.
+     *  (for example when the ball is created and born animation is played immediately)
      */
-    void setColor( BallColor c );
+    void setColor( BallColor c, bool setPix = true );
     /**
      *  @return color of the ball
      */

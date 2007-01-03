@@ -40,9 +40,11 @@ BallItem::BallItem( QGraphicsScene* parent )
     connect(&m_timeLine, SIGNAL(frameChanged(int)), SLOT(animFrameChanged(int)) );
 }
 
-void BallItem::setColor( BallColor c )
+void BallItem::setColor( BallColor c, bool setPix )
 {
     m_color = c;
+    if(setPix)
+        setPixmap( KLinesRenderer::self()->ballPixmap( m_color ) );
 }
 
 void BallItem::startSelectedAnimation()
