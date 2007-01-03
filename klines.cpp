@@ -72,10 +72,7 @@ KLines::KLines()
   score_undo = 0;
   bDemo = false;
 
-  statusBar()->insertItem(i18n(" Score:"), 1, 1);
-  statusBar()->setItemAlignment(1, Qt::AlignVCenter | Qt::AlignLeft);
-  statusBar()->insertItem(i18n(" Level: "), 0, 1);
-  statusBar()->setItemAlignment(0, Qt::AlignVCenter | Qt::AlignLeft);
+  statusBar()->insertItem(i18n("Score:"), 0);
  
   initKAction();
 
@@ -84,8 +81,6 @@ KLines::KLines()
 
   setFocusPolicy(Qt::StrongFocus);
   setFocus();
-
-  startGame();
 }
 
 /*
@@ -153,7 +148,7 @@ void KLines::initKAction()
 
 void KLines::updateScore(int score)
 {
-    statusBar()->changeItem(i18n("Score: %1", score), 1);
+    statusBar()->changeItem(i18n("Score: %1", score), 0);
 }
 
 void KLines::gameOver(int score)
@@ -173,7 +168,6 @@ void KLines::startGame()
 
 void KLines::setLevel(int level) {
     levelStr = i18n(LEVEL[level+2]);
-    statusBar()->changeItem(i18n(" Level: %1", levelStr), 0);
 }
 
 void KLines::startDemo()
@@ -192,7 +186,6 @@ void KLines::startDemo()
     bFirst = true;
 
     levelStr = i18n("Tutorial");
-    statusBar()->changeItem(i18n(" Level: %1", levelStr), 0);
 
     lsb->startDemoMode();
     lsb->setGameOver(false);
@@ -212,7 +205,6 @@ void KLines::stopDemo()
     bDemo = false;
     lsb->hideDemoText();
     demoTimer->stop();
-    statusBar()->changeItem(i18n(" Level: %1", i18n("Tutorial - Stopped")), 0);
     act_demo->setText(i18n("Start &Tutorial"));
 }
 
@@ -435,7 +427,6 @@ void KLines::focusOutEvent(QFocusEvent *ev)
    {
       lsb->hideDemoText();
       demoTimer->stop();
-      statusBar()->changeItem(i18n(" Level: %1", i18n("Tutorial - Paused")), 0);
    }
    KMainWindow::focusOutEvent(ev);
 }
@@ -444,7 +435,6 @@ void KLines::focusInEvent(QFocusEvent *ev)
 {
    if (bDemo)
    {
-      statusBar()->changeItem(i18n(" Level: %1", levelStr), 0);
       slotDemo();
    }
    KMainWindow::focusInEvent(ev);
@@ -548,7 +538,7 @@ void KLines::addScore(int ballsErased)
 
 void KLines::updateStatusBar()
 {
-    statusBar()->changeItem(i18n(" Score: %1", score), 1);
+    statusBar()->changeItem(i18n(" Score: %1", score), 0);
 }
 
 void KLines::viewHighScore()

@@ -196,14 +196,11 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
             if( openList.at(i)->F < minF->F )
                 minF = openList.at(i);
 
-        kDebug() << "minF:" << minF->F << endl;
         // move it to closed list
         closedList.append(minF);
         openList.removeAll(minF);
 
         curNode = minF;
-
-        kDebug() << "Current node (" << curNode->pos.x << "," << curNode->pos.y << ")" << endl;
 
         // for each of adjasent 4 squares (upper,lower, on the left and on the right)...
         QList<FieldPos> adjasentSquares;
@@ -217,25 +214,16 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
         foreach( FieldPos pos, adjasentSquares )
         {
             if( m_scene->ballAt(pos) != 0 ) // skip non-walkable cells
-            {
-                kDebug() << "node (" << pos.x << "," << pos.y << ") contains ball - skipping" << endl;
                 continue;
-            }
-
-            kDebug() << "looking at adjasent node (" << pos.x << "," << pos.y << ")" << endl;
 
             // skip if closed list contains this square
             if(indexOfNodeWithPos(pos, closedList) != -1)
-            {
-                kDebug() << "node (" << pos.x << "," << pos.y << ") is in closed list - skipping" << endl;
                 continue;
-            }
 
             // search for node with position 'pos' in openList
             int idx = indexOfNodeWithPos(pos, openList);
             if(idx == -1) // not found
             {
-                kDebug() << "it is not in open list. adding" << endl;
                 PathNode *node = new PathNode( pos );
                 node->parent = curNode;
                 node->G = curNode->G + 10;
@@ -243,24 +231,19 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
                 node->H = sqrt( pow( (to.x - pos.x)*10, 2 ) + pow( (to.y - pos.y)*10, 2 ) );
                 node->F = node->G+node->H;
                 openList.append( node );
-
-                kDebug() << "G:" << node->G << " H:" << node->H << endl;
             }
             else
             {
                 PathNode *node = openList.at(idx);
                 // check if this path to square is better
-                kDebug() << "it is in open list. cheking if this path is better..." << endl;
                 if( curNode->G + 10 < node->G )
                 {
-                    kDebug() << "yup, it's better. recalculating..." << endl;
                     // yup, it's better, reparent and recalculate G,F
                     node->parent = curNode;
                     node->G = curNode->G + 10;
                     node->F = node->G + node->H;
                 }
             }
-            kDebug() << "====" << endl;
         } // foreach
 
         // exit conditions:
@@ -284,19 +267,14 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 
     if(pathFound)
     {
-        kDebug() << "====" << endl;
-        kDebug() << "and the path is:" <<endl;
         // restoring path starting from last node:
         PathNode* node = curNode;
         while(node)
         {
-            kDebug() << "(" << node->pos.x << "," << node->pos.y << ")" << endl;
             m_foundPath.prepend( node->pos );
             node = node->parent;
         }
     }
-    else
-        kDebug() << "no path found!" << endl;
 }
 
 #include "animator.moc"
