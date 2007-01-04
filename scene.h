@@ -53,6 +53,14 @@ public:
      */
     void nextThreeBalls();
     /**
+     *  This score points will be added as an additional bonus to
+     *  every score resulted from ball erasing event.
+     *  For example 1 score point is added if the game is played with
+     *  hidden preview widget.
+     *  By default no bonus is added.
+     */
+    void setBonusScorePoints( int points ) { m_bonusScore = points; }
+    /**
      *  Returns colors of the 3 balls in the next turn
      */
     QList<BallColor> nextColors() const { return m_nextColors; }
@@ -172,6 +180,11 @@ private:
      *  Current game score
      */
     int m_score;
+    /**
+     *  Bonus points added to score upon ball erasing
+     *  @see setBonusScorePoints()
+     */
+    int m_bonusScore;
     /**
      *  Varable which is needed for little trick (tm).
      *  Read more about it in removeAnimFinished() slot

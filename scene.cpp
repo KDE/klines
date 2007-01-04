@@ -44,7 +44,7 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0)
+    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0), m_bonusScore(0)
 {
     m_animator = new KLinesAnimator(this);
     connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
@@ -64,6 +64,7 @@ void KLinesScene::startNewGame()
     m_selPos = FieldPos();
     m_numFreeCells = FIELD_SIZE*FIELD_SIZE;
     m_score = 0;
+    m_bonusScore = 0;
     m_placeBalls = true;
     m_itemsToDelete.clear();
     m_nextColors.clear();
@@ -149,10 +150,6 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
     if(m_numFreeCells < 0)
         return 0; // game over, we won't create more balls
 
-    // FIXME dimsuz: in old klines ball positon had score and levels of
-    // difficulty were implemented around it. Check this out and consider implementing
-    // as current pos finding isn't very good - theorectically it can search forever :).
-    // @see linesboard.cpp: placeBall()
     int posx = -1, posy = -1;
     // let's find random free cell
     do
@@ -223,7 +220,7 @@ void KLinesScene::removeAnimFinished()
 {
     if( m_itemsToDelete.isEmpty() && m_numFreeCells == 0 )
     {
-        kDebug() << "GAME OVER" << endl;
+        emit enableUndo(false);
         emit gameOver(m_score);
         return;
     }
@@ -243,10 +240,12 @@ void KLinesScene::removeAnimFinished()
         // place in code :)
 
         int numBallsErased = m_itemsToDelete.count();
-        // FIXME dimsuz: add +1 to score if next balls preview is hidden
         if(numBallsErased)
+        {
             // expression taked from previous code in klines.cpp
             m_score += 2*numBallsErased*numBallsErased - 20*numBallsErased + 60 ;
+            m_score += m_bonusScore;
+        }
 
         foreach( BallItem* item, m_itemsToDelete )
         {
@@ -547,7 +546,6 @@ void KLinesScene::undo()
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
 {
-    kDebug() << k_funcinfo << endl;
     // FIXME dimsuz: temp
     for(int x=0; x<32*FIELD_SIZE;x+=32)
         for(int y=0; y<32*FIELD_SIZE;y+=32)

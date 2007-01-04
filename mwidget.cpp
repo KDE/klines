@@ -60,6 +60,8 @@ void MainWidget::updateNextColors()
 void MainWidget::setShowNextColors(bool visible)
 {
     m_preview->setShowColors(visible);
+    // add bonus score points if playing w/o preview
+    m_scene->setBonusScorePoints( visible ? 0 : 1 );
 }
 
 #include "mwidget.moc"
