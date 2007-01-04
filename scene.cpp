@@ -93,6 +93,8 @@ void KLinesScene::startNewGame()
         m_nextColors.append(c);
     }
 
+    emit enableUndo(false);
+
     nextThreeBalls();
 }
 
@@ -241,6 +243,7 @@ void KLinesScene::removeAnimFinished()
         // place in code :)
 
         int numBallsErased = m_itemsToDelete.count();
+        // FIXME dimsuz: add +1 to score if next balls preview is hidden
         if(numBallsErased)
             // expression taked from previous code in klines.cpp
             m_score += 2*numBallsErased*numBallsErased - 20*numBallsErased + 60 ;

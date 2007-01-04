@@ -5,12 +5,7 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames ${CMAKE_SOURCE_DIR}/libkdeg
 ########### next target ###############
 
 set(klines_SRCS 
-   prompt.cpp 
    mwidget.cpp 
-   linesboard.cpp 
-   field.cpp 
-   cell.cpp 
-   ballpainter.cpp 
    klines.cpp 
    main.cpp
    scene.cpp
