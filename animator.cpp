@@ -229,7 +229,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
                 node->parent = curNode;
                 node->G = curNode->G + 10;
                 // h is manhattanLength from node to target square
-                node->H = sqrt( pow( (to.x - pos.x)*10, 2 ) + pow( (to.y - pos.y)*10, 2 ) );
+                node->H = sqrt( pow( (to.x - pos.x)*10, 2. ) + pow( (to.y - pos.y)*10, 2. ) );
                 node->F = node->G+node->H;
                 openList.append( node );
             }
