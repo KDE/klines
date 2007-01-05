@@ -32,7 +32,7 @@
 class BallsPreview : public QWidget
 {
 public:
-    BallsPreview( QWidget* parent );
+    explicit BallsPreview( QWidget* parent );
     /**
      *  Sets 3 colors to display
      */

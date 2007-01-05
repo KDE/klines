@@ -35,7 +35,7 @@ class BallItem : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    BallItem( QGraphicsScene* parent );
+    explicit BallItem( QGraphicsScene* parent );
     /**
      *  Sets ball's color
      *  @param setPix specifies whether to set corresponding ball pixmap to this
