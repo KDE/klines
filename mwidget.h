@@ -18,30 +18,25 @@
 #ifndef MWIDGET_H
 #define MWIDGET_H
 
-#include <QFrame>
-
-class BallPainter;
-class LinesBoard;
-class LinesPrompt;
+#include <QWidget>
 
 class KLinesScene;
+class BallsPreview;
 
-class MainWidget : public QFrame
+class MainWidget : public QWidget
 {
+    Q_OBJECT
 public:
-  MainWidget( QWidget* parent=0 );
-  ~MainWidget();
-  LinesBoard * GetLsb();
-  LinesPrompt * GetPrompt();
-  void updatePix();
+    MainWidget( QWidget* parent=0 );
+    ~MainWidget();
 
-  KLinesScene* scene() { return m_scene; }
+    KLinesScene* scene() { return m_scene; }
+public slots:
+    void updateNextColors();
+    void setShowNextColors(bool);
 private:
-  LinesBoard * lsb;
-  LinesPrompt * lPrompt;
-  BallPainter *bPainter;
-
-  KLinesScene* m_scene;
+    KLinesScene* m_scene;
+    BallsPreview* m_preview;
 };
 
 #endif

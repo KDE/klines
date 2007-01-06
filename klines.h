@@ -16,81 +16,31 @@
 #ifndef KLINES_H
 #define KLINES_H
 
-#include <kmainwindow.h>
-#include "cfg.h"
+#include <KMainWindow>
 
-class KSelectAction;
 class KAction;
 class KToggleAction;
-class QTimer;
-class LinesBoard;
-class LinesPrompt;
 class MainWidget;
 
-// FIXME dimsuz: rename to KLinesMainWindow
-class KLines : public KMainWindow
+class KLinesMainWindow : public KMainWindow
 {
   Q_OBJECT
 public:
-  KLines();
-  ~KLines();
+  KLinesMainWindow();
+  ~KLinesMainWindow();
 
 protected:
-  void keyPressEvent(QKeyEvent *e);
   void initKAction();
-  void setLevel(int level);
-
-  void focusOutEvent(QFocusEvent *);
-  void focusInEvent(QFocusEvent *);
 
 public slots:
   void startGame();
-  void startDemo();
-  void stopGame();
-  void endGame();
-  void makeTurn();
-  void userTurn();
-  void addScore(int ballsErased);
-  void switchPrompt();
-  void switchNumbered();
-  void undo();
-  void slotDemo();
 private slots:
-  void viewHighScore();
   void updateScore(int score);
   void gameOver(int score);
+  void showNextToggled(bool show);
 
 private:
-  LinesBoard* lsb;
   MainWidget *mwidget;
-  LinesPrompt *lPrompt;
-  KAction *act_demo, *undoAction, *endTurnAction;
-  KSelectAction *levelAction;
-  KToggleAction *showNextAction;
-  KToggleAction *showNumberedAction;
-  QString levelStr;
-
-  bool bNewTurn;
-
-  int score;
-  int score_undo;
-
-  int nextBalls[BALLSDROP];
-  int nextBalls_undo[BALLSDROP];
-  int nextBalls_redo[BALLSDROP];
-  bool bUndo;
-  bool bFirst;
-  bool bDemo;
-
-  int demoStep;
-  QTimer *demoTimer;
-
-  void searchBallsLine();
-  void generateRandomBalls();
-  void placeBalls();
-  void updateStatusBar();
-  void switchUndo( bool bu );
-  void stopDemo();
 };
 
 #endif

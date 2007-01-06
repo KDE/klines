@@ -31,9 +31,9 @@
 
 static const int FIELD_SIZE=9;
 
-class KLinesRenderer;
 class KLinesAnimator;
 class BallItem;
+class QGraphicsRectItem;
 
 /**
  *  Displays and drives the game
@@ -44,19 +44,26 @@ class KLinesScene : public QGraphicsScene
 public:
     explicit KLinesScene( QObject *parent );
     ~KLinesScene();
-
     /**
      *  Resizes scene
      */
     void resizeScene( int width, int height );
     /**
-     *  Returns colors of the 3 balls in the next turn
-     */
-    QList<BallColor> nextColors() const { return m_nextColors; }
-    /**
      *  Brings in next three balls to scene
      */
     void nextThreeBalls();
+    /**
+     *  This score points will be added as an additional bonus to
+     *  every score resulted from ball erasing event.
+     *  For example 1 score point is added if the game is played with
+     *  hidden preview widget.
+     *  By default no bonus is added.
+     */
+    void setBonusScorePoints( int points ) { m_bonusScore = points; }
+    /**
+     *  Returns colors of the 3 balls in the next turn
+     */
+    QList<BallColor> nextColors() const { return m_nextColors; }
     /**
      *  Returns ballitem in field position pos or 0 if there
      *  is no item there
@@ -66,10 +73,6 @@ public:
      * Overloaded above function
      */
     BallItem* ballAt( int x, int y ) { return m_field[x][y]; }
-    /**
-     *  Returns games' renderer
-     */
-    const KLinesRenderer* renderer() const  { return m_renderer; }
     /**
      *  Field coords to pixel coords
      */
@@ -81,8 +84,42 @@ public:
      */
     inline FieldPos pixToField( const QPointF& p ) const { 
         return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
+public slots:
+    /**
+     *  Starts new game
+     */
+    void startNewGame();
+    /**
+     *  Ends current and starts next turn explicitly
+     */
+    void endTurn();
+    /**
+     *  Undoes one move
+     */
+    void undo();
+    /**
+     *  Moves keyboard-playing focus rect to the left 
+     */
+    void moveFocusLeft();
+    /**
+     *  Moves keyboard-playing focus rect to the right 
+     */
+    void moveFocusRight();
+    /**
+     *  Moves keyboard-playing focus rect to the up 
+     */
+    void moveFocusUp();
+    /**
+     *  Moves keyboard-playing focus rect to the down 
+     */
+    void moveFocusDown();
+    /**
+     *  Takes corresponding action on cell under focus rect
+     */
+    void cellSelected();
 signals:
     void scoreChanged(int);
+    void enableUndo(bool);
     void nextColorsChanged();
     void gameOver(int);
 private slots:
@@ -100,6 +137,18 @@ private:
      *  Searches for 5 or more balls in a row and deletes them from field
      */
     void searchAndErase();
+    /**
+     *  This fuction takes one of two actions:
+     *  If there's a ball at fpos, it will be selected.
+     *  Otherwise if the cell at fpos is empty and there's 
+     *  a selected ball in some other cell it will be moved to fpos
+     *  (if the move is possible, of course)
+     */
+    void selectOrMove( const FieldPos& fpos );
+    /**
+     *  Saves game state information to be used during undo
+     */
+    void saveUndoInfo();
 
     virtual void drawBackground( QPainter*, const QRectF& );
     virtual void mousePressEvent( QGraphicsSceneMouseEvent* );
@@ -110,10 +159,6 @@ private:
      *  or 0 if there's no ball in that cell
      */
     BallItem* m_field[FIELD_SIZE][FIELD_SIZE];
-    /**
-     *  Renderer used to get all the game graphics
-     */
-    const KLinesRenderer* m_renderer;
     /**
      *  Used to start game animations
      *  This object knows how to do some ball animations
@@ -136,14 +181,15 @@ private:
      */
     int m_score;
     /**
+     *  Bonus points added to score upon ball erasing
+     *  @see setBonusScorePoints()
+     */
+    int m_bonusScore;
+    /**
      *  Varable which is needed for little trick (tm).
      *  Read more about it in removeAnimFinished() slot
      */
     bool m_placeBalls;
-    /**
-     *  Indicates game is over
-     */
-    bool m_gameOver;
     /**
      *  Items pending for removal after remove-anim finishes
      */
@@ -152,6 +198,26 @@ private:
      *  Colors of the next turn's balls
      */
     QList<BallColor> m_nextColors;
+    /**
+     *  Keyboard-playing focus indication
+     */
+    QGraphicsRectItem *m_focusItem;
+
+    /**
+     *  Struct for holding game state - used on undos
+     */
+    struct UndoInfo
+    {
+        int numFreeCells;
+        int score;
+        QList<BallColor> nextColors;
+        BallColor fcolors[FIELD_SIZE][FIELD_SIZE];
+    };
+    /**
+     *  Holds game state for undo.
+     *  It is saved before every new turn
+     */
+    UndoInfo m_undoInfo;
 };
 
 class KLinesView : public QGraphicsView

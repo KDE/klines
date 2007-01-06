@@ -20,11 +20,11 @@
 */
 
 
-#include <kapplication.h>
-#include <klocale.h>
-#include <kaboutdata.h>
-#include <kcmdlineargs.h>
-#include <kglobal.h>
+#include <KApplication>
+#include <KLocale>
+#include <KAboutData>
+#include <KCmdLineArgs>
+#include <KGlobal>
 
 #include "klines.h"
 
@@ -37,19 +37,20 @@ static const char dummy[] = I18N_NOOP2("Menu title", "&Move");
 
 int main( int argc, char **argv )
 {
-	KAboutData aboutData("klines", I18N_NOOP("Kolor Lines"), LINESVERSION,
+    KAboutData aboutData("klines", I18N_NOOP("Kolor Lines"), "1.5",
                          description, KAboutData::License_GPL);
     aboutData.addAuthor("Roman Merzlyakov", I18N_NOOP("Original author"), "roman@sbrf.barrt.ru");
     aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
+    aboutData.addAuthor("Dmitry Suzdalev", I18N_NOOP("Rewrite to use QGraphicsView"), "dimsuz@gmail.com");
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KApplication application;
     KGlobal::locale()->insertCatalog("libkdegames");
 
     if (application.isSessionRestored())
-        RESTORE(KLines)
+        RESTORE(KLinesMainWindow)
     else {
-        KLines *window = new KLines;
+        KLinesMainWindow *window = new KLinesMainWindow;
         window->show();
     }
     return application.exec();

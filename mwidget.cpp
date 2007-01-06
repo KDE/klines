@@ -14,71 +14,54 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include <klocale.h>
+#include <KLocale>
 
 #include <QLabel>
 #include <QLayout>
 
 #include "mwidget.h"
-#include "ballpainter.h"
-#include "linesboard.h"
-#include "prompt.h"
-
+#include "preview.h"
 #include "scene.h"
 
 MainWidget::MainWidget( QWidget* parent )
-    : QFrame( parent )
+    : QWidget( parent )
 {
-    QBoxLayout *grid = new QHBoxLayout( this );     //(rows,col)
-    grid->setMargin( 5 );
-    bPainter = new BallPainter();
+    QBoxLayout *mainLay = new QHBoxLayout( this );
+    mainLay->setMargin( 5 );
 
-    lsb = new LinesBoard(bPainter, this);
-//    grid->addWidget( lsb );
-    lsb->hide();
     m_scene = new KLinesScene(this);
     KLinesView* klview = new KLinesView( m_scene, this );
     klview->setCacheMode( QGraphicsView::CacheBackground );
-    grid->addWidget( klview );
+    mainLay->addWidget( klview );
 
     QBoxLayout *right = new QVBoxLayout;
-    grid->addLayout(right);
+    mainLay->addLayout(right);
     right->setMargin(2);
     QLabel *label = new QLabel(i18n("Next balls:"), this);
-    lPrompt = new LinesPrompt(bPainter, this);
-    connect(lPrompt, SIGNAL(PromptPressed()), parent, SLOT(switchPrompt()));
 
-    right->addWidget( label, 0, Qt::AlignBottom | Qt::AlignHCenter );
-    right->addWidget( lPrompt, 0, Qt::AlignTop | Qt::AlignHCenter );
+    m_preview = new BallsPreview(this);
+    updateNextColors();
 
-//    warning("width: %i height: %i", width(), height() );
+    right->addWidget( label );
+    right->addWidget( m_preview );
 
-//    warning("wh: %i hh: %i", sizeHint().width(), sizeHint().height() );
-
+    connect(m_scene, SIGNAL(nextColorsChanged()), SLOT(updateNextColors()) );
 }
-
-/*
-   Destructor: deallocates memory for contents
-*/
 
 MainWidget::~MainWidget()
 {
 }
 
-LinesBoard * MainWidget::GetLsb()
+void MainWidget::updateNextColors() 
 {
-    return lsb;
+    m_preview->setColors( m_scene->nextColors() );
 }
 
-LinesPrompt * MainWidget::GetPrompt()
+void MainWidget::setShowNextColors(bool visible)
 {
-    return lPrompt;
+    m_preview->setShowColors(visible);
+    // add bonus score points if playing w/o preview
+    m_scene->setBonusScorePoints( visible ? 0 : 1 );
 }
 
-void MainWidget::updatePix()
-{
-    bPainter->deletePix();
-    bPainter->createPix();
-    lPrompt->update();
-    lsb->update();
-}
+#include "mwidget.moc"

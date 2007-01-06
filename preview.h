@@ -20,40 +20,35 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#ifndef KL_RENDERER_H
-#define KL_RENDERER_H
+#ifndef KL_PREVIEW_H
+#define KL_PREVIEW_H
 
-#include <QPixmap>
-
+#include <QWidget>
 #include "commondefs.h"
 
-// FIXME dimsuz: give {fire,born,selected}Pixmap methods better names
-class KLinesRenderer
+/**
+ *  Widget for displaying next-turn balls
+ */
+class BallsPreview : public QWidget
 {
 public:
-    static KLinesRenderer* self();
+    explicit BallsPreview( QWidget* parent );
+    /**
+     *  Sets 3 colors to display
+     */
+    void setColors( const QList<BallColor>& colorlist ) { m_colors = colorlist; update(); }
+    /**
+     *  Shows or hides balls display
+     */
+    void setShowColors( bool show ) { m_showColors = show; update(); }
 
-    QPixmap ballPixmap( BallColor c ) const;
-
-    QPixmap firePixmap( int frame ) const;
-    QPixmap bornPixmap( BallColor c, int frame ) const;
-    QPixmap selectedPixmap( BallColor c, int frame ) const;
-
-    QPixmap backgroundTilePixmap() const;
-
-    inline int numFireFrames() const { return 5; }
-    inline int numBornFrames() const { return 5; }
-    inline int numSelectedFrames() const { return 13; }
+    // FIXME dimsuz: this won't be needed when graphics will be SVG
+    virtual QSize sizeHint() const;
 private:
-    // disable copy - it's singleton
-    KLinesRenderer();
-    KLinesRenderer( const KLinesRenderer& );
-    KLinesRenderer& operator=( const KLinesRenderer& );
-    ~KLinesRenderer() { }
+    void paintEvent( QPaintEvent* );
 
-    QPixmap m_ballsPix; // to be removed when SVG comes to us
-    QPixmap m_fieldPix; // to be removed when SVG comes to us
-    QPixmap m_firePix; // to be removed when SVG comes to us
+    QList<BallColor> m_colors;
+    bool m_showColors;
 };
 
 #endif

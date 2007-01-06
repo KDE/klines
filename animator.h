@@ -59,7 +59,7 @@ public:
      */
     void animateBorn( const QList<BallItem*>& list );
     /**
-     *  @returns whether some animation is in progress
+     *  @return whether some animation is in progress
      */
     bool isAnimating() const;
 signals:
