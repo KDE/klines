@@ -4,6 +4,8 @@
     email                : roman@sbrf.barrt.ru
     copyright            : (C) 2000 by Roman Razilov
     email                : Roman.Razilov@gmx.de
+    copyright            : (C) 2006 by Dmitry Suzdalev
+    email                : dimsuz@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -38,6 +40,7 @@ MainWidget::MainWidget( QWidget* parent )
     mainLay->addLayout(right);
     right->setMargin(2);
     QLabel *label = new QLabel(i18n("Next balls:"), this);
+    label->setAlignment( Qt::AlignBottom );
 
     m_preview = new BallsPreview(this);
     updateNextColors();

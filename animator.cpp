@@ -276,6 +276,10 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
             node = node->parent;
         }
     }
+
+    // cleanup
+    qDeleteAll( openList );
+    qDeleteAll( closedList );
 }
 
 #include "animator.moc"

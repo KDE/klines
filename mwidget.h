@@ -4,6 +4,8 @@
     email                : roman@sbrf.barrt.ru
     copyright            : (C) 2000 by Roman Razilov
     email                : Roman.Razilov@gmx.de
+    copyright            : (C) 2006 by Dmitry Suzdalev
+    email                : dimsuz@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
