@@ -138,7 +138,7 @@ private:
      */
     void searchAndErase();
     /**
-     *  This fuction takes one of two actions:
+     *  This function takes one of two actions:
      *  If there's a ball at fpos, it will be selected.
      *  Otherwise if the cell at fpos is empty and there's 
      *  a selected ball in some other cell it will be moved to fpos
