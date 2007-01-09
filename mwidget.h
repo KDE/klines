@@ -35,6 +35,7 @@ public slots:
     void updateNextColors();
     void setShowNextColors(bool);
 private:
+    virtual void resizeEvent( QResizeEvent* );
     KLinesScene* m_scene;
     BallsPreview* m_preview;
 };

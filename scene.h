@@ -77,13 +77,13 @@ public:
      *  Field coords to pixel coords
      */
     inline QPointF fieldToPix(const FieldPos& fpos) const {
-        return QPointF( fpos.x*32+2, fpos.y*32+2 );
+        return QPointF( fpos.x*m_cellSize, fpos.y*m_cellSize );
     }
     /**
      *  Pixel coords to field coords
      */
     inline FieldPos pixToField( const QPointF& p ) const { 
-        return FieldPos(static_cast<int>(p.x()/32), static_cast<int>(p.y()/32)); }
+        return FieldPos(static_cast<int>(p.x()/m_cellSize), static_cast<int>(p.y()/m_cellSize)); }
 public slots:
     /**
      *  Starts new game
@@ -185,6 +185,10 @@ private:
      *  @see setBonusScorePoints()
      */
     int m_bonusScore;
+    /**
+     *  Cell size in pixels
+     */
+    int m_cellSize;
     /**
      *  Varable which is needed for little trick (tm).
      *  Read more about it in removeAnimFinished() slot

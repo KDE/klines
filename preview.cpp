@@ -32,20 +32,18 @@ BallsPreview::BallsPreview( QWidget* parent )
 
 QSize BallsPreview::sizeHint() const
 {
-    return QSize( KLinesRenderer::self()->backgroundTilePixmap().size().width()*3, KLinesRenderer::self()->backgroundTilePixmap().height() );
+    return QSize( KLinesRenderer::self()->cellSize()*3, KLinesRenderer::self()->cellSize() );
 }
 
 void BallsPreview::paintEvent( QPaintEvent* )
 {
     QPainter p(this);
     QPixmap pix = KLinesRenderer::self()->backgroundTilePixmap();
-    // FIXME dimsuz: use smth like KLinesRenderer::self()->elementSize()
     int width = pix.size().width();
     for(int i=0; i < 3; i++)
     {
         p.drawPixmap( i*width, 0, pix );
         if( !m_colors.isEmpty() && m_showColors)
-            // FIXME dimsuz: "2" - hardcoded
-            p.drawPixmap( i*width+2, 2, KLinesRenderer::self()->ballPixmap( m_colors.at(i) ) );
+            p.drawPixmap( i*width, 2, KLinesRenderer::self()->ballPixmap( m_colors.at(i) ) );
     }
 }

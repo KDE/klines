@@ -98,9 +98,8 @@ void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
     // there will be numPoints-1 intervals of
     // movement (interval=cell). We want each of them to take 100ms
     m_moveTimeLine.setDuration((numPoints-1)*100);
-    // FIXME dimsuz: 30 <=> m_scene->ballSize() or smth like that
-    // each interval will take 30 frames
-    m_moveTimeLine.setFrameRange(0, (numPoints-1)*30);
+    // each interval will take cellSize frames
+    m_moveTimeLine.setFrameRange(0, (numPoints-1)*KLinesRenderer::self()->cellSize());
     m_moveTimeLine.setCurrentTime(0);
     m_moveTimeLine.start();
 }
@@ -126,7 +125,8 @@ void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 
 void KLinesAnimator::moveAnimationFrame(int frame)
 {
-    int intervalNum = frame/30;
+    int cellSize = KLinesRenderer::self()->cellSize();
+    int intervalNum = frame/cellSize;
 
     if(intervalNum == m_foundPath.count()-1)
     {
@@ -153,7 +153,7 @@ void KLinesAnimator::moveAnimationFrame(int frame)
     else
         ky = 0;
 
-    int frameWithinInterval = frame%30;
+    int frameWithinInterval = frame%cellSize;
     QPointF pos = m_scene->fieldToPix(from);
     m_movingBall->setPos( pos.x()+kx*frameWithinInterval,
                           pos.y()+ky*frameWithinInterval );

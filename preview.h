@@ -42,7 +42,6 @@ public:
      */
     void setShowColors( bool show ) { m_showColors = show; update(); }
 
-    // FIXME dimsuz: this won't be needed when graphics will be SVG
     virtual QSize sizeHint() const;
 private:
     void paintEvent( QPaintEvent* );

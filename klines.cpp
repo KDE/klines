@@ -108,9 +108,6 @@ void KLinesMainWindow::initKAction()
   action = actionCollection()->addAction("select_cell");
   action->setText(i18n("Move Ball"));
   connect(action, SIGNAL(triggered(bool) ), mwidget->scene(), SLOT(cellSelected()));
-  action = actionCollection()->addAction("place_ball");
-  action->setText(i18n("Move Ball"));
-
   action->setShortcut(Qt::Key_Space);
   addAction(action);
 

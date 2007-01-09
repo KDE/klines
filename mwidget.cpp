@@ -52,6 +52,11 @@ MainWidget::~MainWidget()
 {
 }
 
+void MainWidget::resizeEvent( QResizeEvent* )
+{
+    m_preview->updateGeometry();
+}
+
 void MainWidget::updateNextColors() 
 {
     m_preview->setColors( m_scene->nextColors() );

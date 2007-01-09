@@ -34,12 +34,13 @@ public:
     static KLinesRenderer* self();
 
     QPixmap ballPixmap( BallColor c ) const;
-
     QPixmap firePixmap( int frame ) const;
     QPixmap bornPixmap( BallColor c, int frame ) const;
     QPixmap selectedPixmap( BallColor c, int frame ) const;
-
     QPixmap backgroundTilePixmap() const;
+
+    void setCellSize(int size) { m_cellSize = size; }
+    int cellSize() const { return m_cellSize; }
 
     inline int numFireFrames() const { return 5; }
     inline int numBornFrames() const { return 5; }
@@ -54,6 +55,12 @@ private:
     QPixmap m_ballsPix; // to be removed when SVG comes to us
     QPixmap m_fieldPix; // to be removed when SVG comes to us
     QPixmap m_firePix; // to be removed when SVG comes to us
+
+    /**
+     *  This is the size of the scene's cell.
+     *  All rendered pixmaps will have this size
+     */
+    int m_cellSize;
 };
 
 #endif

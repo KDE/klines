@@ -44,15 +44,15 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0), m_bonusScore(0)
+    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0), m_bonusScore(0), m_cellSize(32)
 {
     m_animator = new KLinesAnimator(this);
     connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
     connect( m_animator, SIGNAL(removeFinished()), SLOT(removeAnimFinished() ) );
     connect( m_animator, SIGNAL(bornFinished()), SLOT(bornAnimFinished() ) );
 
-    // FIXME dimsuz: hardcoded size
-    m_focusItem = new QGraphicsRectItem( QRectF(0, 0, 32, 32), 0, this );
+    m_focusItem = new QGraphicsRectItem( QRectF(0, 0, m_cellSize, m_cellSize), 0, this );
+    m_focusItem->setZValue(1.0);
     m_focusItem->setPen( Qt::DashLine );
 
     startNewGame();
@@ -106,8 +106,30 @@ KLinesScene::~KLinesScene()
 
 void KLinesScene::resizeScene(int width,int height)
 {
-    kDebug() << "resize:" << width << "," << height << endl;
+    // store focus item field pos (calculated using old cellSize)
+    FieldPos focusRectFieldPos = pixToField( m_focusItem->pos() );
+
+    m_cellSize = qMin(width, height)/FIELD_SIZE;
     setSceneRect( 0, 0, width, height );
+
+    KLinesRenderer::self()->setCellSize( m_cellSize );
+
+    // re-render && recalc positions for all balls
+    for( int x=0; x<FIELD_SIZE; ++x)
+        for(int y=0; y< FIELD_SIZE; ++y)
+        {
+            if( m_field[x][y] )
+            {
+                // this will update pixmap
+                m_field[x][y]->setColor( m_field[x][y]->color() );
+                m_field[x][y]->setPos( fieldToPix( FieldPos(x,y) ) );
+            }
+        }
+
+    m_focusItem->setRect( QRect(0,0, m_cellSize, m_cellSize) );
+    m_focusItem->setPos( fieldToPix( focusRectFieldPos ) );
+
+    kDebug() << "resize:" << width << "," << height << "; cellSize: " << m_cellSize << endl;
 }
 
 void KLinesScene::endTurn()
@@ -407,7 +429,6 @@ void KLinesScene::searchAndErase()
     m_animator->animateRemove( m_itemsToDelete );
 }
 
-// FIXME dimsuz: hardcoded size in 5 functions below
 void KLinesScene::moveFocusLeft()
 {
     if( !m_focusItem->isVisible() )
@@ -418,9 +439,9 @@ void KLinesScene::moveFocusLeft()
     }
 
     QPointF pos = m_focusItem->pos();
-    pos.rx() -= 32;
+    pos.rx() -= m_cellSize;
     if( pos.x() < 0 )
-        pos.setX( (FIELD_SIZE - 1)*32 );
+        pos.setX( (FIELD_SIZE - 1)*m_cellSize );
     m_focusItem->setPos( pos );
 }
 
@@ -434,8 +455,8 @@ void KLinesScene::moveFocusRight()
     }
 
     QPointF pos = m_focusItem->pos();
-    pos.rx() += 32;
-    if( pos.x() > (FIELD_SIZE-1)*32 )
+    pos.rx() += m_cellSize;
+    if( pos.x() > (FIELD_SIZE-1)*m_cellSize )
         pos.setX( 0 );
     m_focusItem->setPos( pos );
 }
@@ -450,9 +471,9 @@ void KLinesScene::moveFocusUp()
     }
 
     QPointF pos = m_focusItem->pos();
-    pos.ry() -= 32;
+    pos.ry() -= m_cellSize;
     if( pos.y() < 0 )
-        pos.setY( (FIELD_SIZE - 1)*32 );
+        pos.setY( (FIELD_SIZE - 1)*m_cellSize );
     m_focusItem->setPos( pos );
 }
 
@@ -466,8 +487,8 @@ void KLinesScene::moveFocusDown()
     }
 
     QPointF pos = m_focusItem->pos();
-    pos.ry() += 32;
-    if( pos.y() > (FIELD_SIZE-1)*32 )
+    pos.ry() += m_cellSize;
+    if( pos.y() > (FIELD_SIZE-1)*m_cellSize )
         pos.setY( 0 );
     m_focusItem->setPos( pos );
 }
@@ -477,9 +498,8 @@ void KLinesScene::cellSelected()
     if( !m_focusItem->isVisible() )
         m_focusItem->show();
 
-    // FIXME dimsuz: hardcoded
     // we're taking the center of the cell
-    selectOrMove( pixToField( m_focusItem->pos() + QPointF(16,16) ) );
+    selectOrMove( pixToField( m_focusItem->pos() + QPointF(m_cellSize/2,m_cellSize/2) ) );
 }
 
 void KLinesScene::saveUndoInfo()
@@ -547,8 +567,8 @@ void KLinesScene::undo()
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
 {
     // FIXME dimsuz: temp
-    for(int x=0; x<32*FIELD_SIZE;x+=32)
-        for(int y=0; y<32*FIELD_SIZE;y+=32)
+    for(int x=0; x<m_cellSize*FIELD_SIZE;x+=m_cellSize)
+        for(int y=0; y<m_cellSize*FIELD_SIZE;y+=m_cellSize)
             p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
 }
 
