@@ -59,32 +59,18 @@ void KLinesMainWindow::initKAction()
 
   action = KStandardGameAction::gameNew(this, SLOT(startGame()), this);
   actionCollection()->addAction(action->objectName(), action);
-  act_demo = KStandardGameAction::demo(this, SLOT(startDemo()), this);
-  actionCollection()->addAction(act_demo->objectName(), act_demo);
-  act_demo->setText(i18n("Start &Tutorial"));
+
   action = KStandardGameAction::highscores(this, SLOT(viewHighScore()), this);
   actionCollection()->addAction(action->objectName(), action);
   action = KStandardGameAction::quit(this, SLOT(close()), this);
   actionCollection()->addAction(action->objectName(), action);
-  action = endTurnAction = KStandardGameAction::endTurn(this, SLOT(makeTurn()), this);
-  actionCollection()->addAction(endTurnAction->objectName(), endTurnAction);
-  showNextAction = new KToggleAction(i18n("&Show Next"), this);
-  actionCollection()->addAction("options_show_next", showNextAction);
-  connect(showNextAction, SIGNAL(triggered(bool) ), SLOT(switchPrompt()));
-  showNextAction->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
-  showNextAction->setCheckedState(KGuiItem(i18n("Hide Next")));
-  showNumberedAction = new KToggleAction(i18n("&Use Numbered Balls"), this);
-  actionCollection()->addAction("options_show_numbered", showNumberedAction);
-  connect(showNumberedAction, SIGNAL(triggered(bool) ), SLOT(switchNumbered()));
-  undoAction = KStandardGameAction::undo(this, SLOT(undo()), this);
-  actionCollection()->addAction(undoAction->objectName(), undoAction);
+  action = KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), this);
+  actionCollection()->addAction(action->objectName(), action);
 
-  levelAction = KStandardGameAction::chooseGameType(0, 0, this);
-  actionCollection()->addAction(levelAction->objectName(), levelAction);
-  QStringList items;
-  for (uint i=0; i<Nb_Levels; i++)
-      items.append( i18n(LEVEL[i]) );
-  levelAction->setItems(items);
+  action = KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), this);
+  actionCollection()->addAction(action->objectName(), action);
+  action->setEnabled(false); 	 
+  connect( mwidget->scene(), SIGNAL(enableUndo(bool)), action, SLOT(setEnabled(bool)) );
 
   KToggleAction *showNext = actionCollection()->add<KToggleAction>("show_next");
   showNext->setText(i18n("&Show Next"));
@@ -124,7 +110,7 @@ void KLinesMainWindow::initKAction()
   connect(action, SIGNAL(triggered(bool) ), mwidget->scene(), SLOT(cellSelected()));
   action = actionCollection()->addAction("place_ball");
   action->setText(i18n("Move Ball"));
-  connect(action, SIGNAL(triggered(bool) ), lsb, SLOT(placePlayerBall()));
+
   action->setShortcut(Qt::Key_Space);
   addAction(action);
 
