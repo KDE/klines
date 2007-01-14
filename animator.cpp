@@ -212,7 +212,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
         if( x != FIELD_SIZE-1 ) adjasentSquares.append( FieldPos(x+1,y) );
         if( y != FIELD_SIZE-1 ) adjasentSquares.append( FieldPos(x,y+1) );
 
-        foreach( FieldPos pos, adjasentSquares )
+        foreach( const FieldPos &pos, adjasentSquares )
         {
             if( m_scene->ballAt(pos) != 0 ) // skip non-walkable cells
                 continue;
