@@ -6,6 +6,7 @@ Exec=klines -caption "%c"
 Icon=klines
 DocPath=klines/index.html
 GenericName=Tactical Game
+GenericName[el]=Παιχνίδι τακτικής
 GenericName[fr]=Jeu de tactique
 GenericName[ja]=戦略的ゲーム
 GenericName[x-test]=xxTactical Gamexx
