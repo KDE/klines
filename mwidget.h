@@ -29,7 +29,7 @@ class MainWidget : public QWidget
 {
     Q_OBJECT
 public:
-    MainWidget( QWidget* parent=0 );
+    explicit MainWidget( QWidget* parent=0 );
     ~MainWidget();
 
     KLinesScene* scene() { return m_scene; }
