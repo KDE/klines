@@ -24,6 +24,7 @@
 
 class KLinesScene;
 class BallsPreview;
+class QLabel;
 
 class MainWidget : public QWidget
 {
@@ -40,6 +41,7 @@ private:
     virtual void resizeEvent( QResizeEvent* );
     KLinesScene* m_scene;
     BallsPreview* m_preview;
+    QLabel *m_next_label;
 };
 
 #endif

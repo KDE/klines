@@ -37,17 +37,12 @@ public:
      *  Sets 3 colors to display
      */
     void setColors( const QList<BallColor>& colorlist ) { m_colors = colorlist; update(); }
-    /**
-     *  Shows or hides balls display
-     */
-    void setShowColors( bool show ) { m_showColors = show; update(); }
 
     virtual QSize sizeHint() const;
 private:
     void paintEvent( QPaintEvent* );
 
     QList<BallColor> m_colors;
-    bool m_showColors;
 };
 
 #endif

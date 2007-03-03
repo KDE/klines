@@ -26,24 +26,24 @@
 #include "renderer.h"
 
 BallsPreview::BallsPreview( QWidget* parent )
-    : QWidget(parent), m_showColors(true)
+    : QWidget(parent)
 {
 }
 
 QSize BallsPreview::sizeHint() const
 {
-    return QSize( KLinesRenderer::self()->cellSize()*3, KLinesRenderer::self()->cellSize() );
+    return QSize( KLinesRenderer::self()->cellSize(), KLinesRenderer::self()->cellSize() * 3 );
 }
 
 void BallsPreview::paintEvent( QPaintEvent* )
 {
     QPainter p(this);
     QPixmap pix = KLinesRenderer::self()->backgroundTilePixmap();
-    int width = pix.size().width();
+    int height = pix.size().height();
     for(int i=0; i < 3; i++)
     {
-        p.drawPixmap( i*width, 0, pix );
-        if( !m_colors.isEmpty() && m_showColors)
-            p.drawPixmap( i*width, 2, KLinesRenderer::self()->ballPixmap( m_colors.at(i) ) );
+        p.drawPixmap( 0, i*height, pix );
+        if( !m_colors.isEmpty() )
+            p.drawPixmap( 2, i*height, KLinesRenderer::self()->ballPixmap( m_colors.at(i) ) );
     }
 }
