@@ -1,4 +1,4 @@
-#declare CELLSIZE = 32
+#declare CELLSIZE = 32;
 #include "colors.inc"
 
 camera

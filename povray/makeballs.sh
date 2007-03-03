@@ -15,10 +15,10 @@ balls.sh Violet "rgb<1,0,1>"
 balls.sh Cyan "rgb<0,1,1>"
 balls.sh Brown "rgb<1/2,1/3,0>"
 
-#### montage balls ( 20x7  cells each 30x30)
+#### montage balls ( 20x7  cells each 300x300)
 
-montage -geometry 570x30 -tile 1x10 bl_*.tga balls.tga
-mogrify -crop 570x210+0+0 balls.tga
+montage -geometry 5700x300 -tile 1x10 bl_*.tga balls.tga
+mogrify -crop 5700x2100+0+0 balls.tga
 
 #### convert to jpeg
 

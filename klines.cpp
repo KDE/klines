@@ -127,6 +127,12 @@ void KLinesMainWindow::gameOver(int score)
         d.exec();
 }
 
+void KLinesMainWindow::viewHighScore()
+{
+   KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+   d.exec();
+}
+
 void KLinesMainWindow::startGame()
 {
     updateScore(0);

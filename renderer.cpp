@@ -33,9 +33,9 @@ KLinesRenderer* KLinesRenderer::self()
 KLinesRenderer::KLinesRenderer()
     : m_cellSize(32)
 {
-    m_fieldPix = QPixmap( KStandardDirs::locate( "appdata", "field.jpg" ));
-    m_firePix = QPixmap( KStandardDirs::locate( "appdata", "fire.jpg" ));
-    m_ballsPix = QPixmap( KStandardDirs::locate( "appdata", "balls.jpg" ));
+    m_fieldPix = QImage( KStandardDirs::locate( "appdata", "field.jpg" ));
+    m_firePix = QImage( KStandardDirs::locate( "appdata", "fire.jpg" ));
+    m_ballsPix = QImage( KStandardDirs::locate( "appdata", "balls.jpg" ));
 }
 
 // these are the notes for all *Pixmap() functions below:
@@ -43,31 +43,36 @@ KLinesRenderer::KLinesRenderer()
 // FIXME dimsuz: hardcoded "magic" numbers
 // FIXME dimsuz: scale to emulate future svg support
 // Switching to svg will make this fixmes obsolete
-    
+
 QPixmap KLinesRenderer::ballPixmap(BallColor color) const
 {
-    // col, row, width, height - hardcoded. balls.jpg has such a format.
-    return m_ballsPix.copy( 7*30, static_cast<int>(color)*30, 30, 30 ).scaled( m_cellSize, m_cellSize );
+    return selectedPixmap( color, 3 );
 }
 
 QPixmap KLinesRenderer::firePixmap(int frame) const
 {
+    int ballsize = m_firePix.height();
     // col, row, width, height - hardcoded. balls.jpg has such a format.
-    return m_firePix.copy(frame*30, 0, 30, 30 ).scaled( m_cellSize, m_cellSize );
+    return QPixmap::fromImage( m_firePix.copy(frame*ballsize, 0, ballsize, ballsize ).
+                               scaled( m_cellSize, m_cellSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
 }
 
 QPixmap KLinesRenderer::bornPixmap(BallColor color, int frame) const
 {
+    int ballsize = m_ballsPix.height() / 7;
     // col, row, width, height - hardcoded. balls.jpg has such a format.
-    return m_ballsPix.copy( 13*30 + frame*30, static_cast<int>(color)*30, 30, 30 ).scaled( m_cellSize, m_cellSize );
+    return QPixmap::fromImage( m_ballsPix.copy( 13*ballsize + frame*ballsize, static_cast<int>(color)*ballsize, ballsize, ballsize ).
+                               scaled( m_cellSize * .9, m_cellSize * .9, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
 }
 
 QPixmap KLinesRenderer::selectedPixmap( BallColor color, int frame ) const
 {
-    return m_ballsPix.copy( frame*30, static_cast<int>(color)*30, 30, 30 ).scaled( m_cellSize, m_cellSize );
+    int ballsize = m_ballsPix.height() / 7;
+    return QPixmap::fromImage( m_ballsPix.copy( frame*ballsize, static_cast<int>(color)*ballsize, ballsize, ballsize ).
+                               scaled( m_cellSize * .9, m_cellSize *.9, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
 }
 
 QPixmap KLinesRenderer::backgroundTilePixmap() const
 {
-    return m_fieldPix.scaled( m_cellSize, m_cellSize );
+    return QPixmap::fromImage( m_fieldPix.scaled( m_cellSize, m_cellSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
 }

@@ -129,7 +129,7 @@ void KLinesScene::resizeScene(int width,int height)
     m_focusItem->setRect( QRect(0,0, m_cellSize, m_cellSize) );
     m_focusItem->setPos( fieldToPix( focusRectFieldPos ) );
 
-    kDebug() << "resize:" << width << "," << height << "; cellSize: " << m_cellSize << endl;
+    //kDebug() << "resize:" << width << "," << height << "; cellSize: " << m_cellSize << endl;
 }
 
 void KLinesScene::endTurn()
@@ -247,7 +247,7 @@ void KLinesScene::removeAnimFinished()
         return;
     }
 
-    if(m_itemsToDelete.isEmpty() && m_placeBalls)
+    if( m_itemsToDelete.isEmpty() && m_placeBalls)
     {
         // slot bornAnimFinished() will be called
         // when born animation finishes
@@ -313,7 +313,7 @@ void KLinesScene::bornAnimFinished()
 void KLinesScene::searchAndErase()
 {
     // FIXME dimsuz: put more comments about bounds in for loops
-    
+
     // horizontal chunks searching
     for(int x=0; x<FIELD_SIZE-4; ++x)
         for(int y=0;y<FIELD_SIZE; ++y)
@@ -374,7 +374,7 @@ void KLinesScene::searchAndErase()
             BallColor col = m_field[x][y]->color();
             int tmpx = x+1;
             int tmpy = y+1;
-            while(tmpx < FIELD_SIZE && tmpy < FIELD_SIZE && 
+            while(tmpx < FIELD_SIZE && tmpy < FIELD_SIZE &&
                     m_field[tmpx][tmpy] && m_field[tmpx][tmpy]->color() == col)
             {
                 tmpx++;
@@ -404,7 +404,7 @@ void KLinesScene::searchAndErase()
             BallColor col = m_field[x][y]->color();
             int tmpx = x+1;
             int tmpy = y-1;
-            while(tmpx < FIELD_SIZE && tmpy >=0 && 
+            while(tmpx < FIELD_SIZE && tmpy >=0 &&
                     m_field[tmpx][tmpy] && m_field[tmpx][tmpy]->color() == col)
             {
                 tmpx++;

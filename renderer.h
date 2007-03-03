@@ -52,9 +52,9 @@ private:
     KLinesRenderer& operator=( const KLinesRenderer& );
     ~KLinesRenderer() { }
 
-    QPixmap m_ballsPix; // to be removed when SVG comes to us
-    QPixmap m_fieldPix; // to be removed when SVG comes to us
-    QPixmap m_firePix; // to be removed when SVG comes to us
+    QImage m_ballsPix; // to be removed when SVG comes to us
+    QImage m_fieldPix; // to be removed when SVG comes to us
+    QImage m_firePix; // to be removed when SVG comes to us
 
     /**
      *  This is the size of the scene's cell.

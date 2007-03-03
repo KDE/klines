@@ -77,7 +77,7 @@ public:
      *  Field coords to pixel coords
      */
     inline QPointF fieldToPix(const FieldPos& fpos) const {
-        return QPointF( fpos.x*m_cellSize, fpos.y*m_cellSize );
+        return QPointF( fpos.x*m_cellSize + m_cellSize * 0.05 , fpos.y*m_cellSize + m_cellSize * 0.05 );
     }
     /**
      *  Pixel coords to field coords

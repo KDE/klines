@@ -31,7 +31,7 @@ BallItem::BallItem( QGraphicsScene* parent )
     m_color = NumColors; // = uninitialized
 
     m_timeLine.setCurveShape( QTimeLine::LinearCurve );
-    m_timeLine.setDuration(400);
+    m_timeLine.setDuration(500);
     m_timeLine.setLoopCount(0);
     m_timeLine.setFrameRange(0, KLinesRenderer::self()->numSelectedFrames()-1);
     // starting by going lower

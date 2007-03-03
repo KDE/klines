@@ -79,7 +79,7 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
 
 bool KLinesAnimator::isAnimating() const
 {
-    return (m_bornTimeLine.state() == QTimeLine::Running 
+    return (m_bornTimeLine.state() == QTimeLine::Running
             || m_moveTimeLine.state() == QTimeLine::Running
             || m_removeTimeLine.state() == QTimeLine::Running);
 }
@@ -106,13 +106,15 @@ void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
 
 void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
 {
+    m_moveTimeLine.stop();
+    m_removeTimeLine.stop();
+
     if(list.isEmpty())
     {
         emit removeFinished();
         return;
     }
 
-    m_removeTimeLine.stop();
     m_removedBalls = list;
     m_removeTimeLine.start();
 }
@@ -178,7 +180,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
     // Implementation of A* pathfinding algorithm
     // Thanks to Patrick Lester for excellent tutorial on gamedev.net.
     // See http://www.gamedev.net/reference/articles/article2003.asp
-    
+
     QList<PathNode*> openList;
     QList<PathNode*> closedList;
 
@@ -249,7 +251,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 
         // exit conditions:
         // a) if closeList contains "to"
-        // b) we can't find "to" in closedList and openlist is empty 
+        // b) we can't find "to" in closedList and openlist is empty
         //    => no path exists
         int idx = indexOfNodeWithPos(to, closedList);
         if(idx != -1)

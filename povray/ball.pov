@@ -14,7 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#version 3.0
+#version 3.0;
 
 // Objectname = Main View
 // Objecttype = view
@@ -22,13 +22,13 @@
 // This camera is build for ratio 451:277
 #include "colors.inc"
 #include "textures.inc"
-#declare BallColor = Green
+#declare BallColor = Green;
 #include "clr.inc"
 
-#declare CELLSIZE = 32
-#declare PIXTIME = 10
-#declare BALLDOWN = 3
-#declare BALLSPACE = 4
+#declare CELLSIZE = 32;
+#declare PIXTIME = 10;
+#declare BALLDOWN = 3;
+#declare BALLSPACE = 8;
 
 #warning concat("XXXX clock:",str(clock,5,2),"\n")
 
@@ -36,11 +36,11 @@
 // --------------------burning ball-------------------
  #range (0,1.001)
 
-  #declare explosion = 1
-  #declare jump = 0
-  #declare n = 0
+  #declare explosion = 1;
+  #declare jump = 0;
+  #declare n = 0;
 
-  #declare t0 = 0
+  #declare t0 = 0;
   #declare t1 = 0.2
   #declare t2 = 0.5
   #declare t3 = 0.8
@@ -142,6 +142,10 @@
   #warning concat("XXXX X:",str(X,5,2),"\n")
 
   #declare tc = PIXTIME - tt*PIXTIME
+  #if (tc > PIXTIME / 2)
+    #declare tc = PIXTIME - tc
+  #end
+  #declare tc = tc * 2
 
   #warning concat("XXXX tc:",str(tc,5,2),"\n")
   // ball position
@@ -207,30 +211,27 @@ background
 // fire
 #if (explosion = 1) 
 sphere { 0, 1
-    pigment { color rgbt<0,0,0,1>
-    }
-    halo {
-      emitting
-      spherical_mapping
-      poly
-      max_value 40
-      exponent 0.1
-      linear
-      turbulence tur
+    pigment { color rgbt<0,0,0,1> }
+    interior {
+    media {
+         intervals 1         
+         samples 1,1          
+      emission 1
+//      spherical_mapping
+//      poly
+//      max_value 40
+//      exponent 0.1
+//      linear
+//      turbulence tur
 //      phase pf
-      lambda 2-pf
-      frequency 1
-      octaves 6
-      color_map {
-        [ 0 color rgbt <1, 0, 0, 1> ]
-        [ 0.2 color rgbt <1, 0, 0, 1-1*trf> ]
-        [ 0.5 color rgbt <1, 0, 0, 1-3*trf> ]
-        [ 0.9 color rgbt <1, 1, 0, 1-4*trf> ]
-        [ 1 color rgbt <1, 1, 0.5, 1-6*trf> ]
-      }
-      samples 30
+//      lambda 2-pf
+//      frequency 1
+//      octaves 6
+
+//      samples 30
     }
-    hollow
+}
+    //hollow
     scale<15,15,15>
     translate <-0.5,-0.5,0>
   }

@@ -34,9 +34,10 @@ public:
 protected:
   void initKAction();
 
-public slots:
+public Q_SLOTS:
   void startGame();
-private slots:
+private Q_SLOTS:
+  void viewHighScore();
   void updateScore(int score);
   void gameOver(int score);
   void showNextToggled(bool show);
