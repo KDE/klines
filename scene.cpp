@@ -307,10 +307,14 @@ void KLinesScene::bornAnimFinished()
     // And because of that we check for gameOver in removeAnimFinished()
     // rather than here - there's a chance that searchAndErase() will remove
     // balls making some free cells to play in
-    searchAndErase();
+    if (!searchAndErase() && m_numFreeCells == 0)
+    {
+        kDebug() << "GAME OVER" << endl;
+        emit gameOver(m_score);
+    }
 }
 
-void KLinesScene::searchAndErase()
+bool KLinesScene::searchAndErase()
 {
     // FIXME dimsuz: put more comments about bounds in for loops
 
@@ -427,6 +431,7 @@ void KLinesScene::searchAndErase()
     // after it finishes slot removeAnimFinished() will be called
     // if m_itemsToDelete is empty removeAnimFinished() will be called immediately
     m_animator->animateRemove( m_itemsToDelete );
+    return !m_itemsToDelete.isEmpty();
 }
 
 void KLinesScene::moveFocusLeft()

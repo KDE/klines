@@ -136,7 +136,7 @@ private:
     /**
      *  Searches for 5 or more balls in a row and deletes them from field
      */
-    void searchAndErase();
+    bool searchAndErase();
     /**
      *  This function takes one of two actions:
      *  If there's a ball at fpos, it will be selected.

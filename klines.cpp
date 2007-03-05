@@ -123,8 +123,8 @@ void KLinesMainWindow::gameOver(int score)
 {
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
     KScoreDialog::FieldInfo scoreInfo;
-    if (d.addScore(score, scoreInfo, true))
-        d.exec();
+    d.addScore(score, scoreInfo, true);
+    d.exec();
 }
 
 void KLinesMainWindow::viewHighScore()
