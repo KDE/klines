@@ -34,6 +34,8 @@ KLinesView::KLinesView( KLinesScene* scene, QWidget* parent )
     : QGraphicsView(scene, parent)
 {
     //setMinimumSize( defaultFieldSize, defaultFieldSize );
+    setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+    setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
 }
 
 void KLinesView::resizeEvent( QResizeEvent* ev )

@@ -41,7 +41,7 @@ int main( int argc, char **argv )
                          description, KAboutData::License_GPL);
     aboutData.addAuthor("Roman Merzlyakov", I18N_NOOP("Original author"), "roman@sbrf.barrt.ru");
     aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
-    aboutData.addAuthor("Dmitry Suzdalev", I18N_NOOP("Rewrite to use QGraphicsView"), "dimsuz@gmail.com");
+    aboutData.addAuthor("Dmitry Suzdalev", I18N_NOOP("Rewrite to use QGraphicsView. Current maintainer"), "dimsuz@gmail.com");
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KApplication application;
