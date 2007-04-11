@@ -16,14 +16,14 @@
 <firstname>Roman</firstname>
 <surname>Razilov</surname>
 <affiliation>
-<address><email>Roman.Razilov@gmx.de</email></address>
+<address>&Roman.Razilov.mail;</address>
 </affiliation>
 </author>
 <author>
 <firstname>Roman</firstname>
 <surname>Merzlyakov</surname>
 <affiliation>
-<address><email>roman@sbrf.barrt.ru</email></address>
+<address>&Roman.Merzlyakov.mail;</address>
 </affiliation>
 </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -33,8 +33,8 @@
 <copyright>
 <year>2000</year>
 <year>2001</year>
-<holder>Roman Razilov,</holder>
-<holder>Roman Merzlyakov</holder>
+<holder>&Roman.Razilov;,</holder>
+<holder>&Roman.Merzlyakov;</holder>
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
@@ -61,7 +61,7 @@ been inspired by well known game - <application>Color
 lines</application>, written for DOS by Olga Demina, Igor Ivkin and
 Gennady Denisov back at 1992.</para>
 
-<para>In 2000 Roman Merzlyakov wrote a original version for &kde;. Roman
+<para>In 2000 &Roman.Merzlyakov; wrote a original version for &kde;. Roman
 Roazilov added to it a cool <application>povray</application> generated
 animation. Later in 2001 he ported it to &kde; 2 and made it conform to
 the &kde; games standard.</para>
@@ -176,7 +176,7 @@ any.</para>
 <guimenuitem>Start Tutorial</guimenuitem>
 </menuchoice></term>
 <listitem><para>Show a short, animated, non-interactive demonstration of how
-to play the game.  If the tutorial is running, the statusbar will show
+to play the game.  If the tutorial is running, the status bar will show
 <guilabel>Level: Tutorial</guilabel>, and this menu entry will now show
 <guimenuitem>Stop Tutorial</guimenuitem>.</para></listitem>
 </varlistentry>
@@ -250,22 +250,21 @@ to customize the keys used in the game.</para></listitem>
 
 <para>&kolorlines;</para>
 
-<para>Program copyright 2000 Roman Merzlyakov
-<email>roman@sbrf.barrt.ru</email></para>
+<para>Program copyright 2000 &Roman.Merzlyakov;
+&Roman.Merzlyakov.mail;</para>
 <para>Contributors:</para>
 <itemizedlist>
-<listitem><para>Roman Razilov <email>Roman.Razilov@gmx.de</email>
+<listitem><para>&Roman.Razilov; &Roman.Razilov.mail;
 Redesign, Graphik, animation, partial re-write. Special thanks to my wife Larissa Juschkin for
 testing and discussions.</para>
 </listitem>
 
 </itemizedlist>
 
-<para>Documentation copyright 2001 Roman Razilov
-<email>Roman.Razilov@gmx.de</email></para>
+<para>Documentation copyright 2001 &Roman.Razilov;
+&Roman.Razilov.mail;</para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-
 &underFDL;               <!-- FDL: do not remove -->
 
 
