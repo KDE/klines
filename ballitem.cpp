@@ -20,10 +20,10 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#include <kdebug.h>
-
 #include "ballitem.h"
 #include "renderer.h"
+
+#include <kdebug.h>
 
 BallItem::BallItem( QGraphicsScene* parent )
     : QGraphicsPixmapItem( 0, parent )

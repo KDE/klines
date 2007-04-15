@@ -16,14 +16,14 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+#include "mwidget.h"
+#include "preview.h"
+#include "scene.h"
+
 #include <KLocale>
 
 #include <QLabel>
 #include <QLayout>
-
-#include "mwidget.h"
-#include "preview.h"
-#include "scene.h"
 
 MainWidget::MainWidget( QWidget* parent )
     : QWidget( parent )

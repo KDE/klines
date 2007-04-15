@@ -16,6 +16,11 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+#include "klines.h"
+#include "prefs.h"
+#include "mwidget.h"
+#include "scene.h"
+
 #include <KConfig>
 #include <KAction>
 #include <KActionCollection>
@@ -29,11 +34,6 @@
 #include <kactioncollection.h>
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
-
-#include "klines.h"
-#include "prefs.h"
-#include "mwidget.h"
-#include "scene.h"
 
 KLinesMainWindow::KLinesMainWindow()
 {

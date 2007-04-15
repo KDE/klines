@@ -20,9 +20,9 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#include <KStandardDirs>
-
 #include "renderer.h"
+
+#include <KStandardDirs>
 
 KLinesRenderer* KLinesRenderer::self()
 {

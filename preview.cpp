@@ -20,10 +20,10 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#include <QPainter>
-
 #include "preview.h"
 #include "renderer.h"
+
+#include <QPainter>
 
 BallsPreview::BallsPreview( QWidget* parent )
     : QWidget(parent)

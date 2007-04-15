@@ -20,15 +20,15 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#include <QResizeEvent>
-#include <QGraphicsSceneMouseEvent>
-
-#include <kdebug.h>
-
 #include "scene.h"
 #include "ballitem.h"
 #include "animator.h"
 #include "renderer.h"
+
+#include <QResizeEvent>
+#include <QGraphicsSceneMouseEvent>
+
+#include <kdebug.h>
 
 KLinesView::KLinesView( KLinesScene* scene, QWidget* parent )
     : QGraphicsView(scene, parent)
