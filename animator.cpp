@@ -64,7 +64,7 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     // we setup here one 'empty' frame at the end, because without it
     // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
     // that last frame won't get shown in the scene
-    m_removeTimeLine.setFrameRange(0, KLinesRenderer::self()->numFireFrames());
+    m_removeTimeLine.setFrameRange(0, KLinesRenderer::self()->numDieFrames());
 
     connect(&m_removeTimeLine, SIGNAL(frameChanged(int)), SLOT(removeAnimationFrame(int)) );
     connect(&m_removeTimeLine, SIGNAL(finished()), SIGNAL(removeFinished()));
@@ -163,10 +163,10 @@ void KLinesAnimator::moveAnimationFrame(int frame)
 
 void KLinesAnimator::removeAnimationFrame(int frame)
 {
-    if(frame == KLinesRenderer::self()->numFireFrames())
+    if(frame == KLinesRenderer::self()->numDieFrames())
         return;
     foreach(BallItem* ball, m_removedBalls)
-        ball->setPixmap( KLinesRenderer::self()->firePixmap(frame) );
+        ball->setPixmap( KLinesRenderer::self()->diePixmap(ball->color(), frame) );
 }
 
 void KLinesAnimator::bornAnimationFrame(int frame)

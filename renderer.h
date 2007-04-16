@@ -24,43 +24,49 @@
 #define KL_RENDERER_H
 
 #include <QPixmap>
+#include <QHash>
 
 #include "commondefs.h"
 
-// FIXME dimsuz: give {fire,born,selected}Pixmap methods better names
+class KSvgRenderer;
+
 class KLinesRenderer
 {
 public:
     static KLinesRenderer* self();
 
     QPixmap ballPixmap( BallColor c ) const;
-    QPixmap firePixmap( int frame ) const;
+    QPixmap diePixmap( BallColor c, int frame ) const;
     QPixmap bornPixmap( BallColor c, int frame ) const;
     QPixmap selectedPixmap( BallColor c, int frame ) const;
     QPixmap backgroundTilePixmap() const;
 
-    void setCellSize(int size) { m_cellSize = size; }
+    void setCellSize(int size) { m_cellSize = size; rerenderPixmaps(); }
     int cellSize() const { return m_cellSize; }
 
-    inline int numFireFrames() const { return 5; }
-    inline int numBornFrames() const { return 5; }
-    inline int numSelectedFrames() const { return 13; }
+    inline int numDieFrames() const { return 8; }
+    inline int numBornFrames() const { return 8; }
+    inline int numSelectedFrames() const { return 8; }
 private:
     // disable copy - it's singleton
     KLinesRenderer();
     KLinesRenderer( const KLinesRenderer& );
     KLinesRenderer& operator=( const KLinesRenderer& );
-    ~KLinesRenderer() { }
+    ~KLinesRenderer();
 
-    QImage m_ballsPix; // to be removed when SVG comes to us
-    QImage m_fieldPix; // to be removed when SVG comes to us
-    QImage m_firePix; // to be removed when SVG comes to us
-
+    /**
+     * Rerenders all animation frames from svg to
+     * pixmaps according to m_cellSize and puts them
+     * to m_pixHash
+     */
+    void rerenderPixmaps();
     /**
      *  This is the size of the scene's cell.
      *  All rendered pixmaps will have this size
      */
     int m_cellSize;
+    KSvgRenderer *m_renderer;
+    QHash<QString, QPixmap> m_pixHash;
 };
 
 #endif

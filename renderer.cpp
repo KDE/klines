@@ -23,6 +23,34 @@
 #include "renderer.h"
 
 #include <KStandardDirs>
+#include <KSvgRenderer>
+#include <KDebug>
+
+#include <QPainter>
+
+// note: this should be in sync with svg
+static inline char color2char( BallColor col )
+{
+    switch( col )
+    {
+    case Blue:
+        return 'b';
+    case Brown:
+        return 'f';
+    case Cyan:
+        return 'g';
+    case Green:
+        return 'c';
+    case Red:
+        return 'a';
+    case Violet:
+        return 'd';
+    case Yellow:
+        return 'e';
+    default:
+        return 'x'; // error
+    }
+}
 
 KLinesRenderer* KLinesRenderer::self()
 {
@@ -33,46 +61,92 @@ KLinesRenderer* KLinesRenderer::self()
 KLinesRenderer::KLinesRenderer()
     : m_cellSize(32)
 {
-    m_fieldPix = QImage( KStandardDirs::locate( "appdata", "field.jpg" ));
-    m_firePix = QImage( KStandardDirs::locate( "appdata", "fire.jpg" ));
-    m_ballsPix = QImage( KStandardDirs::locate( "appdata", "balls.jpg" ));
+    m_renderer = new KSvgRenderer();
+    m_renderer->load( KStandardDirs::locate( "appdata", "klines.svgz" ) );
+
+    rerenderPixmaps();
 }
 
-// these are the notes for all *Pixmap() functions below:
-// FIXME dimsuz: copying every time: not very efficient.
-// FIXME dimsuz: hardcoded "magic" numbers
-// FIXME dimsuz: scale to emulate future svg support
-// Switching to svg will make this fixmes obsolete
+KLinesRenderer::~KLinesRenderer()
+{
+    delete m_renderer;
+}
 
 QPixmap KLinesRenderer::ballPixmap(BallColor color) const
 {
-    return selectedPixmap( color, 3 );
+    // FIXME: it should be separate entry in svg!
+    return bornPixmap( color, numBornFrames()-1 );
 }
 
-QPixmap KLinesRenderer::firePixmap(int frame) const
+QPixmap KLinesRenderer::diePixmap(BallColor color, int frame) const
 {
-    int ballsize = m_firePix.height();
-    // col, row, width, height - hardcoded. balls.jpg has such a format.
-    return QPixmap::fromImage( m_firePix.copy(frame*ballsize, 0, ballsize, ballsize ).
-                               scaled( m_cellSize, m_cellSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
+    QString id = QString( "%1_die_%2" ).arg( color2char( color ) ).arg( frame+1 );
+    return m_pixHash.value( id );
 }
 
 QPixmap KLinesRenderer::bornPixmap(BallColor color, int frame) const
 {
-    int ballsize = m_ballsPix.height() / 7;
-    // col, row, width, height - hardcoded. balls.jpg has such a format.
-    return QPixmap::fromImage( m_ballsPix.copy( 13*ballsize + frame*ballsize, static_cast<int>(color)*ballsize, ballsize, ballsize ).
-                               scaled( m_cellSize * .9, m_cellSize * .9, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
+    QString id = QString( "%1_born_%2" ).arg( color2char( color ) ).arg( frame+1 );
+    return m_pixHash.value( id );
 }
 
 QPixmap KLinesRenderer::selectedPixmap( BallColor color, int frame ) const
 {
-    int ballsize = m_ballsPix.height() / 7;
-    return QPixmap::fromImage( m_ballsPix.copy( frame*ballsize, static_cast<int>(color)*ballsize, ballsize, ballsize ).
-                               scaled( m_cellSize * .9, m_cellSize *.9, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
+    QString id = QString( "%1_select_%2" ).arg( color2char( color ) ).arg( frame+1 );
+    return m_pixHash.value( id );
 }
 
 QPixmap KLinesRenderer::backgroundTilePixmap() const
 {
-    return QPixmap::fromImage( m_fieldPix.scaled( m_cellSize, m_cellSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation ) );
+    return m_pixHash.value( "field_cell" );
+}
+
+void KLinesRenderer::rerenderPixmaps()
+{
+    QString items="abcdefg";
+    QString id;
+
+    QPainter p;
+    for ( int i=0; i<items.size(); ++i )
+    {
+        // rendering born frames
+        for ( int f=0; f<numBornFrames();f++ )
+        {
+            id = QString( "%1_born_%2" ).arg( items.at(i) ).arg( f+1 );
+            QPixmap pix( m_cellSize, m_cellSize );
+            pix.fill( Qt::transparent );
+            p.begin( &pix );
+            m_renderer->render( &p, id );
+            p.end();
+            m_pixHash[id] = pix;
+        }
+        // rendering "selected" frames
+        for ( int f=0; f<numSelectedFrames();f++ )
+        {
+            id = QString( "%1_select_%2" ).arg( items.at(i) ).arg( f+1 );
+            QPixmap pix( m_cellSize, m_cellSize );
+            pix.fill( Qt::transparent );
+            p.begin( &pix );
+            m_renderer->render( &p, id );
+            p.end();
+            m_pixHash[id] = pix;
+        }
+        // rendering "die" frames
+        for ( int f=0; f<numDieFrames();f++ )
+        {
+            id = QString( "%1_die_%2" ).arg( items.at(i) ).arg( f+1 );
+            QPixmap pix( m_cellSize, m_cellSize );
+            pix.fill( Qt::transparent );
+            p.begin( &pix );
+            m_renderer->render( &p, id );
+            p.end();
+            m_pixHash[id] = pix;
+        }
+    }
+    QPixmap pix( m_cellSize, m_cellSize );
+    pix.fill( Qt::transparent );
+    p.begin( &pix );
+    m_renderer->render( &p, "field_cell" );
+    p.end();
+    m_pixHash["field_cell"] = pix;
 }

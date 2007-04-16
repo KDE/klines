@@ -29,7 +29,7 @@ install(TARGETS klines  DESTINATION ${BIN_INSTALL_DIR} )
 
 install( FILES klines.desktop  DESTINATION  ${XDG_APPS_DIR} )
 install( FILES klines.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
-install( FILES balls.jpg field.jpg fire.jpg  DESTINATION  ${DATA_INSTALL_DIR}/klines/ )
+install( FILES klines.svgz balls.jpg field.jpg fire.jpg  DESTINATION  ${DATA_INSTALL_DIR}/klines/ )
 install( FILES klinesui.rc  DESTINATION  ${DATA_INSTALL_DIR}/klines )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}   )
