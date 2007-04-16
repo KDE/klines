@@ -18,13 +18,13 @@
 #ifndef KLINES_H
 #define KLINES_H
 
-#include <KMainWindow>
+#include <KXmlGuiWindow>
 
 class KAction;
 class KToggleAction;
 class MainWidget;
 
-class KLinesMainWindow : public KMainWindow
+class KLinesMainWindow : public KXmlGuiWindow
 {
   Q_OBJECT
 public:
