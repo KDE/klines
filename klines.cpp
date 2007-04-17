@@ -122,8 +122,7 @@ void KLinesMainWindow::updateScore(int score)
 void KLinesMainWindow::gameOver(int score)
 {
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
-    KScoreDialog::FieldInfo scoreInfo;
-    d.addScore(score, scoreInfo, KScoreDialog::AskName);
+    d.addScore(score, KScoreDialog::AskName);
     d.exec();
 }
 
