@@ -36,17 +36,17 @@ static inline char color2char( BallColor col )
     case Blue:
         return 'b';
     case Brown:
-        return 'f';
-    case Cyan:
-        return 'g';
-    case Green:
-        return 'c';
-    case Red:
-        return 'a';
-    case Violet:
-        return 'd';
-    case Yellow:
         return 'e';
+    case Cyan:
+        return 'c';
+    case Green:
+        return 'g';
+    case Red:
+        return 'r';
+    case Violet:
+        return 'p';
+    case Yellow:
+        return 'y';
     default:
         return 'x'; // error
     }
@@ -103,7 +103,8 @@ QPixmap KLinesRenderer::backgroundTilePixmap() const
 
 void KLinesRenderer::rerenderPixmaps()
 {
-    QString items="abcdefg";
+    // this should be in sync with svg
+    QString items="rbgpyec";
     QString id;
 
     QPainter p;
