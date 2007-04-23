@@ -42,6 +42,7 @@ int main( int argc, char **argv )
     aboutData.addAuthor("Roman Merzlyakov", I18N_NOOP("Original author"), "roman@sbrf.barrt.ru");
     aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
     aboutData.addAuthor("Dmitry Suzdalev", I18N_NOOP("Rewrite to use QGraphicsView. Current maintainer"), "dimsuz@gmail.com");
+    aboutData.addCredit("Eugene Trounev", I18N_NOOP("New SVG artwork for KDE4 version of the game"), "eugene.trounev@gmail.com");
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KApplication application;

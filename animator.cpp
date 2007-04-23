@@ -59,7 +59,7 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     connect(&m_moveTimeLine, SIGNAL(frameChanged(int)), SLOT(moveAnimationFrame(int)) );
     connect(&m_moveTimeLine, SIGNAL(finished()), SIGNAL(moveFinished()));
 
-    m_removeTimeLine.setDuration(200);
+    m_removeTimeLine.setDuration(300);
     m_removeTimeLine.setCurveShape(QTimeLine::LinearCurve);
     // we setup here one 'empty' frame at the end, because without it
     // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
@@ -69,7 +69,7 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     connect(&m_removeTimeLine, SIGNAL(frameChanged(int)), SLOT(removeAnimationFrame(int)) );
     connect(&m_removeTimeLine, SIGNAL(finished()), SIGNAL(removeFinished()));
 
-    m_bornTimeLine.setDuration(200);
+    m_bornTimeLine.setDuration(400);
     m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
     m_bornTimeLine.setFrameRange(0, KLinesRenderer::self()->numBornFrames()-1);
 
