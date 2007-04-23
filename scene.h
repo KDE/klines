@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with KAtomic; see the file COPYING.  If not, write to
+ * along with KLines; see the file COPYING.  If not, write to
  * the Free Software Foundation, 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  *
@@ -82,7 +82,7 @@ public:
     /**
      *  Pixel coords to field coords
      */
-    inline FieldPos pixToField( const QPointF& p ) const { 
+    inline FieldPos pixToField( const QPointF& p ) const {
         return FieldPos(static_cast<int>(p.x()/m_cellSize), static_cast<int>(p.y()/m_cellSize)); }
 public slots:
     /**
@@ -98,19 +98,19 @@ public slots:
      */
     void undo();
     /**
-     *  Moves keyboard-playing focus rect to the left 
+     *  Moves keyboard-playing focus rect to the left
      */
     void moveFocusLeft();
     /**
-     *  Moves keyboard-playing focus rect to the right 
+     *  Moves keyboard-playing focus rect to the right
      */
     void moveFocusRight();
     /**
-     *  Moves keyboard-playing focus rect to the up 
+     *  Moves keyboard-playing focus rect to the up
      */
     void moveFocusUp();
     /**
-     *  Moves keyboard-playing focus rect to the down 
+     *  Moves keyboard-playing focus rect to the down
      */
     void moveFocusDown();
     /**
@@ -140,7 +140,7 @@ private:
     /**
      *  This function takes one of two actions:
      *  If there's a ball at fpos, it will be selected.
-     *  Otherwise if the cell at fpos is empty and there's 
+     *  Otherwise if the cell at fpos is empty and there's
      *  a selected ball in some other cell it will be moved to fpos
      *  (if the move is possible, of course)
      */
