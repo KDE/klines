@@ -33,12 +33,14 @@ class KSvgRenderer;
 class KLinesRenderer
 {
 public:
+    enum AnimationType { Born, Selected, Die };
+
     static KLinesRenderer* self();
 
+    void setTheme( const QString& themeName );
+
     QPixmap ballPixmap( BallColor c ) const;
-    QPixmap diePixmap( BallColor c, int frame ) const;
-    QPixmap bornPixmap( BallColor c, int frame ) const;
-    QPixmap selectedPixmap( BallColor c, int frame ) const;
+    QPixmap animationFrame( AnimationType type, BallColor c, int frame ) const;
     QPixmap backgroundTilePixmap() const;
 
     void setCellSize(int size) { m_cellSize = size; rerenderPixmaps(); }

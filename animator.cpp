@@ -166,13 +166,13 @@ void KLinesAnimator::removeAnimationFrame(int frame)
     if(frame == KLinesRenderer::self()->numDieFrames())
         return;
     foreach(BallItem* ball, m_removedBalls)
-        ball->setPixmap( KLinesRenderer::self()->diePixmap(ball->color(), frame) );
+        ball->setPixmap( KLinesRenderer::self()->animationFrame( KLinesRenderer::Die, ball->color(), frame) );
 }
 
 void KLinesAnimator::bornAnimationFrame(int frame)
 {
     foreach(BallItem* ball, m_bornBalls)
-        ball->setPixmap( KLinesRenderer::self()->bornPixmap(ball->color(), frame) );
+        ball->setPixmap( KLinesRenderer::self()->animationFrame( KLinesRenderer::Born, ball->color(), frame) );
 }
 
 void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )

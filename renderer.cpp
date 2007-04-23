@@ -74,26 +74,28 @@ KLinesRenderer::~KLinesRenderer()
 
 QPixmap KLinesRenderer::ballPixmap(BallColor color) const
 {
-    // FIXME: it should be separate entry in svg!
-    return bornPixmap( color, numBornFrames()-1 );
-}
-
-QPixmap KLinesRenderer::diePixmap(BallColor color, int frame) const
-{
-    QString id = QString( "%1_die_%2" ).arg( color2char( color ) ).arg( frame+1 );
+    QString id = QString( "%1_rest" ).arg( color2char( color ) );
     return m_pixHash.value( id );
 }
 
-QPixmap KLinesRenderer::bornPixmap(BallColor color, int frame) const
+QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int frame ) const
 {
-    QString id = QString( "%1_born_%2" ).arg( color2char( color ) ).arg( frame+1 );
-    return m_pixHash.value( id );
-}
-
-QPixmap KLinesRenderer::selectedPixmap( BallColor color, int frame ) const
-{
-    QString id = QString( "%1_select_%2" ).arg( color2char( color ) ).arg( frame+1 );
-    return m_pixHash.value( id );
+    QString id;
+    switch( type )
+    {
+    case Born:
+        id = QString( "%1_born_%2" ).arg( color2char( color ) ).arg( frame+1 );
+        return m_pixHash.value( id );
+    case Selected:
+        id = QString( "%1_select_%2" ).arg( color2char( color ) ).arg( frame+1 );
+        return m_pixHash.value( id );
+    case Die:
+        id = QString( "%1_die_%2" ).arg( color2char( color ) ).arg( frame+1 );
+        return m_pixHash.value( id );
+    default:
+        kDebug() << "Warning! Animation type not handled in switch!" << endl;
+        return QPixmap();
+    }
 }
 
 QPixmap KLinesRenderer::backgroundTilePixmap() const
@@ -143,6 +145,14 @@ void KLinesRenderer::rerenderPixmaps()
             p.end();
             m_pixHash[id] = pix;
         }
+        // rendering "rest frame"
+        id = QString( "%1_rest" ).arg( items.at( i ) );
+        QPixmap pix( m_cellSize, m_cellSize );
+        pix.fill( Qt::transparent );
+        p.begin( &pix );
+        m_renderer->render( &p, id );
+        p.end();
+        m_pixHash[id] = pix;
     }
     QPixmap pix( m_cellSize, m_cellSize );
     pix.fill( Qt::transparent );

@@ -62,7 +62,7 @@ void BallItem::stopAnimation()
 
 void BallItem::animFrameChanged(int frame)
 {
-    setPixmap(KLinesRenderer::self()->selectedPixmap( m_color, frame ));
+    setPixmap(KLinesRenderer::self()->animationFrame( KLinesRenderer::Selected, m_color, frame ));
 }
 
 #include "ballitem.moc"
