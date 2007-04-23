@@ -46,7 +46,9 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 // =============== KLinesScene =======================
 
 KLinesScene::KLinesScene( QObject* parent )
-    : QGraphicsScene(parent), m_numFreeCells(FIELD_SIZE*FIELD_SIZE), m_score(0), m_bonusScore(0), m_cellSize(32)
+    : QGraphicsScene(parent),
+      m_playFieldOrigin(0, 0 ), m_numFreeCells(FIELD_SIZE*FIELD_SIZE),
+      m_score(0), m_bonusScore(0), m_cellSize(32)
 {
     m_animator = new KLinesAnimator(this);
     connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
@@ -111,7 +113,10 @@ void KLinesScene::resizeScene(int width,int height)
     // store focus item field pos (calculated using old cellSize)
     FieldPos focusRectFieldPos = pixToField( m_focusItem->pos() );
 
-    m_cellSize = qMin(width, height)/FIELD_SIZE;
+    int minDim = qMin( width, height );
+    m_cellSize = minDim/FIELD_SIZE;
+    m_playFieldOrigin = QPoint( width/2 - minDim/2, height/2 - minDim/2 );
+
     setSceneRect( 0, 0, width, height );
 
     KLinesRenderer::self()->setCellSize( m_cellSize );
@@ -191,6 +196,10 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
 
 void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 {
+    if ( !QRectF( m_playFieldOrigin.x(), m_playFieldOrigin.y(),
+                  m_cellSize*FIELD_SIZE, m_cellSize*FIELD_SIZE ).contains( ev->scenePos() ) )
+        return;
+
     selectOrMove( pixToField(ev->scenePos()) );
 }
 
@@ -573,9 +582,9 @@ void KLinesScene::undo()
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
 {
-    // FIXME dimsuz: temp
-    for(int x=0; x<m_cellSize*FIELD_SIZE;x+=m_cellSize)
-        for(int y=0; y<m_cellSize*FIELD_SIZE;y+=m_cellSize)
+    p->drawPixmap( 0,0, KLinesRenderer::self()->backgroundPixmap( sceneRect().size().toSize() ) );
+    for(int x=m_playFieldOrigin.x(); x<m_playFieldOrigin.x()+m_cellSize*FIELD_SIZE;x+=m_cellSize)
+        for(int y=m_playFieldOrigin.y(); y<m_playFieldOrigin.y()+m_cellSize*FIELD_SIZE;y+=m_cellSize)
             p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
 }
 

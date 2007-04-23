@@ -76,14 +76,19 @@ public:
     /**
      *  Field coords to pixel coords
      */
-    inline QPointF fieldToPix(const FieldPos& fpos) const {
-        return QPointF( fpos.x*m_cellSize + m_cellSize * 0.05 , fpos.y*m_cellSize + m_cellSize * 0.05 );
+    inline QPointF fieldToPix(const FieldPos& fpos) const
+    {
+        return QPointF( m_playFieldOrigin.x()+fpos.x*m_cellSize + m_cellSize * 0.05 ,
+                        m_playFieldOrigin.y()+fpos.y*m_cellSize + m_cellSize * 0.05 );
     }
     /**
      *  Pixel coords to field coords
      */
-    inline FieldPos pixToField( const QPointF& p ) const {
-        return FieldPos(static_cast<int>(p.x()/m_cellSize), static_cast<int>(p.y()/m_cellSize)); }
+    inline FieldPos pixToField( const QPointF& p ) const
+    {
+        return FieldPos(static_cast<int>(( p.x()-m_playFieldOrigin.x() )/m_cellSize),
+                        static_cast<int>(( p.y()-m_playFieldOrigin.y() )/m_cellSize));
+    }
 public slots:
     /**
      *  Starts new game
@@ -168,6 +173,10 @@ private:
      * We need random numbers in this game
      */
     KRandomSequence m_randomSeq;
+    /**
+     * Origin of playfield
+     */
+    QPoint m_playFieldOrigin;
     /**
      *  Position of selected ball (-1,-1) if none
      */

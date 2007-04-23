@@ -41,6 +41,7 @@ public:
 
     QPixmap ballPixmap( BallColor c ) const;
     QPixmap animationFrame( AnimationType type, BallColor c, int frame ) const;
+    QPixmap backgroundPixmap( const QSize& size ) const;
     QPixmap backgroundTilePixmap() const;
 
     void setCellSize(int size) { m_cellSize = size; rerenderPixmaps(); }
@@ -67,6 +68,10 @@ private:
      *  All rendered pixmaps will have this size
      */
     int m_cellSize;
+    /**
+     * Background. Cached until requested size doesn't change
+     */
+    mutable QPixmap m_bkgnd;
     KSvgRenderer *m_renderer;
     QHash<QString, QPixmap> m_pixHash;
 };

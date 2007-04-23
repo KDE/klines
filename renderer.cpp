@@ -103,6 +103,18 @@ QPixmap KLinesRenderer::backgroundTilePixmap() const
     return m_pixHash.value( "field_cell" );
 }
 
+QPixmap KLinesRenderer::backgroundPixmap( const QSize& sz ) const
+{
+    if ( m_bkgnd.size() != sz )
+    {
+        m_bkgnd = QPixmap( sz );
+        m_bkgnd.fill( Qt::transparent );
+        QPainter p( &m_bkgnd );
+        m_renderer->render( &p, "background" );
+    }
+    return m_bkgnd;
+}
+
 void KLinesRenderer::rerenderPixmaps()
 {
     // this should be in sync with svg
