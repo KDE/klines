@@ -169,19 +169,6 @@ any.</para>
 </listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycap>D</keycap></shortcut>
-<guimenu>Move</guimenu>
-<guimenuitem>Start Tutorial</guimenuitem>
-</menuchoice></term>
-<listitem><para>Show a short, animated, non-interactive demonstration of how
-to play the game.  If the tutorial is running, the status bar will show
-<guilabel>Level: Tutorial</guilabel>, and this menu entry will now show
-<guimenuitem>Stop Tutorial</guimenuitem>.</para></listitem>
-</varlistentry>
-</variablelist>
-
 </sect2>
 
 <sect2>
@@ -214,14 +201,6 @@ marbles.</action></para></listitem>
 <para>Number the balls according to color. This may be of assistance to
 players who are color blind, have other vision impairments that make the
 colors hard to distinguish, or those of you who simply like the look.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guisubmenu>Choose Game
-Type</guisubmenu></menuchoice></term>
-<listitem>
-<para>Choose a difficulty level, from <guimenuitem>Very Easy</guimenuitem>
-through <guimenuitem>Very Hard</guimenuitem>.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -286,30 +265,6 @@ testing and discussions.</para>
 <title>Compilation and Installation</title>
 
 &install.compile.documentation;
-
-</sect1>
-
-<sect1 id="customize">
-<title>Generating marbles with <application>Povray</application></title>
-
-<para>All pictures (<filename>klines/*.jpg</filename>) are
-rendered with <application>Povray</application> 3.0 and manipulated 
-with <application>ImageMagick</application>.
-Povray &amp; bash scripts are in the folder <filename class="directory">>klines/povray</filename>.
-Customize <filename>balls.pov</filename> as you want, 
-render and install it.</para>
-
-<note><para>You need Povray 3.0 to render. In newer Versions &ie; 3.1
-<quote>halo</quote> is suppressed. </para></note>
-
-<para>In order to generate marbles on your system, type the following
-in the base folder of the &package; distribution:</para>
-
-<screen width="40">
-
-<prompt>%</prompt> <userinput><command>cd</command> klines</userinput>
-<prompt>%</prompt> <userinput><command>make</command> install</userinput>
-</screen>
 
 </sect1>
 
