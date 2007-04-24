@@ -31,11 +31,9 @@ BallItem::BallItem( QGraphicsScene* parent )
     m_color = NumColors; // = uninitialized
 
     m_timeLine.setCurveShape( QTimeLine::LinearCurve );
-    m_timeLine.setDuration(500);
+    m_timeLine.setDuration(KLinesRenderer::self()->selAnimDuration());
     m_timeLine.setLoopCount(0);
     m_timeLine.setFrameRange(0, KLinesRenderer::self()->numSelectedFrames()-1);
-    // starting by going lower
-    m_timeLine.setCurrentTime( m_timeLine.duration()/2 );
 
     connect(&m_timeLine, SIGNAL(frameChanged(int)), SLOT(animFrameChanged(int)) );
 }

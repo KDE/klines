@@ -59,7 +59,7 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     connect(&m_moveTimeLine, SIGNAL(frameChanged(int)), SLOT(moveAnimationFrame(int)) );
     connect(&m_moveTimeLine, SIGNAL(finished()), SIGNAL(moveFinished()));
 
-    m_removeTimeLine.setDuration(300);
+    m_removeTimeLine.setDuration(KLinesRenderer::self()->dieAnimDuration());
     m_removeTimeLine.setCurveShape(QTimeLine::LinearCurve);
     // we setup here one 'empty' frame at the end, because without it
     // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
@@ -69,7 +69,7 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     connect(&m_removeTimeLine, SIGNAL(frameChanged(int)), SLOT(removeAnimationFrame(int)) );
     connect(&m_removeTimeLine, SIGNAL(finished()), SIGNAL(removeFinished()));
 
-    m_bornTimeLine.setDuration(400);
+    m_bornTimeLine.setDuration(KLinesRenderer::self()->bornAnimDuration());
     m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
     m_bornTimeLine.setFrameRange(0, KLinesRenderer::self()->numBornFrames()-1);
 
@@ -96,8 +96,8 @@ void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
 
     int numPoints = m_foundPath.count();
     // there will be numPoints-1 intervals of
-    // movement (interval=cell). We want each of them to take 100ms
-    m_moveTimeLine.setDuration((numPoints-1)*100);
+    // movement (interval=cell). We want each of them to take moveAnimDuration() ms
+    m_moveTimeLine.setDuration((numPoints-1)*KLinesRenderer::self()->moveAnimDuration());
     // each interval will take cellSize frames
     m_moveTimeLine.setFrameRange(0, (numPoints-1)*KLinesRenderer::self()->cellSize());
     m_moveTimeLine.setCurrentTime(0);

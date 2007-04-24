@@ -30,6 +30,7 @@
 
 class KSvgRenderer;
 
+// TODO documentation!
 class KLinesRenderer
 {
 public:
@@ -37,7 +38,8 @@ public:
 
     static KLinesRenderer* self();
 
-    void setTheme( const QString& themeName );
+    // by default - "default" theme is loaded
+    bool loadTheme( const QString& themeName );
 
     QPixmap ballPixmap( BallColor c ) const;
     QPixmap animationFrame( AnimationType type, BallColor c, int frame ) const;
@@ -47,9 +49,14 @@ public:
     void setCellSize(int size) { m_cellSize = size; rerenderPixmaps(); }
     int cellSize() const { return m_cellSize; }
 
-    inline int numDieFrames() const { return 8; }
-    inline int numBornFrames() const { return 8; }
-    inline int numSelectedFrames() const { return 8; }
+    inline int numDieFrames() const { return m_numDieFrames; }
+    inline int numBornFrames() const { return m_numBornFrames; }
+    inline int numSelectedFrames() const { return m_numSelFrames; }
+
+    inline int bornAnimDuration() const { return m_bornDuration; }
+    inline int selAnimDuration() const { return m_selDuration; }
+    inline int dieAnimDuration() const { return m_dieDuration; }
+    inline int moveAnimDuration() const { return m_moveDuration; }
 private:
     // disable copy - it's singleton
     KLinesRenderer();
@@ -74,6 +81,15 @@ private:
     mutable QPixmap m_bkgnd;
     KSvgRenderer *m_renderer;
     QHash<QString, QPixmap> m_pixHash;
+
+    int m_numBornFrames;
+    int m_numSelFrames;
+    int m_numDieFrames;
+
+    int m_bornDuration;
+    int m_selDuration;
+    int m_dieDuration;
+    int m_moveDuration; // one cell
 };
 
 #endif

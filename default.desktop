@@ -1,0 +1,29 @@
+[KLinesTheme]
+VersionFormat=1
+Name=Default
+SvgFile=klines.svgz
+Author=Eugene Trounev
+AuthorEmail=eugene.trounev@gmail.com
+
+# number of "born" animation frames in svg
+NumBornFrames=8
+
+# number of "selected" animation frames in svg
+NumSelectedFrames=8
+
+# number of "die" animation frames in svg
+NumDieFrames=8
+
+# Timing settings:
+
+# amount of milliseconds to play one cycle of "born"-animation
+BornAnimDuration=400
+
+# amount of milliseconds to play one cycle of "selected"-animation
+SelectedAnimDuration=500
+
+# amount of milliseconds to play one cycle "die"-animation
+DieAnimDuration=300
+
+# amount of milliseconds to move the ball through one cell
+MoveAnimDuration=100

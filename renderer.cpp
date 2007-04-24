@@ -1,6 +1,6 @@
 /*******************************************************************
  *
- * Copyright 2006 Dmitry Suzdalev <dimsuz@gmail.com>
+ * Copyright 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
  *
  * This file is part of the KDE project "KLines"
  *
@@ -25,8 +25,14 @@
 #include <KStandardDirs>
 #include <KSvgRenderer>
 #include <KDebug>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KMessageBox>
+#include <KLocale>
 
 #include <QPainter>
+
+static const int THEME_FORMAT_VERSION=1;
 
 // note: this should be in sync with svg
 static inline char color2char( BallColor col )
@@ -59,10 +65,16 @@ KLinesRenderer* KLinesRenderer::self()
 }
 
 KLinesRenderer::KLinesRenderer()
-    : m_cellSize(32)
+    : m_cellSize(32),
+      m_numBornFrames(0), m_numSelFrames(0), m_numDieFrames(0),
+      m_bornDuration(0), m_selDuration(0), m_dieDuration(0),
+      m_moveDuration(0)
 {
     m_renderer = new KSvgRenderer();
-    m_renderer->load( KStandardDirs::locate( "appdata", "klines.svgz" ) );
+    if ( !loadTheme( "default" ) )
+    {
+        KMessageBox::error( 0,  i18n( "Failed to load default theme. Please check your installation." ) );
+    }
 
     rerenderPixmaps();
 }
@@ -172,4 +184,41 @@ void KLinesRenderer::rerenderPixmaps()
     m_renderer->render( &p, "field_cell" );
     p.end();
     m_pixHash["field_cell"] = pix;
+}
+
+bool KLinesRenderer::loadTheme( const QString& themeName )
+{
+    QString fileName = KStandardDirs::locate( "appdata", themeName+".desktop" );
+    if ( fileName.isEmpty() )
+    {
+        kDebug() << "Failed to find theme's .desktop file!" << endl;
+        return false;
+    }
+
+    KConfig themeCfg( fileName, KConfig::OnlyLocal );
+    KConfigGroup theme = themeCfg.group( "KLinesTheme" );
+
+    // THEME_FORMAT_VERSION will be increased if some incompatible changes
+    // will be done to theme-config file format
+    if ( theme.readEntry( "VersionFormat", 0 ) != THEME_FORMAT_VERSION )
+    {
+        kDebug() << "Refusing to load incompatible theme!" << endl;
+        return false;
+    }
+
+    kDebug() << "Loading theme: " << theme.readEntry( "Name" ) << endl;
+    m_numBornFrames = theme.readEntry( "NumBornFrames", 0 );
+    m_numSelFrames = theme.readEntry( "NumSelectedFrames", 0 );
+    m_numDieFrames = theme.readEntry( "NumDieFrames", 0 );
+
+    m_bornDuration = theme.readEntry( "BornAnimDuration", 300 );
+    m_selDuration = theme.readEntry( "SelectedAnimDuration", 300 );
+    m_dieDuration = theme.readEntry( "DieAnimDuration", 300 );
+    m_moveDuration = theme.readEntry( "MoveAnimDuration", 100 );
+
+    bool res = m_renderer->load( KStandardDirs::locate( "appdata", theme.readEntry( "SvgFile" ) ) );
+    if ( !res )
+        return false;
+
+    return true;
 }
