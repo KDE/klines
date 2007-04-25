@@ -1,6 +1,11 @@
 [KLinesTheme]
 VersionFormat=1
 Name=Default
+Name[el]=Προκαθορισμένο
+Name[ga]=Réamhshocrú
+Name[sv]=Förval
+Name[uk]=Типові
+Name[x-test]=xxDefaultxx
 SvgFile=klines.svgz
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com
