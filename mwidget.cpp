@@ -29,7 +29,7 @@ MainWidget::MainWidget( QWidget* parent )
     : QWidget( parent )
 {
     QBoxLayout *mainLay = new QHBoxLayout( this );
-    mainLay->setMargin( 5 );
+    mainLay->setMargin( 0 );
 
     m_scene = new KLinesScene(this);
     KLinesView* klview = new KLinesView( m_scene, this );
@@ -50,6 +50,8 @@ MainWidget::MainWidget( QWidget* parent )
     right->addWidget( m_next_label );
     right->addWidget( m_preview );
     right->addStretch( 1 );
+
+    mainLay->addSpacing( mainLay->spacing() );
 
     connect(m_scene, SIGNAL(nextColorsChanged()), SLOT(updateNextColors()) );
 }

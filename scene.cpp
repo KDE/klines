@@ -36,6 +36,7 @@ KLinesView::KLinesView( KLinesScene* scene, QWidget* parent )
     //setMinimumSize( defaultFieldSize, defaultFieldSize );
     setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
     setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+    setFrameStyle(QFrame::NoFrame);
 }
 
 void KLinesView::resizeEvent( QResizeEvent* ev )
