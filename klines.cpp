@@ -57,21 +57,18 @@ void KLinesMainWindow::initKAction()
 {
   QAction *action;
 
-  action = KStandardGameAction::gameNew(this, SLOT(startGame()), this);
-  actionCollection()->addAction(action->objectName(), action);
+  // Game
+  KStandardGameAction::gameNew(this, SLOT(startGame()), actionCollection());
+  KStandardGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
+  KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+  KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
 
-  action = KStandardGameAction::highscores(this, SLOT(viewHighScore()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::quit(this, SLOT(close()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action = KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), this);
-  actionCollection()->addAction(action->objectName(), action);
-
-  action = KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), this);
-  actionCollection()->addAction(action->objectName(), action);
-  action->setEnabled(false); 	 
+  // Move
+  action = KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), actionCollection());
+  action->setEnabled(false);
   connect( mwidget->scene(), SIGNAL(enableUndo(bool)), action, SLOT(setEnabled(bool)) );
 
+  // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>("show_next");
   showNext->setText(i18n("&Show Next"));
   showNext->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
