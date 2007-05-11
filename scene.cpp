@@ -49,7 +49,7 @@ void KLinesView::resizeEvent( QResizeEvent* ev )
 KLinesScene::KLinesScene( QObject* parent )
     : QGraphicsScene(parent),
       m_playFieldOrigin(0, 0 ), m_numFreeCells(FIELD_SIZE*FIELD_SIZE),
-      m_score(0), m_bonusScore(0), m_cellSize(32)
+      m_score(0), m_bonusScore(0), m_cellSize(32), m_previewZoneVisible(true)
 {
     m_animator = new KLinesAnimator(this);
     connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
@@ -116,7 +116,16 @@ void KLinesScene::resizeScene(int width,int height)
 
     int minDim = qMin( width, height );
     m_cellSize = minDim/FIELD_SIZE;
-    m_playFieldOrigin = QPoint( width/2 - minDim/2, height/2 - minDim/2 );
+
+    int boardSize = m_cellSize * FIELD_SIZE;
+    if (m_previewZoneVisible && boardSize + m_cellSize > width) // No space enough for balls preview
+    {
+        minDim = width;
+        m_cellSize = (minDim - m_cellSize)/FIELD_SIZE;
+        boardSize = m_cellSize * FIELD_SIZE;
+    }
+
+    m_playFieldOrigin = QPoint( (width - (m_previewZoneVisible ? m_cellSize : 0))/2 - boardSize/2, height/2 - boardSize/2 );
 
     setSceneRect( 0, 0, width, height );
 
@@ -169,9 +178,19 @@ void KLinesScene::nextThreeBalls()
         m_nextColors[i] = c;
     }
 
-    emit nextColorsChanged();
+    invalidate(sceneRect(), BackgroundLayer); // Refresh next colors preview zone
 
     m_animator->animateBorn( newItems );
+}
+
+void KLinesScene::setPreviewZoneVisible( bool visible )
+{
+    if (visible == m_previewZoneVisible)
+        return;
+
+    m_previewZoneVisible = visible;
+    resizeScene((int) width(), (int) height());
+    invalidate(sceneRect());
 }
 
 BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
@@ -576,8 +595,8 @@ void KLinesScene::undo()
 
     m_selPos = FieldPos();
 
-    emit scoreChanged(m_score);
-    emit nextColorsChanged();
+    emit scoreChanged(m_score);	
+    invalidate(sceneRect(), BackgroundLayer); // Refresh next colors preview zone
     emit enableUndo(false);
 }
 
@@ -587,6 +606,18 @@ void KLinesScene::drawBackground(QPainter *p, const QRectF&)
     for(int x=m_playFieldOrigin.x(); x<m_playFieldOrigin.x()+m_cellSize*FIELD_SIZE;x+=m_cellSize)
         for(int y=m_playFieldOrigin.y(); y<m_playFieldOrigin.y()+m_cellSize*FIELD_SIZE;y+=m_cellSize)
             p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
+
+    // Preview zone
+    if (m_previewZoneVisible)
+    {
+        QPixmap pix = KLinesRenderer::self()->backgroundTilePixmap();
+        int ballHeight = pix.size().height();
+        int previewOriginY = (int) height() / 2 - (3 * m_cellSize) / 2;
+
+        for(int i=0; i < 3; i++)
+            if( !m_nextColors.isEmpty() )
+                p->drawPixmap( (int) width() - m_cellSize + 2, previewOriginY + i*ballHeight, KLinesRenderer::self()->ballPixmap( m_nextColors.at(i) ) );
+    }
 }
 
 #include "scene.moc"

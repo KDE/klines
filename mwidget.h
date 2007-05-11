@@ -35,12 +35,9 @@ public:
 
     KLinesScene* scene() { return m_scene; }
 public slots:
-    void updateNextColors();
     void setShowNextColors(bool);
 private:
-    virtual void resizeEvent( QResizeEvent* );
     KLinesScene* m_scene;
-    BallsPreview* m_preview;
     QLabel *m_next_label;
 };
 

@@ -53,6 +53,10 @@ public:
      */
     void nextThreeBalls();
     /**
+     *  Show/Hide the preview zone
+     */
+    void setPreviewZoneVisible( bool visible );
+    /**
      *  This score points will be added as an additional bonus to
      *  every score resulted from ball erasing event.
      *  For example 1 score point is added if the game is played with
@@ -125,7 +129,6 @@ public slots:
 signals:
     void scoreChanged(int);
     void enableUndo(bool);
-    void nextColorsChanged();
     void gameOver(int);
 private slots:
     void moveAnimFinished();
@@ -199,6 +202,10 @@ private:
      */
     int m_cellSize;
     /**
+     *  Is true if preview zone is visible
+     */
+    bool m_previewZoneVisible;
+    /**
      *  Varable which is needed for little trick (tm).
      *  Read more about it in removeAnimFinished() slot
      */
@@ -215,7 +222,6 @@ private:
      *  Keyboard-playing focus indication
      */
     QGraphicsRectItem *m_focusItem;
-
     /**
      *  Struct for holding game state - used on undos
      */

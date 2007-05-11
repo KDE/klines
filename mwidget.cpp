@@ -35,47 +35,17 @@ MainWidget::MainWidget( QWidget* parent )
     KLinesView* klview = new KLinesView( m_scene, this );
     klview->setCacheMode( QGraphicsView::CacheBackground );
     mainLay->addWidget( klview );
-
-    QBoxLayout *right = new QVBoxLayout;
-    mainLay->addLayout(right);
-    right->setMargin(2);
-    m_next_label = new QLabel(i18n("Next:"), this);
-    m_next_label->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
-    m_next_label->setAlignment( Qt::AlignHCenter );
-
-    m_preview = new BallsPreview(this);
-    updateNextColors();
-
-    right->addStretch( 1 );
-    right->addWidget( m_next_label );
-    right->addWidget( m_preview );
-    right->addStretch( 1 );
-
-    mainLay->addSpacing( mainLay->spacing() );
-
-    connect(m_scene, SIGNAL(nextColorsChanged()), SLOT(updateNextColors()) );
 }
 
 MainWidget::~MainWidget()
 {
 }
 
-void MainWidget::resizeEvent( QResizeEvent* )
-{
-    m_preview->updateGeometry();
-}
-
-void MainWidget::updateNextColors()
-{
-    m_preview->setColors( m_scene->nextColors() );
-}
-
 void MainWidget::setShowNextColors(bool visible)
 {
-    m_preview->setVisible( visible );
-    m_next_label->setVisible( visible );
     // add bonus score points if playing w/o preview
     m_scene->setBonusScorePoints( visible ? 0 : 1 );
+    m_scene->setPreviewZoneVisible( visible );
 }
 
 #include "mwidget.moc"
