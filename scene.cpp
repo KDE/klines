@@ -473,12 +473,12 @@ void KLinesScene::moveFocusLeft()
         // no action for the first time
         return;
     }
+    FieldPos focusPos = pixToField( m_focusItem->pos() );
+    focusPos.x--;
+    if (focusPos.x < 0) // rotate on the torus
+        focusPos.x = FIELD_SIZE - 1;
 
-    QPointF pos = m_focusItem->pos();
-    pos.rx() -= m_cellSize;
-    if( pos.x() < 0 )
-        pos.setX( (FIELD_SIZE - 1)*m_cellSize );
-    m_focusItem->setPos( pos );
+    m_focusItem->setPos ( fieldToPix( focusPos ) );
 }
 
 void KLinesScene::moveFocusRight()
@@ -489,12 +489,12 @@ void KLinesScene::moveFocusRight()
         // no action for the first time
         return;
     }
+    FieldPos focusPos = pixToField( m_focusItem->pos() );
+    focusPos.x++;
+    if (focusPos.x >= FIELD_SIZE) // rotate on the torus
+        focusPos.x = 0;
 
-    QPointF pos = m_focusItem->pos();
-    pos.rx() += m_cellSize;
-    if( pos.x() > (FIELD_SIZE-1)*m_cellSize )
-        pos.setX( 0 );
-    m_focusItem->setPos( pos );
+    m_focusItem->setPos ( fieldToPix( focusPos ) );
 }
 
 void KLinesScene::moveFocusUp()
@@ -505,12 +505,12 @@ void KLinesScene::moveFocusUp()
         // no action for the first time
         return;
     }
+    FieldPos focusPos = pixToField( m_focusItem->pos() );
+    focusPos.y--;
+    if (focusPos.y < 0) // rotate on the torus
+        focusPos.y = FIELD_SIZE - 1;
 
-    QPointF pos = m_focusItem->pos();
-    pos.ry() -= m_cellSize;
-    if( pos.y() < 0 )
-        pos.setY( (FIELD_SIZE - 1)*m_cellSize );
-    m_focusItem->setPos( pos );
+    m_focusItem->setPos ( fieldToPix( focusPos ) );
 }
 
 void KLinesScene::moveFocusDown()
@@ -522,11 +522,12 @@ void KLinesScene::moveFocusDown()
         return;
     }
 
-    QPointF pos = m_focusItem->pos();
-    pos.ry() += m_cellSize;
-    if( pos.y() > (FIELD_SIZE-1)*m_cellSize )
-        pos.setY( 0 );
-    m_focusItem->setPos( pos );
+    FieldPos focusPos = pixToField( m_focusItem->pos() );
+    focusPos.y++;
+    if (focusPos.y >= FIELD_SIZE) // rotate on the torus
+        focusPos.y = 0;
+
+    m_focusItem->setPos ( fieldToPix( focusPos ) );
 }
 
 void KLinesScene::cellSelected()
