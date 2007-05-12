@@ -17,7 +17,6 @@
  *                                                                         *
  ***************************************************************************/
 #include "mwidget.h"
-#include "preview.h"
 #include "scene.h"
 
 #include <KLocale>
