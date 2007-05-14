@@ -231,7 +231,15 @@ void KLinesScene::selectOrMove( const FieldPos& fpos )
     if( m_field[fpos.x][fpos.y] ) // ball was selected
     {
         if( m_selPos.isValid() )
+        {
             m_field[m_selPos.x][m_selPos.y]->stopAnimation();
+            
+            if ( m_selPos == fpos )
+            {
+                m_selPos.x = m_selPos.y = -1; // invalidate position
+                return;
+            }
+        }
 
         m_field[fpos.x][fpos.y]->startSelectedAnimation();
         m_selPos = fpos;
@@ -615,9 +623,12 @@ void KLinesScene::drawBackground(QPainter *p, const QRectF&)
         int ballHeight = pix.size().height();
         int previewOriginY = (int) height() / 2 - (3 * m_cellSize) / 2;
 
+        p->drawPixmap((int) width() - m_cellSize, previewOriginY, KLinesRenderer::self()->previewPixmap());
+
         for(int i=0; i < 3; i++)
             if( !m_nextColors.isEmpty() )
-                p->drawPixmap( (int) width() - m_cellSize + 2, previewOriginY + i*ballHeight, KLinesRenderer::self()->ballPixmap( m_nextColors.at(i) ) );
+                p->drawPixmap( (int) width() - m_cellSize + 2, previewOriginY + i*ballHeight,
+                               KLinesRenderer::self()->ballPixmap( m_nextColors.at(i) ) );
     }
 }
 

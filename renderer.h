@@ -45,6 +45,7 @@ public:
     QPixmap animationFrame( AnimationType type, BallColor c, int frame ) const;
     QPixmap backgroundPixmap( const QSize& size ) const;
     QPixmap backgroundTilePixmap() const;
+    QPixmap previewPixmap() const;
 
     void setCellSize(int size) { m_cellSize = size; rerenderPixmaps(); }
     int cellSize() const { return m_cellSize; }

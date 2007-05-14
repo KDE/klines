@@ -127,6 +127,11 @@ QPixmap KLinesRenderer::backgroundPixmap( const QSize& sz ) const
     return m_bkgnd;
 }
 
+QPixmap KLinesRenderer::previewPixmap() const
+{
+    return m_pixHash.value( "preview" );
+}
+
 void KLinesRenderer::rerenderPixmaps()
 {
     // this should be in sync with svg
@@ -184,6 +189,13 @@ void KLinesRenderer::rerenderPixmaps()
     m_renderer->render( &p, "field_cell" );
     p.end();
     m_pixHash["field_cell"] = pix;
+
+    QPixmap previewPix( m_cellSize, m_cellSize * 3);
+    previewPix.fill( Qt::transparent );
+    p.begin( &previewPix );
+    m_renderer->render( &p, "preview" );
+    p.end();
+    m_pixHash["preview"] = previewPix;
 }
 
 bool KLinesRenderer::loadTheme( const QString& themeName )
