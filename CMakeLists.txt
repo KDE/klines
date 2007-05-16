@@ -11,6 +11,7 @@ set(klines_SRCS
    scene.cpp
    renderer.cpp
    ballitem.cpp
+   previewitem.cpp
    animator.cpp)
    
 

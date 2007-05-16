@@ -22,6 +22,7 @@
  ********************************************************************/
 #include "scene.h"
 #include "ballitem.h"
+#include "previewitem.h"
 #include "animator.h"
 #include "renderer.h"
 
@@ -60,6 +61,8 @@ KLinesScene::KLinesScene( QObject* parent )
     m_focusItem->setZValue(1.0);
     m_focusItem->setPen( Qt::DashLine );
 
+    m_previewItem = new PreviewItem(this);
+    m_previewItem->setPos( 0, 0 );
     startNewGame();
 }
 
@@ -80,7 +83,7 @@ void KLinesScene::startNewGame()
     QList<QGraphicsItem*> itemlist = items();
     foreach( QGraphicsItem* item, itemlist )
     {
-        if( item != m_focusItem )
+        if( item != m_focusItem && item != m_previewItem )
         {
             removeItem(item);
             delete item;
@@ -146,6 +149,10 @@ void KLinesScene::resizeScene(int width,int height)
     m_focusItem->setRect( QRect(0,0, m_cellSize, m_cellSize) );
     m_focusItem->setPos( fieldToPix( focusRectFieldPos ) );
 
+    int previewOriginY = height / 2 - (3 * m_cellSize) / 2;
+    m_previewItem->setPos( width-m_cellSize, previewOriginY );
+    m_previewItem->setPreviewColors( m_nextColors );
+
     //kDebug() << "resize:" << width << "," << height << "; cellSize: " << m_cellSize << endl;
 }
 
@@ -178,7 +185,7 @@ void KLinesScene::nextThreeBalls()
         m_nextColors[i] = c;
     }
 
-    invalidate(sceneRect(), BackgroundLayer); // Refresh next colors preview zone
+    m_previewItem->setPreviewColors( m_nextColors );
 
     m_animator->animateBorn( newItems );
 }
@@ -189,8 +196,9 @@ void KLinesScene::setPreviewZoneVisible( bool visible )
         return;
 
     m_previewZoneVisible = visible;
+    m_previewItem->setVisible( visible );
     resizeScene((int) width(), (int) height());
-    invalidate(sceneRect());
+    invalidate( sceneRect() );
 }
 
 BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
@@ -233,7 +241,7 @@ void KLinesScene::selectOrMove( const FieldPos& fpos )
         if( m_selPos.isValid() )
         {
             m_field[m_selPos.x][m_selPos.y]->stopAnimation();
-            
+
             if ( m_selPos == fpos )
             {
                 m_selPos.x = m_selPos.y = -1; // invalidate position
@@ -604,8 +612,9 @@ void KLinesScene::undo()
 
     m_selPos = FieldPos();
 
-    emit scoreChanged(m_score);	
-    invalidate(sceneRect(), BackgroundLayer); // Refresh next colors preview zone
+    m_previewItem->setPreviewColors( m_nextColors );
+
+    emit scoreChanged(m_score);
     emit enableUndo(false);
 }
 
@@ -615,21 +624,6 @@ void KLinesScene::drawBackground(QPainter *p, const QRectF&)
     for(int x=m_playFieldOrigin.x(); x<m_playFieldOrigin.x()+m_cellSize*FIELD_SIZE;x+=m_cellSize)
         for(int y=m_playFieldOrigin.y(); y<m_playFieldOrigin.y()+m_cellSize*FIELD_SIZE;y+=m_cellSize)
             p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
-
-    // Preview zone
-    if (m_previewZoneVisible)
-    {
-        QPixmap pix = KLinesRenderer::self()->backgroundTilePixmap();
-        int ballHeight = pix.size().height();
-        int previewOriginY = (int) height() / 2 - (3 * m_cellSize) / 2;
-
-        p->drawPixmap((int) width() - m_cellSize, previewOriginY, KLinesRenderer::self()->previewPixmap());
-
-        for(int i=0; i < 3; i++)
-            if( !m_nextColors.isEmpty() )
-                p->drawPixmap( (int) width() - m_cellSize + 2, previewOriginY + i*ballHeight,
-                               KLinesRenderer::self()->ballPixmap( m_nextColors.at(i) ) );
-    }
 }
 
 #include "scene.moc"

@@ -33,6 +33,7 @@ static const int FIELD_SIZE=9;
 
 class KLinesAnimator;
 class BallItem;
+class PreviewItem;
 class QGraphicsRectItem;
 
 /**
@@ -222,6 +223,10 @@ private:
      *  Keyboard-playing focus indication
      */
     QGraphicsRectItem *m_focusItem;
+    /**
+     *  Item which displays next balls preview
+     */
+    PreviewItem *m_previewItem;
     /**
      *  Struct for holding game state - used on undos
      */
