@@ -30,6 +30,8 @@
 #include <KMessageBox>
 #include <KLocale>
 
+#include <KGameTheme>
+
 #include <QPainter>
 
 static const int THEME_FORMAT_VERSION=1;
@@ -71,7 +73,9 @@ KLinesRenderer::KLinesRenderer()
       m_moveDuration(0)
 {
     m_renderer = new KSvgRenderer();
-    if ( !loadTheme( "default" ) )
+    m_theme = new KGameTheme();
+
+    if ( !loadTheme("default") )
     {
         KMessageBox::error( 0,  i18n( "Failed to load default theme. Please check your installation." ) );
     }
@@ -82,6 +86,7 @@ KLinesRenderer::KLinesRenderer()
 KLinesRenderer::~KLinesRenderer()
 {
     delete m_renderer;
+    delete m_theme;
 }
 
 QPixmap KLinesRenderer::ballPixmap(BallColor color) const
@@ -200,37 +205,22 @@ void KLinesRenderer::rerenderPixmaps()
 
 bool KLinesRenderer::loadTheme( const QString& themeName )
 {
-    QString fileName = KStandardDirs::locate( "appdata", themeName+".desktop" );
-    if ( fileName.isEmpty() )
-    {
-        kDebug() << "Failed to find theme's .desktop file!" << endl;
+    if ( !m_theme->load( themeName+".desktop" ) )
         return false;
-    }
 
-    KConfig themeCfg( fileName, KConfig::OnlyLocal );
-    KConfigGroup theme = themeCfg.group( "KLinesTheme" );
-
-    // THEME_FORMAT_VERSION will be increased if some incompatible changes
-    // will be done to theme-config file format
-    if ( theme.readEntry( "VersionFormat", 0 ) != THEME_FORMAT_VERSION )
-    {
-        kDebug() << "Refusing to load incompatible theme!" << endl;
-        return false;
-    }
-
-    kDebug() << "Loading theme: " << theme.readEntry( "Name" ) << endl;
-    m_numBornFrames = theme.readEntry( "NumBornFrames", 0 );
-    m_numSelFrames = theme.readEntry( "NumSelectedFrames", 0 );
-    m_numDieFrames = theme.readEntry( "NumDieFrames", 0 );
-
-    m_bornDuration = theme.readEntry( "BornAnimDuration", 300 );
-    m_selDuration = theme.readEntry( "SelectedAnimDuration", 300 );
-    m_dieDuration = theme.readEntry( "DieAnimDuration", 300 );
-    m_moveDuration = theme.readEntry( "MoveAnimDuration", 100 );
-
-    bool res = m_renderer->load( KStandardDirs::locate( "appdata", theme.readEntry( "SvgFile" ) ) );
+    bool res = m_renderer->load( m_theme->graphics() );
     if ( !res )
         return false;
+
+    m_numBornFrames = m_theme->property( "NumBornFrames" ).toInt();
+    m_numSelFrames = m_theme->property( "NumSelectedFrames" ).toInt();
+    m_numDieFrames = m_theme->property( "NumDieFrames" ).toInt();
+
+    m_bornDuration = m_theme->property( "BornAnimDuration" ).toInt();
+    m_selDuration = m_theme->property( "SelectedAnimDuration" ).toInt();
+    m_dieDuration = m_theme->property( "DieAnimDuration" ).toInt();
+    m_moveDuration = m_theme->property( "MoveAnimDuration" ).toInt();
+
 
     return true;
 }

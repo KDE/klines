@@ -29,6 +29,7 @@
 #include "commondefs.h"
 
 class KSvgRenderer;
+class KGameTheme;
 
 // TODO documentation!
 class KLinesRenderer
@@ -38,7 +39,6 @@ public:
 
     static KLinesRenderer* self();
 
-    // by default - "default" theme is loaded
     bool loadTheme( const QString& themeName );
 
     QPixmap ballPixmap( BallColor c ) const;
@@ -81,6 +81,7 @@ private:
      */
     mutable QPixmap m_bkgnd;
     KSvgRenderer *m_renderer;
+    KGameTheme *m_theme;
     QHash<QString, QPixmap> m_pixHash;
 
     int m_numBornFrames;

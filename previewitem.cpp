@@ -45,7 +45,7 @@ void PreviewItem::setPreviewColors( const QList<BallColor>& colors )
     update();
 }
 
-void PreviewItem::paint( QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget )
+void PreviewItem::paint( QPainter* p, const QStyleOptionGraphicsItem*, QWidget* )
 {
     p->drawPixmap( 0, 0, m_pixmap );
 }

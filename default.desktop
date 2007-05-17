@@ -1,4 +1,4 @@
-[KLinesTheme]
+[KGameTheme]
 VersionFormat=1
 Name=Default
 Name[be]=Прадвызначаны
@@ -7,7 +7,7 @@ Name[ga]=Réamhshocrú
 Name[sv]=Förval
 Name[uk]=Типові
 Name[x-test]=xxDefaultxx
-SvgFile=klines.svgz
+FileName=klines.svgz
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com
 
