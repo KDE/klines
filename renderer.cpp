@@ -205,7 +205,7 @@ void KLinesRenderer::rerenderPixmaps()
 
 bool KLinesRenderer::loadTheme( const QString& themeName )
 {
-    if ( !m_theme->load( themeName+".desktop" ) )
+    if ( !m_theme->load( "themes/"+themeName+".desktop" ) )
         return false;
 
     bool res = m_renderer->load( m_theme->graphics() );
