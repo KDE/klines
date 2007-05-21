@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 
-<gui name="klines" version="6">
+<gui name="klines" version="7">
   <MenuBar>
-    <Menu name="settings"><text>&amp;Settings</text>
+    <Menu name="settings">
       <Action name="show_next" />
+    </Menu>
+    <Menu name="navigation">
+      <text>Navigation</text>
+      <Action name="navi_left" />
+      <Action name="navi_right" />
+      <Action name="navi_up" />
+      <Action name="navi_down" />
+      <Action name="navi_select" />
     </Menu>
   </MenuBar>
 
@@ -14,4 +22,42 @@
     <Action name="move_undo" />
     <Action name="move_end_turn" />
   </ToolBar>
+
+  <ToolBar name="navigationToolBar" hidden="true" iconText="icontextbottom">
+    <text>Navigation</text>
+    <Action name="navi_left" />
+    <Action name="navi_right" />
+    <Action name="navi_up" />
+    <Action name="navi_down" />
+    <Separator />
+    <Action name="navi_select" />
+  </ToolBar>
+
+  <State name="init">
+    <disable>
+      <Action name="move_undo" />
+    </disable>
+  </State>
+
+  <State name="not_undoable">
+    <disable>
+      <Action name="move_undo" />
+    </disable>
+  </State>
+
+  <State name="undoable">
+    <enable>
+      <Action name="move_undo" />
+    </enable>
+  </State>
+
+  <ActionProperties>
+    <Action name="navi_left" text="Left" toolTip="Move cursor to left" icon="arrow-left" shortcut="Left"/>
+    <Action name="navi_right" text="Right" toolTip="Move cursor to right" icon="arrow-right" shortcut="Right"/>
+    <Action name="navi_up" text="Up" toolTip="Move cursor up" icon="arrow-up" shortcut="Up"/>
+    <Action name="navi_down" text="Down" toolTip="Move cursor down" icon="arrow-down" shortcut="Down"/>
+    <Action name="navi_select" text="Select" toolTip="Select field under the cursor" icon="arrow-here" shortcut="Space"/>
+
+    <Action name="show_next" text="&amp;Show Next" shortcut="CTRL+P"/>
+  </ActionProperties>
 </gui>

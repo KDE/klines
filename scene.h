@@ -129,7 +129,7 @@ public slots:
     void cellSelected();
 signals:
     void scoreChanged(int);
-    void enableUndo(bool);
+    void stateChanged(const QString &);
     void gameOver(int);
 private slots:
     void moveAnimFinished();

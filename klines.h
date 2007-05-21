@@ -32,7 +32,7 @@ public:
   ~KLinesMainWindow();
 
 protected:
-  void initKAction();
+  void setupActions();
 
 public Q_SLOTS:
   void startGame();

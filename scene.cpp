@@ -102,7 +102,7 @@ void KLinesScene::startNewGame()
         m_nextColors.append(c);
     }
 
-    emit enableUndo(false);
+    emit stateChanged("not_undoable");
 
     nextThreeBalls();
 }
@@ -289,7 +289,8 @@ void KLinesScene::removeAnimFinished()
 {
     if( m_itemsToDelete.isEmpty() && m_numFreeCells == 0 )
     {
-        emit enableUndo(false);
+        emit stateChanged("not_undoable");
+        //emit enableUndo(false);
         emit gameOver(m_score);
         return;
     }
@@ -566,7 +567,7 @@ void KLinesScene::saveUndoInfo()
     m_undoInfo.score = m_score;
     m_undoInfo.nextColors = m_nextColors;
 
-    emit enableUndo(true);
+    emit stateChanged("undoable");
 }
 
 // Brings m_field and some other vars to the state it was before last turn
@@ -615,7 +616,8 @@ void KLinesScene::undo()
     m_previewItem->setPreviewColors( m_nextColors );
 
     emit scoreChanged(m_score);
-    emit enableUndo(false);
+    
+    emit stateChanged("not_undoable");
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)

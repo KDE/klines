@@ -1,21 +1,24 @@
-/***************************************************************************
-    begin                : Fri May 19 2000
-    copyright            : (C) 2000 by Roman Merzlyakov
-    email                : roman@sbrf.barrt.ru
-    copyright            : (C) 2000 by Roman Razilov
-    email                : Roman.Razilov@gmx.de
-    copyright            : (C) 2006 by Dmitry Suzdalev
-    email                : dimsuz@gmail.com
- ***************************************************************************/
+/*
+    Copyright 2000 Roman Merzlyakov <roman@sbrf.barrt.ru>
+    Copyright 2000 Roman Razilov <roman@sbrf.barrt.ru>
+    Copyright 2006 Dimitry Suzdalev <dimsuz@gmail.com>
+    Copyright 2007 Simon Hürlimann <simon.huerlimann@huerlisi.ch>
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
 #include "klines.h"
 #include "prefs.h"
 #include "mwidget.h"
@@ -35,78 +38,53 @@
 #include <kstandardaction.h>
 #include <kstandardgameaction.h>
 
+// Mainwindow Constructor
 KLinesMainWindow::KLinesMainWindow()
 {
   mwidget = new MainWidget(this);
   setCentralWidget( mwidget );
 
   connect(mwidget->scene(), SIGNAL(scoreChanged(int)), SLOT(updateScore(int)));
+  connect(mwidget->scene(), SIGNAL(stateChanged(const QString &)), SLOT(slotStateChanged(const QString &)));
   connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
 
   statusBar()->insertItem(i18n("Score:"), 0);
   updateScore(0);
 
-  initKAction();
+  setupActions();
+
+  stateChanged("init");
 }
 
+// Mainwindow Destructor
 KLinesMainWindow::~KLinesMainWindow()
 {
 }
 
-void KLinesMainWindow::initKAction()
+void KLinesMainWindow::setupActions()
 {
-  QAction *action;
-
   // Game
   KStandardGameAction::gameNew(this, SLOT(startGame()), actionCollection());
   KStandardGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-  KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
 
   // Move
-  action = KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), actionCollection());
-  action->setEnabled(false);
-  connect( mwidget->scene(), SIGNAL(enableUndo(bool)), action, SLOT(setEnabled(bool)) );
+  KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), actionCollection());
+  KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
 
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>("show_next");
-  showNext->setText(i18n("&Show Next"));
-  showNext->setShortcut(KShortcut(Qt::CTRL+Qt::Key_P));
   connect(showNext, SIGNAL(triggered(bool) ), SLOT(showNextToggled(bool)));
-  addAction(showNext);
 
   showNext->setChecked(Prefs::showNext());
   mwidget->setShowNextColors(Prefs::showNext());
 
-  action = actionCollection()->addAction("left");
-  action->setText(i18n("Move Left"));
-  connect(action, SIGNAL(triggered(bool) ), mwidget->scene(), SLOT(moveFocusLeft()));
-  action->setShortcut(Qt::Key_Left);
-  addAction(action);
-
-  action = actionCollection()->addAction("right");
-  action->setText(i18n("Move Right"));
-  connect(action, SIGNAL(triggered(bool) ), mwidget->scene(), SLOT(moveFocusRight()));
-  action->setShortcut(Qt::Key_Right);
-  addAction(action);
-
-  action = actionCollection()->addAction("up");
-  action->setText(i18n("Move Up"));
-  connect(action, SIGNAL(triggered(bool) ), mwidget->scene(), SLOT(moveFocusUp()));
-  action->setShortcut(Qt::Key_Up);
-  addAction(action);
-
-  action = actionCollection()->addAction("down");
-  action->setText(i18n("Move Down"));
-  connect(action, SIGNAL(triggered(bool) ), mwidget->scene(), SLOT(moveFocusDown()));
-  action->setShortcut(Qt::Key_Down);
-  addAction(action);
-
-  action = actionCollection()->addAction("select_cell");
-  action->setText(i18n("Move Ball"));
-  connect(action, SIGNAL(triggered(bool) ), mwidget->scene(), SLOT(cellSelected()));
-  action->setShortcut(Qt::Key_Space);
-  addAction(action);
+  // Navigation
+  actionCollection()->add<QAction>("navi_left", mwidget->scene(), SLOT(moveFocusLeft()));
+  actionCollection()->add<QAction>("navi_right", mwidget->scene(), SLOT(moveFocusRight()));
+  actionCollection()->add<QAction>("navi_up", mwidget->scene(), SLOT(moveFocusUp()));
+  actionCollection()->add<QAction>("navi_down", mwidget->scene(), SLOT(moveFocusDown()));
+  actionCollection()->add<QAction>("navi_select", mwidget->scene(), SLOT(cellSelected()));
 
   setupGUI();
 }
