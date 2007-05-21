@@ -108,7 +108,7 @@ void KLinesMainWindow::initKAction()
   action->setShortcut(Qt::Key_Space);
   addAction(action);
 
-  setupGUI( Save | Keys | StatusBar | Create );
+  setupGUI();
 }
 
 void KLinesMainWindow::updateScore(int score)
