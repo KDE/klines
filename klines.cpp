@@ -117,7 +117,7 @@ void KLinesMainWindow::showNextToggled(bool show)
 {
     mwidget->setShowNextColors(show);
     Prefs::setShowNext(show);
-    Prefs::writeConfig();
+    Prefs::self()->writeConfig();
 }
 
 
