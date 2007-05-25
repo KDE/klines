@@ -30,27 +30,16 @@ PreviewItem::PreviewItem( QGraphicsScene* scene )
 {
 }
 
-void PreviewItem::setPreviewColors( const QList<BallColor>& colors )
-{
-    if( colors.isEmpty() )
-        return;
-
-    m_pixmap = KLinesRenderer::self()->previewPixmap();
-    QPainter p( &m_pixmap );
-    int ballHeight = KLinesRenderer::self()->backgroundTilePixmap().height();
-    for(int i=0; i < 3; i++)
-        p.drawPixmap( 2, i*ballHeight,
-                       KLinesRenderer::self()->ballPixmap( colors.at(i) ) );
-    p.end();
-    update();
-}
-
 void PreviewItem::paint( QPainter* p, const QStyleOptionGraphicsItem*, QWidget* )
 {
-    p->drawPixmap( 0, 0, m_pixmap );
+    int ballHeight = KLinesRenderer::self()->cellSize();
+    p->drawPixmap( 0, 0, KLinesRenderer::self()->previewPixmap() );
+    for(int i=0; i < 3; i++)
+        p->drawPixmap( 2, i*ballHeight,
+                       KLinesRenderer::self()->ballPixmap( m_colors.at(i) ) );
 }
 
 QRectF PreviewItem::boundingRect() const
 {
-    return m_pixmap.rect();
+    return KLinesRenderer::self()->previewPixmap().rect();
 }

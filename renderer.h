@@ -47,7 +47,7 @@ public:
     QPixmap backgroundTilePixmap() const;
     QPixmap previewPixmap() const;
 
-    void setCellSize(int size) { m_cellSize = size; rerenderPixmaps(); }
+    void setCellSize(int size);
     int cellSize() const { return m_cellSize; }
 
     inline int numDieFrames() const { return m_numDieFrames; }

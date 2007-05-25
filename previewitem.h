@@ -34,13 +34,13 @@ public:
     /**
      * Sets colors to be displayed
      */
-    void setPreviewColors( const QList<BallColor>& colors );
+    void setPreviewColors( const QList<BallColor>& colors ) { m_colors = colors; }
 
     // reimplemented functions
     virtual void paint( QPainter* p, const QStyleOptionGraphicsItem* option,  QWidget* widget = 0 );
     virtual QRectF boundingRect() const;
 private:
-    QPixmap m_pixmap;
+    QList<BallColor> m_colors;
 };
 
 #endif

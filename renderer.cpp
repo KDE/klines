@@ -34,8 +34,6 @@
 
 #include <QPainter>
 
-static const int THEME_FORMAT_VERSION=1;
-
 // note: this should be in sync with svg
 static inline char color2char( BallColor col )
 {
@@ -80,7 +78,7 @@ KLinesRenderer::KLinesRenderer()
         KMessageBox::error( 0,  i18n( "Failed to load default theme. Please check your installation." ) );
     }
 
-    rerenderPixmaps();
+//    rerenderPixmaps();
 }
 
 KLinesRenderer::~KLinesRenderer()
@@ -91,7 +89,7 @@ KLinesRenderer::~KLinesRenderer()
 
 QPixmap KLinesRenderer::ballPixmap(BallColor color) const
 {
-    QString id = QString( "%1_rest" ).arg( color2char( color ) );
+    QString id = color2char( color )+QString( "_rest" );
     return m_pixHash.value( id );
 }
 
@@ -101,13 +99,13 @@ QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int
     switch( type )
     {
     case Born:
-        id = QString( "%1_born_%2" ).arg( color2char( color ) ).arg( frame+1 );
+        id = color2char( color )+QString( "_born_" ) + QString::number( frame+1 );
         return m_pixHash.value( id );
     case Selected:
-        id = QString( "%1_select_%2" ).arg( color2char( color ) ).arg( frame+1 );
+        id = color2char( color )+QString( "_select_" ) + QString::number( frame+1 );
         return m_pixHash.value( id );
     case Die:
-        id = QString( "%1_die_%2" ).arg( color2char( color ) ).arg( frame+1 );
+        id = color2char( color )+QString( "_die_" ) + QString::number( frame+1 );
         return m_pixHash.value( id );
     default:
         kDebug() << "Warning! Animation type not handled in switch!" << endl;
@@ -140,16 +138,18 @@ QPixmap KLinesRenderer::previewPixmap() const
 void KLinesRenderer::rerenderPixmaps()
 {
     // this should be in sync with svg
-    QString items="rbgpyec";
+    const char items[]="rbgpyec";
+    const int numItems = 7;
     QString id;
 
     QPainter p;
-    for ( int i=0; i<items.size(); ++i )
+
+    for ( int i=0; i<numItems; ++i )
     {
         // rendering born frames
         for ( int f=0; f<numBornFrames();f++ )
         {
-            id = QString( "%1_born_%2" ).arg( items.at(i) ).arg( f+1 );
+            id = items[i]+QString( "_born_" )+QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
@@ -160,7 +160,7 @@ void KLinesRenderer::rerenderPixmaps()
         // rendering "selected" frames
         for ( int f=0; f<numSelectedFrames();f++ )
         {
-            id = QString( "%1_select_%2" ).arg( items.at(i) ).arg( f+1 );
+            id = items[i]+QString( "_select_" ) + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
@@ -171,7 +171,7 @@ void KLinesRenderer::rerenderPixmaps()
         // rendering "die" frames
         for ( int f=0; f<numDieFrames();f++ )
         {
-            id = QString( "%1_die_%2" ).arg( items.at(i) ).arg( f+1 );
+            id = items[i]+QString( "_die_" ) + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
@@ -180,7 +180,7 @@ void KLinesRenderer::rerenderPixmaps()
             m_pixHash[id] = pix;
         }
         // rendering "rest frame"
-        id = QString( "%1_rest" ).arg( items.at( i ) );
+        id = items[i]+QString( "_rest" );
         QPixmap pix( m_cellSize, m_cellSize );
         pix.fill( Qt::transparent );
         p.begin( &pix );
@@ -188,6 +188,7 @@ void KLinesRenderer::rerenderPixmaps()
         p.end();
         m_pixHash[id] = pix;
     }
+
     QPixmap pix( m_cellSize, m_cellSize );
     pix.fill( Qt::transparent );
     p.begin( &pix );
@@ -223,4 +224,13 @@ bool KLinesRenderer::loadTheme( const QString& themeName )
 
 
     return true;
+}
+
+void KLinesRenderer::setCellSize(int size)
+{
+    if ( m_cellSize != size )
+    {
+        m_cellSize = size;
+        rerenderPixmaps();
+    }
 }
