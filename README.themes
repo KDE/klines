@@ -1,0 +1,94 @@
+This file describes how to create a new KLines theme.
+
+(Last update: 29.05.2007 by dimsuz)
+
+KLines theme consists of svgz file which contains game elements
+with predefined svg ID's and accompanying .desktop file which contains
+various information about theme and some important theme settings
+(like animation timing and number of frames)
+
+-= SVG file =-
+
+There are 7 types of different-colored balls in the game and each ball
+type has 3 animation sequences:
+- born (played when ball appears on the field)
+- select (played when ball is selected by player)
+- die (played when ball is destroyed)
+
+7 colors are:
+Red, Blue, Green, Purple, Yellow, Earth (dark-brown), Cyan
+
+So, as a theme creator you'll need to create these 3 animation sets
+for EACH ball color. Number of frames in each set is up to you,
+i.e. it's configurable (see below).
+
+Next, you'll need to create svg elements for field-cell, preview area
+and background.
+Yeah, klines needs many elements :-).
+
+So, let me sum this all up and provide you with predefined svg
+ID's that are needed for all the stuff:
+
+1. Born animation set of each ball consists of NumBornFrames (see
+below). Each frame has ID "[C]_born_[N]", where [C] is first letter 
+ of ball's color (in lowercase) and [N] is a frame number
+
+2. Select animation set of each ball consists of NumSelectedFrames
+(see below) and each frame has ID "[C]_select_[N]".
+
+3. Die animation set of each ball consists of NumDieFrames
+(see below) and each frame has ID "[C]_die_[N]".
+
+Example of IDs: e_born_1, e_born_2, ... e_born_N
+                c_select_1, c_select_2, ..., c_select_N
+                y_die_1, y_die_2, ..., y_die_N
+
+4. Picture of the ball (in steady state) of each color with ID: [C]_rest
+   (e.g. r_rest, b_rest, g_rest etc)
+
+5. Field cell with ID: field_cell
+
+6. Picture of preview-display with ID: preview
+
+7. Background image with ID: background
+
+That's all for SVG part. Let's move to simpler one: .desktop file :)
+
+-= .desktop file =-
+
+As has been noted earlier, desktop file is part of each klines
+theme and contains various info about theme as well as settings which
+control animation.
+It has the Key=Value format and starts with the "[KGameTheme]"
+header.
+
+here's how typical klines theme .desktop file should look like (let's name it mytheme.desktop):
+
+-= example of mytheme.desktop =-
+
+[KGameTheme]
+Name=ThemeName
+VersionFormat=1
+FileName=themefile.svgz
+Author=Theme Author Name
+AuthorEmail=author@email.dot
+
+NumBornFrames=[Number of born anim frames in svg]
+NumSelectedFrames=[Number of selected anim frames in svg]
+NumDieFrames=[Number of die anim frames in svg]
+
+BornAnimDuration=[Number of milliseconds to play born anim set]
+SelectedAnimDuration=[Number of milliseconds to play selected anim set]
+DieAnimDuration=[Number of milliseconds to play die anim set]
+
+MoveAnimDuration=[Number of milliseconds to move the ball through one cell]
+
+-= end of mytheme.desktop example =-
+
+You may want to take a look at
+/path/to/kdedir/share/apps/klines/themes/klines.svgz
+and
+/path/to/kdedir/share/apps/klines/themes/default.desktop
+for reference
+
+Good luck!
