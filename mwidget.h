@@ -37,6 +37,7 @@ public:
 public slots:
     void setShowNextColors(bool);
 private:
+    virtual void resizeEvent( QResizeEvent* );
     KLinesScene* m_scene;
     QLabel *m_next_label;
 };

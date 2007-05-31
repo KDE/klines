@@ -24,7 +24,6 @@
 #define KL_SCENE_H
 
 #include <QGraphicsScene>
-#include <QGraphicsView>
 #include <KRandomSequence>
 
 #include "commondefs.h"
@@ -242,14 +241,6 @@ private:
      *  It is saved before every new turn
      */
     UndoInfo m_undoInfo;
-};
-
-class KLinesView : public QGraphicsView
-{
-public:
-    KLinesView( KLinesScene* scene, QWidget *parent );
-private:
-    void resizeEvent(QResizeEvent *);
 };
 
 #endif

@@ -4,7 +4,7 @@
     email                : roman@sbrf.barrt.ru
     copyright            : (C) 2000 by Roman Razilov
     email                : Roman.Razilov@gmx.de
-    copyright            : (C) 2006 by Dmitry Suzdalev
+    copyright            : (C) 2006-2007 by Dmitry Suzdalev
     email                : dimsuz@gmail.com
  ***************************************************************************/
 
@@ -21,8 +21,10 @@
 
 #include <KLocale>
 
+#include <QGraphicsView>
 #include <QLabel>
 #include <QLayout>
+#include <QResizeEvent>
 
 MainWidget::MainWidget( QWidget* parent )
     : QWidget( parent )
@@ -31,8 +33,12 @@ MainWidget::MainWidget( QWidget* parent )
     mainLay->setMargin( 0 );
 
     m_scene = new KLinesScene(this);
-    KLinesView* klview = new KLinesView( m_scene, this );
+    QGraphicsView* klview = new QGraphicsView( m_scene, this );
     klview->setCacheMode( QGraphicsView::CacheBackground );
+    klview->setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+    klview->setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+    klview->setFrameStyle(QFrame::NoFrame);
+
     mainLay->addWidget( klview );
 }
 
@@ -45,6 +51,16 @@ void MainWidget::setShowNextColors(bool visible)
     // add bonus score points if playing w/o preview
     m_scene->setBonusScorePoints( visible ? 0 : 1 );
     m_scene->setPreviewZoneVisible( visible );
+}
+
+void MainWidget::resizeEvent( QResizeEvent* ev)
+{
+    // if this flag is set it means that resizeEvent is called
+    // while widget is hidden.
+    // so we'll wait with resize until it will be unset to not
+    // waste time resizing invisible scene
+    if ( !testAttribute( Qt::WA_PendingResizeEvent ) )
+        m_scene->resizeScene( ev->size().width(), ev->size().height() );
 }
 
 #include "mwidget.moc"

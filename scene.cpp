@@ -26,26 +26,10 @@
 #include "animator.h"
 #include "renderer.h"
 
-#include <QResizeEvent>
 #include <QGraphicsSceneMouseEvent>
+#include <QPainter>
 
-#include <kdebug.h>
-
-KLinesView::KLinesView( KLinesScene* scene, QWidget* parent )
-    : QGraphicsView(scene, parent)
-{
-    //setMinimumSize( defaultFieldSize, defaultFieldSize );
-    setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
-    setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
-    setFrameStyle(QFrame::NoFrame);
-}
-
-void KLinesView::resizeEvent( QResizeEvent* ev )
-{
-    static_cast<KLinesScene*>(scene())->resizeScene( ev->size().width(), ev->size().height() );
-}
-
-// =============== KLinesScene =======================
+#include <KDebug>
 
 KLinesScene::KLinesScene( QObject* parent )
     : QGraphicsScene(parent),
@@ -616,7 +600,7 @@ void KLinesScene::undo()
     m_previewItem->setPreviewColors( m_nextColors );
 
     emit scoreChanged(m_score);
-    
+
     emit stateChanged("not_undoable");
 }
 
