@@ -29,7 +29,6 @@
 #include "commondefs.h"
 
 class KSvgRenderer;
-class KGameTheme;
 
 // TODO documentation!
 class KLinesRenderer
@@ -43,11 +42,11 @@ public:
 
     QPixmap ballPixmap( BallColor c ) const;
     QPixmap animationFrame( AnimationType type, BallColor c, int frame ) const;
-    QPixmap backgroundPixmap( const QSize& size ) const;
+    QPixmap backgroundPixmap() const;
     QPixmap backgroundTilePixmap() const;
     QPixmap previewPixmap() const;
 
-    void setCellSize(int size);
+    void setRenderSizes(int cellSize, const QSize& bkgndSize);
     int cellSize() const { return m_cellSize; }
 
     inline int numDieFrames() const { return m_numDieFrames; }
@@ -73,15 +72,15 @@ private:
     void rerenderPixmaps();
     /**
      *  This is the size of the scene's cell.
-     *  All rendered pixmaps will have this size
+     *  All rendered pixmaps (except background) will have this size
      */
     int m_cellSize;
     /**
-     * Background. Cached until requested size doesn't change
+     * Size of the background pixmap.
      */
-    mutable QPixmap m_bkgnd;
+    QSize m_bkgndSize;
+
     KSvgRenderer *m_renderer;
-    KGameTheme *m_theme;
     QHash<QString, QPixmap> m_pixHash;
 
     int m_numBornFrames;

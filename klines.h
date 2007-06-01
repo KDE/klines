@@ -26,24 +26,25 @@ class MainWidget;
 
 class KLinesMainWindow : public KXmlGuiWindow
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KLinesMainWindow();
-  ~KLinesMainWindow();
+    KLinesMainWindow();
+    ~KLinesMainWindow();
 
 protected:
-  void setupActions();
+    void setupActions();
 
 public Q_SLOTS:
-  void startGame();
+    void startGame();
 private Q_SLOTS:
-  void viewHighScore();
-  void updateScore(int score);
-  void gameOver(int score);
-  void showNextToggled(bool show);
-
+    void viewHighScore();
+    void updateScore(int score);
+    void gameOver(int score);
+    void showNextToggled(bool show);
+    void configureSettings();
+    void loadSettings();
 private:
-  MainWidget *mwidget;
+    MainWidget *mwidget;
 };
 
 #endif

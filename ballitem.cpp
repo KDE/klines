@@ -31,9 +31,7 @@ BallItem::BallItem( QGraphicsScene* parent )
     m_color = NumColors; // = uninitialized
 
     m_timeLine.setCurveShape( QTimeLine::LinearCurve );
-    m_timeLine.setDuration(KLinesRenderer::self()->selAnimDuration());
     m_timeLine.setLoopCount(0);
-    m_timeLine.setFrameRange(0, KLinesRenderer::self()->numSelectedFrames()-1);
 
     connect(&m_timeLine, SIGNAL(frameChanged(int)), SLOT(animFrameChanged(int)) );
 }
@@ -49,6 +47,11 @@ void BallItem::startSelectedAnimation()
 {
     if(m_timeLine.state() == QTimeLine::Running)
         return;
+    // it needs to be here rather than in constructor,
+    // because if different theme would get selected
+    // new settings will be picked up from KLinesRenderer
+    m_timeLine.setDuration(KLinesRenderer::self()->selAnimDuration());
+    m_timeLine.setFrameRange(0, KLinesRenderer::self()->numSelectedFrames()-1);
     m_timeLine.start();
 }
 

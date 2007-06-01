@@ -21,15 +21,10 @@
  *
  ********************************************************************/
 #include "renderer.h"
+#include "prefs.h"
 
-#include <KStandardDirs>
 #include <KSvgRenderer>
 #include <KDebug>
-#include <KConfig>
-#include <KConfigGroup>
-#include <KMessageBox>
-#include <KLocale>
-
 #include <KGameTheme>
 
 #include <QPainter>
@@ -65,26 +60,21 @@ KLinesRenderer* KLinesRenderer::self()
 }
 
 KLinesRenderer::KLinesRenderer()
-    : m_cellSize(32),
+    : m_cellSize(0),
       m_numBornFrames(0), m_numSelFrames(0), m_numDieFrames(0),
       m_bornDuration(0), m_selDuration(0), m_dieDuration(0),
       m_moveDuration(0)
 {
     m_renderer = new KSvgRenderer();
-    m_theme = new KGameTheme();
 
-    if ( !loadTheme("default") )
-    {
-        KMessageBox::error( 0,  i18n( "Failed to load default theme. Please check your installation." ) );
-    }
-
+    if ( !loadTheme( Prefs::theme() ) )
+        kDebug()<< "Failed to load theme " << Prefs::theme() << endl;
 //    rerenderPixmaps();
 }
 
 KLinesRenderer::~KLinesRenderer()
 {
     delete m_renderer;
-    delete m_theme;
 }
 
 QPixmap KLinesRenderer::ballPixmap(BallColor color) const
@@ -118,16 +108,9 @@ QPixmap KLinesRenderer::backgroundTilePixmap() const
     return m_pixHash.value( "field_cell" );
 }
 
-QPixmap KLinesRenderer::backgroundPixmap( const QSize& sz ) const
+QPixmap KLinesRenderer::backgroundPixmap() const
 {
-    if ( m_bkgnd.size() != sz )
-    {
-        m_bkgnd = QPixmap( sz );
-        m_bkgnd.fill( Qt::transparent );
-        QPainter p( &m_bkgnd );
-        m_renderer->render( &p, "background" );
-    }
-    return m_bkgnd;
+    return m_pixHash.value( "background" );
 }
 
 QPixmap KLinesRenderer::previewPixmap() const
@@ -137,6 +120,10 @@ QPixmap KLinesRenderer::previewPixmap() const
 
 void KLinesRenderer::rerenderPixmaps()
 {
+    // don't try render if the sizes aren't set yet
+    if ( m_cellSize == 0 )
+        return;
+
     // this should be in sync with svg
     const char items[]="rbgpyec";
     const int numItems = 7;
@@ -202,35 +189,46 @@ void KLinesRenderer::rerenderPixmaps()
     m_renderer->render( &p, "preview" );
     p.end();
     m_pixHash["preview"] = previewPix;
+
+    QPixmap bkgndPix( m_bkgndSize );
+    bkgndPix.fill( Qt::transparent );
+    p.begin( &bkgndPix );
+    m_renderer->render( &p, "background" );
+    p.end();
+    m_pixHash["background"] = bkgndPix;
 }
 
 bool KLinesRenderer::loadTheme( const QString& themeName )
 {
-    if ( !m_theme->load( "themes/"+themeName+".desktop" ) )
+    KGameTheme theme;
+    if ( !theme.load( themeName ) )
         return false;
 
-    bool res = m_renderer->load( m_theme->graphics() );
+    bool res = m_renderer->load( theme.graphics() );
+    kDebug() << "loading " << theme.graphics() << endl;
     if ( !res )
         return false;
 
-    m_numBornFrames = m_theme->property( "NumBornFrames" ).toInt();
-    m_numSelFrames = m_theme->property( "NumSelectedFrames" ).toInt();
-    m_numDieFrames = m_theme->property( "NumDieFrames" ).toInt();
+    m_numBornFrames = theme.property( "NumBornFrames" ).toInt();
+    m_numSelFrames = theme.property( "NumSelectedFrames" ).toInt();
+    m_numDieFrames = theme.property( "NumDieFrames" ).toInt();
 
-    m_bornDuration = m_theme->property( "BornAnimDuration" ).toInt();
-    m_selDuration = m_theme->property( "SelectedAnimDuration" ).toInt();
-    m_dieDuration = m_theme->property( "DieAnimDuration" ).toInt();
-    m_moveDuration = m_theme->property( "MoveAnimDuration" ).toInt();
+    m_bornDuration = theme.property( "BornAnimDuration" ).toInt();
+    m_selDuration = theme.property( "SelectedAnimDuration" ).toInt();
+    m_dieDuration = theme.property( "DieAnimDuration" ).toInt();
+    m_moveDuration = theme.property( "MoveAnimDuration" ).toInt();
 
+    rerenderPixmaps();
 
     return true;
 }
 
-void KLinesRenderer::setCellSize(int size)
+void KLinesRenderer::setRenderSizes(int cellSize, const QSize& bkgndSize)
 {
-    if ( m_cellSize != size )
-    {
-        m_cellSize = size;
-        rerenderPixmaps();
-    }
+    if ( m_cellSize == cellSize && m_bkgndSize == bkgndSize )
+        return;
+
+    m_cellSize = cellSize;
+    m_bkgndSize = bkgndSize;
+    rerenderPixmaps();
 }

@@ -20,6 +20,7 @@
 */
 
 #include "klines.h"
+#include "renderer.h"
 #include "prefs.h"
 #include "mwidget.h"
 #include "scene.h"
@@ -28,15 +29,15 @@
 #include <KAction>
 #include <KActionCollection>
 #include <KStandardAction>
+#include <KScoreDialog>
 #include <KToggleAction>
 #include <KStatusBar>
 #include <KLocale>
+#include <KConfigDialog>
+#include <KMessageBox>
 
-#include <kscoredialog.h>
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <kstandardaction.h>
-#include <kstandardgameaction.h>
+#include <KStandardGameAction>
+#include <KGameThemeSelector>
 
 // Mainwindow Constructor
 KLinesMainWindow::KLinesMainWindow()
@@ -74,6 +75,7 @@ void KLinesMainWindow::setupActions()
 
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>("show_next");
+  showNext->setText( i18n( "Show next" ) );
   connect(showNext, SIGNAL(triggered(bool) ), SLOT(showNextToggled(bool)));
 
   showNext->setChecked(Prefs::showNext());
@@ -86,6 +88,7 @@ void KLinesMainWindow::setupActions()
   actionCollection()->add<QAction>("navi_down", mwidget->scene(), SLOT(moveFocusDown()));
   actionCollection()->add<QAction>("navi_select", mwidget->scene(), SLOT(cellSelected()));
 
+  KStandardAction::preferences( this, SLOT( configureSettings() ), actionCollection() );
   setupGUI();
 }
 
@@ -122,7 +125,7 @@ void KLinesMainWindow::showNextToggled(bool show)
 
 
 // FIXME these are strings from old tutorial
-// leave them if I want to use them when I'll impelement tutorial mode
+// leave them if I ever want to use them when I'll impelement tutorial mode
 /**
        msg = i18n("The goal of the game is to put\n"
        msg = i18n("You can make horizontal, vertical\n"
@@ -146,5 +149,25 @@ void KLinesMainWindow::showNextToggled(bool show)
        msg = i18n("This is the end of this tutorial.\n"
                   "Feel free to finish the game!");
                   */
+
+void KLinesMainWindow::configureSettings()
+{
+    if ( KConfigDialog::showDialog( "settings" ) )
+        return;
+    KConfigDialog *dialog = new KConfigDialog( this, "settings", Prefs::self() );
+    dialog->addPage( new KGameThemeSelector( dialog, Prefs::self() ), i18n( "Theme" ), "game_theme" );
+    connect( dialog, SIGNAL( settingsChanged(const QString&) ), this, SLOT( loadSettings() ) );
+    dialog->show();
+}
+
+void KLinesMainWindow::loadSettings()
+{
+    if ( !KLinesRenderer::self()->loadTheme(Prefs::theme()) )
+    {
+        KMessageBox::error( this,  i18n( "Failed to load \"%1\" theme. Please check your installation.", Prefs::theme() ) );
+        return;
+    }
+    mwidget->scene()->invalidate( mwidget->scene()->sceneRect() ); // trigger complete redraw
+}
 
 #include "klines.moc"
