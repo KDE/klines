@@ -56,23 +56,16 @@ static inline int indexOfNodeWithPos( const FieldPos& pos, const QList<PathNode*
 KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     : m_scene(scene), m_movingBall(0)
 {
+    // timing & framing setup is done in corresponding animate* functions
+
     connect(&m_moveTimeLine, SIGNAL(frameChanged(int)), SLOT(moveAnimationFrame(int)) );
     connect(&m_moveTimeLine, SIGNAL(finished()), SIGNAL(moveFinished()));
 
-    m_removeTimeLine.setDuration(KLinesRenderer::self()->dieAnimDuration());
     m_removeTimeLine.setCurveShape(QTimeLine::LinearCurve);
-    // we setup here one 'empty' frame at the end, because without it
-    // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
-    // that last frame won't get shown in the scene
-    m_removeTimeLine.setFrameRange(0, KLinesRenderer::self()->numDieFrames());
-
     connect(&m_removeTimeLine, SIGNAL(frameChanged(int)), SLOT(removeAnimationFrame(int)) );
     connect(&m_removeTimeLine, SIGNAL(finished()), SIGNAL(removeFinished()));
 
-    m_bornTimeLine.setDuration(KLinesRenderer::self()->bornAnimDuration());
     m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
-    m_bornTimeLine.setFrameRange(0, KLinesRenderer::self()->numBornFrames()-1);
-
     connect(&m_bornTimeLine, SIGNAL(frameChanged(int)), SLOT(bornAnimationFrame(int)) );
     connect(&m_bornTimeLine, SIGNAL(finished()), SIGNAL(bornFinished()));
 }
@@ -116,12 +109,26 @@ void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
     }
 
     m_removedBalls = list;
+
+    // called here (not in constructor), to stay in sync in case theme's reloaded
+    m_removeTimeLine.setDuration(KLinesRenderer::self()->dieAnimDuration());
+    // we setup here one 'empty' frame at the end, because without it
+    // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
+    // that last frame won't get shown in the scene
+    m_removeTimeLine.setFrameRange(0, KLinesRenderer::self()->numDieFrames());
+
     m_removeTimeLine.start();
 }
 
 void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 {
     m_bornBalls = list;
+
+    // called here (not in constructor), to stay in sync in case theme's reloaded
+    m_bornTimeLine.setDuration(KLinesRenderer::self()->bornAnimDuration());
+    m_bornTimeLine.setFrameRange(0, KLinesRenderer::self()->numBornFrames()-1);
+
+    m_bornTimeLine.setCurrentTime( 0 );
     m_bornTimeLine.start();
 }
 
