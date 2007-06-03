@@ -23,7 +23,6 @@
 #include <QWidget>
 
 class KLinesScene;
-class BallsPreview;
 class QLabel;
 
 class MainWidget : public QWidget

@@ -20,8 +20,6 @@
 
 #include <KXmlGuiWindow>
 
-class KAction;
-class KToggleAction;
 class MainWidget;
 
 class KLinesMainWindow : public KXmlGuiWindow
