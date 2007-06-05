@@ -88,15 +88,18 @@ QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int
     QString id;
     switch( type )
     {
-    case Born:
+    case BornAnim:
         id = color2char( color )+QString( "_born_" ) + QString::number( frame+1 );
         return m_pixHash.value( id );
-    case Selected:
+    case SelectedAnim:
         id = color2char( color )+QString( "_select_" ) + QString::number( frame+1 );
         return m_pixHash.value( id );
-    case Die:
+    case DieAnim:
         id = color2char( color )+QString( "_die_" ) + QString::number( frame+1 );
         return m_pixHash.value( id );
+    case MoveAnim:
+        kDebug() << "Move animation type isn't supposed to be handled by KLinesRenderer!" << endl;
+        return QPixmap();
     default:
         kDebug() << "Warning! Animation type not handled in switch!" << endl;
         return QPixmap();
@@ -134,7 +137,7 @@ void KLinesRenderer::rerenderPixmaps()
     for ( int i=0; i<numItems; ++i )
     {
         // rendering born frames
-        for ( int f=0; f<numBornFrames();f++ )
+        for ( int f=0; f<frameCount(BornAnim);f++ )
         {
             id = items[i]+QString( "_born_" )+QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
@@ -145,7 +148,7 @@ void KLinesRenderer::rerenderPixmaps()
             m_pixHash[id] = pix;
         }
         // rendering "selected" frames
-        for ( int f=0; f<numSelectedFrames();f++ )
+        for ( int f=0; f<frameCount(SelectedAnim);f++ )
         {
             id = items[i]+QString( "_select_" ) + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
@@ -156,7 +159,7 @@ void KLinesRenderer::rerenderPixmaps()
             m_pixHash[id] = pix;
         }
         // rendering "die" frames
-        for ( int f=0; f<numDieFrames();f++ )
+        for ( int f=0; f<frameCount(DieAnim);f++ )
         {
             id = items[i]+QString( "_die_" ) + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );

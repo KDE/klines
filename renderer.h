@@ -30,33 +30,101 @@
 
 class KSvgRenderer;
 
-// TODO documentation!
+/**
+ * This class is responsible for rendering all the game graphics.
+ * Graphics is rendered from svg file specified by current theme.
+ * QPixmaps which are returned are cached until setRenderSizes()
+ * doesn't get called.
+ * Only one instance of this class exists during a program run.
+ * It can be accessed with static function KLinesRenderer::self().
+ */
 class KLinesRenderer
 {
 public:
-    enum AnimationType { Born, Selected, Die };
-
+    enum AnimationType { BornAnim, SelectedAnim, DieAnim, MoveAnim };
+    /**
+     * Returns one and the only instance of KLinesRenderer
+     */
     static KLinesRenderer* self();
-
+    /**
+     * Loads new theme. Resets cache and puts new flashy rerendered
+     * pixmaps there
+     * @param themeName specifies theme name which is the part of the
+     * theme's file path relative to $KDEDIR/share/apps/klines, for example
+     * it might be "themes/default.desktop"
+     */
     bool loadTheme( const QString& themeName );
-
+    /**
+     * @return pixmap of the ball of color c in steady state
+     */
     QPixmap ballPixmap( BallColor c ) const;
+    /**
+     * @param type type of animation sequence
+     * @param c color of the ball
+     * @param frame frame number (must be between 0..numFrames(type)-1)
+     * @return pixmap containing animation frame
+     */
     QPixmap animationFrame( AnimationType type, BallColor c, int frame ) const;
+    /**
+     * @return pixmap for background painting. it's size is set using setRenderSizes()
+     */
     QPixmap backgroundPixmap() const;
+    /**
+     * @return pixmap of background tile (cell)
+     */
     QPixmap backgroundTilePixmap() const;
+    /**
+     * @return pixmap for PreviewItem
+     */
     QPixmap previewPixmap() const;
-
+    /**
+     * Sets render sizes for cells and background
+     * @param cellSize all pixmaps excluding previewPixmap & backgroundPixmap will be of
+     * cellSize x cellSize size
+     */
     void setRenderSizes(int cellSize, const QSize& bkgndSize);
+    /**
+     * @return current cell size
+     */
     int cellSize() const { return m_cellSize; }
 
-    inline int numDieFrames() const { return m_numDieFrames; }
-    inline int numBornFrames() const { return m_numBornFrames; }
-    inline int numSelectedFrames() const { return m_numSelFrames; }
+    /**
+     * @return number of frames in animation sequence of type t
+     */
+    inline int frameCount( AnimationType t ) const
+        {
+            switch(t)
+            {
+            case BornAnim:
+                return m_numBornFrames;
+            case SelectedAnim:
+                return m_numSelFrames;
+            case DieAnim:
+                return m_numDieFrames;
+            default: // e.g. Move - not handled here
+                return 0;
+            }
+        }
+    /**
+     * @return duration of animation sequence of type t
+     */
+    inline int animDuration(AnimationType t) const
+        {
+            switch(t)
+            {
+            case BornAnim:
+                return m_bornDuration;
+            case SelectedAnim:
+                return m_selDuration;
+            case DieAnim:
+                return m_dieDuration;
+            case MoveAnim:
+                return m_moveDuration;
+            default:
+                return 0;
+            }
+        }
 
-    inline int bornAnimDuration() const { return m_bornDuration; }
-    inline int selAnimDuration() const { return m_selDuration; }
-    inline int dieAnimDuration() const { return m_dieDuration; }
-    inline int moveAnimDuration() const { return m_moveDuration; }
 private:
     // disable copy - it's singleton
     KLinesRenderer();

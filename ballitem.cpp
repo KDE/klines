@@ -50,8 +50,8 @@ void BallItem::startSelectedAnimation()
     // it needs to be here rather than in constructor,
     // because if different theme would get selected
     // new settings will be picked up from KLinesRenderer
-    m_timeLine.setDuration(KLinesRenderer::self()->selAnimDuration());
-    m_timeLine.setFrameRange(0, KLinesRenderer::self()->numSelectedFrames()-1);
+    m_timeLine.setDuration(KLinesRenderer::self()->animDuration(KLinesRenderer::SelectedAnim));
+    m_timeLine.setFrameRange(0, KLinesRenderer::self()->frameCount(KLinesRenderer::SelectedAnim)-1);
     m_timeLine.start();
 }
 
@@ -63,7 +63,7 @@ void BallItem::stopAnimation()
 
 void BallItem::animFrameChanged(int frame)
 {
-    setPixmap(KLinesRenderer::self()->animationFrame( KLinesRenderer::Selected, m_color, frame ));
+    setPixmap(KLinesRenderer::self()->animationFrame( KLinesRenderer::SelectedAnim, m_color, frame ));
 }
 
 #include "ballitem.moc"
