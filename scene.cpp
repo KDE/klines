@@ -345,7 +345,7 @@ void KLinesScene::bornAnimFinished()
     searchAndErase();
 }
 
-bool KLinesScene::searchAndErase()
+void KLinesScene::searchAndErase()
 {
     // FIXME dimsuz: put more comments about bounds in for loops
 
@@ -462,7 +462,6 @@ bool KLinesScene::searchAndErase()
     // after it finishes slot removeAnimFinished() will be called
     // if m_itemsToDelete is empty removeAnimFinished() will be called immediately
     m_animator->animateRemove( m_itemsToDelete );
-    return !m_itemsToDelete.isEmpty();
 }
 
 void KLinesScene::moveFocusLeft()
