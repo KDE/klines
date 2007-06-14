@@ -1,6 +1,6 @@
 /*******************************************************************
  *
- * Copyright 2006 Dmitry Suzdalev <dimsuz@gmail.com>
+ * Copyright 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
  *
  * This file is part of the KDE project "KLines"
  *
@@ -58,6 +58,7 @@ void KLinesScene::startNewGame()
     m_score = 0;
     m_bonusScore = 0;
     m_placeBalls = true;
+    m_gameOver = false;
     m_itemsToDelete.clear();
     m_nextColors.clear();
     m_focusItem->setPos(0, 0);
@@ -88,6 +89,7 @@ void KLinesScene::startNewGame()
 
     emit stateChanged("not_undoable");
 
+    m_animator->stopGameOverAnimation();
     nextThreeBalls();
 }
 
@@ -143,6 +145,9 @@ void KLinesScene::resizeScene(int width,int height)
 
 void KLinesScene::endTurn()
 {
+    if( m_gameOver )
+        return;
+
     saveUndoInfo();
     nextThreeBalls();
 }
@@ -274,9 +279,8 @@ void KLinesScene::removeAnimFinished()
 {
     if( m_itemsToDelete.isEmpty() && m_numFreeCells == 0 )
     {
-        emit stateChanged("not_undoable");
-        //emit enableUndo(false);
-        emit gameOver(m_score);
+        // game over
+        gameOverHandler();
         return;
     }
 
@@ -312,18 +316,16 @@ void KLinesScene::removeAnimFinished()
         if(numBallsErased)
             emit scoreChanged(m_score);
     }
-
 }
 
 void KLinesScene::bornAnimFinished()
 {
     // note that if m_numFreeCells == 0, we still need to
     // check for possible 5-in-a-row balls, i.e. call searchAndErase()
-    // So there's another gameOver()-check in removeAnimFinished()
+    // So there's another gameOver-check in removeAnimFinished()
     if( m_numFreeCells < 0 )
     {
-        kDebug() << "GAME OVER" << endl;
-        emit gameOver(m_score);
+        gameOverHandler();
         return;
     }
     // There's a little trick here:
@@ -340,11 +342,7 @@ void KLinesScene::bornAnimFinished()
     // And because of that we check for gameOver in removeAnimFinished()
     // rather than here - there's a chance that searchAndErase() will remove
     // balls making some free cells to play in
-    if (!searchAndErase() && m_numFreeCells == 0)
-    {
-        kDebug() << "GAME OVER" << endl;
-        emit gameOver(m_score);
-    }
+    searchAndErase();
 }
 
 bool KLinesScene::searchAndErase()
@@ -611,6 +609,18 @@ void KLinesScene::drawBackground(QPainter *p, const QRectF&)
     for(int x=m_playFieldOrigin.x(); x<m_playFieldOrigin.x()+m_cellSize*FIELD_SIZE;x+=m_cellSize)
         for(int y=m_playFieldOrigin.y(); y<m_playFieldOrigin.y()+m_cellSize*FIELD_SIZE;y+=m_cellSize)
             p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
+}
+
+void KLinesScene::gameOverHandler()
+{
+    if( m_gameOver )
+        return; // don't emit twice
+    m_gameOver = true;
+    kDebug() << "GAME OVER" << endl;
+    emit stateChanged("not_undoable");
+    //emit enableUndo(false);
+    emit gameOver(m_score);
+    m_animator->startGameOverAnimation();
 }
 
 #include "scene.moc"

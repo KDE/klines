@@ -293,4 +293,24 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
     qDeleteAll( closedList );
 }
 
+void KLinesAnimator::startGameOverAnimation()
+{
+    blockSignals(true);
+    QList<BallItem*> balls;
+    QList<QGraphicsItem*> items = m_scene->items();
+    BallItem *ball=0;
+    foreach( QGraphicsItem* item, items )
+    {
+        ball = qgraphicsitem_cast<BallItem*>(item);
+        if(ball)
+            balls.append(ball);
+    }
+    animateRemove(balls);
+}
+
+void KLinesAnimator::stopGameOverAnimation()
+{
+    blockSignals(false);
+}
+
 #include "animator.moc"

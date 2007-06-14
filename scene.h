@@ -157,6 +157,10 @@ private:
      *  Saves game state information to be used during undo
      */
     void saveUndoInfo();
+    /** Does some actions upon game over. Called from various places where
+     * it is clear that game is now over. emits gameOver(int) signal
+     */
+    void gameOverHandler();
 
     virtual void drawBackground( QPainter*, const QRectF& );
     virtual void mousePressEvent( QGraphicsSceneMouseEvent* );
@@ -241,6 +245,7 @@ private:
      *  It is saved before every new turn
      */
     UndoInfo m_undoInfo;
+    bool m_gameOver;
 };
 
 #endif

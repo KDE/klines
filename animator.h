@@ -1,6 +1,6 @@
 /*******************************************************************
  *
- * Copyright 2006 Dmitry Suzdalev <dimsuz@gmail.com>
+ * Copyright 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
  *
  * This file is part of the KDE project "KLines"
  *
@@ -62,6 +62,14 @@ public:
      *  @return whether some animation is in progress
      */
     bool isAnimating() const;
+    /**
+     * Starts game over animation on the scene, shows game over message
+     */
+    void startGameOverAnimation();
+    /**
+     * Stops game over animation
+     */
+    void stopGameOverAnimation();
 signals:
     void moveFinished();
     void removeFinished();

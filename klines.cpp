@@ -101,7 +101,7 @@ void KLinesMainWindow::gameOver(int score)
 {
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
     d.addScore(score, KScoreDialog::AskName);
-    d.exec();
+    //   d.exec();
 }
 
 void KLinesMainWindow::viewHighScore()
