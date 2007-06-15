@@ -25,6 +25,7 @@
 
 #include <KSvgRenderer>
 #include <KDebug>
+#include <KStandardDirs>
 #include <KGameTheme>
 
 #include <QPainter>
@@ -111,9 +112,17 @@ QPixmap KLinesRenderer::backgroundTilePixmap() const
     return m_pixHash.value( "field_cell" );
 }
 
-QPixmap KLinesRenderer::backgroundPixmap() const
+QPixmap KLinesRenderer::backgroundPixmap( const QSize& size ) const
 {
-    return m_pixHash.value( "background" );
+    if( m_cachedBkgnd.isNull() || m_cachedBkgnd.size() != size )
+    {
+        kDebug() << "re-rendering bkgnd" << endl;
+        m_cachedBkgnd = QPixmap(size);
+        QPainter p(&m_cachedBkgnd);
+        m_renderer->render(&p, "background");
+    }
+
+    return m_cachedBkgnd;
 }
 
 QPixmap KLinesRenderer::previewPixmap() const
@@ -192,13 +201,6 @@ void KLinesRenderer::rerenderPixmaps()
     m_renderer->render( &p, "preview" );
     p.end();
     m_pixHash["preview"] = previewPix;
-
-    QPixmap bkgndPix( m_bkgndSize );
-    bkgndPix.fill( Qt::transparent );
-    p.begin( &bkgndPix );
-    m_renderer->render( &p, "background" );
-    p.end();
-    m_pixHash["background"] = bkgndPix;
 }
 
 bool KLinesRenderer::loadTheme( const QString& themeName )
@@ -226,12 +228,49 @@ bool KLinesRenderer::loadTheme( const QString& themeName )
     return true;
 }
 
-void KLinesRenderer::setRenderSizes(int cellSize, const QSize& bkgndSize)
+void KLinesRenderer::setCellSize(int cellSize)
 {
-    if ( m_cellSize == cellSize && m_bkgndSize == bkgndSize )
+    if ( m_cellSize == cellSize )
         return;
 
     m_cellSize = cellSize;
-    m_bkgndSize = bkgndSize;
     rerenderPixmaps();
+}
+
+void KLinesRenderer::saveBackground(const QSize& size) const
+{
+    int savedWidth = Prefs::self()->savedBackgroundWidth();
+    int savedHeight = Prefs::self()->savedBackgroundHeight();
+    if( savedWidth == size.width() && savedHeight == size.height() )
+    {
+        kDebug() << "not saving last background" << endl;
+        return;
+    }
+
+    kDebug() << "saving last background" << endl;
+    QPixmap bkgnd = backgroundPixmap(size);
+    bkgnd.save( KStandardDirs::locateLocal( "appdata", "savedBkgnd.png" ) );
+
+    Prefs::self()->setSavedBackgroundWidth( size.width() );
+    Prefs::self()->setSavedBackgroundHeight( size.height() );
+    Prefs::self()->writeConfig();
+}
+
+void KLinesRenderer::restoreSavedBackground()
+{
+    QString fname = KStandardDirs::locate( "appdata", "savedBkgnd.png" );
+    if ( !fname.isEmpty() )
+    {
+        QPixmap pix( fname );
+        kDebug() << "restoring saved background..." << endl;
+        m_cachedBkgnd = pix;
+    }
+    else
+    {
+        kDebug() << "no last saved pixmap found" << endl;
+        // reset corresponding fields in config file
+        Prefs::self()->setSavedBackgroundWidth( -1 );
+        Prefs::self()->setSavedBackgroundHeight( -1 );
+        Prefs::self()->writeConfig();
+    }
 }

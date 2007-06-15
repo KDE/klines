@@ -39,25 +39,25 @@
 #include <KStandardGameAction>
 #include <KGameThemeSelector>
 
-// Mainwindow Constructor
 KLinesMainWindow::KLinesMainWindow()
 {
-  mwidget = new MainWidget(this);
-  setCentralWidget( mwidget );
+    KLinesRenderer::self()->restoreSavedBackground();
 
-  connect(mwidget->scene(), SIGNAL(scoreChanged(int)), SLOT(updateScore(int)));
-  connect(mwidget->scene(), SIGNAL(stateChanged(const QString &)), SLOT(slotStateChanged(const QString &)));
-  connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
+    mwidget = new MainWidget(this);
+    setCentralWidget( mwidget );
 
-  statusBar()->insertItem(i18n("Score:"), 0);
-  updateScore(0);
+    connect(mwidget->scene(), SIGNAL(scoreChanged(int)), SLOT(updateScore(int)));
+    connect(mwidget->scene(), SIGNAL(stateChanged(const QString &)), SLOT(slotStateChanged(const QString &)));
+    connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
 
-  setupActions();
+    statusBar()->insertItem(i18n("Score:"), 0);
+    updateScore(0);
 
-  stateChanged("init");
+    setupActions();
+
+    stateChanged("init");
 }
 
-// Mainwindow Destructor
 KLinesMainWindow::~KLinesMainWindow()
 {
 }
@@ -168,6 +168,12 @@ void KLinesMainWindow::loadSettings()
         return;
     }
     mwidget->scene()->invalidate( mwidget->scene()->sceneRect() ); // trigger complete redraw
+}
+
+bool KLinesMainWindow::queryClose()
+{
+    KLinesRenderer::self()->saveBackground(mwidget->scene()->sceneRect().size().toSize());
+    return true;
 }
 
 #include "klines.moc"

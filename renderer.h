@@ -1,6 +1,6 @@
 /*******************************************************************
  *
- * Copyright 2006 Dmitry Suzdalev <dimsuz@gmail.com>
+ * Copyright 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
  *
  * This file is part of the KDE project "KLines"
  *
@@ -66,9 +66,9 @@ public:
      */
     QPixmap animationFrame( AnimationType type, BallColor c, int frame ) const;
     /**
-     * @return pixmap for background painting. it's size is set using setRenderSizes()
+     * @return pixmap for background painting.
      */
-    QPixmap backgroundPixmap() const;
+    QPixmap backgroundPixmap(const QSize& size) const;
     /**
      * @return pixmap of background tile (cell)
      */
@@ -78,11 +78,9 @@ public:
      */
     QPixmap previewPixmap() const;
     /**
-     * Sets render sizes for cells and background
-     * @param cellSize all pixmaps excluding previewPixmap & backgroundPixmap will be of
-     * cellSize x cellSize size
+     * Sets render sizes for cells
      */
-    void setRenderSizes(int cellSize, const QSize& bkgndSize);
+    void setCellSize(int cellSize);
     /**
      * @return current cell size
      */
@@ -125,6 +123,17 @@ public:
             }
         }
 
+    /**
+     * Renders background from SVG and saves it to $appdata/savedBkgnd.png
+     * Background can be restored (put to cache) later with restoreSavedBackground().
+     * Used to speed up startup
+     */
+    void saveBackground(const QSize&) const;
+    /**
+     * Reads pixmap which was saved by saveBackground() and puts it to cache.
+     * If no pixmap is found - nothing is done
+     */
+    void restoreSavedBackground();
 private:
     // disable copy - it's singleton
     KLinesRenderer();
@@ -144,9 +153,9 @@ private:
      */
     int m_cellSize;
     /**
-     * Size of the background pixmap.
+     * Cached background pixmap.
      */
-    QSize m_bkgndSize;
+    mutable QPixmap m_cachedBkgnd;
 
     KSvgRenderer *m_renderer;
     QHash<QString, QPixmap> m_pixHash;

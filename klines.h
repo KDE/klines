@@ -42,6 +42,7 @@ private Q_SLOTS:
     void configureSettings();
     void loadSettings();
 private:
+    virtual bool queryClose(); // reimp
     MainWidget *mwidget;
 };
 

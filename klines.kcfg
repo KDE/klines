@@ -15,5 +15,13 @@
       <label>Whether to show the next set of balls.</label>
       <default>true</default>
     </entry>
+    <entry name="SavedBackgroundWidth" type="Int">
+      <label>Width of saved background</label>
+      <default>-1</default>
+    </entry>
+    <entry name="SavedBackgroundHeight" type="Int">
+      <label>Height of saved background</label>
+      <default>-1</default>
+    </entry>
   </group>
 </kcfg>

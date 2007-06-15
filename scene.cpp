@@ -118,8 +118,8 @@ void KLinesScene::resizeScene(int width,int height)
 
     setSceneRect( 0, 0, width, height );
 
-    // sets render sizes for cell and background
-    KLinesRenderer::self()->setRenderSizes( m_cellSize, QSize( width, height ) );
+    // sets render sizes for cells
+    KLinesRenderer::self()->setCellSize( m_cellSize );
 
     // re-render && recalc positions for all balls
     for( int x=0; x<FIELD_SIZE; ++x)
@@ -604,7 +604,7 @@ void KLinesScene::undo()
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
 {
-    p->drawPixmap( 0,0, KLinesRenderer::self()->backgroundPixmap() );
+    p->drawPixmap( 0,0, KLinesRenderer::self()->backgroundPixmap(sceneRect().size().toSize()) );
     for(int x=m_playFieldOrigin.x(); x<m_playFieldOrigin.x()+m_cellSize*FIELD_SIZE;x+=m_cellSize)
         for(int y=m_playFieldOrigin.y(); y<m_playFieldOrigin.y()+m_cellSize*FIELD_SIZE;y+=m_cellSize)
             p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
