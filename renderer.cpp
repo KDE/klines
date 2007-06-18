@@ -137,29 +137,31 @@ void KLinesRenderer::rerenderPixmaps()
         return;
 
     // this should be in sync with svg
-    const char items[]="rbgpyec";
-    const int numItems = 7;
+    const char colors[]="rbgpyec";
+    const int numColors = 7;
     QString id;
 
     QPainter p;
 
-    for ( int i=0; i<numItems; ++i )
+    for ( int i=0; i<numColors; ++i )
     {
         // rendering born frames
         for ( int f=0; f<frameCount(BornAnim);f++ )
         {
-            id = items[i]+QString( "_born_" )+QString::number( f+1 );
+            id = colors[i]+QString( "_born_" )+QString::number( f+1 );
+
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
             m_renderer->render( &p, id );
             p.end();
+
             m_pixHash[id] = pix;
         }
         // rendering "selected" frames
         for ( int f=0; f<frameCount(SelectedAnim);f++ )
         {
-            id = items[i]+QString( "_select_" ) + QString::number( f+1 );
+            id = colors[i]+QString( "_select_" ) + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
@@ -170,7 +172,7 @@ void KLinesRenderer::rerenderPixmaps()
         // rendering "die" frames
         for ( int f=0; f<frameCount(DieAnim);f++ )
         {
-            id = items[i]+QString( "_die_" ) + QString::number( f+1 );
+            id = colors[i]+QString( "_die_" ) + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
@@ -179,7 +181,7 @@ void KLinesRenderer::rerenderPixmaps()
             m_pixHash[id] = pix;
         }
         // rendering "rest frame"
-        id = items[i]+QString( "_rest" );
+        id = colors[i]+QString( "_rest" );
         QPixmap pix( m_cellSize, m_cellSize );
         pix.fill( Qt::transparent );
         p.begin( &pix );

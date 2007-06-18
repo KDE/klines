@@ -604,10 +604,11 @@ void KLinesScene::undo()
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
 {
+    QPixmap tile = KLinesRenderer::self()->backgroundTilePixmap();
     p->drawPixmap( 0,0, KLinesRenderer::self()->backgroundPixmap(sceneRect().size().toSize()) );
     for(int x=m_playFieldOrigin.x(); x<m_playFieldOrigin.x()+m_cellSize*FIELD_SIZE;x+=m_cellSize)
         for(int y=m_playFieldOrigin.y(); y<m_playFieldOrigin.y()+m_cellSize*FIELD_SIZE;y+=m_cellSize)
-            p->drawPixmap( x, y, KLinesRenderer::self()->backgroundTilePixmap() );
+            p->drawPixmap( x, y, tile );
 }
 
 void KLinesScene::gameOverHandler()
