@@ -42,8 +42,10 @@ public:
      *  When animation finishes moveFinished() signal is emitted
      *  @param from starting field position
      *  @param to   target field position
+     *
+     *  @return true is there exists a path (from,to), false otherwise
      */
-    void animateMove( const FieldPos& from, const FieldPos& to );
+    bool animateMove( const FieldPos& from, const FieldPos& to );
     /**
      *  Starts animation of ball deletion from field.
      *  Note that it doesn't do actual deletion - it just runs

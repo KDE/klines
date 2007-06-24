@@ -34,6 +34,7 @@ class KLinesAnimator;
 class BallItem;
 class PreviewItem;
 class QGraphicsRectItem;
+class KGamePopupItem;
 
 /**
  *  Displays and drives the game
@@ -230,6 +231,10 @@ private:
      *  Item which displays next balls preview
      */
     PreviewItem *m_previewItem;
+    /**
+     * Item to show popup messages to user
+     */
+    KGamePopupItem *m_popupItem;
     /**
      *  Struct for holding game state - used on undos
      */

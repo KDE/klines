@@ -77,12 +77,12 @@ bool KLinesAnimator::isAnimating() const
             || m_removeTimeLine.state() == QTimeLine::Running);
 }
 
-void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
+bool KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
 {
     findPath(from, to);
 
     if(m_foundPath.isEmpty())
-        return;
+        return false;
 
     m_movingBall = m_scene->ballAt(from);
     m_movingBall->stopAnimation();
@@ -95,6 +95,7 @@ void KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
     m_moveTimeLine.setFrameRange(0, (numPoints-1)*KLinesRenderer::self()->cellSize());
     m_moveTimeLine.setCurrentTime(0);
     m_moveTimeLine.start();
+    return true;
 }
 
 void KLinesAnimator::animateRemove( const QList<BallItem*>& list )

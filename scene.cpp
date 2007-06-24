@@ -29,6 +29,8 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 
+#include <kgamepopupitem.h>
+#include <KLocale>
 #include <KDebug>
 
 KLinesScene::KLinesScene( QObject* parent )
@@ -47,6 +49,15 @@ KLinesScene::KLinesScene( QObject* parent )
 
     m_previewItem = new PreviewItem(this);
     m_previewItem->setPos( 0, 0 );
+
+    m_popupItem = new KGamePopupItem;
+    addItem(m_popupItem);
+
+    // NOTE: when adding non-ball items watch out! all items are deleted in startNewGame,
+    // so don't forget to put non-ball item in (if item != myNonBallItem)
+    // TODO: better use qgraphicsitem_cast<BallItem*> == 0 as criteria. After that remove
+    // this NOTE
+
     startNewGame();
 }
 
@@ -68,7 +79,9 @@ void KLinesScene::startNewGame()
     QList<QGraphicsItem*> itemlist = items();
     foreach( QGraphicsItem* item, itemlist )
     {
-        if( item != m_focusItem && item != m_previewItem )
+        // TODO: better use qgraphicsitem_cast<BallItem*> == 0 as criteria. After that remove
+        // NOTE in constructor
+        if( item != m_focusItem && item != m_previewItem && item != m_popupItem)
         {
             removeItem(item);
             delete item;
@@ -249,7 +262,9 @@ void KLinesScene::selectOrMove( const FieldPos& fpos )
             saveUndoInfo();
             // start move animation
             // slot moveAnimFinished() will be called when it finishes
-            m_animator->animateMove(m_selPos, fpos);
+            bool pathExists = m_animator->animateMove(m_selPos, fpos);
+            if(!pathExists)
+                m_popupItem->showMessage(i18n("Selected ball can not be moved to this cell"), KGamePopupItem::BottomLeft);
         }
     }
 }
