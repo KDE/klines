@@ -30,6 +30,16 @@
 
 #include <QPainter>
 
+// NOTE: this should be in sync with svg
+static const int numColors = 7;
+static const char* svgNames[]={ "r_born_", "r_select_", "r_die_", "r_rest",
+                              "b_born_", "b_select_", "b_die_", "b_rest",
+                              "g_born_", "g_select_", "g_die_", "g_rest",
+                              "p_born_", "p_select_", "p_die_", "p_rest",
+                              "y_born_", "y_select_", "y_die_", "y_rest",
+                              "e_born_", "e_select_", "e_die_", "e_rest",
+                              "c_born_", "c_select_", "c_die_", "c_rest" };
+
 // note: this should be in sync with svg
 static inline char color2char( BallColor col )
 {
@@ -70,7 +80,6 @@ KLinesRenderer::KLinesRenderer()
 
     if ( !loadTheme( Prefs::theme() ) )
         kDebug()<< "Failed to load theme " << Prefs::theme() << endl;
-//    rerenderPixmaps();
 }
 
 KLinesRenderer::~KLinesRenderer()
@@ -136,9 +145,6 @@ void KLinesRenderer::rerenderPixmaps()
     if ( m_cellSize == 0 )
         return;
 
-    // this should be in sync with svg
-    const char colors[]="rbgpyec";
-    const int numColors = 7;
     QString id;
 
     QPainter p;
@@ -148,7 +154,7 @@ void KLinesRenderer::rerenderPixmaps()
         // rendering born frames
         for ( int f=0; f<frameCount(BornAnim);f++ )
         {
-            id = colors[i]+QString( "_born_" )+QString::number( f+1 );
+            id = svgNames[i*4]+QString::number( f+1 );
 
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
@@ -161,7 +167,7 @@ void KLinesRenderer::rerenderPixmaps()
         // rendering "selected" frames
         for ( int f=0; f<frameCount(SelectedAnim);f++ )
         {
-            id = colors[i]+QString( "_select_" ) + QString::number( f+1 );
+            id = svgNames[i*4+1] + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
@@ -172,7 +178,7 @@ void KLinesRenderer::rerenderPixmaps()
         // rendering "die" frames
         for ( int f=0; f<frameCount(DieAnim);f++ )
         {
-            id = colors[i]+QString( "_die_" ) + QString::number( f+1 );
+            id = svgNames[i*4+2] + QString::number( f+1 );
             QPixmap pix( m_cellSize, m_cellSize );
             pix.fill( Qt::transparent );
             p.begin( &pix );
@@ -181,7 +187,7 @@ void KLinesRenderer::rerenderPixmaps()
             m_pixHash[id] = pix;
         }
         // rendering "rest frame"
-        id = colors[i]+QString( "_rest" );
+        id = svgNames[i*4+3];
         QPixmap pix( m_cellSize, m_cellSize );
         pix.fill( Qt::transparent );
         p.begin( &pix );

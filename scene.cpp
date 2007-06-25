@@ -53,11 +53,6 @@ KLinesScene::KLinesScene( QObject* parent )
     m_popupItem = new KGamePopupItem;
     addItem(m_popupItem);
 
-    // NOTE: when adding non-ball items watch out! all items are deleted in startNewGame,
-    // so don't forget to put non-ball item in (if item != myNonBallItem)
-    // TODO: better use qgraphicsitem_cast<BallItem*> == 0 as criteria. After that remove
-    // this NOTE
-
     startNewGame();
 }
 
@@ -75,13 +70,12 @@ void KLinesScene::startNewGame()
     m_focusItem->setPos(0, 0);
     m_focusItem->hide();
 
-    // remove all ball items from the scene
+    // remove all ball items from the scene leaving other items untouched
     QList<QGraphicsItem*> itemlist = items();
     foreach( QGraphicsItem* item, itemlist )
     {
-        // TODO: better use qgraphicsitem_cast<BallItem*> == 0 as criteria. After that remove
-        // NOTE in constructor
-        if( item != m_focusItem && item != m_previewItem && item != m_popupItem)
+        BallItem* ball = qgraphicsitem_cast<BallItem*>(item);
+        if( ball )
         {
             removeItem(item);
             delete item;
