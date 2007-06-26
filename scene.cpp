@@ -29,7 +29,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 
-#include <kgamepopupitem.h>
+#include <KGamePopupItem>
 #include <KLocale>
 #include <KDebug>
 
