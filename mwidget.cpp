@@ -39,6 +39,10 @@ MainWidget::MainWidget( QWidget* parent )
     klview->setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
     klview->setFrameStyle(QFrame::NoFrame);
 
+    klview->setOptimizationFlags( QGraphicsView::DontClipPainter |
+                                  QGraphicsView::DontSavePainterState |
+                                  QGraphicsView::DontAdjustForAntialiasing );
+
     mainLay->addWidget( klview );
 }
 
