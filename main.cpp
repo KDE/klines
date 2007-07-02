@@ -37,12 +37,12 @@ static const char dummy[] = I18N_NOOP2("Menu title", "&Move");
 
 int main( int argc, char **argv )
 {
-    KAboutData aboutData("klines", I18N_NOOP("Kolor Lines"), "1.5",
-                         description, KAboutData::License_GPL);
-    aboutData.addAuthor("Roman Merzlyakov", I18N_NOOP("Original author"), "roman@sbrf.barrt.ru");
-    aboutData.addAuthor("Roman Razilov", I18N_NOOP("Rewrite and Extension"), "Roman.Razilov@gmx.de");
-    aboutData.addAuthor("Dmitry Suzdalev", I18N_NOOP("Rewrite to use QGraphicsView. Current maintainer"), "dimsuz@gmail.com");
-    aboutData.addCredit("Eugene Trounev", I18N_NOOP("New SVG artwork for KDE4 version of the game"), "eugene.trounev@gmail.com");
+    KAboutData aboutData("klines", 0, ki18n("Kolor Lines"), "1.5",
+                         ki18n(description), KAboutData::License_GPL);
+    aboutData.addAuthor(ki18n("Roman Merzlyakov"), ki18n("Original author"), "roman@sbrf.barrt.ru");
+    aboutData.addAuthor(ki18n("Roman Razilov"), ki18n("Rewrite and Extension"), "Roman.Razilov@gmx.de");
+    aboutData.addAuthor(ki18n("Dmitry Suzdalev"), ki18n("Rewrite to use QGraphicsView. Current maintainer"), "dimsuz@gmail.com");
+    aboutData.addCredit(ki18n("Eugene Trounev"), ki18n("New SVG artwork for KDE4 version of the game"), "eugene.trounev@gmail.com");
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KApplication application;
