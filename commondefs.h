@@ -20,8 +20,8 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
-#ifndef COMMON_DEFINES_H
-#define COMMON_DEFINES_H
+#ifndef COMMONDEFS_H
+#define COMMONDEFS_H
 
 #include <QList>
 
