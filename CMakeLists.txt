@@ -16,8 +16,6 @@ set(klines_SRCS
    animator.cpp)
    
 
-kde4_automoc(${klines_SRCS})
-
 kde4_add_kcfg_files(klines_SRCS prefs.kcfgc )
 
 kde4_add_executable(klines ${klines_SRCS})
