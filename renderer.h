@@ -33,7 +33,7 @@ class KSvgRenderer;
 /**
  * This class is responsible for rendering all the game graphics.
  * Graphics is rendered from svg file specified by current theme.
- * QPixmaps which are returned are cached until setRenderSizes()
+ * QPixmaps which are returned are cached until setCellSize()
  * doesn't get called.
  * Only one instance of this class exists during a program run.
  * It can be accessed with static function KLinesRenderer::self().

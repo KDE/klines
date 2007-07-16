@@ -127,6 +127,7 @@ QPixmap KLinesRenderer::backgroundPixmap( const QSize& size ) const
     {
         kDebug() << "re-rendering bkgnd" << endl;
         m_cachedBkgnd = QPixmap(size);
+        m_cachedBkgnd.fill(Qt::transparent);
         QPainter p(&m_cachedBkgnd);
         m_renderer->render(&p, "background");
     }
