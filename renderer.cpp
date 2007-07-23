@@ -31,8 +31,8 @@
 
 #include <QPainter>
 
-// if cache get's bigger then this (in bytes), discard it
-static const int CACHE_LIMIT=3000000;
+// if cache get's bigger then this (in kilobytes), discard it
+static const int CACHE_LIMIT=3000;
 
 // note: this should be in sync with svg
 static inline char color2char( BallColor col )
