@@ -139,12 +139,6 @@ private:
      */
     QPixmap pixmapFromCache(const QString& svgName, const QSize& customSize = QSize()) const;
     /**
-     * Rerenders all animation frames from svg to
-     * pixmaps according to m_cellSize and puts them
-     * to m_pixHash
-     */
-    void rerenderPixmaps();
-    /**
      *  This is the size of the scene's cell.
      *  All rendered pixmaps (except background) will have this size
      */
