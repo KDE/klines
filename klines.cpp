@@ -41,8 +41,6 @@
 
 KLinesMainWindow::KLinesMainWindow()
 {
-    KLinesRenderer::self()->restoreSavedBackground();
-
     mwidget = new MainWidget(this);
     setCentralWidget( mwidget );
 
@@ -168,12 +166,6 @@ void KLinesMainWindow::loadSettings()
         return;
     }
     mwidget->scene()->invalidate( mwidget->scene()->sceneRect() ); // trigger complete redraw
-}
-
-bool KLinesMainWindow::queryClose()
-{
-    KLinesRenderer::self()->saveBackground(mwidget->scene()->sceneRect().size().toSize());
-    return true;
 }
 
 #include "klines.moc"

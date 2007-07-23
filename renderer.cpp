@@ -27,18 +27,12 @@
 #include <KDebug>
 #include <KStandardDirs>
 #include <KGameTheme>
+#include <kpixmapcache.h>
 
 #include <QPainter>
 
-// NOTE: this should be in sync with svg
-static const int numColors = 7;
-static const char* svgNames[]={ "r_born_", "r_select_", "r_die_", "r_rest",
-                              "b_born_", "b_select_", "b_die_", "b_rest",
-                              "g_born_", "g_select_", "g_die_", "g_rest",
-                              "p_born_", "p_select_", "p_die_", "p_rest",
-                              "y_born_", "y_select_", "y_die_", "y_rest",
-                              "e_born_", "e_select_", "e_die_", "e_rest",
-                              "c_born_", "c_select_", "c_die_", "c_rest" };
+// if cache get's bigger then this (in bytes), discard it
+static const int CACHE_LIMIT=3000000;
 
 // note: this should be in sync with svg
 static inline char color2char( BallColor col )
@@ -77,6 +71,7 @@ KLinesRenderer::KLinesRenderer()
       m_moveDuration(0)
 {
     m_renderer = new KSvgRenderer();
+    m_cache = new KPixmapCache("klines-cache");
 
     if ( !loadTheme( Prefs::theme() ) )
         kDebug()<< "Failed to load theme " << Prefs::theme() << endl;
@@ -85,12 +80,13 @@ KLinesRenderer::KLinesRenderer()
 KLinesRenderer::~KLinesRenderer()
 {
     delete m_renderer;
+    delete m_cache;
 }
 
 QPixmap KLinesRenderer::ballPixmap(BallColor color) const
 {
     QString id = color2char( color )+QString( "_rest" );
-    return m_pixHash.value( id );
+    return pixmapFromCache(id);
 }
 
 QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int frame ) const
@@ -100,13 +96,13 @@ QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int
     {
     case BornAnim:
         id = color2char( color )+QString( "_born_" ) + QString::number( frame+1 );
-        return m_pixHash.value( id );
+        return pixmapFromCache(id);
     case SelectedAnim:
         id = color2char( color )+QString( "_select_" ) + QString::number( frame+1 );
-        return m_pixHash.value( id );
+        return pixmapFromCache(id);
     case DieAnim:
         id = color2char( color )+QString( "_die_" ) + QString::number( frame+1 );
-        return m_pixHash.value( id );
+        return pixmapFromCache(id);
     case MoveAnim:
         kDebug() << "Move animation type isn't supposed to be handled by KLinesRenderer!" << endl;
         return QPixmap();
@@ -118,105 +114,48 @@ QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int
 
 QPixmap KLinesRenderer::backgroundTilePixmap() const
 {
-    return m_pixHash.value( "field_cell" );
+    return pixmapFromCache( "field_cell" );
 }
 
 QPixmap KLinesRenderer::backgroundPixmap( const QSize& size ) const
 {
-    if( m_cachedBkgnd.isNull() || m_cachedBkgnd.size() != size )
+    QPixmap bkgnd = pixmapFromCache( "background", size );
+    if(m_cache->size() > CACHE_LIMIT)
     {
-        kDebug() << "re-rendering bkgnd" << endl;
-        m_cachedBkgnd = QPixmap(size);
-        m_cachedBkgnd.fill(Qt::transparent);
-        QPainter p(&m_cachedBkgnd);
-        m_renderer->render(&p, "background");
+        kDebug() << "discarding cache - it got too big" << endl;
+        m_cache->discard();
     }
-
-    return m_cachedBkgnd;
+    return bkgnd;
 }
 
 QPixmap KLinesRenderer::previewPixmap() const
 {
-    return m_pixHash.value( "preview" );
-}
-
-void KLinesRenderer::rerenderPixmaps()
-{
-    // don't try render if the sizes aren't set yet
-    if ( m_cellSize == 0 )
-        return;
-
-    QString id;
-
-    QPainter p;
-
-    for ( int i=0; i<numColors; ++i )
-    {
-        // rendering born frames
-        for ( int f=0; f<frameCount(BornAnim);f++ )
-        {
-            id = svgNames[i*4]+QString::number( f+1 );
-
-            QPixmap pix( m_cellSize, m_cellSize );
-            pix.fill( Qt::transparent );
-            p.begin( &pix );
-            m_renderer->render( &p, id );
-            p.end();
-
-            m_pixHash[id] = pix;
-        }
-        // rendering "selected" frames
-        for ( int f=0; f<frameCount(SelectedAnim);f++ )
-        {
-            id = svgNames[i*4+1] + QString::number( f+1 );
-            QPixmap pix( m_cellSize, m_cellSize );
-            pix.fill( Qt::transparent );
-            p.begin( &pix );
-            m_renderer->render( &p, id );
-            p.end();
-            m_pixHash[id] = pix;
-        }
-        // rendering "die" frames
-        for ( int f=0; f<frameCount(DieAnim);f++ )
-        {
-            id = svgNames[i*4+2] + QString::number( f+1 );
-            QPixmap pix( m_cellSize, m_cellSize );
-            pix.fill( Qt::transparent );
-            p.begin( &pix );
-            m_renderer->render( &p, id );
-            p.end();
-            m_pixHash[id] = pix;
-        }
-        // rendering "rest frame"
-        id = svgNames[i*4+3];
-        QPixmap pix( m_cellSize, m_cellSize );
-        pix.fill( Qt::transparent );
-        p.begin( &pix );
-        m_renderer->render( &p, id );
-        p.end();
-        m_pixHash[id] = pix;
-    }
-
-    QPixmap pix( m_cellSize, m_cellSize );
-    pix.fill( Qt::transparent );
-    p.begin( &pix );
-    m_renderer->render( &p, "field_cell" );
-    p.end();
-    m_pixHash["field_cell"] = pix;
-
-    QPixmap previewPix( m_cellSize, m_cellSize * 3);
-    previewPix.fill( Qt::transparent );
-    p.begin( &previewPix );
-    m_renderer->render( &p, "preview" );
-    p.end();
-    m_pixHash["preview"] = previewPix;
+    return pixmapFromCache( "preview", QSize(m_cellSize, m_cellSize*3) );
 }
 
 bool KLinesRenderer::loadTheme( const QString& themeName )
 {
+    // variable saying whether to discard old cache upon successful new theme loading
+    // we won't discard it if m_currentTheme is empty meaning that
+    // this is the first time loadTheme() is called
+    // (i.e. during startup) as we want to pick the cache from disc
+    bool discardCache = !m_currentTheme.isEmpty();
+
+    if( !m_currentTheme.isEmpty() && m_currentTheme == themeName )
+    {
+        kDebug() << "Notice: not loading the same theme" << endl;
+        return true; // this is not an error
+    }
     KGameTheme theme;
     if ( !theme.load( themeName ) )
-        return false;
+    {
+        kDebug()<< "Failed to load theme " << Prefs::theme() << endl;
+        kDebug() << "Trying to load default" << endl;
+        if(!theme.loadDefault())
+            return false;
+    }
+
+    m_currentTheme = themeName;
 
     bool res = m_renderer->load( theme.graphics() );
     kDebug() << "loading " << theme.graphics() << endl;
@@ -232,7 +171,11 @@ bool KLinesRenderer::loadTheme( const QString& themeName )
     m_dieDuration = theme.property( "DieAnimDuration" ).toInt();
     m_moveDuration = theme.property( "MoveAnimDuration" ).toInt();
 
-    rerenderPixmaps();
+    if(discardCache)
+    {
+        kDebug() << "discarding cache" << endl;
+        m_cache->discard();
+    }
 
     return true;
 }
@@ -243,43 +186,28 @@ void KLinesRenderer::setCellSize(int cellSize)
         return;
 
     m_cellSize = cellSize;
-    rerenderPixmaps();
 }
 
-void KLinesRenderer::saveBackground(const QSize& size) const
+QPixmap KLinesRenderer::pixmapFromCache(const QString& svgName, const QSize& customSize) const
 {
-    int savedWidth = Prefs::self()->savedBackgroundWidth();
-    int savedHeight = Prefs::self()->savedBackgroundHeight();
-    if( savedWidth == size.width() && savedHeight == size.height() )
-    {
-        kDebug() << "not saving last background" << endl;
-        return;
-    }
+    if(m_cellSize == 0)
+        return QPixmap();
 
-    kDebug() << "saving last background" << endl;
-    QPixmap bkgnd = backgroundPixmap(size);
-    bkgnd.save( KStandardDirs::locateLocal( "appdata", "savedBkgnd.png" ) );
-
-    Prefs::self()->setSavedBackgroundWidth( size.width() );
-    Prefs::self()->setSavedBackgroundHeight( size.height() );
-    Prefs::self()->writeConfig();
-}
-
-void KLinesRenderer::restoreSavedBackground()
-{
-    QString fname = KStandardDirs::locate( "appdata", "savedBkgnd.png" );
-    if ( !fname.isEmpty() )
+    QPixmap pix;
+    QString cacheName = svgName+QString("_%1").arg(m_cellSize);
+    if(!m_cache->find(cacheName, pix))
     {
-        QPixmap pix( fname );
-        kDebug() << "restoring saved background..." << endl;
-        m_cachedBkgnd = pix;
+        kDebug() << "putting " << cacheName << " to cache" << endl;
+        if(customSize.isValid())
+            pix = QPixmap( customSize );
+        else
+            pix = QPixmap( m_cellSize, m_cellSize );
+
+        pix.fill( Qt::transparent );
+        QPainter p( &pix );
+        m_renderer->render( &p, svgName );
+        p.end();
+        m_cache->insert(cacheName, pix);
     }
-    else
-    {
-        kDebug() << "no last saved pixmap found" << endl;
-        // reset corresponding fields in config file
-        Prefs::self()->setSavedBackgroundWidth( -1 );
-        Prefs::self()->setSavedBackgroundHeight( -1 );
-        Prefs::self()->writeConfig();
-    }
+    return pix;
 }

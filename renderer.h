@@ -24,11 +24,11 @@
 #define KL_RENDERER_H
 
 #include <QPixmap>
-#include <QHash>
 
 #include "commondefs.h"
 
 class KSvgRenderer;
+class KPixmapCache;
 
 /**
  * This class is responsible for rendering all the game graphics.
@@ -122,18 +122,6 @@ public:
                 return 0;
             }
         }
-
-    /**
-     * Renders background from SVG and saves it to $appdata/savedBkgnd.png
-     * Background can be restored (put to cache) later with restoreSavedBackground().
-     * Used to speed up startup
-     */
-    void saveBackground(const QSize&) const;
-    /**
-     * Reads pixmap which was saved by saveBackground() and puts it to cache.
-     * If no pixmap is found - nothing is done
-     */
-    void restoreSavedBackground();
 private:
     // disable copy - it's singleton
     KLinesRenderer();
@@ -141,6 +129,15 @@ private:
     KLinesRenderer& operator=( const KLinesRenderer& );
     ~KLinesRenderer();
 
+    /**
+     * Tries to find pixmap with cacheName in cache.
+     * If pixmap is not found in cache, this function will put it there
+     * Pixmap is rendered according to current cellSize
+     * If customSize is not passed, pixmap will be of (m_cellSize,m_cellSize) size
+     *
+     * @return rendered pixmap
+     */
+    QPixmap pixmapFromCache(const QString& svgName, const QSize& customSize = QSize()) const;
     /**
      * Rerenders all animation frames from svg to
      * pixmaps according to m_cellSize and puts them
@@ -153,12 +150,12 @@ private:
      */
     int m_cellSize;
     /**
-     * Cached background pixmap.
+     * Name of currently loaded theme
      */
-    mutable QPixmap m_cachedBkgnd;
+    QString m_currentTheme;
 
     KSvgRenderer *m_renderer;
-    QHash<QString, QPixmap> m_pixHash;
+    KPixmapCache *m_cache;
 
     int m_numBornFrames;
     int m_numSelFrames;
