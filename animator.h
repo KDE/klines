@@ -66,10 +66,12 @@ public:
     bool isAnimating() const;
     /**
      * Starts game over animation on the scene, shows game over message
+     * TODO: does nothing useful yet
      */
     void startGameOverAnimation();
     /**
      * Stops game over animation
+     * TODO: does nothing useful yet
      */
     void stopGameOverAnimation();
 signals:

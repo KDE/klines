@@ -58,6 +58,9 @@ KLinesScene::KLinesScene( QObject* parent )
 
 void KLinesScene::startNewGame()
 {
+    if(m_animator->isAnimating())
+        return;
+
     // reset all vars
     m_selPos = FieldPos();
     m_numFreeCells = FIELD_SIZE*FIELD_SIZE;
@@ -69,6 +72,8 @@ void KLinesScene::startNewGame()
     m_nextColors.clear();
     m_focusItem->setPos(0, 0);
     m_focusItem->hide();
+
+    m_popupItem->forceHide();
 
     // remove all ball items from the scene leaving other items untouched
     QList<QGraphicsItem*> itemlist = items();
@@ -96,7 +101,6 @@ void KLinesScene::startNewGame()
 
     emit stateChanged("not_undoable");
 
-    m_animator->stopGameOverAnimation();
     nextThreeBalls();
 }
 
@@ -258,7 +262,10 @@ void KLinesScene::selectOrMove( const FieldPos& fpos )
             // slot moveAnimFinished() will be called when it finishes
             bool pathExists = m_animator->animateMove(m_selPos, fpos);
             if(!pathExists)
+            {
+                m_popupItem->setMessageTimeout(2500);
                 m_popupItem->showMessage(i18n("Selected ball can not be moved to this cell"), KGamePopupItem::BottomLeft);
+            }
         }
     }
 }
@@ -629,7 +636,10 @@ void KLinesScene::gameOverHandler()
     emit stateChanged("not_undoable");
     //emit enableUndo(false);
     emit gameOver(m_score);
-    m_animator->startGameOverAnimation();
+
+    // disable auto-hide
+    m_popupItem->setMessageTimeout(0);
+    m_popupItem->showMessage("<h1>Game over</h1>", KGamePopupItem::Center);
 }
 
 #include "scene.moc"
