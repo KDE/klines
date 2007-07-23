@@ -27,7 +27,7 @@ install(TARGETS klines  DESTINATION ${BIN_INSTALL_DIR} )
 
 ########### install files ###############
 
-install( FILES klines.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES klines.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES klines.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES klinesui.rc  DESTINATION  ${DATA_INSTALL_DIR}/klines )
 
