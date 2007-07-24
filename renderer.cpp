@@ -31,9 +31,6 @@
 
 #include <QPainter>
 
-// if cache get's bigger then this (in kilobytes), discard it
-static const int CACHE_LIMIT=3000;
-
 // note: this should be in sync with svg
 static inline char color2char( BallColor col )
 {
@@ -72,6 +69,7 @@ KLinesRenderer::KLinesRenderer()
 {
     m_renderer = new KSvgRenderer();
     m_cache = new KPixmapCache("klines-cache");
+    m_cache->setCacheLimit(3*1024);
 
     if ( !loadTheme( Prefs::theme() ) )
         kDebug()<< "Failed to load theme " << Prefs::theme() << endl;
@@ -119,13 +117,7 @@ QPixmap KLinesRenderer::backgroundTilePixmap() const
 
 QPixmap KLinesRenderer::backgroundPixmap( const QSize& size ) const
 {
-    QPixmap bkgnd = pixmapFromCache( "background", size );
-    if(m_cache->size() > CACHE_LIMIT)
-    {
-        kDebug() << "discarding cache - it got too big" << endl;
-        m_cache->discard();
-    }
-    return bkgnd;
+    return pixmapFromCache( "background", size );
 }
 
 QPixmap KLinesRenderer::previewPixmap() const
