@@ -225,6 +225,7 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
 
 void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 {
+    QGraphicsScene::mousePressEvent(ev);
     if ( !QRectF( m_playFieldOrigin.x(), m_playFieldOrigin.y(),
                   m_cellSize*FIELD_SIZE, m_cellSize*FIELD_SIZE ).contains( ev->scenePos() ) )
         return;
