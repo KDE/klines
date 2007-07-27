@@ -28,6 +28,8 @@
 BallItem::BallItem( QGraphicsScene* parent )
     : QGraphicsPixmapItem( 0, parent )
 {
+    setShapeMode( BoundingRectShape );
+
     m_color = NumColors; // = uninitialized
 
     m_timeLine.setCurveShape( QTimeLine::LinearCurve );
