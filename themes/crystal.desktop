@@ -1,0 +1,30 @@
+[KGameTheme]
+VersionFormat=1
+Name=Crystal
+FileName=klines_crystal.svgz
+Author=Eugene Trounev
+AuthorEmail=eugene.trounev@gmail.com
+Preview=default_preview.png
+
+# number of "born" animation frames in svg
+NumBornFrames=11
+
+# number of "selected" animation frames in svg
+NumSelectedFrames=7
+
+# number of "die" animation frames in svg
+NumDieFrames=3
+
+# Timing settings:
+
+# amount of milliseconds to play one cycle of "born"-animation
+BornAnimDuration=500
+
+# amount of milliseconds to play one cycle of "selected"-animation
+SelectedAnimDuration=500
+
+# amount of milliseconds to play one cycle "die"-animation
+DieAnimDuration=200
+
+# amount of milliseconds to move the ball through one cell
+MoveAnimDuration=100
