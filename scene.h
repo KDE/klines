@@ -83,8 +83,8 @@ public:
      */
     inline QPointF fieldToPix(const FieldPos& fpos) const
     {
-        return QPointF( m_playFieldOrigin.x()+fpos.x*m_cellSize + m_cellSize * 0.05 ,
-                        m_playFieldOrigin.y()+fpos.y*m_cellSize + m_cellSize * 0.05 );
+        return QPointF( m_playFieldOrigin.x()+fpos.x*m_cellSize,
+                        m_playFieldOrigin.y()+fpos.y*m_cellSize );
     }
     /**
      *  Pixel coords to field coords
