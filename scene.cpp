@@ -151,7 +151,7 @@ void KLinesScene::resizeScene(int width,int height)
     m_previewItem->setPos( width-m_cellSize, previewOriginY );
     m_previewItem->setPreviewColors( m_nextColors );
 
-    //kDebug() << "resize:" << width << "," << height << "; cellSize: " << m_cellSize << endl;
+    //kDebug() << "resize:" << width << "," << height << "; cellSize:" << m_cellSize;
 }
 
 void KLinesScene::endTurn()
@@ -633,7 +633,7 @@ void KLinesScene::gameOverHandler()
     if( m_gameOver )
         return; // don't emit twice
     m_gameOver = true;
-    kDebug() << "GAME OVER" << endl;
+    kDebug() << "GAME OVER";
     emit stateChanged("not_undoable");
     //emit enableUndo(false);
     emit gameOver(m_score);

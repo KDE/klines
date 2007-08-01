@@ -72,7 +72,7 @@ KLinesRenderer::KLinesRenderer()
     m_cache->setCacheLimit(3*1024);
 
     if ( !loadTheme( Prefs::theme() ) )
-        kDebug()<< "Failed to load theme " << Prefs::theme() << endl;
+        kDebug()<< "Failed to load theme" << Prefs::theme();
 }
 
 KLinesRenderer::~KLinesRenderer()
@@ -102,10 +102,10 @@ QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int
         id = color2char( color )+QString( "_die_" ) + QString::number( frame+1 );
         return pixmapFromCache(id);
     case MoveAnim:
-        kDebug() << "Move animation type isn't supposed to be handled by KLinesRenderer!" << endl;
+        kDebug() << "Move animation type isn't supposed to be handled by KLinesRenderer!";
         return QPixmap();
     default:
-        kDebug() << "Warning! Animation type not handled in switch!" << endl;
+        kDebug() << "Warning! Animation type not handled in switch!";
         return QPixmap();
     }
 }
@@ -135,14 +135,14 @@ bool KLinesRenderer::loadTheme( const QString& themeName )
 
     if( !m_currentTheme.isEmpty() && m_currentTheme == themeName )
     {
-        kDebug() << "Notice: not loading the same theme" << endl;
+        kDebug() << "Notice: not loading the same theme";
         return true; // this is not an error
     }
     KGameTheme theme;
     if ( !theme.load( themeName ) )
     {
-        kDebug()<< "Failed to load theme " << Prefs::theme() << endl;
-        kDebug() << "Trying to load default" << endl;
+        kDebug()<< "Failed to load theme" << Prefs::theme();
+        kDebug() << "Trying to load default";
         if(!theme.loadDefault())
             return false;
     }
@@ -150,7 +150,7 @@ bool KLinesRenderer::loadTheme( const QString& themeName )
     m_currentTheme = themeName;
 
     bool res = m_renderer->load( theme.graphics() );
-    kDebug() << "loading " << theme.graphics() << endl;
+    kDebug() << "loading" << theme.graphics();
     if ( !res )
         return false;
 
@@ -165,7 +165,7 @@ bool KLinesRenderer::loadTheme( const QString& themeName )
 
     if(discardCache)
     {
-        kDebug() << "discarding cache" << endl;
+        kDebug() << "discarding cache";
         m_cache->discard();
     }
 
@@ -189,7 +189,7 @@ QPixmap KLinesRenderer::pixmapFromCache(const QString& svgName, const QSize& cus
     QString cacheName = svgName+QString("_%1").arg(m_cellSize);
     if(!m_cache->find(cacheName, pix))
     {
-        kDebug() << "putting " << cacheName << " to cache" << endl;
+        kDebug() << "putting" << cacheName << "to cache";
         if(customSize.isValid())
             pix = QPixmap( customSize );
         else
