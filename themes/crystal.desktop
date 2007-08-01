@@ -10,7 +10,7 @@ Preview=default_preview.png
 NumBornFrames=11
 
 # number of "selected" animation frames in svg
-NumSelectedFrames=7
+NumSelectedFrames=6
 
 # number of "die" animation frames in svg
 NumDieFrames=3
