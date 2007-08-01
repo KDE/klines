@@ -165,7 +165,9 @@ void KLinesMainWindow::loadSettings()
         KMessageBox::error( this,  i18n( "Failed to load \"%1\" theme. Please check your installation.", Prefs::theme() ) );
         return;
     }
-    mwidget->scene()->invalidate( mwidget->scene()->sceneRect() ); // trigger complete redraw
+    QRectF r = mwidget->scene()->sceneRect();
+    mwidget->scene()->invalidate( r, QGraphicsScene::BackgroundLayer ); // redraw background
+    mwidget->scene()->resizeScene( (int)r.width(), (int)r.height() ); // redraw scene
 }
 
 #include "klines.moc"
