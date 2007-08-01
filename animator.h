@@ -82,6 +82,8 @@ private slots:
     void moveAnimationFrame(int);
     void removeAnimationFrame(int);
     void bornAnimationFrame(int);
+
+    void slotBornFinished();
 private:
     /**
      *  Implements A* pathfinding algorithm.

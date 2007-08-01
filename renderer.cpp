@@ -186,15 +186,13 @@ QPixmap KLinesRenderer::pixmapFromCache(const QString& svgName, const QSize& cus
         return QPixmap();
 
     QPixmap pix;
-    QString cacheName = svgName+QString("_%1").arg(m_cellSize);
+    QSize sz = customSize.isValid() ? customSize : QSize(m_cellSize,m_cellSize);
+
+    QString cacheName = svgName+QString("_%1x%2").arg(sz.width()).arg(sz.height());
     if(!m_cache->find(cacheName, pix))
     {
         kDebug() << "putting" << cacheName << "to cache";
-        if(customSize.isValid())
-            pix = QPixmap( customSize );
-        else
-            pix = QPixmap( m_cellSize, m_cellSize );
-
+        pix = QPixmap( sz );
         pix.fill( Qt::transparent );
         QPainter p( &pix );
         m_renderer->render( &p, svgName );

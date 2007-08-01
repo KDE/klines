@@ -67,7 +67,7 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
 
     m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
     connect(&m_bornTimeLine, SIGNAL(frameChanged(int)), SLOT(bornAnimationFrame(int)) );
-    connect(&m_bornTimeLine, SIGNAL(finished()), SIGNAL(bornFinished()));
+    connect(&m_bornTimeLine, SIGNAL(finished()), SLOT(slotBornFinished()));
 }
 
 bool KLinesAnimator::isAnimating() const
@@ -312,6 +312,13 @@ void KLinesAnimator::startGameOverAnimation()
 void KLinesAnimator::stopGameOverAnimation()
 {
     blockSignals(false);
+}
+
+void KLinesAnimator::slotBornFinished()
+{
+    foreach(BallItem* ball, m_bornBalls)
+        ball->setPixmap( KLinesRenderer::self()->ballPixmap(ball->color()) );
+    emit bornFinished();
 }
 
 #include "animator.moc"
