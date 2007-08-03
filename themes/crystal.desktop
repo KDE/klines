@@ -1,6 +1,8 @@
 [KGameTheme]
 VersionFormat=1
 Name=Crystal
+Name[pt]=Cristal
+Name[pt_BR]=Cristal
 FileName=klines_crystal.svgz
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com
