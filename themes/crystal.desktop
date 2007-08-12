@@ -6,7 +6,7 @@ Name[pt_BR]=Cristal
 FileName=klines_crystal.svgz
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com
-Preview=default_preview.png
+Preview=crystal.png
 
 # number of "born" animation frames in svg
 NumBornFrames=11
