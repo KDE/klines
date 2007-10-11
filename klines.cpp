@@ -153,7 +153,7 @@ void KLinesMainWindow::configureSettings()
     if ( KConfigDialog::showDialog( "settings" ) )
         return;
     KConfigDialog *dialog = new KConfigDialog( this, "settings", Prefs::self() );
-    dialog->addPage( new KGameThemeSelector( dialog, Prefs::self() ), i18n( "Theme" ), "game_theme" );
+    dialog->addPage( new KGameThemeSelector( dialog, Prefs::self(), KGameThemeSelector::NewStuffDisableDownload  ), i18n( "Theme" ), "game_theme" );
     connect( dialog, SIGNAL( settingsChanged(const QString&) ), this, SLOT( loadSettings() ) );
     dialog->show();
 }
