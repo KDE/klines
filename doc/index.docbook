@@ -1,30 +1,32 @@
 <?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
-  <!ENTITY kappname "&kolorlines;">
-  <!ENTITY package "kdegames">
-  <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE">
+  <!ENTITY kapp-name "&kolorlines;">
+  <!ENTITY kappversion "1.00.00"><!--Applicaion version. Use this variable everywhere it's needed.-->
+  <!ENTITY docversion "1.0"><!--Document version. Use this variable everywhere it's needed.-->
+  <!ENTITY docupdate "2001-05-20"><!--Document version. Use this variable everywhere it's needed.-->
+  <!ENTITY package "kdegames">  <!-- do not change this! -->
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"> <!-- do not change this! -->
 ]>
-	
-<book lang="&language;">
-
+ 
+<book lang="&language;"> <!-- do not change this! -->
 <bookinfo>
-<title>The &kolorlines; Handbook</title>
-
+	<title>&kapp-name; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
 <author>
-<firstname>Roman</firstname>
-<surname>Razilov</surname>
-<affiliation>
-<address>&Roman.Razilov.mail;</address>
-</affiliation>
+<firstname>Roman</firstname><surname>Razilov</surname>
+<affiliation><address>&Roman.Razilov.mail;</address></affiliation>
 </author>
 <author>
-<firstname>Roman</firstname>
-<surname>Merzlyakov</surname>
-<affiliation>
-<address>&Roman.Merzlyakov.mail;</address>
-</affiliation>
+<firstname>Roman</firstname><surname>Merzlyakov</surname>
+<affiliation><address>&Roman.Merzlyakov.mail;</address></affiliation>
+</author>
+<author>
+<firstname>Eugene</firstname><surname>Trounev</surname>
+<affiliation><address><email>eugene.trounev@gmail.com</email></address></affiliation>
 </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 
@@ -37,197 +39,252 @@
 <holder>&Roman.Merzlyakov;</holder>
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
-
-<date>2001-05-20</date>
-<releaseinfo>1.00.00</releaseinfo>
-
-<abstract><para>&kolorlines; is a nice little game meant to amuse you for
-anywhere from 3 minutes to 6 days(straight).</para></abstract>
-
+ 
+<date>&docupdate;</date><!-- Date of (re)writing, ro update. Use the variable definitions within header to change this value.-->
+<releaseinfo>&docversion;</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para>This documentation describes the game of &kapp-name; version &kappversion;</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>kdegames</keyword>
-<keyword>klines</keyword>
+	<keyword>KDE</keyword> <!-- do not change this! -->
+	<keyword>kdegames</keyword> <!-- do not change this! -->
+	<keyword>game</keyword> <!-- do not change this! -->
+	<keyword>Kolrlines</keyword><!--Application name goes here-->
+<!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword>arcade</keyword>
+	<keyword>colors</keyword>
+	<keyword>color lines</keyword>
+	<keyword>color</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword>one player</keyword>
 </keywordset>
-
 </bookinfo>
-
-<chapter id="introduction">
-<title>Introduction</title>
-
-<para>&kolorlines; is a simple game. It is played by one player, so there is
-only one winner :-) You play for fun and against the high score. It has
-been inspired by well known game - <application>Color
-lines</application>, written for DOS by Olga Demina, Igor Ivkin and
-Gennady Denisov back at 1992.</para>
-
-<para>In 2000 &Roman.Merzlyakov; wrote a original version for &kde;. Roman
-Roazilov added to it a cool <application>povray</application> generated
-animation. Later in 2001 he ported it to &kde; 2 and made it conform to
-the &kde; games standard.</para>
-
+<!--Content begins here: -->
+<chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
+	<note><title>Gametype:</title><para>Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para>&kapp-name; is a simple by highly addictive, one player game for KDE. &kapp-name; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
+	<para>The goal of &kapp-name; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, feeling up the game board.</para>
+	<para>&kapp-name; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board is filled up with balls.</para>
 </chapter>
-
-
-<chapter id="using-klines">
-<title>Using &kolorlines;</title>
-
-<para>The main rules of game is as simple as possible: you move (using
-mouse) marbles from cell to cell and build lines (horizontal, vertical
-or diagonal).  When a line contains 5 or more marbles - they are removed
-from the field and your score grows. After each of your turns computer
-drops three more marbles onto the field.</para>
-
-<para> The increase in score depends on the amount of erased marbles
-and if &kolorlines; shows the next balls.  The increase will be smaller if
-you use the information of what's next.</para>
-
-<sect1 id="klines-features">
-<title>More &kolorlines; features</title>
-
-<para>&kolorlines; is wonderful in that it will allow you to kill 5 minutes
-while you wait for that program to compile.</para> <para>Or, if nothing
-else, it will allow you to kill 5 minutes.</para>
-
-</sect1>
+ 
+<chapter id="howto"><title>How to play</title> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note><title>Objective:</title><para>Move the colored balls around the game board, gathering them into the lines of the same color by five.</para></note><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para>	When &kapp-name; starts you are presented with the game board split in to 81 squares (the game board is 9x9 squares), and right away three new colored balls appear on the board. Use your mouse to move the balls from cell to cell to group them into the lines of the same color. However, after each of your moves computer drops three more marbles onto the board. To avoid feeling up the board you should gather the balls into lines of 5 or more balls. When such line is complete, balls are removed from the field and your score grows.</para>
+	<note><title>Note:</title><para>The new balls will not be added to the field after a line removal. Instead you will be rewarded with yet another move before a new triplet of balls is added.</para></note>
+	<para>The increase in score depends solely on the amount of the erased balls.</para>
+	<note><title>Note:</title><para>If you are playing with ‘Show Next’ feature enabled the increase in score is less then if ‘Show Next’ feature is disabled.</para></note>
+	<para>&kapp-name; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board becomes filled up with balls.</para>
 </chapter>
-
-<chapter id="commands">
-<title>Command Reference</title>
-
+ 
+<chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<para>Game Rules, Strategies and Tips</para>
+	<sect1 id="rules">
+		<title>Game Rules</title>
+			<itemizedlist>
+				<listitem><para>After each player’s move the game will add three more balls to the board.</para></listitem>
+				<listitem><para>To free up the space on the board player has to group the balls of the same color into an uninterrupted horizontal, vertical, or diagonal line by five or more.</para></listitem>
+				<listitem><para>To initiate the move simply click on the source ball to select it, then click on the destination square to complete the move.</para></listitem>
+				<listitem><para>A ball can only be moved into the squares that are vacant and not occupied by any other ball.</para></listitem>
+				<listitem><para>In the same time the square in question must be freely accessible.</para></listitem>
+				<listitem><para>The square is freely accessible when there are no other balls blocking the path to it.</para></listitem>
+				<listitem><para>The path is considered blocked if any part of it is currently being occupied by a ball.</para></listitem>
+			</itemizedlist>
+			<note><title>Note:</title><para>In &kapp-name; the path is automatically calculated by the game. If there is no possible (open) route to the destination cell, a friendly notification will be displayed.</para></note>
+			<itemizedlist>
+				<listitem><para>In order to successfully transfer a ball to a desired cell where the path is blocked to, player has to clear the path first.</para></listitem>
+				<listitem><para>To clear the path the player simply has to move all the blocking balls out of the way, therefore freeing the route.</para></listitem>
+				<listitem><para>The scores are awarded for each line of balls removed off the game board.</para></listitem>
+			</itemizedlist>
+			<note><title>Note:</title><para>If you are playing with ‘Show Next’ feature enabled the increase in score is less then if ‘Show Next’ feature is disabled.</para></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title>Strategies and Tips</title>
+			<itemizedlist>
+				<listitem><para>Keep a close look on the bar showing the next three marbles to be dropped onto the field (unless ‘Show Next’ feature is disabled). More often then not you will appreciate the information if provides.</para></listitem>
+				<listitem><para>Try to keep at least a half of the game board cleared. Letting the balls to pile up will almost certainly lead to a loss.</para></listitem>
+				<listitem><para>To make your game easier always keep more then one line of the same balls ready for clearing. This can be achieved by building the consecutive lines of the same balls everywhere possible, instead of concentrating on one line at a time.</para></listitem>
+				<listitem><para>Try to keep more then three almost completed lines existing on the game board at all times. Almost completed means that they are four same balls in length, and only one ball remains until their completion.</para></listitem>
+			</itemizedlist>
+			<note><title>Example:</title><para>If you have an almost completed line and the pathway to it suddenly becomes blocked with another ball, don’t just move that ball. Try to find a sequence of the balls of the same kind that you can continue with the moved ball. If such sequence exists and is accessible – then mote the blocking ball there.</para></note>
+	</sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist> and <varlistentry>. Split the chapter into sections using <sect1(2,3)> for better viewing.-->
 <sect1 id="klines-mainwindow">
-<title>The main &kolorlines; window</title>
-
-<para>There is a large area with marbles.  At the right side a bar
-showing the next three marbles to be dropped on the field. Underneath
-the field is the status bar. Above it is the menu bar.</para>
-
-<sect2>
-<title>The <guimenu>Game</guimenu> Menu</title>
-
-<variablelist>
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>New game</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Starts a new game</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Show Highscores</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Displays the high score table</action></para></listitem>
-</varlistentry>
-<!-- 
-
--->
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Quit</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Quits</action> &kolorlines;</para></listitem>
-</varlistentry>
-</variablelist>
-
-</sect2>
-
-<sect2>
-<title>The <guimenu>Move</guimenu> Menu</title>
-
-<variablelist>
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
-</shortcut>
-<guimenu>Move</guimenu>
-<guimenuitem>Undo</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>This will undo the last move.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Move</guimenu><guimenuitem>End Turn</guimenuitem></menuchoice>
-</term>
-<listitem>
-<para>Skip your move, immediately play the next marbles without you moving
-any.</para>
-</listitem>
-</varlistentry>
-</variablelist>
-</sect2>
-
-<sect2>
-<title>The <guimenu>Settings</guimenu> Menu</title>
-
-<variablelist>
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Show Statusbar</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles the display of the statusbar.</action></para></listitem>
-</varlistentry>
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
-</shortcut>
-<guimenu>Settings</guimenu>
-<guimenuitem>Show Next</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Toggles the information on next
-marbles.</action></para></listitem>
-</varlistentry>
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Use Numbered Balls</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Number the balls according to color. This may be of assistance to
-players who are color blind, have other vision impairments that make the
-colors hard to distinguish, or those of you who simply like the look.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
-Shortcuts</guimenuitem></menuchoice></term>
-<listitem>
-<para>Displays a standard &kde; shortcut configuration dialog, allowing you
-to customize the keys used in the game.</para></listitem>
-</varlistentry>
-</variablelist>
-</sect2>
-
-<sect2>
-<title>The <guimenu>Help</guimenu> Menu</title>
-
-&help.menu.documentation;
-
-</sect2>
+<title>The main &kapp-name; window.</title>
+<screenshot>
+				<screeninfo>A screenshot of &kapp-name;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject><phrase>Screenshot</phrase></textobject>
+				</mediaobject>
+			</screenshot>
+<para>On the very top of the game window there located the menubar. 
+In the center if the screeen there is a large square area filled with marbles called - the game board.
+On the right hand side there located a bar showing the next three marbles to be dropped onto the field (unless ‘Show Next’ feature is disabled).
+Underneath the field there is the status bar.</para>
 </sect1>
-
+<sect1 id="menu-game">
+	<title>The <guimenu>Game</guimenu> Menu</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term><menuchoice>
+				<shortcut><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+				<guimenu>Game</guimenu>
+				<guimenuitem>New game</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Starts a new game</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term><menuchoice>
+				<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
+				<guimenu>Game</guimenu>
+				<guimenuitem>Show Highscores</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Displays the high score table</action></para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><menuchoice>
+				<shortcut><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo></shortcut>
+				<guimenu>Game</guimenu>
+				<guimenuitem>Quit</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Quits</action> &kapp-name;</para></listitem>
+		</varlistentry>
+	</variablelist>
+</sect1>
+<sect1 id="menu-move">
+	<title>The <guimenu>Move</guimenu> Menu</title>
+	<variablelist>
+		<varlistentry id="menu-move-undo">
+			<term><menuchoice>
+				<shortcut><keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo></shortcut>
+				<guimenu>Move</guimenu>
+				<guimenuitem>Undo</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>This will undo the last move.</action></para></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term><menuchoice>
+				<guimenu>Move</guimenu><guimenuitem>End Turn</guimenuitem>
+			</menuchoice></term>
+			<listitem><para>Skip your move, immediately play the next marbles without you moving any.</para></listitem>
+		</varlistentry>
+	</variablelist>
+</sect1>
+<sect1 id="menu-settings">
+	<title>The <guimenu>Settings</guimenu> Menu</title>
+	<variablelist>
+		<varlistentry>
+			<term><menuchoice>
+				<guimenu>Settings</guimenu>
+				<guimenuitem>Show Statusbar</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Toggles the display of the statusbar.</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-settings-shownext">
+			<term><menuchoice>
+				<shortcut><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo></shortcut>
+				<guimenu>Settings</guimenu>
+				<guimenuitem>Show Next</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Toggles the information on next marbles.</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-settings-numbers">
+			<term><menuchoice>
+				<guimenu>Settings</guimenu><guimenuitem>Use Numbered Balls</guimenuitem>
+			</menuchoice></term>
+			<listitem><para>Number the balls according to color. This may be of assistance to players who are color blind, have other vision impairments that make the colors hard to distinguish, or those of you who simply like the look.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts</guimenuitem></menuchoice></term>
+			<listitem><para>Displays a standard &kde; shortcut configuration dialog, allowing you to customize the keys used in the game.</para></listitem>
+		</varlistentry>
+	</variablelist>
+</sect1>
+<sect1 id="help"><!--This is a standard Help menubar entry. Only change if needed.-->
+<title>The <guimenuitem>Help</guimenuitem> Menu</title>
+&help.menu.documentation;
+</sect1>
 </chapter>
-
-<chapter id="credits">
-
-<title>Credits and License</title>
-
-<para>&kolorlines;</para>
+ 
+ 
+<chapter id="faq"><title>Frequently asked questions</title> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset> <qandaentry> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+<question><para>Who made this game?</para></question>
+ <answer><para>The kdegames team. You can find their website here.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Where can I get cheatcodes? </para></question>
+ <answer><para>You can't get cheatcodes for KDE games.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I start a new game? </para></question>
+ <answer><para>&kapp-name; loads right into the game mode. You can start playing as soon as the application starts.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I restart a &kapp-name;? </para></question>
+ <answer><para>To restart the game you can use a <link linkend="menu-game-new">keyboard shortcut</link>, or a <link linkend="menu-game-new">menubar option</link>.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I pause the game? </para></question>
+ <answer><para>&kapp-name; does not have this feature as it is not required.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the way this game looks. Can I? </para></question>
+ <answer><para>Yes. ...</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have made a mistake. Can I undo? </para></question>
+ <answer><para>To undo a move you can use a <link linkend="menu-move-undo">keyboard shortcut</link>, or a <link linkend="menu-move-undo">menubar option.</link></para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I don't want to make any moves right now. Can I skip a turn? </para></question>
+ <answer><para>Yes. To skip a turn you can use a <link linkend="menu-move-endturn">keyboard shortcut</link>, or a <link linkend="menu-move-endturn">menubar</link> option.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Can I use keyboard? </para></question>
+ <answer><para>No. &kapp-name; can not be played using keyboard.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I can't figure out what to do here! Are there hints? </para></question>
+ <answer><para>No. &kapp-name; does not have a 'Hint' feature.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
+  <answer><para>&kapp-name; does not have a 'Svae' feature at this moment.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Where are the highscores?</para></question>
+ <answer><para>To access the highscores simply use <link linkend="menu-game-highscore">'Show Highscores'</link> option on the menubar.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the game configuration. Where do I go? </para></question>
+ <answer><para>!!!!</para></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para>&kapp-name;</para>
 
 <para>Program copyright 2000 &Roman.Merzlyakov;
 &Roman.Merzlyakov.mail;</para>
@@ -244,39 +301,45 @@ testing and discussions.</para>
 &Roman.Razilov.mail;</para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-&underFDL;               <!-- FDL: do not remove -->
-
-
-&underGPL;        	 <!-- GPL License -->
-
+ 
+ 
+<!-- !!!do not change ANYTHING after this line!!!! -->
+&underFDL;
+&underGPL;
+ 
 </chapter>
-
+ 
+ 
 <appendix id="installation">
 <title>Installation</title>
-
-<sect1 id="getting-klines">
-<title>How to obtain &kolorlines;</title>
-
+ 
 &install.intro.documentation;
-
-</sect1>
-
-<sect1 id="compilation">
+ 
+ 
+<sect1 id="Compilation">
 <title>Compilation and Installation</title>
-
+ 
 &install.compile.documentation;
-
+ 
 </sect1>
-
 </appendix>
-
-&documentation.index;
-
+ 
+&documentation.index; 
 </book>
 <!--
 Local Variables:
-sgml-minimize-attributes: nil
-sgml-general-insert-case: lower
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
 End:
 -->
-
