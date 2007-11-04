@@ -184,16 +184,54 @@ Underneath the field there is the status bar.</para>
 		</varlistentry>
 	</variablelist>
 </sect1>
+<sect1 id="menu-navigation">
+	<title>The <guimenu>Navigation</guimenu> Menu</title>
+	<variablelist>
+		<varlistentry id="menu-navigation-left">
+			<term><menuchoice>
+				<shortcut><keycap>Left</keycap></shortcut>
+				<guimenu>Navigation</guimenu>
+				<guimenuitem>Left</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>This action will move the selection cursor to the left.</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term><menuchoice>
+				<shortcut><keycap>Right</keycap></shortcut>
+				<guimenu>Navigation</guimenu>
+				<guimenuitem>Right</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>This action will move the selection cursor to the right.</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term><menuchoice>
+				<shortcut><keycap>Up</keycap></shortcut>
+				<guimenu>Navigation</guimenu>
+				<guimenuitem>Up</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>This action will move the selection cursor up.</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term><menuchoice>
+				<shortcut><keycap>Down</keycap></shortcut>
+				<guimenu>Navigation</guimenu>
+				<guimenuitem>Down</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>This action will move the selection cursor down.</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term><menuchoice>
+				<shortcut><keycap>Space</keycap></shortcut>
+				<guimenu>Navigation</guimenu>
+				<guimenuitem>Select</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>This action will select the item currently under the cursor.</action></para></listitem>
+		</varlistentry>
+	</variablelist>
+</sect1>
 <sect1 id="menu-settings">
 	<title>The <guimenu>Settings</guimenu> Menu</title>
 	<variablelist>
-		<varlistentry>
-			<term><menuchoice>
-				<guimenu>Settings</guimenu>
-				<guimenuitem>Show Statusbar</guimenuitem>
-			</menuchoice></term>
-			<listitem><para><action>Toggles the display of the statusbar.</action></para></listitem>
-		</varlistentry>
 		<varlistentry id="menu-settings-shownext">
 			<term><menuchoice>
 				<shortcut><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo></shortcut>
@@ -202,16 +240,38 @@ Underneath the field there is the status bar.</para>
 			</menuchoice></term>
 			<listitem><para><action>Toggles the information on next marbles.</action></para></listitem>
 		</varlistentry>
-		<varlistentry id="menu-settings-numbers">
+		<varlistentry>
 			<term><menuchoice>
-				<guimenu>Settings</guimenu><guimenuitem>Use Numbered Balls</guimenuitem>
+				<guimenu>Settings</guimenu>
+				<guisubmenu>Toolbars</guisubmenu><guimenuitem>Main Toolbar</guimenuitem>
 			</menuchoice></term>
-			<listitem><para>Number the balls according to color. This may be of assistance to players who are color blind, have other vision impairments that make the colors hard to distinguish, or those of you who simply like the look.</para>
-			</listitem>
+			<listitem><para><action>Toggles the display of the main toolbar.</action></para></listitem>
 		</varlistentry>
 		<varlistentry>
-			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts</guimenuitem></menuchoice></term>
+			<term><menuchoice>
+				<guimenu>Settings</guimenu>
+				<guisubmenu>Toolbars</guisubmenu><guimenuitem>Navigation Toolbar</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Toggles the display of the navigation toolbar.</action></para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><menuchoice>
+				<guimenu>Settings</guimenu>
+				<guimenuitem>Show Statusbar</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Toggles the display of the statusbar.</action></para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice></term>
 			<listitem><para>Displays a standard &kde; shortcut configuration dialog, allowing you to customize the keys used in the game.</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Toolbars...</guimenuitem></menuchoice></term>
+			<listitem><para>Displays a standard &kde; toolbar configuration dialog, allowing you to customize the keys used in the game.</para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-settings-configuration">
+			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kapp-name;...</guimenuitem></menuchoice></term>
+			<listitem><para>Displays a &kapp-name; <link linkend="configuration">configuration dialog</link>, allowing you to customize &kapp-name; settings used in the game.</para></listitem>
 		</varlistentry>
 	</variablelist>
 </sect1>
@@ -248,7 +308,7 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>Yes. ...</para></answer>
+ <answer><para>Yes. To change &kapp-name; visual theme you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kapp-name;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have made a mistake. Can I undo? </para></question>
@@ -276,11 +336,19 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
- <answer><para>!!!!</para></answer>
+ <answer><para>To change the game configuration you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kapp-name;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
 </qandaentry>
 </qandaset>
 </chapter>
- 
+
+<chapter id="configuration"><title>Game Configuration</title> <!-- do not change this! -->
+  <para>&kapp-name; configuration dialog allows you to select &kapp-name; visual themes.</para>
+  <para>To select a new theme simply choose the theme's name from the selection list.</para>
+  <note><title>Note:</title><para>For your convenience a quick preview screenshot will be displayed on the right hand side of the selection list as soon as you select the theme you're interested in.</para></note>
+  <para>Once you are satisfied with the theme you have selected you can either click <guibutton>Apply</guibutton>, or simply click <guibutton>Ok</guibutton> button, located at the bottom part of this dialog.</para>
+  <para>If, however you are dissatisfied with your selection – simply click <guimenu>Cancel</guimenu> to discard the changes.</para>
+</chapter>
+
 <chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
  
