@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kolorlines;">
@@ -12,7 +12,7 @@
  
 <book lang="&language;"> <!-- do not change this! -->
 <bookinfo>
-	<title>The &kappname; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
+	<title>The &kolorlines; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
 <!-- List of immidiate authors begins here. -->
 <!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
@@ -44,7 +44,7 @@
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-	<para>This documentation describes the game of &kappname; version &kappversion;</para>
+	<para>This documentation describes the game of &kolorlines; version &kappversion;</para>
 </abstract>
  
 <!--List of relevan keywords-->
@@ -66,25 +66,24 @@
 <chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
 	<note><title>Gametype:</title><para>Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
-	<para>&kappname; is a simple by highly addictive, one player game for &kde;. &kappname; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
-	<para>The goal of &kappname; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, feeling up the game board.</para>
-	<para>&kappname; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board is filled up with balls.</para>
+	<para>&kolorlines; is a simple by highly addictive, one player game for &kde;. &kolorlines; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
+	<para>The goal of &kolorlines; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.</para>
+	<para>&kolorlines; cannot be won, and is played against the high score exclusively. The game ends once the whole game board is filled up with balls.</para>
 </chapter>
  
-<chapter id="howto"><title>How to play</title> <!-- do not change this! -->
+<chapter id="howto"><title>How to Play</title> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
 	<note><title>Objective:</title><para>Move the colored balls around the game board, gathering them into the lines of the same color by five.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
-	<para>	When &kappname; starts you are presented with the game board split in to 81 squares (the game board is 9x9 squares), and right away three new colored balls appear on the board. Use your mouse to move the balls from cell to cell to group them into the lines of the same color. However, after each of your moves computer drops three more marbles onto the board. To avoid feeling up the board you should gather the balls into lines of 5 or more balls. When such line is complete, balls are removed from the field and your score grows.</para>
+	<para>	When &kolorlines; starts you are presented with the game board split into 81 squares (the game board is 9x9 squares), and right away three new colored balls appear on the board. Use your mouse to move the balls from cell to cell to group them into the lines of the same color. However, after each of your moves the computer drops three more marbles onto the board. To avoid filling up the board you should gather the balls into lines of 5 or more balls. When such a line is complete, the balls are removed from the field and your score grows.</para>
 	<note><title>Note:</title><para>The new balls will not be added to the field after a line removal. Instead you will be rewarded with yet another move before a new triplet of balls is added.</para></note>
 	<para>The increase in score depends solely on the amount of the erased balls.</para>
-	<note><title>Note:</title><para>If you are playing with ‘Show Next’ feature enabled the increase in score is less then if ‘Show Next’ feature is disabled.</para></note>
-	<para>&kappname; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board becomes filled up with balls.</para>
+	<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less then if  <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
+	<para>&kolorlines; cannot be won, and is played against the high score exclusively. The game ends once the whole game board becomes filled up with balls.</para>
 </chapter>
  
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
 	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
-	<para>Game Rules, Strategies and Tips</para>
 	<sect1 id="rules">
 		<title>Game Rules</title>
 			<itemizedlist>
@@ -96,32 +95,32 @@
 				<listitem><para>The square is freely accessible when there are no other balls blocking the path to it.</para></listitem>
 				<listitem><para>The path is considered blocked if any part of it is currently being occupied by a ball.</para></listitem>
 			</itemizedlist>
-			<note><title>Note:</title><para>In &kappname; the path is automatically calculated by the game. If there is no possible (open) route to the destination cell, a friendly notification will be displayed.</para></note>
+			<note><title>Note:</title><para>In &kolorlines; the path is automatically calculated by the game. If there is no possible (open) route to the destination cell, a friendly notification will be displayed.</para></note>
 			<itemizedlist>
 				<listitem><para>In order to successfully transfer a ball to a desired cell where the path is blocked to, player has to clear the path first.</para></listitem>
 				<listitem><para>To clear the path the player simply has to move all the blocking balls out of the way, therefore freeing the route.</para></listitem>
 				<listitem><para>The scores are awarded for each line of balls removed off the game board.</para></listitem>
 			</itemizedlist>
-			<note><title>Note:</title><para>If you are playing with ‘Show Next’ feature enabled the increase in score is less then if ‘Show Next’ feature is disabled.</para></note>
+			<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less then if <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
 	</sect1>
 	<sect1 id="strategies">
 		<title>Strategies and Tips</title>
 			<itemizedlist>
-				<listitem><para>Keep a close look on the bar showing the next three marbles to be dropped onto the field (unless ‘Show Next’ feature is disabled). More often then not you will appreciate the information if provides.</para></listitem>
+				<listitem><para>Keep a close look on the bar showing the next three marbles to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled). More often then not you will appreciate the information if provides.</para></listitem>
 				<listitem><para>Try to keep at least a half of the game board cleared. Letting the balls to pile up will almost certainly lead to a loss.</para></listitem>
 				<listitem><para>To make your game easier always keep more then one line of the same balls ready for clearing. This can be achieved by building the consecutive lines of the same balls everywhere possible, instead of concentrating on one line at a time.</para></listitem>
 				<listitem><para>Try to keep more then three almost completed lines existing on the game board at all times. Almost completed means that they are four same balls in length, and only one ball remains until their completion.</para></listitem>
 			</itemizedlist>
-			<note><title>Example:</title><para>If you have an almost completed line and the pathway to it suddenly becomes blocked with another ball, don’t just move that ball. Try to find a sequence of the balls of the same kind that you can continue with the moved ball. If such sequence exists and is accessible – then mote the blocking ball there.</para></note>
+			<note><title>Example:</title><para>If you have an almost completed line and the pathway to it suddenly becomes blocked with another ball, don’t just move that ball. Try to find a sequence of the balls of the same kind that you can continue with the moved ball. If such sequence exists and is accessible – then move the blocking ball there.</para></note>
 	</sect1>
 </chapter>
   
 <chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
 <!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist> and <varlistentry>. Split the chapter into sections using <sect1(2,3)> for better viewing.-->
 <sect1 id="klines-mainwindow">
-<title>The main &kappname; window.</title>
+<title>The Main &kolorlines; Window</title>
 <screenshot>
-				<screeninfo>A screenshot of &kappname;</screeninfo>
+				<screeninfo>A screenshot of &kolorlines;</screeninfo>
 				<mediaobject>
 					<imageobject>
 						<imagedata fileref="gamescreen.png" format="PNG"/>
@@ -129,9 +128,9 @@
 					<textobject><phrase>Screenshot</phrase></textobject>
 				</mediaobject>
 			</screenshot>
-<para>On the very top of the game window there located the menubar. 
-In the center if the screeen there is a large square area filled with marbles called - the game board.
-On the right hand side there located a bar showing the next three marbles to be dropped onto the field (unless ‘Show Next’ feature is disabled).
+<para>On the very top of the game window there are located the menubar and the toolbar. 
+In the center of the screeen there is a large square area filled with marbles called - the game board.
+On the right hand side there located a bar showing the next three marbles to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled).
 Underneath the field there is the status bar.</para>
 </sect1>
 <sect1 id="menu-game">
@@ -149,7 +148,7 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
 				<guimenu>Game</guimenu>
-				<guimenuitem>Show Highscores</guimenuitem>
+				<guimenuitem>Show High Scores...</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>Displays the high score table</action></para></listitem>
 		</varlistentry>
@@ -159,7 +158,7 @@ Underneath the field there is the status bar.</para>
 				<guimenu>Game</guimenu>
 				<guimenuitem>Quit</guimenuitem>
 			</menuchoice></term>
-			<listitem><para><action>Quits</action> &kappname;</para></listitem>
+			<listitem><para><action>Quits</action> &kolorlines;</para></listitem>
 		</varlistentry>
 	</variablelist>
 </sect1>
@@ -248,7 +247,7 @@ Underneath the field there is the status bar.</para>
 		<varlistentry>
 			<term><menuchoice>
 				<guimenu>Settings</guimenu>
-				<guisubmenu>Toolbars</guisubmenu><guimenuitem>Navigation Toolbar</guimenuitem>
+				<guisubmenu>Toolbars</guisubmenu><guimenuitem>Navigation</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>Toggles the display of the navigation toolbar.</action></para></listitem>
 		</varlistentry>
@@ -268,8 +267,8 @@ Underneath the field there is the status bar.</para>
 			<listitem><para>Displays a standard &kde; toolbar configuration dialog, allowing you to customize the keys used in the game.</para></listitem>
 		</varlistentry>
 		<varlistentry id="menu-settings-configuration">
-			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kappname;...</guimenuitem></menuchoice></term>
-			<listitem><para>Displays a &kappname; <link linkend="configuration">configuration dialog</link>, allowing you to customize &kappname; settings used in the game.</para></listitem>
+			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice></term>
+			<listitem><para>Displays a &kolorlines; <link linkend="configuration">configuration dialog</link>, allowing you to customize &kolorlines; settings used in the game.</para></listitem>
 		</varlistentry>
 	</variablelist>
 </sect1>
@@ -293,19 +292,19 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
- <answer><para>&kappname; loads right into the game mode. You can start playing as soon as the application starts.</para></answer>
+ <answer><para>&kolorlines; loads right into the game mode. You can start playing as soon as the application starts.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>How do I restart a &kappname;? </para></question>
+ <question><para>How do I restart &kolorlines;? </para></question>
  <answer><para>To restart the game you can use a <link linkend="menu-game-new">keyboard shortcut</link>, or a <link linkend="menu-game-new">menubar option</link>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
- <answer><para>&kappname; does not have this feature as it is not required.</para></answer>
+ <answer><para>&kolorlines; does not have this feature as it is not required.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>Yes. To change &kappname; visual theme you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kappname;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
+ <answer><para>Yes. To change &kolorlines; visual theme you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have made a mistake. Can I undo? </para></question>
@@ -317,39 +316,39 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>Can I use keyboard? </para></question>
- <answer><para>No. &kappname; can not be played using keyboard.</para></answer>
+ <answer><para>No. &kolorlines; cannot be played using keyboard.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I can't figure out what to do here! Are there hints? </para></question>
- <answer><para>No. &kappname; does not have a 'Hint' feature.</para></answer>
+ <question><para>I cannot figure out what to do here! Are there hints? </para></question>
+ <answer><para>No. &kolorlines; does not have a <quote>Hint</quote> feature.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
-  <answer><para>&kappname; does not have a 'Svae' feature at this moment.</para></answer>
+ <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
+  <answer><para>&kolorlines; does not have a <quote>Save</quote> feature at this moment.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>Where are the highscores?</para></question>
- <answer><para>To access the highscores simply use <link linkend="menu-game-highscore">'Show Highscores'</link> option on the menubar.</para></answer>
+ <question><para>Where are the high scores?</para></question>
+ <answer><para>To access the high scores simply use <link linkend="menu-game-highscore"><guimenuitem>Show High Scores...</guimenuitem></link> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
- <answer><para>To change the game configuration you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kappname;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
+ <answer><para>To change the game configuration you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
 </qandaentry>
 </qandaset>
 </chapter>
 
 <chapter id="configuration"><title>Game Configuration</title> <!-- do not change this! -->
-  <para>&kappname; configuration dialog allows you to select &kappname; visual themes.</para>
+  <para>&kolorlines; configuration dialog allows you to select &kolorlines; visual themes.</para>
   <para>To select a new theme simply choose the theme's name from the selection list.</para>
   <note><title>Note:</title><para>For your convenience a quick preview screenshot will be displayed on the right hand sided of the selection list as soon as you select the theme you're interested in.</para></note>
   <para>Once you are satisfied with the theme you have selected you can either click <guibutton>Apply</guibutton>, or simply click <guibutton>Ok</guibutton> button, located at the bottom part of this dialog.</para>
-  <para>If, however you are dissatisfied with your selection – simply click <guimenu>Cancel</guimenu> to discard the changes.</para>
+  <para>If, however you are dissatisfied with your selection – simply click <guibutton>Cancel</guibutton> to discard the changes.</para>
 </chapter>
 
 <chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
  
-<para>&kappname;</para>
+<para>&kolorlines;</para>
 
 <para>Program copyright 2000 &Roman.Merzlyakov;
 &Roman.Merzlyakov.mail;</para>
