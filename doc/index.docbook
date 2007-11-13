@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
-  <!ENTITY kapp-name "&kolorlines;">
-  <!ENTITY kappversion "1.00.00"><!--Applicaion version. Use this variable everywhere it's needed.-->
+  <!ENTITY kappname "&kolorlines;">
+  <!ENTITY kappversion "1.5"><!--Applicaion version. Use this variable everywhere it's needed.-->
   <!ENTITY docversion "1.0"><!--Document version. Use this variable everywhere it's needed.-->
   <!ENTITY docupdate "2001-05-20"><!--Document version. Use this variable everywhere it's needed.-->
   <!ENTITY package "kdegames">  <!-- do not change this! -->
@@ -12,7 +12,7 @@
  
 <book lang="&language;"> <!-- do not change this! -->
 <bookinfo>
-	<title>&kapp-name; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
+	<title>The &kappname; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
 <!-- List of immidiate authors begins here. -->
 <!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
@@ -45,7 +45,7 @@
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-	<para>This documentation describes the game of &kapp-name; version &kappversion;</para>
+	<para>This documentation describes the game of &kappname; version &kappversion;</para>
 </abstract>
  
 <!--List of relevan keywords-->
@@ -67,20 +67,20 @@
 <chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
 	<note><title>Gametype:</title><para>Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
-	<para>&kapp-name; is a simple by highly addictive, one player game for KDE. &kapp-name; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
-	<para>The goal of &kapp-name; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, feeling up the game board.</para>
-	<para>&kapp-name; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board is filled up with balls.</para>
+	<para>&kappname; is a simple by highly addictive, one player game for KDE. &kappname; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
+	<para>The goal of &kappname; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, feeling up the game board.</para>
+	<para>&kappname; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board is filled up with balls.</para>
 </chapter>
  
 <chapter id="howto"><title>How to play</title> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
 	<note><title>Objective:</title><para>Move the colored balls around the game board, gathering them into the lines of the same color by five.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
-	<para>	When &kapp-name; starts you are presented with the game board split in to 81 squares (the game board is 9x9 squares), and right away three new colored balls appear on the board. Use your mouse to move the balls from cell to cell to group them into the lines of the same color. However, after each of your moves computer drops three more marbles onto the board. To avoid feeling up the board you should gather the balls into lines of 5 or more balls. When such line is complete, balls are removed from the field and your score grows.</para>
+	<para>	When &kappname; starts you are presented with the game board split in to 81 squares (the game board is 9x9 squares), and right away three new colored balls appear on the board. Use your mouse to move the balls from cell to cell to group them into the lines of the same color. However, after each of your moves computer drops three more marbles onto the board. To avoid feeling up the board you should gather the balls into lines of 5 or more balls. When such line is complete, balls are removed from the field and your score grows.</para>
 	<note><title>Note:</title><para>The new balls will not be added to the field after a line removal. Instead you will be rewarded with yet another move before a new triplet of balls is added.</para></note>
 	<para>The increase in score depends solely on the amount of the erased balls.</para>
 	<note><title>Note:</title><para>If you are playing with ‘Show Next’ feature enabled the increase in score is less then if ‘Show Next’ feature is disabled.</para></note>
-	<para>&kapp-name; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board becomes filled up with balls.</para>
+	<para>&kappname; can not be won, and is played against the Highscore exclusively. The game ends once the whole game board becomes filled up with balls.</para>
 </chapter>
  
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
@@ -97,7 +97,7 @@
 				<listitem><para>The square is freely accessible when there are no other balls blocking the path to it.</para></listitem>
 				<listitem><para>The path is considered blocked if any part of it is currently being occupied by a ball.</para></listitem>
 			</itemizedlist>
-			<note><title>Note:</title><para>In &kapp-name; the path is automatically calculated by the game. If there is no possible (open) route to the destination cell, a friendly notification will be displayed.</para></note>
+			<note><title>Note:</title><para>In &kappname; the path is automatically calculated by the game. If there is no possible (open) route to the destination cell, a friendly notification will be displayed.</para></note>
 			<itemizedlist>
 				<listitem><para>In order to successfully transfer a ball to a desired cell where the path is blocked to, player has to clear the path first.</para></listitem>
 				<listitem><para>To clear the path the player simply has to move all the blocking balls out of the way, therefore freeing the route.</para></listitem>
@@ -121,9 +121,9 @@
 <chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
 <!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist> and <varlistentry>. Split the chapter into sections using <sect1(2,3)> for better viewing.-->
 <sect1 id="klines-mainwindow">
-<title>The main &kapp-name; window.</title>
+<title>The main &kappname; window.</title>
 <screenshot>
-				<screeninfo>A screenshot of &kapp-name;</screeninfo>
+				<screeninfo>A screenshot of &kappname;</screeninfo>
 				<mediaobject>
 					<imageobject>
 						<imagedata fileref="gamescreen.png" format="PNG"/>
@@ -161,7 +161,7 @@ Underneath the field there is the status bar.</para>
 				<guimenu>Game</guimenu>
 				<guimenuitem>Quit</guimenuitem>
 			</menuchoice></term>
-			<listitem><para><action>Quits</action> &kapp-name;</para></listitem>
+			<listitem><para><action>Quits</action> &kappname;</para></listitem>
 		</varlistentry>
 	</variablelist>
 </sect1>
@@ -270,8 +270,8 @@ Underneath the field there is the status bar.</para>
 			<listitem><para>Displays a standard &kde; toolbar configuration dialog, allowing you to customize the keys used in the game.</para></listitem>
 		</varlistentry>
 		<varlistentry id="menu-settings-configuration">
-			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kapp-name;...</guimenuitem></menuchoice></term>
-			<listitem><para>Displays a &kapp-name; <link linkend="configuration">configuration dialog</link>, allowing you to customize &kapp-name; settings used in the game.</para></listitem>
+			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kappname;...</guimenuitem></menuchoice></term>
+			<listitem><para>Displays a &kappname; <link linkend="configuration">configuration dialog</link>, allowing you to customize &kappname; settings used in the game.</para></listitem>
 		</varlistentry>
 	</variablelist>
 </sect1>
@@ -296,19 +296,19 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
- <answer><para>&kapp-name; loads right into the game mode. You can start playing as soon as the application starts.</para></answer>
+ <answer><para>&kappname; loads right into the game mode. You can start playing as soon as the application starts.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>How do I restart a &kapp-name;? </para></question>
+ <question><para>How do I restart a &kappname;? </para></question>
  <answer><para>To restart the game you can use a <link linkend="menu-game-new">keyboard shortcut</link>, or a <link linkend="menu-game-new">menubar option</link>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
- <answer><para>&kapp-name; does not have this feature as it is not required.</para></answer>
+ <answer><para>&kappname; does not have this feature as it is not required.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>Yes. To change &kapp-name; visual theme you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kapp-name;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
+ <answer><para>Yes. To change &kappname; visual theme you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kappname;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have made a mistake. Can I undo? </para></question>
@@ -320,15 +320,15 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>Can I use keyboard? </para></question>
- <answer><para>No. &kapp-name; can not be played using keyboard.</para></answer>
+ <answer><para>No. &kappname; can not be played using keyboard.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I can't figure out what to do here! Are there hints? </para></question>
- <answer><para>No. &kapp-name; does not have a 'Hint' feature.</para></answer>
+ <answer><para>No. &kappname; does not have a 'Hint' feature.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
-  <answer><para>&kapp-name; does not have a 'Svae' feature at this moment.</para></answer>
+  <answer><para>&kappname; does not have a 'Svae' feature at this moment.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>Where are the highscores?</para></question>
@@ -336,15 +336,15 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
- <answer><para>To change the game configuration you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kapp-name;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
+ <answer><para>To change the game configuration you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kappname;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
 </qandaentry>
 </qandaset>
 </chapter>
 
 <chapter id="configuration"><title>Game Configuration</title> <!-- do not change this! -->
-  <para>&kapp-name; configuration dialog allows you to select &kapp-name; visual themes.</para>
+  <para>&kappname; configuration dialog allows you to select &kappname; visual themes.</para>
   <para>To select a new theme simply choose the theme's name from the selection list.</para>
-  <note><title>Note:</title><para>For your convenience a quick preview screenshot will be displayed on the right hand side of the selection list as soon as you select the theme you're interested in.</para></note>
+  <note><title>Note:</title><para>For your convenience a quick preview screenshot will be displayed on the right hand sided of the selection list as soon as you select the theme you're interested in.</para></note>
   <para>Once you are satisfied with the theme you have selected you can either click <guibutton>Apply</guibutton>, or simply click <guibutton>Ok</guibutton> button, located at the bottom part of this dialog.</para>
   <para>If, however you are dissatisfied with your selection – simply click <guimenu>Cancel</guimenu> to discard the changes.</para>
 </chapter>
@@ -352,7 +352,7 @@ Underneath the field there is the status bar.</para>
 <chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
  
-<para>&kapp-name;</para>
+<para>&kappname;</para>
 
 <para>Program copyright 2000 &Roman.Merzlyakov;
 &Roman.Merzlyakov.mail;</para>
