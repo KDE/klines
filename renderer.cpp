@@ -191,7 +191,7 @@ QPixmap KLinesRenderer::pixmapFromCache(const QString& svgName, const QSize& cus
     QString cacheName = svgName+QString("_%1x%2").arg(sz.width()).arg(sz.height());
     if(!m_cache->find(cacheName, pix))
     {
-        kDebug() << "putting" << cacheName << "to cache";
+//        kDebug() << "putting" << cacheName << "to cache";
         pix = QPixmap( sz );
         pix.fill( Qt::transparent );
         QPainter p( &pix );

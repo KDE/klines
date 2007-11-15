@@ -1,7 +1,7 @@
 /*
     Copyright 2000 Roman Merzlyakov <roman@sbrf.barrt.ru>
     Copyright 2000 Roman Razilov <roman@sbrf.barrt.ru>
-    Copyright 2006 Dimitry Suzdalev <dimsuz@gmail.com>
+    Copyright 2007 Dimitry Suzdalev <dimsuz@gmail.com>
     Copyright 2007 Simon Hürlimann <simon.huerlimann@huerlisi.ch>
 
     This program is free software; you can redistribute it and/or modify
@@ -80,11 +80,30 @@ void KLinesMainWindow::setupActions()
   mwidget->setShowNextColors(Prefs::showNext());
 
   // Navigation
-  actionCollection()->add<QAction>("navi_left", mwidget->scene(), SLOT(moveFocusLeft()));
-  actionCollection()->add<QAction>("navi_right", mwidget->scene(), SLOT(moveFocusRight()));
-  actionCollection()->add<QAction>("navi_up", mwidget->scene(), SLOT(moveFocusUp()));
-  actionCollection()->add<QAction>("navi_down", mwidget->scene(), SLOT(moveFocusDown()));
-  actionCollection()->add<QAction>("navi_select", mwidget->scene(), SLOT(cellSelected()));
+  QAction* naviLeft = actionCollection()->add<QAction>("navi_left", mwidget->scene(), SLOT(moveFocusLeft()));
+  QAction* naviRight = actionCollection()->add<QAction>("navi_right", mwidget->scene(), SLOT(moveFocusRight()));
+  QAction* naviUp = actionCollection()->add<QAction>("navi_up", mwidget->scene(), SLOT(moveFocusUp()));
+  QAction* naviDown = actionCollection()->add<QAction>("navi_down", mwidget->scene(), SLOT(moveFocusDown()));
+  QAction* naviSelect = actionCollection()->add<QAction>("navi_select", mwidget->scene(), SLOT(cellSelected()));
+
+  naviLeft->setIcon( KIcon("arrow-left") );
+  naviLeft->setShortcut( Qt::Key_Left );
+  naviLeft->setText( i18n("Move Left") );
+
+  naviRight->setIcon( KIcon("arrow-right") );
+  naviRight->setShortcut( Qt::Key_Right );
+  naviRight->setText( i18n("Move Right") );
+
+  naviUp->setIcon( KIcon("arrow-up") );
+  naviUp->setShortcut( Qt::Key_Up );
+  naviUp->setText( i18n("Move Up") );
+
+  naviDown->setIcon( KIcon("arrow-down") );
+  naviDown->setShortcut( Qt::Key_Down );
+  naviDown->setText( i18n("Move Down") );
+
+  naviSelect->setShortcut( Qt::Key_Space );
+  naviSelect->setText( i18n("Select") );
 
   KStandardAction::preferences( this, SLOT( configureSettings() ), actionCollection() );
   setupGUI();
