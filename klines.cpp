@@ -80,30 +80,31 @@ void KLinesMainWindow::setupActions()
   mwidget->setShowNextColors(Prefs::showNext());
 
   // Navigation
-  QAction* naviLeft = actionCollection()->add<QAction>("navi_left", mwidget->scene(), SLOT(moveFocusLeft()));
-  QAction* naviRight = actionCollection()->add<QAction>("navi_right", mwidget->scene(), SLOT(moveFocusRight()));
-  QAction* naviUp = actionCollection()->add<QAction>("navi_up", mwidget->scene(), SLOT(moveFocusUp()));
-  QAction* naviDown = actionCollection()->add<QAction>("navi_down", mwidget->scene(), SLOT(moveFocusDown()));
-  QAction* naviSelect = actionCollection()->add<QAction>("navi_select", mwidget->scene(), SLOT(cellSelected()));
-
-  naviLeft->setIcon( KIcon("arrow-left") );
+  KAction* naviLeft = new KAction( KIcon("arrow-left"), i18n("Move Left"), this );
   naviLeft->setShortcut( Qt::Key_Left );
-  naviLeft->setText( i18n("Move Left") );
+  actionCollection()->addAction("navi_left", naviLeft);
 
-  naviRight->setIcon( KIcon("arrow-right") );
+  KAction* naviRight = new KAction( KIcon("arrow-right"), i18n("Move Right"), this );
   naviRight->setShortcut( Qt::Key_Right );
-  naviRight->setText( i18n("Move Right") );
+  actionCollection()->addAction("navi_right", naviRight);
 
-  naviUp->setIcon( KIcon("arrow-up") );
+  KAction* naviUp = new KAction( KIcon("arrow-up"), i18n("Move Up"), this );
   naviUp->setShortcut( Qt::Key_Up );
-  naviUp->setText( i18n("Move Up") );
+  actionCollection()->addAction("navi_up", naviUp);
 
-  naviDown->setIcon( KIcon("arrow-down") );
+  KAction* naviDown = new KAction( KIcon("arrow-down"), i18n("Move Down"), this );
   naviDown->setShortcut( Qt::Key_Down );
-  naviDown->setText( i18n("Move Down") );
+  actionCollection()->addAction("navi_down", naviDown);
 
+  KAction* naviSelect = new KAction( i18n("Select"), this );
   naviSelect->setShortcut( Qt::Key_Space );
-  naviSelect->setText( i18n("Select") );
+  actionCollection()->addAction("navi_select", naviSelect);
+
+  connect( naviLeft, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusLeft()));
+  connect( naviRight, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusRight()));
+  connect( naviUp, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusUp()));
+  connect( naviDown, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusDown()));
+  connect( naviSelect, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(cellSelected()));
 
   KStandardAction::preferences( this, SLOT( configureSettings() ), actionCollection() );
   setupGUI();
