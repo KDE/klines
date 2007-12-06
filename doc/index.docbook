@@ -52,7 +52,7 @@
 	<keyword>KDE</keyword> <!-- do not change this! -->
 	<keyword>kdegames</keyword> <!-- do not change this! -->
 	<keyword>game</keyword> <!-- do not change this! -->
-	<keyword>Kolrlines</keyword><!--Application name goes here-->
+	<keyword>Kolorlines</keyword><!--Application name goes here-->
 <!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<keyword>arcade</keyword>
 	<keyword>colors</keyword>
@@ -140,7 +140,7 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></shortcut>
 				<guimenu>Game</guimenu>
-				<guimenuitem>New game</guimenuitem>
+				<guimenuitem>New</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>Starts a new game</action></para></listitem>
 		</varlistentry>
@@ -188,7 +188,7 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycap>Left</keycap></shortcut>
 				<guimenu>Navigation</guimenu>
-				<guimenuitem>Left</guimenuitem>
+				<guimenuitem>Move Left</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>This action will move the selection cursor to the left.</action></para></listitem>
 		</varlistentry>
@@ -196,7 +196,7 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycap>Right</keycap></shortcut>
 				<guimenu>Navigation</guimenu>
-				<guimenuitem>Right</guimenuitem>
+				<guimenuitem>Move Right</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>This action will move the selection cursor to the right.</action></para></listitem>
 		</varlistentry>
@@ -204,7 +204,7 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycap>Up</keycap></shortcut>
 				<guimenu>Navigation</guimenu>
-				<guimenuitem>Up</guimenuitem>
+				<guimenuitem>Move Up</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>This action will move the selection cursor up.</action></para></listitem>
 		</varlistentry>
@@ -212,7 +212,7 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycap>Down</keycap></shortcut>
 				<guimenu>Navigation</guimenu>
-				<guimenuitem>Down</guimenuitem>
+				<guimenuitem>Move Down</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>This action will move the selection cursor down.</action></para></listitem>
 		</varlistentry>
@@ -240,16 +240,9 @@ Underneath the field there is the status bar.</para>
 		<varlistentry>
 			<term><menuchoice>
 				<guimenu>Settings</guimenu>
-				<guisubmenu>Toolbars</guisubmenu><guimenuitem>Main Toolbar</guimenuitem>
+				<guimenuitem>Show Toolbar</guimenuitem>
 			</menuchoice></term>
-			<listitem><para><action>Toggles the display of the main toolbar.</action></para></listitem>
-		</varlistentry>
-		<varlistentry>
-			<term><menuchoice>
-				<guimenu>Settings</guimenu>
-				<guisubmenu>Toolbars</guisubmenu><guimenuitem>Navigation</guimenuitem>
-			</menuchoice></term>
-			<listitem><para><action>Toggles the display of the navigation toolbar.</action></para></listitem>
+			<listitem><para><action>Toggles the display of the toolbar.</action></para></listitem>
 		</varlistentry>
 		<varlistentry>
 			<term><menuchoice>
@@ -273,7 +266,7 @@ Underneath the field there is the status bar.</para>
 	</variablelist>
 </sect1>
 <sect1 id="help"><!--This is a standard Help menubar entry. Only change if needed.-->
-<title>The <guimenuitem>Help</guimenuitem> Menu</title>
+<title>The <guimenu>Help</guimenu> Menu</title>
 &help.menu.documentation;
 </sect1>
 </chapter>
