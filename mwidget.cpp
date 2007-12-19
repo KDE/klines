@@ -22,9 +22,8 @@
 #include <KLocale>
 
 #include <QGraphicsView>
-#include <QLabel>
-#include <QLayout>
 #include <QResizeEvent>
+#include <QBoxLayout>
 
 MainWidget::MainWidget( QWidget* parent )
     : QWidget( parent )

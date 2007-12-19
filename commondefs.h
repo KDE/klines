@@ -23,7 +23,6 @@
 #ifndef COMMONDEFS_H
 #define COMMONDEFS_H
 
-#include <QList>
 
 enum BallColor { Blue=0, Brown, Cyan, Green, Red, Violet, Yellow, NumColors };
 
