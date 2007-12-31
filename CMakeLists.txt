@@ -18,14 +18,7 @@ set(klines_SRCS
 
 kde4_add_kcfg_files(klines_SRCS prefs.kcfgc )
 
-set(klines_icons
-	${CMAKE_CURRENT_SOURCE_DIR}/hi16-app-klines.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi32-app-klines.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi48-app-klines.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi64-app-klines.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi128-app-klines.png
-)
-kde4_add_win32_app_icon(klines_SRCS ${klines_icons})
+kde4_add_app_icon(klines_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-klines.png")
 kde4_add_executable(klines ${klines_SRCS})
 
 target_link_libraries(klines  ${KDE4_KDEUI_LIBS} kdegames )
