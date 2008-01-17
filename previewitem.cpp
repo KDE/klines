@@ -24,6 +24,7 @@
 #include "renderer.h"
 
 #include <QPainter>
+#include <KDebug>
 
 PreviewItem::PreviewItem( QGraphicsScene* scene )
     : QGraphicsItem( 0, scene )
@@ -42,4 +43,10 @@ void PreviewItem::paint( QPainter* p, const QStyleOptionGraphicsItem*, QWidget* 
 QRectF PreviewItem::boundingRect() const
 {
     return KLinesRenderer::self()->previewPixmap().rect();
+}
+
+void PreviewItem::setPreviewColors( const QList<BallColor>& colors )
+{
+    m_colors = colors;
+    update();
 }

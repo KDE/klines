@@ -206,7 +206,13 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
 {
     m_numFreeCells--;
     if(m_numFreeCells < 0)
+    {
+        // restore m_numFreeCells value, it will trigger
+        // saveAndErase() after bornAnimFinished to check if
+        // we have 5-in-a-row to erase
+        m_numFreeCells = 0;
         return 0; // game over, we won't create more balls
+    }
 
     int posx = -1, posy = -1;
     // let's find random free cell
@@ -219,6 +225,7 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
     BallItem* newBall = new BallItem( this );
     newBall->setColor(c, false); // pixmap will be set by born animation
     newBall->setPos( fieldToPix( FieldPos(posx,posy) ) );
+
     m_field[posx][posy] = newBall;
     return newBall;
 }

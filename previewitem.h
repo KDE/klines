@@ -34,7 +34,7 @@ public:
     /**
      * Sets colors to be displayed
      */
-    void setPreviewColors( const QList<BallColor>& colors ) { m_colors = colors; }
+    void setPreviewColors( const QList<BallColor>& colors );
 
     // reimplemented functions
     virtual void paint( QPainter* p, const QStyleOptionGraphicsItem* option,  QWidget* widget = 0 );
