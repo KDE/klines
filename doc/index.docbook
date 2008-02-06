@@ -257,7 +257,7 @@ Underneath the field there is the status bar.</para>
 		</varlistentry>
 		<varlistentry>
 			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Toolbars...</guimenuitem></menuchoice></term>
-			<listitem><para>Displays a standard &kde; toolbar configuration dialog, allowing you to customize the keys used in the game.</para></listitem>
+			<listitem><para><action>Displays a standard &kde; toolbar configuration dialog</action> where you can configure the toolbar icons.</para></listitem>
 		</varlistentry>
 		<varlistentry id="menu-settings-configuration">
 			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice></term>
