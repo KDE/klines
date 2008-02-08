@@ -201,3 +201,17 @@ QPixmap KLinesRenderer::pixmapFromCache(const QString& svgName, const QSize& cus
     }
     return pix;
 }
+
+QPixmap KLinesRenderer::backgroundBorderPixmap( const QSize& size ) const
+{
+    if( !hasBorderElement() )
+        return QPixmap();
+
+    return pixmapFromCache( "border", size );
+}
+
+bool KLinesRenderer::hasBorderElement() const
+{
+    return m_renderer->elementExists( "border" );
+
+}
