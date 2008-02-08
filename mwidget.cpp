@@ -43,6 +43,8 @@ MainWidget::MainWidget( QWidget* parent )
                                   QGraphicsView::DontAdjustForAntialiasing );
 
     mainLay->addWidget( klview );
+
+    setMinimumSize( 250, 250 );
 }
 
 MainWidget::~MainWidget()

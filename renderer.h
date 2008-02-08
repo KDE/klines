@@ -70,6 +70,13 @@ public:
      */
     QPixmap backgroundPixmap(const QSize& size) const;
     /**
+     * @return pixmap for border surrounding the play field.
+     * Will return an invalid QPixmap if no such element exists
+     * in theme's svg file.
+     * @see hasBorderElement
+     */
+    QPixmap backgroundBorderPixmap( const QSize& size ) const;
+    /**
      * @return pixmap of background tile (cell)
      */
     QPixmap backgroundTilePixmap() const;
@@ -85,6 +92,8 @@ public:
      * @return current cell size
      */
     int cellSize() const { return m_cellSize; }
+
+    bool hasBorderElement() const;
 
     /**
      * @return number of frames in animation sequence of type t

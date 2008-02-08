@@ -35,7 +35,7 @@
 
 KLinesScene::KLinesScene( QObject* parent )
     : QGraphicsScene(parent),
-      m_playFieldOrigin(0, 0 ), m_numFreeCells(FIELD_SIZE*FIELD_SIZE),
+      m_playFieldBorderSize(0), m_numFreeCells(FIELD_SIZE*FIELD_SIZE),
       m_score(0), m_bonusScore(0), m_cellSize(32), m_previewZoneVisible(true)
 {
     m_animator = new KLinesAnimator(this);
@@ -114,18 +114,30 @@ void KLinesScene::resizeScene(int width,int height)
     // store focus item field pos (calculated using old cellSize)
     FieldPos focusRectFieldPos = pixToField( m_focusItem->pos() );
 
+    bool hasBorder = KLinesRenderer::self()->hasBorderElement();
+
     int minDim = qMin( width, height );
-    m_cellSize = minDim/FIELD_SIZE;
+    // border width is hardcoded to be half of cell size.
+    // take it into account if it exists
+    m_cellSize = hasBorder ? minDim/(FIELD_SIZE+1) : minDim/FIELD_SIZE;
+
+    // set it only if current theme supports it
+    m_playFieldBorderSize = hasBorder ? m_cellSize/2 : 0;
 
     int boardSize = m_cellSize * FIELD_SIZE;
-    if (m_previewZoneVisible && boardSize + m_cellSize > width) // No space enough for balls preview
+    if ( m_previewZoneVisible && boardSize +m_playFieldBorderSize*2 + m_cellSize > width) // No space enough for balls preview
     {
         minDim = width;
-        m_cellSize = (minDim - m_cellSize)/FIELD_SIZE;
+        m_cellSize = hasBorder ? (minDim - m_cellSize - m_playFieldBorderSize*2)/FIELD_SIZE : (minDim - m_cellSize)/FIELD_SIZE;
         boardSize = m_cellSize * FIELD_SIZE;
     }
 
-    m_playFieldOrigin = QPoint( (width - (m_previewZoneVisible ? m_cellSize : 0))/2 - boardSize/2, height/2 - boardSize/2 );
+
+    m_playFieldRect.setX( (width - (m_previewZoneVisible ? m_cellSize : 0))/2 - boardSize/2 - m_playFieldBorderSize );
+    m_playFieldRect.setY( height/2 - boardSize/2 - m_playFieldBorderSize );
+
+    m_playFieldRect.setWidth( boardSize + m_playFieldBorderSize*2 );
+    m_playFieldRect.setHeight( boardSize + m_playFieldBorderSize*2 );
 
     setSceneRect( 0, 0, width, height );
 
@@ -233,8 +245,12 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
 void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 {
     QGraphicsScene::mousePressEvent(ev);
-    if ( !QRectF( m_playFieldOrigin.x(), m_playFieldOrigin.y(),
-                  m_cellSize*FIELD_SIZE, m_cellSize*FIELD_SIZE ).contains( ev->scenePos() ) )
+    QRect boardRect = m_playFieldRect.adjusted( m_playFieldBorderSize,
+                                                m_playFieldBorderSize,
+                                                -m_playFieldBorderSize,
+                                                -m_playFieldBorderSize );
+
+    if ( !boardRect.contains( ev->scenePos().toPoint() ) )
         return;
 
     selectOrMove( pixToField(ev->scenePos()) );
@@ -629,9 +645,17 @@ void KLinesScene::undo()
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
 {
     QPixmap tile = KLinesRenderer::self()->backgroundTilePixmap();
-    p->drawPixmap( 0,0, KLinesRenderer::self()->backgroundPixmap(sceneRect().size().toSize()) );
-    for(int x=m_playFieldOrigin.x(); x<m_playFieldOrigin.x()+m_cellSize*FIELD_SIZE;x+=m_cellSize)
-        for(int y=m_playFieldOrigin.y(); y<m_playFieldOrigin.y()+m_cellSize*FIELD_SIZE;y+=m_cellSize)
+    p->drawPixmap( 0, 0, KLinesRenderer::self()->backgroundPixmap(sceneRect().size().toSize()) );
+    p->drawPixmap( m_playFieldRect.x(), m_playFieldRect.y(),
+                   KLinesRenderer::self()->backgroundBorderPixmap( m_playFieldRect.size() ) );
+
+    int startX = m_playFieldRect.x()+m_playFieldBorderSize;
+    int maxX = m_playFieldRect.x()+m_cellSize*FIELD_SIZE;
+    int startY = m_playFieldRect.y()+m_playFieldBorderSize;
+    int maxY = m_playFieldRect.y()+m_cellSize*FIELD_SIZE;
+
+    for(int x=startX; x<maxX; x+=m_cellSize)
+        for(int y=startY; y<maxY; y+=m_cellSize)
             p->drawPixmap( x, y, tile );
 }
 

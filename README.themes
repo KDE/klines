@@ -52,6 +52,16 @@ Example of IDs: e_born_1, e_born_2, ... e_born_N
 
 7. Background image with ID: background
 
+8. Optional border with ID: border
+   If theme author wishes, he can add a border element that will be painted
+   around game field, i.e. all cells will be painted inside border element's area
+   IMPORTANT NOTE: Game assumes that border visual side size will be half of field cell's size.
+   And will render it based on this assumtion. I.e. if border element exists in theme, game
+   will render cells slightly smaller, by decreasing their size on half of usual size.
+   Oh, hope you'll understand this :) 
+   Better - just take a look at the current border rich themes as an example ;)
+   It's simple
+
 That's all for SVG part. Let's move to simpler one: .desktop file :)
 
 -= .desktop file =-
