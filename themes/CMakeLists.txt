@@ -2,7 +2,7 @@
 install( FILES 
 klines.svgz
 default.desktop
-default_preview.png
+default.png
 klines_crystal.svgz
 crystal.png
 crystal.desktop
