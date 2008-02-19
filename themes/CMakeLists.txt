@@ -6,5 +6,8 @@ default.png
 klines_crystal.svgz
 crystal.png
 crystal.desktop
+klines-gems.desktop
+klines-gems.png
+klines-gems.svg
 DESTINATION  ${DATA_INSTALL_DIR}/klines/themes )
 
