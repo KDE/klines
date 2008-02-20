@@ -118,13 +118,15 @@ void KLinesMainWindow::updateScore(int score)
 void KLinesMainWindow::gameOver(int score)
 {
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+    d.setConfigGroup( "Highscore" );
     d.addScore(score, KScoreDialog::AskName);
-    //   d.exec();
+    d.exec();
 }
 
 void KLinesMainWindow::viewHighScore()
 {
    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+   d.setConfigGroup( "Highscore" );
    d.exec();
 }
 
