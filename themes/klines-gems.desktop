@@ -1,6 +1,9 @@
 [KGameTheme]
 VersionFormat=1
 Name=Klines Gems
+Name[pt]=Jóias do Klines
+Name[pt_BR]=Jóias do Klines
+Name[zh_TW]=Klines 寶石
 FileName=klines-gems.svg
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com
