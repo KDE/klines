@@ -1,6 +1,6 @@
 /*******************************************************************
  *
- * Copyright 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
+ * Copyright 2006-2008 Dmitry Suzdalev <dimsuz@gmail.com>
  *
  * This file is part of the KDE project "KLines"
  *
@@ -160,7 +160,8 @@ void KLinesScene::resizeScene(int width,int height)
     m_focusItem->setPos( fieldToPix( focusRectFieldPos ) );
 
     int previewOriginY = height / 2 - (3 * m_cellSize) / 2;
-    m_previewItem->setPos( width-m_cellSize, previewOriginY );
+    int previewOriginX = m_playFieldRect.x() + m_playFieldRect.width();
+    m_previewItem->setPos( previewOriginX, previewOriginY );
     m_previewItem->setPreviewColors( m_nextColors );
 
     //kDebug() << "resize:" << width << "," << height << "; cellSize:" << m_cellSize;
