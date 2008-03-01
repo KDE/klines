@@ -285,11 +285,7 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
- <answer><para>&kolorlines; loads right into the game mode. You can start playing as soon as the application starts.</para></answer>
-</qandaentry>
-<qandaentry>
- <question><para>How do I restart &kolorlines;? </para></question>
- <answer><para>To restart the game you can use a <link linkend="menu-game-new">keyboard shortcut</link>, or a <link linkend="menu-game-new">menubar option</link>.</para></answer>
+  <answer><para>You can start a new game using the <guibutton>New</guibutton> button on the toolbar, the <menuchoice><guimenu>Game</guimenu><guimenuitem>New</guimenuitem></menuchoice> menu entry on the menubar or using the default shortcut <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
