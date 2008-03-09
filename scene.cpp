@@ -289,7 +289,7 @@ void KLinesScene::selectOrMove( const FieldPos& fpos )
             if(!pathExists)
             {
                 m_popupItem->setMessageTimeout(2500);
-                m_popupItem->showMessage(i18n("Selected ball can not be moved to this cell"), KGamePopupItem::BottomLeft);
+                m_popupItem->showMessage(i18n("There is no path from the selected piece to this cell"), KGamePopupItem::BottomLeft);
             }
         }
     }
