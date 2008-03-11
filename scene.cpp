@@ -28,10 +28,16 @@
 
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
+#include <QSet>
 
 #include <KGamePopupItem>
 #include <KLocale>
 #include <KDebug>
+
+inline uint qHash( const FieldPos& pos )
+{
+    return qHash( QPair<int,int>(pos.x,pos.y) );
+}
 
 KLinesScene::KLinesScene( QObject* parent )
     : QGraphicsScene(parent),
@@ -390,6 +396,9 @@ void KLinesScene::searchAndErase()
 {
     // FIXME dimsuz: put more comments about bounds in for loops
 
+    // QSet - to exclude adding duplicates
+    QSet<FieldPos> positionsToDelete;
+
     // horizontal chunks searching
     for(int x=0; x<FIELD_SIZE-4; ++x)
         for(int y=0;y<FIELD_SIZE; ++y)
@@ -406,9 +415,7 @@ void KLinesScene::searchAndErase()
             {
                 for(int i=x; i<tmpx;++i)
                 {
-                    m_itemsToDelete.append(m_field[i][y]);
-                    m_field[i][y] = 0;
-                    m_numFreeCells++;
+                    positionsToDelete.insert( FieldPos(i,y) );
                 }
             }
             else
@@ -431,9 +438,7 @@ void KLinesScene::searchAndErase()
             {
                 for(int j=y; j<tmpy;++j)
                 {
-                    m_itemsToDelete.append(m_field[x][j]);
-                    m_field[x][j] = 0;
-                    m_numFreeCells++;
+                    positionsToDelete.insert( FieldPos(x,j) );
                 }
             }
             else
@@ -461,9 +466,7 @@ void KLinesScene::searchAndErase()
             {
                 for(int i=x,j=y; i<tmpx;++i,++j)
                 {
-                    m_itemsToDelete.append(m_field[i][j]);
-                    m_field[i][j] = 0;
-                    m_numFreeCells++;
+                    positionsToDelete.insert( FieldPos(i,j) );
                 }
             }
             else
@@ -491,14 +494,19 @@ void KLinesScene::searchAndErase()
             {
                 for(int i=x,j=y; i<tmpx;++i,--j)
                 {
-                    m_itemsToDelete.append(m_field[i][j]);
-                    m_field[i][j] = 0;
-                    m_numFreeCells++;
+                    positionsToDelete.insert( FieldPos(i,j) );
                 }
             }
             else
                 continue;
         }
+
+    foreach( const FieldPos& pos, positionsToDelete )
+    {
+        m_itemsToDelete.append(m_field[pos.x][pos.y]);
+        m_field[pos.x][pos.y] = 0;
+        m_numFreeCells++;
+    }
 
     // after it finishes slot removeAnimFinished() will be called
     // if m_itemsToDelete is empty removeAnimFinished() will be called immediately
