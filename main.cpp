@@ -38,7 +38,8 @@ static const char dummy[] = I18N_NOOP2("Menu title", "&Move");
 int main( int argc, char **argv )
 {
     KAboutData aboutData("klines", 0, ki18n("Kolor Lines"), "1.5",
-                         ki18n(description), KAboutData::License_GPL);
+                         ki18n(description), KAboutData::License_GPL,
+                         ki18n("(c) 2000-2008 The KLines Authors"), KLocalizedString(), "http://games.kde.org/klines");
     aboutData.addAuthor(ki18n("Roman Merzlyakov"), ki18n("Original author"), "roman@sbrf.barrt.ru");
     aboutData.addAuthor(ki18n("Roman Razilov"), ki18n("Rewrite and Extension"), "Roman.Razilov@gmx.de");
     aboutData.addAuthor(ki18n("Dmitry Suzdalev"), ki18n("Rewrite to use QGraphicsView. Current maintainer"), "dimsuz@gmail.com");
