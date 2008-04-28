@@ -30,7 +30,6 @@
 #include <KActionCollection>
 #include <KStandardAction>
 #include <KScoreDialog>
-#include <KUser>
 #include <KToggleAction>
 #include <KStatusBar>
 #include <KLocale>
@@ -118,17 +117,9 @@ void KLinesMainWindow::updateScore(int score)
 
 void KLinesMainWindow::gameOver(int score)
 {
-    KUser user;
-    // Fill in default user
-    QString userName = user.property(KUser::FullName).toString();
-    if (userName.isEmpty())
-        userName = user.loginName();
-    KScoreDialog::FieldInfo scoreInfo;
-    scoreInfo[KScoreDialog::Name] = userName;
-    scoreInfo[KScoreDialog::Score].setNum(score);
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
     d.setConfigGroup( "Highscore" );
-    d.addScore(scoreInfo, KScoreDialog::AskName);
+    d.addScore(score, KScoreDialog::AskName);
     d.exec();
 }
 
