@@ -1,12 +1,15 @@
 [KGameTheme]
 VersionFormat=1
 Name=Gems for Kolor Lines
+Name[el]=Διαμάντια για το Kolor Lines
 Name[fa]=گوهر‌ها برای خطوط رنگی
 Name[ga]=Seoda le haghaidh Kolor Lines
 Name[km]=ត្បូង​សម្រាប់​​បន្ទាត់ Kolor
+Name[nds]=Eddelstenen för Kolor Lines
 Name[pt_BR]=Gems para Linhas Koloridas
 Name[sv]=Juveler för Färglinjer
 Name[uk]=Коштовне каміння для рядків Kolor
+Name[zh_CN]=Kolor Lines 珠宝
 Name[zh_TW]=Kolor Lines 彩色線條
 FileName=klines-gems.svg
 Author=Eugene Trounev
