@@ -23,7 +23,7 @@ kde4_add_executable(klines ${klines_SRCS})
 
 target_link_libraries(klines  ${KDE4_KDEUI_LIBS} kdegames )
 
-install(TARGETS klines  DESTINATION ${BIN_INSTALL_DIR} )
+install(TARGETS klines  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
