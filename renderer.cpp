@@ -25,7 +25,6 @@
 
 #include <KSvgRenderer>
 #include <KDebug>
-#include <KStandardDirs>
 #include <KGameTheme>
 #include <kpixmapcache.h>
 

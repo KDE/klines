@@ -19,7 +19,6 @@
 #include "mwidget.h"
 #include "scene.h"
 
-#include <KLocale>
 
 #include <QGraphicsView>
 #include <QResizeEvent>
