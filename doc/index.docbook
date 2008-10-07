@@ -2,7 +2,7 @@
 <!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kolorlines;">
-  <!ENTITY kappversion "1.5"><!--Applicaion version. Use this variable everywhere it's needed.-->
+  <!ENTITY kappversion "1.5"><!--Application version. Use this variable everywhere it's needed.-->
   <!ENTITY docversion "1.0"><!--Document version. Use this variable everywhere it's needed.-->
   <!ENTITY docupdate "2007-11-14"><!--Document version. Use this variable everywhere it's needed.-->
   <!ENTITY package "kdegames">  <!-- do not change this! -->
@@ -47,7 +47,7 @@
 	<para>This documentation describes the game of &kolorlines; version &kappversion;</para>
 </abstract>
  
-<!--List of relevan keywords-->
+<!--List of relevant keywords-->
 <keywordset>
 	<keyword>KDE</keyword> <!-- do not change this! -->
 	<keyword>kdegames</keyword> <!-- do not change this! -->
@@ -66,7 +66,7 @@
 <chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
 	<note><title>Gametype:</title><para>Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
-	<para>&kolorlines; is a simple by highly addictive, one player game for &kde;. &kolorlines; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
+	<para>&kolorlines; is a simple but highly addictive, one player game for &kde;. &kolorlines; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
 	<para>The goal of &kolorlines; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.</para>
 	<para>&kolorlines; cannot be won, and is played against the high score exclusively. The game ends once the whole game board is filled up with balls.</para>
 </chapter>
@@ -129,7 +129,7 @@
 				</mediaobject>
 			</screenshot>
 <para>On the very top of the game window there are located the menubar and the toolbar. 
-In the center of the screeen there is a large square area filled with marbles called - the game board.
+In the center of the screen there is a large square area filled with marbles called - the game board.
 On the right hand side there located a bar showing the next three marbles to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled).
 Underneath the field there is the status bar.</para>
 </sect1>
