@@ -108,8 +108,8 @@
 			<itemizedlist>
 				<listitem><para>Keep a close look on the bar showing the next three marbles to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled). More often then not you will appreciate the information if provides.</para></listitem>
 				<listitem><para>Try to keep at least a half of the game board cleared. Letting the balls to pile up will almost certainly lead to a loss.</para></listitem>
-				<listitem><para>To make your game easier always keep more then one line of the same balls ready for clearing. This can be achieved by building the consecutive lines of the same balls everywhere possible, instead of concentrating on one line at a time.</para></listitem>
-				<listitem><para>Try to keep more then three almost completed lines existing on the game board at all times. Almost completed means that they are four same balls in length, and only one ball remains until their completion.</para></listitem>
+				<listitem><para>To make your game easier always keep more than one line of the same balls ready for clearing. This can be achieved by building the consecutive lines of the same balls everywhere possible, instead of concentrating on one line at a time.</para></listitem>
+				<listitem><para>Try to keep more than three almost completed lines existing on the game board at all times. Almost completed means that they are four same balls in length, and only one ball remains until their completion.</para></listitem>
 			</itemizedlist>
 			<note><title>Example:</title><para>If you have an almost completed line and the pathway to it suddenly becomes blocked with another ball, don’t just move that ball. Try to find a sequence of the balls of the same kind that you can continue with the moved ball. If such sequence exists and is accessible – then move the blocking ball there.</para></note>
 	</sect1>
