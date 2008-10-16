@@ -78,7 +78,7 @@
 	<para>	When &kolorlines; starts you are presented with the game board split into 81 squares (the game board is 9x9 squares), and right away three new colored balls appear on the board. Use your mouse to move the balls from cell to cell to group them into the lines of the same color. However, after each of your moves the computer drops three more marbles onto the board. To avoid filling up the board you should gather the balls into lines of 5 or more balls. When such a line is complete, the balls are removed from the field and your score grows.</para>
 	<note><title>Note:</title><para>The new balls will not be added to the field after a line removal. Instead you will be rewarded with yet another move before a new triplet of balls is added.</para></note>
 	<para>The increase in score depends solely on the amount of the erased balls.</para>
-	<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less then if  <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
+	<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less than if  <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
 	<para>&kolorlines; cannot be won, and is played against the high score exclusively. The game ends once the whole game board becomes filled up with balls.</para>
 </chapter>
  
@@ -101,7 +101,7 @@
 				<listitem><para>To clear the path the player simply has to move all the blocking balls out of the way, therefore freeing the route.</para></listitem>
 				<listitem><para>The scores are awarded for each line of balls removed off the game board.</para></listitem>
 			</itemizedlist>
-			<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less then if <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
+			<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less than if <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
 	</sect1>
 	<sect1 id="strategies">
 		<title>Strategies and Tips</title>
