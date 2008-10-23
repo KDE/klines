@@ -148,7 +148,7 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
 				<guimenu>Game</guimenu>
-				<guimenuitem>Show High Scores...</guimenuitem>
+				<guimenuitem>Show High Scores</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>Displays the high score table</action></para></listitem>
 		</varlistentry>
@@ -317,7 +317,7 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>Where are the high scores?</para></question>
- <answer><para>To access the high scores simply use <link linkend="menu-game-highscore"><guimenuitem>Show High Scores...</guimenuitem></link> option on the menubar.</para></answer>
+ <answer><para>To access the high scores simply use <link linkend="menu-game-highscore"><guimenuitem>Show High Scores</guimenuitem></link> option on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
