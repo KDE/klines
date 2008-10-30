@@ -305,7 +305,7 @@ Underneath the field there is the status bar.</para>
 </qandaentry>
 <qandaentry>
  <question><para>Can I use keyboard? </para></question>
- <answer><para>No. &kolorlines; cannot be played using keyboard.</para></answer>
+ <answer><para>Yes. You can use the cursor keys and the <keycap>Space</keycap> key to select and set the balls.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I cannot figure out what to do here! Are there hints? </para></question>
