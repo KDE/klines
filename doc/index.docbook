@@ -39,7 +39,7 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>&docupdate;</date><!-- Date of (re)writing, ro update. Use the variable definitions within header to change this value.-->
+<date>&docupdate;</date><!-- Date of (re)writing, or update. Use the variable definitions within header to change this value.-->
 <releaseinfo>&docversion;</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
  
 <!--Short description of this document. Do not change unless necessary!-->
@@ -53,7 +53,7 @@
 	<keyword>kdegames</keyword> <!-- do not change this! -->
 	<keyword>game</keyword> <!-- do not change this! -->
 	<keyword>Kolorlines</keyword><!--Application name goes here-->
-<!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<keyword>arcade</keyword>
 	<keyword>colors</keyword>
 	<keyword>color lines</keyword>
@@ -64,7 +64,7 @@
 </bookinfo>
 <!--Content begins here: -->
 <chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
-	<note><title>Gametype:</title><para>Arcade</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note><title>Gametype:</title><para>Arcade</para></note><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
 	<para>&kolorlines; is a simple but highly addictive, one player game for &kde;. &kolorlines; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
 	<para>The goal of &kolorlines; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.</para>
