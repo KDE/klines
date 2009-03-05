@@ -73,7 +73,7 @@ void KLinesMainWindow::setupActions()
 
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>("show_next");
-  showNext->setText( i18n( "Show next" ) );
+  showNext->setText( i18n( "Show Next" ) );
   connect(showNext, SIGNAL(triggered(bool) ), SLOT(showNextToggled(bool)));
 
   showNext->setChecked(Prefs::showNext());
