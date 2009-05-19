@@ -183,7 +183,7 @@ void KLinesMainWindow::configureSettings()
 
 void KLinesMainWindow::loadSettings()
 {
-    if ( !KLinesRenderer::self()->loadTheme(Prefs::theme()) )
+    if ( !KLinesRenderer::self()->loadTheme() )
     {
         KMessageBox::error( this,  i18n( "Failed to load \"%1\" theme. Please check your installation.", Prefs::theme() ) );
         return;

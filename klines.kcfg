@@ -7,7 +7,7 @@
   <group name="General">
     <entry name="Theme" type="String" key="Theme">
       <label>The graphical theme to be used.</label>
-      <default>themes/default.desktop</default>
+      <!-- default is empty string - theme will be picked automatically -->
     </entry>
   </group>
   <group name="Game">

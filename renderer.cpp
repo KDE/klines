@@ -26,9 +26,11 @@
 #include <KSvgRenderer>
 #include <KDebug>
 #include <KGameTheme>
-#include <kpixmapcache.h>
+#include <KPixmapCache>
+#include <KStandardDirs>
 
 #include <QPainter>
+#include <QFileInfo>
 
 // note: this should be in sync with svg
 static inline char color2char( BallColor col )
@@ -70,7 +72,7 @@ KLinesRenderer::KLinesRenderer()
     m_cache = new KPixmapCache("klines-cache");
     m_cache->setCacheLimit(3*1024);
 
-    if ( !loadTheme( Prefs::theme() ) )
+    if ( !loadTheme() )
         kDebug()<< "Failed to load theme" << Prefs::theme();
 }
 
@@ -124,8 +126,19 @@ QPixmap KLinesRenderer::previewPixmap() const
     return pixmapFromCache( "preview", QSize(m_cellSize, m_cellSize*3) );
 }
 
-bool KLinesRenderer::loadTheme( const QString& themeName )
+bool KLinesRenderer::loadTheme()
 {
+    QString themeName = Prefs::theme();
+    // if no theme is specified load default one
+    if (themeName.isEmpty())
+    {
+        themeName = findDefaultThemeName();
+        if (themeName.isEmpty())
+        {
+            kDebug() << "Error: failed to load default theme";
+            return false;
+        }
+    }
     // variable saying whether to discard old cache upon successful new theme loading
     // we won't discard it if m_currentTheme is empty meaning that
     // this is the first time loadTheme() is called
@@ -170,6 +183,36 @@ bool KLinesRenderer::loadTheme( const QString& themeName )
 
     return true;
 }
+
+QString KLinesRenderer::findDefaultThemeName() const
+{
+    QStringList themeDesktopFiles = KGlobal::dirs()->findAllResources("appdata", "themes/*.desktop");
+
+    QString defaultThemeName;
+
+    foreach (const QString& file, themeDesktopFiles)
+    {
+        KConfig cfg(file, KConfig::SimpleConfig);
+        KConfigGroup cfgGrp(&cfg, "KGameTheme");
+        bool isDefault = cfgGrp.readEntry("Default", false);
+        if (isDefault)
+        {
+            QFileInfo fi(file);
+            defaultThemeName = "themes/"+fi.fileName();
+            kDebug() << "found default theme:" << defaultThemeName;
+        }
+    }
+
+    // if not found fallback to themes/default.desktop
+    if (defaultThemeName.isEmpty())
+    {
+        kDebug() << "didn't find default theme specification. falling back to themes/default.desktop";
+        defaultThemeName = "themes/default.desktop";
+    }
+
+    return defaultThemeName;
+}
+
 
 void KLinesRenderer::setCellSize(int cellSize)
 {

@@ -47,13 +47,11 @@ public:
      */
     static KLinesRenderer* self();
     /**
-     * Loads new theme. Resets cache and puts new flashy rerendered
-     * pixmaps there
-     * @param themeName specifies theme name which is the part of the
-     * theme's file path relative to $KDEDIR/share/apps/klines, for example
-     * it might be "themes/default.desktop"
+     * Loads theme specified in preferences or a default one if none specified.
+     * Resets cache and puts new flashy rerendered pixmaps there
      */
-    bool loadTheme( const QString& themeName );
+    bool loadTheme();
+
     /**
      * @return pixmap of the ball of color c in steady state
      */
@@ -147,6 +145,13 @@ private:
      * @return rendered pixmap
      */
     QPixmap pixmapFromCache(const QString& svgName, const QSize& customSize = QSize()) const;
+
+    /**
+     * Searches for "Default=true" keyword in all of the theme's desktop files in theme folder
+     * and return this theme name in format like "themes/theme.desktop"
+     */
+    QString findDefaultThemeName() const;
+
     /**
      *  This is the size of the scene's cell.
      *  All rendered pixmaps (except background) will have this size
