@@ -59,11 +59,6 @@ void MainWidget::setShowNextColors(bool visible)
 
 void MainWidget::resizeEvent( QResizeEvent* ev)
 {
-    // if this flag is set it means that resizeEvent is called
-    // while widget is hidden.
-    // so we'll wait with resize until it will be unset to not
-    // waste time resizing invisible scene
-    if ( !testAttribute( Qt::WA_PendingResizeEvent ) )
         m_scene->resizeScene( ev->size().width(), ev->size().height() );
 }
 
