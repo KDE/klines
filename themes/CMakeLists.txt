@@ -9,5 +9,8 @@ crystal.desktop
 klines-gems.desktop
 klines-gems.png
 klines-gems.svg
+egyptian.desktop
+egyptian.png
+egyptian.svgz
 DESTINATION  ${DATA_INSTALL_DIR}/klines/themes )
 

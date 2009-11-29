@@ -51,7 +51,6 @@ FileName=klines.svgz
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com
 Preview=default.png
-Default=true
 
 # number of "born" animation frames in svg
 NumBornFrames=8
