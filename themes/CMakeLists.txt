@@ -8,7 +8,7 @@ crystal.png
 crystal.desktop
 klines-gems.desktop
 klines-gems.png
-klines-gems.svg
+klines-gems.svgz
 egyptian.desktop
 egyptian.png
 egyptian.svgz
