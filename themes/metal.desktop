@@ -1,6 +1,7 @@
 [KGameTheme]
 VersionFormat=1
 Name=Metal
+Name[ca]=Metall
 Name[en_GB]=Metal
 Name[pt]=Metal
 Name[pt_BR]=Metal
@@ -9,6 +10,7 @@ Name[uk]=Метал
 Name[x-test]=xxMetalxx
 Name[zh_TW]=金屬
 Description=A metal style theme with bouncing balls
+Description[ca]=Un estil metàl·lic amb pilotes rebotant
 Description[en_GB]=A metal style theme with bouncing balls
 Description[pt]=Um tema de estilo metálico com bolas saltitantes
 Description[sv]=Ett metalliknade tema med studsande bollar
