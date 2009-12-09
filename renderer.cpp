@@ -153,10 +153,11 @@ bool KLinesRenderer::loadTheme()
     KGameTheme theme;
     if ( !theme.load( themeName ) )
     {
-        kDebug()<< "Failed to load theme" << Prefs::theme();
+        kDebug()<< "Failed to load theme" << themeName;
         kDebug() << "Trying to load default";
-        if(!theme.loadDefault())
-            return false;
+        // clear theme name and try again
+        Prefs::setTheme(QString());
+        return loadTheme();
     }
 
     m_currentTheme = themeName;
@@ -205,10 +206,7 @@ QString KLinesRenderer::findDefaultThemeName() const
 
     // if not found fallback to themes/default.desktop
     if (defaultThemeName.isEmpty())
-    {
-        kDebug() << "didn't find default theme specification. falling back to themes/default.desktop";
-        defaultThemeName = "themes/default.desktop";
-    }
+        kDebug() << "didn't find default theme specification.";
 
     return defaultThemeName;
 }
