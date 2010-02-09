@@ -37,7 +37,7 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2007-11-14</date><!-- Date of (re)writing, or update.-->
+<date>2010-02-01</date><!-- Date of (re)writing, or update.-->
 <releaseinfo>&kappversion;</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
  
 <!--Short description of this document. Do not change unless necessary!-->
@@ -132,7 +132,7 @@ On the right hand side there located a bar showing the next three marbles to be 
 Underneath the field there is the status bar.</para>
 </sect1>
 <sect1 id="menu-game">
-	<title>The <guimenu>Game</guimenu> Menu</title>
+	<title>The Game Menu</title>
 	<variablelist>
 		<varlistentry id="menu-game-new">
 			<term><menuchoice>
@@ -161,7 +161,7 @@ Underneath the field there is the status bar.</para>
 	</variablelist>
 </sect1>
 <sect1 id="menu-move">
-	<title>The <guimenu>Move</guimenu> Menu</title>
+	<title>The Move Menu</title>
 	<variablelist>
 		<varlistentry id="menu-move-undo">
 			<term><menuchoice>
@@ -180,7 +180,7 @@ Underneath the field there is the status bar.</para>
 	</variablelist>
 </sect1>
 <sect1 id="menu-navigation">
-	<title>The <guimenu>Navigation</guimenu> Menu</title>
+	<title>The Navigation Menu</title>
 	<variablelist>
 		<varlistentry id="menu-navigation-left">
 			<term><menuchoice>
@@ -225,11 +225,10 @@ Underneath the field there is the status bar.</para>
 	</variablelist>
 </sect1>
 <sect1 id="menu-settings">
-	<title>The <guimenu>Settings</guimenu> Menu</title>
+	<title>The Settings Menu</title>
 	<variablelist>
 		<varlistentry id="menu-settings-shownext">
 			<term><menuchoice>
-				<shortcut><keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo></shortcut>
 				<guimenu>Settings</guimenu>
 				<guimenuitem>Show Next</guimenuitem>
 			</menuchoice></term>
@@ -264,7 +263,7 @@ Underneath the field there is the status bar.</para>
 	</variablelist>
 </sect1>
 <sect1 id="help"><!--This is a standard Help menubar entry. Only change if needed.-->
-<title>The <guimenu>Help</guimenu> Menu</title>
+<title>The Help Menu</title>
 &help.menu.documentation;
 </sect1>
 </chapter>
