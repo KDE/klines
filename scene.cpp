@@ -604,6 +604,10 @@ void KLinesScene::saveUndoInfo()
 // Brings m_field and some other vars to the state it was before last turn
 void KLinesScene::undo()
 {
+    // do not allow undo during animation
+    if(m_animator->isAnimating())
+        return;
+
     if( m_selPos.isValid() )
         m_field[m_selPos.x][m_selPos.y]->stopAnimation();
 
