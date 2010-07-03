@@ -23,7 +23,7 @@
 #include "renderer.h"
 #include "prefs.h"
 
-#include <KSvgRenderer>
+#include <QSvgRenderer>
 #include <KDebug>
 #include <KGameTheme>
 #include <KPixmapCache>
@@ -68,7 +68,7 @@ KLinesRenderer::KLinesRenderer()
       m_bornDuration(0), m_selDuration(0), m_dieDuration(0),
       m_moveDuration(0)
 {
-    m_renderer = new KSvgRenderer();
+    m_renderer = new QSvgRenderer();
     m_cache = new KPixmapCache("klines-cache");
     m_cache->setCacheLimit(3*1024);
 

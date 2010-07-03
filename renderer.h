@@ -27,7 +27,7 @@
 
 #include "commondefs.h"
 
-class KSvgRenderer;
+class QSvgRenderer;
 class KPixmapCache;
 
 /**
@@ -162,7 +162,7 @@ private:
      */
     QString m_currentTheme;
 
-    KSvgRenderer *m_renderer;
+    QSvgRenderer *m_renderer;
     KPixmapCache *m_cache;
 
     int m_numBornFrames;
