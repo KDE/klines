@@ -42,7 +42,7 @@ int main( int argc, char **argv )
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KApplication application;
-    KGlobal::locale()->insertCatalog("libkdegames");
+    KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
 
     if (application.isSessionRestored())
         RESTORE(KLinesMainWindow)

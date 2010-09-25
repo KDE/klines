@@ -80,25 +80,25 @@ void KLinesMainWindow::setupActions()
   mwidget->setShowNextColors(Prefs::showNext());
 
   // Navigation
-  KAction* naviLeft = new KAction( KIcon("arrow-left"), i18n("Move Left"), this );
+  KAction* naviLeft = new KAction( KIcon( QLatin1String( "arrow-left") ), i18n("Move Left" ), this );
   naviLeft->setShortcut( Qt::Key_Left );
-  actionCollection()->addAction("navi_left", naviLeft);
+  actionCollection()->addAction( QLatin1String( "navi_left" ), naviLeft);
 
-  KAction* naviRight = new KAction( KIcon("arrow-right"), i18n("Move Right"), this );
+  KAction* naviRight = new KAction( KIcon( QLatin1String( "arrow-right") ), i18n("Move Right" ), this );
   naviRight->setShortcut( Qt::Key_Right );
-  actionCollection()->addAction("navi_right", naviRight);
+  actionCollection()->addAction( QLatin1String( "navi_right" ), naviRight);
 
-  KAction* naviUp = new KAction( KIcon("arrow-up"), i18n("Move Up"), this );
+  KAction* naviUp = new KAction( KIcon( QLatin1String( "arrow-up") ), i18n("Move Up" ), this );
   naviUp->setShortcut( Qt::Key_Up );
-  actionCollection()->addAction("navi_up", naviUp);
+  actionCollection()->addAction( QLatin1String( "navi_up" ), naviUp);
 
-  KAction* naviDown = new KAction( KIcon("arrow-down"), i18n("Move Down"), this );
+  KAction* naviDown = new KAction( KIcon( QLatin1String( "arrow-down") ), i18n("Move Down" ), this );
   naviDown->setShortcut( Qt::Key_Down );
-  actionCollection()->addAction("navi_down", naviDown);
+  actionCollection()->addAction( QLatin1String( "navi_down" ), naviDown);
 
   KAction* naviSelect = new KAction( i18n("Select"), this );
   naviSelect->setShortcut( Qt::Key_Space );
-  actionCollection()->addAction("navi_select", naviSelect);
+  actionCollection()->addAction( QLatin1String( "navi_select" ), naviSelect);
 
   connect( naviLeft, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusLeft()));
   connect( naviRight, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusRight()));
