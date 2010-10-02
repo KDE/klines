@@ -53,7 +53,7 @@ KLinesMainWindow::KLinesMainWindow()
 
     setupActions();
 
-    stateChanged("init");
+    stateChanged(QLatin1String( "init" ));
 }
 
 KLinesMainWindow::~KLinesMainWindow()
@@ -72,7 +72,7 @@ void KLinesMainWindow::setupActions()
   KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
 
   // Preferences
-  KToggleAction *showNext = actionCollection()->add<KToggleAction>("show_next");
+  KToggleAction *showNext = actionCollection()->add<KToggleAction>(QLatin1String( "show_next" ));
   showNext->setText( i18n( "Show Next" ) );
   connect(showNext, SIGNAL(triggered(bool) ), SLOT(showNextToggled(bool)));
 
@@ -118,7 +118,7 @@ void KLinesMainWindow::updateScore(int score)
 void KLinesMainWindow::gameOver(int score)
 {
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
-    d.setConfigGroup( "Highscore" );
+    d.setConfigGroup( QLatin1String( "Highscore" ) );
     d.addScore(score, KScoreDialog::AskName);
     d.exec();
 }
@@ -126,7 +126,7 @@ void KLinesMainWindow::gameOver(int score)
 void KLinesMainWindow::viewHighScore()
 {
    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
-   d.setConfigGroup( "Highscore" );
+   d.setConfigGroup( QLatin1String( "Highscore" ) );
    d.exec();
 }
 
@@ -172,12 +172,12 @@ void KLinesMainWindow::showNextToggled(bool show)
 
 void KLinesMainWindow::configureSettings()
 {
-    if ( KConfigDialog::showDialog( "settings" ) )
+    if ( KConfigDialog::showDialog( QLatin1String( "settings" ) ) )
         return;
-    KConfigDialog *dialog = new KConfigDialog( this, "settings", Prefs::self() );
-    dialog->addPage( new KGameThemeSelector( dialog, Prefs::self(), KGameThemeSelector::NewStuffDisableDownload  ), i18n( "Theme" ), "games-config-theme" );
+    KConfigDialog *dialog = new KConfigDialog( this, QLatin1String( "settings" ), Prefs::self() );
+    dialog->addPage( new KGameThemeSelector( dialog, Prefs::self(), KGameThemeSelector::NewStuffDisableDownload  ), i18n( "Theme" ), QLatin1String( "games-config-theme" ));
     connect( dialog, SIGNAL( settingsChanged(const QString&) ), this, SLOT( loadSettings() ) );
-    dialog->setHelp(QString(),"klines");
+    dialog->setHelp(QString(),QLatin1String( "klines" ));
     dialog->show();
 }
 

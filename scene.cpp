@@ -105,7 +105,7 @@ void KLinesScene::startNewGame()
         m_nextColors.append(c);
     }
 
-    emit stateChanged("not_undoable");
+    emit stateChanged(QLatin1String( "not_undoable" ));
 
     nextThreeBalls();
 }
@@ -598,7 +598,7 @@ void KLinesScene::saveUndoInfo()
     m_undoInfo.score = m_score;
     m_undoInfo.nextColors = m_nextColors;
 
-    emit stateChanged("undoable");
+    emit stateChanged(QLatin1String( "undoable" ));
 }
 
 // Brings m_field and some other vars to the state it was before last turn
@@ -652,7 +652,7 @@ void KLinesScene::undo()
 
     emit scoreChanged(m_score);
 
-    emit stateChanged("not_undoable");
+    emit stateChanged(QLatin1String( "not_undoable" ));
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
@@ -678,7 +678,7 @@ void KLinesScene::gameOverHandler()
         return; // don't emit twice
     m_gameOver = true;
     kDebug() << "GAME OVER";
-    emit stateChanged("not_undoable");
+    emit stateChanged(QLatin1String( "not_undoable" ));
     //emit enableUndo(false);
     emit gameOver(m_score);
 
