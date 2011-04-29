@@ -24,10 +24,13 @@
 #include "renderer.h"
 
 #include <kdebug.h>
+#include <QGraphicsScene>
+#include <KGameRenderer>
 
 BallItem::BallItem( QGraphicsScene* parent )
-    : QGraphicsPixmapItem( 0, parent )
+  : KGameRenderedItem(KLinesRenderer::renderer() , "", NULL)
 {
+    parent->addItem(this);
     setShapeMode( BoundingRectShape );
 
     m_color = NumColors; // = uninitialized
@@ -42,7 +45,7 @@ void BallItem::setColor( BallColor c, bool setPix )
 {
     m_color = c;
     if(setPix)
-        setPixmap( KLinesRenderer::self()->ballPixmap( m_color ) );
+      setSpriteKey(KLinesRenderer::ballPixmapId(m_color));
 }
 
 void BallItem::startSelectedAnimation()
@@ -52,20 +55,22 @@ void BallItem::startSelectedAnimation()
     // it needs to be here rather than in constructor,
     // because if different theme would get selected
     // new settings will be picked up from KLinesRenderer
-    m_timeLine.setDuration(KLinesRenderer::self()->animDuration(KLinesRenderer::SelectedAnim));
-    m_timeLine.setFrameRange(0, KLinesRenderer::self()->frameCount(KLinesRenderer::SelectedAnim)-1);
+    m_timeLine.setDuration(KLinesRenderer::animDuration(KLinesRenderer::SelectedAnim));
+    m_timeLine.setFrameRange(0, KLinesRenderer::frameCount(KLinesRenderer::SelectedAnim)-1);
     m_timeLine.start();
 }
 
 void BallItem::stopAnimation()
 {
     m_timeLine.stop();
-    setPixmap( KLinesRenderer::self()->ballPixmap( m_color ) );
+    setSpriteKey(KLinesRenderer::ballPixmapId(m_color));
 }
+
+
 
 void BallItem::animFrameChanged(int frame)
 {
-    setPixmap(KLinesRenderer::self()->animationFrame( KLinesRenderer::SelectedAnim, m_color, frame ));
+  setSpriteKey(KLinesRenderer::animationFrameId(KLinesRenderer::SelectedAnim, m_color, frame ));
 }
 
 #include "ballitem.moc"

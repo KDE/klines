@@ -1,42 +1,41 @@
 /*******************************************************************
- *
- * Copyright 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
- *
- * This file is part of the KDE project "KLines"
- *
- * KLines is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2, or (at your option)
- * any later version.
- *
- * KLines is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with KLines; see the file COPYING.  If not, write to
- * the Free Software Foundation, 51 Franklin Street, Fifth Floor,
- * Boston, MA 02110-1301, USA.
- *
- ********************************************************************/
+*
+* Copyright 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
+*
+* This file is part of the KDE project "KLines"
+*
+* KLines is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2, or (at your option)
+* any later version.
+*
+* KLines is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with KLines; see the file COPYING.  If not, write to
+* the Free Software Foundation, 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301, USA.
+*
+********************************************************************/
 #include "renderer.h"
 #include "prefs.h"
 
+#include <KGameRenderer>
 #include <QSvgRenderer>
 #include <KDebug>
 #include <KGameTheme>
-#include <KPixmapCache>
 #include <KStandardDirs>
 
 #include <QPainter>
 #include <QFileInfo>
 
 // note: this should be in sync with svg
-static inline char color2char( BallColor col )
+static inline char color2char(BallColor col)
 {
-    switch( col )
-    {
+    switch (col) {
     case Blue:
         return 'b';
     case Brown:
@@ -56,104 +55,108 @@ static inline char color2char( BallColor col )
     }
 }
 
-KLinesRenderer* KLinesRenderer::self()
+int KLinesRenderer::m_cellSize = 0;
+KGameRenderer *KLinesRenderer::m_renderer;
+int KLinesRenderer::m_numBornFrames(0);
+int KLinesRenderer::m_numSelFrames(0);
+int KLinesRenderer::m_numDieFrames(0);
+int KLinesRenderer::m_bornDuration(0);
+int KLinesRenderer::m_selDuration(0);
+int KLinesRenderer::m_dieDuration(0);
+int KLinesRenderer::m_moveDuration(0);
+QString KLinesRenderer::m_currentTheme;
+
+KLinesRenderer  *g_KLinesRenderer = NULL;
+
+void KLinesRenderer::Init()
 {
-    static KLinesRenderer instance;
-    return &instance;
+    g_KLinesRenderer = new KLinesRenderer();
+}
+
+void KLinesRenderer::UnInit()
+{
+    delete g_KLinesRenderer;
 }
 
 KLinesRenderer::KLinesRenderer()
-    : m_cellSize(0),
-      m_numBornFrames(0), m_numSelFrames(0), m_numDieFrames(0),
-      m_bornDuration(0), m_selDuration(0), m_dieDuration(0),
-      m_moveDuration(0)
 {
-    m_renderer = new QSvgRenderer();
-    m_cache = new KPixmapCache(QLatin1String( "klines-cache" ));
-    m_cache->setCacheLimit(3*1024);
+    QString themeName = Prefs::theme();
+    // if no theme is specified load default one
+    if (themeName.isEmpty())
+        themeName = findDefaultThemeName();
+    m_renderer = new KGameRenderer(themeName);
 
-    if ( !loadTheme() )
-        kDebug()<< "Failed to load theme" << Prefs::theme();
+    if (!loadTheme())
+        kDebug() << "Failed to load theme" << Prefs::theme();
 }
 
 KLinesRenderer::~KLinesRenderer()
 {
     delete m_renderer;
-    delete m_cache;
 }
 
-QPixmap KLinesRenderer::ballPixmap(BallColor color) const
+QString KLinesRenderer::ballPixmapId(BallColor color)
 {
-    QString id =QLatin1Char( color2char( color ) )+QLatin1String( "_rest" );
-    return pixmapFromCache(id);
+    return QLatin1Char(color2char(color)) + QLatin1String("_rest");
 }
 
-QPixmap KLinesRenderer::animationFrame( AnimationType type, BallColor color, int frame ) const
+QPixmap KLinesRenderer::ballPixmap(BallColor color)
 {
-    QString id;
-    switch( type )
-    {
+    return getPixmap(ballPixmapId(color));
+}
+
+QString KLinesRenderer::animationFrameId(AnimationType type, BallColor color, int frame)
+{
+    switch (type) {
     case BornAnim:
-        id = QLatin1Char(  color2char( color ) )+QLatin1String( "_born_" ) + QString::number( frame+1 );
-        return pixmapFromCache(id);
+        return QLatin1Char(color2char(color)) + QLatin1String("_born_") + QString::number(frame + 1);
     case SelectedAnim:
-        id = QLatin1Char( color2char( color ) )+QLatin1String( "_select_" ) + QString::number( frame+1 );
-        return pixmapFromCache(id);
+        return QLatin1Char(color2char(color)) + QLatin1String("_select_") + QString::number(frame + 1);
     case DieAnim:
-        id = QLatin1Char( color2char( color ) )+QLatin1String( "_die_" ) + QString::number( frame+1 );
-        return pixmapFromCache(id);
+        return QLatin1Char(color2char(color)) + QLatin1String("_die_") + QString::number(frame + 1);
     case MoveAnim:
         kDebug() << "Move animation type isn't supposed to be handled by KLinesRenderer!";
-        return QPixmap();
+        return QString();
     default:
         kDebug() << "Warning! Animation type not handled in switch!";
-        return QPixmap();
+        return QString();
     }
 }
 
-QPixmap KLinesRenderer::backgroundTilePixmap() const
+QPixmap KLinesRenderer::backgroundTilePixmap()
 {
-    return pixmapFromCache( QLatin1String( "field_cell" ) );
+    return getPixmap(QLatin1String("field_cell"));
 }
 
-QPixmap KLinesRenderer::backgroundPixmap( const QSize& size ) const
+QPixmap KLinesRenderer::backgroundPixmap(const QSize& size)
 {
-    return pixmapFromCache( QLatin1String( "background" ), size );
+    return getPixmap(QLatin1String("background"), size);
 }
 
-QPixmap KLinesRenderer::previewPixmap() const
+QPixmap KLinesRenderer::previewPixmap()
 {
-    return pixmapFromCache( QLatin1String( "preview" ), QSize(m_cellSize, m_cellSize*3) );
+    return getPixmap(QLatin1String("preview"), QSize(m_cellSize, m_cellSize * 3));
 }
 
 bool KLinesRenderer::loadTheme()
 {
     QString themeName = Prefs::theme();
     // if no theme is specified load default one
-    if (themeName.isEmpty())
-    {
+    if (themeName.isEmpty()) {
         themeName = findDefaultThemeName();
-        if (themeName.isEmpty())
-        {
+        if (themeName.isEmpty()) {
             kDebug() << "Error: failed to load default theme";
             return false;
         }
     }
-    // variable saying whether to discard old cache upon successful new theme loading
-    // we won't discard it if m_currentTheme is empty meaning that
-    // this is the first time loadTheme() is called
-    // (i.e. during startup) as we want to pick the cache from disc
-    bool discardCache = !m_currentTheme.isEmpty();
 
-    if( !m_currentTheme.isEmpty() && m_currentTheme == themeName )
-    {
+    if (!m_currentTheme.isEmpty() && m_currentTheme == themeName) {
         kDebug() << "Notice: not loading the same theme";
         return true; // this is not an error
     }
     KGameTheme theme;
-    if ( !theme.load( themeName ) )
-    {
-        kDebug()<< "Failed to load theme" << themeName;
+    if (!theme.load(themeName)) {
+        kDebug() << "Failed to load theme" << themeName;
         kDebug() << "Trying to load default";
         // clear theme name and try again
         Prefs::setTheme(QString());
@@ -161,45 +164,33 @@ bool KLinesRenderer::loadTheme()
     }
 
     m_currentTheme = themeName;
+    m_renderer->setTheme(themeName);
 
-    bool res = m_renderer->load( theme.graphics() );
-    kDebug() << "loading" << theme.graphics();
-    if ( !res )
-        return false;
+    m_numBornFrames = theme.property(QLatin1String("NumBornFrames")).toInt();
+    m_numSelFrames = theme.property(QLatin1String("NumSelectedFrames")).toInt();
+    m_numDieFrames = theme.property(QLatin1String("NumDieFrames")).toInt();
 
-    m_numBornFrames = theme.property( QLatin1String( "NumBornFrames" ) ).toInt();
-    m_numSelFrames = theme.property( QLatin1String( "NumSelectedFrames" ) ).toInt();
-    m_numDieFrames = theme.property( QLatin1String( "NumDieFrames" ) ).toInt();
-
-    m_bornDuration = theme.property( QLatin1String( "BornAnimDuration" ) ).toInt();
-    m_selDuration = theme.property( QLatin1String( "SelectedAnimDuration" ) ).toInt();
-    m_dieDuration = theme.property( QLatin1String( "DieAnimDuration" ) ).toInt();
-    m_moveDuration = theme.property( QLatin1String( "MoveAnimDuration" ) ).toInt();
-
-    if(discardCache)
-    {
-        kDebug() << "discarding cache";
-        m_cache->discard();
-    }
+    m_bornDuration = theme.property(QLatin1String("BornAnimDuration")).toInt();
+    m_selDuration = theme.property(QLatin1String("SelectedAnimDuration")).toInt();
+    m_dieDuration = theme.property(QLatin1String("DieAnimDuration")).toInt();
+    m_moveDuration = theme.property(QLatin1String("MoveAnimDuration")).toInt();
 
     return true;
 }
 
-QString KLinesRenderer::findDefaultThemeName() const
+QString KLinesRenderer::findDefaultThemeName()
 {
-    QStringList themeDesktopFiles = KGlobal::dirs()->findAllResources("appdata", QLatin1String( "themes/*.desktop" ));
+    QStringList themeDesktopFiles = KGlobal::dirs()->findAllResources("appdata", QLatin1String("themes/*.desktop"));
 
     QString defaultThemeName;
 
-    foreach (const QString& file, themeDesktopFiles)
-    {
+    foreach(const QString & file, themeDesktopFiles) {
         KConfig cfg(file, KConfig::SimpleConfig);
         KConfigGroup cfgGrp(&cfg, "KGameTheme");
         bool isDefault = cfgGrp.readEntry("Default", false);
-        if (isDefault)
-        {
+        if (isDefault) {
             QFileInfo fi(file);
-            defaultThemeName = QLatin1String( "themes/" )+fi.fileName();
+            defaultThemeName = QLatin1String("themes/") + fi.fileName();
             kDebug() << "found default theme:" << defaultThemeName;
         }
     }
@@ -214,44 +205,34 @@ QString KLinesRenderer::findDefaultThemeName() const
 
 void KLinesRenderer::setCellSize(int cellSize)
 {
-    if ( m_cellSize == cellSize )
+    if (m_cellSize == cellSize)
         return;
 
     m_cellSize = cellSize;
 }
 
-QPixmap KLinesRenderer::pixmapFromCache(const QString& svgName, const QSize& customSize) const
+QPixmap KLinesRenderer::getPixmap(const QString& svgName, const QSize& customSize)
 {
-    if(m_cellSize == 0)
+    if (m_cellSize == 0)
         return QPixmap();
 
-    QPixmap pix;
-    QSize sz = customSize.isValid() ? customSize : QSize(m_cellSize,m_cellSize);
+    QSize sz = customSize.isValid() ? customSize : cellExtent();
 
-    QString cacheName = svgName+QString::fromLatin1( "_%1x%2").arg(sz.width()).arg(sz.height());
-    if(!m_cache->find(cacheName, pix))
-    {
-//        kDebug() << "putting" << cacheName << "to cache";
-        pix = QPixmap( sz );
-        pix.fill( Qt::transparent );
-        QPainter p( &pix );
-        m_renderer->render( &p, svgName );
-        p.end();
-        m_cache->insert(cacheName, pix);
-    }
+    QPixmap pix = m_renderer->spritePixmap(svgName, sz);
+
     return pix;
 }
 
-QPixmap KLinesRenderer::backgroundBorderPixmap( const QSize& size ) const
+QPixmap KLinesRenderer::backgroundBorderPixmap(const QSize& size)
 {
-    if( !hasBorderElement() )
+    if (!hasBorderElement())
         return QPixmap();
 
-    return pixmapFromCache( QLatin1String( "border" ), size );
+    return getPixmap(QLatin1String("border"), size);
 }
 
-bool KLinesRenderer::hasBorderElement() const
+bool KLinesRenderer::hasBorderElement()
 {
-    return m_renderer->elementExists( QLatin1String( "border" ) );
+    return m_renderer->spriteExists(QLatin1String("border"));
 
 }

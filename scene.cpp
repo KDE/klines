@@ -120,7 +120,7 @@ void KLinesScene::resizeScene(int width,int height)
     // store focus item field pos (calculated using old cellSize)
     FieldPos focusRectFieldPos = pixToField( m_focusItem->pos() );
 
-    bool hasBorder = KLinesRenderer::self()->hasBorderElement();
+    bool hasBorder = KLinesRenderer::hasBorderElement();
 
     int minDim = qMin( width, height );
     // border width is hardcoded to be half of cell size.
@@ -148,7 +148,8 @@ void KLinesScene::resizeScene(int width,int height)
     setSceneRect( 0, 0, width, height );
 
     // sets render sizes for cells
-    KLinesRenderer::self()->setCellSize( m_cellSize );
+    KLinesRenderer::setCellSize( m_cellSize );
+    QSize cellSize(m_cellSize, m_cellSize);
 
     // re-render && recalc positions for all balls
     for( int x=0; x<FIELD_SIZE; ++x)
@@ -157,8 +158,9 @@ void KLinesScene::resizeScene(int width,int height)
             if( m_field[x][y] )
             {
                 // this will update pixmap
-                m_field[x][y]->setColor( m_field[x][y]->color() );
+                m_field[x][y]->setRenderSize(cellSize);
                 m_field[x][y]->setPos( fieldToPix( FieldPos(x,y) ) );
+                m_field[x][y]->setColor( m_field[x][y]->color() );
             }
         }
 
@@ -241,7 +243,7 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
         posy = m_randomSeq.getLong(FIELD_SIZE);
     } while( m_field[posx][posy] != 0 );
 
-    BallItem* newBall = new BallItem( this );
+    BallItem* newBall = new BallItem( this);
     newBall->setColor(c, false); // pixmap will be set by born animation
     newBall->setPos( fieldToPix( FieldPos(posx,posy) ) );
 
@@ -657,10 +659,10 @@ void KLinesScene::undo()
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
 {
-    QPixmap tile = KLinesRenderer::self()->backgroundTilePixmap();
-    p->drawPixmap( 0, 0, KLinesRenderer::self()->backgroundPixmap(sceneRect().size().toSize()) );
+    QPixmap tile = KLinesRenderer::backgroundTilePixmap();
+    p->drawPixmap( 0, 0, KLinesRenderer::backgroundPixmap(sceneRect().size().toSize()) );
     p->drawPixmap( m_playFieldRect.x(), m_playFieldRect.y(),
-                   KLinesRenderer::self()->backgroundBorderPixmap( m_playFieldRect.size() ) );
+                   KLinesRenderer::backgroundBorderPixmap( m_playFieldRect.size() ) );
 
     int startX = m_playFieldRect.x()+m_playFieldBorderSize;
     int maxX = m_playFieldRect.x()+m_cellSize*FIELD_SIZE;

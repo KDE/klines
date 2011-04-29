@@ -41,6 +41,8 @@
 
 KLinesMainWindow::KLinesMainWindow()
 {
+    KLinesRenderer::Init();
+
     mwidget = new MainWidget(this);
     setCentralWidget( mwidget );
 
@@ -58,6 +60,7 @@ KLinesMainWindow::KLinesMainWindow()
 
 KLinesMainWindow::~KLinesMainWindow()
 {
+  KLinesRenderer::UnInit();
 }
 
 void KLinesMainWindow::setupActions()
@@ -183,7 +186,7 @@ void KLinesMainWindow::configureSettings()
 
 void KLinesMainWindow::loadSettings()
 {
-    if ( !KLinesRenderer::self()->loadTheme() )
+    if ( !KLinesRenderer::loadTheme() )
     {
         KMessageBox::error( this,  i18n( "Failed to load \"%1\" theme. Please check your installation.", Prefs::theme() ) );
         return;

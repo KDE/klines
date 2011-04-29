@@ -90,9 +90,9 @@ bool KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
     int numPoints = m_foundPath.count();
     // there will be numPoints-1 intervals of
     // movement (interval=cell). We want each of them to take animDuration(MoveAnim) ms
-    m_moveTimeLine.setDuration((numPoints-1)*KLinesRenderer::self()->animDuration(KLinesRenderer::MoveAnim));
+    m_moveTimeLine.setDuration((numPoints-1)*KLinesRenderer::animDuration(KLinesRenderer::MoveAnim));
     // each interval will take cellSize frames
-    m_moveTimeLine.setFrameRange(0, (numPoints-1)*KLinesRenderer::self()->cellSize());
+    m_moveTimeLine.setFrameRange(0, (numPoints-1)*KLinesRenderer::cellSize());
     m_moveTimeLine.setCurrentTime(0);
     m_moveTimeLine.start();
     return true;
@@ -112,11 +112,11 @@ void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
     m_removedBalls = list;
 
     // called here (not in constructor), to stay in sync in case theme's reloaded
-    m_removeTimeLine.setDuration(KLinesRenderer::self()->animDuration(KLinesRenderer::DieAnim));
+    m_removeTimeLine.setDuration(KLinesRenderer::animDuration(KLinesRenderer::DieAnim));
     // we setup here one 'empty' frame at the end, because without it
     // m_scene will delete 'burned' items in removeAnimFinished() slot so quickly
     // that last frame won't get shown in the scene
-    m_removeTimeLine.setFrameRange(0, KLinesRenderer::self()->frameCount(KLinesRenderer::DieAnim));
+    m_removeTimeLine.setFrameRange(0, KLinesRenderer::frameCount(KLinesRenderer::DieAnim));
 
     m_removeTimeLine.start();
 }
@@ -124,10 +124,12 @@ void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
 void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 {
     m_bornBalls = list;
+    foreach(BallItem* ball, m_bornBalls)
+	ball->setRenderSize(KLinesRenderer::cellExtent());
 
     // called here (not in constructor), to stay in sync in case theme's reloaded
-    m_bornTimeLine.setDuration(KLinesRenderer::self()->animDuration(KLinesRenderer::BornAnim));
-    m_bornTimeLine.setFrameRange(0, KLinesRenderer::self()->frameCount(KLinesRenderer::BornAnim)-1);
+    m_bornTimeLine.setDuration(KLinesRenderer::animDuration(KLinesRenderer::BornAnim));
+    m_bornTimeLine.setFrameRange(0, KLinesRenderer::frameCount(KLinesRenderer::BornAnim)-1);
 
     m_bornTimeLine.setCurrentTime( 0 );
     m_bornTimeLine.start();
@@ -135,7 +137,7 @@ void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 
 void KLinesAnimator::moveAnimationFrame(int frame)
 {
-    int cellSize = KLinesRenderer::self()->cellSize();
+    int cellSize = KLinesRenderer::cellSize();
     int intervalNum = frame/cellSize;
 
     if(intervalNum == m_foundPath.count()-1)
@@ -171,17 +173,17 @@ void KLinesAnimator::moveAnimationFrame(int frame)
 
 void KLinesAnimator::removeAnimationFrame(int frame)
 {
-    if(frame == KLinesRenderer::self()->frameCount(KLinesRenderer::DieAnim))
+    if(frame == KLinesRenderer::frameCount(KLinesRenderer::DieAnim))
         return;
     foreach(BallItem* ball, m_removedBalls)
-        ball->setPixmap( KLinesRenderer::self()->animationFrame( KLinesRenderer::DieAnim,
+	ball->setSpriteKey(KLinesRenderer::animationFrameId( KLinesRenderer::DieAnim,
                                                                  ball->color(), frame) );
 }
 
 void KLinesAnimator::bornAnimationFrame(int frame)
 {
     foreach(BallItem* ball, m_bornBalls)
-        ball->setPixmap( KLinesRenderer::self()->animationFrame( KLinesRenderer::BornAnim,
+        ball->setSpriteKey( KLinesRenderer::animationFrameId( KLinesRenderer::BornAnim,
                                                                  ball->color(), frame) );
 }
 
@@ -317,7 +319,7 @@ void KLinesAnimator::stopGameOverAnimation()
 void KLinesAnimator::slotBornFinished()
 {
     foreach(BallItem* ball, m_bornBalls)
-        ball->setPixmap( KLinesRenderer::self()->ballPixmap(ball->color()) );
+	ball->setColor(ball->color(), true);
     emit bornFinished();
 }
 

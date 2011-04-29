@@ -23,15 +23,15 @@
 #ifndef BALL_ITEM_H
 #define BALL_ITEM_H
 
-#include <QGraphicsPixmapItem>
+#include <KGameRenderedItem>
 #include <QTimeLine>
 
 #include "commondefs.h"
 
 /**
- *  QGraphicsItem for Ball
+ *  KGameRenderedItem for Ball
  */
-class BallItem : public QObject, public QGraphicsPixmapItem
+class BallItem : public QObject, public KGameRenderedItem
 {
     Q_OBJECT
 public:
