@@ -125,7 +125,7 @@ void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 {
     m_bornBalls = list;
     foreach(BallItem* ball, m_bornBalls)
-	ball->setRenderSize(KLinesRenderer::cellExtent());
+        ball->setRenderSize(KLinesRenderer::cellExtent());
 
     // called here (not in constructor), to stay in sync in case theme's reloaded
     m_bornTimeLine.setDuration(KLinesRenderer::animDuration(KLinesRenderer::BornAnim));
