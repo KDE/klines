@@ -45,9 +45,9 @@ KLinesScene::KLinesScene( QObject* parent )
       m_score(0), m_bonusScore(0), m_cellSize(32), m_previewZoneVisible(true)
 {
     m_animator = new KLinesAnimator(this);
-    connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished() ) );
-    connect( m_animator, SIGNAL(removeFinished()), SLOT(removeAnimFinished() ) );
-    connect( m_animator, SIGNAL(bornFinished()), SLOT(bornAnimFinished() ) );
+    connect( m_animator, SIGNAL(moveFinished()), SLOT(moveAnimFinished()) );
+    connect( m_animator, SIGNAL(removeFinished()), SLOT(removeAnimFinished()) );
+    connect( m_animator, SIGNAL(bornFinished()), SLOT(bornAnimFinished()) );
 
     m_focusItem = new QGraphicsRectItem( QRectF(0, 0, m_cellSize, m_cellSize), 0, this );
     m_focusItem->setZValue(1.0);

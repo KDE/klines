@@ -47,7 +47,7 @@ KLinesMainWindow::KLinesMainWindow()
     setCentralWidget( mwidget );
 
     connect(mwidget->scene(), SIGNAL(scoreChanged(int)), SLOT(updateScore(int)));
-    connect(mwidget->scene(), SIGNAL(stateChanged(const QString &)), SLOT(slotStateChanged(const QString &)));
+    connect(mwidget->scene(), SIGNAL(stateChanged(QString)), SLOT(slotStateChanged(QString)));
     connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
 
     statusBar()->insertItem(i18n("Score:"), 0);
@@ -77,7 +77,7 @@ void KLinesMainWindow::setupActions()
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>(QLatin1String( "show_next" ));
   showNext->setText( i18n( "Show Next" ) );
-  connect(showNext, SIGNAL(triggered(bool) ), SLOT(showNextToggled(bool)));
+  connect(showNext, SIGNAL(triggered(bool)), SLOT(showNextToggled(bool)));
 
   showNext->setChecked(Prefs::showNext());
   mwidget->setShowNextColors(Prefs::showNext());
@@ -109,7 +109,7 @@ void KLinesMainWindow::setupActions()
   connect( naviDown, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusDown()));
   connect( naviSelect, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(cellSelected()));
 
-  KStandardAction::preferences( this, SLOT( configureSettings() ), actionCollection() );
+  KStandardAction::preferences( this, SLOT(configureSettings()), actionCollection() );
   setupGUI();
 }
 
@@ -180,7 +180,7 @@ void KLinesMainWindow::configureSettings()
     KConfigDialog *dialog = new KConfigDialog( this, QLatin1String( "settings" ), Prefs::self() );
     dialog->addPage( new KGameThemeSelector( dialog, Prefs::self(), KGameThemeSelector::NewStuffDisableDownload  ), i18n( "Theme" ), QLatin1String( "games-config-theme" ));
 	dialog->setFaceType(KConfigDialog::Plain); //only one page -> no page selection necessary
-    connect( dialog, SIGNAL( settingsChanged(const QString&) ), this, SLOT( loadSettings() ) );
+    connect( dialog, SIGNAL(settingsChanged(QString)), this, SLOT(loadSettings()) );
     dialog->setHelp(QString(),QLatin1String( "klines" ));
     dialog->show();
 }
