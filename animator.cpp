@@ -137,7 +137,7 @@ void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 
 void KLinesAnimator::moveAnimationFrame(int frame)
 {
-    int cellSize = KLinesRenderer::cellSize();
+    int cellSize = m_moveTimeLine.endFrame() / (m_foundPath.count()-1);
     int intervalNum = frame/cellSize;
 
     if(intervalNum == m_foundPath.count()-1)
