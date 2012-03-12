@@ -641,6 +641,7 @@ void KLinesScene::undo()
                 item->setColor(col);
                 item->setPos( fieldToPix( FieldPos(x,y) ) );
                 item->show();
+                item->setRenderSize(KLinesRenderer::cellExtent());
                 m_field[x][y] = item;
             }
         }
