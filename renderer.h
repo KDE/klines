@@ -155,20 +155,10 @@ private:
     static QPixmap getPixmap(const QString& svgName, const QSize& customSize = QSize());
 
     /**
-     * Searches for "Default=true" keyword in all of the theme's desktop files in theme folder
-     * and return this theme name in format like "themes/theme.desktop"
-     */
-    static QString findDefaultThemeName();
-
-    /**
      *  This is the size of the scene's cell.
      *  All rendered pixmaps (except background) will have this size
      */
     static int m_cellSize;
-    /**
-     * Name of currently loaded theme
-     */
-    static QString m_currentTheme;
 
     static KGameRenderer *m_renderer;
 

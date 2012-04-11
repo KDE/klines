@@ -18,6 +18,7 @@
 #ifndef KLINES_H
 #define KLINES_H
 
+class KgThemeSelector;
 #include <KXmlGuiWindow>
 
 class MainWidget;
@@ -39,10 +40,11 @@ private Q_SLOTS:
     void updateScore(int score);
     void gameOver(int score);
     void showNextToggled(bool show);
-    void configureSettings();
     void loadSettings();
 private:
+    KgThemeSelector *mselector;
     MainWidget *mwidget;
+
 };
 
 #endif

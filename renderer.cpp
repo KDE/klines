@@ -21,15 +21,11 @@
 *
 ********************************************************************/
 #include "renderer.h"
-#include "prefs.h"
 
-#include <KGameRenderer>
-#include <QSvgRenderer>
 #include <KDebug>
-#include <KGameTheme>
-#include <KStandardDirs>
+#include <KGameRenderer>
+#include <KgThemeProvider>
 
-#include <QPainter>
 #include <QFileInfo>
 
 // note: this should be in sync with svg
@@ -64,7 +60,6 @@ int KLinesRenderer::m_bornDuration(0);
 int KLinesRenderer::m_selDuration(0);
 int KLinesRenderer::m_dieDuration(0);
 int KLinesRenderer::m_moveDuration(0);
-QString KLinesRenderer::m_currentTheme;
 
 KLinesRenderer  *g_KLinesRenderer = NULL;
 
@@ -80,14 +75,19 @@ void KLinesRenderer::UnInit()
 
 KLinesRenderer::KLinesRenderer()
 {
-    QString themeName = Prefs::theme();
-    // if no theme is specified load default one
-    if (themeName.isEmpty())
-        themeName = findDefaultThemeName();
-    m_renderer = new KGameRenderer(themeName);
-
-    if (!loadTheme())
-        kDebug() << "Failed to load theme" << Prefs::theme();
+    KgThemeProvider* provider = new KgThemeProvider;
+    provider->discoverThemes("appdata", QLatin1String("themes"));
+    //the default theme is marked with a key "Default=true"
+    foreach (const KgTheme* theme, provider->themes())
+    {
+        if (theme->customData(QLatin1String("Default")) == QLatin1String("true"))
+        {
+            provider->setDefaultTheme(theme);
+            break;
+        }
+    }
+    m_renderer = new KGameRenderer(provider);
+    loadTheme();
 }
 
 KLinesRenderer::~KLinesRenderer()
@@ -140,68 +140,19 @@ QPixmap KLinesRenderer::previewPixmap()
 
 bool KLinesRenderer::loadTheme()
 {
-    QString themeName = Prefs::theme();
-    // if no theme is specified load default one
-    if (themeName.isEmpty()) {
-        themeName = findDefaultThemeName();
-        if (themeName.isEmpty()) {
-            kDebug() << "Error: failed to load default theme";
-            return false;
-        }
-    }
+    const KgTheme* theme = m_renderer->theme();
 
-    if (!m_currentTheme.isEmpty() && m_currentTheme == themeName) {
-        kDebug() << "Notice: not loading the same theme";
-        return true; // this is not an error
-    }
-    KGameTheme theme;
-    if (!theme.load(themeName)) {
-        kDebug() << "Failed to load theme" << themeName;
-        kDebug() << "Trying to load default";
-        // clear theme name and try again
-        Prefs::setTheme(QString());
-        return loadTheme();
-    }
+    m_numBornFrames = theme->customData(QLatin1String("NumBornFrames")).toInt();
+    m_numSelFrames = theme->customData(QLatin1String("NumSelectedFrames")).toInt();
+    m_numDieFrames = theme->customData(QLatin1String("NumDieFrames")).toInt();
 
-    m_currentTheme = themeName;
-    m_renderer->setTheme(themeName);
-
-    m_numBornFrames = theme.property(QLatin1String("NumBornFrames")).toInt();
-    m_numSelFrames = theme.property(QLatin1String("NumSelectedFrames")).toInt();
-    m_numDieFrames = theme.property(QLatin1String("NumDieFrames")).toInt();
-
-    m_bornDuration = theme.property(QLatin1String("BornAnimDuration")).toInt();
-    m_selDuration = theme.property(QLatin1String("SelectedAnimDuration")).toInt();
-    m_dieDuration = theme.property(QLatin1String("DieAnimDuration")).toInt();
-    m_moveDuration = theme.property(QLatin1String("MoveAnimDuration")).toInt();
+    m_bornDuration = theme->customData(QLatin1String("BornAnimDuration")).toInt();
+    m_selDuration = theme->customData(QLatin1String("SelectedAnimDuration")).toInt();
+    m_dieDuration = theme->customData(QLatin1String("DieAnimDuration")).toInt();
+    m_moveDuration = theme->customData(QLatin1String("MoveAnimDuration")).toInt();
 
     return true;
 }
-
-QString KLinesRenderer::findDefaultThemeName()
-{
-    QStringList themeDesktopFiles = KGlobal::dirs()->findAllResources("appdata", QLatin1String("themes/*.desktop"));
-
-    QString defaultThemeName;
-
-    foreach(const QString & file, themeDesktopFiles) {
-        KConfig cfg(file, KConfig::SimpleConfig);
-        KConfigGroup cfgGrp(&cfg, "KGameTheme");
-        bool isDefault = cfgGrp.readEntry("Default", false);
-        if (isDefault) {
-            QFileInfo fi(file);
-            defaultThemeName = QLatin1String("themes/") + fi.fileName();
-            kDebug() << "found default theme:" << defaultThemeName;
-        }
-    }
-
-    // if not found fallback to themes/default.desktop
-    if (defaultThemeName.isEmpty())
-        kDebug() << "didn't find default theme specification.";
-
-    return defaultThemeName;
-}
-
 
 void KLinesRenderer::setCellSize(int cellSize)
 {

@@ -37,7 +37,8 @@
 #include <KMessageBox>
 
 #include <KStandardGameAction>
-#include <KGameThemeSelector>
+#include <KGameRenderer>
+#include <KgThemeSelector>
 
 KLinesMainWindow::KLinesMainWindow()
 {
@@ -52,6 +53,10 @@ KLinesMainWindow::KLinesMainWindow()
 
     statusBar()->insertItem(i18n("Score:"), 0);
     updateScore(0);
+
+    KgThemeProvider* prov = KLinesRenderer::renderer()->themeProvider();
+    connect(prov, SIGNAL(currentThemeChanged(const KgTheme*)), SLOT(loadSettings()));
+    mselector = new KgThemeSelector(KLinesRenderer::renderer()->themeProvider());
 
     setupActions();
 
@@ -109,7 +114,7 @@ void KLinesMainWindow::setupActions()
   connect( naviDown, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusDown()));
   connect( naviSelect, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(cellSelected()));
 
-  KStandardAction::preferences( this, SLOT(configureSettings()), actionCollection() );
+  KStandardAction::preferences( mselector, SLOT(showAsDialog()), actionCollection() );
   setupGUI();
 }
 
@@ -173,25 +178,9 @@ void KLinesMainWindow::showNextToggled(bool show)
                   "Feel free to finish the game!");
                   */
 
-void KLinesMainWindow::configureSettings()
-{
-    if ( KConfigDialog::showDialog( QLatin1String( "settings" ) ) )
-        return;
-    KConfigDialog *dialog = new KConfigDialog( this, QLatin1String( "settings" ), Prefs::self() );
-    dialog->addPage( new KGameThemeSelector( dialog, Prefs::self(), KGameThemeSelector::NewStuffDisableDownload  ), i18n( "Theme" ), QLatin1String( "games-config-theme" ));
-	dialog->setFaceType(KConfigDialog::Plain); //only one page -> no page selection necessary
-    connect( dialog, SIGNAL(settingsChanged(QString)), this, SLOT(loadSettings()) );
-    dialog->setHelp(QString(),QLatin1String( "klines" ));
-    dialog->show();
-}
-
 void KLinesMainWindow::loadSettings()
 {
-    if ( !KLinesRenderer::loadTheme() )
-    {
-        KMessageBox::error( this,  i18n( "Failed to load \"%1\" theme. Please check your installation.", Prefs::theme() ) );
-        return;
-    }
+    KLinesRenderer::loadTheme();
     QRectF r = mwidget->scene()->sceneRect();
     mwidget->scene()->invalidate( r, QGraphicsScene::BackgroundLayer ); // redraw background
     mwidget->scene()->resizeScene( (int)r.width(), (int)r.height() ); // redraw scene

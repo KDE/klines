@@ -4,12 +4,6 @@
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
   <kcfgfile name="klinesrc"/>
-  <group name="General">
-    <entry name="Theme" type="String" key="Theme">
-      <label>The graphical theme to be used.</label>
-      <!-- default is empty string - theme will be picked automatically -->
-    </entry>
-  </group>
   <group name="Game">
     <entry name="ShowNext" type="Bool">
       <label>Whether to show the next set of balls.</label>
