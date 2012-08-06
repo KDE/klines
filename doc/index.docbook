@@ -37,8 +37,8 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2010-02-01</date><!-- Date of (re)writing, or update.-->
-<releaseinfo>&kappversion;</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
+<date>2012-08-06</date><!-- Date of (re)writing, or update.-->
+<releaseinfo>&kappversion; (&kde; 4.9)</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
@@ -297,10 +297,10 @@ Underneath the field there is the status bar.</para>
 
 <chapter id="configuration"><title>Game Configuration</title> <!-- do not change this! -->
   <para>&kolorlines; configuration dialog allows you to select &kolorlines; visual themes.</para>
-  <para>To select a new theme simply choose the theme's name from the selection list.</para>
-  <note><title>Note:</title><para>For your convenience a quick preview screenshot will be displayed on the right hand sided of the selection list as soon as you select the theme you're interested in.</para></note>
-  <para>Once you are satisfied with the theme you have selected you can either click <guibutton>Apply</guibutton>, or simply click <guibutton>Ok</guibutton> button, located at the bottom part of this dialog.</para>
-  <para>If, however you are dissatisfied with your selection – simply click <guibutton>Cancel</guibutton> to discard the changes.</para>
+  <para>To select a new theme simply choose the theme from the selection list.
+  Each item in the list shows a small preview left to the theme name. A selection is immediately applied.</para>
+  <para>Once you are satisfied with the theme you have selected you can click the <guibutton>Close</guibutton>,
+  located at the bottom part of this dialog.</para>
 </chapter>
 
 <chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
