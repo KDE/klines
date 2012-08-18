@@ -14,6 +14,7 @@ endif(NOT COMPILING_KDEGAMES)
 include_directories( ${CMAKE_SOURCE_DIR}/libkdegames/highscore  )
 
 add_subdirectory( themes )
+add_subdirectory( doc )
 
 ########### next target ###############
 
