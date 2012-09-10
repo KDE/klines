@@ -1,6 +1,8 @@
 [KGameTheme]
 VersionFormat=1
 Name=Gems for Kolor Lines
+Name[uk]=Коштовне каміння для рядків Kolor
+Name[x-test]=xxGems for Kolor Linesxx
 FileName=klines-gems.svgz
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com

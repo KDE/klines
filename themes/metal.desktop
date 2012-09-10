@@ -1,7 +1,11 @@
 [KGameTheme]
 VersionFormat=1
 Name=Metal
+Name[uk]=Метал
+Name[x-test]=xxMetalxx
 Description=A metal style theme with bouncing balls
+Description[uk]=Тема, елементи якої є металічними деталями з кульками
+Description[x-test]=xxA metal style theme with bouncing ballsxx
 FileName=metal.svgz
 Author=Eugene Trounev
 AuthorEmail=eugene.trounev@gmail.com
