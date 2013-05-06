@@ -37,8 +37,8 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2012-08-06</date><!-- Date of (re)writing, or update.-->
-<releaseinfo>&kappversion; (&kde; 4.9)</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
+<date>203-05-06</date><!-- Date of (re)writing, or update.-->
+<releaseinfo>&kappversion; (&kde; 4.11)</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
@@ -131,8 +131,8 @@ In the center of the screen there is a large square area filled with marbles cal
 On the right hand side there located a bar showing the next three marbles to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled).
 Underneath the field there is the status bar.</para>
 </sect1>
-<sect1 id="menu-game">
-	<title>The Game Menu</title>
+<sect1 id="menu-items">
+	<title>Menu Items</title>
 	<variablelist>
 		<varlistentry id="menu-game-new">
 			<term><menuchoice>
@@ -158,11 +158,7 @@ Underneath the field there is the status bar.</para>
 			</menuchoice></term>
 			<listitem><para><action>Quits</action> &kolorlines;</para></listitem>
 		</varlistentry>
-	</variablelist>
-</sect1>
-<sect1 id="menu-move">
-	<title>The Move Menu</title>
-	<variablelist>
+
 		<varlistentry id="menu-move-undo">
 			<term><menuchoice>
 				<shortcut><keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo></shortcut>
@@ -177,11 +173,7 @@ Underneath the field there is the status bar.</para>
 			</menuchoice></term>
 			<listitem><para>Skip your move, immediately play the next marbles without you moving any.</para></listitem>
 		</varlistentry>
-	</variablelist>
-</sect1>
-<sect1 id="menu-navigation">
-	<title>The Navigation Menu</title>
-	<variablelist>
+
 		<varlistentry id="menu-navigation-left">
 			<term><menuchoice>
 				<shortcut><keycap>Left</keycap></shortcut>
@@ -222,11 +214,7 @@ Underneath the field there is the status bar.</para>
 			</menuchoice></term>
 			<listitem><para><action>This action will select the item currently under the cursor.</action></para></listitem>
 		</varlistentry>
-	</variablelist>
-</sect1>
-<sect1 id="menu-settings">
-	<title>The Settings Menu</title>
-	<variablelist>
+
 		<varlistentry id="menu-settings-shownext">
 			<term><menuchoice>
 				<guimenu>Settings</guimenu>
@@ -234,37 +222,15 @@ Underneath the field there is the status bar.</para>
 			</menuchoice></term>
 			<listitem><para><action>Toggles the information on next marbles.</action></para></listitem>
 		</varlistentry>
-		<varlistentry>
-			<term><menuchoice>
-				<guimenu>Settings</guimenu>
-				<guimenuitem>Show Toolbar</guimenuitem>
-			</menuchoice></term>
-			<listitem><para><action>Toggles the display of the toolbar.</action></para></listitem>
-		</varlistentry>
-		<varlistentry>
-			<term><menuchoice>
-				<guimenu>Settings</guimenu>
-				<guimenuitem>Show Statusbar</guimenuitem>
-			</menuchoice></term>
-			<listitem><para><action>Toggles the display of the statusbar.</action></para></listitem>
-		</varlistentry>
-		<varlistentry>
-			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice></term>
-			<listitem><para>Displays a standard &kde; shortcut configuration dialog, allowing you to customize the keys used in the game.</para></listitem>
-		</varlistentry>
-		<varlistentry>
-			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Toolbars...</guimenuitem></menuchoice></term>
-			<listitem><para><action>Displays a standard &kde; toolbar configuration dialog</action> where you can configure the toolbar icons.</para></listitem>
-		</varlistentry>
-		<varlistentry id="menu-settings-configuration">
-			<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice></term>
-			<listitem><para>Displays a &kolorlines; <link linkend="configuration">configuration dialog</link>, allowing you to customize &kolorlines; settings used in the game.</para></listitem>
-		</varlistentry>
 	</variablelist>
-</sect1>
-<sect1 id="help"><!--This is a standard Help menubar entry. Only change if needed.-->
-<title>The Help Menu</title>
-&help.menu.documentation;
+
+<para>
+Additionally &kolorlines; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items, for more information read the sections about the <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
+</para>
+
 </sect1>
 </chapter>
 
