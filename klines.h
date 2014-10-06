@@ -18,8 +18,12 @@
 #ifndef KLINES_H
 #define KLINES_H
 
-class KgThemeSelector;
+#include <QLabel>
+#include <QPointer>
+
 #include <KXmlGuiWindow>
+
+class KgThemeSelector;
 
 class MainWidget;
 
@@ -44,6 +48,8 @@ private Q_SLOTS:
 private:
     KgThemeSelector *mselector;
     MainWidget *mwidget;
+    
+    QPointer<QLabel> scoreLabel = new QLabel;
 
 };
 

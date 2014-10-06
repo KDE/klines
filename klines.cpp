@@ -25,17 +25,17 @@
 #include "mwidget.h"
 #include "scene.h"
 
+#include <QStatusBar>
+#include <QAction>
+
 #include <KConfig>
-#include <KAction>
 #include <KActionCollection>
 #include <KStandardAction>
 #include <KScoreDialog>
 #include <KToggleAction>
-#include <KStatusBar>
-#include <KLocale>
 #include <KConfigDialog>
 #include <KMessageBox>
-
+#include <KLocalizedString>
 #include <KStandardGameAction>
 #include <KGameRenderer>
 #include <KgThemeSelector>
@@ -51,7 +51,9 @@ KLinesMainWindow::KLinesMainWindow()
     connect(mwidget->scene(), SIGNAL(stateChanged(QString)), SLOT(slotStateChanged(QString)));
     connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
 
-    statusBar()->insertItem(i18n("Score:"), 0);
+    scoreLabel->setText(i18n("Score:"));
+    statusBar()->insertPermanentWidget(1, scoreLabel);
+    
     updateScore(0);
 
     KgThemeProvider* prov = KLinesRenderer::renderer()->themeProvider();
@@ -88,23 +90,27 @@ void KLinesMainWindow::setupActions()
   mwidget->setShowNextColors(Prefs::showNext());
 
   // Navigation
-  KAction* naviLeft = new KAction( KIcon( QLatin1String( "arrow-left") ), i18n("Move Left" ), this );
+  QAction* naviLeft = new QAction( i18n("Move Left" ), this );
+  naviLeft->setIcon(QIcon::fromTheme(QLatin1String( "arrow-left"))); 
   naviLeft->setShortcut( Qt::Key_Left );
   actionCollection()->addAction( QLatin1String( "navi_left" ), naviLeft);
 
-  KAction* naviRight = new KAction( KIcon( QLatin1String( "arrow-right") ), i18n("Move Right" ), this );
+  QAction* naviRight = new QAction( i18n("Move Right" ), this );
+  naviRight->setIcon(QIcon::fromTheme(QLatin1String( "arrow-right")));
   naviRight->setShortcut( Qt::Key_Right );
   actionCollection()->addAction( QLatin1String( "navi_right" ), naviRight);
 
-  KAction* naviUp = new KAction( KIcon( QLatin1String( "arrow-up") ), i18n("Move Up" ), this );
+  QAction* naviUp = new QAction( i18n("Move Up" ), this );
+  naviUp->setIcon(QIcon::fromTheme(QLatin1String( "arrow-up")));
   naviUp->setShortcut( Qt::Key_Up );
   actionCollection()->addAction( QLatin1String( "navi_up" ), naviUp);
 
-  KAction* naviDown = new KAction( KIcon( QLatin1String( "arrow-down") ), i18n("Move Down" ), this );
+  QAction* naviDown = new QAction( i18n("Move Down" ), this );
+  naviDown->setIcon(QIcon::fromTheme(QLatin1String( "arrow-down")));
   naviDown->setShortcut( Qt::Key_Down );
   actionCollection()->addAction( QLatin1String( "navi_down" ), naviDown);
 
-  KAction* naviSelect = new KAction( i18n("Select"), this );
+  QAction* naviSelect = new QAction( i18n("Select"), this );
   naviSelect->setShortcut( Qt::Key_Space );
   actionCollection()->addAction( QLatin1String( "navi_select" ), naviSelect);
 
@@ -120,7 +126,7 @@ void KLinesMainWindow::setupActions()
 
 void KLinesMainWindow::updateScore(int score)
 {
-    statusBar()->changeItem(i18n("Score: %1", score), 0);
+    scoreLabel->setText(i18n("Score: %1", score));
 }
 
 void KLinesMainWindow::gameOver(int score)
@@ -148,7 +154,7 @@ void KLinesMainWindow::showNextToggled(bool show)
 {
     mwidget->setShowNextColors(show);
     Prefs::setShowNext(show);
-    Prefs::self()->writeConfig();
+    Prefs::self()->save();
 }
 
 

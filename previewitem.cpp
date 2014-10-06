@@ -24,10 +24,9 @@
 #include "renderer.h"
 
 #include <QPainter>
-#include <KDebug>
 
 PreviewItem::PreviewItem( QGraphicsScene* scene )
-    : QGraphicsItem( 0, scene )
+    : QGraphicsItem( 0 )
 {
 }
 

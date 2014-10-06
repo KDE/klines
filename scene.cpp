@@ -29,10 +29,10 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 #include <QSet>
+#include <QDebug>
 
 #include <KGamePopupItem>
-#include <KLocale>
-#include <KDebug>
+#include <KLocalizedString>
 
 inline uint qHash( const FieldPos& pos )
 {
@@ -49,7 +49,7 @@ KLinesScene::KLinesScene( QObject* parent )
     connect( m_animator, SIGNAL(removeFinished()), SLOT(removeAnimFinished()) );
     connect( m_animator, SIGNAL(bornFinished()), SLOT(bornAnimFinished()) );
 
-    m_focusItem = new QGraphicsRectItem( QRectF(0, 0, m_cellSize, m_cellSize), 0, this );
+    m_focusItem = new QGraphicsRectItem( QRectF(0, 0, m_cellSize, m_cellSize), 0);
     m_focusItem->setZValue(1.0);
     m_focusItem->setPen( Qt::DashLine );
 
@@ -172,7 +172,7 @@ void KLinesScene::resizeScene(int width,int height)
     m_previewItem->setPos( previewOriginX, previewOriginY );
     m_previewItem->setPreviewColors( m_nextColors );
 
-    //kDebug() << "resize:" << width << "," << height << "; cellSize:" << m_cellSize;
+    //qDebug() << "resize:" << width << "," << height << "; cellSize:" << m_cellSize;
 }
 
 void KLinesScene::endTurn()
@@ -680,7 +680,7 @@ void KLinesScene::gameOverHandler()
     if( m_gameOver )
         return; // don't emit twice
     m_gameOver = true;
-    kDebug() << "GAME OVER";
+    qDebug() << "GAME OVER";
     emit stateChanged(QLatin1String( "not_undoable" ));
     //emit enableUndo(false);
     emit gameOver(m_score);

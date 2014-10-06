@@ -22,7 +22,6 @@
 ********************************************************************/
 #include "renderer.h"
 
-#include <KDebug>
 #include <KGameRenderer>
 #include <KgThemeProvider>
 
@@ -115,10 +114,10 @@ QString KLinesRenderer::animationFrameId(AnimationType type, BallColor color, in
     case DieAnim:
         return QLatin1Char(color2char(color)) + QLatin1String("_die_") + QString::number(frame + 1);
     case MoveAnim:
-        kDebug() << "Move animation type isn't supposed to be handled by KLinesRenderer!";
+        qDebug() << "Move animation type isn't supposed to be handled by KLinesRenderer!";
         return QString();
     default:
-        kDebug() << "Warning! Animation type not handled in switch!";
+        qDebug() << "Warning! Animation type not handled in switch!";
         return QString();
     }
 }

@@ -23,7 +23,6 @@
 #include "ballitem.h"
 #include "renderer.h"
 
-#include <kdebug.h>
 #include <QGraphicsScene>
 #include <KGameRenderer>
 

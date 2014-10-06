@@ -24,6 +24,7 @@
 #define KL_SCENE_H
 
 #include <QGraphicsScene>
+
 #include <KRandomSequence>
 
 #include "commondefs.h"

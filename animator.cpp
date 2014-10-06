@@ -25,7 +25,6 @@
 #include "ballitem.h"
 #include "renderer.h"
 
-#include <kdebug.h>
 #include <math.h> // for pow, sqrt
 
 // Needed by A* pathfinding algorithm

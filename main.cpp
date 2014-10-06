@@ -19,12 +19,10 @@
   * Roman Razilov 2000-05-21 qimgio
 */
 
+#include <QApplication>
 
-#include <KApplication>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KAboutData>
-#include <KCmdLineArgs>
-#include <KGlobal>
 
 #include "klines.h"
 
@@ -32,23 +30,33 @@ static const char description[] = I18N_NOOP("Kolor Lines - a little game about b
 
 int main( int argc, char **argv )
 {
-    KAboutData aboutData("klines", 0, ki18n("Kolor Lines"), "1.5",
-                         ki18n(description), KAboutData::License_GPL,
-                         ki18n("(c) 2000-2008 The KLines Authors"), KLocalizedString(), "http://games.kde.org/klines");
-    aboutData.addAuthor(ki18n("Roman Merzlyakov"), ki18n("Original author"), "roman@sbrf.barrt.ru");
-    aboutData.addAuthor(ki18n("Roman Razilov"), ki18n("Rewrite and Extension"), "Roman.Razilov@gmx.de");
-    aboutData.addAuthor(ki18n("Dmitry Suzdalev"), ki18n("Rewrite to use QGraphicsView. Current maintainer"), "dimsuz@gmail.com");
-    aboutData.addCredit(ki18n("Eugene Trounev"), ki18n("New SVG artwork for KDE4 version of the game"), "eugene.trounev@gmail.com");
-    KCmdLineArgs::init(argc, argv, &aboutData);
-
-    KApplication application;
-    KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
-
-    if (application.isSessionRestored())
+    QApplication app(argc, argv);
+    
+    KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral("1.5"),
+                         i18n(description), KAboutLicense::GPL,
+                         i18n("(c) 2000-2008 The KLines Authors"), QString(), QStringLiteral("http://games.kde.org/klines"));
+    aboutData.addAuthor(i18n("Roman Merzlyakov"), i18n("Original author"), QStringLiteral("roman@sbrf.barrt.ru"));
+    aboutData.addAuthor(i18n("Roman Razilov"), i18n("Rewrite and Extension"), QStringLiteral("Roman.Razilov@gmx.de"));
+    aboutData.addAuthor(i18n("Dmitry Suzdalev"), i18n("Rewrite to use QGraphicsView. Current maintainer"), QStringLiteral("dimsuz@gmail.com"));
+    aboutData.addCredit(i18n("Eugene Trounev"), i18n("New SVG artwork for KDE4 version of the game"), QStringLiteral("eugene.trounev@gmail.com"));
+    
+    aboutData.setOrganizationDomain(QByteArray("kde.org"));
+    aboutData.setProgramIconName(QStringLiteral("klines"));
+    aboutData.setProductName(QByteArray("klines"));
+    
+    KAboutData::setApplicationData(aboutData);
+        
+    app.setApplicationDisplayName(aboutData.displayName());
+    app.setOrganizationDomain(aboutData.organizationDomain());
+    app.setApplicationVersion(aboutData.version());
+    
+    KLocalizedString::setApplicationDomain("klines");
+    
+    if (app.isSessionRestored())
         RESTORE(KLinesMainWindow)
     else {
         KLinesMainWindow *window = new KLinesMainWindow;
         window->show();
     }
-    return application.exec();
+    return app.exec();
 }
