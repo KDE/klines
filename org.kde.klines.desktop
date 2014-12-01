@@ -146,3 +146,4 @@ Name[zh_CN]=Kolor Lines
 Name[zh_TW]=Kolor Lines 彩色線條
 X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;StrategyGame;
+X-DBUS-ServiceName=org.kde.klines

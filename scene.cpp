@@ -690,4 +690,4 @@ void KLinesScene::gameOverHandler()
     m_popupItem->showMessage(i18n("<h1>Game over</h1>"), KGamePopupItem::Center);
 }
 
-#include "scene.moc"
+

@@ -72,4 +72,4 @@ void BallItem::animFrameChanged(int frame)
   setSpriteKey(KLinesRenderer::animationFrameId(KLinesRenderer::SelectedAnim, m_color, frame ));
 }
 
-#include "ballitem.moc"
+

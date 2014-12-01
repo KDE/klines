@@ -322,4 +322,4 @@ void KLinesAnimator::slotBornFinished()
     emit bornFinished();
 }
 
-#include "animator.moc"
+

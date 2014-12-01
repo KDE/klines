@@ -23,6 +23,7 @@
 
 #include <KLocalizedString>
 #include <KAboutData>
+#include <kdelibs4configmigrator.h>
 
 #include "klines.h"
 
@@ -31,6 +32,10 @@ static const char description[] = I18N_NOOP("Kolor Lines - a little game about b
 int main( int argc, char **argv )
 {
     QApplication app(argc, argv);
+    Kdelibs4ConfigMigrator migrate(QLatin1String("klines"));
+    migrate.setConfigFiles(QStringList() << QLatin1String("klinesrc"));
+    migrate.setUiFiles(QStringList() << QLatin1String("klinesui.rc"));
+    migrate.migrate();
     
     KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral("1.5"),
                          i18n(description), KAboutLicense::GPL,
@@ -41,16 +46,13 @@ int main( int argc, char **argv )
     aboutData.addCredit(i18n("Eugene Trounev"), i18n("New SVG artwork for KDE4 version of the game"), QStringLiteral("eugene.trounev@gmail.com"));
     
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
-    aboutData.setProgramIconName(QStringLiteral("klines"));
     aboutData.setProductName(QByteArray("klines"));
-    
+    app.setWindowIcon(QIcon::fromTheme(QLatin1String("klines")));
     KAboutData::setApplicationData(aboutData);
         
     app.setApplicationDisplayName(aboutData.displayName());
     app.setOrganizationDomain(aboutData.organizationDomain());
     app.setApplicationVersion(aboutData.version());
-    
-    KLocalizedString::setApplicationDomain("klines");
     
     if (app.isSessionRestored())
         RESTORE(KLinesMainWindow)
