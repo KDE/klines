@@ -10,14 +10,10 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Qui
 find_package(KF5 REQUIRED COMPONENTS 
     CoreAddons 
     Config 
-    ItemModels 
     WidgetsAddons 
     WindowSystem 
-    Codecs 
-    Archive
     Config 
     DBusAddons 
-    DNSSD 
     Declarative
     I18n 
     GuiAddons 
@@ -28,14 +24,10 @@ find_package(KF5 REQUIRED COMPONENTS
     Completion 
     JobWidgets
     TextWidgets
-    GlobalAccel
     XmlGui
-    Crash
-    Bookmarks
     KIO
     NotifyConfig
-    NewStuff
-    KDELibs4Support)
+    NewStuff)
     
 find_package(KF5KDEGames 4.9.0 REQUIRED)
 
@@ -65,7 +57,7 @@ set(klines_SRCS
    animator.cpp)
    
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc )
-kde4_add_app_icon(klines_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-klines.png")
+#kde4_add_app_icon(klines_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-klines.png")
 add_executable(klines ${klines_SRCS})
 
 target_link_libraries(klines KF5KDEGames KF5::XmlGui)
