@@ -57,16 +57,16 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
 {
     // timing & framing setup is done in corresponding animate* functions
 
-    connect(&m_moveTimeLine, SIGNAL(frameChanged(int)), SLOT(moveAnimationFrame(int)) );
-    connect(&m_moveTimeLine, SIGNAL(finished()), SIGNAL(moveFinished()));
+    connect(&m_moveTimeLine, &QTimeLine::frameChanged, this, &KLinesAnimator::moveAnimationFrame);
+    connect(&m_moveTimeLine, &QTimeLine::finished, this, &KLinesAnimator::moveFinished);
 
     m_removeTimeLine.setCurveShape(QTimeLine::LinearCurve);
-    connect(&m_removeTimeLine, SIGNAL(frameChanged(int)), SLOT(removeAnimationFrame(int)) );
-    connect(&m_removeTimeLine, SIGNAL(finished()), SIGNAL(removeFinished()));
+    connect(&m_removeTimeLine, &QTimeLine::frameChanged, this, &KLinesAnimator::removeAnimationFrame);
+    connect(&m_removeTimeLine, &QTimeLine::finished, this, &KLinesAnimator::removeFinished);
 
     m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
-    connect(&m_bornTimeLine, SIGNAL(frameChanged(int)), SLOT(bornAnimationFrame(int)) );
-    connect(&m_bornTimeLine, SIGNAL(finished()), SLOT(slotBornFinished()));
+    connect(&m_bornTimeLine, &QTimeLine::frameChanged, this, &KLinesAnimator::bornAnimationFrame);
+    connect(&m_bornTimeLine, &QTimeLine::finished, this, &KLinesAnimator::slotBornFinished);
 }
 
 bool KLinesAnimator::isAnimating() const

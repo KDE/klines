@@ -37,7 +37,7 @@ BallItem::BallItem( QGraphicsScene* parent )
     m_timeLine.setCurveShape( QTimeLine::LinearCurve );
     m_timeLine.setLoopCount(0);
 
-    connect(&m_timeLine, SIGNAL(frameChanged(int)), SLOT(animFrameChanged(int)) );
+    connect(&m_timeLine, &QTimeLine::frameChanged, this, &BallItem::animFrameChanged);
 }
 
 void BallItem::setColor( BallColor c, bool setPix )

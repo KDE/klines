@@ -57,7 +57,7 @@ KLinesMainWindow::KLinesMainWindow()
     updateScore(0);
 
     KgThemeProvider* prov = KLinesRenderer::renderer()->themeProvider();
-    connect(prov, SIGNAL(currentThemeChanged(const KgTheme*)), SLOT(loadSettings()));
+    connect(prov, &KgThemeProvider::currentThemeChanged, this, &KLinesMainWindow::loadSettings);
     mselector = new KgThemeSelector(KLinesRenderer::renderer()->themeProvider());
 
     setupActions();
@@ -84,7 +84,7 @@ void KLinesMainWindow::setupActions()
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>(QLatin1String( "show_next" ));
   showNext->setText( i18n( "Show Next" ) );
-  connect(showNext, SIGNAL(triggered(bool)), SLOT(showNextToggled(bool)));
+  connect(showNext, &KToggleAction::triggered, this, &KLinesMainWindow::showNextToggled);
 
   showNext->setChecked(Prefs::showNext());
   mwidget->setShowNextColors(Prefs::showNext());
