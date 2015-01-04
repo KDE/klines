@@ -24,7 +24,7 @@
 #include <KLocalizedString>
 #include <KAboutData>
 #include <kdelibs4configmigrator.h>
-
+#include <QCommandLineParser>
 #include "klines.h"
 
 static const char description[] = I18N_NOOP("Kolor Lines - a little game about balls and how to get rid of them");
@@ -45,14 +45,16 @@ int main( int argc, char **argv )
     aboutData.addAuthor(i18n("Dmitry Suzdalev"), i18n("Rewrite to use QGraphicsView. Current maintainer"), QStringLiteral("dimsuz@gmail.com"));
     aboutData.addCredit(i18n("Eugene Trounev"), i18n("New SVG artwork for KDE4 version of the game"), QStringLiteral("eugene.trounev@gmail.com"));
     
-    aboutData.setOrganizationDomain(QByteArray("kde.org"));
-    aboutData.setProductName(QByteArray("klines"));
     app.setWindowIcon(QIcon::fromTheme(QLatin1String("klines")));
     KAboutData::setApplicationData(aboutData);
-        
-    app.setApplicationDisplayName(aboutData.displayName());
-    app.setOrganizationDomain(aboutData.organizationDomain());
-    app.setApplicationVersion(aboutData.version());
+   
+    QCommandLineParser parser;
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
+     
     
     if (app.isSessionRestored())
         RESTORE(KLinesMainWindow)
