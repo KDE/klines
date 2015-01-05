@@ -11,22 +11,16 @@ find_package(KF5 REQUIRED COMPONENTS
     CoreAddons 
     Config 
     WidgetsAddons 
-    WindowSystem 
     Config 
     DBusAddons 
-    Declarative
     I18n 
     GuiAddons 
     Service 
     ConfigWidgets 
     ItemViews 
     IconThemes 
-    Completion 
-    JobWidgets
-    TextWidgets
     XmlGui
     KIO
-    NotifyConfig
     NewStuff)
     
 find_package(KF5KDEGames 4.9.0 REQUIRED)
