@@ -92,26 +92,26 @@ void KLinesMainWindow::setupActions()
   // Navigation
   QAction* naviLeft = new QAction( i18n("Move Left" ), this );
   naviLeft->setIcon(QIcon::fromTheme(QLatin1String( "arrow-left"))); 
-  naviLeft->setShortcut( Qt::Key_Left );
+  actionCollection()->setDefaultShortcut(naviLeft, Qt::Key_Left );
   actionCollection()->addAction( QLatin1String( "navi_left" ), naviLeft);
 
   QAction* naviRight = new QAction( i18n("Move Right" ), this );
   naviRight->setIcon(QIcon::fromTheme(QLatin1String( "arrow-right")));
-  naviRight->setShortcut( Qt::Key_Right );
+  actionCollection()->setDefaultShortcut(naviRight, Qt::Key_Right );
   actionCollection()->addAction( QLatin1String( "navi_right" ), naviRight);
 
   QAction* naviUp = new QAction( i18n("Move Up" ), this );
   naviUp->setIcon(QIcon::fromTheme(QLatin1String( "arrow-up")));
-  naviUp->setShortcut( Qt::Key_Up );
+  actionCollection()->setDefaultShortcut(naviUp, Qt::Key_Up );
   actionCollection()->addAction( QLatin1String( "navi_up" ), naviUp);
 
   QAction* naviDown = new QAction( i18n("Move Down" ), this );
   naviDown->setIcon(QIcon::fromTheme(QLatin1String( "arrow-down")));
-  naviDown->setShortcut( Qt::Key_Down );
+  actionCollection()->setDefaultShortcut(naviDown, Qt::Key_Down );
   actionCollection()->addAction( QLatin1String( "navi_down" ), naviDown);
 
   QAction* naviSelect = new QAction( i18n("Select"), this );
-  naviSelect->setShortcut( Qt::Key_Space );
+  actionCollection()->setDefaultShortcut(naviSelect, Qt::Key_Space );
   actionCollection()->addAction( QLatin1String( "navi_select" ), naviSelect);
 
   connect( naviLeft, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusLeft()));
