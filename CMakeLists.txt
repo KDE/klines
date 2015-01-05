@@ -71,6 +71,7 @@ ecm_install_icons(ICONS
     32-apps-klines.png
     48-apps-klines.png
     64-apps-klines.png
+    128-apps-klines.png
     DESTINATION ${ICON_INSTALL_DIR}
     THEME hicolor
 )
