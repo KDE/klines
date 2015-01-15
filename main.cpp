@@ -25,6 +25,7 @@
 #include <KAboutData>
 #include <kdelibs4configmigrator.h>
 #include <QCommandLineParser>
+#include <KDBusService>
 #include "klines.h"
 
 static const char description[] = I18N_NOOP("Kolor Lines - a little game about balls and how to get rid of them");
@@ -55,7 +56,7 @@ int main( int argc, char **argv )
     parser.process(app);
     aboutData.processCommandLine(&parser);
      
-    
+    KDBusService service;    
     if (app.isSessionRestored())
         RESTORE(KLinesMainWindow)
     else {

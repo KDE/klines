@@ -54,7 +54,7 @@ kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc )
 #kde4_add_app_icon(klines_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-klines.png")
 add_executable(klines ${klines_SRCS})
 
-target_link_libraries(klines KF5KDEGames KF5::XmlGui)
+target_link_libraries(klines KF5KDEGames KF5::XmlGui KF5::DBusAddons)
 
 install(TARGETS klines  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
