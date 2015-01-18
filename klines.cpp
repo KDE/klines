@@ -52,7 +52,7 @@ KLinesMainWindow::KLinesMainWindow()
     connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
 
     scoreLabel->setText(i18n("Score:"));
-    statusBar()->insertPermanentWidget(1, scoreLabel);
+    statusBar()->addPermanentWidget(scoreLabel);
     
     updateScore(0);
 
