@@ -29,14 +29,14 @@ class MainWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MainWidget( QWidget* parent=0 );
+    explicit MainWidget( QWidget* parent=Q_NULLPTR);
     ~MainWidget();
 
     KLinesScene* scene() { return m_scene; }
 public slots:
     void setShowNextColors(bool);
 private:
-    virtual void resizeEvent( QResizeEvent* );
+    void resizeEvent( QResizeEvent* ) Q_DECL_OVERRIDE;
     KLinesScene* m_scene;
     QLabel *m_next_label;
 };

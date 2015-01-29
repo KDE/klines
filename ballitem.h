@@ -58,7 +58,7 @@ public:
 
     // enable use of qgraphicsitem_cast
     enum { Type = UserType + 1 };
-    virtual int type() const { return Type; }
+    int type() const Q_DECL_OVERRIDE { return Type; }
 private slots:
     void animFrameChanged(int);
 private:
