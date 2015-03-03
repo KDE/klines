@@ -26,6 +26,7 @@ find_package(KF5 REQUIRED COMPONENTS
 find_package(KF5KDEGames 4.9.0 REQUIRED)
 
 include(FeatureSummary)
+include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(KDEInstallDirs)
 include(KDECompilerSettings)
@@ -52,19 +53,20 @@ set(klines_SRCS
    animator.cpp)
    
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc )
-#kde4_add_app_icon(klines_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-klines.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-klines.png")
+ecm_add_app_icon(klines_SRCS ICONS ${ICONS_SRCS})
 add_executable(klines ${klines_SRCS})
 
 target_link_libraries(klines KF5KDEGames KF5::XmlGui KF5::DBusAddons)
 
-install(TARGETS klines  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS klines  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### install files ###############
 
-install( PROGRAMS org.kde.klines.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
-install( FILES klines.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
-install( FILES klinesui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/klines )
+install( PROGRAMS org.kde.klines.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
+install( FILES klines.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR} )
+install( FILES klinesui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/klines )
 
 ecm_install_icons(ICONS
     16-apps-klines.png
@@ -73,7 +75,7 @@ ecm_install_icons(ICONS
     48-apps-klines.png
     64-apps-klines.png
     128-apps-klines.png
-    DESTINATION ${ICON_INSTALL_DIR}
+    DESTINATION ${KDE_INSTALL_ICONDIR}
     THEME hicolor
 )
 
