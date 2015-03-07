@@ -1,7 +1,7 @@
 # KDE Config File
 [Desktop Entry]
 Type=Application
-Exec=klines -caption %c
+Exec=klines -qwindowtitle %c
 Icon=klines
 X-DocPath=klines/index.html
 GenericName=Tactical Game
