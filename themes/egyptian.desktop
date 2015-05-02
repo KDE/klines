@@ -1,6 +1,7 @@
 [KGameTheme]
 VersionFormat=0.8
 Name=Egyptian
+Name[ast]=Exipciu
 Name[bs]=Egipatski
 Name[ca]=Egipci
 Name[ca@valencia]=Egipci
@@ -48,6 +49,7 @@ Name[x-test]=xxEgyptianxx
 Name[zh_CN]=埃及
 Name[zh_TW]=埃及式
 Description=An Egyptian style theme for klines.
+Description[ast]=Un tema estilu exipciu pa KLines
 Description[bs]=Tema u Egipatskom stilu za klines.
 Description[ca]=Un tema d'estil egipci pel klines.
 Description[ca@valencia]=Un tema d'estil egipci pel klines.
