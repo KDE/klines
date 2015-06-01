@@ -37,6 +37,7 @@ int main( int argc, char **argv )
     migrate.setConfigFiles(QStringList() << QLatin1String("klinesrc"));
     migrate.setUiFiles(QStringList() << QLatin1String("klinesui.rc"));
     migrate.migrate();
+    KLocalizedString::setApplicationDomain("klines");
     
     KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral("1.6"),
                          i18n(description), KAboutLicense::GPL,
