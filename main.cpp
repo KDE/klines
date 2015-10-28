@@ -33,9 +33,9 @@ static const char description[] = I18N_NOOP("Kolor Lines - a little game about b
 int main( int argc, char **argv )
 {
     QApplication app(argc, argv);
-    Kdelibs4ConfigMigrator migrate(QLatin1String("klines"));
-    migrate.setConfigFiles(QStringList() << QLatin1String("klinesrc"));
-    migrate.setUiFiles(QStringList() << QLatin1String("klinesui.rc"));
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("klines"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("klinesrc"));
+    migrate.setUiFiles(QStringList() << QStringLiteral("klinesui.rc"));
     migrate.migrate();
     KLocalizedString::setApplicationDomain("klines");
     
@@ -47,7 +47,7 @@ int main( int argc, char **argv )
     aboutData.addAuthor(i18n("Dmitry Suzdalev"), i18n("Rewrite to use QGraphicsView. Current maintainer"), QStringLiteral("dimsuz@gmail.com"));
     aboutData.addCredit(i18n("Eugene Trounev"), i18n("New SVG artwork for KDE4 version of the game"), QStringLiteral("eugene.trounev@gmail.com"));
     
-    app.setWindowIcon(QIcon::fromTheme(QLatin1String("klines")));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("klines")));
     KAboutData::setApplicationData(aboutData);
    
     QCommandLineParser parser;

@@ -47,9 +47,9 @@ KLinesMainWindow::KLinesMainWindow()
     mwidget = new MainWidget(this);
     setCentralWidget( mwidget );
 
-    connect(mwidget->scene(), SIGNAL(scoreChanged(int)), SLOT(updateScore(int)));
+    connect(mwidget->scene(), &KLinesScene::scoreChanged, this, &KLinesMainWindow::updateScore);
     connect(mwidget->scene(), SIGNAL(stateChanged(QString)), SLOT(slotStateChanged(QString)));
-    connect(mwidget->scene(), SIGNAL(gameOver(int)), SLOT(gameOver(int)));
+    connect(mwidget->scene(), &KLinesScene::gameOver, this, &KLinesMainWindow::gameOver);
 
     scoreLabel->setText(i18n("Score:"));
     statusBar()->addPermanentWidget(scoreLabel);
@@ -62,7 +62,7 @@ KLinesMainWindow::KLinesMainWindow()
 
     setupActions();
 
-    stateChanged(QLatin1String( "init" ));
+    stateChanged(QStringLiteral( "init" ));
 }
 
 KLinesMainWindow::~KLinesMainWindow()
@@ -82,7 +82,7 @@ void KLinesMainWindow::setupActions()
   KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
 
   // Preferences
-  KToggleAction *showNext = actionCollection()->add<KToggleAction>(QLatin1String( "show_next" ));
+  KToggleAction *showNext = actionCollection()->add<KToggleAction>(QStringLiteral( "show_next" ));
   showNext->setText( i18n( "Show Next" ) );
   connect(showNext, &KToggleAction::triggered, this, &KLinesMainWindow::showNextToggled);
 
@@ -91,34 +91,34 @@ void KLinesMainWindow::setupActions()
 
   // Navigation
   QAction* naviLeft = new QAction( i18n("Move Left" ), this );
-  naviLeft->setIcon(QIcon::fromTheme(QLatin1String( "arrow-left"))); 
+  naviLeft->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-left"))); 
   actionCollection()->setDefaultShortcut(naviLeft, Qt::Key_Left );
-  actionCollection()->addAction( QLatin1String( "navi_left" ), naviLeft);
+  actionCollection()->addAction( QStringLiteral( "navi_left" ), naviLeft);
 
   QAction* naviRight = new QAction( i18n("Move Right" ), this );
-  naviRight->setIcon(QIcon::fromTheme(QLatin1String( "arrow-right")));
+  naviRight->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-right")));
   actionCollection()->setDefaultShortcut(naviRight, Qt::Key_Right );
-  actionCollection()->addAction( QLatin1String( "navi_right" ), naviRight);
+  actionCollection()->addAction( QStringLiteral( "navi_right" ), naviRight);
 
   QAction* naviUp = new QAction( i18n("Move Up" ), this );
-  naviUp->setIcon(QIcon::fromTheme(QLatin1String( "arrow-up")));
+  naviUp->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-up")));
   actionCollection()->setDefaultShortcut(naviUp, Qt::Key_Up );
-  actionCollection()->addAction( QLatin1String( "navi_up" ), naviUp);
+  actionCollection()->addAction( QStringLiteral( "navi_up" ), naviUp);
 
   QAction* naviDown = new QAction( i18n("Move Down" ), this );
-  naviDown->setIcon(QIcon::fromTheme(QLatin1String( "arrow-down")));
+  naviDown->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-down")));
   actionCollection()->setDefaultShortcut(naviDown, Qt::Key_Down );
-  actionCollection()->addAction( QLatin1String( "navi_down" ), naviDown);
+  actionCollection()->addAction( QStringLiteral( "navi_down" ), naviDown);
 
   QAction* naviSelect = new QAction( i18n("Select"), this );
   actionCollection()->setDefaultShortcut(naviSelect, Qt::Key_Space );
-  actionCollection()->addAction( QLatin1String( "navi_select" ), naviSelect);
+  actionCollection()->addAction( QStringLiteral( "navi_select" ), naviSelect);
 
-  connect( naviLeft, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusLeft()));
-  connect( naviRight, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusRight()));
-  connect( naviUp, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusUp()));
-  connect( naviDown, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(moveFocusDown()));
-  connect( naviSelect, SIGNAL(triggered(bool)), mwidget->scene(), SLOT(cellSelected()));
+  connect( naviLeft, &QAction::triggered, mwidget->scene(), &KLinesScene::moveFocusLeft);
+  connect( naviRight, &QAction::triggered, mwidget->scene(), &KLinesScene::moveFocusRight);
+  connect( naviUp, &QAction::triggered, mwidget->scene(), &KLinesScene::moveFocusUp);
+  connect( naviDown, &QAction::triggered, mwidget->scene(), &KLinesScene::moveFocusDown);
+  connect( naviSelect, &QAction::triggered, mwidget->scene(), &KLinesScene::cellSelected);
 
   KStandardAction::preferences( mselector, SLOT(showAsDialog()), actionCollection() );
   setupGUI();
@@ -132,7 +132,7 @@ void KLinesMainWindow::updateScore(int score)
 void KLinesMainWindow::gameOver(int score)
 {
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
-    d.setConfigGroup( QLatin1String( "Highscore" ) );
+    d.setConfigGroup( QStringLiteral( "Highscore" ) );
     d.addScore(score, KScoreDialog::AskName);
     d.exec();
 }
@@ -140,7 +140,7 @@ void KLinesMainWindow::gameOver(int score)
 void KLinesMainWindow::viewHighScore()
 {
    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
-   d.setConfigGroup( QLatin1String( "Highscore" ) );
+   d.setConfigGroup( QStringLiteral( "Highscore" ) );
    d.exec();
 }
 

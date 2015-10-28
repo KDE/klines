@@ -75,11 +75,11 @@ void KLinesRenderer::UnInit()
 KLinesRenderer::KLinesRenderer()
 {
     KgThemeProvider* provider = new KgThemeProvider;
-    provider->discoverThemes("appdata", QLatin1String("themes"));
+    provider->discoverThemes("appdata", QStringLiteral("themes"));
     //the default theme is marked with a key "Default=true"
     foreach (const KgTheme* theme, provider->themes())
     {
-        if (theme->customData(QLatin1String("Default")) == QLatin1String("true"))
+        if (theme->customData(QStringLiteral("Default")) == QLatin1String("true"))
         {
             provider->setDefaultTheme(theme);
             break;
@@ -124,31 +124,31 @@ QString KLinesRenderer::animationFrameId(AnimationType type, BallColor color, in
 
 QPixmap KLinesRenderer::backgroundTilePixmap()
 {
-    return getPixmap(QLatin1String("field_cell"));
+    return getPixmap(QStringLiteral("field_cell"));
 }
 
 QPixmap KLinesRenderer::backgroundPixmap(const QSize& size)
 {
-    return getPixmap(QLatin1String("background"), size);
+    return getPixmap(QStringLiteral("background"), size);
 }
 
 QPixmap KLinesRenderer::previewPixmap()
 {
-    return getPixmap(QLatin1String("preview"), QSize(m_cellSize, m_cellSize * 3));
+    return getPixmap(QStringLiteral("preview"), QSize(m_cellSize, m_cellSize * 3));
 }
 
 bool KLinesRenderer::loadTheme()
 {
     const KgTheme* theme = m_renderer->theme();
 
-    m_numBornFrames = theme->customData(QLatin1String("NumBornFrames")).toInt();
-    m_numSelFrames = theme->customData(QLatin1String("NumSelectedFrames")).toInt();
-    m_numDieFrames = theme->customData(QLatin1String("NumDieFrames")).toInt();
+    m_numBornFrames = theme->customData(QStringLiteral("NumBornFrames")).toInt();
+    m_numSelFrames = theme->customData(QStringLiteral("NumSelectedFrames")).toInt();
+    m_numDieFrames = theme->customData(QStringLiteral("NumDieFrames")).toInt();
 
-    m_bornDuration = theme->customData(QLatin1String("BornAnimDuration")).toInt();
-    m_selDuration = theme->customData(QLatin1String("SelectedAnimDuration")).toInt();
-    m_dieDuration = theme->customData(QLatin1String("DieAnimDuration")).toInt();
-    m_moveDuration = theme->customData(QLatin1String("MoveAnimDuration")).toInt();
+    m_bornDuration = theme->customData(QStringLiteral("BornAnimDuration")).toInt();
+    m_selDuration = theme->customData(QStringLiteral("SelectedAnimDuration")).toInt();
+    m_dieDuration = theme->customData(QStringLiteral("DieAnimDuration")).toInt();
+    m_moveDuration = theme->customData(QStringLiteral("MoveAnimDuration")).toInt();
 
     return true;
 }
@@ -178,11 +178,11 @@ QPixmap KLinesRenderer::backgroundBorderPixmap(const QSize& size)
     if (!hasBorderElement())
         return QPixmap();
 
-    return getPixmap(QLatin1String("border"), size);
+    return getPixmap(QStringLiteral("border"), size);
 }
 
 bool KLinesRenderer::hasBorderElement()
 {
-    return m_renderer->spriteExists(QLatin1String("border"));
+    return m_renderer->spriteExists(QStringLiteral("border"));
 
 }
