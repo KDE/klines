@@ -29,7 +29,7 @@
 class PreviewItem : public QGraphicsItem
 {
 public:
-    PreviewItem( QGraphicsScene* scene );
+    explicit PreviewItem( QGraphicsScene* scene );
 
     /**
      * Sets colors to be displayed
