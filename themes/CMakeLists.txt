@@ -12,5 +12,8 @@ klines-gems.svgz
 egyptian.desktop
 egyptian.png
 egyptian.svgz
+pool.desktop
+pool.png
+pool.svgz
 DESTINATION  ${KDE_INSTALL_DATADIR}/klines/themes )
 
