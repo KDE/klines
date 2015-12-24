@@ -1,6 +1,12 @@
 [KGameTheme]
 VersionFormat=1
 Name=Pool
+Name[ca]=Billar
+Name[nl]=Pool
+Name[pt]=Bilhar
+Name[pt_BR]=Sinuca
+Name[uk]=Басейн
+Name[x-test]=xxPoolxx
 FileName=pool.svgz
 Author=Claudio Canavese
 AuthorEmail=cod@cod-web.net
