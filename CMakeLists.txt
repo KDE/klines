@@ -30,12 +30,18 @@ include(KDEInstallDirs)
 include(KDECompilerSettings)
 include(KDECMakeSettings)
 
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
+add_definitions(
+    -DQT_USE_FAST_CONCATENATION
+    -DQT_USE_FAST_OPERATOR_PLUS
+    -DQT_NO_CAST_FROM_ASCII
+    -DQT_NO_CAST_TO_ASCII
+    -DQT_NO_CAST_FROM_BYTEARRAY
+    -DQT_NO_URL_CAST_FROM_STRING
+    -DQT_USE_QSTRINGBUILDER
+)
 
-
-add_subdirectory( themes )
-add_subdirectory( doc )
+add_subdirectory(themes)
+add_subdirectory(doc)
 
 ########### next target ###############
 
@@ -50,7 +56,7 @@ set(klines_SRCS
    animator.cpp
 )
    
-kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc )
+kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-klines.png")
 ecm_add_app_icon(klines_SRCS ICONS ${ICONS_SRCS})
 add_executable(klines ${klines_SRCS})
