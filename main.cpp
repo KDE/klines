@@ -23,6 +23,7 @@
 
 #include <KLocalizedString>
 #include <KAboutData>
+#include <KCrash>
 #include <kdelibs4configmigrator.h>
 #include <QCommandLineParser>
 #include <KDBusService>
@@ -49,7 +50,7 @@ int main( int argc, char **argv )
     
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("klines")));
     KAboutData::setApplicationData(aboutData);
-   
+    KCrash::initialize();
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
