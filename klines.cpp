@@ -132,7 +132,7 @@ void KLinesMainWindow::updateScore(int score)
 void KLinesMainWindow::gameOver(int score)
 {
     KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
-    d.setConfigGroup(qMakePair(QByteArray("Highscore"), i18n("Highscore")));
+    d.setConfigGroup(qMakePair(QByteArray("Highscore"), i18n("High Scores")));
     d.addScore(score, KScoreDialog::AskName);
     d.exec();
 }
@@ -140,7 +140,7 @@ void KLinesMainWindow::gameOver(int score)
 void KLinesMainWindow::viewHighScore()
 {
    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
-   d.setConfigGroup(qMakePair(QByteArray("Highscore"), i18n("Highscore")));
+   d.setConfigGroup(qMakePair(QByteArray("Highscore"), i18n("High Scores")));
    d.exec();
 }
 
