@@ -28,6 +28,7 @@
 PreviewItem::PreviewItem( QGraphicsScene* scene )
     : QGraphicsItem( 0 )
 {
+    Q_UNUSED( scene );
 }
 
 void PreviewItem::paint( QPainter* p, const QStyleOptionGraphicsItem*, QWidget* )
