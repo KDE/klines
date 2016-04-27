@@ -26,6 +26,8 @@
 
 MainWidget::MainWidget( QWidget* parent )
     : QWidget( parent )
+    , m_scene( nullptr )
+    , m_next_label( nullptr )
 {
     QBoxLayout *mainLay = new QHBoxLayout( this );
     mainLay->setMargin( 0 );
