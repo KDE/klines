@@ -1,9 +1,6 @@
 <?xml version="1.0" ?>
 <!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kappname "&kolorlines;">
-  <!ENTITY kappversion "1.5"><!--Application version. Use this variable everywhere it's needed.-->
-  <!ENTITY package "kdegames">  <!-- do not change this! -->
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE"> <!-- do not change this! -->
 ]>
@@ -37,12 +34,12 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2013-05-06</date><!-- Date of (re)writing, or update.-->
-<releaseinfo>&kappversion; (&kde; 4.11)</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
+<date>2016-05-10</date>
+<releaseinfo>1.6 (Applications 16.04)</releaseinfo>
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-	<para>This documentation describes the game of &kolorlines; version &kappversion;</para>
+	<para>This documentation describes the game of &kolorlines; version 1.6</para>
 </abstract>
  
 <!--List of relevant keywords-->
@@ -295,20 +292,6 @@ testing and discussions.</para>
  
 </chapter>
   
-<appendix id="installation">
-<title>Installation</title>
- 
-&install.intro.documentation;
- 
- 
-<sect1 id="Compilation">
-<title>Compilation and Installation</title>
- 
-&install.compile.documentation;
- 
-</sect1>
-</appendix>
- 
 &documentation.index; 
 </book>
 <!--
