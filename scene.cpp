@@ -55,6 +55,7 @@ KLinesScene::KLinesScene( QObject* parent )
 
     m_previewItem = new PreviewItem(this);
     m_previewItem->setPos( 0, 0 );
+    addItem(m_previewItem);
 
     m_popupItem = new KGamePopupItem;
     addItem(m_popupItem);
