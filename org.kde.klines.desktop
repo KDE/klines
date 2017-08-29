@@ -142,6 +142,7 @@ Name[xh]=Iilayini zeKolor
 Name[x-test]=xxKolor Linesxx
 Name[zh_CN]=Kolor Lines
 Name[zh_TW]=Kolor Lines 彩色線條
+Comment=Tactical game
 X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;StrategyGame;
 X-DBUS-ServiceName=org.kde.klines
