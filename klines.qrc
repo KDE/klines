@@ -1,0 +1,5 @@
+<RCC>
+<qresource prefix="/kxmlgui5/klines">
+<file>klinesui.rc</file>
+</qresource>
+</RCC>

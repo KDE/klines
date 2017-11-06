@@ -56,6 +56,7 @@ set(klines_SRCS
    animator.cpp
 )
    
+qt5_add_resources(klines_SRCS klines.qrc)
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-klines.png")
 ecm_add_app_icon(klines_SRCS ICONS ${ICONS_SRCS})
@@ -75,7 +76,6 @@ install(TARGETS klines  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(PROGRAMS org.kde.klines.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES klines.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR})
-install(FILES klinesui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/klines)
 
 ecm_install_icons(ICONS
     16-apps-klines.png
