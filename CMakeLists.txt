@@ -76,6 +76,7 @@ install(TARGETS klines  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(PROGRAMS org.kde.klines.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES klines.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR})
+install(FILES org.kde.klines.appdata.xml DESTINATION ${CMAKE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
     16-apps-klines.png
