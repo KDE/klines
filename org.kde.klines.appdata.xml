@@ -1,10 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component type="desktop-application"><id>org.kde.klines</id><metadata_license>FSFAP</metadata_license><project_license>GPL-2.0</project_license><name>Kolor Lines</name><summary>Tactical Game</summary><description><p>
+<component type="desktop-application">
+  <id>org.kde.klines</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-2.0</project_license>
+  <name>Kolor Lines</name>
+  <name xml:lang="ca">Kolor Lines</name>
+  <name xml:lang="gl">Liñas de kores</name>
+  <name xml:lang="nl">Kolor Lines</name>
+  <name xml:lang="pt">Kolor Lines</name>
+  <name xml:lang="sv">Färglinjer</name>
+  <name xml:lang="uk">Кольорові лінії</name>
+  <name xml:lang="x-test">xxKolor Linesxx</name>
+  <summary>Tactical Game</summary>
+  <summary xml:lang="ca">Joc de tàctica</summary>
+  <summary xml:lang="gl">Xogo de táctica</summary>
+  <summary xml:lang="nl">Tactisch spel</summary>
+  <summary xml:lang="pt">Jogo Táctico</summary>
+  <summary xml:lang="sv">Taktikspel</summary>
+  <summary xml:lang="uk">Тактична гра</summary>
+  <summary xml:lang="x-test">xxTactical Gamexx</summary>
+  <description>
+    <p>
      KLines is a simple but highly addictive one player game.
-    </p><p>
+    </p>
+    <p xml:lang="ca">El KLines és un joc d'un jugador senzill però molt addictiu.</p>
+    <p xml:lang="gl">KLines é un xogo simple pero moi adictivo para unha persoa.</p>
+    <p xml:lang="nl">KLines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
+    <p xml:lang="pt">O KLines é um jogo simples, mas bastante viciante, para um único jogador.</p>
+    <p xml:lang="sv">Färglinjer är ett enkelt men mycket vanebildande spel för en spelare.</p>
+    <p xml:lang="uk">KLines — проста, але дуже захоплива гра для одного гравця.</p>
+    <p xml:lang="x-test">xxKLines is a simple but highly addictive one player game.xx</p>
+    <p>
      The player has to move the colored balls around the game board, gathering them into the lines of the same color by five.
      Once the line is complete it is removed from the board, therefore freeing precious space. 
      In the same time the new balls keep arriving by three after each move, filling up the game board.
-    </p></description><categories><category>Qt</category><category>KDE</category><category>Game</category><category>StrategyGame</category></categories><content_rating type="oars-1.1"><content_attribute id="violence-cartoon">none</content_attribute><content_attribute id="violence-fantasy">none</content_attribute><content_attribute id="violence-realistic">none</content_attribute><content_attribute id="violence-bloodshed">none</content_attribute><content_attribute id="violence-sexual">none</content_attribute><content_attribute id="violence-desecration">none</content_attribute><content_attribute id="violence-slavery">none</content_attribute><content_attribute id="violence-worship">none</content_attribute><content_attribute id="drugs-alcohol">none</content_attribute><content_attribute id="drugs-narcotics">none</content_attribute><content_attribute id="drugs-tobacco">none</content_attribute><content_attribute id="sex-nudity">none</content_attribute><content_attribute id="sex-themes">none</content_attribute><content_attribute id="sex-homosexuality">none</content_attribute><content_attribute id="sex-prostitution">none</content_attribute><content_attribute id="sex-adultery">none</content_attribute><content_attribute id="sex-appearance">none</content_attribute><content_attribute id="language-profanity">none</content_attribute><content_attribute id="language-humor">none</content_attribute><content_attribute id="language-discrimination">none</content_attribute><content_attribute id="social-chat">none</content_attribute><content_attribute id="social-info">none</content_attribute><content_attribute id="social-audio">none</content_attribute><content_attribute id="social-location">none</content_attribute><content_attribute id="social-contacts">none</content_attribute><content_attribute id="money-purchasing">none</content_attribute><content_attribute id="money-gambling">none</content_attribute></content_rating><url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=klines</url><url type="donation">https://www.kde.org/community/donations/</url><url type="help">https://docs.kde.org/?application=klines</url><url type="homepage">https://games.kde.org/game.php?game=klines</url><screenshots><screenshot type="default"><image>https://www.kde.org/images/screenshots/klines.png</image></screenshot></screenshots><project_group>KDE</project_group><developer_name>The KDE Community</developer_name><provides><binary>klines</binary></provides><update_contact>kde-games-devel_AT_kde.org</update_contact>
+    </p>
+    <p xml:lang="ca">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les a les línies del mateix color cada cinc. Un cop completada la línia, s'elimina del tauler, alliberant l'escàs espai. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment. omplint el tauler de joc.</p>
+    <p xml:lang="gl">O xogador ten de mover as bólas coloradas pola área de xogo, recolléndoas das liñas da mesma cor en grupos de cinco. Cando a liña está completa elimínase da área de xogo, liberando así un espazo necesario. Ao mesmo tempo, as bólas novas continúan a chegar en grupos de tres despois de cada xogada, enchendo a área de xogo.</p>
+    <p xml:lang="nl">De speler verplaatst de gekleurde ballen op het speelbord en verzamelt ze daarbij per vijf op de lijnen van gelijke kleur. Nadat de lijn klaar is wordt deze van het bord verwijderd en maakt daarmee kostbare ruimte vrij. Op hetzelfde moment blijven er bij elke zet drie nieuwe ballen verschijnen, die het speelbord opvullen.</p>
+    <p xml:lang="pt">O jogador tem de mover as bolas coloridas pelo tabuleiro do jogo, recolhendo-as  para as linhas da mesma cor em grupos de cinco. Assim que a linha estiver completa, é removida do tabuleiro, libertando assim espaço precioso. Ao mesmo tempo, começam a chegar bolas novas em grupos de três ao fim de cada jogada, preenchendo o tabuleiro do jogo.</p>
+    <p xml:lang="sv">Spelaren ska flytta omkring de färgade bollarna på spelbrädet, och samla fem av samma färg i en linje. När en linje är färdig tas den bort från brädet, och frigör därför dyrbart utrymme. På samma gång anländer tre nya bollar åt gången efter varje drag, och fyller upp spelbrädet.</p>
+    <p xml:lang="uk">Гравцеві слід пересувати кольорові кульки ігровою дошкою, збираючи їх по п’ять у рядки однакового кольору. Після утворення такого рядка всі кульки з нього буде вилучено і таким чином на дошці звільниться місце. Також після кожного ходу на дошці з’являтимуться три нових кульки, які зменшуватимуть вільне місце на ній.</p>
+    <p xml:lang="x-test">xxThe player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.xx</p>
+  </description>
+  <categories>
+    <category>Qt</category>
+    <category>KDE</category>
+    <category>Game</category>
+    <category>StrategyGame</category>
+  </categories>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=klines</url>
+  <url type="donation">https://www.kde.org/community/donations/</url>
+  <url type="help">https://docs.kde.org/?application=klines</url>
+  <url type="homepage">https://games.kde.org/game.php?game=klines</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.kde.org/images/screenshots/klines.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <developer_name>The KDE Community</developer_name>
+  <developer_name xml:lang="ast">La comunidá KDE</developer_name>
+  <developer_name xml:lang="ca">La comunitat KDE</developer_name>
+  <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
+  <developer_name xml:lang="nl">De KDE gemeenschap</developer_name>
+  <developer_name xml:lang="pt">A Comunidade do KDE</developer_name>
+  <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
+  <developer_name xml:lang="uk">Спільнота KDE</developer_name>
+  <developer_name xml:lang="x-test">xxThe KDE Communityxx</developer_name>
+  <provides>
+    <binary>klines</binary>
+  </provides>
+  <update_contact>kde-games-devel_AT_kde.org</update_contact>
   <launchable type="desktop-id">org.kde.klines.desktop</launchable>
 </component>
