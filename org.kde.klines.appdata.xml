@@ -13,6 +13,7 @@
   <name xml:lang="sv">Färglinjer</name>
   <name xml:lang="uk">Кольорові лінії</name>
   <name xml:lang="x-test">xxKolor Linesxx</name>
+  <name xml:lang="zh-CN">Kolor Lines</name>
   <summary>Tactical Game</summary>
   <summary xml:lang="ca">Joc de tàctica</summary>
   <summary xml:lang="ca-valencia">Joc de tàctica</summary>
@@ -23,6 +24,7 @@
   <summary xml:lang="sv">Taktikspel</summary>
   <summary xml:lang="uk">Тактична гра</summary>
   <summary xml:lang="x-test">xxTactical Gamexx</summary>
+  <summary xml:lang="zh-CN">战术游戏</summary>
   <description>
     <p>
      KLines is a simple but highly addictive one player game.
@@ -107,6 +109,7 @@
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxThe KDE Communityxx</developer_name>
+  <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
   <provides>
     <binary>klines</binary>
   </provides>
