@@ -9,6 +9,7 @@
   <name xml:lang="gl">Liñas de kores</name>
   <name xml:lang="nl">Kolor Lines</name>
   <name xml:lang="pt">Kolor Lines</name>
+  <name xml:lang="sk">Farebné čiary</name>
   <name xml:lang="sl">Kolor Lines</name>
   <name xml:lang="sv">Färglinjer</name>
   <name xml:lang="uk">Кольорові лінії</name>
@@ -20,6 +21,7 @@
   <summary xml:lang="gl">Xogo de táctica</summary>
   <summary xml:lang="nl">Tactisch spel</summary>
   <summary xml:lang="pt">Jogo Táctico</summary>
+  <summary xml:lang="sk">Taktická hra</summary>
   <summary xml:lang="sl">Strateška igra</summary>
   <summary xml:lang="sv">Taktikspel</summary>
   <summary xml:lang="uk">Тактична гра</summary>
@@ -105,6 +107,7 @@
   <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
   <developer_name xml:lang="nl">De KDE gemeenschap</developer_name>
   <developer_name xml:lang="pt">A Comunidade do KDE</developer_name>
+  <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
