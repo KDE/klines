@@ -6,6 +6,7 @@
   <name>Kolor Lines</name>
   <name xml:lang="ca">Kolor Lines</name>
   <name xml:lang="ca-valencia">Kolor Lines</name>
+  <name xml:lang="es">Líneas de color</name>
   <name xml:lang="gl">Liñas de kores</name>
   <name xml:lang="nl">Kolor Lines</name>
   <name xml:lang="pt">Kolor Lines</name>
@@ -18,6 +19,7 @@
   <summary>Tactical Game</summary>
   <summary xml:lang="ca">Joc de tàctica</summary>
   <summary xml:lang="ca-valencia">Joc de tàctica</summary>
+  <summary xml:lang="es">Juego de táctica</summary>
   <summary xml:lang="gl">Xogo de táctica</summary>
   <summary xml:lang="nl">Tactisch spel</summary>
   <summary xml:lang="pt">Jogo Táctico</summary>
@@ -33,6 +35,7 @@
     </p>
     <p xml:lang="ca">El KLines és un joc d'un jugador senzill però molt addictiu.</p>
     <p xml:lang="ca-valencia">El KLines és un joc d'un jugador senzill però molt addictiu.</p>
+    <p xml:lang="es">KLines es un juego sencillo pero muy adictivo para un solo jugador.</p>
     <p xml:lang="gl">KLines é un xogo simple pero moi adictivo para unha persoa.</p>
     <p xml:lang="nl">KLines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
     <p xml:lang="pt">O KLines é um jogo simples, mas bastante viciante, para um único jogador.</p>
@@ -47,6 +50,7 @@
     </p>
     <p xml:lang="ca">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les a les línies del mateix color cada cinc. Un cop completada la línia, s'elimina del tauler, alliberant l'escàs espai. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment. omplint el tauler de joc.</p>
     <p xml:lang="ca-valencia">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les a les línies del mateix color cada cinc. Un cop completada la línia, s'elimina del tauler, alliberant l'escàs espai. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment. omplint el tauler de joc.</p>
+    <p xml:lang="es">El jugador tiene que mover las bolas de color por el tablero de juego, reuniéndolas en líneas de cinco del mismo color. Cuando se completa una línea, se elimina del tablero, liberando un espacio valioso. Al mismo tiempo, seguirán llegando tres nuevas bolas tras cada movimiento, rellenando el tablero de juego.</p>
     <p xml:lang="gl">O xogador ten de mover as bólas coloradas pola área de xogo, recolléndoas das liñas da mesma cor en grupos de cinco. Cando a liña está completa elimínase da área de xogo, liberando así un espazo necesario. Ao mesmo tempo, as bólas novas continúan a chegar en grupos de tres despois de cada xogada, enchendo a área de xogo.</p>
     <p xml:lang="nl">De speler verplaatst de gekleurde ballen op het speelbord en verzamelt ze daarbij per vijf op de lijnen van gelijke kleur. Nadat de lijn klaar is wordt deze van het bord verwijderd en maakt daarmee kostbare ruimte vrij. Op hetzelfde moment blijven er bij elke zet drie nieuwe ballen verschijnen, die het speelbord opvullen.</p>
     <p xml:lang="pt">O jogador tem de mover as bolas coloridas pelo tabuleiro do jogo, recolhendo-as  para as linhas da mesma cor em grupos de cinco. Assim que a linha estiver completa, é removida do tabuleiro, libertando assim espaço precioso. Ao mesmo tempo, começam a chegar bolas novas em grupos de três ao fim de cada jogada, preenchendo o tabuleiro do jogo.</p>
@@ -104,6 +108,7 @@
   <developer_name xml:lang="ast">La comunidá KDE</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
+  <developer_name xml:lang="es">La comunidad KDE</developer_name>
   <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
   <developer_name xml:lang="nl">De KDE gemeenschap</developer_name>
   <developer_name xml:lang="pt">A Comunidade do KDE</developer_name>
