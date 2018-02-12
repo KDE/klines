@@ -6,6 +6,7 @@
   <name>Kolor Lines</name>
   <name xml:lang="ca">Kolor Lines</name>
   <name xml:lang="ca-valencia">Kolor Lines</name>
+  <name xml:lang="de">Kolor Lines</name>
   <name xml:lang="es">Líneas de color</name>
   <name xml:lang="fi">Kolor Lines</name>
   <name xml:lang="fr">Kolor Lines</name>
@@ -22,6 +23,7 @@
   <summary>Tactical Game</summary>
   <summary xml:lang="ca">Joc de tàctica</summary>
   <summary xml:lang="ca-valencia">Joc de tàctica</summary>
+  <summary xml:lang="de">Kugeln entfernen</summary>
   <summary xml:lang="es">Juego de táctica</summary>
   <summary xml:lang="fi">Taktiikkapeli</summary>
   <summary xml:lang="fr">Jeu de tactique</summary>
@@ -120,6 +122,7 @@
   <developer_name xml:lang="ast">La comunidá KDE</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
+  <developer_name xml:lang="de">Die KDE-Gemeinschaft</developer_name>
   <developer_name xml:lang="es">La comunidad KDE</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">La communauté KDE</developer_name>
