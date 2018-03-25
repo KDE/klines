@@ -168,6 +168,7 @@ Comment[sv]=Taktikspel
 Comment[tr]=Taktik oyunu
 Comment[uk]=Тактична гра
 Comment[x-test]=xxTactical gamexx
+Comment[zh_TW]=戰術遊戲
 X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;StrategyGame;
 X-DBUS-ServiceName=org.kde.klines
