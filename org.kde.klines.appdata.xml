@@ -12,6 +12,7 @@
   <name xml:lang="fi">Kolor Lines</name>
   <name xml:lang="fr">Kolor Lines</name>
   <name xml:lang="gl">Liñas de kores</name>
+  <name xml:lang="it">Kolor Lines</name>
   <name xml:lang="nl">Kolor Lines</name>
   <name xml:lang="pl">Kolorowe linie</name>
   <name xml:lang="pt">Kolor Lines</name>
@@ -31,6 +32,7 @@
   <summary xml:lang="fi">Taktiikkapeli</summary>
   <summary xml:lang="fr">Jeu de tactique</summary>
   <summary xml:lang="gl">Xogo de táctica</summary>
+  <summary xml:lang="it">Gioco di tattica</summary>
   <summary xml:lang="nl">Tactisch spel</summary>
   <summary xml:lang="pl">Gra taktyczna</summary>
   <summary xml:lang="pt">Jogo Táctico</summary>
@@ -52,6 +54,7 @@
     <p xml:lang="fi">KLines on yksinkertainen mutta addiktoiva yhden pelaajan peli.</p>
     <p xml:lang="fr">KLInes est un jeu en solo simple mais très addictif.</p>
     <p xml:lang="gl">KLines é un xogo simple pero moi adictivo para unha persoa.</p>
+    <p xml:lang="it">KLines è un gioco semplice ma divertente, con un solo giocatore.</p>
     <p xml:lang="nl">KLines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
     <p xml:lang="pl">KLinie jest prostą, lecz wysoce uzależniającą grą pojedycznego gracza.</p>
     <p xml:lang="pt">O KLines é um jogo simples, mas bastante viciante, para um único jogador.</p>
@@ -72,6 +75,7 @@
     <p xml:lang="fi">Pelaaja siirtää värillisiä palloja pelilaudalla keräten samanvärisiä viiden suoria. Kun suora on valmis, se poistetaan laudalta, jolloin vapautuu arvokasta lautatilaa. Samaan aikaan joka siirrolla saapuu kolmen ryppäissä uusia palloja täyttämään pelilautaa.</p>
     <p xml:lang="fr">Le joueur doit déplacer des billes de couleur sur le plateau de jeu, en les regroupant cinq par cinq pour constituer des lignes d'une seule couleur. Une fois la ligne complète, elle est enlevée du plateau, ce qui libère de l'espace. Les nouvelles billes continuent à arriver trois par trois après chaque mouvement du joueur, remplissant le plateau au fur et à mesure.</p>
     <p xml:lang="gl">O xogador ten de mover as bólas coloradas pola área de xogo, recolléndoas das liñas da mesma cor en grupos de cinco. Cando a liña está completa elimínase da área de xogo, liberando así un espazo necesario. Ao mesmo tempo, as bólas novas continúan a chegar en grupos de tres despois de cada xogada, enchendo a área de xogo.</p>
+    <p xml:lang="it">Il giocatore deve spostare le palline colorate nell'area di gioco, raggruppandole in file di cinque palline dello stesso colore. Quando una linea viene completata viene rimossa, liberando spazio prezioso. Allo stesso tempo, nuove palline continuano ad arrivare: tre dopo ogni mossa, riempiendo l'area di gioco.</p>
     <p xml:lang="nl">De speler verplaatst de gekleurde ballen op het speelbord en verzamelt ze daarbij per vijf op de lijnen van gelijke kleur. Nadat de lijn klaar is wordt deze van het bord verwijderd en maakt daarmee kostbare ruimte vrij. Op hetzelfde moment blijven er bij elke zet drie nieuwe ballen verschijnen, die het speelbord opvullen.</p>
     <p xml:lang="pl">Gracz musi przemieszczać kolorowe kulki na polu gry, zgrupowując je w linie tej samej barwy w liczbie pięciu. W chwili ukończenia linii, są one usuwane z planszy, zwalniając przy tym cenne miejsce. W tym samym czasie na pole gry dochodzą trzy nowe kulki.</p>
     <p xml:lang="pt">O jogador tem de mover as bolas coloridas pelo tabuleiro do jogo, recolhendo-as  para as linhas da mesma cor em grupos de cinco. Assim que a linha estiver completa, é removida do tabuleiro, libertando assim espaço precioso. Ao mesmo tempo, começam a chegar bolas novas em grupos de três ao fim de cada jogada, preenchendo o tabuleiro do jogo.</p>
@@ -136,6 +140,7 @@
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">La communauté KDE</developer_name>
   <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
+  <developer_name xml:lang="it">La comunità KDE</developer_name>
   <developer_name xml:lang="nl">De KDE gemeenschap</developer_name>
   <developer_name xml:lang="pl">Społeczność KDE</developer_name>
   <developer_name xml:lang="pt">A Comunidade do KDE</developer_name>
