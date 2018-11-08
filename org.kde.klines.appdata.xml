@@ -128,7 +128,7 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=klines</url>
-  <url type="donation">https://www.kde.org/community/donations/</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=klines&amp;source=appdata</url>
   <url type="help">https://docs.kde.org/?application=klines</url>
   <url type="homepage">https://games.kde.org/game.php?game=klines</url>
   <screenshots>
