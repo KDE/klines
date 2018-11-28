@@ -268,9 +268,11 @@ void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
 
 void KLinesScene::selectOrMove( const FieldPos& fpos )
 {
+    if (fpos.x < 0 || fpos.y < 0) {
+        return;
+    }
     if( m_animator->isAnimating() )
         return;
-
     if( m_field[fpos.x][fpos.y] ) // ball was selected
     {
         if( m_selPos.isValid() )
