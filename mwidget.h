@@ -33,7 +33,7 @@ public:
     ~MainWidget();
 
     KLinesScene* scene() { return m_scene; }
-public slots:
+public Q_SLOTS:
     void setShowNextColors(bool);
 private:
     void resizeEvent( QResizeEvent* ) Q_DECL_OVERRIDE;

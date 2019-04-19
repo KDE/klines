@@ -95,7 +95,7 @@ public:
         return FieldPos(static_cast<int>(( p.x()-m_playFieldRect.x()-m_playFieldBorderSize )/m_cellSize),
                         static_cast<int>(( p.y()-m_playFieldRect.y()-m_playFieldBorderSize )/m_cellSize));
     }
-public slots:
+public Q_SLOTS:
     /**
      *  Starts new game
      */
@@ -128,11 +128,11 @@ public slots:
      *  Takes corresponding action on cell under focus rect
      */
     void cellSelected();
-signals:
+Q_SIGNALS:
     void scoreChanged(int);
     void stateChanged(const QString &);
     void gameOver(int);
-private slots:
+private Q_SLOTS:
     void moveAnimFinished();
     void removeAnimFinished();
     void bornAnimFinished();

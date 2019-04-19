@@ -74,11 +74,11 @@ public:
      * TODO: does nothing useful yet
      */
     void stopGameOverAnimation();
-signals:
+Q_SIGNALS:
     void moveFinished();
     void removeFinished();
     void bornFinished();
-private slots:
+private Q_SLOTS:
     void moveAnimationFrame(int);
     void removeAnimationFrame(int);
     void bornAnimationFrame(int);
