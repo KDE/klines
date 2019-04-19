@@ -30,7 +30,7 @@ MainWidget::MainWidget( QWidget* parent )
     , m_next_label( nullptr )
 {
     QBoxLayout *mainLay = new QHBoxLayout( this );
-    mainLay->setMargin( 0 );
+    mainLay->setContentsMargins( 0 ,  0 ,  0 ,  0 );
 
     m_scene = new KLinesScene(this);
     QGraphicsView* klview = new QGraphicsView( m_scene, this );
