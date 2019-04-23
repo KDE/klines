@@ -49,7 +49,7 @@ KLinesScene::KLinesScene( QObject* parent )
     connect(m_animator, &KLinesAnimator::removeFinished, this, &KLinesScene::removeAnimFinished);
     connect(m_animator, &KLinesAnimator::bornFinished, this, &KLinesScene::bornAnimFinished);
 
-    m_focusItem = new QGraphicsRectItem( QRectF(0, 0, m_cellSize, m_cellSize), 0);
+    m_focusItem = new QGraphicsRectItem( QRectF(0, 0, m_cellSize, m_cellSize), nullptr);
     m_focusItem->setZValue(1.0);
     m_focusItem->setPen( Qt::DashLine );
 
@@ -96,7 +96,7 @@ void KLinesScene::startNewGame()
 
     for(int x=0; x<FIELD_SIZE; ++x)
         for(int y=0; y<FIELD_SIZE; ++y)
-            m_field[x][y] = 0;
+            m_field[x][y] = nullptr;
 
     // init m_nextColors
     for(int i=0; i<3; i++)
@@ -233,7 +233,7 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
         // saveAndErase() after bornAnimFinished to check if
         // we have 5-in-a-row to erase
         m_numFreeCells = 0;
-        return 0; // game over, we won't create more balls
+        return nullptr; // game over, we won't create more balls
     }
 
     int posx = -1, posy = -1;
@@ -242,7 +242,7 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
     {
         posx = m_randomSeq.getLong(FIELD_SIZE);
         posy = m_randomSeq.getLong(FIELD_SIZE);
-    } while( m_field[posx][posy] != 0 );
+    } while( m_field[posx][posy] != nullptr );
 
     BallItem* newBall = new BallItem( this);
     newBall->setColor(c, false); // pixmap will be set by born animation
@@ -291,7 +291,7 @@ void KLinesScene::selectOrMove( const FieldPos& fpos )
     }
     else // move selected ball to new location
     {
-        if( m_selPos.isValid() && m_field[fpos.x][fpos.y] == 0 )
+        if( m_selPos.isValid() && m_field[fpos.x][fpos.y] == nullptr )
         {
             saveUndoInfo();
             // start move animation
@@ -316,7 +316,7 @@ void KLinesScene::moveAnimFinished()
     // movedBall has new pixel position - let's find out corresponding field pos
     FieldPos newpos = pixToField(movedBall->pos());
 
-    m_field[m_selPos.x][m_selPos.y] = 0; // no more ball here
+    m_field[m_selPos.x][m_selPos.y] = nullptr; // no more ball here
     m_field[newpos.x][newpos.y] = movedBall;
 
     m_selPos.x = m_selPos.y = -1; // invalidate position
@@ -408,7 +408,7 @@ void KLinesScene::searchAndErase()
     for(int x=0; x<FIELD_SIZE-4; ++x)
         for(int y=0;y<FIELD_SIZE; ++y)
         {
-            if(m_field[x][y] == 0)
+            if(m_field[x][y] == nullptr)
                 continue;
 
             BallColor col = m_field[x][y]->color();
@@ -431,7 +431,7 @@ void KLinesScene::searchAndErase()
     for(int y=0; y<FIELD_SIZE-4; ++y)
         for(int x=0;x<FIELD_SIZE; ++x)
         {
-            if(m_field[x][y] == 0)
+            if(m_field[x][y] == nullptr)
                 continue;
 
             BallColor col = m_field[x][y]->color();
@@ -454,7 +454,7 @@ void KLinesScene::searchAndErase()
     for(int x=0; x<FIELD_SIZE-4; ++x)
         for(int y=0;y<FIELD_SIZE-4; ++y)
         {
-            if(m_field[x][y] == 0)
+            if(m_field[x][y] == nullptr)
                 continue;
 
             BallColor col = m_field[x][y]->color();
@@ -482,7 +482,7 @@ void KLinesScene::searchAndErase()
     for(int x=0; x<FIELD_SIZE-4; ++x)
         for(int y=4; y<FIELD_SIZE; ++y)
         {
-            if(m_field[x][y] == 0)
+            if(m_field[x][y] == nullptr)
                 continue;
 
             BallColor col = m_field[x][y]->color();
@@ -509,7 +509,7 @@ void KLinesScene::searchAndErase()
     foreach( const FieldPos& pos, positionsToDelete )
     {
         m_itemsToDelete.append(m_field[pos.x][pos.y]);
-        m_field[pos.x][pos.y] = 0;
+        m_field[pos.x][pos.y] = nullptr;
         m_numFreeCells++;
     }
 
@@ -627,7 +627,7 @@ void KLinesScene::undo()
                 {
                     removeItem( m_field[x][y] );
                     delete m_field[x][y];
-                    m_field[x][y] = 0;
+                    m_field[x][y] = nullptr;
                 }
                 continue;
             }

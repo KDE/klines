@@ -60,7 +60,7 @@ int KLinesRenderer::m_selDuration(0);
 int KLinesRenderer::m_dieDuration(0);
 int KLinesRenderer::m_moveDuration(0);
 
-KLinesRenderer  *g_KLinesRenderer = NULL;
+KLinesRenderer  *g_KLinesRenderer = nullptr;
 
 void KLinesRenderer::Init()
 {

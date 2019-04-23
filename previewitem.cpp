@@ -26,7 +26,7 @@
 #include <QPainter>
 
 PreviewItem::PreviewItem( QGraphicsScene* scene )
-    : QGraphicsItem( 0 )
+    : QGraphicsItem( nullptr )
 {
     Q_UNUSED( scene );
 }

@@ -35,7 +35,7 @@ struct PathNode
     int G;
     float H;
     float F;
-    PathNode( const FieldPos& fpos, PathNode* p = 0, int g=0, int h=0 )
+    PathNode( const FieldPos& fpos, PathNode* p = nullptr, int g=0, int h=0 )
         : pos(fpos), parent(p), G(g), H(h), F(g+h) { }
 };
 
@@ -53,7 +53,7 @@ static inline int indexOfNodeWithPos( const FieldPos& pos, const QList<PathNode*
 }
 
 KLinesAnimator::KLinesAnimator( KLinesScene* scene )
-    : m_scene(scene), m_movingBall(0)
+    : m_scene(scene), m_movingBall(nullptr)
 {
     // timing & framing setup is done in corresponding animate* functions
 
@@ -199,7 +199,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 
     openList.append( new PathNode(from) );
 
-    PathNode *curNode=0;
+    PathNode *curNode=nullptr;
     bool pathFound = false;
     // see exit conditions at the end of while loop below
     while(true)
@@ -227,7 +227,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 
         foreach( const FieldPos &pos, adjacentSquares )
         {
-            if( m_scene->ballAt(pos) != 0 ) // skip non-walkable cells
+            if( m_scene->ballAt(pos) != nullptr ) // skip non-walkable cells
                 continue;
 
             // skip if closed list contains this square
@@ -300,7 +300,7 @@ void KLinesAnimator::startGameOverAnimation()
     blockSignals(true);
     QList<BallItem*> balls;
     QList<QGraphicsItem*> items = m_scene->items();
-    BallItem *ball=0;
+    BallItem *ball=nullptr;
     foreach( QGraphicsItem* item, items )
     {
         ball = qgraphicsitem_cast<BallItem*>(item);

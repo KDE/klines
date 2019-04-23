@@ -27,7 +27,7 @@
 #include <KGameRenderer>
 
 BallItem::BallItem( QGraphicsScene* parent )
-  : KGameRenderedItem(KLinesRenderer::renderer() , QString(), NULL)
+  : KGameRenderedItem(KLinesRenderer::renderer() , QString(), nullptr)
 {
     parent->addItem(this);
     setShapeMode( BoundingRectShape );
