@@ -15,6 +15,7 @@
   <name xml:lang="gl">Liñas de kores</name>
   <name xml:lang="id">Kolor Lines</name>
   <name xml:lang="it">Kolor Lines</name>
+  <name xml:lang="ko">Kolor Lines</name>
   <name xml:lang="nl">Kolor Lines</name>
   <name xml:lang="nn">Fargelinjer</name>
   <name xml:lang="pl">Kolorowe linie</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="gl">Xogo de táctica</summary>
   <summary xml:lang="id">Permainan Taktik</summary>
   <summary xml:lang="it">Gioco di tattica</summary>
+  <summary xml:lang="ko">전략 게임</summary>
   <summary xml:lang="nl">Tactisch spel</summary>
   <summary xml:lang="nn">Taktisk spel</summary>
   <summary xml:lang="pl">Gra taktyczna</summary>
@@ -65,6 +67,7 @@
     <p xml:lang="gl">KLines é un xogo simple pero moi adictivo para unha persoa.</p>
     <p xml:lang="id">KLines adalah sebuah permainan satu pemain yang sederhana namun menagihkan</p>
     <p xml:lang="it">KLines è un gioco semplice ma divertente, con un solo giocatore.</p>
+    <p xml:lang="ko">KLines는 간단하면서도 머리를 쓰는 1인용 게임입니다.</p>
     <p xml:lang="nl">KLines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
     <p xml:lang="nn">KLines er eit enkelt men vanedannande spel for éin spelar.</p>
     <p xml:lang="pl">KLinie jest prostą, lecz wysoce uzależniającą grą pojedycznego gracza.</p>
@@ -89,6 +92,7 @@
     <p xml:lang="gl">O xogador ten de mover as bólas coloradas pola área de xogo, recolléndoas das liñas da mesma cor en grupos de cinco. Cando a liña está completa elimínase da área de xogo, liberando así un espazo necesario. Ao mesmo tempo, as bólas novas continúan a chegar en grupos de tres despois de cada xogada, enchendo a área de xogo.</p>
     <p xml:lang="id">Pemain harus memindahkan bola berwarna di sekitar papan permainan, mengumpulkan bola ke garis dengan lima warna yang sama. Setelah baris sudah lengkap ia terhapus dari papan, dengan begitu membebaskan ruang yang berharga. Di saat yang sama bola baru terus berdatangan tiga buah setelah setiap langkah, mengisi papan permainan."</p>
     <p xml:lang="it">Il giocatore deve spostare le palline colorate nell'area di gioco, raggruppandole in file di cinque palline dello stesso colore. Quando una linea viene completata viene rimossa, liberando spazio prezioso. Allo stesso tempo, nuove palline continuano ad arrivare: tre dopo ogni mossa, riempiendo l'area di gioco.</p>
+    <p xml:lang="ko">플레이어는 게임 판에 있는 색깔 있는 공을 움직여야 하며, 같은 색 공을 일렬로 다섯 개 모아서 줄을 없애야 합니다. 공의 위치를 바꿀 때 새로운 공이 게임 판에 나타납니다.</p>
     <p xml:lang="nl">De speler verplaatst de gekleurde ballen op het speelbord en verzamelt ze daarbij per vijf op de lijnen van gelijke kleur. Nadat de lijn klaar is wordt deze van het bord verwijderd en maakt daarmee kostbare ruimte vrij. Op hetzelfde moment blijven er bij elke zet drie nieuwe ballen verschijnen, die het speelbord opvullen.</p>
     <p xml:lang="pl">Gracz musi przemieszczać kolorowe kulki na polu gry, zgrupowując je w linie tej samej barwy w liczbie pięciu. W chwili ukończenia linii, są one usuwane z planszy, zwalniając przy tym cenne miejsce. W tym samym czasie na pole gry dochodzą trzy nowe kulki.</p>
     <p xml:lang="pt">O jogador tem de mover as bolas coloridas pelo tabuleiro do jogo, recolhendo-as  para as linhas da mesma cor em grupos de cinco. Assim que a linha estiver completa, é removida do tabuleiro, libertando assim espaço precioso. Ao mesmo tempo, começam a chegar bolas novas em grupos de três ao fim de cada jogada, preenchendo o tabuleiro do jogo.</p>
@@ -155,6 +159,7 @@
   <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">La comunità KDE</developer_name>
+  <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">De KDE gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
   <developer_name xml:lang="pl">Społeczność KDE</developer_name>
