@@ -24,7 +24,6 @@
 #include "renderer.h"
 
 #include <QGraphicsScene>
-#include <KGameRenderer>
 
 BallItem::BallItem( QGraphicsScene* parent )
   : KGameRenderedItem(KLinesRenderer::renderer() , QString(), nullptr)

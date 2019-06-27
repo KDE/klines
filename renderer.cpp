@@ -25,7 +25,6 @@
 #include <KGameRenderer>
 #include <KgThemeProvider>
 
-#include <QFileInfo>
 
 // note: this should be in sync with svg
 static inline char color2char(BallColor col)
