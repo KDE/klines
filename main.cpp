@@ -42,7 +42,7 @@ int main( int argc, char **argv )
     
     KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral("1.6"),
                          i18n(description), KAboutLicense::GPL,
-                         i18n("(c) 2000-2015 The KLines Authors"), QString(), QStringLiteral("http://games.kde.org/klines"));
+                         i18n("(c) 2000-2015 The KLines Authors"), QString(), QStringLiteral("https://kde.org/applications/games/org.kde.klines"));
     aboutData.addAuthor(i18n("Roman Merzlyakov"), i18n("Original author"), QStringLiteral("roman@sbrf.barrt.ru"));
     aboutData.addAuthor(i18n("Roman Razilov"), i18n("Rewrite and Extension"), QStringLiteral("Roman.Razilov@gmx.de"));
     aboutData.addAuthor(i18n("Dmitry Suzdalev"), i18n("Rewrite to use QGraphicsView. Current maintainer"), QStringLiteral("dimsuz@gmail.com"));

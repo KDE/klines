@@ -190,7 +190,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
 {
     // Implementation of A* pathfinding algorithm
     // Thanks to Patrick Lester for excellent tutorial on gamedev.net.
-    // See http://www.gamedev.net/reference/articles/article2003.asp
+    // See https://www.gamedev.net/articles/programming/artificial-intelligence/a-pathfinding-for-beginners-r2003/
 
     QList<PathNode*> openList;
     QList<PathNode*> closedList;
@@ -204,7 +204,7 @@ void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
     // see exit conditions at the end of while loop below
     while(true)
     {
-        // find the square with lowes F(=G+H) on the open list
+        // find the square with lowest F(=G+H) on the open list
         PathNode *minF = openList.at(0);
         for(int i=1; i<openList.count(); ++i)
             if( openList.at(i)->F < minF->F )
