@@ -29,7 +29,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 #include <QSet>
-#include <QDebug>
+#include "klines_debug.h"
 
 #include <KGamePopupItem>
 #include <KLocalizedString>
@@ -173,7 +173,7 @@ void KLinesScene::resizeScene(int width,int height)
     m_previewItem->setPos( previewOriginX, previewOriginY );
     m_previewItem->setPreviewColors( m_nextColors );
 
-    //qDebug() << "resize:" << width << "," << height << "; cellSize:" << m_cellSize;
+    //qCDebug(KLINES_LOG) << "resize:" << width << "," << height << "; cellSize:" << m_cellSize;
 }
 
 void KLinesScene::endTurn()
@@ -683,7 +683,7 @@ void KLinesScene::gameOverHandler()
     if( m_gameOver )
         return; // don't emit twice
     m_gameOver = true;
-    qDebug() << "GAME OVER";
+    qCDebug(KLINES_LOG) << "GAME OVER";
     emit stateChanged(QStringLiteral( "not_undoable" ));
     //emit enableUndo(false);
     emit gameOver(m_score);

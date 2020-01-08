@@ -29,6 +29,7 @@ include(ECMInstallIcons)
 include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
+include(ECMQtDeclareLoggingCategory)
 if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
    add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
    add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000)
@@ -48,7 +49,7 @@ set(klines_SRCS
    previewitem.cpp
    animator.cpp
 )
-   
+ecm_qt_declare_logging_category(klines_SRCS HEADER klines_debug.h IDENTIFIER KLINES_LOG CATEGORY_NAME org.kde.kdegames.klines) 
 qt5_add_resources(klines_SRCS klines.qrc)
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-klines.png")
@@ -81,5 +82,5 @@ ecm_install_icons(ICONS
     DESTINATION ${KDE_INSTALL_ICONDIR}
     THEME hicolor
 )
-
+install( FILES klines.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR} )
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
