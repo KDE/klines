@@ -76,6 +76,7 @@ void KLinesMainWindow::setupActions()
   KStandardGameAction::gameNew(this, SLOT(startGame()), actionCollection());
   KStandardGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+  KStandardGameAction::end(mwidget->scene(), SLOT(endGame()), actionCollection());
 
   // Move
   KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), actionCollection());

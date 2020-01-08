@@ -101,6 +101,10 @@ public Q_SLOTS:
      */
     void startNewGame();
     /**
+     * Ends game
+     */
+    void endGame();
+    /**
      *  Ends current and starts next turn explicitly
      */
     void endTurn();

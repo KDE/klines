@@ -116,6 +116,12 @@ KLinesScene::~KLinesScene()
     delete m_animator;
 }
 
+
+void KLinesScene::endGame()
+{
+    gameOverHandler();
+}
+
 void KLinesScene::resizeScene(int width,int height)
 {
     // store focus item field pos (calculated using old cellSize)
