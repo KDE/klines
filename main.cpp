@@ -28,6 +28,7 @@
 #include <QCommandLineParser>
 #include <KDBusService>
 #include "klines.h"
+#include "klines_version.h"
 
 static const char description[] = I18N_NOOP("Kolor Lines - a little game about balls and how to get rid of them");
 
@@ -40,7 +41,7 @@ int main( int argc, char **argv )
     migrate.migrate();
     KLocalizedString::setApplicationDomain("klines");
     
-    KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral("1.6"),
+    KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral(KLINES_VERSION_STRING),
                          i18n(description), KAboutLicense::GPL,
                          i18n("(c) 2000-2015 The KLines Authors"), QString(), QStringLiteral("https://kde.org/applications/games/org.kde.klines"));
     aboutData.addAuthor(i18n("Roman Merzlyakov"), i18n("Original author"), QStringLiteral("roman@sbrf.barrt.ru"));

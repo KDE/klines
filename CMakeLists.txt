@@ -1,6 +1,13 @@
-project(klines)
-
 cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
+
+set (RELEASE_SERVICE_VERSION_MAJOR "20")
+set (RELEASE_SERVICE_VERSION_MINOR "03")
+set (RELEASE_SERVICE_VERSION_MICRO "70")
+set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
+set (RELEASE_SERVICE_COMPACT_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}${RELEASE_SERVICE_VERSION_MINOR}${RELEASE_SERVICE_VERSION_MICRO}")
+
+project(klines VERSION "1.6.${RELEASE_SERVICE_COMPACT_VERSION}")
+
 set (QT_MIN_VERSION "5.9.0")
 set (KF5_MIN_VERSION "5.46.0")
 
@@ -27,6 +34,7 @@ include(FeatureSummary)
 include(ECMAddAppIcon)
 include(ECMInstallIcons)
 include(KDEInstallDirs)
+include(ECMSetupVersion)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMQtDeclareLoggingCategory)
@@ -49,6 +57,7 @@ set(klines_SRCS
    previewitem.cpp
    animator.cpp
 )
+ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX KLINES VERSION_HEADER klines_version.h)
 ecm_qt_declare_logging_category(klines_SRCS HEADER klines_debug.h IDENTIFIER KLINES_LOG CATEGORY_NAME org.kde.kdegames.klines) 
 qt5_add_resources(klines_SRCS klines.qrc)
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
