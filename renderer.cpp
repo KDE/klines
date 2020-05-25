@@ -126,7 +126,7 @@ QPixmap KLinesRenderer::backgroundTilePixmap()
     return getPixmap(QStringLiteral("field_cell"));
 }
 
-QPixmap KLinesRenderer::backgroundPixmap(const QSize& size)
+QPixmap KLinesRenderer::backgroundPixmap(QSize size)
 {
     return getPixmap(QStringLiteral("background"), size);
 }
@@ -160,7 +160,7 @@ void KLinesRenderer::setCellSize(int cellSize)
     m_cellSize = cellSize;
 }
 
-QPixmap KLinesRenderer::getPixmap(const QString& svgName, const QSize& customSize)
+QPixmap KLinesRenderer::getPixmap(const QString& svgName, QSize customSize)
 {
     if (m_cellSize == 0)
         return QPixmap();
@@ -172,7 +172,7 @@ QPixmap KLinesRenderer::getPixmap(const QString& svgName, const QSize& customSiz
     return pix;
 }
 
-QPixmap KLinesRenderer::backgroundBorderPixmap(const QSize& size)
+QPixmap KLinesRenderer::backgroundBorderPixmap(QSize size)
 {
     if (!hasBorderElement())
         return QPixmap();

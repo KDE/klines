@@ -34,7 +34,7 @@
 #include <KGamePopupItem>
 #include <KLocalizedString>
 
-inline uint qHash( const FieldPos& pos )
+inline uint qHash( FieldPos pos )
 {
     return qHash( QPair<int,int>(pos.x,pos.y) );
 }
@@ -272,7 +272,7 @@ void KLinesScene::mousePressEvent( QGraphicsSceneMouseEvent* ev )
     selectOrMove( pixToField(ev->scenePos()) );
 }
 
-void KLinesScene::selectOrMove( const FieldPos& fpos )
+void KLinesScene::selectOrMove( FieldPos fpos )
 {
     if (fpos.x < 0 || fpos.y < 0) {
         return;

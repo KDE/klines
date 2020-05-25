@@ -45,7 +45,7 @@ public:
      *
      *  @return true is there exists a path (from,to), false otherwise
      */
-    bool animateMove( const FieldPos& from, const FieldPos& to );
+    bool animateMove(FieldPos from, FieldPos to );
     /**
      *  Starts animation of ball deletion from field.
      *  Note that it doesn't do actual deletion - it just runs
@@ -88,7 +88,7 @@ private:
     /**
      *  Implements A* pathfinding algorithm.
      */
-    void findPath(const FieldPos& from, const FieldPos& to);
+    void findPath(FieldPos from, FieldPos to);
     /**
      *  Timeline used to control movement animation
      */

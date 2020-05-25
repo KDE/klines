@@ -74,7 +74,7 @@ public:
      *  Returns ballitem in field position pos or 0 if there
      *  is no item there
      */
-    BallItem* ballAt( const FieldPos& pos ) { return m_field[pos.x][pos.y]; }
+    BallItem* ballAt( FieldPos pos ) { return m_field[pos.x][pos.y]; }
     /**
      * Overloaded above function
      */
@@ -82,7 +82,7 @@ public:
     /**
      *  Field coords to pixel coords
      */
-    inline QPointF fieldToPix(const FieldPos& fpos) const
+    inline QPointF fieldToPix(FieldPos fpos) const
     {
         return QPointF( m_playFieldRect.x() + m_playFieldBorderSize + fpos.x*m_cellSize,
                         m_playFieldRect.y() + m_playFieldBorderSize + fpos.y*m_cellSize );
@@ -90,7 +90,7 @@ public:
     /**
      *  Pixel coords to field coords
      */
-    inline FieldPos pixToField( const QPointF& p ) const
+    inline FieldPos pixToField( QPointF p ) const
     {
         return FieldPos(static_cast<int>(( p.x()-m_playFieldRect.x()-m_playFieldBorderSize )/m_cellSize),
                         static_cast<int>(( p.y()-m_playFieldRect.y()-m_playFieldBorderSize )/m_cellSize));
@@ -158,7 +158,7 @@ private:
      *  a selected ball in some other cell it will be moved to fpos
      *  (if the move is possible, of course)
      */
-    void selectOrMove( const FieldPos& fpos );
+    void selectOrMove(FieldPos fpos );
     /**
      *  Saves game state information to be used during undo
      */

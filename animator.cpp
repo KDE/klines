@@ -35,7 +35,7 @@ struct PathNode
     int G;
     float H;
     float F;
-    PathNode( const FieldPos& fpos, PathNode* p = nullptr, int g=0, int h=0 )
+    PathNode( FieldPos fpos, PathNode* p = nullptr, int g=0, int h=0 )
         : pos(fpos), parent(p), G(g), H(h), F(g+h) { }
 };
 
@@ -43,7 +43,7 @@ struct PathNode
 // returns:
 //         -1 - if position not found
 //         index of node in list if position is found
-static inline int indexOfNodeWithPos( const FieldPos& pos, const QList<PathNode*>& list )
+static inline int indexOfNodeWithPos( FieldPos pos, const QList<PathNode*>& list )
 {
     for(int i=0;i<list.count(); ++i)
         if( list.at(i)->pos == pos )
@@ -76,7 +76,7 @@ bool KLinesAnimator::isAnimating() const
             || m_removeTimeLine.state() == QTimeLine::Running);
 }
 
-bool KLinesAnimator::animateMove( const FieldPos& from, const FieldPos& to )
+bool KLinesAnimator::animateMove( FieldPos from, FieldPos to )
 {
     findPath(from, to);
 
@@ -186,7 +186,7 @@ void KLinesAnimator::bornAnimationFrame(int frame)
                                                                  ball->color(), frame) );
 }
 
-void KLinesAnimator::findPath( const FieldPos& from, const FieldPos& to )
+void KLinesAnimator::findPath( FieldPos from, FieldPos to )
 {
     // Implementation of A* pathfinding algorithm
     // Thanks to Patrick Lester for excellent tutorial on gamedev.net.

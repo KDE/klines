@@ -68,14 +68,14 @@ public:
     /**
      * @return pixmap for background painting.
      */
-    static QPixmap backgroundPixmap(const QSize& size);
+    static QPixmap backgroundPixmap(QSize size);
     /**
      * @return pixmap for border surrounding the play field.
      * Will return an invalid QPixmap if no such element exists
      * in theme's svg file.
      * @see hasBorderElement
      */
-    static QPixmap backgroundBorderPixmap(const QSize& size);
+    static QPixmap backgroundBorderPixmap(QSize size);
     /**
      * @return pixmap of background tile (cell)
      */
@@ -152,7 +152,7 @@ private:
      *
      * @return rendered pixmap
      */
-    static QPixmap getPixmap(const QString& svgName, const QSize& customSize = QSize());
+    static QPixmap getPixmap(const QString& svgName, QSize customSize = QSize());
 
     /**
      *  This is the size of the scene's cell.
