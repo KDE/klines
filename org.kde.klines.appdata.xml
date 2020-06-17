@@ -26,7 +26,6 @@
   <name xml:lang="sl">Kolor Lines</name>
   <name xml:lang="sv">Färglinjer</name>
   <name xml:lang="uk">Кольорові лінії</name>
-  <name xml:lang="x-test">xxKolor Linesxx</name>
   <name xml:lang="zh-CN">Kolor Lines</name>
   <name xml:lang="zh-TW">Kolor Lines 彩色線條</name>
   <summary>Tactical Game</summary>
@@ -52,7 +51,6 @@
   <summary xml:lang="sl">Strateška igra</summary>
   <summary xml:lang="sv">Taktikspel</summary>
   <summary xml:lang="uk">Тактична гра</summary>
-  <summary xml:lang="x-test">xxTactical Gamexx</summary>
   <summary xml:lang="zh-CN">战术游戏</summary>
   <summary xml:lang="zh-TW">戰術遊戲</summary>
   <description>
@@ -80,7 +78,6 @@
     <p xml:lang="sl">KLines je preprosta, a zasvojljiva enoigralska igra.</p>
     <p xml:lang="sv">Färglinjer är ett enkelt men mycket vanebildande spel för en spelare.</p>
     <p xml:lang="uk">KLines — проста, але дуже захоплива гра для одного гравця.</p>
-    <p xml:lang="x-test">xxKLines is a simple but highly addictive one player game.xx</p>
     <p>
      The player has to move the colored balls around the game board, gathering them into the lines of the same color by five.
      Once the line is complete it is removed from the board, therefore freeing precious space. 
@@ -107,7 +104,6 @@
     <p xml:lang="sl">Igralec mora po igralni površini premikati barvne žogice in jih postavljati v enakobarvne vrste po pet ali več žogic. Ko je vrstica dopolnjena, je odstranjena iz igralne površine, pri tem pa se sprosti dragocen prostor. Sočasno s premikanjem se na površini pojavljajo po tri nove žogice naenkrat, ki polnijo prazen prostor na igralni površini.</p>
     <p xml:lang="sv">Spelaren ska flytta omkring de färgade bollarna på spelbrädet, och samla fem av samma färg i en linje. När en linje är färdig tas den bort från brädet, och frigör därför dyrbart utrymme. På samma gång anländer tre nya bollar åt gången efter varje drag, och fyller upp spelbrädet.</p>
     <p xml:lang="uk">Гравцеві слід пересувати кольорові кульки ігровою дошкою, збираючи їх по п’ять у рядки однакового кольору. Після утворення такого рядка всі кульки з нього буде вилучено і таким чином на дошці звільниться місце. Також після кожного ходу на дошці з’являтимуться три нових кульки, які зменшуватимуть вільне місце на ній.</p>
-    <p xml:lang="x-test">xxThe player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.xx</p>
   </description>
   <categories>
     <category>Qt</category>
@@ -178,7 +174,6 @@
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
-  <developer_name xml:lang="x-test">xxThe KDE Communityxx</developer_name>
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
   <developer_name xml:lang="zh-TW">KDE 社群</developer_name>
   <provides>
