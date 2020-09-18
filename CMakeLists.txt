@@ -89,4 +89,7 @@ ecm_install_icons(ICONS
     THEME hicolor
 )
 install( FILES klines.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR} )
+
+ki18n_install(po)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
