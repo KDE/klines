@@ -123,8 +123,9 @@ void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
 void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 {
     m_bornBalls = list;
-    foreach(BallItem* ball, m_bornBalls)
+    for (BallItem* ball : qAsConst(m_bornBalls)) {
         ball->setRenderSize(KLinesRenderer::cellExtent());
+    }
 
     // called here (not in constructor), to stay in sync in case theme's reloaded
     m_bornTimeLine.setDuration(KLinesRenderer::animDuration(KLinesRenderer::BornAnim));
@@ -174,16 +175,18 @@ void KLinesAnimator::removeAnimationFrame(int frame)
 {
     if(frame == KLinesRenderer::frameCount(KLinesRenderer::DieAnim))
         return;
-    foreach(BallItem* ball, m_removedBalls)
+    for (BallItem* ball : qAsConst(m_removedBalls)) {
 	ball->setSpriteKey(KLinesRenderer::animationFrameId( KLinesRenderer::DieAnim,
                                                                  ball->color(), frame) );
+    }
 }
 
 void KLinesAnimator::bornAnimationFrame(int frame)
 {
-    foreach(BallItem* ball, m_bornBalls)
+    for (BallItem* ball : qAsConst(m_bornBalls)) {
         ball->setSpriteKey( KLinesRenderer::animationFrameId( KLinesRenderer::BornAnim,
                                                                  ball->color(), frame) );
+    }
 }
 
 void KLinesAnimator::findPath( FieldPos from, FieldPos to )
@@ -225,8 +228,7 @@ void KLinesAnimator::findPath( FieldPos from, FieldPos to )
         if( x != FIELD_SIZE-1 ) adjacentSquares.append( FieldPos(x+1,y) );
         if( y != FIELD_SIZE-1 ) adjacentSquares.append( FieldPos(x,y+1) );
 
-        foreach( const FieldPos &pos, adjacentSquares )
-        {
+        for (const FieldPos &pos : qAsConst(adjacentSquares)) {
             if( m_scene->ballAt(pos) != nullptr ) // skip non-walkable cells
                 continue;
 
@@ -258,7 +260,7 @@ void KLinesAnimator::findPath( FieldPos from, FieldPos to )
                     node->F = node->G + node->H;
                 }
             }
-        } // foreach
+        } // for
 
         // exit conditions:
         // a) if closeList contains "to"
@@ -299,10 +301,9 @@ void KLinesAnimator::startGameOverAnimation()
 {
     blockSignals(true);
     QList<BallItem*> balls;
-    QList<QGraphicsItem*> items = m_scene->items();
+    const QList<QGraphicsItem*> items = m_scene->items();
     BallItem *ball=nullptr;
-    foreach( QGraphicsItem* item, items )
-    {
+    for (QGraphicsItem* item : items) {
         ball = qgraphicsitem_cast<BallItem*>(item);
         if(ball)
             balls.append(ball);
@@ -317,8 +318,9 @@ void KLinesAnimator::stopGameOverAnimation()
 
 void KLinesAnimator::slotBornFinished()
 {
-    foreach(BallItem* ball, m_bornBalls)
+    for (BallItem* ball : qAsConst(m_bornBalls)) {
 	ball->setColor(ball->color(), true);
+    }
     emit bornFinished();
 }
 

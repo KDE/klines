@@ -39,6 +39,11 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMQtDeclareLoggingCategory)
 
+
+if (${KF5Config_VERSION} VERSION_GREATER "5.56.0")
+    add_definitions(-DQT_NO_FOREACH)
+endif()
+
 add_subdirectory(themes)
 add_subdirectory(doc)
 

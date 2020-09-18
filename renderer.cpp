@@ -76,8 +76,8 @@ KLinesRenderer::KLinesRenderer()
     KgThemeProvider* provider = new KgThemeProvider;
     provider->discoverThemes("appdata", QStringLiteral("themes"));
     //the default theme is marked with a key "Default=true"
-    foreach (const KgTheme* theme, provider->themes())
-    {
+    const auto themes = provider->themes();
+    for (const KgTheme* theme : themes) {
         if (theme->customData(QStringLiteral("Default")) == QLatin1String("true"))
         {
             provider->setDefaultTheme(theme);

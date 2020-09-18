@@ -84,9 +84,8 @@ void KLinesScene::startNewGame()
     m_popupItem->forceHide();
 
     // remove all ball items from the scene leaving other items untouched
-    QList<QGraphicsItem*> itemlist = items();
-    foreach( QGraphicsItem* item, itemlist )
-    {
+    const QList<QGraphicsItem*> itemlist = items();
+    for (QGraphicsItem* item : itemlist) {
         BallItem* ball = qgraphicsitem_cast<BallItem*>(item);
         if( ball )
         {
@@ -365,8 +364,7 @@ void KLinesScene::removeAnimFinished()
             m_score += m_bonusScore;
         }
 
-        foreach( BallItem* item, m_itemsToDelete )
-        {
+        for (BallItem* item : qAsConst(m_itemsToDelete)) {
             removeItem(item);
             delete item;
         }
@@ -513,8 +511,7 @@ void KLinesScene::searchAndErase()
                 continue;
         }
 
-    foreach( const FieldPos& pos, positionsToDelete )
-    {
+    for (const FieldPos& pos : qAsConst(positionsToDelete)) {
         m_itemsToDelete.append(m_field[pos.x][pos.y]);
         m_field[pos.x][pos.y] = nullptr;
         m_numFreeCells++;
