@@ -106,7 +106,7 @@ void KLinesScene::startNewGame()
         m_nextColors.append(c);
     }
 
-    emit stateChanged(QStringLiteral( "not_undoable" ));
+    Q_EMIT stateChanged(QStringLiteral( "not_undoable" ));
 
     nextThreeBalls();
 }
@@ -371,7 +371,7 @@ void KLinesScene::removeAnimFinished()
         m_itemsToDelete.clear();
 
         if(numBallsErased)
-            emit scoreChanged(m_score);
+            Q_EMIT scoreChanged(m_score);
     }
 }
 
@@ -607,7 +607,7 @@ void KLinesScene::saveUndoInfo()
     m_undoInfo.score = m_score;
     m_undoInfo.nextColors = m_nextColors;
 
-    emit stateChanged(QStringLiteral( "undoable" ));
+    Q_EMIT stateChanged(QStringLiteral( "undoable" ));
 }
 
 // Brings m_field and some other vars to the state it was before last turn
@@ -660,9 +660,9 @@ void KLinesScene::undo()
 
     m_previewItem->setPreviewColors( m_nextColors );
 
-    emit scoreChanged(m_score);
+    Q_EMIT scoreChanged(m_score);
 
-    emit stateChanged(QStringLiteral( "not_undoable" ));
+    Q_EMIT stateChanged(QStringLiteral( "not_undoable" ));
 }
 
 void KLinesScene::drawBackground(QPainter *p, const QRectF&)
@@ -688,9 +688,9 @@ void KLinesScene::gameOverHandler()
         return; // don't emit twice
     m_gameOver = true;
     qCDebug(KLINES_LOG) << "GAME OVER";
-    emit stateChanged(QStringLiteral( "not_undoable" ));
-    //emit enableUndo(false);
-    emit gameOver(m_score);
+    Q_EMIT stateChanged(QStringLiteral( "not_undoable" ));
+    //Q_EMIT enableUndo(false);
+    Q_EMIT gameOver(m_score);
 
     // disable auto-hide
     m_popupItem->setMessageTimeout(0);

@@ -104,7 +104,7 @@ void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
 
     if(list.isEmpty())
     {
-        emit removeFinished();
+        Q_EMIT removeFinished();
         return;
     }
 
@@ -321,7 +321,7 @@ void KLinesAnimator::slotBornFinished()
     for (BallItem* ball : qAsConst(m_bornBalls)) {
 	ball->setColor(ball->color(), true);
     }
-    emit bornFinished();
+    Q_EMIT bornFinished();
 }
 
 

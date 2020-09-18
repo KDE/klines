@@ -40,6 +40,9 @@ include(KDECMakeSettings)
 include(ECMQtDeclareLoggingCategory)
 
 
+add_definitions(
+    -DQT_NO_KEYWORDS
+)
 if (${KF5Config_VERSION} VERSION_GREATER "5.56.0")
     add_definitions(-DQT_NO_FOREACH)
 endif()
