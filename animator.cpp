@@ -60,11 +60,11 @@ KLinesAnimator::KLinesAnimator( KLinesScene* scene )
     connect(&m_moveTimeLine, &QTimeLine::frameChanged, this, &KLinesAnimator::moveAnimationFrame);
     connect(&m_moveTimeLine, &QTimeLine::finished, this, &KLinesAnimator::moveFinished);
 
-    m_removeTimeLine.setCurveShape(QTimeLine::LinearCurve);
+    m_removeTimeLine. setEasingCurve(QEasingCurve::Linear);
     connect(&m_removeTimeLine, &QTimeLine::frameChanged, this, &KLinesAnimator::removeAnimationFrame);
     connect(&m_removeTimeLine, &QTimeLine::finished, this, &KLinesAnimator::removeFinished);
 
-    m_bornTimeLine.setCurveShape(QTimeLine::LinearCurve);
+    m_bornTimeLine. setEasingCurve(QEasingCurve::Linear);
     connect(&m_bornTimeLine, &QTimeLine::frameChanged, this, &KLinesAnimator::bornAnimationFrame);
     connect(&m_bornTimeLine, &QTimeLine::finished, this, &KLinesAnimator::slotBornFinished);
 }
