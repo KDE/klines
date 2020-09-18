@@ -24,8 +24,7 @@
 #define KL_SCENE_H
 
 #include <QGraphicsScene>
-
-#include <KRandomSequence>
+#include <QRandomGenerator>
 
 #include "commondefs.h"
 
@@ -185,7 +184,7 @@ private:
     /**
      * We need random numbers in this game
      */
-    KRandomSequence m_randomSeq;
+    QRandomGenerator m_randomSeq;
     /**
      * Area of playfield (with border included - if any exists in theme)
      */

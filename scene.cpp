@@ -41,6 +41,7 @@ inline uint qHash( FieldPos pos )
 
 KLinesScene::KLinesScene( QObject* parent )
     : QGraphicsScene(parent),
+      m_randomSeq(QRandomGenerator::global()->generate()),
       m_playFieldBorderSize(0), m_numFreeCells(FIELD_SIZE*FIELD_SIZE),
       m_score(0), m_bonusScore(0), m_cellSize(32), m_previewZoneVisible(true)
 {
@@ -102,7 +103,7 @@ void KLinesScene::startNewGame()
     for(int i=0; i<3; i++)
     {
         // random color
-        BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
+        BallColor c = static_cast<BallColor>(m_randomSeq.bounded(static_cast<int>(NumColors)));
         m_nextColors.append(c);
     }
 
@@ -210,7 +211,7 @@ void KLinesScene::nextThreeBalls()
     for(int i=0; i<3; i++)
     {
         // random color
-        BallColor c = static_cast<BallColor>(m_randomSeq.getLong(static_cast<int>(NumColors)));
+        BallColor c = static_cast<BallColor>(m_randomSeq.bounded(static_cast<int>(NumColors)));
         m_nextColors[i] = c;
     }
 
@@ -246,8 +247,8 @@ BallItem* KLinesScene::randomlyPlaceBall(BallColor c)
     // let's find random free cell
     do
     {
-        posx = m_randomSeq.getLong(FIELD_SIZE);
-        posy = m_randomSeq.getLong(FIELD_SIZE);
+        posx = m_randomSeq.bounded(FIELD_SIZE);
+        posy = m_randomSeq.bounded(FIELD_SIZE);
     } while( m_field[posx][posy] != nullptr );
 
     BallItem* newBall = new BallItem( this);
