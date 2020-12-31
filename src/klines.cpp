@@ -61,14 +61,14 @@ KLinesMainWindow::~KLinesMainWindow()
 void KLinesMainWindow::setupActions()
 {
   // Game
-  KStandardGameAction::gameNew(this, SLOT(startGame()), actionCollection());
-  KStandardGameAction::highscores(this, SLOT(viewHighScore()), actionCollection());
-  KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-  KStandardGameAction::end(mwidget->scene(), SLOT(endGame()), actionCollection());
+  KStandardGameAction::gameNew(this, &KLinesMainWindow::startGame, actionCollection());
+  KStandardGameAction::highscores(this, &KLinesMainWindow::viewHighScore, actionCollection());
+  KStandardGameAction::quit(this, &QWidget::close, actionCollection());
+  KStandardGameAction::end(mwidget->scene(), &KLinesScene::endGame, actionCollection());
 
   // Move
-  KStandardGameAction::undo(mwidget->scene(), SLOT(undo()), actionCollection());
-  KStandardGameAction::endTurn(mwidget->scene(), SLOT(endTurn()), actionCollection());
+  KStandardGameAction::undo(mwidget->scene(), &KLinesScene::undo, actionCollection());
+  KStandardGameAction::endTurn(mwidget->scene(), &KLinesScene::endTurn, actionCollection());
 
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>(QStringLiteral( "show_next" ));
@@ -109,7 +109,7 @@ void KLinesMainWindow::setupActions()
   connect( naviDown, &QAction::triggered, mwidget->scene(), &KLinesScene::moveFocusDown);
   connect( naviSelect, &QAction::triggered, mwidget->scene(), &KLinesScene::cellSelected);
 
-  KStandardAction::preferences( mselector, SLOT(showAsDialog()), actionCollection() );
+  KStandardAction::preferences(mselector, [this]() { mselector->showAsDialog(); }, actionCollection());
   setupGUI();
 }
 
