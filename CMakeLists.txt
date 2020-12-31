@@ -8,8 +8,8 @@ set (RELEASE_SERVICE_COMPACT_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}${RELEASE_
 
 project(klines VERSION "1.6.${RELEASE_SERVICE_COMPACT_VERSION}")
 
-set (QT_MIN_VERSION "5.10.0")
-set (KF5_MIN_VERSION "5.46.0")
+set (QT_MIN_VERSION "5.12.0")
+set (KF5_MIN_VERSION "5.68.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -44,10 +44,8 @@ add_definitions(
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050A00
     -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x05AE00
     -DQT_NO_KEYWORDS
+    -DQT_NO_FOREACH
 )
-if (${KF5Config_VERSION} VERSION_GREATER "5.56.0")
-    add_definitions(-DQT_NO_FOREACH)
-endif()
 
 add_subdirectory(themes)
 add_subdirectory(icons)
@@ -66,7 +64,13 @@ set(klines_SRCS
    animator.cpp
 )
 ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX KLINES VERSION_HEADER klines_version.h)
-ecm_qt_declare_logging_category(klines_SRCS HEADER klines_debug.h IDENTIFIER KLINES_LOG CATEGORY_NAME org.kde.kdegames.klines) 
+ecm_qt_declare_logging_category(klines_SRCS
+    HEADER klines_debug.h
+    IDENTIFIER KLINES_LOG
+    CATEGORY_NAME org.kde.kdegames.klines
+    DESCRIPTION "KLines game"
+    EXPORT KLINES
+)
 qt5_add_resources(klines_SRCS klines.qrc)
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-klines.png")
@@ -89,7 +93,11 @@ install(PROGRAMS org.kde.klines.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES klines.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR})
 install(FILES org.kde.klines.appdata.xml DESTINATION ${CMAKE_INSTALL_METAINFODIR})
 
-install( FILES klines.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR} )
+ecm_qt_install_logging_categories(
+    EXPORT KLINES
+    FILE klines.categories
+    DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
+)
 
 ki18n_install(po)
 kdoctools_install(po)
