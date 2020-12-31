@@ -50,6 +50,7 @@ if (${KF5Config_VERSION} VERSION_GREATER "5.56.0")
 endif()
 
 add_subdirectory(themes)
+add_subdirectory(icons)
 add_subdirectory(doc)
 
 ########### next target ###############
@@ -68,7 +69,7 @@ ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX KLINES VERSION_HEADER kline
 ecm_qt_declare_logging_category(klines_SRCS HEADER klines_debug.h IDENTIFIER KLINES_LOG CATEGORY_NAME org.kde.kdegames.klines) 
 qt5_add_resources(klines_SRCS klines.qrc)
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-klines.png")
+file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-klines.png")
 ecm_add_app_icon(klines_SRCS ICONS ${ICONS_SRCS})
 add_executable(klines ${klines_SRCS})
 
@@ -88,16 +89,6 @@ install(PROGRAMS org.kde.klines.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES klines.kcfg  DESTINATION  ${KDE_INSTALL_KCFGDIR})
 install(FILES org.kde.klines.appdata.xml DESTINATION ${CMAKE_INSTALL_METAINFODIR})
 
-ecm_install_icons(ICONS
-    16-apps-klines.png
-    22-apps-klines.png
-    32-apps-klines.png
-    48-apps-klines.png
-    64-apps-klines.png
-    128-apps-klines.png
-    DESTINATION ${KDE_INSTALL_ICONDIR}
-    THEME hicolor
-)
 install( FILES klines.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR} )
 
 ki18n_install(po)
