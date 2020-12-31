@@ -23,7 +23,7 @@ public:
     void setPreviewColors( const QList<BallColor>& colors );
 
     // reimplemented functions
-    void paint( QPainter* p, const QStyleOptionGraphicsItem* option,  QWidget* widget = Q_NULLPTR ) Q_DECL_OVERRIDE;
+    void paint(QPainter* p, const QStyleOptionGraphicsItem* option,  QWidget* widget = nullptr) Q_DECL_OVERRIDE;
     QRectF boundingRect() const Q_DECL_OVERRIDE;
 private:
     QList<BallColor> m_colors;

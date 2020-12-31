@@ -18,7 +18,7 @@ class MainWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MainWidget( QWidget* parent=Q_NULLPTR);
+    explicit MainWidget(QWidget* parent = nullptr);
     ~MainWidget();
 
     KLinesScene* scene() { return m_scene; }
