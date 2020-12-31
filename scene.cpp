@@ -53,6 +53,7 @@ KLinesScene::KLinesScene( QObject* parent )
     m_focusItem = new QGraphicsRectItem( QRectF(0, 0, m_cellSize, m_cellSize), nullptr);
     m_focusItem->setZValue(1.0);
     m_focusItem->setPen( Qt::DashLine );
+    addItem(m_focusItem);
 
     m_previewItem = new PreviewItem(this);
     m_previewItem->setPos( 0, 0 );
