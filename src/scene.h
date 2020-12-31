@@ -153,8 +153,8 @@ private:
      */
     void gameOverHandler();
 
-    void drawBackground( QPainter*, const QRectF& ) Q_DECL_OVERRIDE;
-    void mousePressEvent( QGraphicsSceneMouseEvent* ) Q_DECL_OVERRIDE;
+    void drawBackground( QPainter*, const QRectF& ) override;
+    void mousePressEvent( QGraphicsSceneMouseEvent* ) override;
 
     /**
      *  This array represents the play field.

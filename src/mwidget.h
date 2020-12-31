@@ -25,7 +25,7 @@ public:
 public Q_SLOTS:
     void setShowNextColors(bool);
 private:
-    void resizeEvent( QResizeEvent* ) Q_DECL_OVERRIDE;
+    void resizeEvent( QResizeEvent* ) override;
     KLinesScene* m_scene;
     QLabel *m_next_label;
 };
