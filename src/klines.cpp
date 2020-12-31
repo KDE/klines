@@ -36,7 +36,8 @@ KLinesMainWindow::KLinesMainWindow()
     setCentralWidget( mwidget );
 
     connect(mwidget->scene(), &KLinesScene::scoreChanged, this, &KLinesMainWindow::updateScore);
-    connect(mwidget->scene(), SIGNAL(stateChanged(QString)), SLOT(slotStateChanged(QString)));
+    connect(mwidget->scene(), &KLinesScene::stateChanged,
+            this, QOverload<const QString&>::of(&KLinesMainWindow::slotStateChanged));
     connect(mwidget->scene(), &KLinesScene::gameOver, this, &KLinesMainWindow::gameOver);
 
     scoreLabel->setText(i18n("Score:"));
