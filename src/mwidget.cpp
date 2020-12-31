@@ -1,21 +1,11 @@
-/***************************************************************************
-    begin                : Fri May 19 2000
-    copyright            : (C) 2000 by Roman Merzlyakov
-    email                : roman@sbrf.barrt.ru
-    copyright            : (C) 2000 by Roman Razilov
-    email                : Roman.Razilov@gmx.de
-    copyright            : (C) 2006-2007 by Dmitry Suzdalev
-    email                : dimsuz@gmail.com
- ***************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2000 Roman Merzlyakov <roman@sbrf.barrt.ru>
+    SPDX-FileCopyrightText: 2000 Roman Razilov <Roman.Razilov@gmx.de>
+    SPDX-FileCopyrightText: 2006-2007 Dmitry Suzdalev <dimsuz@gmail.com>
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
 #include "mwidget.h"
 #include "scene.h"
 
