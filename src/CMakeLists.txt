@@ -7,6 +7,7 @@ set(klines_SRCS
    ballitem.cpp
    previewitem.cpp
    animator.cpp
+   klines.qrc
 )
 
 ecm_setup_version(${PROJECT_VERSION}
@@ -21,8 +22,6 @@ ecm_qt_declare_logging_category(klines_SRCS
     DESCRIPTION "KLines game"
     EXPORT KLINES
 )
-
-qt5_add_resources(klines_SRCS klines.qrc)
 
 kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
 
