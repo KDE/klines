@@ -1,21 +1,24 @@
-set(klines_SRCS 
-   mwidget.cpp 
-   klines.cpp 
-   main.cpp
-   scene.cpp
-   renderer.cpp
-   ballitem.cpp
-   previewitem.cpp
-   animator.cpp
-   klines.qrc
-)
-
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KLINES
     VERSION_HEADER klines_version.h
 )
 
-ecm_qt_declare_logging_category(klines_SRCS
+add_executable(klines)
+
+target_sources(klines PRIVATE
+    mwidget.cpp
+    klines.cpp
+    main.cpp
+    scene.cpp
+    renderer.cpp
+    ballitem.cpp
+    previewitem.cpp
+    animator.cpp
+
+    klines.qrc
+)
+
+ecm_qt_declare_logging_category(klines
     HEADER klines_debug.h
     IDENTIFIER KLINES_LOG
     CATEGORY_NAME org.kde.kdegames.klines
@@ -23,12 +26,10 @@ ecm_qt_declare_logging_category(klines_SRCS
     EXPORT KLINES
 )
 
-kconfig_add_kcfg_files(klines_SRCS prefs.kcfgc)
+kconfig_add_kcfg_files(klines prefs.kcfgc)
 
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-klines.png")
-ecm_add_app_icon(klines_SRCS ICONS ${ICONS_SRCS})
-
-add_executable(klines ${klines_SRCS})
+ecm_add_app_icon(klines ICONS ${ICONS_SRCS})
 
 target_link_libraries(klines
     KF5KDEGames
