@@ -4,7 +4,7 @@
   <!ENTITY % English "INCLUDE" > <!-- change language only here -->
   <!ENTITY % addindex "IGNORE"> <!-- do not change this! -->
 ]>
- 
+
 <book id="klines" lang="&language;"> <!-- do not change this! -->
 <bookinfo>
 	<title>The &kolorlines; Handbook</title> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
@@ -33,26 +33,26 @@
 <holder>&Roman.Merzlyakov;</holder>
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
- 
-<date>2016-05-10</date>
-<releaseinfo>1.6 (Applications 16.04)</releaseinfo>
- 
+
+<date>2021-07-11</date>
+<releaseinfo>1.6 (KDE Gear 21.04)</releaseinfo>
+
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
 	<para>This documentation describes the game of &kolorlines; version 1.6</para>
 </abstract>
- 
+
 <!--List of relevant keywords-->
 <keywordset>
 	<keyword>KDE</keyword> <!-- do not change this! -->
 	<keyword>kdegames</keyword> <!-- do not change this! -->
 	<keyword>game</keyword> <!-- do not change this! -->
-	<keyword>Kolorlines</keyword><!--Application name goes here-->
+	<keyword>Kolor Lines</keyword><!--Application name goes here-->
 <!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<keyword>arcade</keyword>
-	<keyword>colors</keyword>
 	<keyword>color lines</keyword>
 	<keyword>color</keyword>
+	<keyword>colors</keyword>
 <!--Number of possible players. It can be: One, Two,..., Multiplayer-->
 	<keyword>one player</keyword>
 </keywordset>
@@ -62,54 +62,54 @@
 	<note><title>Gametype:</title><para>Arcade</para></note><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
 	<para>&kolorlines; is a simple but highly addictive, one player game by &kde;. &kolorlines; has been inspired by well known game of <application>Color Lines</application>, written for <application>DOS</application>, by Olga Demina, Igor Ivkin and Gennady Denisov back in 1992.</para>
-	<para>The goal of &kolorlines; is quite plain. The player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.</para>
-	<para>&kolorlines; cannot be won, and is played against the high score exclusively. The game ends once the whole game board is filled up with balls.</para>
+	<para>The goal of &kolorlines; is quite plain. The player has to move the colored marbres around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new marbres keep arriving by three after each move, filling up the game board.</para>
+	<para>&kolorlines; cannot be won, and is played exclusively to get a high score. The game ends once the whole game board is filled up with marbres.</para>
 </chapter>
- 
+
 <chapter id="howto"><title>How to Play</title> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
-	<note><title>Objective:</title><para>Move the colored balls around the game board, gathering them into the lines of the same color by five.</para></note><!--Describe the objective of the game.-->
+	<note><title>Objective:</title><para>Move the colored marbres around the game board, gathering them into the lines of the same color by five.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
-	<para>	When &kolorlines; starts you are presented with the game board split into 81 squares (the game board is 9x9 squares), and right away three new colored balls appear on the board. Use your mouse to move the balls from cell to cell to group them into the lines of the same color. However, after each of your moves the computer drops three more marbles onto the board. To avoid filling up the board you should gather the balls into lines of 5 or more balls. When such a line is complete, the balls are removed from the field and your score grows.</para>
-	<note><title>Note:</title><para>The new balls will not be added to the field after a line removal. Instead you will be rewarded with yet another move before a new triplet of balls is added.</para></note>
-	<para>The increase in score depends solely on the amount of the erased balls.</para>
+	<para>	When &kolorlines; starts you are presented with the game board split into 81 squares (the game board is 9x9 squares), and right away three new colored marbres appear on the board. Use your mouse to move the marbres from cell to cell to group them into the lines of the same color. However, after each of your moves the computer drops three more marbres onto the board. To avoid filling up the board you should gather the marbres into lines of 5 or more marbres. When such a line is complete, the marbres are removed from the field and your score grows.</para>
+	<note><title>Note:</title><para>The new marbres will not be added to the field after a line removal. Instead you will be rewarded with yet another move before a new triplet of marbres is added.</para></note>
+	<para>The increase in score depends solely on the amount of the erased marbres.</para>
 	<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less than if  <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
-	<para>&kolorlines; cannot be won, and is played against the high score exclusively. The game ends once the whole game board becomes filled up with balls.</para>
+	<para>&kolorlines; cannot be won, and is played exclusively to get a high score. The game ends once the whole game board becomes filled up with marbres.</para>
 </chapter>
- 
+
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
 	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
 	<sect1 id="rules">
 		<title>Game Rules</title>
 			<itemizedlist>
-				<listitem><para>After each player’s move the game will add three more balls to the board.</para></listitem>
-				<listitem><para>To free up the space on the board player has to group the balls of the same color into an uninterrupted horizontal, vertical, or diagonal line by five or more.</para></listitem>
-				<listitem><para>To initiate the move simply click on the source ball to select it, then click on the destination square to complete the move.</para></listitem>
-				<listitem><para>A ball can only be moved into the squares that are vacant and not occupied by any other ball.</para></listitem>
-				<listitem><para>In the same time the square in question must be freely accessible.</para></listitem>
-				<listitem><para>The square is freely accessible when there are no other balls blocking the path to it.</para></listitem>
-				<listitem><para>The path is considered blocked if any part of it is currently being occupied by a ball.</para></listitem>
+				<listitem><para>After each player’s move the game will add three more marbres to the board.</para></listitem>
+				<listitem><para>To free up the space on the board player has to group the marbres of the same color into an uninterrupted horizontal, vertical, or diagonal line by five or more.</para></listitem>
+				<listitem><para>To initiate the move, simply click on the source marbre to select it, then click on the destination square to complete the move.</para></listitem>
+				<listitem><para>A marbre can only be moved into the squares that are vacant and not occupied by any other marbre.</para></listitem>
+				<listitem><para>In the same way, the square in question must be freely accessible.</para></listitem>
+				<listitem><para>The square is freely accessible when there are no other marbres blocking the path to it.</para></listitem>
+				<listitem><para>The path is considered blocked if any part of it is currently being occupied by a marbre.</para></listitem>
 			</itemizedlist>
-			<note><title>Note:</title><para>In &kolorlines; the path is automatically calculated by the game. If there is no possible (open) route to the destination cell, a friendly notification will be displayed.</para></note>
+			<note><title>Note:</title><para>In &kolorlines;, the path is automatically calculated by the game. If there is no possible (open) route to the destination cell, a friendly notification will be displayed.</para></note>
 			<itemizedlist>
-				<listitem><para>In order to successfully transfer a ball to a desired cell where the path is blocked to, player has to clear the path first.</para></listitem>
-				<listitem><para>To clear the path the player simply has to move all the blocking balls out of the way, therefore freeing the route.</para></listitem>
-				<listitem><para>The scores are awarded for each line of balls removed off the game board.</para></listitem>
+				<listitem><para>In order to successfully transfer a marbre to a desired cell where the path is blocked to, player has to clear the path first.</para></listitem>
+				<listitem><para>To clear the path the player simply has to move all the blocking marbres out of the way, therefore freeing the route.</para></listitem>
+				<listitem><para>The scores are awarded for each line of marbres removed off the game board.</para></listitem>
 			</itemizedlist>
 			<note><title>Note:</title><para>If you are playing with <guimenuitem>Show Next</guimenuitem> feature enabled the increase in score is less than if <guimenuitem>Show Next</guimenuitem> feature is disabled.</para></note>
 	</sect1>
 	<sect1 id="strategies">
 		<title>Strategies and Tips</title>
 			<itemizedlist>
-				<listitem><para>Keep a close look on the bar showing the next three marbles to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled). More often then not you will appreciate the information if provides.</para></listitem>
-				<listitem><para>Try to keep at least a half of the game board cleared. Letting the balls to pile up will almost certainly lead to a loss.</para></listitem>
-				<listitem><para>To make your game easier always keep more than one line of the same balls ready for clearing. This can be achieved by building the consecutive lines of the same balls everywhere possible, instead of concentrating on one line at a time.</para></listitem>
-				<listitem><para>Try to keep more than three almost completed lines existing on the game board at all times. Almost completed means that they are four same balls in length, and only one ball remains until their completion.</para></listitem>
+				<listitem><para>Keep a close look on the bar showing the next three marbres to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled). More often then not you will appreciate the information if provides.</para></listitem>
+				<listitem><para>Try to keep at least a half of the game board cleared. Letting the marbres to pile up will almost certainly lead to a loss.</para></listitem>
+				<listitem><para>To make your game easier, always keep more than one line of the same marbres ready for remove. This can be achieved by building the consecutive lines of the same marbres everywhere possible, instead of concentrating on one line at a time.</para></listitem>
+				<listitem><para>Try to keep more than three almost completed lines existing on the game board at all times. Almost completed means that they are four same marbres in length, and only one marbre remains until their completion.</para></listitem>
 			</itemizedlist>
-			<note><title>Example:</title><para>If you have an almost completed line and the pathway to it suddenly becomes blocked with another ball, don’t just move that ball. Try to find a sequence of the balls of the same kind that you can continue with the moved ball. If such sequence exists and is accessible – then move the blocking ball there.</para></note>
+			<note><title>Example:</title><para>If you have an almost completed line and the pathway to it suddenly becomes blocked with another marbre, don’t just move that marbre. Try to find a sequence of the marbres of the same kind that you can continue with the moved marbre. If such sequence exists and is accessible – then move the blocking marbre there.</para></note>
 	</sect1>
 </chapter>
-  
+
 <chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
 <!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist> and <varlistentry>. Split the chapter into sections using <sect1(2,3)> for better viewing.-->
 <sect1 id="klines-mainwindow">
@@ -123,10 +123,10 @@
 					<textobject><phrase>Screenshot</phrase></textobject>
 				</mediaobject>
 			</screenshot>
-<para>On the very top of the game window there are located the menubar and the toolbar. 
-In the center of the screen there is a large square area filled with marbles called - the game board.
-On the right hand side there located a bar showing the next three marbles to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled).
-Underneath the field there is the status bar.</para>
+<para>On the very top of the game window there are located the menubar and the toolbar.
+In the center of the screen there is a large square area filled with marbres called the game board.
+On the right hand side there located a bar showing the next three marbres to be dropped onto the field (unless <guimenuitem>Show Next</guimenuitem> feature is disabled).
+Below the playing field there is the status bar.</para>
 </sect1>
 <sect1 id="menu-items">
 	<title>Menu Items</title>
@@ -137,15 +137,23 @@ Underneath the field there is the status bar.</para>
 				<guimenu>Game</guimenu>
 				<guimenuitem>New</guimenuitem>
 			</menuchoice></term>
-			<listitem><para><action>Starts a new game</action></para></listitem>
+			<listitem><para><action>Starts a new game.</action></para></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term><menuchoice>
+				<shortcut><keycombo action="simul">&Ctrl;&End;</keycombo></shortcut>
+				<guimenu>Game</guimenu>
+				<guimenuitem>End Game</guimenuitem>
+			</menuchoice></term>
+			<listitem><para><action>Ends a running game.</action></para></listitem>
 		</varlistentry>
 		<varlistentry id="menu-game-highscore">
 			<term><menuchoice>
 				<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
 				<guimenu>Game</guimenu>
-				<guimenuitem>Show High Scores</guimenuitem>
+				<guimenuitem>Show High Scores...</guimenuitem>
 			</menuchoice></term>
-			<listitem><para><action>Displays the high score table</action></para></listitem>
+			<listitem><para><action>Displays the high score table.</action></para></listitem>
 		</varlistentry>
 		<varlistentry>
 			<term><menuchoice>
@@ -168,12 +176,12 @@ Underneath the field there is the status bar.</para>
 			<term><menuchoice>
 				<guimenu>Move</guimenu><guimenuitem>End Turn</guimenuitem>
 			</menuchoice></term>
-			<listitem><para>Skip your move, immediately play the next marbles without you moving any.</para></listitem>
+			<listitem><para>Skip your move, immediately play the next marbres without you moving any.</para></listitem>
 		</varlistentry>
 
 		<varlistentry id="menu-navigation-left">
 			<term><menuchoice>
-				<shortcut><keycap>Left</keycap></shortcut>
+				<shortcut>&Left;</shortcut>
 				<guimenu>Navigation</guimenu>
 				<guimenuitem>Move Left</guimenuitem>
 			</menuchoice></term>
@@ -181,7 +189,7 @@ Underneath the field there is the status bar.</para>
 		</varlistentry>
 		<varlistentry id="menu-navigation-right">
 			<term><menuchoice>
-				<shortcut><keycap>Right</keycap></shortcut>
+				<shortcut>&Right;</shortcut>
 				<guimenu>Navigation</guimenu>
 				<guimenuitem>Move Right</guimenuitem>
 			</menuchoice></term>
@@ -189,7 +197,7 @@ Underneath the field there is the status bar.</para>
 		</varlistentry>
 		<varlistentry id="menu-navigation-up">
 			<term><menuchoice>
-				<shortcut><keycap>Up</keycap></shortcut>
+				<shortcut>&Up;</shortcut>
 				<guimenu>Navigation</guimenu>
 				<guimenuitem>Move Up</guimenuitem>
 			</menuchoice></term>
@@ -197,7 +205,7 @@ Underneath the field there is the status bar.</para>
 		</varlistentry>
 		<varlistentry id="menu-navigation-down">
 			<term><menuchoice>
-				<shortcut><keycap>Down</keycap></shortcut>
+				<shortcut>&Down;</shortcut>
 				<guimenu>Navigation</guimenu>
 				<guimenuitem>Move Down</guimenuitem>
 			</menuchoice></term>
@@ -205,7 +213,7 @@ Underneath the field there is the status bar.</para>
 		</varlistentry>
 		<varlistentry id="menu-navigation-select">
 			<term><menuchoice>
-				<shortcut><keycap>Space</keycap></shortcut>
+				<shortcut>&Space;</shortcut>
 				<guimenu>Navigation</guimenu>
 				<guimenuitem>Select</guimenuitem>
 			</menuchoice></term>
@@ -217,7 +225,7 @@ Underneath the field there is the status bar.</para>
 				<guimenu>Settings</guimenu>
 				<guimenuitem>Show Next</guimenuitem>
 			</menuchoice></term>
-			<listitem><para><action>Toggles the information on next marbles.</action></para></listitem>
+			<listitem><para><action>Toggles the information on next marbres.</action></para></listitem>
 		</varlistentry>
 	</variablelist>
 
@@ -237,7 +245,7 @@ of the &kde; Fundamentals.
 <!--Following is a standard list of FAQ questions.-->
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>Yes. To change &kolorlines; visual theme you can use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice> option on the menubar.</para></answer>
+ <answer><para>Yes. To change &kolorlines; visual theme you can use the <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice> menu item.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I don't want to make any moves right now. Can I skip a turn? </para></question>
@@ -245,7 +253,7 @@ of the &kde; Fundamentals.
 </qandaentry>
 <qandaentry>
  <question><para>Can I use the keyboard to play the game? </para></question>
- <answer><para>Yes. You can use the cursor keys and the <keycap>Space</keycap> key to select and set the balls.</para></answer>
+ <answer><para>Yes. You can use the cursor keys and the &Space; key to select and set the marbres.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I cannot figure out what to do here! Are there hints? </para></question>
@@ -268,7 +276,7 @@ of the &kde; Fundamentals.
 
 <chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
- 
+
 <para>&kolorlines;</para>
 
 <para>Program copyright 2000 &Roman.Merzlyakov;
@@ -289,10 +297,10 @@ testing and discussions.</para>
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 &underFDL;
 &underGPL;
- 
+
 </chapter>
-  
-&documentation.index; 
+
+&documentation.index;
 </book>
 <!--
 Local Variables:
