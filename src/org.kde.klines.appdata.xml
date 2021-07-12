@@ -62,36 +62,13 @@
     <p>
      Kolor Lines is a simple but highly addictive one player game.
     </p>
-    <p xml:lang="ca">El KLines és un joc d'un jugador senzill però molt addictiu.</p>
-    <p xml:lang="ca-valencia">El KLines és un joc d'un jugador senzill però molt addictiu.</p>
-    <p xml:lang="de">KLines ist ein einfaches, aber süchtig machendes Spiel für eine Person.</p>
-    <p xml:lang="el">Το KLines είναι ένα απλό αλλά ιδιαίτερα εθιστικό παιχνίδι για έναν παίκτη.</p>
-    <p xml:lang="en-GB">KLines is a simple but highly addictive one player game.</p>
-    <p xml:lang="es">KLines es un juego sencillo pero muy adictivo para un solo jugador.</p>
-    <p xml:lang="et">KLines on lihtne, kuid äärmiselt haarava ühe mängijaga mäng.</p>
-    <p xml:lang="fi">KLines on yksinkertainen mutta addiktoiva yhden pelaajan peli.</p>
-    <p xml:lang="fr">KLines est un jeu en solo simple mais très addictif.</p>
-    <p xml:lang="gl">KLines é un xogo simple pero moi adictivo para unha persoa.</p>
-    <p xml:lang="id">KLines adalah sebuah permainan satu pemain yang sederhana namun menagihkan</p>
-    <p xml:lang="it">KLines è un gioco semplice ma divertente, con un solo giocatore.</p>
-    <p xml:lang="ko">KLines는 간단하면서도 머리를 쓰는 1인용 게임입니다.</p>
-    <p xml:lang="nl">KLines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
-    <p xml:lang="nn">KLines er eit enkelt men vanedannande spel for éin spelar.</p>
-    <p xml:lang="pl">KLinie jest prostą, lecz wysoce uzależniającą grą pojedycznego gracza.</p>
-    <p xml:lang="pt">O KLines é um jogo simples, mas bastante viciante, para um único jogador.</p>
-    <p xml:lang="pt-BR">KLines é um jogo simples, mas muito viciante, para um único jogador.</p>
-    <p xml:lang="sk">KLines je jednoduchá, ale vysoko návyková hra pre jedného hráča.</p>
-    <p xml:lang="sl">KLines je preprosta, a zasvojljiva enoigralska igra.</p>
-    <p xml:lang="sv">Färglinjer är ett enkelt men mycket vanebildande spel för en spelare.</p>
-    <p xml:lang="uk">KLines — проста, але дуже захоплива гра для одного гравця.</p>
-    <p xml:lang="x-test">xxKLines is a simple but highly addictive one player game.xx</p>
     <p>
      The player has to move the colored balls around the game board, gathering them into the lines of the same color by five.
      Once the line is complete it is removed from the board, therefore freeing precious space. 
      In the same time the new balls keep arriving by three after each move, filling up the game board.
     </p>
-    <p xml:lang="ca">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les a les línies del mateix color cada cinc. Un cop completada la línia, s'elimina del tauler, alliberant l'escàs espai. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
-    <p xml:lang="ca-valencia">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les a les línies del mateix color cada cinc. Un cop completada la línia, s'elimina del tauler, alliberant l'escàs espai. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
+    <p xml:lang="ca">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les en línies de cinc del mateix color. Un cop completada la línia, s'eliminarà del tauler, alliberant l'espai escàs. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
+    <p xml:lang="ca-valencia">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les en línies de cinc del mateix color. Un cop completada la línia, s'eliminarà del tauler, alliberant l'espai escàs. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
     <p xml:lang="de">Der Spieler muss die farbigen Bälle auf dem Spielfeld bewegen, um Linien von fünf gleichfarbigen Bällen zu bilden. Diese verschwinden dann vom Spielfeld und geben kostbaren Platz frei, der gleichzeitig nach jedem Zug von drei neu erscheinenden Bällen ausgefüllt wird.</p>
     <p xml:lang="el">Ο παίκτης πρέπει να μετακινήσει τις έγχρωμες μπάλες στον πίνακα του παιχνιδιού, συλλέγοντάς τις ανά πέντε σε γραμμές του ίδιου χρώματος. Όταν η γραμμή συμπληρωθεί αφαιρείται από τον πίνακα, άρα ελευθερώνοντας πολύτιμο χώρο. Ταυτόχρονα οι νέες μπάλες εμφανίζονται ανά τρεις μετά από κάθε κίνηση, γεμίζοντας τον πίνακα.</p>
     <p xml:lang="en-GB">The player has to move the coloured balls around the game board, gathering them into the lines of the same colour by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.</p>
