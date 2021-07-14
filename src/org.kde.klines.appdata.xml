@@ -62,6 +62,11 @@
     <p>
      Kolor Lines is a simple but highly addictive one player game.
     </p>
+    <p xml:lang="ca">El Kolor Lines és un joc senzill d'un jugador però molt addictiu.</p>
+    <p xml:lang="nl">Kolor Lines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
+    <p xml:lang="sv">Färglinjer är ett enkelt men mycket vanebildande spel för en spelare.</p>
+    <p xml:lang="uk">«Кольорові лінії» — проста, але дуже захоплива гра для одного гравця.</p>
+    <p xml:lang="x-test">xxKolor Lines is a simple but highly addictive one player game.xx</p>
     <p>
      The player has to move the colored balls around the game board, gathering them into the lines of the same color by five.
      Once the line is complete it is removed from the board, therefore freeing precious space. 
