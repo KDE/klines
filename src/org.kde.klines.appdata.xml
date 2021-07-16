@@ -4,6 +4,7 @@
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0</project_license>
   <name>Kolor Lines</name>
+  <name xml:lang="ar">الخطوط الملونة ك</name>
   <name xml:lang="ca">Kolor Lines</name>
   <name xml:lang="ca-valencia">Kolor Lines</name>
   <name xml:lang="cs">Barevné čáry</name>
@@ -32,6 +33,7 @@
   <name xml:lang="zh-CN">Kolor Lines</name>
   <name xml:lang="zh-TW">Kolor Lines 彩色線條</name>
   <summary>Tactical Game</summary>
+  <summary xml:lang="ar">لعبة تكتيكية</summary>
   <summary xml:lang="ca">Joc de tàctica</summary>
   <summary xml:lang="ca-valencia">Joc de tàctica</summary>
   <summary xml:lang="cs">Taktická hra</summary>
@@ -62,9 +64,11 @@
     <p>
      Kolor Lines is a simple but highly addictive one player game.
     </p>
+    <p xml:lang="ar">الخطوط الملونة ك هي لعبة لاعب واحد بسيطة ولكنها تسبب الإدمان.</p>
     <p xml:lang="ca">El Kolor Lines és un joc senzill d'un jugador però molt addictiu.</p>
     <p xml:lang="de">Kolor Lines ist ein einfaches, aber süchtig machendes Spiel für eine Person.</p>
     <p xml:lang="es">Líneas de color es un juego sencillo pero muy adictivo para un solo jugador.</p>
+    <p xml:lang="fr">KLines est un jeu en solo simple mais très addictif.</p>
     <p xml:lang="nl">Kolor Lines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
     <p xml:lang="pt">O Kolor Lines é um jogo simples, mas bastante viciante, para um único jogador.</p>
     <p xml:lang="pt-BR">O Kolor Lines é um jogo simples, mas muito viciante, para um único jogador.</p>
@@ -77,6 +81,7 @@
      Once the line is complete it is removed from the board, therefore freeing precious space. 
      In the same time the new balls keep arriving by three after each move, filling up the game board.
     </p>
+    <p xml:lang="ar">يتعين على اللاعب تحريك الكرات الملونة حول لوحة اللعبة، وتجميعها في خطوط من نفس اللون بمقدار خمسة. بمجرد اكتمال الخط، يتم إزالته من اللوحة، وبالتالي تحرير مساحة ثمينة. في نفس الوقت، تستمر الكرات الجديدة في الوصول بمقدار ثلاث كرات بعد كل حركة لتملأ لوحة اللعبة.</p>
     <p xml:lang="ca">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les en línies de cinc del mateix color. Un cop completada la línia, s'eliminarà del tauler, alliberant l'espai escàs. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
     <p xml:lang="ca-valencia">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les en línies de cinc del mateix color. Un cop completada la línia, s'eliminarà del tauler, alliberant l'espai escàs. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
     <p xml:lang="de">Der Spieler muss die farbigen Bälle auf dem Spielfeld bewegen, um Linien von fünf gleichfarbigen Bällen zu bilden. Diese verschwinden dann vom Spielfeld und geben kostbaren Platz frei, der gleichzeitig nach jedem Zug von drei neu erscheinenden Bällen ausgefüllt wird.</p>
@@ -147,6 +152,7 @@
   </screenshots>
   <project_group>KDE</project_group>
   <developer_name>The KDE Community</developer_name>
+  <developer_name xml:lang="ar">مجتمع كدي</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
