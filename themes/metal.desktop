@@ -1,6 +1,7 @@
 [KGameTheme]
 VersionFormat=1
 Name=Metal
+Name[ar]=معدن
 Name[bs]=Metal
 Name[ca]=Metall
 Name[ca@valencia]=Metall
@@ -49,6 +50,7 @@ Name[x-test]=xxMetalxx
 Name[zh_CN]=重金属
 Name[zh_TW]=金屬
 Description=A metal style theme with bouncing balls
+Description[ar]=سمة نمط معدني بكرات مرتدة
 Description[bs]=Tema u metalnom stilu sa odskačućim loptama
 Description[ca]=Un estil metàl·lic amb pilotes rebotant
 Description[ca@valencia]=Un estil metàl·lic amb pilotes rebotant

@@ -1,6 +1,7 @@
 [KGameTheme]
 VersionFormat=0.8
 Name=Egyptian
+Name[ar]=مصري
 Name[bs]=Egipatski
 Name[ca]=Egipci
 Name[ca@valencia]=Egipci
@@ -49,10 +50,12 @@ Name[x-test]=xxEgyptianxx
 Name[zh_CN]=埃及
 Name[zh_TW]=埃及式
 Description=An Egyptian style theme for Kolor Lines.
+Description[ar]=سمة نمط مصري للخطوط الملونة ك.
 Description[ca]=Un tema d'estil egipci per al Kolor Lines.
 Description[cs]=Motiv pro Kolor Lines v egyptském stylu.
 Description[de]=Das ägyptische Design für Kolor Lines.
 Description[es]=Tema de estilo egipcio para Líneas de color.
+Description[fr]=Un thème dans le style égyptien pour KLines.
 Description[nl]=Thema in Egyptische stijl voor Kolor Lines.
 Description[pt]=Um tema de estilo Egípcio para o Kolor Lines.
 Description[pt_BR]=Um tema de estilo egípcio para o Kolor Lines.
