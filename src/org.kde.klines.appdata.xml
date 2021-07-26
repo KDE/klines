@@ -14,6 +14,7 @@
   <name xml:lang="en-GB">Kolor Lines</name>
   <name xml:lang="es">Líneas de color</name>
   <name xml:lang="et">Kolor Lines</name>
+  <name xml:lang="eu">Kolor Lines</name>
   <name xml:lang="fi">Kolor Lines</name>
   <name xml:lang="fr">Kolor Lines</name>
   <name xml:lang="gl">Liñas de kores</name>
@@ -42,6 +43,7 @@
   <summary xml:lang="en-GB">Tactical Game</summary>
   <summary xml:lang="es">Juego de táctica</summary>
   <summary xml:lang="et">Taktikamäng</summary>
+  <summary xml:lang="eu">Joko taktikoa</summary>
   <summary xml:lang="fi">Taktiikkapeli</summary>
   <summary xml:lang="fr">Jeu de tactique</summary>
   <summary xml:lang="gl">Xogo de táctica</summary>
@@ -68,11 +70,14 @@
     <p xml:lang="ca">El Kolor Lines és un joc senzill d'un jugador però molt addictiu.</p>
     <p xml:lang="de">Kolor Lines ist ein einfaches, aber süchtig machendes Spiel für eine Person.</p>
     <p xml:lang="el">Το Kolor Lines είναι ένα απλό αλλά ιδιαίτερα εθιστικό παιχνίδι για έναν παίκτη.</p>
+    <p xml:lang="en-GB">Kolor Lines is a simple but highly addictive one player game.</p>
     <p xml:lang="es">Líneas de color es un juego sencillo pero muy adictivo para un solo jugador.</p>
+    <p xml:lang="eu">Kolor Lines, Kolore Lerroak, joko sinple baina oso adiktiboa da.</p>
     <p xml:lang="fr">KLines est un jeu en solo simple mais très addictif.</p>
     <p xml:lang="it">Kolor Lines è un gioco per un solo giocatore, semplice ma divertente.</p>
     <p xml:lang="ko">Kolor Lines는 간단하면서도 머리를 쓰는 1인용 게임입니다.</p>
     <p xml:lang="nl">Kolor Lines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
+    <p xml:lang="pl">Kolorowe Linie jest prostą, lecz wysoce uzależniającą grą pojedynczego gracza.</p>
     <p xml:lang="pt">O Kolor Lines é um jogo simples, mas bastante viciante, para um único jogador.</p>
     <p xml:lang="pt-BR">O Kolor Lines é um jogo simples, mas muito viciante, para um único jogador.</p>
     <p xml:lang="sl">Kolor Lines je preprosta igra za enega igralca, ki vas zelo zasvoji.</p>
@@ -92,6 +97,7 @@
     <p xml:lang="en-GB">The player has to move the coloured balls around the game board, gathering them into the lines of the same colour by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.</p>
     <p xml:lang="es">El jugador tiene que mover las bolas de color por el tablero de juego, reuniéndolas en líneas de cinco del mismo color. Cuando se completa una línea, se elimina del tablero, liberando un espacio valioso. Al mismo tiempo, seguirán llegando tres nuevas bolas tras cada movimiento, rellenando el tablero de juego.</p>
     <p xml:lang="et">Mängija peab liigutama värvilisi palle mööda mänguväljakut, et koguda neid värvi järgi viiekaupa ritta. Kui rida saab valmis, eemaldatakse see mänguväljalt, millega vabaneb hinnalist ruumi. Samal ajal heidetakse iga käigu peale mänguväljakule kolm uut palli, mis väljakut usinalt täidavad.</p>
+    <p xml:lang="eu">Jokalariak koloretako bolak mugitu behar ditu joko-taulan zehar, kolore bereko bost, lerro berean bilduz. Lerroa osatzen denean, taulatik kentzen da, espazio preziatua askatuz. Era berean, bola berriak iristen dira, aldiko hiru, mugimendu bakoitzaren ondoren, jokoaren taula betez.</p>
     <p xml:lang="fi">Pelaaja siirtää värillisiä palloja pelilaudalla keräten samanvärisiä viiden suoria. Kun suora on valmis, se poistetaan laudalta, jolloin vapautuu arvokasta lautatilaa. Samaan aikaan joka siirrolla saapuu kolmen ryppäissä uusia palloja täyttämään pelilautaa.</p>
     <p xml:lang="fr">Le joueur doit déplacer des billes de couleur sur le plateau de jeu, en les regroupant cinq par cinq pour constituer des lignes d'une seule couleur. Une fois la ligne complète, elle est enlevée du plateau, ce qui libère de l'espace. Les nouvelles billes continuent à arriver trois par trois après chaque mouvement du joueur, remplissant le plateau au fur et à mesure.</p>
     <p xml:lang="gl">O xogador ten de mover as bólas coloradas pola área de xogo, recolléndoas das liñas da mesma cor en grupos de cinco. Cando a liña está completa elimínase da área de xogo, liberando así un espazo necesario. Ao mesmo tempo, as bólas novas continúan a chegar en grupos de tres despois de cada xogada, enchendo a área de xogo.</p>
@@ -100,7 +106,7 @@
     <p xml:lang="ko">플레이어는 게임 판에 있는 색깔 있는 공을 움직여야 하며, 같은 색 공을 일렬로 다섯 개 모아서 줄을 없애야 합니다. 공의 위치를 바꿀 때 새로운 공이 게임 판에 나타납니다.</p>
     <p xml:lang="nl">De speler verplaatst de gekleurde ballen op het speelbord en verzamelt ze daarbij per vijf op de lijnen van gelijke kleur. Nadat de lijn klaar is wordt deze van het bord verwijderd en maakt daarmee kostbare ruimte vrij. Op hetzelfde moment blijven er bij elke zet drie nieuwe ballen verschijnen, die het speelbord opvullen.</p>
     <p xml:lang="nn">Du må flytta farge kuler rundt på eit spelebrett slik at fem kuler med same farge kjem på linje. Dei vert då automatisk fjerna frå brettet, slik at du får meir ledig plass. Men ved kvart flytt kjem det samtidig tre nye kuler, som fyller opp brettet.</p>
-    <p xml:lang="pl">Gracz musi przemieszczać kolorowe kulki na polu gry, zgrupowując je w linie tej samej barwy w liczbie pięciu. W chwili ukończenia linii, są one usuwane z planszy, zwalniając przy tym cenne miejsce. W tym samym czasie na pole gry dochodzą trzy nowe kulki.</p>
+    <p xml:lang="pl">Gracz musi przemieszczać kolorowe kulki na polu gry, grupując je w linie tej samej barwy w liczbie pięciu. W chwili ukończenia linii, są one usuwane z planszy, zwalniając przy tym cenne miejsce. W tym samym czasie na pole gry dochodzą trzy nowe kulki.</p>
     <p xml:lang="pt">O jogador tem de mover as bolas coloridas pelo tabuleiro do jogo, recolhendo-as  para as linhas da mesma cor em grupos de cinco. Assim que a linha estiver completa, é removida do tabuleiro, libertando assim espaço precioso. Ao mesmo tempo, começam a chegar bolas novas em grupos de três ao fim de cada jogada, preenchendo o tabuleiro do jogo.</p>
     <p xml:lang="pt-BR">O jogador terá de mover as bolas coloridas pela área de jogo, recolhendo-as das linhas da mesma cor em grupos de cinco. Logo que a linha esteja completa, é removida da área de jogo, liberando assim o espaço anterior. Ao mesmo tempo, as bolas novas continuam a chegar em grupos de três após cada jogada, alimentando a área de jogo.</p>
     <p xml:lang="sk">Hráč musí posúvať farebné gule okolo hracieho plánu a zbierať ich do riadkov rovnakej farby po piatich. Akonáhle je linka kompletná, je odstránená z hracej plochy, čím sa uvoľní vzácny priestor. V rovnakom čase nové lopty stále prichádzajú o tri po každom ťahu, čím zaplnia hraciu dosku.</p>
@@ -164,6 +170,7 @@
   <developer_name xml:lang="en-GB">The KDE Community</developer_name>
   <developer_name xml:lang="es">La comunidad KDE</developer_name>
   <developer_name xml:lang="et">KDE kogukond</developer_name>
+  <developer_name xml:lang="eu">KDE komunitatea</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">La communauté KDE</developer_name>
   <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
