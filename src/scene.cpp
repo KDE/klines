@@ -351,7 +351,7 @@ void KLinesScene::removeAnimFinished()
             m_score += m_bonusScore;
         }
 
-        for (BallItem* item : qAsConst(m_itemsToDelete)) {
+        for (BallItem* item : std::as_const(m_itemsToDelete)) {
             removeItem(item);
             delete item;
         }
@@ -498,7 +498,7 @@ void KLinesScene::searchAndErase()
                 continue;
         }
 
-    for (const FieldPos& pos : qAsConst(positionsToDelete)) {
+    for (const FieldPos& pos : std::as_const(positionsToDelete)) {
         m_itemsToDelete.append(m_field[pos.x][pos.y]);
         m_field[pos.x][pos.y] = nullptr;
         m_numFreeCells++;

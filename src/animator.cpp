@@ -109,7 +109,7 @@ void KLinesAnimator::animateRemove( const QList<BallItem*>& list )
 void KLinesAnimator::animateBorn( const QList<BallItem*>& list )
 {
     m_bornBalls = list;
-    for (BallItem* ball : qAsConst(m_bornBalls)) {
+    for (BallItem* ball : std::as_const(m_bornBalls)) {
         ball->setRenderSize(KLinesRenderer::cellExtent());
     }
 
@@ -161,7 +161,7 @@ void KLinesAnimator::removeAnimationFrame(int frame)
 {
     if(frame == KLinesRenderer::frameCount(KLinesRenderer::DieAnim))
         return;
-    for (BallItem* ball : qAsConst(m_removedBalls)) {
+    for (BallItem* ball : std::as_const(m_removedBalls)) {
 	ball->setSpriteKey(KLinesRenderer::animationFrameId( KLinesRenderer::DieAnim,
                                                                  ball->color(), frame) );
     }
@@ -169,7 +169,7 @@ void KLinesAnimator::removeAnimationFrame(int frame)
 
 void KLinesAnimator::bornAnimationFrame(int frame)
 {
-    for (BallItem* ball : qAsConst(m_bornBalls)) {
+    for (BallItem* ball : std::as_const(m_bornBalls)) {
         ball->setSpriteKey( KLinesRenderer::animationFrameId( KLinesRenderer::BornAnim,
                                                                  ball->color(), frame) );
     }
@@ -214,7 +214,7 @@ void KLinesAnimator::findPath( FieldPos from, FieldPos to )
         if( x != FIELD_SIZE-1 ) adjacentSquares.append( FieldPos(x+1,y) );
         if( y != FIELD_SIZE-1 ) adjacentSquares.append( FieldPos(x,y+1) );
 
-        for (const FieldPos &pos : qAsConst(adjacentSquares)) {
+        for (const FieldPos &pos : std::as_const(adjacentSquares)) {
             if( m_scene->ballAt(pos) != nullptr ) // skip non-walkable cells
                 continue;
 
@@ -304,7 +304,7 @@ void KLinesAnimator::stopGameOverAnimation()
 
 void KLinesAnimator::slotBornFinished()
 {
-    for (BallItem* ball : qAsConst(m_bornBalls)) {
+    for (BallItem* ball : std::as_const(m_bornBalls)) {
 	ball->setColor(ball->color(), true);
     }
     Q_EMIT bornFinished();
