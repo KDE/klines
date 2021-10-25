@@ -22,7 +22,7 @@ class KLinesMainWindow : public KXmlGuiWindow
     Q_OBJECT
 public:
     KLinesMainWindow();
-    ~KLinesMainWindow();
+    ~KLinesMainWindow() override;
 
 protected:
     void setupActions();

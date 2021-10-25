@@ -30,7 +30,7 @@ class KLinesScene : public QGraphicsScene
     Q_OBJECT
 public:
     explicit KLinesScene( QObject *parent );
-    ~KLinesScene();
+    ~KLinesScene() override;
     /**
      *  Resizes scene
      */

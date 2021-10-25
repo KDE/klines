@@ -19,7 +19,7 @@ class MainWidget : public QWidget
     Q_OBJECT
 public:
     explicit MainWidget(QWidget* parent = nullptr);
-    ~MainWidget();
+    ~MainWidget() override;
 
     KLinesScene* scene() { return m_scene; }
 public Q_SLOTS:
