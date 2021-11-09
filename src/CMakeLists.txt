@@ -6,14 +6,23 @@ ecm_setup_version(${PROJECT_VERSION}
 add_executable(klines)
 
 target_sources(klines PRIVATE
-    mwidget.cpp
-    klines.cpp
-    main.cpp
-    scene.cpp
-    renderer.cpp
-    ballitem.cpp
-    previewitem.cpp
     animator.cpp
+    animator.h
+    ballitem.cpp
+    ballitem.h
+    commondefs.h
+    klines.cpp
+    klines.h
+    main.cpp
+    mwidget.cpp
+    mwidget.h
+    previewitem.cpp
+    previewitem.h
+    renderer.cpp
+    renderer.h
+    scene.cpp
+    scene.h
+
 
     klines.qrc
 )
