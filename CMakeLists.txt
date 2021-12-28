@@ -35,9 +35,12 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     ConfigWidgets
     XmlGui
-    DocTools
 )
-
+find_package(KF5DocTools ${KF5_MIN_VERSION})
+set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
+    "Tools to generate documentation"
+    TYPE OPTIONAL
+)
 find_package(KF5KDEGames 7.3.0 REQUIRED)
 
 add_definitions(
@@ -50,9 +53,11 @@ add_definitions(
 add_subdirectory(themes)
 add_subdirectory(icons)
 add_subdirectory(src)
-add_subdirectory(doc)
 
 ki18n_install(po)
-kdoctools_install(po)
+if(KF5DocTools_FOUND)
+    kdoctools_install(po)
+    add_subdirectory(doc)
+endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
