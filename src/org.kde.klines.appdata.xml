@@ -29,6 +29,7 @@
   <name xml:lang="sk">Farebné čiary</name>
   <name xml:lang="sl">Kolor Lines</name>
   <name xml:lang="sv">Färglinjer</name>
+  <name xml:lang="tr">Kolor Lines</name>
   <name xml:lang="uk">Кольорові лінії</name>
   <name xml:lang="x-test">xxKolor Linesxx</name>
   <name xml:lang="zh-CN">Kolor Lines</name>
@@ -59,6 +60,7 @@
   <summary xml:lang="sk">Taktická hra</summary>
   <summary xml:lang="sl">Strateška igra</summary>
   <summary xml:lang="sv">Taktikspel</summary>
+  <summary xml:lang="tr">Taktik Oyunu</summary>
   <summary xml:lang="uk">Тактична гра</summary>
   <summary xml:lang="x-test">xxTactical Gamexx</summary>
   <summary xml:lang="zh-CN">战术游戏</summary>
@@ -87,6 +89,7 @@
     <p xml:lang="sk">Kolor Lines je jednoduchá, ale vysoko návyková hra pre jedného hráča.</p>
     <p xml:lang="sl">Kolor Lines je preprosta igra za enega igralca, ki vas zelo zasvoji.</p>
     <p xml:lang="sv">Färglinjer är ett enkelt men mycket vanebildande spel för en spelare.</p>
+    <p xml:lang="tr">Kolor Lines, yalın; ancak ileri düzeyde bağımlılık yaratan tek kişilik bir oyundur.</p>
     <p xml:lang="uk">«Кольорові лінії» — проста, але дуже захоплива гра для одного гравця.</p>
     <p xml:lang="x-test">xxKolor Lines is a simple but highly addictive one player game.xx</p>
     <p xml:lang="zh-CN">Kolor Lines 是一款简单易上头的单人游戏。</p>
@@ -119,6 +122,7 @@
     <p xml:lang="sk">Hráč musí posúvať farebné gule okolo hracieho plánu a zbierať ich do riadkov rovnakej farby po piatich. Akonáhle je linka kompletná, je odstránená z hracej plochy, čím sa uvoľní vzácny priestor. V rovnakom čase nové lopty stále prichádzajú o tri po každom ťahu, čím zaplnia hraciu dosku.</p>
     <p xml:lang="sl">Igralec mora po igralni površini premikati barvne žogice in jih postavljati v enakobarvne vrste po pet ali več žogic. Ko je vrstica dopolnjena, je odstranjena iz igralne površine, pri tem pa se sprosti dragocen prostor. Sočasno s premikanjem se na površini pojavljajo po tri nove žogice naenkrat, ki polnijo prazen prostor na igralni površini.</p>
     <p xml:lang="sv">Spelaren ska flytta omkring de färgade bollarna på spelbrädet, och samla fem av samma färg i en linje. När en linje är färdig tas den bort från brädet, och frigör därför dyrbart utrymme. På samma gång anländer tre nya bollar åt gången efter varje drag, och fyller upp spelbrädet.</p>
+    <p xml:lang="tr">Oyuncu, aynı renkli toplarını oyun tahtası üzerinde taşıyarak beşli diziler oluşturmalıdır. Dizi tamamlandığında toplar tahtadan kaldırılır ve değerli bir alanı boşa çıkarır. Aynı zamanda her hareketten sonra yeni toplar gelir ve oyun tahtasını doldurur.</p>
     <p xml:lang="uk">Гравцеві слід пересувати кольорові кульки ігровою дошкою, збираючи їх по п’ять у рядки однакового кольору. Після утворення такого рядка всі кульки з нього буде вилучено і таким чином на дошці звільниться місце. Також після кожного ходу на дошці з’являтимуться три нових кульки, які зменшуватимуть вільне місце на ній.</p>
     <p xml:lang="x-test">xxThe player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.xx</p>
     <p xml:lang="zh-CN">玩家需移动游戏版面周围的彩球，将同色彩球聚集在同一行的五个位置上。一行完成后，就会被移出版面，也就腾空了宝贵的空间。同时，每移动一步，就会有三个新的球填到游戏版面上。</p>
@@ -195,6 +199,7 @@
   <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
+  <developer_name xml:lang="tr">KDE Topluluğu</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxThe KDE Communityxx</developer_name>
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
