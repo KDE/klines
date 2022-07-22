@@ -5,6 +5,7 @@
   <project_license>GPL-2.0</project_license>
   <name>Kolor Lines</name>
   <name xml:lang="ar">الخطوط الملونة ك</name>
+  <name xml:lang="bg">Kolor Lines</name>
   <name xml:lang="ca">Kolor Lines</name>
   <name xml:lang="ca-valencia">Kolor Lines</name>
   <name xml:lang="cs">Barevné čáry</name>
@@ -36,6 +37,7 @@
   <name xml:lang="zh-TW">Kolor Lines 彩色線條</name>
   <summary>Tactical Game</summary>
   <summary xml:lang="ar">لعبة تكتيكية</summary>
+  <summary xml:lang="bg">Тактическа игра</summary>
   <summary xml:lang="ca">Joc de tàctica</summary>
   <summary xml:lang="ca-valencia">Joc de tàctica</summary>
   <summary xml:lang="cs">Taktická hra</summary>
@@ -70,6 +72,7 @@
      Kolor Lines is a simple but highly addictive one player game.
     </p>
     <p xml:lang="ar">الخطوط الملونة ك هي لعبة لاعب واحد بسيطة ولكنها تسبب الإدمان.</p>
+    <p xml:lang="bg">Kolor Lines е проста, но силно пристрастяваща игра за един играч.</p>
     <p xml:lang="ca">El Kolor Lines és un joc senzill d'un jugador però molt addictiu.</p>
     <p xml:lang="ca-valencia">Kolor Lines és un joc senzill d'un jugador però molt addictiu.</p>
     <p xml:lang="da">Kolor Lines er et simpelt men stærkt vanedannende spil til en enkelt spiller.</p>
@@ -100,6 +103,7 @@
      In the same time the new balls keep arriving by three after each move, filling up the game board.
     </p>
     <p xml:lang="ar">يتعين على اللاعب تحريك الكرات الملونة حول لوحة اللعبة، وتجميعها في خطوط من نفس اللون بمقدار خمسة. بمجرد اكتمال الخط، يتم إزالته من اللوحة، وبالتالي تحرير مساحة ثمينة. في نفس الوقت، تستمر الكرات الجديدة في الوصول بمقدار ثلاث كرات بعد كل حركة لتملأ لوحة اللعبة.</p>
+    <p xml:lang="bg">Играчът трябва да движи цветните топки по игралното поле, като събира в редици по пет от един и същи цвят. След като линията е завършена, тя се премахва от игралното поле, като по този начин се освобождава ценно пространство. В същото време нови топчета пристигат по три след всеки ход, запълвайки игралното поле.</p>
     <p xml:lang="ca">El jugador ha de moure les pilotes acolorides pel tauler de joc, recollint-les en línies de cinc del mateix color. Un cop completada la línia, s'eliminarà del tauler, alliberant l'espai escàs. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
     <p xml:lang="ca-valencia">El jugador ha de moure les pilotes acolorides pel tauler de joc, arreplegant-les en línies de cinc del mateix color. Una vegada completada la línia, s'eliminarà del tauler, alliberant l'espai escàs. Al mateix temps, tres pilotes noves continuen arribant després de cada moviment, omplint el tauler de joc.</p>
     <p xml:lang="da">Spilleren skal flytte de farvede bolde rundt på spillebrættet, og samle dem i linjer af dem med samme farve. Når linjen er komplet fjernes den fra brættet, hvilket frigør vigtig plads. På samme tid kommer der hele tiden trioer af nye bolde efter hvert træk, som fylder spilletbrættet op.</p>
@@ -175,6 +179,7 @@
   <project_group>KDE</project_group>
   <developer_name>The KDE Community</developer_name>
   <developer_name xml:lang="ar">مجتمع كدي</developer_name>
+  <developer_name xml:lang="bg">Общността на KDE</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
