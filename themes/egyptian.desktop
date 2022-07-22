@@ -2,6 +2,7 @@
 VersionFormat=0.8
 Name=Egyptian
 Name[ar]=مصري
+Name[bg]=Египетски
 Name[bs]=Egipatski
 Name[ca]=Egipci
 Name[ca@valencia]=Egipci
@@ -52,6 +53,7 @@ Name[zh_CN]=埃及
 Name[zh_TW]=埃及式
 Description=An Egyptian style theme for Kolor Lines.
 Description[ar]=سمة نمط مصري للخطوط الملونة ك.
+Description[bg]=Египетски стил за Kolor Lines.
 Description[ca]=Un tema d'estil egipci per al Kolor Lines.
 Description[ca@valencia]=Un tema d'estil egipci per a Kolor Lines.
 Description[cs]=Motiv pro Kolor Lines v egyptském stylu.
