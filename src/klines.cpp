@@ -22,7 +22,6 @@
 #include <KScoreDialog>
 #include <KToggleAction>
 #include <KConfigDialog>
-#include <KMessageBox>
 #include <KLocalizedString>
 #include <KStandardGameAction>
 #include <KGameRenderer>
