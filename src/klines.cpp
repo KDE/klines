@@ -21,11 +21,10 @@
 #include <KStandardAction>
 #include <KScoreDialog>
 #include <KToggleAction>
-#include <KConfigDialog>
 #include <KLocalizedString>
 #include <KStandardGameAction>
-#include <KGameRenderer>
 #include <KgThemeSelector>
+#include <KGameRenderer>
 
 KLinesMainWindow::KLinesMainWindow()
 {
