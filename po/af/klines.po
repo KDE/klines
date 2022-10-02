@@ -1,0 +1,274 @@
+# WEB-Translator generated file. UTF-8 test:äëïöü
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Frikkie Thirion <frix@expertron.co.za>, 2001,2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2002-11-07 11:32+0200\n"
+"Last-Translator: WEB-Translator <http://kde.af.org.za>\n"
+"Language-Team: AFRIKAANS <AF@lia.org.za>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "WEB-Vertaler (http://kde.af.org.za)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "frix@expertron.co.za"
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr " Telling:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "Vertoon Volgende"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr ""
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr ""
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr ""
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr ""
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr " Telling: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kleur Lyne"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr ""
+"Kleur Lyne - 'n klein speletjie aangaande balle en hoe na kry ontslae van "
+"hulle"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Oorspronklike outeur"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Herskryf en Uitbreiding"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~| msgid "&Show Next"
+#~ msgid "Show next"
+#~ msgstr "Vertoon Volgende"
+
+#~ msgid "Very Easy"
+#~ msgstr "Baie Maklike"
+
+#~ msgid "Easy"
+#~ msgstr "Maklike"
+
+#~ msgid "Normal"
+#~ msgstr "Normale"
+
+#~ msgid "Hard"
+#~ msgstr "Hard"
+
+#~ msgid "Very Hard"
+#~ msgstr "Baie Hard"
+
+#~ msgid " Level: "
+#~ msgstr " Vlak: "
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Begin Tutoriaal"
+
+#~ msgid " Level: %1"
+#~ msgstr " Vlak: %1"
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "Stop Tutoriaal"
+
+#~ msgid "Tutorial"
+#~ msgstr "Tutoriaal"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Tutoriaal - Op gehou"
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr ""
+#~ "Die teiken van Die speletjie is na plaas\n"
+#~ "5 balle van Die selfde kleur in lyn."
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "Jy kan maak horisontaal, vertikaal\n"
+#~ "en diagonale lyne."
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "Elke skakel, drie nuwe balle word rangorde op die bord."
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "Elke skakel, jy kan beweeg een bal."
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "Na beweeg 'n bal, kliek op dit met die muis,\n"
+#~ "dan word kliek waar jy wil hê die bal Na gaan."
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "Jy net verskuif die blou bal!"
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "Balle kan wees verskuif na elke posisie op die bord,\n"
+#~ "as lang as daar word nee ander Balle in hulle weg."
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "Nou ons slegs benodig een meer blou bal."
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "Dit blyk na wees ons gelukkig dag!"
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "Nou jy probeer!\n"
+#~ "Kliek op die groen bal en beweeg dit na die andere!"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "Amper, probeer weer!"
+
+#~ msgid "Very good!"
+#~ msgstr "Baie goeie!"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr "Wanneer ook al jy volledige 'n lyn jy kry 'n addisionele skakel."
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "Hierdie is die einde van Hierdie tutoriaal.\n"
+#~ "Gevoel vry na einde die speletjie!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Tutoriaal - Gepouseer"
+
+#~ msgid "Game Over"
+#~ msgstr "Speletjie Bo"

@@ -1,0 +1,332 @@
+# translation of klines.po to
+# translation of klines.po to Tajik
+# translation of klines.po to Тоҷикӣ
+# Copyright (C) 2004, 2003, 2005 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank organization
+# 2004, Khujand Computer Technologies, Inc.
+# 2004, KCT1, NGO
+# Youth Opportunities NGO, 2005.
+# Dilshod Marupov <dma165@hotmail.com>, 2004.
+# Victor Ibragimov <youth_opportunities@tajikngo.org>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2005-10-07 16:46+0500\n"
+"Last-Translator: Victor Ibragimov <youth_opportunities@tajikngo.org>\n"
+"Language-Team: Tajik\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Виктор Ибрагимов, Павел Карась, Нозимова Мадина, Нозимзожда Меҳрангез"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ",,,MehaN@tajikngo.org "
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr " Ҳисоб:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "&Намоиши Оянда"
+
+#: klines.cpp:81
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgid "Move Left"
+msgstr "Ҳаракат ба боло"
+
+#: klines.cpp:86
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgid "Move Right"
+msgstr "Ҳаракат ба рост"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Ҳаракат ба боло"
+
+#: klines.cpp:96
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgid "Move Down"
+msgstr "Ҳаракат ба поён"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr " Ҳисоб: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Оё намоиши тӯбчаҳои рақамгузошташуда истифода бурда шаванд."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Хатҳои Рангин"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Хатҳои Рангин - бозии хурд оиди тӯбчаҳо ва чӣ қадар ҷамъ овардани онҳо"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Муаллифи Ибтидоӣ"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Бознавишта шудааст ва Беҳтар гардонида шудааст"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Unable to find graphics. Check your installation."
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Графикҳо пайдо нашудаанд. Коргузории худро санҷед."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Ҳаракат"
+
+#, fuzzy
+#~| msgid "&Show Next"
+#~ msgid "Show next"
+#~ msgstr "&Намоиши Оянда"
+
+#, fuzzy
+#~| msgid "Move Left"
+#~ msgid "Left"
+#~ msgstr "Ҳаракат ба чап"
+
+#, fuzzy
+#~| msgid "Move Right"
+#~ msgid "Move cursor to right"
+#~ msgstr "Ҳаракат ба рост"
+
+#, fuzzy
+#~| msgid "Move Down"
+#~ msgid "Down"
+#~ msgstr "Ҳаракат ба поён"
+
+#~ msgid "Move Ball"
+#~ msgstr "Ҳаракати тӯб"
+
+#, fuzzy
+#~ msgid "Next:"
+#~ msgstr "Тӯбчаҳои оянда:"
+
+#~ msgid "Very Easy"
+#~ msgstr "Хеле Осон"
+
+#~ msgid "Easy"
+#~ msgstr "Осон"
+
+#~ msgid "Normal"
+#~ msgstr "Муқаррарӣ"
+
+#~ msgid "Hard"
+#~ msgstr "Душвор"
+
+#~ msgid "Very Hard"
+#~ msgstr "Хеле Душвор"
+
+#~ msgid " Level: "
+#~ msgstr " Сатҳ: "
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Оғози &Воситаҳои Ёдгирӣ"
+
+#~ msgid "Hide Next"
+#~ msgstr "Пинҳон кардани Оянда"
+
+#~ msgid "&Use Numbered Balls"
+#~ msgstr "&Истифодаи Тӯбҳои Рақамгузоришуда"
+
+#~ msgid " Level: %1"
+#~ msgstr " Сатҳ: %1"
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "Боздоштани &Воситаҳои Ёдгирӣ"
+
+#~ msgid "Tutorial"
+#~ msgstr "Воситаҳои Ёдгирӣ"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Воситаҳои Ёдгирӣ - Боздошташудааст"
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr ""
+#~ "Мақсади бозӣ - ин дар як хат гузоштани\n"
+#~ "5 тӯбчаҳои якранг."
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "Тӯбчаҳоро ба таври уфуқӣ, амудӣ\n"
+#~ "ва диагоналӣ ҷамъ карда метавонед."
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "Ҳар дафъа, се тӯбчаҳои нав дар тахта ҷойгир карда мешаванд."
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "Ҳар дафъа шумо як тӯбчаро ҷойиваз карда метавонед."
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "Барои ҷойивазкунии тӯбча ба воситаи тугмаи муш, ба он ангушт занед,\n"
+#~ "ва ба ҷое, ки тӯбчаро гузоштан мехоҳед, ангушт занед."
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "Ҳоло шумо тӯбчаи кабудро ҷойиваз намудед!"
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "Тӯбҳо ба ҳар куҷои тахта ҷойиваз карда мешаванд,\n"
+#~ "агар ки дар роҳи онҳо ягон тӯбчаи дигар набошад."
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "Ҳоло ба мо як тӯбчаи кабуд лозим аст."
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "Аз афташ, имрӯз ба мо муваффақият насиб мегардад!"
+
+#~ msgid ""
+#~ "Hurray! And away they go!\n"
+#~ "Now lets try the green balls."
+#~ msgstr ""
+#~ "Ура! Мо ҳамаи онҳоро хориҷ кардем!\n"
+#~ "Ҳоло биёед бо тӯбчаҳои сабз машғул мешавем."
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "Ҳоло шумо кӯшиш кунед!\n"
+#~ "Ба тӯбчаи сабз ангушт занед ва онро ба назди дигарҳо ҷойгир  кунед!"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "Қариб шуд, бори дигар кӯшиш кунед!"
+
+#~ msgid "Very good!"
+#~ msgstr "Хеле хуб!"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr "Бо хориҷкунии сатр шумо соҳиби ҳаракати иловагӣ мегардед."
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "Ин охири воситаҳои омӯзиш аст.\n"
+#~ "Худатон бозиро давом диҳед!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Воситаҳои Ёдгирӣ - Таваққуф карда шудааст"
+
+#~ msgid "Game Over"
+#~ msgstr "Бозӣ ба Итмом расид"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Ҳамворҳо"
+
+#~ msgid "Whether to use numbered balls."
+#~ msgstr "Оё намоиши тӯбчаҳои рақамгузошташуда истифода бурда шаванд."

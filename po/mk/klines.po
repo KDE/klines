@@ -1,0 +1,330 @@
+# translation of klines.po to Macedonian
+# Copyright (C) 2003, 2004, 2006 Free Software Foundation, Inc.
+# Jovan Kostovski <chombium@freemail.com.mk>, 2003.
+# Zaklina Gjalevska <gjalevska@yahoo.com>, 2004, 2006.
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2006-04-26 01:17+0200\n"
+"Last-Translator: Zaklina Gjalevska <gjalevska@yahoo.com>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Костовски Јован,Ѓалевска Жаклина"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "chombium@freemail.com.mk,gjalevska@yahoo.com"
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr " Резултат:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "&Прикажи следни"
+
+#: klines.cpp:81
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgid "Move Left"
+msgstr "Премести нагоре"
+
+#: klines.cpp:86
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgid "Move Right"
+msgstr "Премести надесно"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Премести нагоре"
+
+#: klines.cpp:96
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgid "Move Down"
+msgstr "Премести надолу"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr " Резултат: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Дали да се прикаже следната група на топчиња."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Обоени линии"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Обоени линии - мала игра за топчиња и како да се ослободите од нив"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Оригинален автор"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Повторно пишување и проширување"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Unable to find graphics. Check your installation."
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr ""
+#~ "Не можам да најдам податоци за графика. Проверете ја вашата инсталација."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "П&отег"
+
+#, fuzzy
+#~| msgid "&Show Next"
+#~ msgid "Show next"
+#~ msgstr "&Прикажи следни"
+
+#, fuzzy
+#~| msgid "Move Left"
+#~ msgid "Left"
+#~ msgstr "Премести налево"
+
+#, fuzzy
+#~| msgid "Move Right"
+#~ msgid "Move cursor to right"
+#~ msgstr "Премести надесно"
+
+#, fuzzy
+#~| msgid "Move Down"
+#~ msgid "Down"
+#~ msgstr "Премести надолу"
+
+#~ msgid "Move Ball"
+#~ msgstr "Премести топче"
+
+#, fuzzy
+#~ msgid "Next:"
+#~ msgstr "Следни топчиња:"
+
+#~ msgid "Very Easy"
+#~ msgstr "Многу лесно"
+
+#~ msgid "Easy"
+#~ msgstr "Лесно"
+
+#~ msgid "Normal"
+#~ msgstr "Нормално"
+
+#~ msgid "Hard"
+#~ msgstr "Тешко"
+
+#~ msgid "Very Hard"
+#~ msgstr "Многу тешко"
+
+#~ msgid " Level: "
+#~ msgstr " Ниво: "
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Стартувај &демонстрација"
+
+#~ msgid "Hide Next"
+#~ msgstr "Скриј следни"
+
+#~ msgid "&Use Numbered Balls"
+#~ msgstr "&Користи нумерирани топчиња"
+
+#~ msgid " Level: %1"
+#~ msgstr " Ниво: %1"
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "&Запри демонстрација"
+
+#~ msgid "Tutorial"
+#~ msgstr "Демонстрација"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Демонстрација - запрена"
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr ""
+#~ "Целта на играта е да се состави\n"
+#~ "линија од 5 топчиња со иста боја."
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "Можете да правите хоризонтални, вертикални\n"
+#~ "и дијагонални линии."
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "При секој потег на таблата се додаваат три нови топчиња."
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "При секој потег можете да преместите едно топче."
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "За да преместите топче, кликнете на топчето со глушецот, а потоа\n"
+#~ "кликнете на местото каде што сакате да оди топчето."
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "Тукушто го преместивте синото топче!"
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "Топчињата може да се преместуваат на секоја позиција на таблата,\n"
+#~ "се додека нема други топчиња на нивната патека."
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "Сега ни треба само уште едно сино топче."
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "Изгледа дека денес ни е среќен ден!"
+
+#~ msgid ""
+#~ "Hurray! And away they go!\n"
+#~ "Now lets try the green balls."
+#~ msgstr ""
+#~ "Ура! Нема повеќе топчиња!\n"
+#~ "Сега да се обидеме со зелените топчиња."
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "Сега пробајте сами!\n"
+#~ "Кликнете на зеленото топче и преместете го кај другите!"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "За малку. Обидете се повторно!"
+
+#~ msgid "Very good!"
+#~ msgstr "Многу добро!"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr "Секогаш кога ќе составите линија добивате дополнителен потег."
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "Ова е крај на демонстрацијата.\n"
+#~ "Слободно довршете ја играта!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Демонстрација - Паузирана"
+
+#~ msgid "Game Over"
+#~ msgstr "Играта заврши"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Ниво на сложеност"
+
+#~ msgid "Whether to use numbered balls."
+#~ msgstr "Дали да се користат нумерирани топчиња."

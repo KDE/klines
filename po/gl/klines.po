@@ -1,0 +1,178 @@
+# translation of klines.po to galician
+# Copyright (C) 2003, 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+# Jorge Baz López <lussac@mundo-r.com>, 2003.
+# mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
+# Xosé <xosecalvo@gmail.com>, 2009.
+# Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2009, 2015, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2017-03-15 21:43+0100\n"
+"Last-Translator: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail."
+"com>\n"
+"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Jorge Baz López, Irene Doval Marcos, Marcelino Villarino, Adrián Chaves "
+"Fernández"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"lussac@mundo-r.com, dereka@mundo-r.com, mvillarino@users.sourceforge.net, "
+"adrian@chaves.io"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Puntuación:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Mostrar a seguinte"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Mover á esquerda"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Mover á dereita"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Subir"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Baixar"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Escoller"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Puntuación: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Mellores puntuacións"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Indica se mostrar o seguinte conxunto de bólas."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Anchura do fondo gardado"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Alto do fondo gardado"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Navegación"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Liñas de kores"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Liñas de kores: un pequeno xogo sobre como desfacerse de bólas"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "© 2000-2015 Os autores de KLines"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Autor orixinal"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Revisión profunda e ampliación"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Adaptación para usar QGraphicsView. Mantedor actual"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Novo traballo plástico en SVG para a versión de KDE4 do xogo"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Non hai ningunha ruta desde a peza escollida a esta cela"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Rematou a partida</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Tema visual"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Non foi posíbel cargar o tema visual «%1». Verifica a instalación."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "O tema visual que se usará."

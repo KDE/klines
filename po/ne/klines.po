@@ -1,0 +1,184 @@
+# translation of klines.po to Nepali
+# Mahesh Subedi <submanesh@yahoo.com>, 2006.
+# Nabin Gautam <nabin@mpp.org.np>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2007-08-20 12:21+0545\n"
+"Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Mahesh Subedi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "submanesh@gmail.com"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "प्राप्ताङ्क:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "Show next"
+msgid "Show Next"
+msgstr "पछिल्लो देखाउनुहोस्"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr ""
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr ""
+
+#: klines.cpp:91
+#, fuzzy, kde-format
+#| msgctxt "Menu title"
+#| msgid "&Move"
+msgid "Move Up"
+msgstr "चाल"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr ""
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "प्राप्ताङ्क: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "बलको पछिल्लो सेट देखाउने या नदेखाउने ।"
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "बचत गरिएको पृष्ठभूमिको चौडाइ"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "बचत गरिएको पृष्ठभूमिको उचाइ"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "नेभिगेसन"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "रङ लाइन"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "रङ लाइन - बल र तिनीहरूबाट कसरी मुक्त हुने बारेको एउटा सानो खेल"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "रोमन मेर्जल्याकोभ"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "मौलिक लेखक"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "रोमन राजिलोभ"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "पुन: लेखन र विस्तार"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "डिमिट्री सुज्डालेभ"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "क्यू ग्राफिक्स दृश्य प्रयोग गर्न पुन: लेखन गर्नुहोस् । हालको मर्मतकर्ता"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "युगेन ट्रुनेभ"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "खेलको केडीई४ संस्करणका लागि नयाँ SVG कलाकार्य"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#~ msgid "Theme"
+#~ msgstr "विषयवस्तु"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "\"%1\" विषयवस्तु लोड गर्न असफल । कृपया तपाईँको स्थापना जाँच गर्नुहोस् ।"
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "प्रयोग हुने ग्राफिकल विषयवस्तु ।"
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "चाल"
+
+#~ msgid "Show next"
+#~ msgstr "पछिल्लो देखाउनुहोस्"
+
+#~ msgid "Selected ball can not be moved to this cell"
+#~ msgstr "चयन गरिएका बल यो कक्षमा सार्न सकिने छैन"

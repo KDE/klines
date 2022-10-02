@@ -1,0 +1,330 @@
+# translation of klines.po to Cymraeg
+# Penbwrdd yn Gymraeg.
+# Copyright (C) 2003, 2005 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk<kyfieithu@dotmon.com>, www.gyfieithu.co.uk<kyfieithu@dotmon.com>, 2003.
+# Kevin Donnelly <kevin@dotmon.com>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2005-09-21 09:11+0100\n"
+"Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
+"Language-Team: Cymraeg <cy@li.org>\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kyfieithu: jr, dylunio, Thierry Vignaud"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kyfieithu@dotmon.com,,"
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr "Sgôr:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "&Dangos Nesaf"
+
+#: klines.cpp:81
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgid "Move Left"
+msgstr "Symud i Fyny"
+
+#: klines.cpp:86
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgid "Move Right"
+msgstr "Symud i'r Dde"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Symud i Fyny"
+
+#: klines.cpp:96
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgid "Move Down"
+msgstr "Symud i Lawr"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr "Sgôr: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "A ddylid dangos y set nesaf o bêli."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Llinellau Lliw - gêm fechan am bêli a sut i gael gwared â nhw"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Awdur gwreiddiol"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Ailysgrifennu ac Ymestyn"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Unable to find graphics. Check your installation."
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Methu canfod graffeg. Gwiriwch eich arsefydliad."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Symud"
+
+#, fuzzy
+#~| msgid "&Show Next"
+#~ msgid "Show next"
+#~ msgstr "&Dangos Nesaf"
+
+#, fuzzy
+#~| msgid "Move Left"
+#~ msgid "Left"
+#~ msgstr "Symud i'r Chwith"
+
+#, fuzzy
+#~| msgid "Move Right"
+#~ msgid "Move cursor to right"
+#~ msgstr "Symud i'r Dde"
+
+#, fuzzy
+#~| msgid "Move Down"
+#~ msgid "Down"
+#~ msgstr "Symud i Lawr"
+
+#~ msgid "Move Ball"
+#~ msgstr "Symud Pêl"
+
+#, fuzzy
+#~ msgid "Next:"
+#~ msgstr "Pêli nesaf:"
+
+#~ msgid "Very Easy"
+#~ msgstr "Hawdd Iawn"
+
+#~ msgid "Easy"
+#~ msgstr "Hawdd"
+
+#~ msgid "Normal"
+#~ msgstr "Arferol"
+
+#~ msgid "Hard"
+#~ msgstr "Anodd"
+
+#~ msgid "Very Hard"
+#~ msgstr "Anodd Iawn"
+
+#~ msgid " Level: "
+#~ msgstr " Lefel:"
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Dechrau &Hyfforddiad"
+
+#~ msgid "Hide Next"
+#~ msgstr "Cuddio Nesaf"
+
+#~ msgid "&Use Numbered Balls"
+#~ msgstr "&Defnyddio Peli Rhif"
+
+#~ msgid " Level: %1"
+#~ msgstr "Lefel: %1"
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "Atal &Hyfforddiad"
+
+#~ msgid "Tutorial"
+#~ msgstr "Hyfforddiad"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Hyfforddiad - Ataliwyd"
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr ""
+#~ "Amcan y gêm yw rhoi\n"
+#~ "5 pêl o'r un lliw mewn rhes."
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "Gallwch wneud llinellau llorweddol, \n"
+#~ "fertigol a lletraws."
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "Mae tair pêl yn cael eu gosod ar y bwrdd bob tro."
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "Gallwch symud un bêl bob tro."
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "I symud pêl, cliciwch arni gyda'r llygoden,\n"
+#~ " yna cliciwch lle mae'r bêl i fynd."
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "Rydych newydd symud y bêl las!"
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "Gellir symud pêli i unrhyw le ar y bwrdd,\n"
+#~ " os nad yw pêli eraill yn eu ffordd."
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "Mae angen un bêl las arall yn unig rwan."
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "Dyma ddiwrnod lwcus!"
+
+#~ msgid ""
+#~ "Hurray! And away they go!\n"
+#~ "Now lets try the green balls."
+#~ msgstr ""
+#~ "Hwre! Ffwrdd a nhw!\n"
+#~ "Rwan, gad i ni geisio'r pêli gwyrdd."
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "Ceisiwch chi rwan!\n"
+#~ "Cliciwch ar y bêl werdd a'i symud at y lleill!"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "Bron, ceisiwch eto!"
+
+#~ msgid "Very good!"
+#~ msgstr "Da iawn!"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr "Pan gwblhewch linell, byddwch yn cael tro arall."
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "Dyma ddiwedd yr hyfforddiad.\n"
+#~ "Croeso i chi orffen y gêm!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Hyfforddiad - wedi'i seibio"
+
+#~ msgid "Game Over"
+#~ msgstr "Gêm Drosodd"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Lefel anhawster"
+
+#~ msgid "Whether to use numbered balls."
+#~ msgstr "A ddylid defnyddio pêli rhif."

@@ -1,0 +1,163 @@
+# Translation of klines to Korean.
+# Copyright (C) 2007-2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdegames package.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2011, 2015, 2019, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2020-04-04 00:05+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 19.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "점수:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "다음 보기"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "왼쪽으로 이동"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "오른쪽으로 이동"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "위로 이동"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "아래로 이동"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "선택"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "점수: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "최고 기록"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "다음 공을 보여 줄지 여부입니다."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "저장된 배경의 폭"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "저장된 배경의 높이"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "탐색"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - 공을 제거하는 방법에 관한 작은 게임"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2015 The KLines Authors"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "원 작성자"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "재작성, 확장"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "QGraphicsView를 사용하도록 재작성. 현재 관리자."
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "KDE 4 버전의 게임용 SVG 그림"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "선택한 조각을 이 공간으로 옮길 경로가 없습니다"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>게임 끝</h1>"

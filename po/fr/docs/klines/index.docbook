@@ -1,0 +1,678 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Manuel de &kolorlines;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+&traducteurGerardDelafond;&traducteurStanislasZeller;&relecteurLudovicGrossard; 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;, </holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+ 
+<date
+>10-05-2016</date>
+<releaseinfo
+>1.6 (Applications 16.04)</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Cette documentation décrit le jeu &kolorlines; version 1.6</para>
+</abstract>
+ 
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>jeu</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kolorlines</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>arcade</keyword>
+	<keyword
+>couleurs</keyword>
+	<keyword
+>lignes de couleur</keyword>
+	<keyword
+>couleur</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>un joueur</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introduction</title
+> <!-- do not change this! -->
+	<note
+><title
+>Type de jeu : </title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Nombre possible de joueurs : </title
+><para
+>Un</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>&kolorlines; est un jeu simple et hautement captivant avec un seul joueur pour &kde;. &kolorlines; est inspiré par le jeu bien connu <application
+>Color Lines</application
+> écrit pour <application
+>DOS</application
+> par Olga Demina, Igor Ivkin et Gennady Denisov en 1992.</para>
+	<para
+>Le but de &kolorlines; est assez simple. Le joueur doit déplacer les billes colorées sur le plateau de jeu, en les groupant sur des lignes de la même couleur par cinq. Une fois que la ligne est complète, elle est supprimée du plateau, libérant un espace précieux. Dans le même temps, les nouvelles billes se placent par trois à chaque tour sur le plateau de jeu.</para>
+	<para
+>&kolorlines; est un jeu qui se joue exclusivement contre le meilleur score. Le jeu prend fin une fois que tout le plateau de jeu est rempli de billes.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Comment jouer</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Objectif : </title
+><para
+>Déplacer les billes sur le plateau de jeu, en les groupant sur des lignes de la même couleur par cinq.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>Quand &kolorlines; démarre, vous voyez un plateau de jeu divisé en 81 cases (la taille du plateau est de 9x9 cases), et aussitôt trois nouvelles billes colorées apparaissent sur le plateau. Utilisez la souris pour déplacer les billes de cellule en cellule pour les grouper sur une ligne d'une même couleur. Cependant, après chaque déplacement, l'ordinateur rajoute trois billes de plus sur le plateau. Pour éviter le remplissage du plateau, vous devez grouper ensemble les billes sur une ligne par cinq ou plus. Quand une ligne est complète, les billes sont supprimées du plateau et votre score augmente.</para>
+	<note
+><title
+>Remarque : </title
+><para
+>Les nouvelles billes ne seront pas ajoutées sur le plateau après la suppression d'une ligne. À la place, vous rejouerez un déplacement avant que la nouvelle triplette de billes ne soit ajoutée.</para
+></note>
+	<para
+>L'augmentation du score dépend exclusivement du nombre de billes supprimées.</para>
+	<note
+><title
+>Remarque : </title
+><para
+>Si vous jouez avec la fonctionnalité <guimenuitem
+>Afficher la suite</guimenuitem
+> activée, l'augmentation du score est moindre que si cette fonctionnalité est désactivée.</para
+></note>
+	<para
+>&kolorlines; ne se joue que contre le meilleur score exclusivement. Le jeu prend fin une fois que la totalité du plateau est rempli avec les billes.</para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Règles du jeu, stratégies et astuces</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Règles du jeu</title>
+			<itemizedlist>
+				<listitem
+><para
+>Après chaque déplacement du joueur, trois billes supplémentaires seront ajoutées.</para
+></listitem>
+				<listitem
+><para
+>Pour gagner de l'espace sur le plateau de jeu, le joueur doit grouper les billes de la même couleur sur une ligne horizontale, verticale ou diagonale ininterrompue par groupe de cinq ou plus.</para
+></listitem>
+				<listitem
+><para
+>Pour initier un déplacement, cliquez simplement sur la bille pour la sélectionner, puis cliquez sur la case de destination pour terminer le déplacement.</para
+></listitem>
+				<listitem
+><para
+>Une bille peut être déplacée vers des cases qui sont vacantes et non occupées par d'autres billes.</para
+></listitem>
+				<listitem
+><para
+>Dans le même temps, la case en question doit être librement accessible.</para
+></listitem>
+				<listitem
+><para
+>La case est librement accessible quand il n'y a pas d'autres billes bloquant l'emplacement.</para
+></listitem>
+				<listitem
+><para
+>L'emplacement est considéré comme bloqué si celui ci est occupé par une bille.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Remarque : </title
+><para
+>Dans &kolorlines;, l'emplacement est automatiquement calculé. Si il n'y a aucune possibilité pour se déplacer vers la cellule de destination, une notification d'avertissement est affichée.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>Pour envoyer une bille vers la cellule désirée qui est bloquée, le joueur doit d'abord libérer celle ci.</para
+></listitem>
+				<listitem
+><para
+>Pour libérer un emplacement, le joueur doit simplement déplacer toutes les billes bloquantes, et donc libérer l'espace.</para
+></listitem>
+				<listitem
+><para
+>Les scores sont attribués pour chaque ligne de billes supprimée du plateau.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Remarque : </title
+><para
+>Si vous jouez avec la fonctionnalité <guimenuitem
+>Afficher la suite</guimenuitem
+> activée, l'augmentation du score est moindre que si cette fonctionnalité est désactivée.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Stratégies et astuces</title>
+			<itemizedlist>
+				<listitem
+><para
+>Jetez un œil sur la barre affichant les trois prochaines billes à être insérées sur le plateau (sauf si la fonctionnalité <guimenuitem
+>Afficher la suite</guimenuitem
+> est désactivée). Vous apprécierez cette information assez souvent lorsqu'elle est fournie.</para
+></listitem>
+				<listitem
+><para
+>Essayez d'effacer au moins une moitié du plateau de jeu. Laisser les billes s'empiler vous amènera presque certainement à la défaite.</para
+></listitem>
+				<listitem
+><para
+>Pour rendre le jeu plus facile, concentrez vous sur plusieurs lignes de billes identiques prêtes à être supprimées. Ceci peut être réalisé en construisant plusieurs lignes consécutives partout où il est possible, au lieu de ce concentrer sur une ligne à la fois.</para
+></listitem>
+				<listitem
+><para
+>Essayer de jouer avec des lignes presque complètes de trois billes sur le plateau de jeu tous le temps. Presque complètes veut dire que ces lignes ont quatre billes identiques en longueur, et qu'il manque seulement une bille pour compléter la séquence.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Exemple : </title
+><para
+>Si vous avez une ligne presque complète et que le chemin devient soudainement bloqué par une autre bille, ne déplacez pas cette bille. Essayez de trouver une séquence de billes du même genre qui vous permet de continuer avec la bille à déplacer. Si une telle séquence existe et est accessible, déplacez la bille bloquante vers cette séquence.</para
+></note>
+	</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Vue d'ensemble de l'interface</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>La fenêtre principale de &kolorlines;</title>
+<screenshot>
+				<screeninfo
+>Une capture d'écran de &kolorlines;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Capture d'écran</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>Tout en haut de la fenêtre est située la barre de menu et la barre d'outils. Au centre de l'écran se présente une grande zone remplie de cases appelées le plateau de jeu. Sur le coté droit est représenté une barre affichant les trois prochaines billes à être affichées sur le plateau (sauf si la fonctionnalité <guimenuitem
+>Afficher la suite</guimenuitem
+> est désactivée). En dessous de ce champ se trouve la barre d'état.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Éléments de menu</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Nouveau</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Commence une nouvelle partie</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Afficher les meilleurs scores</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Affiche le tableau des meilleurs scores</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Quitter</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Quitte</action
+> &kolorlines;</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Déplacer</guimenu
+> <guimenuitem
+>Annuler</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Ceci annulera le dernier mouvement</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Déplacer</guimenu
+><guimenuitem
+>Fin du tour</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Passe votre tour, jouer immédiatement les prochaine billes sans en déplacer aucune.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Gauche</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Déplacer vers la gauche</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Cette action déplacera le curseur de sélection vers la gauche.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Droite</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Déplacer vers la droite</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Cette action déplacera le curseur de sélection vers la droite.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Haut</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Déplacer vers le haut</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Cette action déplacera le curseur de sélection vers le haut.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Bas</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Déplacer vers le bas</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Cette action déplacera le curseur de sélection vers le bas.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Espace</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Sélectionner</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Cette action sélectionnera l'élément courant sous le curseur.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Afficher le suivant</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Affiche ou cache les informations sur les billes suivantes.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>De plus, &kolorlines; possède des éléments communs de menu &kde; <guimenu
+>Configuration</guimenu
+> et <guimenu
+>Aide</guimenu
+>. Pour plus d'informations, veuillez consulter les sections <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu de configuration</ulink
+> et <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu d'aide</ulink
+> des fondamentaux de &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Foire aux questions</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Je veux modifier la façon dont le jeu s'affiche. Est-ce possible ? </para
+></question>
+ <answer
+><para
+>Oui. Pour modifier le thème visuel de &kolorlines;, vous pouvez utiliser l'option <menuchoice
+><guimenu
+>Configuration</guimenu
+><guimenuitem
+>Configurer &kolorlines;...</guimenuitem
+></menuchoice
+> sur la barre de menu.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je ne veux pas faire de déplacement pour le moment. Puis-je passer mon tour ? </para
+></question>
+ <answer
+><para
+>Oui. Pour passer votre tour, vous pouvez utiliser un <link linkend="menu-move-endturn"
+>raccourci clavier</link
+>, ou une option de la <link linkend="menu-move-endturn"
+>barre de menus</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Puis-je utiliser le clavier pour jouer à ce jeu ? </para
+></question>
+ <answer
+><para
+>Oui. Vous pouvez utiliser les touches flèches et la touche <keycap
+>Espace</keycap
+> pour sélectionner et définir les balles.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je ne comprend pas quoi faire ! Y a t-il une astuce ? </para
+></question>
+ <answer
+><para
+>Non. &kolorlines; n'implante pas la fonctionnalité <quote
+>Astuce</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je veux quitter le jeu maintenant, mais ma partie n'est pas terminée. Puis je l'enregistrer ?</para
+></question>
+  <answer
+><para
+>&kolorlines; ne propose pas la fonctionnalité « Enregistrer » pour le moment.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Configuration du jeu</title
+> <!-- do not change this! -->
+  <para
+>Boîte de dialogue de configuration de &kolorlines; qui vous permet de sélectionner les thèmes visuels de &kolorlines;.</para>
+  <para
+>La sélection d'un nouveau thème se fait simplement à partir d'un choix dans la liste de sélection. Chaque élément de la liste affiche un aperçu réduit à gauche du nom du thème. La sélection est appliquée immédiatement.</para>
+  <para
+>Une fois que vous êtes satisfait avec le thème que vous avez sélectionné, vous pouvez cliquer sur <guibutton
+>Fermer</guibutton
+>, situé en bas de la boîte de dialogue.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Remerciements et licence</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kolorlines;</para>
+
+<para
+>Copyright du programme 2000 &Roman.Merzlyakov; &Roman.Merzlyakov.mail;</para>
+<para
+>Collaborateurs :</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail; Création, graphisme, animation, ré-écriture partielle. Remerciements spéciaux à ma femme Larissa Juschkin pour les tests et les discussions.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Copyright de la documentation 2001 &Roman.Razilov; &Roman.Razilov.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>Traduction française par &GerardDelafond; et &StanislasZeller;. Relecture par &LudovicGrossard;.</para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

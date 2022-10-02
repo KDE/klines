@@ -1,0 +1,328 @@
+# Translation of klines to Croatian
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines 0\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2006-08-21 17:00+0100\n"
+"Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: TransDict server\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Renato Pavičić"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "renato@translator-shop.org"
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr "Rezultat:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "&Prikaži sljedeće"
+
+#: klines.cpp:81
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgid "Move Left"
+msgstr "Pomakni gore"
+
+#: klines.cpp:86
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgid "Move Right"
+msgstr "Pomakni udesno"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Pomakni gore"
+
+#: klines.cpp:96
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgid "Move Down"
+msgstr "Pomakni dolje"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr "Rezultat: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Želite li da se prikazuje sljedeća grupa loptica."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "KNiz u boji"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "KNiz u boji – mala igra s lopticama i kako ih se riješiti."
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Prvi autor"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Ponovo napisao i proširio"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Unable to find graphics. Check your installation."
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Nije moguće pronaći grafiku. Provjerite instalaciju."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Pomakni"
+
+#, fuzzy
+#~| msgid "&Show Next"
+#~ msgid "Show next"
+#~ msgstr "&Prikaži sljedeće"
+
+#, fuzzy
+#~| msgid "Move Left"
+#~ msgid "Left"
+#~ msgstr "Pomakni ulijevo"
+
+#, fuzzy
+#~| msgid "Move Right"
+#~ msgid "Move cursor to right"
+#~ msgstr "Pomakni udesno"
+
+#, fuzzy
+#~| msgid "Move Down"
+#~ msgid "Down"
+#~ msgstr "Pomakni dolje"
+
+#~ msgid "Move Ball"
+#~ msgstr "Pomakni lopticu"
+
+#, fuzzy
+#~ msgid "Next:"
+#~ msgstr "Sljedeće loptice:"
+
+#~ msgid "Very Easy"
+#~ msgstr "Jako lagano"
+
+#~ msgid "Easy"
+#~ msgstr "Lagano"
+
+#~ msgid "Normal"
+#~ msgstr "Normalna"
+
+#~ msgid "Hard"
+#~ msgstr "Teško"
+
+#~ msgid "Very Hard"
+#~ msgstr "Jako teško"
+
+#~ msgid " Level: "
+#~ msgstr "Razina:"
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Pokreni &vodič"
+
+#~ msgid "Hide Next"
+#~ msgstr "Sakrij sljedeće"
+
+#~ msgid "&Use Numbered Balls"
+#~ msgstr "&Upotrijebi numerirane loptice"
+
+#~ msgid " Level: %1"
+#~ msgstr "Razina: %1"
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "Zaustavi &vodič"
+
+#~ msgid "Tutorial"
+#~ msgstr "Vodič"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Vodič je zaustavljen"
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr ""
+#~ "Cilj igre je postaviti 5 loptica\n"
+#~ "iste boje u jedan niz."
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "Možete izraditi vodoravne, uspravne\n"
+#~ "ili dijagonalne nizove."
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "U svakom se potezu na ploču postavljaju tri nove loptice."
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "U svakom potezu možete pomaknute jednu lopticu."
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "Da biste pomaknuli lopticu, kliknite ju, a potom\n"
+#~ "kliknite mjesto gdje želite da se loptica pomakne."
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "Upravo ste pomaknuli plavu lopticu!"
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "Loptice se mogu pomaknuti na bilo koji položaj na ploči,\n"
+#~ "sve dok nema drugih loptica koje im stoje na putu."
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "Sad nam treba još jedna plava loptica."
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "Izgleda da ovo naš sretan dan!"
+
+#~ msgid ""
+#~ "Hurray! And away they go!\n"
+#~ "Now lets try the green balls."
+#~ msgstr ""
+#~ "Jupi! Riješili smo ih se!\n"
+#~ "Sad da probamo zelene loptice."
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "Sad vi pokušajte!\n"
+#~ "Kliknite zelenu lopticu i premjestite je do ostalih!"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "Skoro! Pokušajte ponovo!"
+
+#~ msgid "Very good!"
+#~ msgstr "Jako dobro!"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr "Svaki put kad sastavite niz dobivate dodatni potez."
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "Ovo je završetak vodiča.\n"
+#~ "Slobodno završite ovu igru!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Vodič je pauziran"
+
+#~ msgid "Game Over"
+#~ msgstr "Završetak igre"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Razina težine"
+
+#~ msgid "Whether to use numbered balls."
+#~ msgstr "Želite li upotrebljavati numerirane loptice."

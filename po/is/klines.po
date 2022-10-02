@@ -1,0 +1,183 @@
+# translation of klines.po to icelandic
+# Copyright (C) 2004, 2005, 2009 Free Software Foundation, Inc.
+#
+# Pjetur G. Hjaltason <pjetur@pjetur.net>, 2004.
+# Björgvin Ragnarsson <nifgraup@gmail.com>, 2005.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2009-06-13 16:24+0000\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"Language-Team: icelandic <kde-isl@molar.is>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Haukur Þorgeirsson, Pjetur G. Hjaltason"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "haukurth@hi.is, pjetur@pjetur.net"
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr "Stig:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "Sýna næstu"
+
+#: klines.cpp:81
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgid "Move Left"
+msgstr "Færa til vinstri"
+
+#: klines.cpp:86
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgid "Move Right"
+msgstr "Færa til hægri"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Færa upp"
+
+#: klines.cpp:96
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgid "Move Down"
+msgstr "Færa niður"
+
+#: klines.cpp:101
+#, fuzzy, kde-format
+msgid "Select"
+msgstr "Velja"
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr "Stig: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Hvort eigi að sýna næsta boltasett."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, fuzzy, kde-format
+msgid "Navigation"
+msgstr "Flakk"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Litaðar línur"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Litaðar línur - dálítill leikur um bolta og hvernig losna á við þá"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Upprunalegur höfundur"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Endurskrift og viðbætur"
+
+#: main.cpp:50
+#, fuzzy, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, fuzzy, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Theme"
+#~ msgstr "Þema"
+
+#, fuzzy
+#~| msgid "Unable to find graphics. Check your installation."
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Tókst ekki að hlaða inn \"%1\" þemanu. Athugaðu uppsetninguna."
+
+#, fuzzy
+#~ msgid "The graphical theme to be used."
+#~ msgstr "Grafískt þema sem á að nota."

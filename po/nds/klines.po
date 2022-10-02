@@ -1,0 +1,180 @@
+# translation of klines.po to Low Saxon
+# Translation of klines.po to Low Saxon
+#
+# Manfred Wiese <m.j.wiese@web.de>, 2006, 2008, 2011.
+# Sönke Dibbern <s_dibbern@web.de>, 2006, 2007, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2009-03-06 22:55+0100\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manfred Wiese, Sönke Dibbern"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "m.j.wiese@web.de, s_dibbern@web.de"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Pünkt:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Nakamen wiesen"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Na links"
+
+# unreviewed-context
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Na rechts"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Na baven"
+
+# unreviewed-context
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Na nerrn"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Kören"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Pünkt: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Wat de nakamen Sett vun Bäll wiest warrt."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Breed vun den sekert Achtergrund"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Hööchd vun den sekert Achtergrund"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Navigatschoon"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - En lütt Speel över Bäll, un woans Een de quitt warrt"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "(c) 2000-2008 The KLines Authors"
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2008, de Schrieverslüüd vun KLines"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Orginaal-Schriever"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Nieg schreven un verwiedert"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "För den Bruuk vun QGraphicsView nieg schreven, aktuell Pleger"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Nieg SVG-Billerwark vun de Speelverschoon för KDE 4"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Dat gifft keen Weg vun't köört Stück na disse Zell."
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Speel vörbi</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Muster"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr ""
+#~ "Muster \"%1\" lett sik nich laden. Bitte prööv Dien Installatschoon."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "Bruukt Grafikmuster"
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Tog"

@@ -1,0 +1,164 @@
+# translation of klines.po to Lithuanian
+#
+# Donatas Glodenis <dgvirtual@akl.lt>, 2005.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2011-08-09 23:18+0300\n"
+"Last-Translator: Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrius Štikonas"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrius@stikonas.eu"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Taškai:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Rodyti kitus"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Kairėn"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Dešinėn"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Aukštyn"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Žemyn"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Žymėti"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Taškai: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Ar rodyti kitą kamuoliukų rinkinį."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Išsaugoto fono plotis"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Išsaugoto fono aukštis"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Navigacija"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - mažas žaidimas apie kamuoliukus ir kaip jų atsikratyti"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "(c) 2000-2008 The KLines Authors"
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2008 KLines autoriai"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Pradinis autorius"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Perrašymas naudojant QGraphicsView. Dabartinis prižiūrėtojas"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Žaidimas baigtas</h1>"

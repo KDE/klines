@@ -1,0 +1,690 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Dutch "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Het handboek van &kolorlines;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+&Niels.Reedijk;&Rinse.Devries;&Sander.Koning;&Jordy.Ritico; 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-07-11</date>
+<releaseinfo
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Deze documentatie beschrijft het spel &kolorlines; versie 1.6</para>
+</abstract>
+
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>spel</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kolor Lines</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>arcade</keyword>
+	<keyword
+>kleurige lijnen</keyword>
+	<keyword
+>kleur</keyword>
+	<keyword
+>kleuren</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>één speler</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Inleiding</title
+> <!-- do not change this! -->
+	<note
+><title
+>Speltype:</title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Aantal mogelijke spelers:</title
+><para
+>Eén</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>&kolorlines; is een eenvoudig maar zeer verslavend spel door &kde;. Het wordt door één speler gespeeld. Het is geïnspireerd door een welbekend spel <application
+>Color lines</application
+>, dat geschreven werd door Olga Demina, Igor Ivkin en Gennady Denisov voor DOS in 1992.</para>
+	<para
+>Het doel van &kolorlines; is tamelijk gewoon. De speler verplaatst de gekleurde knikkers op het speelbord en verzamelt ze daarbij per vijf op de lijnen van gelijke kleur. Nadat de lijn klaar is wordt deze van het bord verwijderd en maakt daarmee kostbare ruimte vrij. Op hetzelfde moment blijven er bij elke zet drie nieuwe knikkers verschijnen, die het speelbord opvullen.</para>
+	<para
+>&kolorlines; kan niet gewonnen worden en wordt alleen gespeeld tegen de hoogste score. He spel eindigt wanneer het gehele speelbord is gevuld met knikkers.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Hoe te spelen</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Doel:</title
+><para
+>Verplaats de gekleurde knikkers op het speelbord en verzamel ze per vijf op de lijnen van gelijke kleur.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>Wanneer &kolorlines; start krijgt u het speelbord te zien met 81 posities (het speelbord is 9x9 posities) en er verschijnen onmiddellijk drie nieuwe gekleurde knikkers op het bord. Gebruik uw muis om de knikkers van positie naar positie te verplaatsen om ze te groeperen in lijnen van dezelfde kleur. Na elke zet van u, plaatst de computer drie extra knikkers op het bord. Om te vermijden dat het bord geheel wordt gevuld dient u de knikkers in lijnen van 5 of meer knikkers te plaatsen. Wanneer zo'n lijn klaar is, worden de knikkers van het bord verwijderd en groeit uw score.</para>
+	<note
+><title
+>Notitie:</title
+><para
+>De nieuwe knikkers zullen niet aan het bord worden toegevoegd na verwijdering van een lijn. In plaats daarvan wordt u beloont met een extra zet alvorens een nieuw drietal knikkers wordt toegevoegd.</para
+></note>
+	<para
+>De toename van de score hangt alleen af van het aantal verwijderde knikkers.</para>
+	<note
+><title
+>Notitie:</title
+><para
+>Als u speelt met de functie <guimenuitem
+>Volgende tonen</guimenuitem
+> ingeschakeld dan is de toename van de score minder dan wanneer de functie <guimenuitem
+>Volgende tonen</guimenuitem
+> is uitgeschakeld.</para
+></note>
+	<para
+>&kolorlines; kan niet gewonnen worden en wordt alleen gespeeld tegen de hoogste score. Het spel eindigt wanneer het gehele speelbord is gevuld met knikkers.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Spelregels, strategieën en tips</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Spelregels</title>
+			<itemizedlist>
+				<listitem
+><para
+>Na elke zet in het spel worden er drie ballen aan het bord toegevoegd.</para
+></listitem>
+				<listitem
+><para
+>Om ruimte op het bord vrij te maken moet de speler knikkers van dezelfde kleur groeperen in een ononderbroken horizontale, verticale of diagonale lijn van vijf of meer.</para
+></listitem>
+				<listitem
+><para
+>Om een zet te doen klikt u eenvoudig op de bronknikker om deze te selecteren, daarna klikt u op de bestemmingspositie om de zet te voltooien.</para
+></listitem>
+				<listitem
+><para
+>Een knikker kan alleen verplaatst worden naar de posities die leeg zijn en niet bezet door een andere knikker.</para
+></listitem>
+				<listitem
+><para
+>Op dezelfde manier moet de doelpositie vrij toegankelijk zijn.</para
+></listitem>
+				<listitem
+><para
+>De positie is vrij toegankelijk wanneer er geen andere knikkers het pad er heen blokkeren.</para
+></listitem>
+				<listitem
+><para
+>Het pad is is geblokkeerd als een deel van het pad bezet is door een knikker.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Notitie:</title
+><para
+>In &kolorlines; wordt het pad automatisch berekend door het spel. Als er geen mogelijke (open) route naar de bestemmingspositie is, dan wordt er een vriendelijke melding getoond.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>Om met succes een knikker naar een gewenste positie te verplaatsen wanneer het pad geblokkeerd is, moet de speler het pad eerst vrij maken.</para
+></listitem>
+				<listitem
+><para
+>Om het pad vrij te maken moet de speler eenvoudig alle blokkerende knikkers uit weg ruimen door ze te verplaatsen, waarbij de route wordt vrijgemaakt.</para
+></listitem>
+				<listitem
+><para
+>De scores worden toegekend voor elke lijn met knikkers die van het bord wordt verwijderd.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Notitie:</title
+><para
+>Als u speelt met de functie <guimenuitem
+>Volgende tonen</guimenuitem
+> ingeschakeld dan is de toename van de score minder dan wanneer de functie <guimenuitem
+>Volgende tonen</guimenuitem
+> is uitgeschakeld.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Strategieën en tips</title>
+			<itemizedlist>
+				<listitem
+><para
+>Houdt de plek waar de volgende drie knikkers staan die op het bord geplaatst zullen worden, goed in het oog (tenzij de functie <guimenuitem
+>Volgende tonen</guimenuitem
+> is uitgeschakeld). Vaker wel dan niet waardeert u de informatie indien beschikbaar.</para
+></listitem>
+				<listitem
+><para
+>Probeer minstens de helft van het speelbord leeg te houden. De knikkers zich laten opstapelen leidt vrijwel zeker tot beëindiging van het spel.</para
+></listitem>
+				<listitem
+><para
+>Om uw spel makkelijker te maken houdt u altijd meer dan één lijn met dezelfde knikkers gereed voor verwijderen. Dit kan worden gedaan door lijnen met dezelfde knikkers overal waar mogelijk te bouwen, in plaats van zich te concentreren op één lijn tegelijk.</para
+></listitem>
+				<listitem
+><para
+>Probeer ten alle tijden meer dan drie bijna complete lijnen op het speelbord te houden. Bijna compleet betekent dat ze vier gelijke knikkers in lengte zijn en slechts één knikker overblijft voor hun voltooiing.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Voorbeeld:</title
+><para
+>Als u bijna een lijn hebt voltooid en het pad er naar toe wordt plotseling geblokkeerd door een andere knikker, verplaats die knikker niet zomaar. Probeer een rij knikkers van dezelfde soort te vinden waarmee u verder kunt gaan. Als zo'n rij bestaat en toegankelijk is, verplaats de blokkerende bal dan daarheen.</para
+></note>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Overzicht van het interface</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>Het hoofdvenster van &kolorlines;</title>
+<screenshot>
+				<screeninfo
+>Een schermafbeelding van &kolorlines;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Schermafdruk</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>Helemaal bovenaan het spelvenster is de menubalk en de werkbalk aanwezig. In het centrum van het venster is een groot vierkant gebied aanwezig dat gevuld is met de opgeroepen knikkers - het speelbord. Rechts daarvan is de balk aanwezig die de volgende drie knikkers toont (tenzij de functie <guimenuitem
+>Volgende tonen</guimenuitem
+> is uitgeschakeld) die op het speelveld worden geplaatst. Onder het speelveld bevindt zich de statusbalk.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Menu-items</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Start een nieuw spel.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&End;</keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Spel beëindigen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Beëindigt een lopend spel.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Topscores tonen...</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Toont de tabel met de topscores.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Beëindigt</action
+> &kolorlines;</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Zet</guimenu
+> <guimenuitem
+>Ongedaan maken</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Dit maakt de laatste zet ongedaan.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Zet</guimenu
+><guimenuitem
+>Ronde beëindigen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Slaat uw zet over. De volgende set knikkers wordt in het spel gelegd zonder dat iets wordt verplaatst.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+>&Left;</shortcut
+> <guimenu
+>Navigatie</guimenu
+> <guimenuitem
+>Naar links verplaatsen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Deze actie verplaats de cursor naar links.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+>&Right;</shortcut
+> <guimenu
+>Navigatie</guimenu
+> <guimenuitem
+>Naar rechts verplaatsen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Deze actie verplaats de cursor naar rechts.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+>&Up;</shortcut
+> <guimenu
+>Navigatie</guimenu
+> <guimenuitem
+>Omhoog verplaatsen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Deze actie verplaats de cursor omhoog.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+>&Down;</shortcut
+> <guimenu
+>Navigatie</guimenu
+> <guimenuitem
+>Omlaag verplaatsen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Deze actie verplaats de cursor naar beneden.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+>&Space;</shortcut
+> <guimenu
+>Navigatie</guimenu
+> <guimenuitem
+>Selecteren</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Deze actie selecteert het item nu onder de cursor.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Volgende tonen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Toont of verbergt de informatie over de volgende set knikkers.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>Bovendien heeft &kolorlines; de gezamenlijke menu-items van &kde; <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+>, voor meer informatie lees de secties over de <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Instellingen</ulink
+> en <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Help</ulink
+> van &kde;-fundamentals. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Veel voorkomende vragen</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Ik wil het uiterlijk van dit spel wijzigen. Kan dat? </para
+></question>
+ <answer
+><para
+>Ja. Om het visuele thema van &kolorlines; te wijzigen, kunt u het menu-item <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>&kolorlines; configureren...</guimenuitem
+></menuchoice
+> gebruiken op de menubalk.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik wil nu geen zetten meer doen. Kan ik een zet overslaan? </para
+></question>
+ <answer
+><para
+>Ja. Om een beurt over te slaan kunt u een <link linkend="menu-move-endturn"
+>sneltoets</link
+> gebruiken of een optie op de <link linkend="menu-move-endturn"
+>menubalk</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kan ik het toetsenbord gebruiken om het spel te spelen? </para
+></question>
+ <answer
+><para
+>Ja. U kunt de pijltjestoetsen en de <keycap
+>Spatie</keycap
+>toets gebruiken om te selecteren en de knikkers te plaatsen.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik kom er niet achter wat hier te doen! Zijn er tips? </para
+></question>
+ <answer
+><para
+>Nee. &kolorlines; heeft op geen <quote
+>Tip</quote
+> mogelijkheid.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik moet het spel nu beëindigen, maar ik ben nog niet klaar. Kan ik mijn spel opslaan?</para
+></question>
+  <answer
+><para
+>&kolorlines; heeft op dit moment geen <quote
+>Opslaan</quote
+> mogelijkheid.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Spelconfiguratie</title
+> <!-- do not change this! -->
+  <para
+>De instellingendialoog van &kolorlines; stelt u in staat visuele thema's voor &kolorlines; te selecteren</para>
+  <para
+>Om een nieuwe thema te selecteren kiest u de naam van het thema uit de lijst. Elk item in de lijst toont een klein voorbeeld links van de naam van het thema. Een selectie wordt onmiddellijk toegepast.</para>
+  <para
+>Nadat u tevreden bent met het thema dat u hebt geselecteerd kunt u op de knop <guibutton
+>Sluiten</guibutton
+> klikken onderaan deze dialoog.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Dankbetuigingen en licentie</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kolorlines;</para>
+
+<para
+>Programma copyright 2000 &Roman.Merzlyakov; &Roman.Merzlyakov.mail;</para>
+<para
+>Met dank aan:</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail; herontwerp, illustraties, animatie, gedeeltelijk herschrijven. Speciale dank aan mijn vrouw Larissa Juschkin voor het testen en de discussies.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Documentatie copyright 2001 &Roman.Razilov; &Roman.Razilov.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+&meld.fouten;&vertaling.niels;&nagelezen.jordy; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

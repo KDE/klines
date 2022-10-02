@@ -1,0 +1,260 @@
+# Irish translation of klines
+# Copyright (C) 2009 This_file_is_part_of_KDE
+# This file is distributed under the same license as the klines package.
+# Kevin Scannell <kscanne@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdegames/klines.po\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2004-12-03 14:52-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Séamus Ó Ciardhuáin,Kevin Scannell"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "seoc@iolfree.ie,kscanne@gmail.com"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Scór:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Taispeáin an chéad cheann eile"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Bog Faoi Chlé"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Bog Faoi Dheis"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Bog Suas"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Bog Síos"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Roghnaigh"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Scór: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Cé acu a thaispeánfar an chéad tacar eile, nó nach dtaispeánfar."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Leithead an chúlra sábháilte"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Airde an chúlra sábháilte"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Nascleanúint"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr ""
+"Kolor Lines - cluiche beag a bhaineann le liathróidí agus an tslí is fearr "
+"chun fáil réidh leo"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "(c) 2000-2008 The KLines Authors"
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "© 2000-2008 Údair KLines"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "An chéad údar"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Athscríobh agus Feabhsú"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Athscríobh le húsáid QGraphicsView. Cothaitheoir reatha"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Maisiúchán nua SVG le haghaidh leagan KDE4"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Níl aon chosán ón phíosa roghnaithe go dtí an chill seo"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Cluiche thart</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Téama"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Níorbh fhéidir téama \"%1\" a luchtú.  Déan seiceáil ar do chóras."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "An téama grafach le húsáid."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Bog"
+
+#~ msgid "Show next"
+#~ msgstr "Taispeáin an chéad cheann eile"
+
+#~ msgid "Selected ball can not be moved to this cell"
+#~ msgstr ""
+#~ "Níorbh fhéidir an liathróid roghnaithe a bhogadh go dtí an chill seo"
+
+#~ msgid "Left"
+#~ msgstr "Ar Chlé"
+
+#~ msgid "Move cursor to left"
+#~ msgstr "Bog an cúrsóir faoi chlé"
+
+#~ msgid "Move cursor to right"
+#~ msgstr "Bog an cúrsóir faoi dheis"
+
+#~ msgid "Up"
+#~ msgstr "Suas"
+
+#~ msgid "Move cursor up"
+#~ msgstr "Bog an cúrsóir suas"
+
+#~ msgid "Down"
+#~ msgstr "Síos"
+
+#~ msgid "Select field under the cursor"
+#~ msgstr "Roghnaigh an réimse faoin chúrsóir"
+
+#~ msgid "Move Ball"
+#~ msgstr "Bog Liathróid"
+
+#~ msgid "Very Easy"
+#~ msgstr "An-Éasca"
+
+#~ msgid "Easy"
+#~ msgstr "Éasca"
+
+#~ msgid "Normal"
+#~ msgstr "Gnách"
+
+#~ msgid "Hard"
+#~ msgstr "Crua"
+
+#~ msgid "Very Hard"
+#~ msgstr "An-Chrua"
+
+#~ msgid " Level: "
+#~ msgstr " Leibhéal: "
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Tosaigh an Cúrsa &Teagaisc"
+
+#~ msgid "&Use Numbered Balls"
+#~ msgstr "Úsáid Liathróidí &Uimhrithe"
+
+#~ msgid " Level: %1"
+#~ msgstr " Leibhéal: %1"
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "Stop an Cúrsa &Teagaisc"
+
+#~ msgid "Tutorial"
+#~ msgstr "Cúrsa Teagaisc"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Cúrsa Teagaisc - Stoptha"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "Beagnach, bain triail eile as!"
+
+#~ msgid "Very good!"
+#~ msgstr "An-mhaith!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Cúrsa Teagaisc - Curtha ar shos"
+
+#~ msgid "Game Over"
+#~ msgstr "Cluiche Thart"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Leibhéal deacrachta"

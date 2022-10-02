@@ -1,0 +1,175 @@
+# translation of klines.po to Italian
+# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+# Francesco Bresciani <fbresciani@users.sourceforge.net>, 2003, 2004, 2005, 2007.
+# Andrea Celli <andrea.celli@libero.it>, 2006, 2009.
+# Marco Poletti <poletti.marco@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2016-02-14 08:52+0100\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Vincenzo Reale,Marco Poletti,Andrea Celli,Francesco Bresciani"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "smart2128vr@gmail.com,,,"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Punteggio:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Mostra le prossime"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Muovi a sinistra"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Muovi a destra"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Muovi su"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Muovi giù"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Seleziona"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Punteggio: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Classifica"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Imposta la visualizzazione delle palline successive."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Larghezza dello sfondo salvato"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Altezza dello sfondo salvato"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Navigazione"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - un semplice gioco in cui si rimuovono palline"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2015 Gli autori di KLines"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Autore originale"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Riscrittura ed estensione"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Riscrittura per utilizzare QGraphicsView, responsabile attuale"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Nuove immagini SVG per la versione KDE 4 di questo gioco"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Non c'è alcun percorso dal pezzo selezionato a questa cella."
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Partita terminata</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Tema"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr ""
+#~ "Impossibile caricare il tema «%1». Verificare l'installazione del "
+#~ "programma."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "Il tema grafico da utilizzare."

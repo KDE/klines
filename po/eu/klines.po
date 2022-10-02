@@ -1,0 +1,178 @@
+# translation of klines.po to Basque
+# Copyright (C) 2003, 2005, 2006, 2009 Free Software Foundation, Inc.
+#
+# Marcos  <marcos@euskalgnu.org>, 2003.
+# Ion Gaztañaga <igaztanaga@gmail.com>, 2005, 2006.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2021-07-25 23:21+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.04.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ion Gaztañaga"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "igaztanaga@gmail.com"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Puntuazioa:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Erakutsi hurrengoa"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Mugitu ezkerrera"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Mugitu eskuinera"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Mugitu gorantz"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Mugitu behera"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Hautatu"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Puntuazioa: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Puntuazio onenak"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Hurrengo pilota-sorta erakutsiko duen ala ez."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Gordetako atzeko planoaren zabalera"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Gordetako atzeko planoaren altuera"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Nabigazioa"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - pilotak nola kendu behar diren erakusten duen joko txiki"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2015 KLines egileak"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Jatorrizko egilea"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Berridazpena eta luzapena"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "QGraphicsView erabiltzeko berriro garatua. Uneko mantentzailea"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "KDE 4ko jokoaren bertsioarentzako SVG artelan berriak"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Ez dago biderik hautatutako piezatik gelaxka honetara"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Jokoa amaitu da</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Gaia"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Huts egin du \"%1\" gaia kargatzean. Egiaztatu instalazioa."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "Erabiliko den gai grafikoa."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Mugitu"

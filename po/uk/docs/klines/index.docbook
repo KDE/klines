@@ -1,0 +1,720 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Підручник з &kolorlines;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>11 липня 2021 року</date>
+<releaseinfo
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>У цій документації описано гру &kolorlines; версії 1.6.</para>
+</abstract>
+
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>гра</keyword
+> <!-- do not change this! -->
+	<keyword
+>Кольорові лінії</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>аркада</keyword>
+	<keyword
+>кольорові лінії</keyword>
+	<keyword
+>колір</keyword>
+	<keyword
+>кольори</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>один гравець</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Вступ</title
+> <!-- do not change this! -->
+	<note
+><title
+>Тип гри:</title
+><para
+>Аркада</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Можлива кількість гравців:</title
+><para
+>Один</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>&kolorlines; — це проста, але дуже захоплива гра для одного гравця, розроблена &kde;. На написання &kolorlines; авторів програми надихнула добре відома гра <application
+>Color Lines</application
+>, написана для <application
+>DOS</application
+> у 1992 році, авторами якої є Olga Demina, Igor Ivkin та Gennady Denisov.</para>
+	<para
+>Мета гри &kolorlines; елементарна. Гравцеві слід пересувати кольорові кульки ігровою дошкою, збираючи їх по п’ять у рядки однакового кольору. Після утворення такого рядка всі кульки з нього буде вилучено і таким чином на дошці звільниться місце. Також після кожного ходу на дошці з’являтимуться три нових кульки, які зменшуватимуть вільне місце на ній.</para>
+	<para
+>У &kolorlines; виграш неможливий, гра ведеться лише з метою покращення результату. Гра завершується, якщо всю ігрову дошку буде вкрито кульками.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Як грати</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Мета:</title
+><para
+>Пересунути кольорові кульки ігровою дошкою так, щоб вони утворили рядок з п’яти кульок однакового кольору.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>Після запуску &kolorlines; ви побачите ігрову дошку, поділену на 81 квадратних полів (розміри ігрової дошки — 9x9 клітинок), на дошці вже буде три кульки. Скористайтеся вказівником миші для пересування кульок між клітинками так, щоб кульки утворювали рядки однакового кольору. Після кожного з ваших ходів комп’ютер додаватиме три нових кульки на дошку. Щоб уникнути заповнення дошки кульками, вам слід збирати кульки у рядки з 5 або більшої кількості кульок. Після утворення таких рядків, кульки з них буде вилучено з ігрового поля, а ви отримаєте декілька призових очок.</para>
+	<note
+><title
+>Примітка:</title
+><para
+>Після вилучення рядка з кульок на дошку не додаватимуться нові кульки. Замість цього програма надасть вам можливість зробити ще один хід перед додаванням трійки кульок.</para
+></note>
+	<para
+>Збільшення вашого очкового результату залежить лише від кількості вилучених кульок.</para>
+	<note
+><title
+>Примітка:</title
+><para
+>Якщо ви гратимете у гру з увімкненою можливістю <guimenuitem
+>Показувати наступні</guimenuitem
+>, очковий приріст буде меншим, ніж у випадку вимкненої можливості <guimenuitem
+>Показувати наступні</guimenuitem
+>.</para
+></note>
+	<para
+>У &kolorlines; виграш неможливий, гра ведеться лише з метою покращення результату. Гра завершується одразу по тому, як всю ігрову дошку буде вкрито кульками.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Правила гри, стратегія та поради</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Правила гри</title>
+			<itemizedlist>
+				<listitem
+><para
+>Після кожного ходу гравця на дошку буде додано три нові кульки.</para
+></listitem>
+				<listitem
+><para
+>Щоб звільнити місце на дошці, вам слід зібрати кульки одного кольору у неперервний горизонтальний, вертикальний або діагональний рядок, у якому буде не менше п’яти кульок.</para
+></listitem>
+				<listitem
+><para
+>Щоб почати хід, просто наведіть вказівник миші на кульку, яку ви бажаєте пересунути, клацніть лівою кнопкою, а потім наведіть вказівник на клітинку призначення і знову клацніть лівою кнопкою миші, щоб пересунути кульку.</para
+></listitem>
+				<listitem
+><para
+>Кульку можна пересувати лише у вільну клітинку, яку не зайнято будь-якою іншою кулькою.</para
+></listitem>
+				<listitem
+><para
+>Крім того, доступ до клітинки-цілі має бути вільним.</para
+></listitem>
+				<listitem
+><para
+>Доступ до клітинки вважається вільним, якщо перехід до неї не блоковано жодною іншою кулькою.</para
+></listitem>
+				<listitem
+><para
+>Шлях до клітинки вважається заблокованим, якщо всі проходи до клітинки закрито кульками.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Примітка:</title
+><para
+>У &kolorlines; шлях автоматично визначається програмою. Якщо до клітинки призначення не існує можливих (відкритих) шляхів, ви побачите сповіщення про неможливість ходу.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>Щоб успішно пересунути кульку у бажану клітинку, шлях до якої заблоковано, слід спочатку очистити шлях до неї.</para
+></listitem>
+				<listitem
+><para
+>Щоб очистити шлях, гравцеві просто слід пересунути всі кульки, які блокують шлях, і таким чином зробити можливим пересування до клітинки.</para
+></listitem>
+				<listitem
+><para
+>За кожен вилучений з ігрової дошки рядок кульок буде нараховано очки.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Примітка:</title
+><para
+>Якщо ви гратимете у гру з увімкненою можливістю <guimenuitem
+>Показувати наступні</guimenuitem
+>, очковий приріст буде меншим, ніж у випадку вимкненої можливості <guimenuitem
+>Показувати наступні</guimenuitem
+>.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Стратегія та поради</title>
+			<itemizedlist>
+				<listitem
+><para
+>Уважно слідкуйте за панеллю, на якій буде показано наступні три кульки, які буде додано на дошку (якщо можливість <guimenuitem
+>Показувати наступні</guimenuitem
+> не вимкнено). Ці відомості можуть вам знадобитися під час розробки стратегії пересування кульок.</para
+></listitem>
+				<listitem
+><para
+>Намагайтеся тримати вільною принаймні половину дошки. Утворення нагромаджень кульок майже завжди веде до програшу.</para
+></listitem>
+				<listitem
+><para
+>Щоб полегшити гру, завжди готуйте декілька рядків готовими до вилучення. Досягти цього можна утворюючи рядки кульок всюди, де це можливо, замість зосередження на одному з рядків.</para
+></listitem>
+				<listitem
+><para
+>Намагайтеся весь час мати у грі не менше трьох майже завершених рядків. Майже завершений рядок — це рядок, у якому чотири кульки одного кольору, для завершення якого не вистачає лише однієї кульки.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Приклад:</title
+><para
+>Якщо шлях до майже завершеного рядка раптом було перекрито доданою кулькою, не намагайтеся просто відсунути цю кульку будь-куди. Спробуйте знайти послідовність кульок того ж кольору, що і кулька, яку ви пересуватимете, яку ви можете продовжити цією кулькою. Якщо таку послідовність буде знайдено, і доступ до неї буде відкрито, пересуньте цю кульку саме туди.</para
+></note>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Огляд інтерфейсу</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>Головне вікно &kolorlines;</title>
+<screenshot>
+				<screeninfo
+>Знімок вікна &kolorlines;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Знімок вікна</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>У верхній частині вікна гри розташовано панель меню і панель інструментів. У центрі вікна знаходиться велика квадратна область, на якій розташовано кульки, — ця область називається ігровою дошкою. У правій частині вікна буде показано наступні три кульки, які буде додано на дошку (якщо ви не вимкнули можливості <guimenuitem
+>Показувати наступні</guimenuitem
+>). Під ігровим полем розташовано смужку стану.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Пункти меню</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Починає нову гру.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&End;</keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Завершити гру</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Завершує поточну гру.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Показати найкращі результати...</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Показує таблицю найкращих результатів.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Завершує роботу</action
+> &kolorlines;</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Хід</guimenu
+> <guimenuitem
+>Вернути</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>За допомогою цього пункту можна скасувати останній хід.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Хід</guimenu
+> <guimenuitem
+>Завершити хід</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Пропустити ваш хід, одразу грати з наступним кульками, що з’являться, не пересуваючи жодної з поточних.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Стрілка ліворуч</keycap
+></shortcut
+> <guimenu
+>Навігація</guimenu
+> <guimenuitem
+>Пересунути ліворуч</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>За допомогою цього пункту можна пересунути курсор вибору ліворуч.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Стрілка праворуч</keycap
+></shortcut
+> <guimenu
+>Навігація</guimenu
+> <guimenuitem
+>Пересунути праворуч</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>За допомогою цього пункту можна пересунути курсор вибору праворуч.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Стрілка вгору</keycap
+></shortcut
+> <guimenu
+>Навігація</guimenu
+> <guimenuitem
+>Пересунути вгору</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>За допомогою цього пункту можна пересунути курсор вибору вгору.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Стрілка вниз</keycap
+></shortcut
+> <guimenu
+>Навігація</guimenu
+> <guimenuitem
+>Пересунути вниз</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>За допомогою цього пункту можна пересунути курсор вибору вниз.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Пробіл</keycap
+></shortcut
+> <guimenu
+>Навігація</guimenu
+> <guimenuitem
+>Вибрати</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>За допомогою цього пункту можна вибрати елемент, що зараз знаходиться під курсором.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Показувати наступний</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Вмикає або вимикає показ інформації про наступні кульки.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>Крім того, у &kolorlines; передбачено типові для &kde; пункти меню <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+>. Щоб дізнатися більше, ознайомтеся з розділами щодо <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню «Параметри»</ulink
+> та <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню «Довідка»</ulink
+> підручника з основ роботи у &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Часті запитання</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Я хочу змінити вигляд цієї гри. Як це зробити? </para
+></question>
+ <answer
+><para
+>Так. Щоб змінити тему візуального вигляду &kolorlines;, ви можете скористатися пунктом меню <menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Налаштувати &kolorlines;...</guimenuitem
+></menuchoice
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я не хочу робити жодних пересувань. Чи можна пропустити хід? </para
+></question>
+ <answer
+><para
+>Так. Щоб пропустити хід, скористайтеся відповідним <link linkend="menu-move-endturn"
+>клавіатурним скороченням</link
+> або <link linkend="menu-move-endturn"
+>пунктом меню</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Чи можна для гри використовувати клавіатуру? </para
+></question>
+ <answer
+><para
+>Так. Ви можете користуватися клавішами зі стрілками і клавішею <keycap
+>Пробіл</keycap
+> для виділення і встановлення кульок.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Не можу з’ясувати, що слід робити! Чи є у грі підказки? </para
+></question>
+ <answer
+><para
+>Ні. У &kolorlines; немає функції <quote
+>Підказка</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я змушений (змушена) перервати гру, але гру ще не завершено. Чи можу я зберегти поточний стан?</para
+></question>
+  <answer
+><para
+>У поточній версії &kolorlines; немає функції <quote
+>Зберегти</quote
+>.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Налаштування гри</title
+> <!-- do not change this! -->
+  <para
+>За допомогою діалогового вікна налаштування &kolorlines; ви можете обрати візуальну тему вікна &kolorlines;.</para>
+  <para
+>Щоб вибрати нову тему, просто позначте назву теми у списку для вибору. Ліворуч від кожного з пунктів у списку буде показано невеличке зображення попереднього перегляду. Вибрану тему буде негайно застосовано.</para>
+  <para
+>Після того, як ви виберете бажаний для вас варіант, ви можете натиснути кнопку <guibutton
+>Закрити</guibutton
+>. Цю кнопки розташовано у нижній частині відповідного діалогового вікна.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Подяки і ліцензія</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kolorlines;</para>
+
+<para
+>Авторські права на програму належать &Roman.Merzlyakov; &Roman.Merzlyakov.mail;, ©2000</para>
+<para
+>Учасники розробки:</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail; — зміна дизайну, графіка, анімація, часткове переписування коду. Особливу подяку він складає своїй жінці — Larissa Juschkin, — за перевірку і корисне обговорення програми.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Авторські права на документацію належать &Roman.Razilov; &Roman.Razilov.mail;, ©2001</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

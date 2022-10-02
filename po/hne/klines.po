@@ -1,0 +1,181 @@
+# translation of klines.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2007.
+# Ravishankar Shrivastava <raviratlami@aol.in>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2009-02-26 10:12+0530\n"
+"Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
+"Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
+"Language: hne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "रविसंकर सिरीवास्तव, जी. करूनाकर"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "raviratlami@aol.in,"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "अंकः"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+msgid "Show Next"
+msgstr "अगला देखाव"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "डेरी जाव"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "जेवनी जाव"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "ऊपर जाव"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "नीचे जाव"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "चुनव"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "अंकः %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "गेंद के अगले समूह ल देखाव या नइ."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "सहेजे गे पिछोत अंगना के चौड़ाई"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "सहेजे गे पिछोत अंगना के ऊंचाई"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "नेविगेसन"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "कलर लाइन्स"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "कलर लाइन्स - गेंद अउ ओ मन से छुटकारा पाय के एक छोटकुन खेल."
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "(c) 2000-2008 The KLines Authors"
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2008 केलाइन्स के लिखइया मन"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "रोमन मेर्जेल्याकोव"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "मूल लेखक"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "रोमन राजीलोव"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "फिर से  लिखे अउ विस्तृत करिस"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "दमित्रि सुज्दालेव"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "क्यूग्राफिक्सव्यू उपयोग करे बर फिर से लिखिस. अभी हाल के मेंटेनर"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "यूजीन ट्रोव्नेव"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "खेल के केडीई४ संस्करन बर नवा एसवीजी कलाकृति"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>खेल खतम</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "प्रसंग"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "प्रसंग \"%1\" चालू कर पाय मं फेल. किरपा करके, अपन इंस्टालेसन जांचव."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "ग्राफिकल थीम जऊन ल परयोग करे जाही ."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "खिसकाव (&M) "
+
+#~ msgid "Selected ball can not be moved to this cell"
+#~ msgstr "चुने गे गेंद एखर कक्छ मं खिसकाय नइ जा सके"

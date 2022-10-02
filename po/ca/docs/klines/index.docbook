@@ -1,0 +1,688 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>El manual del &kolorlines;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>11 de juliol de 2021</date>
+<releaseinfo
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Aquesta documentació descriu el joc &kolorlines; versió 1.6</para>
+</abstract>
+
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>joc</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kolor Lines</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>arcade</keyword>
+	<keyword
+>línies amb color</keyword>
+	<keyword
+>color</keyword>
+	<keyword
+>colors</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>un jugador</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introducció</title
+> <!-- do not change this! -->
+	<note
+><title
+>Tipus de joc:</title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Nombre de possibles jugadors:</title
+><para
+>Un</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>El &kolorlines; és un joc senzill però altament addictiu, d'un jugador, creat per la comunitat &kde;. El &kolorlines; s'ha inspirat en un conegut joc de <application
+>Línies de colors</application
+>, escrit per a <application
+>DOS</application
+>, per n'Olga Demina, Igor Ivkin i Gennady Denisov el 1992.</para>
+	<para
+>L'objectiu del &kolorlines; és força senzill. El jugador ha de moure les bales de color pel tauler de joc, recollint-les en línies de cinc del mateix color. Un cop completada la línia, s'eliminarà del tauler, alliberant un espai escàs. Al mateix temps, tres bales noves continuaran arribant després de cada moviment, omplint el tauler de joc.</para>
+	<para
+>El &kolorlines; no es pot guanyar, i es juga exclusivament per a aconseguir una puntuació alta. El joc acaba una vegada que tot el tauler de joc s'emplena amb les bales.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Com jugar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Objectiu:</title
+><para
+>Moure les bales de color pel tauler de joc, recollint-les en línies de cinc del mateix color.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>Quan inicieu el &kolorlines;, es presentarà amb la divisió del tauler de joc en 81 quadrats (el tauler de joc és de 9x9 quadrats), i immediatament apareixeran sobre el tauler tres bales noves de color. Utilitzeu el ratolí per a moure-les de cel·la a cel·la per a agrupar-les en línies del mateix color. No obstant això, després de cadascun dels vostres moviments, l'ordinador deixarà caure 3 bales més. Per a evitar omplir el tauler, haureu de reunir les bales en línies de 5 o més bales. Quan es completa tal línia, les bales es retiraran del camp i creixerà la vostra puntuació.</para>
+	<note
+><title
+>Nota:</title
+><para
+>Les bales noves no s'afegiran al camp després d'eliminar una línia. En el seu lloc, sereu recompensat amb un altre moviment abans que s'afegeixi un triplet nou de bales.</para
+></note>
+	<para
+>L'augment en la puntuació únicament depèn de la quantitat de bales retirades.</para>
+	<note
+><title
+>Nota:</title
+><para
+>Si esteu jugant amb la característica <guimenuitem
+>Mostra les següents</guimenuitem
+> habilitada, l'augment de la puntuació serà menor que si està inhabilitada.</para
+></note>
+	<para
+>El &kolorlines; no es pot guanyar, i es juga exclusivament per a obtenir una puntuació alta. El joc acaba una vegada que tota la taula de joc s'emplena amb bales.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Les regles del joc, estratègies i consells</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Les regles del joc</title>
+			<itemizedlist>
+				<listitem
+><para
+>Després del moviment de cada jugador, el joc afegirà tres bales més al tauler.</para
+></listitem>
+				<listitem
+><para
+>Per a alliberar l'espai en el tauler de joc, s'han d'agrupar les bales del mateix color en una línia horitzontal, vertical o diagonal ininterrompuda per cinc o més.</para
+></listitem>
+				<listitem
+><para
+>Per a iniciar el moviment, senzillament feu clic sobre la bala d'origen per a seleccionar-la, després feu clic sobre el quadrat de destinació per a completar el moviment.</para
+></listitem>
+				<listitem
+><para
+>Una bala només es podrà moure als quadrats que estan vacants i no ocupats per cap altra bala.</para
+></listitem>
+				<listitem
+><para
+>De la mateixa manera, el quadrat en qüestió haurà de ser de lliure accés.</para
+></listitem>
+				<listitem
+><para
+>El quadrat serà de lliure accés quan no hi hagi altres bales que bloquegin el camí.</para
+></listitem>
+				<listitem
+><para
+>El camí es considerarà bloquejat si alguna part d'ell està ocupat per una bala.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Nota:</title
+><para
+>En el &kolorlines;, el camí és calculat automàticament pel joc. Si no hi ha un camí (obert) cap a la cel·la de destinació, es mostrarà una notificació amistosa.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>Per a transferir amb èxit una bala a una cel·la desitjada on es bloqueja el camí, el jugador haurà de netejar primer el camí.</para
+></listitem>
+				<listitem
+><para
+>Per a netejar el camí, el jugador senzillament haurà de moure totes les bales que el bloquegen i, per tant, alliberar-lo.</para
+></listitem>
+				<listitem
+><para
+>Les puntuacions s'atorguen per cada línia de bales eliminada del tauler de joc.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Nota:</title
+><para
+>Si esteu jugant amb la característica <guimenuitem
+>Mostra les següents</guimenuitem
+> habilitada, l'augment de la puntuació serà menor que si està inhabilitada.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Les estratègies i consells</title>
+			<itemizedlist>
+				<listitem
+><para
+>Manteniu la mirada atenta a la barra, on es mostren les 3 bales següents que es deixaran caure al camp (a menys que estigui inhabilitada la característica <guimenuitem
+>Mostra les següents</guimenuitem
+>). Llavors, no apreciareu tan sovint la informació que es proporciona.</para
+></listitem>
+				<listitem
+><para
+>Intenteu mantenir net almenys la meitat del tauler de joc. Deixar que s'acumulin les bales us farà perdre, gairebé amb tota seguretat.</para
+></listitem>
+				<listitem
+><para
+>Per a fer que la partida sigui més fàcil, manteniu sempre més d'una línia de bales iguals a punt per a eliminar. Això es pot aconseguir construint línies consecutives de bales iguals per tot arreu, en lloc de concentrar-vos en una sola línia alhora.</para
+></listitem>
+				<listitem
+><para
+>En tot moment, intenteu mantenir més de tres línies gairebé completades en el tauler de joc. Gairebé completades vol dir que són quatre bales iguals en longitud, i només en manca una per a la seva compleció.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Exemple:</title
+><para
+>Si teniu una línia gairebé completa i el camí, de sobte, es bloqueja amb una altra bala, no moveu només aquesta pilota. Intenteu trobar una seqüència de bales del mateix tipus que pugui continuar amb la bala moguda. Si tal seqüència existeix i és accessible, moveu-hi després la bala que bloqueja.</para
+></note>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Resum de la interfície</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>La finestra principal del &kolorlines;</title>
+<screenshot>
+				<screeninfo
+>Una captura de pantalla del &kolorlines;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>A la part superior de la finestra de joc es troben les barres de menús i la d'eines. Al centre de la pantalla hi ha una gran àrea quadrada plena de bales anomenada el tauler de joc. A la part dreta, s'ubica una barra que mostra les 3 bales següents que es deixaran caure al camp (a menys que estigui inhabilitada la característica <guimenuitem
+>Mostra les següents</guimenuitem
+>). A sota del camp hi ha la barra d'estat.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Elements de menú</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Comença una partida nova.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;&End;</keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Finalitza la partida</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Finalitza una partida en execució.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Mostra les puntuacions...</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Mostra la taula de puntuacions.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Surt</action
+> del &kolorlines;.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mou</guimenu
+> <guimenuitem
+>Desfés</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Desfà l'últim moviment.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Mou</guimenu
+><guimenuitem
+>Finalitza el torn</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Salta el vostre moviment, immediatament, juga les bales següents sense que moveu res.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+>&Left;</shortcut
+> <guimenu
+>Navegació</guimenu
+> <guimenuitem
+>Mou a l'esquerra</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Aquesta acció mourà el cursor de selecció cap a l'esquerra.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+>&Right;</shortcut
+> <guimenu
+>Navegació</guimenu
+> <guimenuitem
+>Mou a la dreta</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Aquesta acció mourà el cursor de selecció cap a la dreta.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+>&Up;</shortcut
+> <guimenu
+>Navegació</guimenu
+> <guimenuitem
+>Mou amunt</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Aquesta acció mourà el cursor de selecció cap amunt.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+>&Down;</shortcut
+> <guimenu
+>Navegació</guimenu
+> <guimenuitem
+>Mou avall</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Aquesta acció mourà el cursor de selecció cap avall.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+>&Space;</shortcut
+> <guimenu
+>Navegació</guimenu
+> <guimenuitem
+>Selecciona</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Aquesta acció seleccionarà l'element actualment sota el cursor.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Mostra les següents</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Alterna la informació sobre les properes bales.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>De manera addicional, el &kolorlines; té la configuració comuna al &kde; i els elements dels menús <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Per a obtenir més informació, llegiu les seccions sobre <ulink url="help:/fundamentals/menus.html#menus-settings"
+>El menú Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Preguntes més freqüents</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Vull canviar l'aparença d'aquest joc. Puc fer-ho? </para
+></question>
+ <answer
+><para
+>Sí. Per a canviar el tema visual del &nbsp;&kolorlines;, podeu utilitzar l'element de menú <menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Configura el &kolorlines;...</guimenuitem
+></menuchoice
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>No vull fer cap moviment ara mateix. Puc saltar un torn? </para
+></question>
+ <answer
+><para
+>Sí. Per a fer-ho, podeu utilitzar una <link linkend="menu-move-endturn"
+>drecera de teclat</link
+> o una opció de la <link linkend="menu-move-endturn"
+>barra de menús</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Puc utilitzar el teclat per a jugar a aquest joc? </para
+></question>
+ <answer
+><para
+>Sí. Utilitzeu les tecles del cursor i la tecla &nbsp;&Space; per a seleccionar i establir les bales.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>No sé què fer aquí! Hi ha cap consell? </para
+></question>
+ <answer
+><para
+>No. El &kolorlines; no té una característica <quote
+>Consell</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>He de sortir del joc ara, però encara no he acabat. Puc desar el meu progrés?</para
+></question>
+  <answer
+><para
+>En aquest moment, el &kolorlines; no té una característica <quote
+>Desa</quote
+>.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Configuració del joc</title
+> <!-- do not change this! -->
+  <para
+>El diàleg de configuració del &kolorlines; permet seleccionar temes visuals.</para>
+  <para
+>Per a seleccionar un tema nou, senzillament escolliu-lo des de la llista de selecció. Cada element de la llista mostra una petita vista prèvia a l'esquerra del nom del tema. Una selecció s'aplicarà immediatament.</para>
+  <para
+>Una vegada esteu satisfet amb el tema que heu seleccionat podeu fer clic al botó &nbsp;<guibutton
+>Tanca</guibutton
+>, localitzat a la part inferior d'aquest diàleg.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Crèdits i llicència</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kolorlines;</para>
+
+<para
+>Copyright del programa 2000 &Roman.Merzlyakov; &Roman.Merzlyakov.mail;</para>
+<para
+>Col·laboradors:</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail; redisseny, gràfics, animació, reescriptura parcial. Especialment gràcies a la meva dona Larissa Juschkin per les proves i els debats.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Copyright de la documentació 2001 &Roman.Razilov; &Roman.Razilov.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

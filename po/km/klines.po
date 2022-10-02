@@ -1,0 +1,174 @@
+# translation of klines.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2005, 2007, 2008, 2009.
+# Auk Piseth <piseth_dv@khmeros.info>, 2006, 2007, 2008.
+# Morn Met, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2009-10-24 09:42+0700\n"
+"Last-Translator: Morn Met\n"
+"Language-Team: Khmer <kde-i18n-doc@kde.org>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
+"X-Language: km_KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "ពិន្ទុ ៖"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "បង្ហាញ​បន្ទាប់"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "ផ្លាស់​ទី​ទៅ​ឆ្វេង"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "ផ្លាស់​ទី​ទៅ​ស្ដាំ"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "ផ្លាស់​ទី​ឡើង​លើ"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "ផ្លាស់​ទី​ចុះ​ក្រោម"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "ជ្រើស"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "ពិន្ទុ ៖ %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#  i18n: file klines.kcfg line 15
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "ថា​តើ​ត្រូវ​បង្ហាញ​សំណុំ​បាល់​បន្ទាប់​ឬ​​អត់ ។"
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "ទទឹង​ផ្ទៃ​ខាង​ក្រោយ​ដែល​បាន​រក្សាទុក"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "កម្ពស់​​ផ្ទៃ​ខាង​ក្រោយ​ដែល​បាន​រក្សា​ទុក"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "រុករក"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - គឺ​ជា​ល្បែង​តូច​មួយ ដែល​និយាយ​អំពី​បាល់ និង​របៀប​យក​​ពួក​វា​ចេញ"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "(c) 2000-2008 The KLines Authors"
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២​០​០​០-២​០​០​៨ ដោយ​អ្នក​និពន្ធ KLines"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "អ្នក​និពន្ធ​ដើម"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "សរសេរ​ឡើង​វិញ និង​ផ្នែក​បន្ថែម"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "សរសេរ​ឡើង​វិញ​ដើម្បី​ប្រើ QGraphicsView ។ អ្នក​ថែ​ទាំ​បច្ចុប្បន្ន"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "ការងារ​សិល្បៈ​ SVG ថ្មី​សម្រាប់​កំណែ​ល្បែង​របស់ KDE4"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "គ្មាន​​ផ្លូវ​ពី​ចម្រៀក​​ដែល​បាន​ជ្រើស​ទៅ​ក្រឡា​នេះ​ទេ"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>ល្បែង​ចប់ហើយ</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "ស្បែក"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​ស្បែក \"%1\" ។ សូម​ពិនិត្យ​មើល​ការដំឡើង​របស់​អ្នក ។"
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "ស្បែក​ក្រាហ្វិក​ដែល​ត្រូវ​ប្រើ ។"

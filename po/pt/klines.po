@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2015-02-07 15:27+0000\n"
+"Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: Kolor Yuuppi Lines   QGraphicsView Suzdalev Razilov\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-POFile-SpellExtra: Roman Trounev Dmitry Merzlyakov Eugene KLines\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "José Nuno Pires,Pedro Morais"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zepires@gmail.com,morais@kde.org"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Pontuação:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Mostrar o Seguinte"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Mover para a Esquerda"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Mover para a Direita"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Subir"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Descer"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Seleccionar"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Pontuação: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Recordes"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Mostrar ou não o próximo conjunto de bolas."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Largura do fundo gravado"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Altura do fundo gravado"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Navegação"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - um pequeno jogo sobre bolas e como se ver livre delas"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2015 Os Autores do KLines"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Autor original"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Reescrito e Estendido"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Modificação para usar o QGraphicsView. Manutenção actual"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Novos gráficos em SVG na versão do jogo para o KDE4"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Não existe nenhum caminho da peça seleccionada até esta célula"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Fim do jogo</h1>"

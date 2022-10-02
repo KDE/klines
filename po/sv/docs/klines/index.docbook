@@ -1,0 +1,722 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Handbok Färglinjer</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-07-11</date>
+<releaseinfo
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Denna dokumentation beskriver spelet Färglinjer, version 1.6</para>
+</abstract>
+
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>spel</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kolorlines</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>spelhall</keyword>
+	<keyword
+>färglinjer</keyword>
+	<keyword
+>färg</keyword>
+	<keyword
+>färger</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>en spelare</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Inledning</title
+> <!-- do not change this! -->
+	<note
+><title
+>Speltyp:</title
+><para
+>Spelhall</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Antal möjliga spelare:</title
+><para
+>En</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>Färglinjer är ett enkelt men mycket vanebildande spel för en spelare av &kde;. Det är inspirerat av ett välkänt spel, <application
+>Color lines</application
+>, skrivet för <application
+>DOS</application
+> av Olga Demina, Igor Ivkin och Gennady Denisov redan 1992.</para>
+	<para
+>Målet med Färglinjer är ganska enkelt. Spelaren måste flytta omkring de färgade kulorna på spelplanen, och samla dem i linjer av samma färg fem i rad. När linjen väl är färdig tas den bort från spelplanen, och frigör på så sätt värdefullt utrymme. På samma gång fortsätter nya kulor anlända tre åt gången efter varje drag, och fyller upp spelplanen.</para>
+	<para
+>Färglinjer kan inte vinnas, utan spelas enbart för att nå högsta poäng. Spelet slutar så fort hela spelplanen har fyllts med kulor.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Hur man spelar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Syfte:</title
+><para
+>Flytta omkring de färgade kulorna på spelplanen, och samla dem i linjer med samma färg fem i rad.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>När Färglinjer startar visas spelplanen, som är delad i 81 rutor (spelplanen har 9x9 rutor), och tre nya färgade kulor dyker omedelbart upp på spelplanen. Använd musen för att flytta kulorna från ruta till ruta för att gruppera dem i linjer av samma färg. Efter vart och ett av dina drag släpper datorn dock tre ytterligare kulor på spelplanen. Du måste samla kulorna i linjer med fem eller fler kulor för att undvika att spelplanen fylls upp. När en sådan linje är färdig, tas kulorna bort från spelplanen och dina poäng ökas.</para>
+	<note
+><title
+>Observera:</title
+><para
+>Nya kulor läggs inte till på spelplanen när en linje tas bort. Istället får du ytterligare ett drag innan ett nytt tretal kulor läggs till.</para
+></note>
+	<para
+>Ökningen av poäng beror enbart på antal borttagna kulor.</para>
+	<note
+><title
+>Observera:</title
+><para
+>Om du spelar med funktionen <guimenuitem
+>Visa nästa</guimenuitem
+> aktiverad är poängökningen mindre än om funktionen <guimenuitem
+>Visa nästa</guimenuitem
+> är avstängd.</para
+></note>
+	<para
+>Färglinjer kan inte vinnas, utan spelas enbart för att nå högsta poäng. Spelet slutar så fort hela spelplanen blivit fylld med kulor.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Spelets regler, strategi och tips</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Spelregler</title>
+			<itemizedlist>
+				<listitem
+><para
+>Efter varje spelares drag lägger spelet till tre nya kulor på spelplanen.</para
+></listitem>
+				<listitem
+><para
+>För att frigöra utrymme på spelplanen måste spelaren gruppera kulor av samma färg i obrutna horisontella, vertikala eller diagonala linjer med fem eller fler kulor.</para
+></listitem>
+				<listitem
+><para
+>Klicka helt enkelt på en kula för att välja den för att starta förflyttningen, och klicka därefter på rutan kulan ska flyttas till för att göra färdigt förflyttningen.</para
+></listitem>
+				<listitem
+><para
+>En kula kan bara flyttas till rutorna som är lediga och inte redan upptas av en annan kula.</para
+></listitem>
+				<listitem
+><para
+>På samma sätt, måste rutan i fråga vara fritt tillgänglig.</para
+></listitem>
+				<listitem
+><para
+>Rutan är fritt tillgänglig om det inte finns några andra kulor som blockerar vägen till den.</para
+></listitem>
+				<listitem
+><para
+>Vägen anses blockerad om någon del av den för närvarande upptas av en kula.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Observera:</title
+><para
+>I Färglinjer beräknas vägen automatiskt av spelet. Om det inte finns någon möjlig (öppen) väg till målrutan, visas ett vänligt meddelande.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>För att lyckas förflytta en kula till en önskad ruta när vägen är blockerad, måste spelaren först rensa vägen.</para
+></listitem>
+				<listitem
+><para
+>För att rensa vägen måste spelaren helt enkelt flytta alla blockerande kulor ur vägen, och på så sätt frigöra vägen.</para
+></listitem>
+				<listitem
+><para
+>Poäng ges för varje linje med kulor som tas bort från spelplanen.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Observera:</title
+><para
+>Om du spelar med funktionen <guimenuitem
+>Visa nästa</guimenuitem
+> aktiverad är poängökningen mindre än om funktionen <guimenuitem
+>Visa nästa</guimenuitem
+> är avstängd.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Strategi och tips</title>
+			<itemizedlist>
+				<listitem
+><para
+>Håll ögonen på raden som visar de tre nästa kulorna som kommer att släppas på spelplanen (om inte funktionen <guimenuitem
+>Visa nästa</guimenuitem
+> har stängts av). Informationen den ger uppskattas oftare än inte.</para
+></listitem>
+				<listitem
+><para
+>Försök hålla åtminstone halva spelplanen rensad. Att låta kulorna ansamlas leder nästan säker till en förlust.</para
+></listitem>
+				<listitem
+><para
+>Ha alltid mer än en linje med samma kulor klar att ta bort, för att göra spelet enklare. Det kan åstadkommas genom att bygga linjer i följd med samma kulor på alla ställen det är möjligt, istället för att koncentrera sig på en linje åt gången.</para
+></listitem>
+				<listitem
+><para
+>Försök att alltid behålla fler än tre nästan färdiga linjer redo på spelplanen. Nästan färdig betyder att de är fyra likadana kulor i längd, och att bara en kula återstår för att göra färdigt dem.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Exempel:</title
+><para
+>Om du har en linje som nästan är färdig och vägen till den plötsligt blir blockerad av en annan kula, flytta inte bara den kulan. Försök att hitta en följd av kulor av samma sort som du kan förlänga med kulan som ska flyttas. Om en sådan följd finns och kan kommas åt, flytta då den blockerande kulan dit.</para
+></note>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Översikt av gränssnittet</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>Färglinjers huvudfönster.</title>
+<screenshot>
+				<screeninfo
+>En skärmbild av Färglinjer</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Skärmbild</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>Längst upp i spelfönstret finns menyraden och verktygsraden. I mitten av skärmen finns en stor fyrkant fylld med kulor, som kallas spelplanen. Till höger finns en rad som visar de tre nästa kulorna som kommer att släppas på spelplanen (om inte funktionen <guimenuitem
+>Visa nästa</guimenuitem
+> är avstängd). Under spelplanen finns statusraden.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Menyalternativ</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Ny</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Startar ett nytt spel.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>End</keycap
+> </keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avsluta spelet</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Avslutar ett pågående spel.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Visa bästa resultat</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Visar tabellen med poängtoppen.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Avslutar</action
+> Färglinjer</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Flytta</guimenu
+> <guimenuitem
+>Ångra</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Det här ångrar det senaste draget.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Flytta</guimenu
+><guimenuitem
+>Avsluta omgång</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Hoppa över ditt drag, spela omedelbart nästa spelkula utan att du flyttar någon.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Vänsterpil</keycap
+></shortcut
+> <guimenu
+>Navigering</guimenu
+> <guimenuitem
+>Flytta åt vänster</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Åtgärden flyttar markeringspekaren åt vänster.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Högerpil</keycap
+></shortcut
+> <guimenu
+>Navigering</guimenu
+> <guimenuitem
+>Flytta åt höger</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Åtgärden flyttar markeringspekaren åt höger.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Uppåtpil</keycap
+></shortcut
+> <guimenu
+>Navigering</guimenu
+> <guimenuitem
+>Flytta uppåt</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Åtgärden flyttar markeringspekaren uppåt.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Neråtpil</keycap
+></shortcut
+> <guimenu
+>Navigering</guimenu
+> <guimenuitem
+>Flytta neråt</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Åtgärden flyttar markeringspekaren neråt.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Mellanslag</keycap
+></shortcut
+> <guimenu
+>Navigering</guimenu
+> <guimenuitem
+>Markera</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Åtgärden markerar objektet som för närvarande är under pekaren.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Visa nästa</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Byter information om de nästa kulorna.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>Dessutom har Färglinjer de vanliga menyalternativen <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> i &kde;. För mer information, läs avsnitten  <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s Grunder. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Vanliga frågor</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Jag vill ändra hur spelet ser ut. Kan man göra det? </para
+></question>
+ <answer
+><para
+>Ja. För att ändra Färglinjers visuella tema kan du använda menyalternativet <menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Anpassa Färglinjer...</guimenuitem
+></menuchoice
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag vill inte göra något drag just nu. Kan man hoppa över sin tur? </para
+></question>
+ <answer
+><para
+>Ja. För att hoppa över din tur kan du använda en <link linkend="menu-move-endturn"
+>snabbtangent</link
+> eller ett alternativ <link linkend="menu-move-endturn"
+>i menyraden</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kan man använda tangentbordet för att spela? </para
+></question>
+ <answer
+><para
+>Ja. Du kan använda piltangenterna och <keycap
+>Mellanslag</keycap
+> för att välja och placera kulorna.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag kan inte räkna ut vad man ska göra här. Finns det några tips? </para
+></question>
+ <answer
+><para
+>Nej. Färglinjer har inte någon <quote
+>tipsfunktion</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag måste avsluta spelet nu, men jag är inte klar än. Kan man spara det man har gjort?</para
+></question>
+  <answer
+><para
+>Färglinjer har för närvarande inte någon funktion för att <quote
+>spara</quote
+>.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Spelanpassning</title
+> <!-- do not change this! -->
+  <para
+>Inställningsdialogrutan i Färglinjer låter dig välja Färglinjers visuella tema.</para>
+  <para
+>Markera helt enkelt temat i urvalslistan för att välja ett nytt tema. Varje objekt i listan visar en liten förhandsgranskning till vänster om temats namn. En markering verkställs omedelbart.</para>
+  <para
+>När du väl är nöjd med temat du har valt kan du antingen klicka på knappen <guibutton
+>Stäng</guibutton
+>, som finns längst ner i dialogrutan.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Tack till och licens</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kolorlines;</para>
+
+<para
+>Program copyright 2000 &Roman.Merzlyakov; &Roman.Merzlyakov.mail;</para>
+<para
+>Bidragsgivare:</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail; omdesign, grafik, animering, partiell omskrivning. Särskilt tack till min fru Larissa Juschkin för test och diskussioner.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Dokumentation copyright 2001 &Roman.Razilov; &Roman.Razilov.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

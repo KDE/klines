@@ -1,0 +1,185 @@
+# Thomas Diehl <thd@kde.org>, 2003.
+# Stefan Winter <swinter@kde.org>, 2004, 2005, 2007.
+# Stephan Johach <hunsum@gmx.de>, 2004, 2005.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005.
+# Burkhard Lück <lueck@hube-lueck.de>, 2008, 2015.
+# Johannes Obermayr <johannesobermayr@gmx.de>, 2009.
+# Frederik Schwarzer <schwarzer@kde.org>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2016-02-09 14:08+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Maren Pakura"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "maren@kde.org"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Punkte:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Nächste Kugeln anzeigen"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Links"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Rechts"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Hoch"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Runter"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Auswahl"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Punkte: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Bestenliste"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr ""
+"Ist diese Einstellung aktiviert, wird der nächste Satz Kugeln angezeigt."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Breite des gespeicherten Hintergrunds"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Höhe des gespeicherten Hintergrunds"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Navigation"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr ""
+"Kolor Lines – Ein kleines Spiel über Kugeln und wie man ihrer überdrüssig "
+"wird."
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "© 2000–2015, Die KLines-Autoren"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Ursprünglicher Autor"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Neufassung und Erweiterung."
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Neuer Code zur Verwendung von QGraphicsView. Aktueller Betreuer."
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Neue SVG-Grafiken für die KDE4-Version des Spiels."
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Es gibt keinen Weg von der gewählten Kugel zu dieser Zelle"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Spiel beendet</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Design"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr ""
+#~ "Design „%1“ lässt sich nicht laden. Bitten überprüfen Sie die "
+#~ "Installation."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "Grafikdesign"
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Zug"
+
+#~ msgid "Selected ball can not be moved to this cell"
+#~ msgstr "Der ausgewählte Ball kann nicht in dieses Feld verschoben werden."

@@ -1,0 +1,694 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Das Handbuch zu &kolorlines;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Maren</firstname
+><surname
+>Pakura</surname
+><affiliation
+><address
+><email
+>maren@kde.org</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+ 
+<date
+>2016-05-10</date>
+<releaseinfo
+>1.6 (Anwendungen 16.04)</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Dieses Handbuch beschreibt das Spiel &kolorlines; in der Version 1.6</para>
+</abstract>
+ 
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>KDE-Spiele</keyword
+> <!-- do not change this! -->
+	<keyword
+>Spiel</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kolorlines</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>Arcade</keyword>
+	<keyword
+>Farben</keyword>
+	<keyword
+>bunte Linien</keyword>
+	<keyword
+>Farbe</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>ein Spieler</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Einführung</title
+> <!-- do not change this! -->
+	<note
+><title
+>Spieltyp:</title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Anzahl der Spieler:</title
+><para
+>Einer</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>&kolorlines; ist ein einfaches, aber süchtigmachendes Spiel für einen Spieler. Es wurde angeregt durch das bekannte Spiel <application
+>Color Lines</application
+>, das von Olga Demina, Igor Ivkin und Gennady Denisov 1992 für <application
+>DOS</application
+> geschrieben wurde.</para>
+	<para
+>Das Ziel von &kolorlines; ist recht einfach. Der Spieler muss die farbigen Bälle auf dem Spielfeld bewegen, um Linien von fünf gleichfarbigen Bällen zu bilden. Diese verschwinden dann vom Spielfeld und geben kostbaren Platz frei, der gleichzeitig nach jedem Zug von drei neu erscheinenden Bällen ausgefüllt wird.</para>
+	<para
+>In &kolorlines; kann nicht gewonnen werden - es wird nur um einen Platz in der Bestenliste gespielt. Das Spiel endet, sobald auf dem Spielfeld kein Platz mehr ist.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Spielanleitung</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Ziel des Spiels:</title
+><para
+>Bewegen Sie die Bälle auf dem Spielfeld umher und bilden Sie Linien mit fünf gleichfarbigen Bällen.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>Beim Start von &kolorlines; erscheint ein in 81 Quadrate unterteiltes Spielfeld (9x9 Quadrate) und darauf drei farbige Bälle. Mit Ihrer Maus können Sie die Bälle von Zelle zu Zelle bewegen, um Sie in gleichfarbigen Linien anzuordnen. Nach jedem Ihrer Züge lässt der Computer drei weitere Bälle zufällig auf dem Spielfeld erscheinen. Um ein Auffüllen des Spielfeldes zu vermeiden, müssen Sie Linien mit mindestens fünf gleichfarbigen Bällen bilden, da diese verschwinden und somit wieder Platz frei wird und sich ihr Punktestand erhöht.</para>
+	<note
+><title
+>Hinweis:</title
+><para
+>Wenn eine komplette Linie verschwindet, erscheinen keine neuen Bälle. Stattdessen dürfen Sie noch einen weiteren Zug tätigen. Erst danach erscheinen drei neue Bälle.</para
+></note>
+	<para
+>Die Punktzahl steigt mit der Anzahl vom Spielfeld entfernter Bälle.</para>
+	<note
+><title
+>Hinweis:</title
+><para
+>Wenn Sie die Einstellung <guimenuitem
+>Nächste Kugeln anzeigen</guimenuitem
+> eingeschaltet haben, erhalten Sie eine geringere Punktzahl, als wenn sie deaktiviert ist.</para
+></note>
+	<para
+>In &kolorlines; kann nicht gewonnen werden - es wird nur um einen Platz in der Bestenliste gespielt. Das Spiel endet, sobald alle Quadrate des Spielfeldes mit Bällen gefüllt sind.</para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Spielregeln, Spielstrategien und Tipps</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Spielregeln</title>
+			<itemizedlist>
+				<listitem
+><para
+>Nach jedem Zug des Spielers werden drei weitere farbige Bälle auf dem Spielfeld platziert.</para
+></listitem>
+				<listitem
+><para
+>Um auf dem Spielfeld Platz zu schaffen, muss der Spieler fünf oder mehr gleichfarbige Bälle in horizontalen, vertikalen oder diagonalen Linien anordnen.</para
+></listitem>
+				<listitem
+><para
+>Um einen Zug zu tätigen, klicken Sie zuerst auf einen Ball und anschließend auf das Quadrat, zu dem der Ball sich bewegen soll.</para
+></listitem>
+				<listitem
+><para
+>Ein Ball kann nur in leere Quadrate verschoben werden.</para
+></listitem>
+				<listitem
+><para
+>Gleichzeitig muss das ausgewählte Quadrat frei zugänglich sein.</para
+></listitem>
+				<listitem
+><para
+>Ein Quadrat ist frei zugänglich, wenn keine anderen Bälle den Weg dorthin blockieren.</para
+></listitem>
+				<listitem
+><para
+>Ein Pfad gilt als blockiert, wenn ein beliebiger Teil von ihm von einem Ball besetzt ist.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Hinweis:</title
+><para
+>&kolorlines; berechnet den Pfad automatisch. Wenn es keinen möglichen Weg gibt, wird Ihnen das angezeigt.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>Um einen Ball erfolgreich zu einer blockierten Zelle zu befördern, muss der Spieler den Pfad zunächst freiräumen.</para
+></listitem>
+				<listitem
+><para
+>Um einen Pfad freizuräumen, muss der Spieler einfach alle blockierenden Bälle aus dem Weg räumen.</para
+></listitem>
+				<listitem
+><para
+>Die Punktzahl errechnet sich aus den vom Spielfeld entfernten Linien.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Hinweis:</title
+><para
+>Wenn Sie die Einstellung <guimenuitem
+>Nächste Kugeln anzeigen</guimenuitem
+> eingeschaltet haben, erhalten Sie eine geringere Punktzahl, als wenn sie deaktiviert ist.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Spielstrategien und Tipps</title>
+			<itemizedlist>
+				<listitem
+><para
+>Achten Sie auf die Leiste, die Ihnen die folgenden drei Bälle anzeigt (außer die Einstellung <guimenuitem
+>Nächsten Ball anzeigen</guimenuitem
+> ist ausgeschaltet). Diese Information kann Ihnen häufig nützlich sein.</para
+></listitem>
+				<listitem
+><para
+>Versuchen Sie, zumindest die Hälfte des Spielfeldes frei zu halten. Wenn die Bälle sich aufstauen, wird das fast immer zu einer Niederlage führen.</para
+></listitem>
+				<listitem
+><para
+>Um das Spielen zu erleichtern, halten Sie immer mehr als nur eine Linie zum Vervollständigen bereit. Dies kann erreicht werden, indem Sie überall, wo es möglich ist, gleichfarbige Bälle sammeln, anstatt sich nur auf eine Linie zu konzentrieren.</para
+></listitem>
+				<listitem
+><para
+>Versuchen Sie immer, mehr als drei fast vollständige Linien auf dem Spielfeld bereit zu halten. Mit <quote
+>fast vollständig</quote
+> sind Linien von vier gleichfarbigen Bällen gemeint, denen nur noch ein Ball zum Vervollständigen fehlt.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Beispiel:</title
+><para
+>Wenn Sie eine Linie fast vervollständigt haben und der Pfad dahin plötzlich von einem anderen Ball blockiert wird, bewegen Sie diesen nicht einfach weg. Suchen Sie stattdessen eine Abfolge von Bällen der gleichen Farbe, die Sie mit dem blockierenden Ball weiterführen könnten. Wenn eine solche Abfolge existiert und erreichbar ist, bewegen Sie den Ball dorthin.</para
+></note>
+	</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Die Benutzeroberfläche</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>Das Hauptfenster von &kolorlines;</title>
+<screenshot>
+				<screeninfo
+>Bildschirmfoto von &kolorlines;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Bildschirmfoto</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>Am oberen Ende des Spielfensters befinden sich die Menü- und Statusleiste. In der Mitte des Bildes befindet sich das aus einem großen Quadrat bestehende, mit Bällen angefüllte Spielfeld. Rechts davon ist eine Leiste, die die nächsten drei auf dem Spielfeld erscheinenden Bällen anzeigt (außer die Einstellung <guimenuitem
+>Nächsten Ball anzeigen</guimenuitem
+> ist ausgeschaltet). Unterhalb des Feldes befindet sich die Statusleiste.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Menüeinträge</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Neu</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Startet ein neues Spiel.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Bestenliste anzeigen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Zeigt die Bestenliste an.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Beenden</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Beendet</action
+> &kolorlines;.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Zug</guimenu
+> <guimenuitem
+>Zurücknehmen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Macht den letzten Schritt rückgängig.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Zug</guimenu
+><guimenuitem
+>Zug beenden</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Überspringt Ihren Zug und spielt sofort die nächsten Kugeln, ohne Sie ziehen zu lassen.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Pfeil links</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Links</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Diese Aktion verschiebt das Auswahlrechteck nach links.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Pfeil rechts</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Rechts</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Diese Aktion verschiebt das Auswahlrechteck nach rechts.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Pfeil hoch</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Hoch</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Diese Aktion verschiebt das Auswahlrechteck nach oben.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Pfeil runter</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Runter</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Diese Aktion verschiebt das Auswahlrechteck nach unten.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+><keycap
+>Leertaste</keycap
+></shortcut
+> <guimenu
+>Navigation</guimenu
+> <guimenuitem
+>Auswahl</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Diese Aktion wählt die Kugel im Auswahlrechteck für den nächsten Zug.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guimenuitem
+>Nächste Kugeln anzeigen</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Blendet die Vorschau für die nächsten Kugeln ein bzw. aus.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>Zusätzlich hat &kolorlines; die bekannten &kde;-Einträge im Menü <guimenu
+>Einstellungen</guimenu
+> und <guimenu
+>Hilfe</guimenu
+>, weitere Informationen dazu finden Sie in den Abschnitten über die Menüs <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Einstellungen</ulink
+> und <ulink url="help:/fundamentals/menus.html#menus-help"
+>Hilfe</ulink
+> der &kde;-Grundlagen. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Häufig gestellte Fragen</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Kann ich das Erscheinungsbild des Spiels ändern? </para
+></question>
+ <answer
+><para
+>Ja, um das Design für &kolorlines; zu ändern, wählen Sie <menuchoice
+><guimenu
+>Einstellungen</guimenu
+><guimenuitem
+>&kolorlines; einrichten ...</guimenuitem
+></menuchoice
+> in der Menüleiste.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ich möchte in dieser Runde nicht ziehen, kann ich einmal aussetzen? </para
+></question>
+ <answer
+><para
+>Um eine Runde auszusetzen, benutzen Sie ein <link linkend="menu-move-endturn"
+>Tastenkürzel</link
+> oder diesen <link linkend="menu-move-endturn"
+>Menüeintrag</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kann ich mit der Tastatur spielen? </para
+></question>
+ <answer
+><para
+>Ja. Mit den Pfeiltasten und der <keycap
+>Leertaste</keycap
+> können die Bälle ausgewählt und gesetzt werden.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ich komme im Spiel nicht weiter, gibt es Tipps? </para
+></question>
+ <answer
+><para
+>Nein, in &kolorlines; gibt es keine Tipps.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ich muss das Spiel unterbrechen, kann ich den aktuellen Spielstand speichern?</para
+></question>
+  <answer
+><para
+>Nein, in &kolorlines; kann der aktuelle Spielstand nicht gespeichert werden.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Einstellungen für das Spiel</title
+> <!-- do not change this! -->
+  <para
+>Im Einrichtungsdialog von &kolorlines; können Sie das Design des Spiels ändern.</para>
+  <para
+>Um ein Design einzustellen, wählen Sie es aus der Auswahlliste. Für jeden Eintrag in der Liste wird eine kleine Vorschau links vom Namen des Designs angezeigt. Eine Auswahl wird sofort angewendet,</para>
+  <para
+>Um Ihre Auswahl zu übernehmen, klicken Sie auf den Knopf <guibutton
+>Schließen</guibutton
+> im unteren Bereich dieses Dialogs.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Danksagungen und Lizenz</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kolorlines;</para>
+
+<para
+>Programm-Copyright 2000 &Roman.Merzlyakov; &Roman.Merzlyakov.mail;</para>
+<para
+>Beiträge von:</para>
+<itemizedlist>
+<listitem
+><para
+>Von &Roman.Razilov; &Roman.Razilov.mail; stammen die Neugestaltung, die Grafik, die Animation des Spiels. Besonderer Dank geht an meine Frau Larissa Juschkin fürs Diskutieren und Testen.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Copyright für die Dokumentation 2001 &Roman.Razilov; &Roman.Razilov.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>Deutsche Übersetzung von Maren Pakura <email
+>maren@kde.org</email
+></para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

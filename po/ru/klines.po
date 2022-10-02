@@ -1,0 +1,337 @@
+# translation of klines.po into Russian
+# Copyright (C) 2001, KDE Russian translation Team.
+#
+# Gregory Mokhin <mok@kde.ru>, 2001, 2004, 2005, 2008.
+# Nick Shaforostoff <shaforostoff@kde.ru>, 2008.
+# Artem Sereda <overmind88@gmail.com>, 2008, 2009.
+# Evgeniy Ivanov <powerfox@kde.ru>, 2008.
+# Alexander Potashev <aspotashev@gmail.com>, 2010, 2015.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2020-04-12 14:47+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Григорий Мохин,Ростислав Окулов"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mok@kde.ru,ru.silvercry@mail.ru"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Очки:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Показывать следующие шарики"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Вверх"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Вправо"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Вверх"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Вниз"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Выбрать"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Очки: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Рекорды"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Показывать следующий комплект шариков."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Ширина выбранного фона"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Высота выбранного фона"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Навигация"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Цветные линии"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Цветные линии - игра про шарики и про то, как их собирать"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "© Разработчики KLines, 2000-2015"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Роман Мерзляков"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Автор программы"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Роман Разилов"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Переписана и улучшена"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Дмитрий Суздалев"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Переход на QGraphicsView. Текущий сопровождающий."
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Евгений Трунев"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Новое SVG-оформление для KDE4"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Путь от выбранного шарика к этой ячейке не существует"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Игра закончена</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Оформление"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Не удалось загрузить оформление %1. Проверьте установку программы."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "Оформление."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Ход"
+
+#~ msgid "Show next"
+#~ msgstr "Показывать следующие шарики"
+
+#~ msgid "Selected ball can not be moved to this cell"
+#~ msgstr "Выбранный шарик не может быть передвинут в эту ячейку"
+
+#, fuzzy
+#~| msgid "Move Left"
+#~ msgid "Left"
+#~ msgstr "Влево"
+
+#, fuzzy
+#~| msgid "Move Right"
+#~ msgid "Move cursor to right"
+#~ msgstr "Вправо"
+
+#, fuzzy
+#~| msgid "Move Down"
+#~ msgid "Down"
+#~ msgstr "Вниз"
+
+#~ msgid "Move Ball"
+#~ msgstr "Переместить шарик"
+
+#, fuzzy
+#~ msgid "Next:"
+#~ msgstr "Следующие шарики:"
+
+#~ msgid "Very Easy"
+#~ msgstr "Очень лёгкий"
+
+#~ msgid "Easy"
+#~ msgstr "Лёгкий"
+
+#~ msgid "Normal"
+#~ msgstr "Обычный"
+
+#~ msgid "Hard"
+#~ msgstr "Сложный"
+
+#~ msgid "Very Hard"
+#~ msgstr "Очень сложный"
+
+#~ msgid " Level: "
+#~ msgstr " Уровень: "
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Запустить &обучение"
+
+#~ msgid "Hide Next"
+#~ msgstr "Скрыть показ следующих шариков"
+
+#~ msgid "&Use Numbered Balls"
+#~ msgstr "&Использовать шарики с цифрами"
+
+#~ msgid " Level: %1"
+#~ msgstr " Уровень: %1 "
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "Остановить &обучение"
+
+#~ msgid "Tutorial"
+#~ msgstr "Обучение"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Обучение"
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr ""
+#~ "Цель игры - составить ряд из\n"
+#~ "5 шариков одного цвета."
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "Можно собирать шарики по\n"
+#~ "горизонтали, вертикали и диагонали."
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "С каждым ходом на поле попадают три новых шарика."
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "С каждым ходом вы можете переместить только один шарик."
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "Чтобы его переместить, щёлкните на нём мышкой,\n"
+#~ "а затем щёлкните на клетке, куда хотите его поставить."
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "Вы только что переместили синий шарик!"
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "Шарики можно ставить на любую клетку,\n"
+#~ "если проход к ней свободен."
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "Теперь нам нужен ещё один синий шарик."
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "Сегодня нам везёт!"
+
+#~ msgid ""
+#~ "Hurray! And away they go!\n"
+#~ "Now lets try the green balls."
+#~ msgstr ""
+#~ "Ура! Мы их убрали!\n"
+#~ "Возьмёмся теперь за зелёные."
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "Попробуйте сами!\n"
+#~ "Щёлкните на зелёном шарике и поставьте его к другим!"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "Почти получилось, ещё разок!"
+
+#~ msgid "Very good!"
+#~ msgstr "Здорово!"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr "Убрав линию, вы получаете дополнительный ход."
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "Вот обучение и подошло к концу.\n"
+#~ "Играйте дальше сами!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Пауза в обучении"
+
+#~ msgid "Game Over"
+#~ msgstr "Игра окончена"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Уровень сложности"
+
+#~ msgid "Whether to use numbered balls."
+#~ msgstr "Использовать шарики с цифрами."

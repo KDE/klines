@@ -1,0 +1,172 @@
+# Translation of klines into Japanese.
+# This file is distributed under the same license as the kdegames package.
+# Taiki Komoda <kom@kde.gr.jp>, 2002.
+# Takuro Ashie <ashie@homa.ne.jp>, 2004.
+# Kurose Shushi <md81@bird.email.ne.jp>, 2004.
+# Naoya KOJIMA <naoya@fullmoon.dyndns.org>, 2005.
+# Fumiaki Okushi <okushi@kde.gr.jp>, 2006.
+# Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2008-12-14 22:05+0900\n"
+"Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Taiki Komoda,Takuro Ashie,Kurose Shushi,Naoya KOJIMA"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"kom@kde.gr.jp,ashie@homa.ne.jp,md81@bird.email.ne.jp,naoya@fullmoon.dyndns."
+"org"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "スコア:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "次を表示"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "左へ移動"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "右へ移動"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "上へ移動"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "下へ移動"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "選択"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "スコア: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "次のボールのセットを表示するかどうか"
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "保存された背景の幅"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "保存された背景の高さ"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "ナビゲーション"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Kolor Lines - ボールを取り除くゲーム"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "(c) 2000-2008 The KLines Authors"
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2008 KLines の作者"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "オリジナルの作者"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "書き直し、拡張"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "QGraphicsView を使うように書き直し、現在のメンテナ"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "KDE4 バージョンのための新しい SVG アートワーク"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "選択したボールをこのセルに移動する経路はありません"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>ゲームオーバー</h1>"

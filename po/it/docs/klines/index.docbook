@@ -1,0 +1,754 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Manuale di &kolorlines;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+> <surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Vincenzo</firstname
+><surname
+>Reale</surname
+> <affiliation
+><address
+><email
+>smart2128vr@gmail.com</email
+> </address
+></affiliation
+><contrib
+>Traduzione dell'interfaccia grafica e della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Andrea</firstname
+> <surname
+>Celli</surname
+><affiliation
+><address
+><email
+>andrea.celli@libero.it</email
+></address
+></affiliation
+><contrib
+>Traduzione dell'interfaccia grafica</contrib
+></othercredit
+><othercredit role="translator"
+> <firstname
+>Francesco</firstname
+><surname
+>Bresciani</surname
+> <affiliation
+><address
+><email
+>fbresciani@users.sourceforge.net</email
+> </address
+></affiliation
+><contrib
+>Traduzione dell'interfaccia grafica e della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+> <firstname
+>Marco</firstname
+><surname
+>Poletti</surname
+><affiliation
+> <address
+><email
+>poletti.marco@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>11/7/2021</date>
+<releaseinfo
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Questa documentazione descrive il gioco di &kolorlines; versione 1.6</para>
+</abstract>
+
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>giochi</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kolor Lines</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>arcade</keyword>
+	<keyword
+>file colorate</keyword>
+	<keyword
+>colore</keyword>
+	<keyword
+>colori</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>un giocatore</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introduzione</title
+> <!-- do not change this! -->
+	<note
+><title
+>Tipo del gioco:</title
+><para
+>Arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Numero giocatori:</title
+><para
+>Uno</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>&kolorlines; è un gioco semplice ma divertente, con un solo giocatore, per &kde;. &kolorlines; è ispirato a un gioco molto conosciuto - <application
+>Color lines</application
+>, scritto per <application
+>DOS</application
+> da Olga Demina, Igor Ivkin e Gennady Denisov nel 1992.</para>
+	<para
+>L'obiettivo di &kolorlines; è semplice. Il giocatore deve spostare le palline colorate nell'area di gioco, raggruppandole in file di cinque palline dello stesso colore. Quando una fila viene completata viene rimossa, liberando spazio prezioso. Allo stesso tempo, nuove palline continuano ad arrivare: tre dopo ogni mossa, riempiendo l'area di gioco.</para>
+	<para
+>&kolorlines; non può essere vinto, e si gioca solo per raggiungere un punteggio più alto. Il gioco termina quando l'area di gioco è completamente piena di palline.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Come giocare</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Obiettivo:</title
+><para
+>Spostare le palline colorate nell'area di gioco, raggruppando quelle dello stesso colore in file da cinque.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>All'avvio di &kolorlines; si può vedere l'area di gioco, divisa in 81 quadrati (l'area di gioco è 9x9), con tre palline colorate. Usare il mouse per spostare le palline tra le celle, raggruppandole in file di cinque palline dello stesso colore. Ad ogni mossa effettuata, il computer aggiungerà altre tre palline all'area di gioco. Per evitare di riempire l'area di gioco bisogna raggruppare le palline in file di cinque o più. Quando si completa una fila, le palline vengono rimosse dall'area di gioco e il punteggio aumenta.</para>
+	<note
+><title
+>Nota:</title
+><para
+>Non verranno aggiunte nuove palline dopo la rimozione di una fila. Invece, si potrà fare ancora un'altra mossa prima che venga aggiunta una nuova tripletta di palline.</para
+></note>
+	<para
+>L'aumento del punteggio dipende solo dal numero di palline rimosse.</para>
+	<note
+><title
+>Nota:</title
+><para
+>Se si sta giocando con l'opzione <guimenuitem
+>Mostra le prossime</guimenuitem
+> abilitata, l'aumento del punteggio è minore.</para
+></note>
+	<para
+>&kolorlines; non può essere vinto, e si gioca solo per raggiungere un punteggio più alto. Il gioco termina quando l'area di gioco è completamente piena di palline.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Regole del gioco, strategie e suggerimenti</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Regole del gioco</title>
+			<itemizedlist>
+				<listitem
+><para
+>Dopo ogni mossa, il gioco aggiungerà tre palline all'area di gioco.</para
+></listitem>
+				<listitem
+><para
+>Per liberare spazio nell'area di gioco, il giocatore deve raggruppare le palline dello stesso colore in file continue orizzontali, verticali o diagonali da cinque o più.</para
+></listitem>
+				<listitem
+><para
+>Per iniziare la mossa, fare clic su una pallina per selezionarla, poi fare clic sulla cella di destinazione per completare la mossa.</para
+></listitem>
+				<listitem
+><para
+>Una pallina può essere spostata solo nelle celle libere e non occupate da altre palline.</para
+></listitem>
+				<listitem
+><para
+>Inoltre, la cella di destinazione deve essere accessibile.</para
+></listitem>
+				<listitem
+><para
+>La cella è accessibile se non ci solo altre palline che bloccano il percorso.</para
+></listitem>
+				<listitem
+><para
+>Il percorso è considerato bloccato se parte di esso è attualmente occupato da una pallina.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Nota:</title
+><para
+>In &kolorlines; il percorso è calcolato automaticamente dal gioco. Se non esiste un percorso (aperto) per la cella di destinazione, sarà visualizzata una notifica.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>Per trasferire con successo una pallina in una cella desiderata il cui percorso è bloccato, il giocatore deve prima liberare il percorso.</para
+></listitem>
+				<listitem
+><para
+>Per liberare il passaggio il giocatore deve spostare le palline che lo bloccano, in modo che non intralcino più la strada.</para
+></listitem>
+				<listitem
+><para
+>I punteggi sono assegnati per ogni fila di palline rimosse dall'area di gioco.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Nota:</title
+><para
+>Se si sta giocando con l'opzione <guimenuitem
+>Mostra le prossime</guimenuitem
+> abilitata, l'aumento del punteggio è minore.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Strategie e suggerimenti</title>
+			<itemizedlist>
+				<listitem
+><para
+>È bene stare attenti alla barra che visualizza le prossime tre palline che verranno aggiunte all'area di gioco (a meno che <guimenuitem
+>Mostra le prossime</guimenuitem
+> non sia disabilitato). Spesso queste informazioni saranno molto utili.</para
+></listitem>
+				<listitem
+><para
+>È bene lasciare libera almeno metà dell'area da gioco. Se si lasciano accumulare troppe palline, si perderà facilmente.</para
+></listitem>
+				<listitem
+><para
+>Per semplificarsi la vita, è meglio tenere più di una fila di palline dello stesso colore pronta per essere rimossa. Questo può essere ottenuto mettendo in file palline dello stesso tipo in tutti i posti dove è possibile, invece di concentrarsi su una fila alla volta.</para
+></listitem>
+				<listitem
+><para
+>È bene cercare di avere sempre almeno tre file di palline quasi complete sull'area di gioco, in ogni momento. Quasi complete significa che sono lunghe quattro palline dello stesso colore, e ne basta una sola per completarle.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Esempio:</title
+><para
+>Se si ha una fila di palline quasi completata e il percorso verso di essa viene bloccato improvvisamente da una pallina, non spostare semplicemente quella pallina. Provare a cercare una sequenza di palline dello stesso tipo che può essere continuata con la pallina da spostare. Se tale sequenza esiste ed è accessibile, spostare lì la pallina che blocca il passaggio.</para
+></note>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Interfaccia</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>La finestra principale di &kolorlines;</title>
+<screenshot>
+				<screeninfo
+>Una schermata di &kolorlines;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Schermata</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>Nella parte alta della finestra di gioco sono posizionate la barra dei menu e quella degli strumenti. Al centro dello schermo c'è un'area quadrata riempita di palline - l'area di gioco. A destra c'è una barra che visualizza le prossime tre palline che saranno immesse nell'area di gioco (a meno che la funzione <guimenuitem
+>Mostra le prossime</guimenuitem
+> non sia disabilitata). Sotto all'area di gioco c'è la barra di stato.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Voci dei menu</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Nuova</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Inizia una nuova partita.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&End;</keycombo
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Termina partita</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Termina una partita in corso.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Mostra la classifica...</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Visualizza la classifica dei punteggi migliori.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Esce</action
+> da &kolorlines;.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mossa</guimenu
+> <guimenuitem
+>Annulla</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Annulla l'ultima mossa.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Mossa</guimenu
+><guimenuitem
+>Termina il turno</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Salta la mossa. Vengono messe subito in gioco le sfere successive senza che se ne muova una.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+>&Left;</shortcut
+> <guimenu
+>Navigazione</guimenu
+> <guimenuitem
+>Sposta a sinistra</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Questa azione sposterà a sinistra il cursore di selezione.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+>&Right;</shortcut
+> <guimenu
+>Navigazione</guimenu
+> <guimenuitem
+>Sposta a destra</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Questa azione sposterà a destra il cursore di selezione.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+>&Up;</shortcut
+> <guimenu
+>Navigazione</guimenu
+> <guimenuitem
+>Sposta su</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Questa azione sposterà in alto il cursore di selezione.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+>&Down;</shortcut
+> <guimenu
+>Navigazione</guimenu
+> <guimenuitem
+>Sposta giù</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Questa azione sposterà in basso il cursore di selezione.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+>&Space;</shortcut
+> <guimenu
+>Navigazione</guimenu
+> <guimenuitem
+>Seleziona</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Questa azione selezionerà l'oggetto sotto il cursore.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Mostra successive</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Mostra o nasconde le prossime palline.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>Inoltre &kolorlines; ha le voci dei menu <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+> comuni di &kde;; per maggiori informazioni, consulta i capitoli <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Impostazioni</ulink
+> e <ulink url="help:/fundamentals/menus.html#menus-help"
+>menu Aiuto</ulink
+> dei Fondamentali di &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Domande frequenti</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Vorrei modificare l'aspetto del gioco. È possibile? </para
+></question>
+ <answer
+><para
+>Sì. Per cambiare il tema grafico di &kolorlines; è possibile utilizzare la voce di menu <menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura &kolorlines;...</guimenuitem
+></menuchoice
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Non voglio muovere adesso. Posso saltare un turno? </para
+></question>
+ <answer
+><para
+>Sì. Per saltare un turno si può usare la <link linkend="menu-move-endturn"
+>scorciatoia da tastiera</link
+>, o la <link linkend="menu-move-endturn"
+>voce del menu</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Si può giocare con la tastiera? </para
+></question>
+ <answer
+><para
+>Sì. È possibile utilizzare le frecce direzionali e il tasto &Space; per selezionare e posizionare le palline.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Non so cosa fare qui! Ci sono dei suggerimenti? </para
+></question>
+ <answer
+><para
+>No. &kolorlines; non ha una funzionalità per i <quote
+>suggerimenti</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Devo uscire dal gioco, ma non ho ancora finito la partita. Posso salvare i miei progressi?</para
+></question>
+  <answer
+><para
+>Per il momento &kolorlines; non ha la funzione <quote
+>Salva</quote
+>.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Configurazione del gioco</title
+> <!-- do not change this! -->
+  <para
+>La finestra di configurazione di &kolorlines; permette di scegliere diversi temi grafici per il gioco</para>
+  <para
+>Per scegliere un nuovo tema, seleziona il tema nella lista. Ciascun elemento nella lista mostra una piccola anteprima a sinistra del nome del tema. La scelta è applicata immediatamente.</para>
+  <para
+>Quando sarai soddisfatto della scelta puoi premere il pulsante <guibutton
+>Chiudi</guibutton
+> collocato nella parte bassa della finestra.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Riconoscimenti e licenza</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kolorlines;</para>
+
+<para
+>Copyright sul programma 2000 &Roman.Merzlyakov; &Roman.Merzlyakov.mail;</para>
+<para
+>Hanno contribuito:</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail;: ri-progettazione, grafica, animazioni, parziale riscrittura. Un ringraziamento speciale alla moglie Larissa Juschkin per il test e la discussione.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>Copyright 2001 sulla documentazione: &Roman.Razilov; &Roman.Razilov.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>Traduzione italiana di Vincenzo Reale <email
+>smart2128vr@gmail.com</email
+></para
+> <para
+>Traduzione italiana di Francesco Bresciani <email
+>fbresciani@users.sourceforge.net</email
+></para
+> <para
+>Traduzione italiana di Marco Poletti <email
+>poletti.marco@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

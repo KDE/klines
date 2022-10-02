@@ -1,0 +1,185 @@
+# translation of klines.po to Finnish
+# KDE Finnish translation sprint participants:
+# Kim Enkovaara <kim.enkovaara@iki.fi>, 2002,2003, 2004.
+# Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
+# Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2003, 2008.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.
+# Niklas Laxström <niklas.laxstrom+kdetrans@gmail.com>, 2007.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2010, 2014, 2015, 2016.
+# Tommi Nieminen <translator@legisign.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2016-02-10 12:04+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-POT-Import-Date: 2012-12-01 22:24:03+0000\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kim Enkovaara,Teemu Rytilahti,Niklas Laxström"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"kim.enkovaara@iki.fi,teemu.rytilahti@kde-fi.org,niklas.laxstrom"
+"+kdetrans@gmail.com"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Pisteet:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Näytä seuraava"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Siirry vasemmalle"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Siirry oikealle"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Siirry ylös"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Siirry alas"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Valitse"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Pisteet: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Ennätykset"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Näytetäänkö seuraava pallosarja"
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Tallennetun taustan leveys"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Tallennetun taustan korkeus"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Liikkuminen"
+
+# pmap: =/gen=Kolor Linesin/
+# pmap: =/elat=Kolor Linesista/
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Lines"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Värisuorat – pieni pallopeli, jossa yritetään päästä eroon palloista"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "© 2000–2015 KLines-tekijät"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Alkuperäinen tekijä"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Uudelleenkirjoittanut ja laajentanut "
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "Sovellus QGraphicsViewiin. Nykyinen ylläpitäjä."
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "SVG-kuvamateriaali pelin KDE 4 -versioon"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Valitusta palasesta ei ole polkua tähän soluun"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Peli päättyi</h1>"
+
+#~ msgid "Theme"
+#~ msgstr "Teema"
+
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "Teeman %1 lataaminen epäonnistui."
+
+#~ msgid "The graphical theme to be used."
+#~ msgstr "Käytettävä graafinen teema."
+
+#~ msgctxt "Menu title"
+#~ msgid "&Move"
+#~ msgstr "&Siirto"

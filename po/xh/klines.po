@@ -1,0 +1,286 @@
+# translation of klines.po to Xhosa
+# translation of klines.po to
+# translation of klines.po to
+# K Desktop Environment - kdegames
+# Copyright (C) 2001 translate.org.za
+# Antoinette Dekeni <antoinette@transalate.org.za>, 2001,2002.
+# Thelma Lungcuzo <thelma@translate.org.za>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2002-09-02 15:41+0200\n"
+"Last-Translator: Thelma Lungcuzo <thelma@translate.org.za>\n"
+"Language-Team: Xhosa <xhosa@translate.org.za>\n"
+"Language: xh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0beta2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lwandle Mgidlana,Thelma Lungcuzo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lwandle@translate.org.za,thelma@translate.org.za"
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr "Inqaku:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "&Bonisa Okulandelayo"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr ""
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr ""
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr ""
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr ""
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr " Inqaku: %1 "
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor Iilayini"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr ""
+"Kolor Iilayini - umdlalo omncinane malunga neebhola kwaye nendlela "
+"yokuzifumana"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Umbhali woqobo"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Bhala kwakhona Nolwandiso"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~| msgid "&Show Next"
+#~ msgid "Show next"
+#~ msgstr "&Bonisa Okulandelayo"
+
+#~ msgid "Very Easy"
+#~ msgstr "Ilula kakhulu"
+
+#~ msgid "Easy"
+#~ msgstr "Ilula"
+
+#~ msgid "Normal"
+#~ msgstr "Eqhelekileyo"
+
+#~ msgid "Hard"
+#~ msgstr "Inzima"
+
+#~ msgid "Very Hard"
+#~ msgstr "Ilukhuni Kakhulu"
+
+#~ msgid " Level: "
+#~ msgstr "Izinga lokuphakama:"
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "Qala &Imbuyiselo yokufundiweyo"
+
+#~ msgid " Level: %1"
+#~ msgstr " Izinga eliphezulu: %1 "
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "Yima &Imbuyiselo yokufundiweyo"
+
+#~ msgid "Tutorial"
+#~ msgstr "Imbuyiselo yokufundisiweyo"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "Imbuyiselo yokufundiweyo - Lumisiwe"
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr ""
+#~ "Igowuli yomdlalo kukubeka\n"
+#~ "iibhola eziyi 5 zombala ofanayo emgceni."
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "Ungenza ulundi, ngokuthe tye\n"
+#~ "kunye nemigca elinganayo ephambene."
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "Ujiko olunye, iibhola ezintsha ezintathu zibekwe ebhodini."
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "Ujiko olunye, ungasusa ibhola enye."
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "Ukususa ibhola, cofa kuyo ngemouse,\n"
+#~ "uze cofe apho ufuna ibhola iye khona."
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "Uhambise ibhola ebhlowu!"
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "Iibhola zinga hanjiswa kuzo zonke indawo ebhodini,\n"
+#~ "Ukuba akukho bhola ize zinye endleleni yakho. "
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "Ngoku sifuna enye ibhola ebhulowu."
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "Ikhangeleka iyimini yethu yethamsanqa!"
+
+#~ msgid ""
+#~ "Hurray! And away they go!\n"
+#~ "Now lets try the green balls."
+#~ msgstr ""
+#~ "Hurray! Yaye kude bahamba!\n"
+#~ "Ngoku masizame iibhola eziluhlaza."
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "Ngoku nguwe ozamayo!\n"
+#~ "Nqakraza kwibhola elulhlaza uze uhambise kwabanye!"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "Uphantse, zama kwakhona!"
+
+#~ msgid "Very good!"
+#~ msgstr "Kuhle kakhulu!"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr "Nanini na ugqiba umgca ufumana ujiko olongeziweyo."
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "Esi sisiphelo sembuyiselo yokufundiweyo.\n"
+#~ "Zive ukhululikile ukugqiba umdlalo!"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "Imbuyiselo yokufundiweyo - Imisiwe"
+
+#~ msgid "Game Over"
+#~ msgstr "Umdlalo Uphelile"

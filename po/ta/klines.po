@@ -1,0 +1,321 @@
+# translation of klines.po to English
+# root <root@intranet.ddsl>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klines\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2004-08-11 09:25--800\n"
+"Last-Translator: I. Felix <ifelix25@yahoo.co.in>\n"
+"Language-Team: English <en@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "அ.அகஸ்டின் ராஜ்"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "augustin_raj@hotmail.com"
+
+#: klines.cpp:41
+#, fuzzy, kde-format
+msgid "Score:"
+msgstr "கணக்கீடு:"
+
+#: klines.cpp:74
+#, fuzzy, kde-format
+#| msgid "&Show Next"
+msgid "Show Next"
+msgstr "&அடுத்து காட்டு"
+
+#: klines.cpp:81
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgid "Move Left"
+msgstr "மேலே நகர்த்து"
+
+#: klines.cpp:86
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgid "Move Right"
+msgstr "வலதுபுறம் நகர்த்து"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "மேலே நகர்த்து"
+
+#: klines.cpp:96
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgid "Move Down"
+msgstr "கீழே நகர்த்து"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: klines.cpp:117
+#, fuzzy, kde-format
+msgid "Score: %1"
+msgstr "கணக்கீடு:%1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr ""
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "அடுத்த அமைப்பு பந்துகளை காட்டவேண்டுமா"
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr ""
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr ""
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr ""
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Kolor வரிகள்"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr ""
+"Kolor வரிகள் - பந்துகளை பற்றியும் அவற்றை எவ்வாறு தொலைக்கலாம் என்பதை பற்றிய ஒரு சிறு "
+"விளையாட்டு"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "உண்மையான ஆசிரியர்"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "மேலெழுதுதல் மற்றும் விரிவு"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr ""
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr ""
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Unable to find graphics. Check your installation."
+#~ msgid "Failed to load \"%1\" theme. Please check your installation."
+#~ msgstr "சித்திரங்களை கண்டுபிடிக்க முடியவில்லை, உங்கள் நிறுவுதலை சரி பார்க்கவும்"
+
+#, fuzzy
+#~| msgid "&Show Next"
+#~ msgid "Show next"
+#~ msgstr "&அடுத்து காட்டு"
+
+#, fuzzy
+#~| msgid "Move Left"
+#~ msgid "Left"
+#~ msgstr "இடதுபுறம் நகர்த்து"
+
+#, fuzzy
+#~| msgid "Move Right"
+#~ msgid "Move cursor to right"
+#~ msgstr "வலதுபுறம் நகர்த்து"
+
+#, fuzzy
+#~| msgid "Move Down"
+#~ msgid "Down"
+#~ msgstr "கீழே நகர்த்து"
+
+#~ msgid "Move Ball"
+#~ msgstr "பந்தை நகர்த்து"
+
+#, fuzzy
+#~ msgid "Next:"
+#~ msgstr "அடுத்த பந்துகள்:"
+
+#~ msgid "Very Easy"
+#~ msgstr "மிக சுலபம்"
+
+#~ msgid "Easy"
+#~ msgstr "சுலபமாக"
+
+#~ msgid "Normal"
+#~ msgstr "சாதாரணம்"
+
+#~ msgid "Hard"
+#~ msgstr "கடினம்"
+
+#~ msgid "Very Hard"
+#~ msgstr "மிக கடினம்"
+
+#~ msgid " Level: "
+#~ msgstr "நிலை:"
+
+#~ msgid "Start &Tutorial"
+#~ msgstr "&வகுப்பு ஆரம்பம்"
+
+#~ msgid "Hide Next"
+#~ msgstr "அடுத்ததை மறை"
+
+#~ msgid "&Use Numbered Balls"
+#~ msgstr "&எண்ணப்பட்ட பந்துகளை உபயோகி"
+
+#~ msgid " Level: %1"
+#~ msgstr "நிலை: %1"
+
+#~ msgid "Stop &Tutorial"
+#~ msgstr "&வகுப்பு முடிவு"
+
+#~ msgid "Tutorial"
+#~ msgstr "வகுப்பு"
+
+#~ msgid "Tutorial - Stopped"
+#~ msgstr "வகுப்பு-நிறுத்தப்பட்டது."
+
+#~ msgid ""
+#~ "The goal of the game is to put\n"
+#~ "5 balls of the same color in line."
+#~ msgstr "இந்த விளையாட்டின் நோக்கம் ஒரே வண்ணமுடைய 5 பந்துகளை வரிசைப்படுத்துவதாகும்"
+
+#~ msgid ""
+#~ "You can make horizontal, vertical\n"
+#~ "and diagonal lines."
+#~ msgstr ""
+#~ "நீங்கள் நீள, உயர,\n"
+#~ " மற்றும் குறுக்குவாக்கு வரிகள் செய்யலாம்"
+
+#~ msgid "Each turn, three new balls are placed on the board."
+#~ msgstr "ஒவ்வொரு சுற்றிலும் மூன்று புதிய பந்துகள் பலகையில் அமர்த்தப்படும்"
+
+#~ msgid "Every turn, you can move one ball."
+#~ msgstr "ஒவ்வொரு சுற்றிலும் ஒவ்வொரு பந்தை நகர்த்தவும்"
+
+#~ msgid ""
+#~ "To move a ball, click on it with the mouse,\n"
+#~ "then click where you want the ball to go."
+#~ msgstr ""
+#~ "ஒரு பந்தை நகர்த்த அதன் மேல் சுட்டியை வைத்து அழுத்தி \n"
+#~ " பின் பந்து எங்கு செல்ல வேண்டும் என்று விரும்புகிறீர்களோ அங்கே சென்று சுட்டியை அழுத்தவும்"
+
+#~ msgid "You just moved the blue ball!"
+#~ msgstr "நீங்கள் இப்போது தான் நீல பந்தை நகர்த்தினீர்கள் "
+
+#~ msgid ""
+#~ "Balls can be moved to every position on the board,\n"
+#~ "as long as there are no other balls in their way."
+#~ msgstr ""
+#~ "பந்துகளை பலகையில் எங்கு வேண்டுமானாலும் நகர்த்தலாம்,\n"
+#~ "அவற்றின் வழியில் வேறெந்த பந்தும் இருக்கக்கூடாது"
+
+#~ msgid "Now we only need one more blue ball."
+#~ msgstr "இப்பொழுது நமக்கு மேலும் ஒரே ஒரு நீலப் பந்து மட்டுமே தேவை"
+
+#~ msgid "It seems to be our lucky day!"
+#~ msgstr "இது உங்கள் அதிர்ஷ்ட நாளாக இருக்கும் போல் உள்ளது"
+
+#~ msgid ""
+#~ "Hurray! And away they go!\n"
+#~ "Now lets try the green balls."
+#~ msgstr ""
+#~ "நன்று!அவை சென்றன!\n"
+#~ "இப்போது பச்சைப் பந்துகளை முயலுங்கள்."
+
+#~ msgid ""
+#~ "Now you try!\n"
+#~ "Click on the green ball and move it to the others!"
+#~ msgstr ""
+#~ "இப்போது முயலுங்கள்!\n"
+#~ " பச்சைப் பந்தின் மேல் அழுத்தி அதை மற்றவையிடம் நகர்த்தவும்"
+
+#~ msgid "Almost, try again!"
+#~ msgstr "கிட்டத்தட்ட மீண்டும் முயற்சி செய்"
+
+#~ msgid "Very good!"
+#~ msgstr "மிக நன்று"
+
+#~ msgid "Whenever you complete a line you get an extra turn."
+#~ msgstr ""
+#~ "ஒவ்வொரு முறையும் நீங்கள் ஒரு வரி முடிக்கும்பொழுது மேலும் ஒரு சுற்று அதிகம் பெறுவீர்கள்"
+
+#~ msgid ""
+#~ "This is the end of this tutorial.\n"
+#~ "Feel free to finish the game!"
+#~ msgstr ""
+#~ "இதுதான் வகுப்பின் முடிவு.\n"
+#~ "இந்த விளையாட்டை முடிக்க வசதியாக உணருங்கள்"
+
+#~ msgid "Tutorial - Paused"
+#~ msgstr "வகுப்பு-தற்காலிகமாக நிறுத்தப்பட்டது."
+
+#~ msgid "Game Over"
+#~ msgstr "விளையாட்டு முடிந்தது"
+
+#~ msgid "Difficulty level"
+#~ msgstr "கடின நிலை"
+
+#~ msgid "Whether to use numbered balls."
+#~ msgstr "எண்ணப்பட்ட பந்துகளை உபயோகிக்க வேண்டுமா"

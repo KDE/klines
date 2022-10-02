@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Görkem Çetin <gorkem@kde.org>, 2001-2004
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002
+# Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004
+# obsoleteman <tulliana@gmail.com>, 2008-2009
+msgid ""
+msgstr ""
+"Project-Id-Version: kdegames-kde4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"PO-Revision-Date: 2017-05-16 09:06+0000\n"
+"Last-Translator: Mete <metebilgin48@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/kdegames-k-tr/"
+"language/tr/)\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: klines.cpp:41
+#, kde-format
+msgid "Score:"
+msgstr "Puan:"
+
+#: klines.cpp:74
+#, kde-format
+msgid "Show Next"
+msgstr "Sonrakini Göster"
+
+#: klines.cpp:81
+#, kde-format
+msgid "Move Left"
+msgstr "Sola Taşı"
+
+#: klines.cpp:86
+#, kde-format
+msgid "Move Right"
+msgstr "Sağa Taşı"
+
+#: klines.cpp:91
+#, kde-format
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: klines.cpp:96
+#, kde-format
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: klines.cpp:101
+#, kde-format
+msgid "Select"
+msgstr "Seç"
+
+#: klines.cpp:117
+#, kde-format
+msgid "Score: %1"
+msgstr "Puan: %1"
+
+#: klines.cpp:123 klines.cpp:131
+#, kde-format
+msgid "High Scores"
+msgstr "Yüksek Puanlar"
+
+#. i18n: ectx: label, entry (ShowNext), group (Game)
+#: klines.kcfg:9
+#, kde-format
+msgid "Whether to show the next set of balls."
+msgstr "Sonraki topların gösterilip gösterilmeyeceği."
+
+#. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
+#: klines.kcfg:13
+#, kde-format
+msgid "Width of saved background"
+msgstr "Kaydedilen artalanın genişliği"
+
+#. i18n: ectx: label, entry (SavedBackgroundHeight), group (Game)
+#: klines.kcfg:17
+#, kde-format
+msgid "Height of saved background"
+msgstr "Kaydedilen artalanın yüksekliği"
+
+#. i18n: ectx: Menu (navigation)
+#: klinesui.rc:14
+#, kde-format
+msgid "Navigation"
+msgstr "Gezinti"
+
+#: main.cpp:42
+#, kde-format
+msgid "Kolor Lines"
+msgstr "Renkli Çizgiler"
+
+#: main.cpp:43
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Renkli Çizgiler - Renkli toplarla oynanan zevkli bir oyun"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2000-2015 The KLines Authors"
+msgstr "(c) 2000-2015 KLines Yazarları"
+
+#: main.cpp:48
+#, kde-format
+msgid "Roman Merzlyakov"
+msgstr "Roman Merzlyakov"
+
+#: main.cpp:48
+#, kde-format
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: main.cpp:49
+#, kde-format
+msgid "Roman Razilov"
+msgstr "Roman Razilov"
+
+#: main.cpp:49
+#, kde-format
+msgid "Rewrite and Extension"
+msgstr "Yeniden yazan ve geliştiren"
+
+#: main.cpp:50
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:50
+#, kde-format
+msgid "Rewrite to use QGraphicsView. Current maintainer"
+msgstr "QGraphicsView kullanımının yeniden yazılması. Projeyi yürüten"
+
+#: main.cpp:51
+#, kde-format
+msgid "Eugene Trounev"
+msgstr "Eugene Trounev"
+
+#: main.cpp:51
+#, kde-format
+msgid "New SVG artwork for KDE4 version of the game"
+msgstr "Oyunun KDE4 sürümü için yeni SVG sanatsal çalışmalar"
+
+#: scene.cpp:296
+#, kde-format
+msgid "There is no path from the selected piece to this cell"
+msgstr "Seçilen parçadan bu hücreye hiçbir yol yok"
+
+#: scene.cpp:684
+#, kde-format
+msgid "<h1>Game over</h1>"
+msgstr "<h1>Oyun Bitti</h1>"
