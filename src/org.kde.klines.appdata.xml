@@ -21,6 +21,7 @@
   <name xml:lang="gl">Liñas de kores</name>
   <name xml:lang="id">Kolor Lines</name>
   <name xml:lang="it">Kolor Lines</name>
+  <name xml:lang="ka">Kolor Lines</name>
   <name xml:lang="ko">Kolor Lines</name>
   <name xml:lang="nl">Kolor Lines</name>
   <name xml:lang="nn">Kolor Lines</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="gl">Xogo de táctica</summary>
   <summary xml:lang="id">Permainan Taktik</summary>
   <summary xml:lang="it">Gioco di tattica</summary>
+  <summary xml:lang="ka">ტაქტიკური თამაში</summary>
   <summary xml:lang="ko">전략 게임</summary>
   <summary xml:lang="nl">Tactisch spel</summary>
   <summary xml:lang="nn">Taktisk spel</summary>
@@ -87,6 +89,7 @@
     <p xml:lang="fr">KLines est un jeu en solo simple mais très addictif.</p>
     <p xml:lang="id">Kolor Lines adalah permainan gim satu pemain yang sederhana namun sangat adiktif.</p>
     <p xml:lang="it">Kolor Lines è un gioco per un solo giocatore, semplice ma divertente.</p>
+    <p xml:lang="ka">KolorLines მარტივი, მაგრამ ადვილად მიჩვევადი ერთ მოთამაშეზე გათვლილი თამაშია.</p>
     <p xml:lang="ko">Kolor Lines는 간단하면서도 머리를 쓰는 1인용 게임입니다.</p>
     <p xml:lang="nl">Kolor Lines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
     <p xml:lang="nn">Kolor Lines er eit enkelt men vanedannande spel for éin spelar.</p>
@@ -200,6 +203,7 @@
   <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">La comunità KDE</developer_name>
+  <developer_name xml:lang="ka">KDE-ის საზოგადოება</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">De KDE gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
