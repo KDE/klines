@@ -42,10 +42,10 @@ ecm_add_app_icon(klines ICONS ${ICONS_SRCS})
 
 target_link_libraries(klines
     KF5KDEGames
-    KF5::CoreAddons
-    KF5::Crash
-    KF5::DBusAddons
-    KF5::XmlGui
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::Crash
+    KF${KF_MAJOR_VERSION}::DBusAddons
+    KF${KF_MAJOR_VERSION}::XmlGui
 )
 
 install(TARGETS klines  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
