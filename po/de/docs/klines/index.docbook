@@ -6,7 +6,7 @@
   <!ENTITY % addindex "IGNORE"
 > <!-- do not change this! -->
 ]>
- 
+
 <book id="klines" lang="&language;"
 > <!-- do not change this! -->
 <bookinfo>
@@ -77,18 +77,18 @@
 </copyright>
 <legalnotice
 >&FDLNotice;</legalnotice>
- 
+
 <date
->2016-05-10</date>
+>2021-07-11</date>
 <releaseinfo
->1.6 (Anwendungen 16.04)</releaseinfo>
- 
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
 	<para
 >Dieses Handbuch beschreibt das Spiel &kolorlines; in der Version 1.6</para>
 </abstract>
- 
+
 <!--List of relevant keywords-->
 <keywordset>
 	<keyword
@@ -101,17 +101,17 @@
 >Spiel</keyword
 > <!-- do not change this! -->
 	<keyword
->Kolorlines</keyword
+>Kolor Lines</keyword
 ><!--Application name goes here-->
 <!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<keyword
 >Arcade</keyword>
 	<keyword
->Farben</keyword>
-	<keyword
 >bunte Linien</keyword>
 	<keyword
 >Farbe</keyword>
+	<keyword
+>Farben</keyword>
 <!--Number of possible players. It can be: One, Two,..., Multiplayer-->
 	<keyword
 >ein Spieler</keyword>
@@ -143,11 +143,11 @@
 >DOS</application
 > geschrieben wurde.</para>
 	<para
->Das Ziel von &kolorlines; ist recht einfach. Der Spieler muss die farbigen Bälle auf dem Spielfeld bewegen, um Linien von fünf gleichfarbigen Bällen zu bilden. Diese verschwinden dann vom Spielfeld und geben kostbaren Platz frei, der gleichzeitig nach jedem Zug von drei neu erscheinenden Bällen ausgefüllt wird.</para>
+>Das Ziel von &kolorlines; ist recht einfach. Der Spieler muss die farbigen Murmeln auf dem Spielfeld bewegen, um Linien von fünf gleichfarbigen Murmeln zu bilden. Diese verschwinden dann vom Spielfeld und geben kostbaren Platz frei, der gleichzeitig nach jedem Zug von drei neu erscheinenden Murmeln ausgefüllt wird.</para>
 	<para
 >In &kolorlines; kann nicht gewonnen werden - es wird nur um einen Platz in der Bestenliste gespielt. Das Spiel endet, sobald auf dem Spielfeld kein Platz mehr ist.</para>
 </chapter>
- 
+
 <chapter id="howto"
 ><title
 >Spielanleitung</title
@@ -157,20 +157,20 @@
 ><title
 >Ziel des Spiels:</title
 ><para
->Bewegen Sie die Bälle auf dem Spielfeld umher und bilden Sie Linien mit fünf gleichfarbigen Bällen.</para
+>Bewegen Sie die Murmeln auf dem Spielfeld umher und bilden Sie Linien mit fünf gleichfarbigen Murmeln.</para
 ></note
 ><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 	<para
->Beim Start von &kolorlines; erscheint ein in 81 Quadrate unterteiltes Spielfeld (9x9 Quadrate) und darauf drei farbige Bälle. Mit Ihrer Maus können Sie die Bälle von Zelle zu Zelle bewegen, um Sie in gleichfarbigen Linien anzuordnen. Nach jedem Ihrer Züge lässt der Computer drei weitere Bälle zufällig auf dem Spielfeld erscheinen. Um ein Auffüllen des Spielfeldes zu vermeiden, müssen Sie Linien mit mindestens fünf gleichfarbigen Bällen bilden, da diese verschwinden und somit wieder Platz frei wird und sich ihr Punktestand erhöht.</para>
+>Beim Start von &kolorlines; erscheint ein in 81 Quadrate unterteiltes Spielfeld (9x9 Quadrate) und darauf drei farbige Murmeln. Mit Ihrer Maus können Sie die Murmeln von Zelle zu Zelle bewegen, um Sie in gleichfarbigen Linien anzuordnen. Nach jedem Ihrer Züge lässt der Computer drei weitere Murmeln zufällig auf dem Spielfeld erscheinen. Um ein Auffüllen des Spielfeldes zu vermeiden, müssen Sie Linien mit mindestens fünf gleichfarbigen Murmeln bilden, da diese verschwinden und somit wieder Platz frei wird und sich ihr Punktestand erhöht.</para>
 	<note
 ><title
 >Hinweis:</title
 ><para
->Wenn eine komplette Linie verschwindet, erscheinen keine neuen Bälle. Stattdessen dürfen Sie noch einen weiteren Zug tätigen. Erst danach erscheinen drei neue Bälle.</para
+>Wenn eine komplette Linie verschwindet, erscheinen keine neuen Murmeln. Stattdessen dürfen Sie noch einen weiteren Zug tätigen. Erst danach erscheinen drei neue Murmeln.</para
 ></note>
 	<para
->Die Punktzahl steigt mit der Anzahl vom Spielfeld entfernter Bälle.</para>
+>Die Punktzahl steigt mit der Anzahl vom Spielfeld entfernter Murmeln.</para>
 	<note
 ><title
 >Hinweis:</title
@@ -180,9 +180,9 @@
 > eingeschaltet haben, erhalten Sie eine geringere Punktzahl, als wenn sie deaktiviert ist.</para
 ></note>
 	<para
->In &kolorlines; kann nicht gewonnen werden - es wird nur um einen Platz in der Bestenliste gespielt. Das Spiel endet, sobald alle Quadrate des Spielfeldes mit Bällen gefüllt sind.</para>
+>In &kolorlines; kann nicht gewonnen werden - es wird nur um einen Platz in der Bestenliste gespielt. Das Spiel endet, sobald alle Quadrate des Spielfeldes mit Murmeln gefüllt sind.</para>
 </chapter>
- 
+
 <chapter id="rules_and_tips"
 ><title
 >Spielregeln, Spielstrategien und Tipps</title
@@ -194,19 +194,19 @@
 			<itemizedlist>
 				<listitem
 ><para
->Nach jedem Zug des Spielers werden drei weitere farbige Bälle auf dem Spielfeld platziert.</para
+>Nach jedem Zug des Spielers werden drei weitere farbige Murmeln auf dem Spielfeld platziert.</para
 ></listitem>
 				<listitem
 ><para
->Um auf dem Spielfeld Platz zu schaffen, muss der Spieler fünf oder mehr gleichfarbige Bälle in horizontalen, vertikalen oder diagonalen Linien anordnen.</para
+>Um auf dem Spielfeld Platz zu schaffen, muss der Spieler fünf oder mehr gleichfarbige Murmeln in horizontalen, vertikalen oder diagonalen Linien anordnen.</para
 ></listitem>
 				<listitem
 ><para
->Um einen Zug zu tätigen, klicken Sie zuerst auf einen Ball und anschließend auf das Quadrat, zu dem der Ball sich bewegen soll.</para
+>Um einen Zug zu tätigen, klicken Sie zuerst auf eine Murmel und anschließend auf das Quadrat, zu dem die Murmel sich bewegen soll.</para
 ></listitem>
 				<listitem
 ><para
->Ein Ball kann nur in leere Quadrate verschoben werden.</para
+>Eine Murmel kann nur in leere Quadrate verschoben werden.</para
 ></listitem>
 				<listitem
 ><para
@@ -214,11 +214,11 @@
 ></listitem>
 				<listitem
 ><para
->Ein Quadrat ist frei zugänglich, wenn keine anderen Bälle den Weg dorthin blockieren.</para
+>Ein Quadrat ist frei zugänglich, wenn keine anderen Murmeln den Weg dorthin blockieren.</para
 ></listitem>
 				<listitem
 ><para
->Ein Pfad gilt als blockiert, wenn ein beliebiger Teil von ihm von einem Ball besetzt ist.</para
+>Ein Pfad gilt als blockiert, wenn ein beliebiger Teil von ihm von einer Murmel besetzt ist.</para
 ></listitem>
 			</itemizedlist>
 			<note
@@ -230,11 +230,11 @@
 			<itemizedlist>
 				<listitem
 ><para
->Um einen Ball erfolgreich zu einer blockierten Zelle zu befördern, muss der Spieler den Pfad zunächst freiräumen.</para
+>Um eine Murmel erfolgreich zu einer blockierten Zelle zu befördern, muss der Spieler den Pfad zunächst freiräumen.</para
 ></listitem>
 				<listitem
 ><para
->Um einen Pfad freizuräumen, muss der Spieler einfach alle blockierenden Bälle aus dem Weg räumen.</para
+>Um einen Pfad freizuräumen, muss der Spieler einfach alle blockierenden Murmeln aus dem Weg räumen.</para
 ></listitem>
 				<listitem
 ><para
@@ -262,28 +262,28 @@
 ></listitem>
 				<listitem
 ><para
->Versuchen Sie, zumindest die Hälfte des Spielfeldes frei zu halten. Wenn die Bälle sich aufstauen, wird das fast immer zu einer Niederlage führen.</para
+>Versuchen Sie, zumindest die Hälfte des Spielfeldes frei zu halten. Wenn die Murmeln sich aufstauen, wird das fast immer zu einer Niederlage führen.</para
 ></listitem>
 				<listitem
 ><para
->Um das Spielen zu erleichtern, halten Sie immer mehr als nur eine Linie zum Vervollständigen bereit. Dies kann erreicht werden, indem Sie überall, wo es möglich ist, gleichfarbige Bälle sammeln, anstatt sich nur auf eine Linie zu konzentrieren.</para
+>Um das Spielen zu erleichtern, halten Sie immer mehr als nur eine Linie zum Vervollständigen bereit. Dies kann erreicht werden, indem Sie überall, wo es möglich ist, gleichfarbige Murmeln sammeln, anstatt sich nur auf eine Linie zu konzentrieren.</para
 ></listitem>
 				<listitem
 ><para
 >Versuchen Sie immer, mehr als drei fast vollständige Linien auf dem Spielfeld bereit zu halten. Mit <quote
 >fast vollständig</quote
-> sind Linien von vier gleichfarbigen Bällen gemeint, denen nur noch ein Ball zum Vervollständigen fehlt.</para
+> sind Linien von vier gleichfarbigen Murmeln gemeint, denen nur noch eine Murmel zum Vervollständigen fehlt.</para
 ></listitem>
 			</itemizedlist>
 			<note
 ><title
 >Beispiel:</title
 ><para
->Wenn Sie eine Linie fast vervollständigt haben und der Pfad dahin plötzlich von einem anderen Ball blockiert wird, bewegen Sie diesen nicht einfach weg. Suchen Sie stattdessen eine Abfolge von Bällen der gleichen Farbe, die Sie mit dem blockierenden Ball weiterführen könnten. Wenn eine solche Abfolge existiert und erreichbar ist, bewegen Sie den Ball dorthin.</para
+>Wenn Sie eine Linie fast vervollständigt haben und der Pfad dahin plötzlich von einer anderen Murmel blockiert wird, bewegen Sie diesen nicht einfach weg. Suchen Sie stattdessen eine Abfolge von Murmeln der gleichen Farbe, die Sie mit der blockierenden Murmel weiterführen könnten. Wenn eine solche Abfolge existiert und erreichbar ist, bewegen Sie die Murmel dorthin.</para
 ></note>
 	</sect1>
 </chapter>
-  
+
 <chapter id="interface"
 ><title
 >Die Benutzeroberfläche</title
@@ -309,7 +309,7 @@
 				</mediaobject>
 			</screenshot>
 <para
->Am oberen Ende des Spielfensters befinden sich die Menü- und Statusleiste. In der Mitte des Bildes befindet sich das aus einem großen Quadrat bestehende, mit Bällen angefüllte Spielfeld. Rechts davon ist eine Leiste, die die nächsten drei auf dem Spielfeld erscheinenden Bällen anzeigt (außer die Einstellung <guimenuitem
+>Am oberen Ende des Spielfensters befinden sich die Menü- und Statusleiste. In der Mitte des Bildes befindet sich das aus einem großen Quadrat bestehende, mit Murmeln angefüllte Spielfeld. Rechts davon ist eine Leiste, die die nächsten drei auf dem Spielfeld erscheinenden Murmeln anzeigt (außer die Einstellung <guimenuitem
 >Nächsten Ball anzeigen</guimenuitem
 > ist ausgeschaltet). Unterhalb des Feldes befindet sich die Statusleiste.</para>
 </sect1>
@@ -336,6 +336,26 @@
 ><para
 ><action
 >Startet ein neues Spiel.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&End;</keycombo
+></shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Spiel beenden</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Beendet ein Spiel.</action
 ></para
 ></listitem>
 		</varlistentry>
@@ -425,9 +445,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Pfeil links</keycap
-></shortcut
+>&Left;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -445,9 +463,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Pfeil rechts</keycap
-></shortcut
+>&Right;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -465,13 +481,11 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Pfeil hoch</keycap
-></shortcut
+>&Up;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
->Hoch</guimenuitem
+>Nach oben</guimenuitem
 > </menuchoice
 ></term>
 			<listitem
@@ -485,13 +499,11 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Pfeil runter</keycap
-></shortcut
+>&Down;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
->Runter</guimenuitem
+>Nach unten</guimenuitem
 > </menuchoice
 ></term>
 			<listitem
@@ -505,9 +517,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Leertaste</keycap
-></shortcut
+>&Space;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -600,9 +610,7 @@
 ></question>
  <answer
 ><para
->Ja. Mit den Pfeiltasten und der <keycap
->Leertaste</keycap
-> können die Bälle ausgewählt und gesetzt werden.</para
+>Ja. Mit den Pfeiltasten und der &Space; können die Murmeln ausgewählt und gesetzt werden.</para
 ></answer>
 </qandaentry>
 <qandaentry>
@@ -647,7 +655,7 @@
 >Danksagungen und Lizenz</title
 > <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
- 
+
 <para
 >&kolorlines;</para>
 
@@ -672,8 +680,8 @@
 >maren@kde.org</email
 ></para
 > &underFDL; &underGPL; </chapter>
-  
-&documentation.index; 
+
+&documentation.index;
 </book>
 <!--
 Local Variables:
