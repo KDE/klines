@@ -151,7 +151,7 @@ msgstr "Eugene Trounev"
 #: main.cpp:51
 #, kde-format
 msgid "New SVG artwork for KDE4 version of the game"
-msgstr "عمل فني SVG جديد لإصدارة الكيدي4 من اللعبة"
+msgstr "عمل فني SVG جديد لإصدارة الكِيدِي4 من اللعبة"
 
 #: scene.cpp:296
 #, kde-format
