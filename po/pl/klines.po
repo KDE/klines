@@ -1,5 +1,5 @@
 # translation of klines.po to Polish
-# Version: $Revision: 1646140 $
+# Version: $Revision: 1646150 $
 # translation of klines.po to
 # Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003, 2004, 2005, 2007, 2008, 2009.
