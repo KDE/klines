@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-28 00:43+0000\n"
-"PO-Revision-Date: 2023-01-06 22:00+0100\n"
+"PO-Revision-Date: 2023-06-09 20:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -72,7 +72,7 @@ msgstr "Poentoj: %1"
 #: klines.cpp:123 klines.cpp:131
 #, kde-format
 msgid "High Scores"
-msgstr ""
+msgstr "Altaj Poentoj"
 
 #. i18n: ectx: label, entry (ShowNext), group (Game)
 #: klines.kcfg:9
@@ -111,7 +111,7 @@ msgstr "Kolor Lines - ludeto kun pilkoj kaj kiel forigi ilin"
 #: main.cpp:45
 #, kde-format
 msgid "(c) 2000-2015 The KLines Authors"
-msgstr ""
+msgstr "(c) 2000-2015 La KLines-Aŭtoroj"
 
 #: main.cpp:48
 #, kde-format
@@ -156,7 +156,7 @@ msgstr "Nova SVG artaĵo por la KDE4 versio de la ludo"
 #: scene.cpp:296
 #, kde-format
 msgid "There is no path from the selected piece to this cell"
-msgstr ""
+msgstr "Ne estas vojo de la elektita peco al ĉi tiu ĉelo"
 
 #: scene.cpp:684
 #, kde-format
