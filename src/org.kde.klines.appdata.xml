@@ -13,6 +13,7 @@
   <name xml:lang="de">Kolor Lines</name>
   <name xml:lang="el">Kolor Lines</name>
   <name xml:lang="en-GB">Kolor Lines</name>
+  <name xml:lang="eo">Kolor Lines</name>
   <name xml:lang="es">Líneas de color</name>
   <name xml:lang="et">Kolor Lines</name>
   <name xml:lang="eu">Kolor Lines</name>
@@ -47,6 +48,7 @@
   <summary xml:lang="de">Kugeln entfernen</summary>
   <summary xml:lang="el">Παιχνίδι τακτικής</summary>
   <summary xml:lang="en-GB">Tactical Game</summary>
+  <summary xml:lang="eo">Taktika ludo</summary>
   <summary xml:lang="es">Juego de táctica</summary>
   <summary xml:lang="et">Taktikamäng</summary>
   <summary xml:lang="eu">Joko taktikoa</summary>
@@ -83,6 +85,7 @@
     <p xml:lang="de">Kolor Lines ist ein einfaches, aber süchtig machendes Spiel für eine Person.</p>
     <p xml:lang="el">Το Kolor Lines είναι ένα απλό αλλά ιδιαίτερα εθιστικό παιχνίδι για έναν παίκτη.</p>
     <p xml:lang="en-GB">Kolor Lines is a simple but highly addictive one player game.</p>
+    <p xml:lang="eo">Kolor Lines estas simpla sed ege dependiga unuludanta ludo.</p>
     <p xml:lang="es">Líneas de color es un juego sencillo pero muy adictivo para un solo jugador.</p>
     <p xml:lang="eu">Kolor Lines, Kolore Lerroak, joko sinple baina oso adiktiboa da.</p>
     <p xml:lang="fi">Kolor Lines on yksinkertainen mutta koukuttava yhden pelaajan peli.</p>
@@ -197,6 +200,7 @@
   <developer_name xml:lang="de">Die KDE-Gemeinschaft</developer_name>
   <developer_name xml:lang="el">Η Κοινότητα του KDE</developer_name>
   <developer_name xml:lang="en-GB">The KDE Community</developer_name>
+  <developer_name xml:lang="eo">La KDE-Komunumo</developer_name>
   <developer_name xml:lang="es">La comunidad KDE</developer_name>
   <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
