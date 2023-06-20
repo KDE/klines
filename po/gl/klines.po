@@ -43,7 +43,7 @@ msgstr "Puntuación:"
 #: klines.cpp:74
 #, kde-format
 msgid "Show Next"
-msgstr "Mostrar a seguinte"
+msgstr "Amosar a seguinte"
 
 #: klines.cpp:81
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "Mellores puntuacións"
 #: klines.kcfg:9
 #, kde-format
 msgid "Whether to show the next set of balls."
-msgstr "Indica se mostrar o seguinte conxunto de bólas."
+msgstr "Indica se amosar o seguinte conxunto de bólas."
 
 #. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
 #: klines.kcfg:13
