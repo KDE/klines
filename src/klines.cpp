@@ -180,4 +180,4 @@ void KLinesMainWindow::loadSettings()
     mwidget->scene()->resizeScene( (int)r.width(), (int)r.height() ); // redraw scene
 }
 
-
+#include "moc_klines.cpp"

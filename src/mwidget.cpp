@@ -54,4 +54,4 @@ void MainWidget::resizeEvent( QResizeEvent* ev)
         m_scene->resizeScene( ev->size().width(), ev->size().height() );
 }
 
-
+#include "moc_mwidget.cpp"
