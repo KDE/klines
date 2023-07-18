@@ -13,6 +13,7 @@
   <name xml:lang="de">Kolor Lines</name>
   <name xml:lang="el">Kolor Lines</name>
   <name xml:lang="en-GB">Kolor Lines</name>
+  <name xml:lang="eo">Kolor Lines</name>
   <name xml:lang="es">Líneas de color</name>
   <name xml:lang="et">Kolor Lines</name>
   <name xml:lang="eu">Kolor Lines</name>
@@ -47,6 +48,7 @@
   <summary xml:lang="de">Kugeln entfernen</summary>
   <summary xml:lang="el">Παιχνίδι τακτικής</summary>
   <summary xml:lang="en-GB">Tactical Game</summary>
+  <summary xml:lang="eo">Taktika ludo</summary>
   <summary xml:lang="es">Juego de táctica</summary>
   <summary xml:lang="et">Taktikamäng</summary>
   <summary xml:lang="eu">Joko taktikoa</summary>
@@ -83,6 +85,7 @@
     <p xml:lang="de">Kolor Lines ist ein einfaches, aber süchtig machendes Spiel für eine Person.</p>
     <p xml:lang="el">Το Kolor Lines είναι ένα απλό αλλά ιδιαίτερα εθιστικό παιχνίδι για έναν παίκτη.</p>
     <p xml:lang="en-GB">Kolor Lines is a simple but highly addictive one player game.</p>
+    <p xml:lang="eo">Kolor Lines estas simpla sed ege dependiga unuludanta ludo.</p>
     <p xml:lang="es">Líneas de color es un juego sencillo pero muy adictivo para un solo jugador.</p>
     <p xml:lang="eu">Kolor Lines, Kolore Lerroak, joko sinple baina oso adiktiboa da.</p>
     <p xml:lang="fi">Kolor Lines on yksinkertainen mutta koukuttava yhden pelaajan peli.</p>
@@ -118,6 +121,7 @@
     <p xml:lang="de">Der Spieler muss die farbigen Bälle auf dem Spielfeld bewegen, um Linien von fünf gleichfarbigen Bällen zu bilden. Diese verschwinden dann vom Spielfeld und geben kostbaren Platz frei, der gleichzeitig nach jedem Zug von drei neu erscheinenden Bällen ausgefüllt wird.</p>
     <p xml:lang="el">Ο παίκτης πρέπει να μετακινήσει τις έγχρωμες μπάλες στον πίνακα του παιχνιδιού, συλλέγοντάς τις ανά πέντε σε γραμμές του ίδιου χρώματος. Όταν η γραμμή συμπληρωθεί αφαιρείται από τον πίνακα, άρα ελευθερώνοντας πολύτιμο χώρο. Ταυτόχρονα οι νέες μπάλες εμφανίζονται ανά τρεις μετά από κάθε κίνηση, γεμίζοντας τον πίνακα.</p>
     <p xml:lang="en-GB">The player has to move the coloured balls around the game board, gathering them into the lines of the same colour by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.</p>
+    <p xml:lang="eo">La ludanto devas movi la kolorajn pilkojn ĉirkaŭ la ludtabulo, kolektante ilin en la liniojn de la sama koloro je kvin. Post kiam la linio estas kompleta ĝi estas forigita de la tabulo, tial liberigante altvaloran spacon. Samtempe la novaj pilkoj daŭre alvenas triope post ĉiu movo, plenigante la ludotabulon.</p>
     <p xml:lang="es">El jugador tiene que mover las bolas de color por el tablero de juego, reuniéndolas en líneas de cinco del mismo color. Cuando se completa una línea, se elimina del tablero, liberando un espacio valioso. Al mismo tiempo, seguirán llegando tres nuevas bolas tras cada movimiento, rellenando el tablero de juego.</p>
     <p xml:lang="et">Mängija peab liigutama värvilisi palle mööda mänguväljakut, et koguda neid värvi järgi viiekaupa ritta. Kui rida saab valmis, eemaldatakse see mänguväljalt, millega vabaneb hinnalist ruumi. Samal ajal heidetakse iga käigu peale mänguväljakule kolm uut palli, mis väljakut usinalt täidavad.</p>
     <p xml:lang="eu">Jokalariak koloretako bolak mugitu behar ditu joko-taulan zehar, kolore bereko bost, lerro berean bilduz. Lerroa osatzen denean, taulatik kentzen da, espazio preziatua askatuz. Era berean, bola berriak iristen dira, aldiko hiru, mugimendu bakoitzaren ondoren, jokoaren taula betez.</p>
@@ -197,6 +201,7 @@
   <developer_name xml:lang="de">Die KDE-Gemeinschaft</developer_name>
   <developer_name xml:lang="el">Η Κοινότητα του KDE</developer_name>
   <developer_name xml:lang="en-GB">The KDE Community</developer_name>
+  <developer_name xml:lang="eo">La KDE-Komunumo</developer_name>
   <developer_name xml:lang="es">La comunidad KDE</developer_name>
   <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
