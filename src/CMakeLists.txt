@@ -40,17 +40,12 @@ kconfig_add_kcfg_files(klines prefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-klines.png")
 ecm_add_app_icon(klines ICONS ${ICONS_SRCS})
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(klines KDEGames6)
-else()
-    target_link_libraries(klines KF5KDEGames)
-endif()
-
 target_link_libraries(klines
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::Crash
-    KF${KF_MAJOR_VERSION}::DBusAddons
-    KF${KF_MAJOR_VERSION}::XmlGui
+    KDEGames6
+    KF6::CoreAddons
+    KF6::Crash
+    KF6::DBusAddons
+    KF6::XmlGui
 )
 
 install(TARGETS klines  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

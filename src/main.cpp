@@ -11,32 +11,21 @@
 */
 
 #include <QApplication>
+#include <QCommandLineParser>
 
 #include <KLocalizedString>
 #include <KAboutData>
 #include <KCrash>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <kdelibs4configmigrator.h>
-#endif
-#include <QCommandLineParser>
 #include <KDBusService>
+
 #include "klines.h"
 #include "klines_version.h"
 
 
 int main( int argc, char **argv )
 {
-    // Fixes blurry icons with fractional scaling
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
     QApplication app(argc, argv);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Kdelibs4ConfigMigrator migrate(QStringLiteral("klines"));
-    migrate.setConfigFiles(QStringList() << QStringLiteral("klinesrc"));
-    migrate.setUiFiles(QStringList() << QStringLiteral("klinesui.rc"));
-    migrate.migrate();
-#endif
+
     KLocalizedString::setApplicationDomain("klines");
     
     KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral(KLINES_VERSION_STRING),

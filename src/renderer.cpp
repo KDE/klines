@@ -9,7 +9,6 @@
 #include "renderer.h"
 #include "klines_debug.h"
 // KDEGames
-#include <kdegames_version.h>
 #include <KGameRenderer>
 #include <KgThemeProvider>
 
@@ -62,11 +61,7 @@ void KLinesRenderer::UnInit()
 KLinesRenderer::KLinesRenderer()
 {
     KgThemeProvider* provider = new KgThemeProvider;
-#if KDEGAMES_VERSION >= QT_VERSION_CHECK(7, 4, 0)
     provider->discoverThemes(QStringLiteral("themes"));
-#else
-    provider->discoverThemes("appdata", QStringLiteral("themes"));
-#endif
     //the default theme is marked with a key "Default=true"
     const auto themes = provider->themes();
     for (const KgTheme* theme : themes) {
