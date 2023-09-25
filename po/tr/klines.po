@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2017-05-16 09:06+0000\n"
 "Last-Translator: Mete <metebilgin48@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/kdegames-k-tr/"
@@ -101,57 +101,57 @@ msgstr "Kaydedilen artalanın yüksekliği"
 msgid "Navigation"
 msgstr "Gezinti"
 
-#: main.cpp:42
+#: main.cpp:31
 #, kde-format
 msgid "Kolor Lines"
 msgstr "Renkli Çizgiler"
 
-#: main.cpp:43
+#: main.cpp:32
 #, kde-format
 msgid "Kolor Lines - a little game about balls and how to get rid of them"
 msgstr "Renkli Çizgiler - Renkli toplarla oynanan zevkli bir oyun"
 
-#: main.cpp:45
+#: main.cpp:34
 #, kde-format
 msgid "(c) 2000-2015 The KLines Authors"
 msgstr "(c) 2000-2015 KLines Yazarları"
 
-#: main.cpp:48
+#: main.cpp:37
 #, kde-format
 msgid "Roman Merzlyakov"
 msgstr "Roman Merzlyakov"
 
-#: main.cpp:48
+#: main.cpp:37
 #, kde-format
 msgid "Original author"
 msgstr "Asıl yazar"
 
-#: main.cpp:49
+#: main.cpp:38
 #, kde-format
 msgid "Roman Razilov"
 msgstr "Roman Razilov"
 
-#: main.cpp:49
+#: main.cpp:38
 #, kde-format
 msgid "Rewrite and Extension"
 msgstr "Yeniden yazan ve geliştiren"
 
-#: main.cpp:50
+#: main.cpp:39
 #, kde-format
 msgid "Dmitry Suzdalev"
 msgstr "Dmitry Suzdalev"
 
-#: main.cpp:50
+#: main.cpp:39
 #, kde-format
 msgid "Rewrite to use QGraphicsView. Current maintainer"
 msgstr "QGraphicsView kullanımının yeniden yazılması. Projeyi yürüten"
 
-#: main.cpp:51
+#: main.cpp:40
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Eugene Trounev"
 
-#: main.cpp:51
+#: main.cpp:40
 #, kde-format
 msgid "New SVG artwork for KDE4 version of the game"
 msgstr "Oyunun KDE4 sürümü için yeni SVG sanatsal çalışmalar"

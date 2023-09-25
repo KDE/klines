@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:43+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2008-04-16 22:26+0330\n"
 "Last-Translator: Emil Sedgh <emilsedgh@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@lists.kde.org>\n"
@@ -99,57 +99,57 @@ msgstr "ارتفاع زمینه ذخیره‌شده"
 msgid "Navigation"
 msgstr "ناوش"
 
-#: main.cpp:42
+#: main.cpp:31
 #, kde-format
 msgid "Kolor Lines"
 msgstr "خطوط رنگی"
 
-#: main.cpp:43
+#: main.cpp:32
 #, kde-format
 msgid "Kolor Lines - a little game about balls and how to get rid of them"
 msgstr "خطوط رنگی - یک بازی کوچک در مورد گوی‌ها و چگونگی خلاص شدن از شر آنها"
 
-#: main.cpp:45
+#: main.cpp:34
 #, kde-format
 msgid "(c) 2000-2015 The KLines Authors"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:37
 #, kde-format
 msgid "Roman Merzlyakov"
 msgstr "رُمان مرزلیاکوف"
 
-#: main.cpp:48
+#: main.cpp:37
 #, kde-format
 msgid "Original author"
 msgstr "نویسنده اصلی"
 
-#: main.cpp:49
+#: main.cpp:38
 #, kde-format
 msgid "Roman Razilov"
 msgstr "رُمان رازیلوف"
 
-#: main.cpp:49
+#: main.cpp:38
 #, kde-format
 msgid "Rewrite and Extension"
 msgstr "بازنویسی و پسوند"
 
-#: main.cpp:50
+#: main.cpp:39
 #, kde-format
 msgid "Dmitry Suzdalev"
 msgstr "دیمیتری سوزدالو"
 
-#: main.cpp:50
+#: main.cpp:39
 #, kde-format
 msgid "Rewrite to use QGraphicsView. Current maintainer"
 msgstr "بازنویسی مجدد برای استفاده از QGraphicsView. نگه‌دارنده جاری"
 
-#: main.cpp:51
+#: main.cpp:40
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "ایگوئن ترونو"
 
-#: main.cpp:51
+#: main.cpp:40
 #, kde-format
 msgid "New SVG artwork for KDE4 version of the game"
 msgstr "کار هنری SVG جدید برای نسخه KDE4 بازی"

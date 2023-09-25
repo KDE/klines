@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-12 03:22+0200\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2016-02-14 17:49+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -33,47 +33,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "twiddle@eunet.yu,caslav.ilic@gmx.net,slsimic@gmail.com"
 
-#: klines.cpp:54
+#: klines.cpp:41
 #, kde-format
 msgid "Score:"
 msgstr "Резултат:"
 
-#: klines.cpp:87
+#: klines.cpp:74
 #, kde-format
 msgid "Show Next"
 msgstr "Прикажи следеће"
 
-#: klines.cpp:94
+#: klines.cpp:81
 #, kde-format
 msgid "Move Left"
 msgstr "Помери улево"
 
-#: klines.cpp:99
+#: klines.cpp:86
 #, kde-format
 msgid "Move Right"
 msgstr "Помери удесно"
 
-#: klines.cpp:104
+#: klines.cpp:91
 #, kde-format
 msgid "Move Up"
 msgstr "Помери нагоре"
 
-#: klines.cpp:109
+#: klines.cpp:96
 #, kde-format
 msgid "Move Down"
 msgstr "Помери надоле"
 
-#: klines.cpp:114
+#: klines.cpp:101
 #, kde-format
 msgid "Select"
 msgstr "Изабери"
 
-#: klines.cpp:130
+#: klines.cpp:117
 #, kde-format
 msgid "Score: %1"
 msgstr "Резултат: %1"
 
-#: klines.cpp:136 klines.cpp:144
+#: klines.cpp:123 klines.cpp:131
 #, kde-format
 msgid "High Scores"
 msgstr "Најрезултати"
@@ -103,69 +103,69 @@ msgid "Navigation"
 msgstr "Кретање"
 
 # skip-rule: t-line
-#: main.cpp:33
-#, kde-format
-msgid "Kolor Lines - a little game about balls and how to get rid of them"
-msgstr "Обојене линије — мала игра о лоптама и како их се отарасити"
-
-# skip-rule: t-line
-#: main.cpp:46
+#: main.cpp:31
 #, kde-format
 msgid "Kolor Lines"
 msgstr "Обојене линије"
 
-#: main.cpp:48
+# skip-rule: t-line
+#: main.cpp:32
+#, kde-format
+msgid "Kolor Lines - a little game about balls and how to get rid of them"
+msgstr "Обојене линије — мала игра о лоптама и како их се отарасити"
+
+#: main.cpp:34
 #, kde-format
 msgid "(c) 2000-2015 The KLines Authors"
 msgstr "© 2000–2015, аутори Обојених линија"
 
-#: main.cpp:49
+#: main.cpp:37
 #, kde-format
 msgid "Roman Merzlyakov"
 msgstr "Роман Мерзљаков"
 
-#: main.cpp:49
+#: main.cpp:37
 #, kde-format
 msgid "Original author"
 msgstr "Првобитни аутор"
 
-#: main.cpp:50
+#: main.cpp:38
 #, kde-format
 msgid "Roman Razilov"
 msgstr "Роман Разилов"
 
-#: main.cpp:50
+#: main.cpp:38
 #, kde-format
 msgid "Rewrite and Extension"
 msgstr "Писање изнова и проширење"
 
-#: main.cpp:51
+#: main.cpp:39
 #, kde-format
 msgid "Dmitry Suzdalev"
 msgstr "Дмитриј Суздаљев"
 
-#: main.cpp:51
+#: main.cpp:39
 #, kde-format
 msgid "Rewrite to use QGraphicsView. Current maintainer"
 msgstr "Писање изнова за QGraphicsView, тренутни одржавалац"
 
-#: main.cpp:52
+#: main.cpp:40
 #, kde-format
 msgid "Eugene Trounev"
 msgstr "Јевгениј Труњов"
 
-#: main.cpp:52
+#: main.cpp:40
 #, kde-format
 msgid "New SVG artwork for KDE4 version of the game"
 msgstr "Нова СВГ графика за КДЕ‑4 верзију игре"
 
 # skip-rule: t-cell
-#: scene.cpp:309
+#: scene.cpp:296
 #, kde-format
 msgid "There is no path from the selected piece to this cell"
 msgstr "Не постоји пут од изабране лоптице до овог поља"
 
-#: scene.cpp:699
+#: scene.cpp:684
 #, kde-format
 msgid "<h1>Game over</h1>"
 msgstr "<h1>Крај игре</h1>"
