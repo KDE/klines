@@ -10,7 +10,7 @@
 #include "klines_debug.h"
 // KDEGames
 #include <KGameRenderer>
-#include <KgThemeProvider>
+#include <KGameThemeProvider>
 
 
 // note: this should be in sync with svg
@@ -60,11 +60,11 @@ void KLinesRenderer::UnInit()
 
 KLinesRenderer::KLinesRenderer()
 {
-    KgThemeProvider* provider = new KgThemeProvider;
+    KGameThemeProvider* provider = new KGameThemeProvider;
     provider->discoverThemes(QStringLiteral("themes"));
     //the default theme is marked with a key "Default=true"
     const auto themes = provider->themes();
-    for (const KgTheme* theme : themes) {
+    for (const KGameTheme* theme : themes) {
         if (theme->customData(QStringLiteral("Default")) == QLatin1String("true"))
         {
             provider->setDefaultTheme(theme);
@@ -125,7 +125,7 @@ QPixmap KLinesRenderer::previewPixmap()
 
 bool KLinesRenderer::loadTheme()
 {
-    const KgTheme* theme = m_renderer->theme();
+    const KGameTheme* theme = m_renderer->theme();
 
     m_numBornFrames = theme->customData(QStringLiteral("NumBornFrames")).toInt();
     m_numSelFrames = theme->customData(QStringLiteral("NumSelectedFrames")).toInt();

@@ -23,7 +23,7 @@
 #include <KToggleAction>
 #include <KLocalizedString>
 #include <KStandardGameAction>
-#include <KgThemeSelector>
+#include <KGameThemeSelector>
 #include <KGameRenderer>
 
 KLinesMainWindow::KLinesMainWindow()
@@ -43,9 +43,9 @@ KLinesMainWindow::KLinesMainWindow()
     
     updateScore(0);
 
-    KgThemeProvider* prov = KLinesRenderer::renderer()->themeProvider();
-    connect(prov, &KgThemeProvider::currentThemeChanged, this, &KLinesMainWindow::loadSettings);
-    mselector = new KgThemeSelector(KLinesRenderer::renderer()->themeProvider());
+    KGameThemeProvider* prov = KLinesRenderer::renderer()->themeProvider();
+    connect(prov, &KGameThemeProvider::currentThemeChanged, this, &KLinesMainWindow::loadSettings);
+    mselector = new KGameThemeSelector(KLinesRenderer::renderer()->themeProvider());
 
     setupActions();
 

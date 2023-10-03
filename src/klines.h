@@ -13,7 +13,7 @@
 
 #include <KXmlGuiWindow>
 
-class KgThemeSelector;
+class KGameThemeSelector;
 
 class MainWidget;
 
@@ -36,7 +36,7 @@ private Q_SLOTS:
     void showNextToggled(bool show);
     void loadSettings();
 private:
-    KgThemeSelector *mselector;
+    KGameThemeSelector *mselector;
     MainWidget *mwidget;
     
     QPointer<QLabel> scoreLabel = new QLabel;
