@@ -650,9 +650,9 @@
 ></question>
  <answer
 ><para
->Sí. Para saltar el turno utilice un <link linkend="menu-move-endturn"
->acceso rápido de teclado</link
->, o una opción de la <link linkend="menu-move-endturn"
+>Sí. Para saltar el turno use un <link linkend="menu-move-endturn"
+>atajo de teclado</link
+> o una opción de la <link linkend="menu-move-endturn"
 >barra de menú</link
 >.</para
 ></answer>
