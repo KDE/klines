@@ -22,7 +22,7 @@
 #include <KScoreDialog>
 #include <KToggleAction>
 #include <KLocalizedString>
-#include <KStandardGameAction>
+#include <KGameStandardAction>
 #include <KGameThemeSelector>
 #include <KGameRenderer>
 
@@ -60,14 +60,14 @@ KLinesMainWindow::~KLinesMainWindow()
 void KLinesMainWindow::setupActions()
 {
   // Game
-  KStandardGameAction::gameNew(this, &KLinesMainWindow::startGame, actionCollection());
-  KStandardGameAction::highscores(this, &KLinesMainWindow::viewHighScore, actionCollection());
-  KStandardGameAction::quit(this, &QWidget::close, actionCollection());
-  KStandardGameAction::end(mwidget->scene(), &KLinesScene::endGame, actionCollection());
+  KGameStandardAction::gameNew(this, &KLinesMainWindow::startGame, actionCollection());
+  KGameStandardAction::highscores(this, &KLinesMainWindow::viewHighScore, actionCollection());
+  KGameStandardAction::quit(this, &QWidget::close, actionCollection());
+  KGameStandardAction::end(mwidget->scene(), &KLinesScene::endGame, actionCollection());
 
   // Move
-  KStandardGameAction::undo(mwidget->scene(), &KLinesScene::undo, actionCollection());
-  KStandardGameAction::endTurn(mwidget->scene(), &KLinesScene::endTurn, actionCollection());
+  KGameStandardAction::undo(mwidget->scene(), &KLinesScene::undo, actionCollection());
+  KGameStandardAction::endTurn(mwidget->scene(), &KLinesScene::endTurn, actionCollection());
 
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>(QStringLiteral( "show_next" ));
