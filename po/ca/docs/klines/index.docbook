@@ -604,9 +604,7 @@
 ></question>
  <answer
 ><para
->No. El &kolorlines; no té una característica <quote
->Consell</quote
->.</para
+>No. El &kolorlines; no té una característica «Consell».</para
 ></answer>
 </qandaentry>
 <qandaentry>
@@ -616,9 +614,7 @@
 ></question>
   <answer
 ><para
->En aquest moment, el &kolorlines; no té una característica <quote
->Desa</quote
->.</para
+>En aquest moment, el &kolorlines; no té una característica «Desa».</para
 ></answer>
 </qandaentry>
 </qandaset>
