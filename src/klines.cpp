@@ -19,9 +19,10 @@
 #include <KConfig>
 #include <KActionCollection>
 #include <KStandardAction>
-#include <KScoreDialog>
 #include <KToggleAction>
 #include <KLocalizedString>
+
+#include <KGameHighScoreDialog>
 #include <KGameStandardAction>
 #include <KGameThemeSelector>
 #include <KGameRenderer>
@@ -119,15 +120,15 @@ void KLinesMainWindow::updateScore(int score)
 
 void KLinesMainWindow::gameOver(int score)
 {
-    KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+    KGameHighScoreDialog d(KGameHighScoreDialog::Name | KGameHighScoreDialog::Score, this);
     d.setConfigGroup(qMakePair(QByteArray("Highscore"), i18n("High Scores")));
-    d.addScore(score, KScoreDialog::AskName);
+    d.addScore(score, KGameHighScoreDialog::AskName);
     d.exec();
 }
 
 void KLinesMainWindow::viewHighScore()
 {
-   KScoreDialog d(KScoreDialog::Name | KScoreDialog::Score, this);
+   KGameHighScoreDialog d(KGameHighScoreDialog::Name | KGameHighScoreDialog::Score, this);
    d.setConfigGroup(qMakePair(QByteArray("Highscore"), i18n("High Scores")));
    d.exec();
 }
