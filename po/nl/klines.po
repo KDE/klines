@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2016-02-10 09:47+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -36,47 +36,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ",rinse@kde.nl,,jordyritico@hotmail.com"
 
-#: klines.cpp:41
+#: klines.cpp:42
 #, kde-format
 msgid "Score:"
 msgstr "Score:"
 
-#: klines.cpp:74
+#: klines.cpp:75
 #, kde-format
 msgid "Show Next"
 msgstr "Volgende tonen"
 
-#: klines.cpp:81
+#: klines.cpp:82
 #, kde-format
 msgid "Move Left"
 msgstr "Naar links"
 
-#: klines.cpp:86
+#: klines.cpp:87
 #, kde-format
 msgid "Move Right"
 msgstr "Naar rechts"
 
-#: klines.cpp:91
+#: klines.cpp:92
 #, kde-format
 msgid "Move Up"
 msgstr "Omhoog"
 
-#: klines.cpp:96
+#: klines.cpp:97
 #, kde-format
 msgid "Move Down"
 msgstr "Omlaag"
 
-#: klines.cpp:101
+#: klines.cpp:102
 #, kde-format
 msgid "Select"
 msgstr "Selecteren"
 
-#: klines.cpp:117
+#: klines.cpp:118
 #, kde-format
 msgid "Score: %1"
 msgstr "Score: %1"
 
-#: klines.cpp:123 klines.cpp:131
+#: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
 msgstr "Topscores"

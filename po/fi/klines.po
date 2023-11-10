@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2016-02-10 12:04+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -35,47 +35,47 @@ msgstr ""
 "kim.enkovaara@iki.fi,teemu.rytilahti@kde-fi.org,niklas.laxstrom"
 "+kdetrans@gmail.com"
 
-#: klines.cpp:41
+#: klines.cpp:42
 #, kde-format
 msgid "Score:"
 msgstr "Pisteet:"
 
-#: klines.cpp:74
+#: klines.cpp:75
 #, kde-format
 msgid "Show Next"
 msgstr "Näytä seuraava"
 
-#: klines.cpp:81
+#: klines.cpp:82
 #, kde-format
 msgid "Move Left"
 msgstr "Siirry vasemmalle"
 
-#: klines.cpp:86
+#: klines.cpp:87
 #, kde-format
 msgid "Move Right"
 msgstr "Siirry oikealle"
 
-#: klines.cpp:91
+#: klines.cpp:92
 #, kde-format
 msgid "Move Up"
 msgstr "Siirry ylös"
 
-#: klines.cpp:96
+#: klines.cpp:97
 #, kde-format
 msgid "Move Down"
 msgstr "Siirry alas"
 
-#: klines.cpp:101
+#: klines.cpp:102
 #, kde-format
 msgid "Select"
 msgstr "Valitse"
 
-#: klines.cpp:117
+#: klines.cpp:118
 #, kde-format
 msgid "Score: %1"
 msgstr "Pisteet: %1"
 
-#: klines.cpp:123 klines.cpp:131
+#: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
 msgstr "Ennätykset"

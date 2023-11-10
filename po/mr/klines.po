@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2013-03-22 15:16+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -27,47 +27,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "chetan@kompkin.com"
 
-#: klines.cpp:41
+#: klines.cpp:42
 #, kde-format
 msgid "Score:"
 msgstr "अंक :"
 
-#: klines.cpp:74
+#: klines.cpp:75
 #, kde-format
 msgid "Show Next"
 msgstr "पुढील दर्शवा"
 
-#: klines.cpp:81
+#: klines.cpp:82
 #, kde-format
 msgid "Move Left"
 msgstr "डावीकडे हलवा"
 
-#: klines.cpp:86
+#: klines.cpp:87
 #, kde-format
 msgid "Move Right"
 msgstr "उजवीकडे हलवा"
 
-#: klines.cpp:91
+#: klines.cpp:92
 #, kde-format
 msgid "Move Up"
 msgstr "वर हलवा"
 
-#: klines.cpp:96
+#: klines.cpp:97
 #, kde-format
 msgid "Move Down"
 msgstr "खाली हलवा"
 
-#: klines.cpp:101
+#: klines.cpp:102
 #, kde-format
 msgid "Select"
 msgstr "निवडा"
 
-#: klines.cpp:117
+#: klines.cpp:118
 #, kde-format
 msgid "Score: %1"
 msgstr "अंक : %1"
 
-#: klines.cpp:123 klines.cpp:131
+#: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2012-04-07 02:31+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -27,47 +27,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sairan@computer.org"
 
-#: klines.cpp:41
+#: klines.cpp:42
 #, kde-format
 msgid "Score:"
 msgstr "Ұпайы:"
 
-#: klines.cpp:74
+#: klines.cpp:75
 #, kde-format
 msgid "Show Next"
 msgstr "Келісіні көрсету"
 
-#: klines.cpp:81
+#: klines.cpp:82
 #, kde-format
 msgid "Move Left"
 msgstr "Сол жаққа"
 
-#: klines.cpp:86
+#: klines.cpp:87
 #, kde-format
 msgid "Move Right"
 msgstr "Оң жаққа"
 
-#: klines.cpp:91
+#: klines.cpp:92
 #, kde-format
 msgid "Move Up"
 msgstr "Жоғарлату"
 
-#: klines.cpp:96
+#: klines.cpp:97
 #, kde-format
 msgid "Move Down"
 msgstr "Төмендету"
 
-#: klines.cpp:101
+#: klines.cpp:102
 #, kde-format
 msgid "Select"
 msgstr "Таңдау"
 
-#: klines.cpp:117
+#: klines.cpp:118
 #, kde-format
 msgid "Score: %1"
 msgstr "Ұпайы: %1"
 
-#: klines.cpp:123 klines.cpp:131
+#: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
 msgstr ""

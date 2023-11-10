@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2004-08-11 09:25--800\n"
 "Last-Translator: I. Felix <ifelix25@yahoo.co.in>\n"
 "Language-Team: English <en@li.org>\n"
@@ -25,51 +25,51 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "augustin_raj@hotmail.com"
 
-#: klines.cpp:41
+#: klines.cpp:42
 #, fuzzy, kde-format
 msgid "Score:"
 msgstr "கணக்கீடு:"
 
-#: klines.cpp:74
+#: klines.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Show Next"
 msgid "Show Next"
 msgstr "&அடுத்து காட்டு"
 
-#: klines.cpp:81
+#: klines.cpp:82
 #, fuzzy, kde-format
 #| msgid "Move Up"
 msgid "Move Left"
 msgstr "மேலே நகர்த்து"
 
-#: klines.cpp:86
+#: klines.cpp:87
 #, fuzzy, kde-format
 #| msgid "Move Right"
 msgid "Move Right"
 msgstr "வலதுபுறம் நகர்த்து"
 
-#: klines.cpp:91
+#: klines.cpp:92
 #, kde-format
 msgid "Move Up"
 msgstr "மேலே நகர்த்து"
 
-#: klines.cpp:96
+#: klines.cpp:97
 #, fuzzy, kde-format
 #| msgid "Move Down"
 msgid "Move Down"
 msgstr "கீழே நகர்த்து"
 
-#: klines.cpp:101
+#: klines.cpp:102
 #, kde-format
 msgid "Select"
 msgstr ""
 
-#: klines.cpp:117
+#: klines.cpp:118
 #, fuzzy, kde-format
 msgid "Score: %1"
 msgstr "கணக்கீடு:%1"
 
-#: klines.cpp:123 klines.cpp:131
+#: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
 msgstr ""

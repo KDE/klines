@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2008-04-16 22:26+0330\n"
 "Last-Translator: Emil Sedgh <emilsedgh@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@lists.kde.org>\n"
@@ -29,48 +29,48 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "daniarzadeh@itland.ir"
 
-#: klines.cpp:41
+#: klines.cpp:42
 #, kde-format
 msgid "Score:"
 msgstr "امتیاز:"
 
-#: klines.cpp:74
+#: klines.cpp:75
 #, fuzzy, kde-format
 #| msgid "Show next"
 msgid "Show Next"
 msgstr "نمایش بعدی"
 
-#: klines.cpp:81
+#: klines.cpp:82
 #, kde-format
 msgid "Move Left"
 msgstr "حرکت به چپ"
 
-#: klines.cpp:86
+#: klines.cpp:87
 #, kde-format
 msgid "Move Right"
 msgstr "حرکت به راست"
 
-#: klines.cpp:91
+#: klines.cpp:92
 #, kde-format
 msgid "Move Up"
 msgstr "حرکت به بالا"
 
-#: klines.cpp:96
+#: klines.cpp:97
 #, kde-format
 msgid "Move Down"
 msgstr "حرکت به پایین"
 
-#: klines.cpp:101
+#: klines.cpp:102
 #, kde-format
 msgid "Select"
 msgstr "انتخاب"
 
-#: klines.cpp:117
+#: klines.cpp:118
 #, kde-format
 msgid "Score: %1"
 msgstr "امتیاز: %1"
 
-#: klines.cpp:123 klines.cpp:131
+#: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
 msgstr ""

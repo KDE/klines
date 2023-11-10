@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2005-09-21 09:11+0100\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -31,51 +31,51 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kyfieithu@dotmon.com,,"
 
-#: klines.cpp:41
+#: klines.cpp:42
 #, fuzzy, kde-format
 msgid "Score:"
 msgstr "Sgôr:"
 
-#: klines.cpp:74
+#: klines.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Show Next"
 msgid "Show Next"
 msgstr "&Dangos Nesaf"
 
-#: klines.cpp:81
+#: klines.cpp:82
 #, fuzzy, kde-format
 #| msgid "Move Up"
 msgid "Move Left"
 msgstr "Symud i Fyny"
 
-#: klines.cpp:86
+#: klines.cpp:87
 #, fuzzy, kde-format
 #| msgid "Move Right"
 msgid "Move Right"
 msgstr "Symud i'r Dde"
 
-#: klines.cpp:91
+#: klines.cpp:92
 #, kde-format
 msgid "Move Up"
 msgstr "Symud i Fyny"
 
-#: klines.cpp:96
+#: klines.cpp:97
 #, fuzzy, kde-format
 #| msgid "Move Down"
 msgid "Move Down"
 msgstr "Symud i Lawr"
 
-#: klines.cpp:101
+#: klines.cpp:102
 #, kde-format
 msgid "Select"
 msgstr ""
 
-#: klines.cpp:117
+#: klines.cpp:118
 #, fuzzy, kde-format
 msgid "Score: %1"
 msgstr "Sgôr: %1"
 
-#: klines.cpp:123 klines.cpp:131
+#: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
 msgstr ""
