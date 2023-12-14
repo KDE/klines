@@ -20,6 +20,7 @@
   <name xml:lang="fi">Kolor Lines</name>
   <name xml:lang="fr">Kolor Lines</name>
   <name xml:lang="gl">Kolor Lines</name>
+  <name xml:lang="he">Kolor Lines</name>
   <name xml:lang="id">Kolor Lines</name>
   <name xml:lang="it">Kolor Lines</name>
   <name xml:lang="ka">Kolor Lines</name>
@@ -56,6 +57,7 @@
   <summary xml:lang="fi">Taktiikkapeli</summary>
   <summary xml:lang="fr">Jeu de tactique</summary>
   <summary xml:lang="gl">Xogo de táctica</summary>
+  <summary xml:lang="he">משחק טקטי</summary>
   <summary xml:lang="id">Permainan Taktik</summary>
   <summary xml:lang="it">Gioco di tattica</summary>
   <summary xml:lang="ka">ტაქტიკური თამაში</summary>
@@ -92,6 +94,7 @@
     <p xml:lang="fi">Kolor Lines on yksinkertainen mutta koukuttava yhden pelaajan peli.</p>
     <p xml:lang="fr">KLines est un jeu en solo simple mais très addictif.</p>
     <p xml:lang="gl">Kolor Lines é un xogo simple pero moi aditivo para unha persoa.</p>
+    <p xml:lang="he">Kolor Lines הוא משחק פשוט אך ממכר מאוד לשחקן או שחקנים יחידים.</p>
     <p xml:lang="id">Kolor Lines adalah permainan gim satu pemain yang sederhana namun sangat adiktif.</p>
     <p xml:lang="it">Kolor Lines è un gioco per un solo giocatore, semplice ma divertente.</p>
     <p xml:lang="ka">KolorLines მარტივი, მაგრამ ადვილად მიჩვევადი ერთ მოთამაშეზე გათვლილი თამაშია.</p>
@@ -129,6 +132,7 @@
     <p xml:lang="fi">Pelaaja siirtää värillisiä palloja pelilaudalla keräten samanvärisiä viiden suoria. Kun suora on valmis, se poistetaan laudalta, jolloin vapautuu arvokasta lautatilaa. Samaan aikaan joka siirrolla saapuu kolmen ryppäissä uusia palloja täyttämään pelilautaa.</p>
     <p xml:lang="fr">Le joueur doit déplacer des billes de couleur sur le plateau de jeu, en les regroupant cinq par cinq pour constituer des lignes d'une seule couleur. Une fois la ligne complète, elle est enlevée du plateau, ce qui libère de l'espace. Les nouvelles billes continuent à arriver trois par trois après chaque mouvement du joueur, remplissant le plateau au fur et à mesure.</p>
     <p xml:lang="gl">O xogador ten de mover as bólas coloradas pola área de xogo, recolléndoas das liñas da mesma cor en grupos de cinco. Cando a liña está completa elimínase da área de xogo, liberando así un espazo necesario. Ao mesmo tempo, as bólas novas continúan a chegar en grupos de tres despois de cada xogada, enchendo a área de xogo.</p>
+    <p xml:lang="he">על השחקן או השחקנית להעביר את הכדורים הצבעוניים על פני לוח המשחק כדי לאגד אותם לשורות באותו הצבע בחמישיות. לאחר ששורה הושלמה היא נמחקת מהלוח ובכך מפנה מקום יקר. באותו הזמן, כדורים חדשים ממשיכים להגיע בשלשות אחרי כל המהלך וממלאים את לוח המשחק.</p>
     <p xml:lang="id">Pemain harus memindahkan bola berwarna di sekitar papan permainan, mengumpulkan bola ke garis dengan lima warna yang sama. Setelah baris sudah lengkap ia terhapus dari papan, dengan begitu membebaskan ruang yang berharga. Di saat yang sama bola baru terus berdatangan tiga buah setelah setiap langkah, yang mengisi papan permainan.</p>
     <p xml:lang="it">Il giocatore deve spostare le palline colorate nell'area di gioco, raggruppandole in file di cinque palline dello stesso colore. Quando una linea viene completata viene rimossa, liberando spazio prezioso. Allo stesso tempo, nuove palline continuano ad arrivare: tre dopo ogni mossa, riempiendo l'area di gioco.</p>
     <p xml:lang="ka">მოთამაშემ უნდა გადააადგილოს შეღებილი ბურთები სათამაშო დაფაზე და შეაგროვოს ისინი ხუთ-ხუთი ცალი, ერთ ხაზში. როცა ხაზი დასრულდება, ის წაიშლება დაფიდან, რითიც ძვირფას თავისუფალ ადგილს ათავისუფლებს. იგივე დროს, ახალი ბურთი თითოეული სვლისას სამი უჯრით დაბლა ჩამოდის, რითიც დაფას ავსებს.</p>
@@ -209,6 +213,7 @@
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">La communauté KDE</developer_name>
   <developer_name xml:lang="gl">A comunidade de KDE</developer_name>
+  <developer_name xml:lang="he">קהילת KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">La comunità KDE</developer_name>
   <developer_name xml:lang="ka">KDE-ის საზოგადოება</developer_name>
