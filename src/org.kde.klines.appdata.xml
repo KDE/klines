@@ -112,6 +112,7 @@
     <p xml:lang="uk">«Кольорові лінії» — проста, але дуже захоплива гра для одного гравця.</p>
     <p xml:lang="x-test">xxKolor Lines is a simple but highly addictive one player game.xx</p>
     <p xml:lang="zh-CN">Kolor Lines 是一款简单易上头的单人游戏。</p>
+    <p xml:lang="zh-TW">《Kolor Lines 彩色線條》是一個簡單但讓人沉迷的單人遊戲。</p>
     <p>
      The player has to move the colored balls around the game board, gathering them into the lines of the same color by five.
      Once the line is complete it is removed from the board, therefore freeing precious space. 
@@ -150,6 +151,7 @@
     <p xml:lang="uk">Гравцеві слід пересувати кольорові кульки ігровою дошкою, збираючи їх по п’ять у рядки однакового кольору. Після утворення такого рядка всі кульки з нього буде вилучено і таким чином на дошці звільниться місце. Також після кожного ходу на дошці з’являтимуться три нових кульки, які зменшуватимуть вільне місце на ній.</p>
     <p xml:lang="x-test">xxThe player has to move the colored balls around the game board, gathering them into the lines of the same color by five. Once the line is complete it is removed from the board, therefore freeing precious space. In the same time the new balls keep arriving by three after each move, filling up the game board.xx</p>
     <p xml:lang="zh-CN">玩家需移动游戏版面周围的彩球，将同色彩球聚集在同一行的五个位置上。一行完成后，就会被移出版面，也就腾空了宝贵的空间。同时，每移动一步，就会有三个新的球填到游戏版面上。</p>
+    <p xml:lang="zh-TW">玩家必須在遊玩區域中移動有顏色的小球，讓五個同色的球集結成一條線。完成一條線後它將會從遊玩區域中移除，空出寶貴的空間。同時每次移動之後都會有三顆新的球進入遊玩區域，慢慢填滿剩餘的空間。</p>
   </description>
   <categories>
     <category>Qt</category>
