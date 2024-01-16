@@ -26,7 +26,7 @@ int main( int argc, char **argv )
 {
     QApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain("klines");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("klines"));
     
     KAboutData aboutData(QStringLiteral("klines"), i18n("Kolor Lines"), QStringLiteral(KLINES_VERSION_STRING),
                          i18n("Kolor Lines - a little game about balls and how to get rid of them"),
