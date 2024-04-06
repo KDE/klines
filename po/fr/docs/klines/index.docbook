@@ -6,12 +6,12 @@
   <!ENTITY % addindex "IGNORE"
 > <!-- do not change this! -->
 ]>
- 
+
 <book id="klines" lang="&language;"
 > <!-- do not change this! -->
 <bookinfo>
 	<title
->Manuel de &kolorlines;</title
+>Manuel utilisateur de &kolorlines;</title
 > <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
 <!-- List of immidiate authors begins here. -->
 <!--INPORTANT! - All other contributors: [to be determined] -->
@@ -63,18 +63,18 @@
 </copyright>
 <legalnotice
 >&FDLNotice;</legalnotice>
- 
+
 <date
->10-05-2016</date>
+>11-07-2021</date>
 <releaseinfo
->1.6 (Applications 16.04)</releaseinfo>
- 
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
 	<para
 >Cette documentation décrit le jeu &kolorlines; version 1.6</para>
 </abstract>
- 
+
 <!--List of relevant keywords-->
 <keywordset>
 	<keyword
@@ -87,17 +87,17 @@
 >jeu</keyword
 > <!-- do not change this! -->
 	<keyword
->Kolorlines</keyword
+>Lignes de Kolor</keyword
 ><!--Application name goes here-->
 <!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
 	<keyword
 >arcade</keyword>
 	<keyword
->couleurs</keyword>
-	<keyword
 >lignes de couleur</keyword>
 	<keyword
 >couleur</keyword>
+	<keyword
+>couleurs</keyword>
 <!--Number of possible players. It can be: One, Two,..., Multiplayer-->
 	<keyword
 >un joueur</keyword>
@@ -129,11 +129,11 @@
 >DOS</application
 > par Olga Demina, Igor Ivkin et Gennady Denisov en 1992.</para>
 	<para
->Le but de &kolorlines; est assez simple. Le joueur doit déplacer les billes colorées sur le plateau de jeu, en les groupant sur des lignes de la même couleur par cinq. Une fois que la ligne est complète, elle est supprimée du plateau, libérant un espace précieux. Dans le même temps, les nouvelles billes se placent par trois à chaque tour sur le plateau de jeu.</para>
+>Le but de &kolorlines; est assez simple. Le joueur doit déplacer les billes colorées sur le plateau de jeu, en les regroupant sur des lignes de la même couleur par cinq. Une fois que la ligne est complète, elle est supprimée du plateau, libérant un espace précieux. Dans le même temps, les nouvelles billes se placent par trois à chaque tour sur le plateau de jeu.</para>
 	<para
->&kolorlines; est un jeu qui se joue exclusivement contre le meilleur score. Le jeu prend fin une fois que tout le plateau de jeu est rempli de billes.</para>
+>Il est impossible de gagner avec &kolorlines;, car il se joue exclusivement pour arriver au meilleur score. Le jeu prend fin une fois que la totalité du plateau est rempli avec les billes.</para>
 </chapter>
- 
+
 <chapter id="howto"
 ><title
 >Comment jouer</title
@@ -143,17 +143,17 @@
 ><title
 >Objectif : </title
 ><para
->Déplacer les billes sur le plateau de jeu, en les groupant sur des lignes de la même couleur par cinq.</para
+>Déplacer les billes colorées sur le plateau de jeu, en les groupant sur des lignes de la même couleur par cinq.</para
 ></note
 ><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 	<para
->Quand &kolorlines; démarre, vous voyez un plateau de jeu divisé en 81 cases (la taille du plateau est de 9x9 cases), et aussitôt trois nouvelles billes colorées apparaissent sur le plateau. Utilisez la souris pour déplacer les billes de cellule en cellule pour les grouper sur une ligne d'une même couleur. Cependant, après chaque déplacement, l'ordinateur rajoute trois billes de plus sur le plateau. Pour éviter le remplissage du plateau, vous devez grouper ensemble les billes sur une ligne par cinq ou plus. Quand une ligne est complète, les billes sont supprimées du plateau et votre score augmente.</para>
+>Quand &kolorlines; démarre, un plateau de jeu divisé en 81 cases vous sera présenté (La taille du plateau est de 9 x 9 cases). Aussitôt, trois nouvelles billes colorées vont apparaître sur le plateau. Veuillez utiliser la souris pour déplacer les billes de case en case pour les regrouper en une ligne d'une même couleur. Cependant, après chacun de vos déplacements, l'ordinateur va rajouter trois billes de plus sur le plateau. Pour éviter le remplissage du plateau, vous devez regrouper ensemble les billes sur une ligne par cinq ou plus. Quand une ligne est complète, les billes sont supprimées du plateau et votre score augmente.</para>
 	<note
 ><title
 >Remarque : </title
 ><para
->Les nouvelles billes ne seront pas ajoutées sur le plateau après la suppression d'une ligne. À la place, vous rejouerez un déplacement avant que la nouvelle triplette de billes ne soit ajoutée.</para
+>Les nouvelles billes ne seront pas ajoutées sur le plateau après la suppression d'une ligne. À la place, vous serez récompensé par un déplacement avant que la nouvelle triplette de billes ne soit ajoutée.</para
 ></note>
 	<para
 >L'augmentation du score dépend exclusivement du nombre de billes supprimées.</para>
@@ -166,9 +166,9 @@
 > activée, l'augmentation du score est moindre que si cette fonctionnalité est désactivée.</para
 ></note>
 	<para
->&kolorlines; ne se joue que contre le meilleur score exclusivement. Le jeu prend fin une fois que la totalité du plateau est rempli avec les billes.</para>
+>Il est impossible de gagner avec &kolorlines;, car il se joue exclusivement contre le meilleur score. Le jeu prend fin une fois que la totalité du plateau est rempli avec les billes.</para>
 </chapter>
- 
+
 <chapter id="rules_and_tips"
 ><title
 >Règles du jeu, stratégies et astuces</title
@@ -180,15 +180,15 @@
 			<itemizedlist>
 				<listitem
 ><para
->Après chaque déplacement du joueur, trois billes supplémentaires seront ajoutées.</para
+>Après chaque déplacement du joueur, trois billes supplémentaires seront ajoutées sur le plateau.</para
 ></listitem>
 				<listitem
 ><para
->Pour gagner de l'espace sur le plateau de jeu, le joueur doit grouper les billes de la même couleur sur une ligne horizontale, verticale ou diagonale ininterrompue par groupe de cinq ou plus.</para
+>Pour libérer de l'espace sur le plateau de jeu, le joueur doit regrouper les billes de la même couleur sur une ligne horizontale, verticale ou diagonale ininterrompue par groupe de cinq ou plus.</para
 ></listitem>
 				<listitem
 ><para
->Pour initier un déplacement, cliquez simplement sur la bille pour la sélectionner, puis cliquez sur la case de destination pour terminer le déplacement.</para
+>Pour démarrer un déplacement, veuillez simplement cliquer sur la bille pour la sélectionner, puis cliquer sur la case de destination pour effectuer le déplacement.</para
 ></listitem>
 				<listitem
 ><para
@@ -196,11 +196,11 @@
 ></listitem>
 				<listitem
 ><para
->Dans le même temps, la case en question doit être librement accessible.</para
+>Dans le même temps, la carré en question doit être librement accessible.</para
 ></listitem>
 				<listitem
 ><para
->La case est librement accessible quand il n'y a pas d'autres billes bloquant l'emplacement.</para
+>Le carré est librement accessible quand il n'y a aucune autre bille bloquant l'emplacement de celui-ci.</para
 ></listitem>
 				<listitem
 ><para
@@ -216,11 +216,11 @@
 			<itemizedlist>
 				<listitem
 ><para
->Pour envoyer une bille vers la cellule désirée qui est bloquée, le joueur doit d'abord libérer celle ci.</para
+>Pour déplacer avec succès une bille vers la cellule désirée alors que le chemin est bloqué, le joueur doit d'abord libérer le chemin.</para
 ></listitem>
 				<listitem
 ><para
->Pour libérer un emplacement, le joueur doit simplement déplacer toutes les billes bloquantes, et donc libérer l'espace.</para
+>Pour libérer un chemin, le joueur doit simplement déplacer toutes les billes bloquantes en dehors du chemin, afin de libérer la route.</para
 ></listitem>
 				<listitem
 ><para
@@ -252,22 +252,22 @@
 ></listitem>
 				<listitem
 ><para
->Pour rendre le jeu plus facile, concentrez vous sur plusieurs lignes de billes identiques prêtes à être supprimées. Ceci peut être réalisé en construisant plusieurs lignes consécutives partout où il est possible, au lieu de ce concentrer sur une ligne à la fois.</para
+>Pour rendre le jeu plus facile, veuillez vous concentrer sur plusieurs lignes de billes identiques prêtes à être supprimées. Ceci peut être réalisé en construisant plusieurs lignes consécutives partout où cela est possible, au lieu de ce concentrer sur une ligne à la fois.</para
 ></listitem>
 				<listitem
 ><para
->Essayer de jouer avec des lignes presque complètes de trois billes sur le plateau de jeu tous le temps. Presque complètes veut dire que ces lignes ont quatre billes identiques en longueur, et qu'il manque seulement une bille pour compléter la séquence.</para
+>Essayer de jouer avec des lignes presque complètes de trois billes sur le plateau de jeu tous le temps. Presque complètes veut dire que ces lignes ont quatre billes identiques en longueur et qu'il manque seulement une bille pour compléter la séquence.</para
 ></listitem>
 			</itemizedlist>
 			<note
 ><title
 >Exemple : </title
 ><para
->Si vous avez une ligne presque complète et que le chemin devient soudainement bloqué par une autre bille, ne déplacez pas cette bille. Essayez de trouver une séquence de billes du même genre qui vous permet de continuer avec la bille à déplacer. Si une telle séquence existe et est accessible, déplacez la bille bloquante vers cette séquence.</para
+>Si vous avez une ligne presque complète et que le chemin devient soudainement bloqué par une autre bille, ne déplacez pas cette bille. Essayez de trouver une séquence de billes du même genre vous permettant de continuer avec la bille à déplacer. Si une telle séquence existe et est accessible, alors, déplacez la bille bloquante vers cette dernière.</para
 ></note>
 	</sect1>
 </chapter>
-  
+
 <chapter id="interface"
 ><title
 >Vue d'ensemble de l'interface</title
@@ -293,7 +293,7 @@
 				</mediaobject>
 			</screenshot>
 <para
->Tout en haut de la fenêtre est située la barre de menu et la barre d'outils. Au centre de l'écran se présente une grande zone remplie de cases appelées le plateau de jeu. Sur le coté droit est représenté une barre affichant les trois prochaines billes à être affichées sur le plateau (sauf si la fonctionnalité <guimenuitem
+>Tout en haut de la fenêtre, il y a la barre de menus et la barre d'outils. Au centre de l'écran, il y a une grande zone remplie de cases appelée le plateau de jeu. Sur le coté droit, il est présenté une barre affichant les trois prochaines billes à être affichées sur le plateau (Sauf si la fonctionnalité <guimenuitem
 >Afficher la suite</guimenuitem
 > est désactivée). En dessous de ce champ se trouve la barre d'état.</para>
 </sect1>
@@ -319,7 +319,27 @@
 			<listitem
 ><para
 ><action
->Commence une nouvelle partie</action
+>Démarre une nouvelle partie.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl; &End;</keycombo
+></shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Terminer le jeu</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Termine un jeu en cours.</action
 ></para
 ></listitem>
 		</varlistentry>
@@ -335,13 +355,13 @@
 > <guimenu
 >Jeu</guimenu
 > <guimenuitem
->Afficher les meilleurs scores</guimenuitem
+>Afficher les meilleurs scores...</guimenuitem
 > </menuchoice
 ></term>
 			<listitem
 ><para
 ><action
->Affiche le tableau des meilleurs scores</action
+>Affiche le tableau des meilleurs scores.</action
 ></para
 ></listitem>
 		</varlistentry>
@@ -409,9 +429,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Gauche</keycap
-></shortcut
+>&Left;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -429,9 +447,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Droite</keycap
-></shortcut
+>&Right;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -449,9 +465,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Haut</keycap
-></shortcut
+>&Up;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -469,9 +483,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Bas</keycap
-></shortcut
+>&Down;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -489,9 +501,7 @@
 			<term
 ><menuchoice
 ><shortcut
-><keycap
->Espace</keycap
-></shortcut
+>&Space;</shortcut
 > <guimenu
 >Navigation</guimenu
 > <guimenuitem
@@ -554,13 +564,13 @@
 ></question>
  <answer
 ><para
->Oui. Pour modifier le thème visuel de &kolorlines;, vous pouvez utiliser l'option <menuchoice
+>Oui. Pour modifier le thème visuel de &kolorlines;, vous pouvez utiliser l''élément de menu <menuchoice
 ><guimenu
 >Configuration</guimenu
 ><guimenuitem
 >Configurer &kolorlines;...</guimenuitem
 ></menuchoice
-> sur la barre de menu.</para
+>.</para
 ></answer>
 </qandaentry>
 <qandaentry>
@@ -584,9 +594,7 @@
 ></question>
  <answer
 ><para
->Oui. Vous pouvez utiliser les touches flèches et la touche <keycap
->Espace</keycap
-> pour sélectionner et définir les balles.</para
+>Oui. Vous pouvez utiliser les touches de flèches et la touche &Space; pour sélectionner et définir les billes.</para
 ></answer>
 </qandaentry>
 <qandaentry>
@@ -633,7 +641,7 @@
 >Remerciements et licence</title
 > <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
- 
+
 <para
 >&kolorlines;</para>
 
@@ -656,8 +664,8 @@
 <para
 >Traduction française par &GerardDelafond; et &StanislasZeller;. Relecture par &LudovicGrossard;.</para
 > &underFDL; &underGPL; </chapter>
-  
-&documentation.index; 
+
+&documentation.index;
 </book>
 <!--
 Local Variables:
