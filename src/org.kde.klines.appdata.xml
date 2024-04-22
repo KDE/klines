@@ -29,7 +29,6 @@
   <name xml:lang="it">Kolor Lines</name>
   <name xml:lang="ka">Kolor Lines</name>
   <name xml:lang="ko">Kolor Lines</name>
-  <name xml:lang="lv">Kolor Lines</name>
   <name xml:lang="nl">Kolor Lines</name>
   <name xml:lang="nn">Kolor Lines</name>
   <name xml:lang="pl">Kolorowe linie</name>
@@ -68,7 +67,6 @@
   <summary xml:lang="it">Gioco di tattica</summary>
   <summary xml:lang="ka">ტაქტიკური თამაში</summary>
   <summary xml:lang="ko">전략 게임</summary>
-  <summary xml:lang="lv">Loģikas spēle</summary>
   <summary xml:lang="nl">Tactisch spel</summary>
   <summary xml:lang="nn">Taktisk spel</summary>
   <summary xml:lang="pl">Gra taktyczna</summary>
@@ -107,7 +105,6 @@
     <p xml:lang="it">Kolor Lines è un gioco per un solo giocatore, semplice ma divertente.</p>
     <p xml:lang="ka">KolorLines მარტივი, მაგრამ ადვილად მიჩვევადი ერთ მოთამაშეზე გათვლილი თამაშია.</p>
     <p xml:lang="ko">Kolor Lines는 간단하면서도 머리를 쓰는 1인용 게임입니다.</p>
-    <p xml:lang="lv">„Kolor Lines“ ir vienkārša, bet ļoti aizraujoša spēle vienam spēlētājam.</p>
     <p xml:lang="nl">Kolor Lines is een eenvoudig maar zeer verslavend spel voor één speler.</p>
     <p xml:lang="nn">Kolor Lines er eit enkelt men vanedannande spel for éin spelar.</p>
     <p xml:lang="pl">Kolorowe Linie jest prostą, lecz wysoce uzależniającą grą pojedynczego gracza.</p>
@@ -148,7 +145,6 @@
     <p xml:lang="it">Il giocatore deve spostare le palline colorate nell'area di gioco, raggruppandole in file di cinque palline dello stesso colore. Quando una linea viene completata viene rimossa, liberando spazio prezioso. Allo stesso tempo, nuove palline continuano ad arrivare: tre dopo ogni mossa, riempiendo l'area di gioco.</p>
     <p xml:lang="ka">მოთამაშემ უნდა გადააადგილოს შეღებილი ბურთები სათამაშო დაფაზე და შეაგროვოს ისინი ხუთ-ხუთი ცალი, ერთ ხაზში. როცა ხაზი დასრულდება, ის წაიშლება დაფიდან, რითიც ძვირფას თავისუფალ ადგილს ათავისუფლებს. იგივე დროს, ახალი ბურთი თითოეული სვლისას სამი უჯრით დაბლა ჩამოდის, რითიც დაფას ავსებს.</p>
     <p xml:lang="ko">플레이어는 게임 판에 있는 색깔 있는 공을 움직여야 하며, 같은 색 공을 일렬로 다섯 개 모아서 줄을 없애야 합니다. 공의 위치를 바꿀 때 새로운 공이 게임 판에 나타납니다.</p>
-    <p xml:lang="lv">Spēles uzdevums ir pārkārtot krāsainās bumbas spēles laukumā, lai tās izvietotos vismaz piecu bumbu garās līnijās jebkurā virzienā. Kad līnija ir pabeigta, tā pazūd no laukuma, atbrīvojot dārgo vietu. Tajā pašā laikā pēc katra gājiena laukumu papildina trīs jaunas bumbas, tādējādi to lēnām aizpildot.</p>
     <p xml:lang="nl">De speler verplaatst de gekleurde ballen op het speelbord en verzamelt ze daarbij per vijf op de lijnen van gelijke kleur. Nadat de lijn klaar is wordt deze van het bord verwijderd en maakt daarmee kostbare ruimte vrij. Op hetzelfde moment blijven er bij elke zet drie nieuwe ballen verschijnen, die het speelbord opvullen.</p>
     <p xml:lang="nn">Du må flytta farge kuler rundt på eit spelebrett slik at fem kuler med same farge kjem på linje. Dei vert då automatisk fjerna frå brettet, slik at du får meir ledig plass. Men ved kvart flytt kjem det samtidig tre nye kuler, som fyller opp brettet.</p>
     <p xml:lang="pl">Gracz musi przemieszczać kolorowe kulki na polu gry, grupując je w linie tej samej barwy w liczbie pięciu. W chwili ukończenia linii, są one usuwane z planszy, zwalniając przy tym cenne miejsce. W tym samym czasie na pole gry dochodzą trzy nowe kulki.</p>
