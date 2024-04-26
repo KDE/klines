@@ -30,7 +30,8 @@ target_sources(klines PRIVATE
 ecm_qt_declare_logging_category(klines
     HEADER klines_debug.h
     IDENTIFIER KLINES_LOG
-    CATEGORY_NAME org.kde.kdegames.klines
+    CATEGORY_NAME klines
+    OLD_CATEGORY_NAMES org.kde.kdegames.klines
     DESCRIPTION "KLines game"
     EXPORT KLINES
 )
