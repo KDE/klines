@@ -151,7 +151,7 @@ Below the playing field there is the status bar.</para>
 			<term><menuchoice>
 				<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
 				<guimenu>Game</guimenu>
-				<guimenuitem>Show High Scores...</guimenuitem>
+				<guimenuitem>Show High Scores…</guimenuitem>
 			</menuchoice></term>
 			<listitem><para><action>Displays the high score table.</action></para></listitem>
 		</varlistentry>
@@ -245,7 +245,7 @@ of the &kde; Fundamentals.
 <!--Following is a standard list of FAQ questions.-->
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>Yes. To change &kolorlines; visual theme you can use the <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kolorlines;...</guimenuitem></menuchoice> menu item.</para></answer>
+ <answer><para>Yes. To change &kolorlines; visual theme you can use the <menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kolorlines;…</guimenuitem></menuchoice> menu item.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I don't want to make any moves right now. Can I skip a turn? </para></question>
