@@ -72,34 +72,34 @@ void KLinesMainWindow::setupActions()
 
   // Preferences
   KToggleAction *showNext = actionCollection()->add<KToggleAction>(QStringLiteral( "show_next" ));
-  showNext->setText( i18n( "Show Next" ) );
+  showNext->setText( i18nc("@option:check",  "Show Next" ) );
   connect(showNext, &KToggleAction::triggered, this, &KLinesMainWindow::showNextToggled);
 
   showNext->setChecked(Prefs::showNext());
   mwidget->setShowNextColors(Prefs::showNext());
 
   // Navigation
-  QAction* naviLeft = new QAction( i18n("Move Left" ), this );
+  auto *naviLeft = new QAction( i18nc("@action", "Move Left" ), this );
   naviLeft->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-left"))); 
   KActionCollection::setDefaultShortcut(naviLeft, Qt::Key_Left);
   actionCollection()->addAction( QStringLiteral( "navi_left" ), naviLeft);
 
-  QAction* naviRight = new QAction( i18n("Move Right" ), this );
+  auto *naviRight = new QAction( i18nc("@action", "Move Right" ), this );
   naviRight->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-right")));
   KActionCollection::setDefaultShortcut(naviRight, Qt::Key_Right);
   actionCollection()->addAction( QStringLiteral( "navi_right" ), naviRight);
 
-  QAction* naviUp = new QAction( i18n("Move Up" ), this );
+  auto *naviUp = new QAction( i18nc("@action", "Move Up" ), this );
   naviUp->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-up")));
   KActionCollection::setDefaultShortcut(naviUp, Qt::Key_Up);
   actionCollection()->addAction( QStringLiteral( "navi_up" ), naviUp);
 
-  QAction* naviDown = new QAction( i18n("Move Down" ), this );
+  auto *naviDown = new QAction( i18nc("@action", "Move Down" ), this );
   naviDown->setIcon(QIcon::fromTheme(QStringLiteral( "arrow-down")));
   KActionCollection::setDefaultShortcut(naviDown, Qt::Key_Down);
   actionCollection()->addAction( QStringLiteral( "navi_down" ), naviDown);
 
-  QAction* naviSelect = new QAction( i18n("Select"), this );
+  auto *naviSelect = new QAction( i18nc("@action", "Select"), this );
   KActionCollection::setDefaultShortcut(naviSelect, Qt::Key_Space);
   actionCollection()->addAction( QStringLiteral( "navi_select" ), naviSelect);
 
