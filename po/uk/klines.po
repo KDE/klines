@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2016-02-09 16:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -39,32 +39,44 @@ msgid "Score:"
 msgstr "Рахунок:"
 
 #: klines.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Показувати наступний"
 
 #: klines.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "Пересунути ліворуч"
 
 #: klines.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "Пересунути праворуч"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "Пересунути вгору"
 
 #: klines.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "Пересунути вниз"
 
 #: klines.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select"
+msgctxt "@action"
 msgid "Select"
 msgstr "Вибрати"
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2008-12-14 22:05+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -42,32 +42,44 @@ msgid "Score:"
 msgstr "スコア:"
 
 #: klines.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "次を表示"
 
 #: klines.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "左へ移動"
 
 #: klines.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "右へ移動"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "上へ移動"
 
 #: klines.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "下へ移動"
 
 #: klines.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select"
+msgctxt "@action"
 msgid "Select"
 msgstr "選択"
 

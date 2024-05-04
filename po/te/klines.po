@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2007-07-14 14:15+0530\n"
 "Last-Translator: V Naresh Kumar <cyan_00391@yahoo.co.in>\n"
 "Language-Team: Telugu <en@li.org>\n"
@@ -34,35 +34,41 @@ msgstr "స్కోరు:"
 
 #: klines.cpp:75
 #, kde-format
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr ""
 
 #: klines.cpp:82
 #, fuzzy, kde-format
 #| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "ఎడమవైపు జరుపు"
 
 #: klines.cpp:87
 #, fuzzy, kde-format
 #| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "కుడివైపు జరుపు"
 
 #: klines.cpp:92
 #, fuzzy, kde-format
 #| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "పైకి జరుపు"
 
 #: klines.cpp:97
 #, fuzzy, kde-format
 #| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "కిందకి జరుపు"
 
 #: klines.cpp:102
 #, kde-format
+msgctxt "@action"
 msgid "Select"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2015-02-13 09:59+0100\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -34,32 +34,44 @@ msgid "Score:"
 msgstr "Skóre:"
 
 #: klines.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Zobrazit následující"
 
 #: klines.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "Přesunout doleva"
 
 #: klines.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "Přesunout doprava"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "Přesunout nahoru"
 
 #: klines.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "Přesunout dolů"
 
 #: klines.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select"
+msgctxt "@action"
 msgid "Select"
 msgstr "Vybrat"
 

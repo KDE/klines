@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames/klines.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -33,32 +33,44 @@ msgid "Score:"
 msgstr "Scór:"
 
 #: klines.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Taispeáin an chéad cheann eile"
 
 #: klines.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "Bog Faoi Chlé"
 
 #: klines.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "Bog Faoi Dheis"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "Bog Suas"
 
 #: klines.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "Bog Síos"
 
 #: klines.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select"
+msgctxt "@action"
 msgid "Select"
 msgstr "Roghnaigh"
 

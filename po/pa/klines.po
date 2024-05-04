@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2007-01-17 11:09+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
@@ -33,34 +33,41 @@ msgstr ""
 
 #: klines.cpp:75
 #, kde-format
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr ""
 
 #: klines.cpp:82
 #, fuzzy, kde-format
 #| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "ਉੱਪਰ ਜਾਓ"
 
 #: klines.cpp:87
 #, fuzzy, kde-format
 #| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "ਸੱਜੇ ਭੇਜੋ"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "ਉੱਪਰ ਜਾਓ"
 
 #: klines.cpp:97
 #, fuzzy, kde-format
 #| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "ਹੇਠਾਂ ਭੇਜੋ"
 
 #: klines.cpp:102
 #, kde-format
+msgctxt "@action"
 msgid "Select"
 msgstr ""
 

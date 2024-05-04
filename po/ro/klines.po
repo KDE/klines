@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2009-08-09 08:23+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -33,32 +33,44 @@ msgid "Score:"
 msgstr "Scor:"
 
 #: klines.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Arată următor"
 
 #: klines.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "Mută la stânga"
 
 #: klines.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "Mută la dreapta"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "Mută în sus"
 
 #: klines.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "Mută în jos"
 
 #: klines.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select"
+msgctxt "@action"
 msgid "Select"
 msgstr "Alege"
 

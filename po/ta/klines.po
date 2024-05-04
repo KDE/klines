@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2004-08-11 09:25--800\n"
 "Last-Translator: I. Felix <ifelix25@yahoo.co.in>\n"
 "Language-Team: English <en@li.org>\n"
@@ -33,34 +33,41 @@ msgstr "கணக்கீடு:"
 #: klines.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "&அடுத்து காட்டு"
 
 #: klines.cpp:82
 #, fuzzy, kde-format
 #| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "மேலே நகர்த்து"
 
 #: klines.cpp:87
 #, fuzzy, kde-format
 #| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "வலதுபுறம் நகர்த்து"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "மேலே நகர்த்து"
 
 #: klines.cpp:97
 #, fuzzy, kde-format
 #| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "கீழே நகர்த்து"
 
 #: klines.cpp:102
 #, kde-format
+msgctxt "@action"
 msgid "Select"
 msgstr ""
 

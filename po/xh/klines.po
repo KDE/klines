@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2002-09-02 15:41+0200\n"
 "Last-Translator: Thelma Lungcuzo <thelma@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -39,31 +39,37 @@ msgstr "Inqaku:"
 #: klines.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "&Bonisa Okulandelayo"
 
 #: klines.cpp:82
 #, kde-format
+msgctxt "@action"
 msgid "Move Left"
 msgstr ""
 
 #: klines.cpp:87
 #, kde-format
+msgctxt "@action"
 msgid "Move Right"
 msgstr ""
 
 #: klines.cpp:92
 #, kde-format
+msgctxt "@action"
 msgid "Move Up"
 msgstr ""
 
 #: klines.cpp:97
 #, kde-format
+msgctxt "@action"
 msgid "Move Down"
 msgstr ""
 
 #: klines.cpp:102
 #, kde-format
+msgctxt "@action"
 msgid "Select"
 msgstr ""
 

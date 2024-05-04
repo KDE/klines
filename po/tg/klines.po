@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-04 00:37+0000\n"
 "PO-Revision-Date: 2005-10-07 16:46+0500\n"
 "Last-Translator: Victor Ibragimov <youth_opportunities@tajikngo.org>\n"
 "Language-Team: Tajik\n"
@@ -41,34 +41,41 @@ msgstr " Ҳисоб:"
 #: klines.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Show Next"
+msgctxt "@option:check"
 msgid "Show Next"
 msgstr "&Намоиши Оянда"
 
 #: klines.cpp:82
 #, fuzzy, kde-format
 #| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "Ҳаракат ба боло"
 
 #: klines.cpp:87
 #, fuzzy, kde-format
 #| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "Ҳаракат ба рост"
 
 #: klines.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "Ҳаракат ба боло"
 
 #: klines.cpp:97
 #, fuzzy, kde-format
 #| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "Ҳаракат ба поён"
 
 #: klines.cpp:102
 #, kde-format
+msgctxt "@action"
 msgid "Select"
 msgstr ""
 
