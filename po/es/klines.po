@@ -7,7 +7,7 @@
 # Santiago Fernandez Sancho <santi@kde-es.org>, 2004.
 # santi <santi@kde-es.org>, 2005.
 # Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
-# SPDX-FileCopyrightText: 2009, 2015, 2016, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009, 2015, 2016, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 # Huever, 2009.
 # Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
 # Sofía Priego <spriego@darksylvania.net>, %Y.
@@ -16,14 +16,14 @@ msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:37+0000\n"
-"PO-Revision-Date: 2023-10-02 21:19+0100\n"
+"PO-Revision-Date: 2024-05-04 20:36+0100\n"
 "Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -46,43 +46,37 @@ msgid "Score:"
 msgstr "Puntuación:"
 
 #: klines.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show Next"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Mostrar siguiente"
 
 #: klines.cpp:82
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Mover a la izquierda"
 
 #: klines.cpp:87
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Mover a la derecha"
 
 #: klines.cpp:92
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Mover hacia arriba"
 
 #: klines.cpp:97
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Mueve hacia abajo"
 
 #: klines.cpp:102
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@action"
 msgid "Select"
 msgstr "Seleccionar"
@@ -101,7 +95,7 @@ msgstr "Mejores puntuaciones"
 #: klines.kcfg:9
 #, kde-format
 msgid "Whether to show the next set of balls."
-msgstr "Mostrar el siguiente conjunto de bolas."
+msgstr "Indica si se debe mostrar el siguiente conjunto de bolas."
 
 #. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
 #: klines.kcfg:13
@@ -129,7 +123,7 @@ msgstr "Kolor Lines"
 #: main.cpp:32
 #, kde-format
 msgid "Kolor Lines - a little game about balls and how to get rid of them"
-msgstr "Kolor Lines - un pequeño juego sobre bolas y cómo deshacerse de ellas"
+msgstr "Kolor Lines: un sencillo juego sobre bolas y cómo deshacerse de ellas"
 
 #: main.cpp:34
 #, kde-format
@@ -144,7 +138,7 @@ msgstr "Roman Merzlyakov"
 #: main.cpp:37
 #, kde-format
 msgid "Original author"
-msgstr "Autor original"
+msgstr "Autor original."
 
 #: main.cpp:38
 #, kde-format
@@ -154,7 +148,7 @@ msgstr "Roman Razilov"
 #: main.cpp:38
 #, kde-format
 msgid "Rewrite and Extension"
-msgstr "Reescrito y ampliado"
+msgstr "Reescritura y extensión."
 
 #: main.cpp:39
 #, kde-format
@@ -164,7 +158,7 @@ msgstr "Dmitry Suzdalev"
 #: main.cpp:39
 #, kde-format
 msgid "Rewrite to use QGraphicsView. Current maintainer"
-msgstr "Reescritura para utilizar QGraphicsView. Responsable actual"
+msgstr "Reescritura para poder usar QGraphicsView. Responsable actual."
 
 #: main.cpp:40
 #, kde-format
@@ -174,12 +168,12 @@ msgstr "Eugene Trounev"
 #: main.cpp:40
 #, kde-format
 msgid "New SVG artwork for KDE4 version of the game"
-msgstr "Nuevo material gráfico SVG para la versión de KDE4 del juego"
+msgstr "Nuevo material gráfico SVG para la versión del juego para KDE4."
 
 #: scene.cpp:296
 #, kde-format
 msgid "There is no path from the selected piece to this cell"
-msgstr "No hay ruta desde la pieza seleccionada a esta celda"
+msgstr "No hay ninguna ruta desde la pieza seleccionada hasta esta celda"
 
 #: scene.cpp:684
 #, kde-format

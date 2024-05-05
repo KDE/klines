@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:37+0000\n"
-"PO-Revision-Date: 2016-08-05 18:36+0200\n"
-"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"PO-Revision-Date: 2024-05-04 06:24+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -41,43 +41,37 @@ msgid "Score:"
 msgstr "Rezultat:"
 
 #: klines.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show Next"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Pokaži naslednje"
 
 #: klines.cpp:82
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Premakni levo"
 
 #: klines.cpp:87
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Premakni desno"
 
 #: klines.cpp:92
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Premakni navzgor"
+msgstr "Premakni gor"
 
 #: klines.cpp:97
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Premakni navzdol"
+msgstr "Premakni dol"
 
 #: klines.cpp:102
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@action"
 msgid "Select"
 msgstr "Izberi"

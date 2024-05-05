@@ -373,7 +373,7 @@
 > <guimenu
 >Гра</guimenu
 > <guimenuitem
->Показати найкращі результати...</guimenuitem
+>Показати найкращі результати…</guimenuitem
 > </menuchoice
 ></term>
 			<listitem
@@ -596,7 +596,7 @@
 ><guimenu
 >Параметри</guimenu
 > <guimenuitem
->Налаштувати &kolorlines;...</guimenuitem
+>Налаштувати &kolorlines;…</guimenuitem
 ></menuchoice
 >.</para
 ></answer>
