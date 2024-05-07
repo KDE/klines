@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the klines package.
 #
-# giovanni <g.sora@tiscali.it>, 2023.
+# giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:37+0000\n"
-"PO-Revision-Date: 2023-09-25 18:03+0200\n"
+"PO-Revision-Date: 2024-05-06 12:25+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -33,43 +33,37 @@ msgid "Score:"
 msgstr "Punctos:"
 
 #: klines.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show Next"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Monstra proxime"
 
 #: klines.cpp:82
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Move a sinistra"
 
 #: klines.cpp:87
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Move a dextera"
 
 #: klines.cpp:92
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Move in alto"
 
 #: klines.cpp:97
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Move a basso "
 
 #: klines.cpp:102
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@action"
 msgid "Select"
 msgstr "Selige"
@@ -82,7 +76,7 @@ msgstr "Punctos: %1"
 #: klines.cpp:124 klines.cpp:132
 #, kde-format
 msgid "High Scores"
-msgstr ""
+msgstr "Punctos plus alte"
 
 #. i18n: ectx: label, entry (ShowNext), group (Game)
 #: klines.kcfg:9
