@@ -100,7 +100,7 @@ msgstr "Alçària del fons guardat"
 #: klinesui.rc:14
 #, kde-format
 msgid "Navigation"
-msgstr "Navegació"
+msgstr "Navegueu"
 
 #: main.cpp:31
 #, kde-format
