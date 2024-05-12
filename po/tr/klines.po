@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:37+0000\n"
-"PO-Revision-Date: 2024-05-04 14:16+0300\n"
+"PO-Revision-Date: 2024-05-11 01:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -145,7 +145,7 @@ msgstr "Yeniden yazan ve geliştiren"
 #: main.cpp:39
 #, kde-format
 msgid "Dmitry Suzdalev"
-msgstr "Dmitry Suzdalev"
+msgstr "Dmitriy Suzdalev"
 
 #: main.cpp:39
 #, kde-format
