@@ -2,15 +2,15 @@
 # Copyright (C) 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <wolfram@steloj.de>, 2002.
 # Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-10 01:46+0000\n"
-"PO-Revision-Date: 2023-06-09 20:56+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-04 07:47+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Wolfram Diestel, Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "wolfram@steloj.de, okellogg@users.sourceforge.net"
+msgstr "wolfram@steloj.de, olivermkellogg@gmail.com"
 
 #: klines.cpp:42
 #, kde-format
@@ -37,27 +37,27 @@ msgstr "Poentoj:"
 #: klines.cpp:75
 #, kde-format
 msgid "Show Next"
-msgstr "Montri sekvan"
+msgstr "Montri Sekvan"
 
 #: klines.cpp:82
 #, kde-format
 msgid "Move Left"
-msgstr "Movi maldekstren"
+msgstr "Movi Maldekstren"
 
 #: klines.cpp:87
 #, kde-format
 msgid "Move Right"
-msgstr "Movi dekstren"
+msgstr "Movi Dekstren"
 
 #: klines.cpp:92
 #, kde-format
 msgid "Move Up"
-msgstr "Movi supren"
+msgstr "Movi Supren"
 
 #: klines.cpp:97
 #, kde-format
 msgid "Move Down"
-msgstr "Movi malsupren"
+msgstr "Movi Malsupren"
 
 #: klines.cpp:102
 #, kde-format
