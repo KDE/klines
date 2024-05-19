@@ -118,6 +118,20 @@
 ><contrib
 >Traductora</contrib
 ></othercredit
+> <othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
 > 
 </authorgroup>
 
@@ -199,7 +213,7 @@
 >DOS</application
 > por Olga Demina, Igor Ivkin y Gennady Denisov en 1992.</para>
 	<para
->Ganar a &kolorlines; es bastante sencillo. El jugador tiene que mover las canicas coloreadas alrededor del tablero de juego, para ir creando líneas de cinco canicas del mismo color. Una vez que haya completado la línea se eliminará del tablero, obteniendo un espacio precioso. De la misma forma continúan llegando tres canicas después de cada movimiento, rellenando el tablero de juego.</para>
+>Ganar a &kolorlines; es bastante sencillo. El jugador tiene que mover las canicas de color alrededor del tablero de juego, para ir creando líneas de cinco canicas del mismo color. Una vez que haya completado la línea se eliminará del tablero, obteniendo un espacio precioso. Al mismo tiempo, continúan llegando tres canicas después de cada movimiento para rellenar el tablero de juego.</para>
 	<para
 >&kolorlines; no se puede ganar y se juega exclusivamente para obtener una puntuación alta. El juego termina una vez que todo el tablero de juego está lleno de canicas.</para>
 </chapter>
@@ -213,27 +227,27 @@
 ><title
 >Objetivo:</title
 ><para
->Mueva las canicas de colores por el tablero de juego, agrupándolas en líneas del mismo color de cinco en cinco.</para
+>Mueve las canicas de colores por el tablero de juego, agrupándolas en líneas del mismo color, de cinco en cinco.</para
 ></note
 ><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 	<para
->Cuando se inicia &kolorlines; se muestra un tablero de juego dividido en 81 cuadrados (el tablero de juego es de 9x9 cuadrados), apareciendo inmediatamente tres canicas en el tablero. Use el ratón para mover las canicas de una celda a otra para agruparlas en líneas del mismo color. No obstante, después de cada uno de sus movimientos la máquina dejará caer tres canicas más en el tablero. Para evitar que se rellene el tablero debe colocar las canicas en líneas de 5 o más canicas. Cuando se completa una línea, las canicas se eliminan del campo y su puntuación aumentará.</para>
+>Cuando se inicia &kolorlines; se muestra un tablero de juego dividido en 81 cuadrados (el tablero de juego es de 9x9 cuadrados), apareciendo inmediatamente tres canicas en el tablero. Usa el ratón para mover las canicas de una celda a otra con el objeto de agruparlas en líneas del mismo color. No obstante, después de cada uno de tus movimientos, la máquina dejará caer tres canicas más en el tablero. Para evitar que se llene el tablero, debes colocar las canicas en líneas de 5 o más canicas. Cuando se completa una línea, las canicas se eliminarán del campo y tu puntuación aumentará.</para>
 	<note
 ><title
 >Nota:</title
 ><para
->Las nuevas canicas no se añadirán al campo tras eliminar una línea. Será recompensado con otro movimiento antes de que se añada un nuevo triplete de canicas.</para
+>Las nuevas canicas no se añadirán al campo tras eliminar una línea. Serás recompensado con otro movimiento antes de que se añada un nuevo triplete de canicas.</para
 ></note>
 	<para
->El incremento en la puntuación dependerá únicamente de la cantidad de canicas eliminadas.</para>
+>El aumento de la puntuación depende únicamente de la cantidad de canicas eliminadas.</para>
 	<note
 ><title
 >Nota:</title
 ><para
->Si está jugando con la funcionalidad <guimenuitem
+>Si estás jugando con la funcionalidad <guimenuitem
 >Mostrar siguiente</guimenuitem
-> activada el incremento en la puntuación será inferior que si esta funcionalidad está desactivada.</para
+> activada, el aumento de la puntuación será inferior que si esta funcionalidad está desactivada.</para
 ></note>
 	<para
 >&kolorlines; no se puede ganar y se juega exclusivamente para obtener una puntuación alta. El juego termina una vez que todo el tablero de juego se llena de canicas.</para>
@@ -254,11 +268,11 @@
 ></listitem>
 				<listitem
 ><para
->Para liberar espacio en el tablero se tienen que agrupar cinco o más canicas del mismo color en una línea ininterrumpida horizontal, vertical o diagonal.</para
+>Para liberar espacio del tablero se tienen que agrupar cinco o más canicas del mismo color en una línea ininterrumpida horizontal, vertical o diagonal.</para
 ></listitem>
 				<listitem
 ><para
->Para comenzar a mover, pulse sobre la canica de origen para seleccionarla; a continuación pulse sobre el cuadrado de destino para completar el movimiento.</para
+>Para empezar a mover, pulsa sobre la canica de origen para seleccionarla; a continuación, pulsa sobre el cuadrado de destino para completar el movimiento.</para
 ></listitem>
 				<listitem
 ><para
@@ -266,11 +280,11 @@
 ></listitem>
 				<listitem
 ><para
->Des mismo modo, el cuadrado en cuestión debe estar también accesible.</para
+>Del mismo modo, el cuadrado en cuestión debe estar también accesible.</para
 ></listitem>
 				<listitem
 ><para
->El cuadrado será accesible cuando no haya ninguna canica bloqueando el camino a ella.</para
+>El cuadrado será accesible cuando no haya ninguna canica que bloquee el camino hasta él.</para
 ></listitem>
 				<listitem
 ><para
@@ -281,29 +295,29 @@
 ><title
 >Nota:</title
 ><para
->En &kolorlines;, la ruta la calcula automáticamente el juego. Sino es posible abrir una ruta a la celda de destino, se mostrará una notificación.</para
+>En &kolorlines;, la ruta la calcula automáticamente el juego. Si no es posible abrir una ruta a la celda de destino, se mostrará una notificación.</para
 ></note>
 			<itemizedlist>
 				<listitem
 ><para
->Para transferir correctamente una canica a la celda deseada en la que la ruta esté bloqueada, el jugador tendrá que limpiar la ruta en primer lugar.</para
+>Para transferir correctamente una canica a la celda de destino cuando la ruta está bloqueada, habrá que limpiar la ruta en primer lugar.</para
 ></listitem>
 				<listitem
 ><para
->Para limpiar la ruta el jugador tan solo tendrá que mover todas las canicas que provoquen el bloqueo fuera de la ruta, dejando así la ruta libre.</para
+>Para limpiar una ruta, solo hay que mover todas las canicas que la bloquean fuera de dicha ruta para dejarla libre.</para
 ></listitem>
 				<listitem
 ><para
->Las puntuaciones se otorgan por cada línea de canicas eliminadas del tablero de juego.</para
+>Las puntuaciones se obtienen por cada línea de canicas eliminada del tablero de juego.</para
 ></listitem>
 			</itemizedlist>
 			<note
 ><title
 >Nota:</title
 ><para
->Si está jugando con la funcionalidad <guimenuitem
+>Si estás jugando con la funcionalidad <guimenuitem
 >Mostrar siguiente</guimenuitem
-> activada el incremento en la puntuación será inferior que si esta funcionalidad está desactivada.</para
+> activada, el aumento de la puntuación será inferior que si esta funcionalidad está desactivada.</para
 ></note>
 	</sect1>
 	<sect1 id="strategies">
@@ -312,28 +326,28 @@
 			<itemizedlist>
 				<listitem
 ><para
->Vigile la barra que muestra las siguientes tres canicas que se dejarán caer en el campo (a menos que esté desactivada la funcionalidad <guimenuitem
+>Vigila la barra que muestra las tres siguientes canicas que se van a dejar caer en el campo (excepto si desactivada la funcionalidad <guimenuitem
 >Mostrar siguientes</guimenuitem
->). La mayoría de las veces no apreciará la información que proporciona.</para
+>). La mayoría de las veces apreciarás la información que proporciona.</para
 ></listitem>
 				<listitem
 ><para
->Intente dejar limpia al menos la mitad del tablero de juego. Si deja que las canicas se apilen, probablemente perderá.</para
+>Intenta dejar limpia al menos la mitad del tablero de juego. Si dejas que las canicas se apilen, probablemente perderás.</para
 ></listitem>
 				<listitem
 ><para
->Para facilitar el juego, mantenga siempre más de una línea de las mismas canicas lista para eliminar. Esto se puede conseguir construyendo líneas consecutivas de las mismas canicas donde sea posible, en lugar de concentrarse en una línea cada vez.</para
+>Para facilitar el juego, mantén siempre más de una línea de las mismas canicas lista para eliminar. Puedes conseguirlo construyendo líneas consecutivas de canicas idénticas donde sea posible, en lugar de concentrarte en una línea cada vez.</para
 ></listitem>
 				<listitem
 ><para
->Intente mantener siempre tres líneas casi completas en el tablero de juego. Casi completas significa que tengan cuatro canicas iguales y que solo falte una canica para completarlas.</para
+>Intenta mantener siempre tres líneas casi completas en el tablero de juego. Casi completas significa que tengan cuatro canicas iguales y que solo falte una canica para completarlas.</para
 ></listitem>
 			</itemizedlist>
 			<note
 ><title
 >Ejemplo:</title
 ><para
->Si tiene una línea casi completa y la ruta se bloquea frecuentemente con otra canica, no la mueva. Intente encontrar una secuencia de canicas del mismo tipo que le permita continuar con la canica movida. Si esta secuencia existe y es accesible, mueva aquí la canica bloqueada.</para
+>Si tienes una línea casi completa y la ruta se bloquea frecuentemente con otra canica, no la muevas. Intenta encontrar una secuencia de canicas del mismo tipo que te permita continuar con la canica que muevas. Si esta secuencia existe y puedes acceder a ella, mueve ahí la canica que la bloquea.</para
 ></note>
 	</sect1>
 </chapter>
@@ -351,7 +365,7 @@
 >La ventana principal de &kolorlines;</title>
 <screenshot>
 				<screeninfo
->Una captura de pantalla de &kolorlines;</screeninfo>
+>Captura de pantalla de &kolorlines;</screeninfo>
 				<mediaobject>
 					<imageobject>
 						<imagedata fileref="gamescreen.png" format="PNG"/>
@@ -363,13 +377,13 @@
 				</mediaobject>
 			</screenshot>
 <para
->La parte superior de la ventana de juego contiene la barra de menú y la barra de herramientas. En el centro de la pantalla hay un área grande cuadrada con canicas llamada «tablero de juego». En la parte derecha encontramos una barra que muestra las tres canicas siguientes que se dejarán caer en el campo (a menos que la funcionalidad <guimenuitem
+>La parte superior de la ventana de juego contiene la barra de menú y la barra de herramientas. En el centro de la pantalla hay un área grande cuadrada con canicas llamada «tablero de juego». En la parte derecha encontramos una barra que muestra las tres canicas siguientes que se dejarán caer en el campo (excepto cuando la funcionalidad <guimenuitem
 >Mostrar siguiente</guimenuitem
-> esté desactivada). Debajo del campo de juego está la barra de estado.</para>
+> está desactivada). Debajo del campo de juego está la barra de estado.</para>
 </sect1>
 <sect1 id="menu-items">
 	<title
->Opciones de menú</title>
+>Opciones del menú</title>
 	<variablelist>
 		<varlistentry id="menu-game-new">
 			<term
@@ -409,7 +423,7 @@
 			<listitem
 ><para
 ><action
->Termina una partida en curso.</action
+>Termina la partida en curso.</action
 ></para
 ></listitem>
 		</varlistentry>
@@ -491,7 +505,7 @@
 ></term>
 			<listitem
 ><para
->Salta su turno, se juegan inmediatamente las siguientes canicas sin que mueva ninguna.</para
+>Salta tu turno. Se juegan inmediatamente las siguientes canicas sin que hayas movido ninguna.</para
 ></listitem>
 		</varlistentry>
 
@@ -509,7 +523,7 @@
 			<listitem
 ><para
 ><action
->Esta acción moverá el cursor de selección hacia la izquierda.</action
+>Esta acción moverá el cursor de selección haciaa la izquierda.</action
 ></para
 ></listitem>
 		</varlistentry>
@@ -581,7 +595,7 @@
 			<listitem
 ><para
 ><action
->Esta acción seleccionará el elemento que esté bajo el cursor.</action
+>Esta acción seleccionará el elemento que esté debajo del cursor.</action
 ></para
 ></listitem>
 		</varlistentry>
@@ -605,11 +619,11 @@
 	</variablelist>
 
 <para
->Además &kolorlines; tiene las opciones de menú <guimenu
+>Además, &kolorlines; tiene las opciones de los menús <guimenu
 >Preferencias</guimenu
 > y <guimenu
 >Ayuda</guimenu
-> comunes de &kde;. Para obtener más información, consulte las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+> comunes de &kde;. Para obtener más información, consulta las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
 >Menú «Preferencias»</ulink
 > y <ulink url="help:/fundamentals/menus.html#menus-help"
 >Menú «Ayuda» </ulink
@@ -630,11 +644,11 @@
 <qandaentry>
  <question
 ><para
->Deseo cambiar el aspecto del juego ¿Puedo? </para
+>Quiero cambiar el aspecto del juego. ¿Puedo? </para
 ></question>
  <answer
 ><para
->Sí. Para cambiar el tema visual de &kolorlines; puede usar la opción del menú <menuchoice
+>Sí. Para cambiar el tema visual de &kolorlines;, puedes usar la opción del menú <menuchoice
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
@@ -646,13 +660,13 @@
 <qandaentry>
  <question
 ><para
->No quiero hacer ningún movimiento ¿puedo saltar el turno? </para
+>No quiero hacer ningún movimiento. ¿Puedo saltar el turno? </para
 ></question>
  <answer
 ><para
->Sí. Para saltar el turno use un <link linkend="menu-move-endturn"
+>Sí. Para saltar el turno, usa el <link linkend="menu-move-endturn"
 >atajo de teclado</link
-> o una opción de la <link linkend="menu-move-endturn"
+> o la opción de la <link linkend="menu-move-endturn"
 >barra de menú</link
 >.</para
 ></answer>
@@ -660,31 +674,31 @@
 <qandaentry>
  <question
 ><para
->¿Puedo utilizar el teclado para jugar? </para
+>¿Puedo usar el teclado para jugar? </para
 ></question>
  <answer
 ><para
->Sí. Puede usar las teclas del cursor y la tecla &Space; para seleccionar y fijar las canicas.</para
+>Sí. Puedes usar las teclas del cursor y la tecla &Space; para seleccionar y fijar las canicas.</para
 ></answer>
 </qandaentry>
 <qandaentry>
  <question
 ><para
->¡No se qué puedo hacer! ¿Hay pistas? </para
+>¡No sé qué puedo hacer! ¿Hay pistas? </para
 ></question>
  <answer
 ><para
->No. &kolorlines; no tiene una característica de «Pistas».</para
+>No. &kolorlines; no tiene la función de «Pistas».</para
 ></answer>
 </qandaentry>
 <qandaentry>
  <question
 ><para
->Debo salir del juego, pero todavía no he terminado la partida ¿puedo guardar mi progreso?</para
+>Debo salir del juego, pero todavía no he terminado la partida. ¿Puedo guardar el estado actual?</para
 ></question>
   <answer
 ><para
->&kolorlines; no tiene en este momento la funcionalidad «Guardar».</para
+>&kolorlines; no tiene en este momento la función de «Guardar».</para
 ></answer>
 </qandaentry>
 </qandaset>
@@ -695,13 +709,13 @@
 >Configuración del juego</title
 > <!-- do not change this! -->
   <para
->El diálogo de configuración de &kolorlines; le permite seleccionar sus temas visuales.</para>
+>El diálogo de configuración de &kolorlines; permite seleccionar temas visuales.</para>
   <para
->Para seleccionar un nuevo tema, basta con elegirlo en la lista de selección. Cada uno de elementos de la lista tiene una pequeña vista previa a la izquierda del nombre del tema. El tema seleccionado se aplica inmediatamente.</para>
+>Para seleccionar un nuevo tema, basta con seleccionarlo en la lista. Cada uno de elementos de la lista tiene una pequeña vista previa a la izquierda del nombre del tema. El tema seleccionado se aplica inmediatamente.</para>
   <para
->Cuando esté satisfecho con el tema que ha seleccionado, pulse el botón <guibutton
+>Cuando estés conforme con el tema que hayas seleccionado, pulsa el botón <guibutton
 >Cerrar</guibutton
-> situado en la parte inferior del cuadro de diálogo.</para>
+> que hay en la parte inferior del diálogo.</para>
 </chapter>
 
 <chapter id="credits"
@@ -714,7 +728,7 @@
 >&kolorlines;</para>
 
 <para
->Derechos de autor del programa. 2000. &Roman.Merzlyakov; &Roman.Merzlyakov.mail;.</para>
+>Copyright del programa. 2000. &Roman.Merzlyakov; &Roman.Merzlyakov.mail;.</para>
 <para
 >Colaboradores:</para>
 <itemizedlist>
@@ -726,11 +740,11 @@
 </itemizedlist>
 
 <para
->Derechos de autor de la documentación. 2001. &Roman.Razilov; &Roman.Razilov.mail;.</para>
+>Copyright de la documentación. 2001. &Roman.Razilov; &Roman.Razilov.mail;.</para>
 
 <!-- !!!do not change ANYTHING after this line!!!! -->
 <para
->Traducido por Rocío Gallego <email
+>Documentación traducida por Rocío Gallego <email
 >traducciones@rociogallego.com</email
 >, Rafael Osuna <email
 >rosuna@wol.es</email
@@ -738,6 +752,10 @@
 >pvicentea@wanado.es</email
 > y Kira J. Fernández <email
 >kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregida por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
 >.</para
 > &underFDL; &underGPL; </chapter>
 
