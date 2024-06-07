@@ -137,6 +137,7 @@ void KLinesMainWindow::startGame()
 {
     updateScore(0);
     mwidget->scene()->startNewGame();
+    mwidget->setShowNextColors(Prefs::showNext());
 }
 
 void KLinesMainWindow::showNextToggled(bool show)
