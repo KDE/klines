@@ -1,19 +1,18 @@
 # Translation of klines to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2008, 2009, 2016, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-04 00:37+0000\n"
-"PO-Revision-Date: 2022-07-02 13:31+0200\n"
+"PO-Revision-Date: 2024-07-26 15:04+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -35,43 +34,37 @@ msgid "Score:"
 msgstr "Poeng:"
 
 #: klines.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show Next"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Vis neste"
 
 #: klines.cpp:82
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr "Flytt til venstre"
+msgstr "Gå til venstre"
 
 #: klines.cpp:87
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr "Flytt til høgre"
+msgstr "Gå til høgre"
 
 #: klines.cpp:92
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Flytt opp"
+msgstr "Gå opp"
 
 #: klines.cpp:97
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Flytt ned"
+msgstr "Gå ned"
 
 #: klines.cpp:102
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@action"
 msgid "Select"
 msgstr "Vel"
