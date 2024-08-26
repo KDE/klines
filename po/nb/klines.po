@@ -40,42 +40,36 @@ msgstr "Poeng:"
 
 #: klines.cpp:75
 #, fuzzy, kde-format
-#| msgid "Show Next"
 msgctxt "@option:check"
 msgid "Show Next"
 msgstr "Vis neste"
 
 #: klines.cpp:82
 #, fuzzy, kde-format
-#| msgid "Move Left"
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Flytt til venstre"
 
 #: klines.cpp:87
 #, fuzzy, kde-format
-#| msgid "Move Right"
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Flytt til høyre"
 
 #: klines.cpp:92
 #, fuzzy, kde-format
-#| msgid "Move Up"
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Flytt opp"
 
 #: klines.cpp:97
 #, fuzzy, kde-format
-#| msgid "Move Down"
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Flytt ned"
 
 #: klines.cpp:102
 #, fuzzy, kde-format
-#| msgid "Select"
 msgctxt "@action"
 msgid "Select"
 msgstr "Velg"
