@@ -48,6 +48,7 @@ target_link_libraries(klines
     KF6::DBusAddons
     KF6::I18n
     KF6::XmlGui
+    KF6::IconThemes
 )
 
 install(TARGETS klines  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
