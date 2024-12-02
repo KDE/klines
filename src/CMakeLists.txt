@@ -27,6 +27,18 @@ target_sources(klines PRIVATE
     klines.qrc
 )
 
+if(APPLE)
+    set_target_properties(klines PROPERTIES
+           MACOSX_BUNDLE_DISPLAY_NAME "Klines"
+        MACOSX_BUNDLE_BUNDLE_NAME "Klines"
+        MACOSX_BUNDLE_LONG_VERSION_STRING "Klines ${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}"
+        MACOSX_BUNDLE_BUNDLE_VERSION "${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.klines"
+        MACOSX_BUNDLE_COPYRIGHT "2024 The Klines Developers")
+endif()
+
+
 ecm_qt_declare_logging_category(klines
     HEADER klines_debug.h
     IDENTIFIER KLINES_LOG
