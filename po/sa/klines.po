@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: klines.cpp:42
 #, kde-format
@@ -35,37 +35,37 @@ msgstr "अंक:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Next"
-msgstr ""
+msgstr "अग्रिमम् दर्शयतु"
 
 #: klines.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr ""
+msgstr "वामभागे गच्छतु"
 
 #: klines.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr ""
+msgstr "दक्षिणतः गच्छतु"
 
 #: klines.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr ""
+msgstr "उपरि गच्छतु"
 
 #: klines.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr ""
+msgstr "अधः गच्छतु"
 
 #: klines.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Select"
-msgstr ""
+msgstr "विचि"
 
 #: klines.cpp:118
 #, kde-format
