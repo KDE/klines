@@ -34,7 +34,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "lussac@mundo-r.com, dereka@mundo-r.com, mvillarino@users.sourceforge.net, "
-"adrian@chaves.io"
+"adrian@chaves.gal"
 
 #: klines.cpp:42
 #, kde-format
