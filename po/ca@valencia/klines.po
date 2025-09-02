@@ -72,7 +72,7 @@ msgstr "Mou cap avall"
 #, kde-format
 msgctxt "@action"
 msgid "Select"
-msgstr "Selecciona"
+msgstr "Tria"
 
 #: klines.cpp:118
 #, kde-format
