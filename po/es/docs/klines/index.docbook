@@ -439,7 +439,7 @@
 > <guimenu
 >Juego</guimenu
 > <guimenuitem
->Mostrar mejores puntuaciones...</guimenuitem
+>Mostrar mejores puntuaciones…</guimenuitem
 > </menuchoice
 ></term>
 			<listitem
@@ -652,7 +652,7 @@
 ><guimenu
 >Preferencias</guimenu
 > <guimenuitem
->Configurar &kolorlines;...</guimenuitem
+>Configurar &kolorlines;…</guimenuitem
 ></menuchoice
 >.</para
 ></answer>
@@ -750,6 +750,8 @@
 >rosuna@wol.es</email
 >, Pablo de Vicente <email
 >pvicentea@wanado.es</email
+>, Pablo Barneo <email
+>pablob@nikhef.nl</email
 > y Kira J. Fernández <email
 >kirajfdez@gmail.com</email
 >.</para
