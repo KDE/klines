@@ -2,11 +2,11 @@
 # Copyright (C) 2002-2024 This_file_is_part_of_KDE
 #
 # SPDX-FileCopyrightText: 2002, 2003, 2005, 2010, 2011, 2015, 2016, 2024 Josep M. Ferrer <txemaq@gmail.com>
-# Albert Astals Cid <aacid@kde.org>, 2004, 2008.
-# Miquel Oliete <ktalanet@yahoo.es>, 2007.
-# Manuel Tortosa <manutortosa@gmail.com>, 2009.
-# Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009.
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2016, 2020, 2021.
+# SPDX-FileCopyrightText: 2004, 2008 Albert Astals Cid <aacid@kde.org>
+# SPDX-FileCopyrightText: 2007 Miquel Oliete <ktalanet@yahoo.es>
+# SPDX-FileCopyrightText: 2009 Manuel Tortosa <manutortosa@gmail.com>
+# SPDX-FileCopyrightText: 2009 Manuel Tortosa Moreno <manutortosa@gmail.com>
+# SPDX-FileCopyrightText: 2016, 2020, 2021 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
