@@ -148,7 +148,7 @@
 ><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 	<para
->Quand &kolorlines; démarre, un plateau de jeu divisé en 81 cases vous sera présenté (La taille du plateau est de 9 x 9 cases). Aussitôt, trois nouvelles billes colorées vont apparaître sur le plateau. Veuillez utiliser la souris pour déplacer les billes de case en case pour les regrouper en une ligne d'une même couleur. Cependant, après chacun de vos déplacements, l'ordinateur va rajouter trois billes de plus sur le plateau. Pour éviter le remplissage du plateau, vous devez regrouper ensemble les billes sur une ligne par cinq ou plus. Quand une ligne est complète, les billes sont supprimées du plateau et votre score augmente.</para>
+>Quand &kolorlines; démarre, un plateau de jeu divisé en 81 cases vous sera présenté (La taille du plateau est de 9 x 9 cases). Aussitôt, trois nouvelles billes colorées vont apparaitre sur le plateau. Veuillez utiliser la souris pour déplacer les billes de case en case pour les regrouper en une ligne d'une même couleur. Cependant, après chacun de vos déplacements, l'ordinateur va rajouter trois billes de plus sur le plateau. Pour éviter le remplissage du plateau, vous devez regrouper ensemble les billes sur une ligne par cinq ou plus. Quand une ligne est complète, les billes sont supprimées du plateau et votre score augmente.</para>
 	<note
 ><title
 >Remarque : </title
@@ -633,7 +633,7 @@
   <para
 >Une fois que vous êtes satisfait avec le thème que vous avez sélectionné, vous pouvez cliquer sur <guibutton
 >Fermer</guibutton
->, situé en bas de la boîte de dialogue.</para>
+>, situé en bas de la boite de dialogue.</para>
 </chapter>
 
 <chapter id="credits"
