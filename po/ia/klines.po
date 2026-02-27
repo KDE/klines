@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2026-02-25 17:13+0100\n"
+"PO-Revision-Date: 2026-02-26 18:14+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -82,7 +82,7 @@ msgstr "Punctos plus alte"
 #: klines.kcfg:9
 #, kde-format
 msgid "Whether to show the next set of balls."
-msgstr "Si monstrar leproxime insimul de ballas"
+msgstr "Si monstrar le proxime insimul de ballas"
 
 #. i18n: ectx: label, entry (SavedBackgroundWidth), group (Game)
 #: klines.kcfg:13
