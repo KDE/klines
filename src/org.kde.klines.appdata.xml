@@ -25,6 +25,7 @@
   <name xml:lang="gl">Kolor Lines</name>
   <name xml:lang="he">Kolor Lines</name>
   <name xml:lang="hu">Színes vonalak</name>
+  <name xml:lang="ia">Kolor Lines</name>
   <name xml:lang="id">Kolor Lines</name>
   <name xml:lang="it">Kolor Lines</name>
   <name xml:lang="ka">Kolor Lines</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="gl">Xogo de táctica</summary>
   <summary xml:lang="he">משחק טקטי</summary>
   <summary xml:lang="hu">Taktikai játék</summary>
+  <summary xml:lang="ia">Joco Tactic</summary>
   <summary xml:lang="id">Permainan Taktik</summary>
   <summary xml:lang="it">Gioco di tattica</summary>
   <summary xml:lang="ka">ტაქტიკური თამაში</summary>
@@ -103,6 +105,7 @@
     <p xml:lang="gl">Kolor Lines é un xogo simple pero moi aditivo para unha persoa.</p>
     <p xml:lang="he">Kolor Lines הוא משחק פשוט אך ממכר מאוד לשחקן או שחקנים יחידים.</p>
     <p xml:lang="hu">A Színes vonalak egy egyszerű, de erősen addiktív egyszemélyes játék.</p>
+    <p xml:lang="ia">Kolor Lines es un simple ma altemente implicante joco de un jocator.</p>
     <p xml:lang="id">Kolor Lines adalah permainan gim satu pemain yang sederhana namun sangat adiktif.</p>
     <p xml:lang="it">Kolor Lines è un gioco per un solo giocatore, semplice ma divertente.</p>
     <p xml:lang="ka">KolorLines მარტივი, მაგრამ ადვილად მიჩვევადი ერთ მოთამაშეზე გათვლილი თამაშია.</p>
@@ -144,6 +147,7 @@
     <p xml:lang="gl">O xogador ten de mover as bólas coloradas pola área de xogo, recolléndoas das liñas da mesma cor en grupos de cinco. Cando a liña está completa elimínase da área de xogo, liberando así un espazo necesario. Ao mesmo tempo, as bólas novas continúan a chegar en grupos de tres despois de cada xogada, enchendo a área de xogo.</p>
     <p xml:lang="he">על השחקן או השחקנית להעביר את הכדורים הצבעוניים על פני לוח המשחק כדי לאגד אותם לשורות באותו הצבע בחמישיות. לאחר ששורה הושלמה היא נמחקת מהלוח ובכך מפנה מקום יקר. באותו הזמן, כדורים חדשים ממשיכים להגיע בשלשות אחרי כל המהלך וממלאים את לוח המשחק.</p>
     <p xml:lang="hu">A játékosnak a színes golyókat kell mozgatnia a játéktáblán, és ötösével azonos színű sorokba gyűjtenie őket. Amint a sor elkészült, eltávolítja a játéktábláról, így értékes helyet szabadít fel. Ugyanakkor minden egyes lépés után folyamatosan érkeznek az új golyók hármasával, így töltve fel a játéktáblát.</p>
+    <p xml:lang="ia">Le jocator debe mover leballas colorate ubique le tabula, unir los in lineas del mesme color per cinque. Un vice que le linea es completate il es removite ex le tabula,ergo liberante spatio pretiose. In le mesme tempore le nove ballas arriva en grupos de tres pos cata mover, reimplemente le tabula de joco.</p>
     <p xml:lang="id">Pemain harus memindahkan bola berwarna di sekitar papan permainan, mengumpulkan bola ke garis dengan lima warna yang sama. Setelah baris sudah lengkap ia terhapus dari papan, dengan begitu membebaskan ruang yang berharga. Di saat yang sama bola baru terus berdatangan tiga buah setelah setiap langkah, yang mengisi papan permainan.</p>
     <p xml:lang="it">Il giocatore deve spostare le palline colorate nell'area di gioco, raggruppandole in file di cinque palline dello stesso colore. Quando una linea viene completata viene rimossa, liberando spazio prezioso. Allo stesso tempo, nuove palline continuano ad arrivare: tre dopo ogni mossa, riempiendo l'area di gioco.</p>
     <p xml:lang="ka">მოთამაშემ უნდა გადააადგილოს შეღებილი ბურთები სათამაშო დაფაზე და შეაგროვოს ისინი ხუთ-ხუთი ცალი, ერთ ხაზში. როცა ხაზი დასრულდება, ის წაიშლება დაფიდან, რითიც ძვირფას თავისუფალ ადგილს ათავისუფლებს. იგივე დროს, ახალი ბურთი თითოეული სვლისას სამი უჯრით დაბლა ჩამოდის, რითიც დაფას ავსებს.</p>
