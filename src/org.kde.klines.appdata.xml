@@ -220,6 +220,7 @@
   <update_contact>kde-games-devel_AT_kde.org</update_contact>
   <launchable type="desktop-id">org.kde.klines.desktop</launchable>
   <releases>
+    <release version="1.6.26042" date="2026-06-04"/>
     <release version="1.6.26041" date="2026-05-07"/>
     <release version="1.6.26040" date="2026-04-16"/>
     <release version="1.6.25123" date="2026-03-05"/>
