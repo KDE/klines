@@ -116,7 +116,7 @@ msgstr "Kolor Lines"
 #: main.cpp:49
 #, kde-format
 msgid "Kolor Lines - a little game about balls and how to get rid of them"
-msgstr "Kolor Lines - un xicotet joc sobre pilotes i com eliminar-les"
+msgstr "Kolor Lines – un xicotet joc sobre pilotes i com eliminar-les"
 
 #: main.cpp:51
 #, kde-format
