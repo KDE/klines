@@ -363,7 +363,7 @@
 			<term
 ><menuchoice
 ><shortcut
-> <keycombo action="simul"
+><keycombo action="simul"
 >&Ctrl;<keycap
 >H</keycap
 ></keycombo
@@ -371,7 +371,7 @@
 > <guimenu
 >Spiel</guimenu
 > <guimenuitem
->Bestenliste anzeigen</guimenuitem
+>Bestenliste anzeigen …</guimenuitem
 > </menuchoice
 ></term>
 			<listitem
@@ -584,7 +584,7 @@
 ><guimenu
 >Einstellungen</guimenu
 ><guimenuitem
->&kolorlines; einrichten ...</guimenuitem
+>&kolorlines; einrichten …</guimenuitem
 ></menuchoice
 > in der Menüleiste.</para
 ></answer>
