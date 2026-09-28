@@ -1,0 +1,710 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Руководство пользователя &kolorlines;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Роман</firstname
+> <surname
+>Разилов</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Роман</firstname
+> <surname
+>Мерзляков</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Евгений</firstname
+> <surname
+>Трунев</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Михаил</firstname
+> <surname
+>Сибиряков</surname
+> <affiliation
+><address
+><email
+>dtldt@dt.ru</email
+></address
+> </affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>11 июля 2021 г.</date>
+<releaseinfo
+>1.6 (KDE Gear 21.04)</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>В этом руководстве описывается игра &kolorlines; версии 1.6.</para>
+</abstract>
+
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>игра</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kolor Lines</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>аркада</keyword>
+	<keyword
+>color lines</keyword>
+	<keyword
+>цвет</keyword>
+	<keyword
+>цвета</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>один игрок</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Введение</title
+> <!-- do not change this! -->
+	<note
+><title
+>Тип игры:</title
+><para
+>Аркада</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Количество игроков:</title
+><para
+>Один</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>&kolorlines; — простая, но очень увлекательная игра &kde; для одного игрока. Она создана по мотивам известной игры <application
+>Color Lines</application
+> («Линии») для <application
+>DOS</application
+>, которую в 1992 году написали Ольга Дёмина, Игорь Ивкин и Геннадий Денисов.</para>
+	<para
+>Цель &kolorlines; проста. Игрок перемещает цветные шарики по игровому полю, собирая их в линии из пяти шариков одного цвета. Собранная линия исчезает с поля и освобождает драгоценное место. Тем временем после каждого хода на поле появляются новые шарики, по три за раз, и поле постепенно заполняется.</para>
+	<para
+>Выиграть в &kolorlines; нельзя, играют исключительно ради рекорда. Игра заканчивается, когда всё поле заполнено шариками.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Как играть</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Цель:</title
+><para
+>Перемещайте цветные шарики по игровому полю, собирая их в линии по пять шариков одного цвета.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>При запуске &kolorlines; открывается игровое поле из 81 клетки (9x9 клеток), и на нём сразу появляются три цветных шарика. Перемещайте шарики мышью из клетки в клетку, собирая их в линии одного цвета. Однако после каждого вашего хода компьютер бросает на поле ещё три шарика. Чтобы поле не заполнилось, собирайте шарики в линии из 5 или более шариков. Собранная линия исчезает с поля, а счёт растёт.</para>
+	<note
+><title
+>Примечание:</title
+><para
+>После удаления линии новые шарики на поле не добавляются: вместо этого вы получаете ещё один ход, прежде чем появится новая тройка шариков.</para
+></note>
+	<para
+>Прибавка к счёту зависит только от количества убранных шариков.</para>
+	<note
+><title
+>Примечание:</title
+><para
+>Если играть с включённым пунктом <guimenuitem
+>Показывать следующие шарики</guimenuitem
+>, очков начисляется меньше, чем когда пункт <guimenuitem
+>Показывать следующие шарики</guimenuitem
+> выключен.</para
+></note>
+	<para
+>Выиграть в &kolorlines; нельзя, играют исключительно ради рекорда. Игра заканчивается, когда всё поле заполнится шариками.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Правила игры, стратегия и советы</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>Правила игры</title>
+			<itemizedlist>
+				<listitem
+><para
+>После каждого хода игрока на поле добавляются три новых шарика.</para
+></listitem>
+				<listitem
+><para
+>Чтобы освободить место на поле, игрок должен выстроить шарики одного цвета в непрерывную горизонтальную, вертикальную или диагональную линию из пяти или более шариков.</para
+></listitem>
+				<listitem
+><para
+>Чтобы сделать ход, щёлкните по шарику, чтобы выбрать его, а затем — по клетке, куда его нужно переместить.</para
+></listitem>
+				<listitem
+><para
+>Шарик можно переместить только в свободную клетку, не занятую другим шариком.</para
+></listitem>
+				<listitem
+><para
+>Кроме того, к этой клетке должен быть свободный путь.</para
+></listitem>
+				<listitem
+><para
+>Путь свободен, если его не преграждают другие шарики.</para
+></listitem>
+				<listitem
+><para
+>Путь считается перекрытым, если хотя бы одну его клетку занимает шарик.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Примечание:</title
+><para
+>В &kolorlines; путь рассчитывается автоматически. Если свободного пути к клетке нет, появится сообщение об этом.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>Чтобы переместить шарик в клетку, путь к которой перекрыт, сначала нужно расчистить путь.</para
+></listitem>
+				<listitem
+><para
+>Для этого достаточно убрать с дороги все мешающие шарики.</para
+></listitem>
+				<listitem
+><para
+>Очки начисляются за каждую убранную с поля линию шариков.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Примечание:</title
+><para
+>Если играть с включённым пунктом <guimenuitem
+>Показывать следующие шарики</guimenuitem
+>, очков начисляется меньше, чем когда пункт <guimenuitem
+>Показывать следующие шарики</guimenuitem
+> выключен.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>Стратегия и советы</title>
+			<itemizedlist>
+				<listitem
+><para
+>Внимательно следите за панелью, на которой показаны три шарика, которые появятся на поле следующими (если не отключён пункт <guimenuitem
+>Показывать следующие шарики</guimenuitem
+>). Эти сведения почти всегда пригодятся.</para
+></listitem>
+				<listitem
+><para
+>Старайтесь, чтобы хотя бы половина поля оставалась свободной. Если дать шарикам скопиться, проигрыш почти неизбежен.</para
+></listitem>
+				<listitem
+><para
+>Чтобы играть было легче, держите наготове больше одной линии одинаковых шариков. Для этого стройте линии одинаковых шариков везде, где можно, а не сосредотачивайтесь на одной линии.</para
+></listitem>
+				<listitem
+><para
+>Старайтесь, чтобы на поле всегда было больше трёх почти собранных линий, то есть линий из четырёх одинаковых шариков, которым для завершения не хватает одного шарика.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>Пример:</title
+><para
+>Если линия почти собрана, а путь к ней вдруг перекрыл другой шарик, не спешите просто убрать этот шарик. Поищите ряд шариков того же цвета, который можно продолжить перемещаемым шариком. Если такой ряд есть и к нему есть путь, переместите мешающий шарик туда.</para
+></note>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Обзор интерфейса</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>Главное окно &kolorlines;</title>
+<screenshot>
+				<screeninfo
+>Снимок экрана &kolorlines;</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>Снимок экрана</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>В самом верху окна игры находятся строка меню и панель инструментов. В центре — большая квадратная область с шариками: игровое поле. Справа — панель с тремя шариками, которые появятся на поле следующими (если не отключён пункт <guimenuitem
+>Показывать следующие шарики</guimenuitem
+>). Под игровым полем — строка состояния.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>Пункты меню</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Начать игру</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Начать новую игру.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&End;</keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Закончить игру</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Закончить текущую игру.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Показать лучшие результаты…</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Показать таблицу лучших результатов.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Выйти</action
+> из &kolorlines;</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ход</guimenu
+> <guimenuitem
+>Отменить</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Отменить последний ход.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>Ход</guimenu
+> <guimenuitem
+>Конец хода</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>Пропустить свой ход, чтобы на поле сразу добавились новые шарики.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+>&Left;</shortcut
+> <guimenu
+>Навигация</guimenu
+> <guimenuitem
+>Влево</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Переместить курсор выделения влево.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+>&Right;</shortcut
+> <guimenu
+>Навигация</guimenu
+> <guimenuitem
+>Вправо</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Переместить курсор выделения вправо.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+>&Up;</shortcut
+> <guimenu
+>Навигация</guimenu
+> <guimenuitem
+>Вверх</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Переместить курсор выделения вверх.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+>&Down;</shortcut
+> <guimenu
+>Навигация</guimenu
+> <guimenuitem
+>Вниз</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Переместить курсор выделения вниз.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+>&Space;</shortcut
+> <guimenu
+>Навигация</guimenu
+> <guimenuitem
+>Выбрать</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Выбрать элемент под курсором.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Показывать следующие шарики</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>Включить или отключить показ трёх следующих шариков.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>Кроме того, в &kolorlines; есть стандартные для &kde; меню <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Справка</guimenu
+>, описанные в разделах <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Меню «Настройка»</ulink
+> и <ulink url="help:/fundamentals/menus.html#menus-help"
+>Меню «Справка»</ulink
+> руководства «Основы &kde;». </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Вопросы и ответы</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Можно ли изменить внешний вид игры? </para
+></question>
+ <answer
+><para
+>Да. Чтобы сменить тему оформления &kolorlines;, выберите пункт меню <menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить &kolorlines;…</guimenuitem
+></menuchoice
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я пока не хочу ходить. Можно ли пропустить ход? </para
+></question>
+ <answer
+><para
+>Да. Пропустить ход можно <link linkend="menu-move-endturn"
+>комбинацией клавиш</link
+> или <link linkend="menu-move-endturn"
+>пунктом меню</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Можно ли играть с помощью клавиатуры? </para
+></question>
+ <answer
+><para
+>Да. Выбирать и перемещать шарики можно клавишами со стрелками и клавишей &Space;.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Не понимаю, что тут делать! Есть ли подсказки? </para
+></question>
+ <answer
+><para
+>Нет. Функции <quote
+>Подсказка</quote
+> в &kolorlines; нет.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Мне нужно выйти из игры, но я ещё не закончил. Можно ли сохранить игру?</para
+></question>
+  <answer
+><para
+>Сейчас в &kolorlines; сохранить игру нельзя.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Настройка игры</title
+> <!-- do not change this! -->
+  <para
+>В диалоге настройки &kolorlines; можно выбрать тему оформления.</para>
+  <para
+>Чтобы выбрать тему, просто щёлкните её в списке. Слева от названия каждой темы показана её миниатюра. Выбор применяется сразу.</para>
+  <para
+>Выбрав подходящую тему, нажмите кнопку <guibutton
+>Закрыть</guibutton
+> в нижней части диалога.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Авторские права и лицензия</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kolorlines;</para>
+
+<para
+>© &Roman.Merzlyakov; &Roman.Merzlyakov.mail;, 2000 (программа)</para>
+<para
+>При участии:</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail;: новый дизайн, графика, анимация, частичная переработка кода. Особая благодарность моей жене Ларисе Юшкиной за тестирование и обсуждения.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>© &Roman.Razilov; &Roman.Razilov.mail;, 2001 (документация)</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>Перевод на русский — Михаил Сибиряков <email
+>dtldt@dt.ru</email
+></para
+> <para
+>Редактор перевода — Григорий Мохин <email
+>mok@kde.ru</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
