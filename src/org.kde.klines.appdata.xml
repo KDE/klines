@@ -41,6 +41,10 @@
   <name xml:lang="sa">कोलोर रेखाः</name>
   <name xml:lang="sk">Farebné čiary</name>
   <name xml:lang="sl">Kolor Lines</name>
+  <name xml:lang="sr">Обојене линије</name>
+  <name xml:lang="sr-Latn">Obojene linije</name>
+  <name xml:lang="sr-ijekavian">Обојене линије</name>
+  <name xml:lang="sr-ijekavianlatin">Obojene linije</name>
   <name xml:lang="sv">Färglinjer</name>
   <name xml:lang="tr">Kolor Lines</name>
   <name xml:lang="uk">Кольорові лінії</name>
@@ -82,6 +86,10 @@
   <summary xml:lang="sa">सामरिक खेल</summary>
   <summary xml:lang="sk">Taktická hra</summary>
   <summary xml:lang="sl">Strateška igra</summary>
+  <summary xml:lang="sr">Тактичка игра</summary>
+  <summary xml:lang="sr-Latn">Taktička igra</summary>
+  <summary xml:lang="sr-ijekavian">Тактичка игра</summary>
+  <summary xml:lang="sr-ijekavianlatin">Taktička igra</summary>
   <summary xml:lang="sv">Taktikspel</summary>
   <summary xml:lang="tr">Taktik Oyunu</summary>
   <summary xml:lang="ug">تاكتىكىلىق ئويۇن</summary>
@@ -125,6 +133,10 @@
     <p xml:lang="sa">Kolor Lines इति सरलं किन्तु अत्यन्तं व्यसनं जनयति एकः खिलाडी क्रीडा ।</p>
     <p xml:lang="sk">Kolor Lines je jednoduchá, ale vysoko návyková hra pre jedného hráča.</p>
     <p xml:lang="sl">Kolor Lines je preprosta igra za enega igralca, ki vas zelo zasvoji.</p>
+    <p xml:lang="sr">Обојене линије су једноставна, али веома заразна игра за једног играча.</p>
+    <p xml:lang="sr-Latn">Obojene linije su jednostavna, ali veoma zarazna igra za jednog igrača.</p>
+    <p xml:lang="sr-ijekavian">Обојене линије су једноставна, али веома заразна игра за једног играча.</p>
+    <p xml:lang="sr-ijekavianlatin">Obojene linije su jednostavna, ali veoma zarazna igra za jednog igrača.</p>
     <p xml:lang="sv">Färglinjer är ett enkelt men mycket vanebildande spel för en spelare.</p>
     <p xml:lang="tr">Kolor Lines, yalın; ancak ileri düzeyde bağımlılık yaratan tek kişilik bir oyundur.</p>
     <p xml:lang="uk">«Кольорові лінії» — проста, але дуже захоплива гра для одного гравця.</p>
@@ -168,6 +180,10 @@
     <p xml:lang="sa">क्रीडकेन वर्णकन्दुकं क्रीडाफलकस्य परितः चालयितुं भवति, पञ्चभिः समानवर्णरेखासु सङ्गृह्य । एकदा रेखा पूर्णा भवति तदा सा फलकात् निष्कासिता भवति, अतः बहुमूल्यं स्थानं मुक्तं भवति । तस्मिन् एव काले नूतनाः कन्दुकाः प्रत्येकं चालनस्य अनन्तरं त्रिभिः आगच्छन्ति एव, क्रीडाफलकं पूरयन्ति ।</p>
     <p xml:lang="sk">Hráč musí posúvať farebné gule okolo hracieho plánu a zbierať ich do riadkov rovnakej farby po piatich. Akonáhle je linka kompletná, je odstránená z hracej plochy, čím sa uvoľní vzácny priestor. V rovnakom čase nové lopty stále prichádzajú o tri po každom ťahu, čím zaplnia hraciu dosku.</p>
     <p xml:lang="sl">Igralec mora po igralni površini premikati barvne žogice in jih postavljati v enakobarvne vrste po pet ali več žogic. Ko je vrstica dopolnjena, je odstranjena iz igralne površine, pri tem pa se sprosti dragocen prostor. Sočasno s premikanjem se na površini pojavljajo po tri nove žogice naenkrat, ki polnijo prazen prostor na igralni površini.</p>
+    <p xml:lang="sr">Играч помера обојене лоптице по табли и слаже их у линије од по пет лоптица исте боје. Када се линија сложи, уклања се са табле и тако ослобађа драгоцени простор. У исто време после сваког потеза стижу по три нове лоптице и попуњавају таблу.</p>
+    <p xml:lang="sr-Latn">Igrač pomera obojene loptice po tabli i slaže ih u linije od po pet loptica iste boje. Kada se linija složi, uklanja se sa table i tako oslobađa dragoceni prostor. U isto vreme posle svakog poteza stižu po tri nove loptice i popunjavaju tablu.</p>
+    <p xml:lang="sr-ijekavian">Играч помијера обојене лоптице по табли и слаже их у линије од по пет лоптица исте боје. Када се линија сложи, уклања се са табле и тако ослобађа драгоцјени простор. У исто вријеме послије сваког потеза стижу по три нове лоптице и попуњавају таблу.</p>
+    <p xml:lang="sr-ijekavianlatin">Igrač pomijera obojene loptice po tabli i slaže ih u linije od po pet loptica iste boje. Kada se linija složi, uklanja se sa table i tako oslobađa dragocjeni prostor. U isto vrijeme poslije svakog poteza stižu po tri nove loptice i popunjavaju tablu.</p>
     <p xml:lang="sv">Spelaren ska flytta omkring de färgade bollarna på spelbrädet, och samla fem av samma färg i en linje. När en linje är färdig tas den bort från brädet, och frigör därför dyrbart utrymme. På samma gång anländer tre nya bollar åt gången efter varje drag, och fyller upp spelbrädet.</p>
     <p xml:lang="tr">Oyuncu, aynı renkli toplarını oyun tahtası üzerinde taşıyarak beşli diziler oluşturmalıdır. Dizi tamamlandığında toplar tahtadan kaldırılır ve değerli bir alanı boşa çıkarır. Aynı zamanda her hareketten sonra yeni toplar gelir ve oyun tahtasını doldurur.</p>
     <p xml:lang="uk">Гравцеві слід пересувати кольорові кульки ігровою дошкою, збираючи їх по п’ять у рядки однакового кольору. Після утворення такого рядка всі кульки з нього буде вилучено і таким чином на дошці звільниться місце. Також після кожного ходу на дошці з’являтимуться три нових кульки, які зменшуватимуть вільне місце на ній.</p>
