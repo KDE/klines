@@ -1,0 +1,708 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="klines" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>دليل لعبة الخطوط الملونة ك</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Razilov</surname
+> <affiliation
+><address
+>&Roman.Razilov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Roman</firstname
+><surname
+>Merzlyakov</surname
+> <affiliation
+><address
+>&Roman.Merzlyakov.mail;</address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<year
+>2001</year>
+<holder
+>&Roman.Razilov;,</holder>
+<holder
+>&Roman.Merzlyakov;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-07-11</date>
+<releaseinfo
+>1.6 (ترس كيدي 21.04)</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>يصف هذا الدليل لعبة الخطوط الملونة ك الإصدارة 1.6</para>
+</abstract>
+
+<!--List of relevant keywords-->
+<keywordset>
+	<keyword
+>كيدي</keyword
+> <!-- do not change this! -->
+	<keyword
+>ألعاب كيدي</keyword
+> <!-- do not change this! -->
+	<keyword
+>لعبة</keyword
+> <!-- do not change this! -->
+	<keyword
+>الخطوط الملونة ك</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>أركيد</keyword>
+	<keyword
+>خطوط مُلوَّنة</keyword>
+	<keyword
+>لون</keyword>
+	<keyword
+>ألوان</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>لاعب واحد</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>مقدمة</title
+> <!-- do not change this! -->
+	<note
+><title
+>نوع اللعبة:</title
+><para
+>أركيد</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>عدد اللاعبين الممكنين:</title
+><para
+>واحد</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<para
+>الخطوط الملونة ك هي لعبة بسيطة ولكنها تسبب الإدمان بشدة، وهي لعبة للاعب واحد من كيدي. استُلهمت الخطوط الملونة ك من اللعبة الشهيرة <application
+>Color Lines</application
+>، التي كُتبت لنظام <application
+>DOS</application
+> بواسطة Olga Demina و Igor Ivkin و Gennady Denisov في عام 1992.</para>
+	<para
+>هدف الخطوط الملونة ك بسيط للغاية. يجب على اللاعب تحريك الكرات الملونة حول لوحة اللعبة، وتجميعها في خطوط من نفس اللون مكونة من خمس كرات. بمجرد اكتمال الخط، يُزال من اللوحة، مما يوفر مساحة ثمينة. في الوقت نفسه، تستمر الكرات الجديدة في الوصول بمعدل ثلاث كرات بعد كل حركة، لتملأ لوحة اللعبة.</para>
+	<para
+>لا يمكن الفوز في الخطوط الملونة ك، وتُلعب حصريًا للحصول على درجة عالية. تنتهي اللعبة بمجرد امتلاء لوحة اللعبة بالكامل بالكرات.</para>
+</chapter>
+
+<chapter id="howto"
+><title
+>كيف تلعب</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>الهدف:</title
+><para
+>حرك الكرات الملونة حول لوحة اللعبة، واجمعها في خطوط من نفس اللون مكونة من خمس كرات.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>عندما تبدأ الخطوط الملونة ك، ستظهر لك لوحة اللعبة مقسمة إلى 81 مربعًا (لوحة اللعبة 9x9 مربعات)، وتظهر ثلاث كرات ملونة جديدة على اللوحة فورًا. استخدم الفأرة لتحريك الكرات من خلية إلى خلية لتجميعها في خطوط من نفس اللون. ومع ذلك، بعد كل حركة تقوم بها، يسقط الحاسوب ثلاث كرات أخرى على اللوحة. لتجنب امتلاء اللوحة، يجب عليك جمع الكرات في خطوط مكونة من 5 كرات أو أكثر. عندما يكتمل مثل هذا الخط، تُزال الكرات من الميدان وتزداد درجتك.</para>
+	<note
+><title
+>ملاحظة:</title
+><para
+>لن تُضاف الكرات الجديدة إلى الميدان بعد إزالة الخط. بدلًا من ذلك، ستُكافأ بحركة أخرى قبل إضافة ثلاثية جديدة من الكرات.</para
+></note>
+	<para
+>تعتمد زيادة الدرجة فقط على كمية الكرات الممحاة.</para>
+	<note
+><title
+>ملاحظة:</title
+><para
+>إذا كنت تلعب مع تمكين ميزة <guimenuitem
+>أظهر التالي</guimenuitem
+>، فإن زيادة الدرجة تكون أقل مما لو كانت ميزة <guimenuitem
+>أظهر التالي</guimenuitem
+> معطلة.</para
+></note>
+	<para
+>لا يمكن الفوز في الخطوط الملونة ك، وتُلعب حصريًا للحصول على درجة عالية. تنتهي اللعبة بمجرد امتلاء لوحة اللعبة بالكامل بالكرات.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>قواعد اللعبة واستراتيجياتها وتلميحاتها</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="rules">
+		<title
+>قواعد اللعبة</title>
+			<itemizedlist>
+				<listitem
+><para
+>بعد كل حركة للاعب، ستضيف اللعبة ثلاث كرات أخرى إلى اللوحة.</para
+></listitem>
+				<listitem
+><para
+>لإخلاء مساحة على اللوحة، يجب على اللاعب تجميع الكرات من نفس اللون في خط أفقي أو عمودي أو قطري غير منقطع من خمس كرات أو أكثر.</para
+></listitem>
+				<listitem
+><para
+>لبدء الحركة، انقر ببساطة على الكرة المصدر لتحديدها، ثم انقر على مربع الوجهة لإكمال الحركة.</para
+></listitem>
+				<listitem
+><para
+>لا يمكن تحريك الكرة إلا إلى المربعات الشاغرة وغير المشغولة بأي كرة أخرى.</para
+></listitem>
+				<listitem
+><para
+>بالطريقة نفسها، يجب أن يكون المربع المعني متاحًا للوصول إليه بحرية.</para
+></listitem>
+				<listitem
+><para
+>يكون المربع متاحًا للوصول إليه بحرية عندما لا توجد كرات أخرى تسد الطريق إليه.</para
+></listitem>
+				<listitem
+><para
+>يُعتبر المسار مسدودًا إذا كان أي جزء منه مشغولًا حاليًا بكرة.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>ملاحظة:</title
+><para
+>في الخطوط الملونة ك، يُحسب المسار آليًا بواسطة اللعبة. إذا لم يكن هناك مسار (مفتوح) ممكن إلى خلية الوجهة، فسيُعرض إشعار ودي.</para
+></note>
+			<itemizedlist>
+				<listitem
+><para
+>من أجل نقل كرة بنجاح إلى خلية مطلوبة يكون المسار إليها مسدودًا، يجب على اللاعب إخلاء المسار أولًا.</para
+></listitem>
+				<listitem
+><para
+>لإخلاء المسار، يجب على اللاعب ببساطة تحريك جميع الكرات التي تسد الطريق، وبالتالي تحرير المسار.</para
+></listitem>
+				<listitem
+><para
+>تُمنح الدرجات لكل خط من الكرات يُزال من لوحة اللعبة.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>ملاحظة:</title
+><para
+>إذا كنت تلعب مع تمكين ميزة <guimenuitem
+>أظهر التالي</guimenuitem
+>، فإن زيادة الدرجة تكون أقل مما لو كانت ميزة <guimenuitem
+>أظهر التالي</guimenuitem
+> معطلة.</para
+></note>
+	</sect1>
+	<sect1 id="strategies">
+		<title
+>الاستراتيجيات والتلميحات</title>
+			<itemizedlist>
+				<listitem
+><para
+>راقب عن كثب الشريط الذي يعرض الكرات الثلاث التالية التي ستسقط في الميدان (ما لم تكن ميزة <guimenuitem
+>أظهر التالي</guimenuitem
+> معطلة). في كثير من الأحيان ستقدر المعلومات التي يوفرها.</para
+></listitem>
+				<listitem
+><para
+>حاول إبقاء نصف لوحة اللعبة على الأقل خاليًا. إن السماح للكرات بالتراكم سيؤدي بالتأكيد تقريبًا إلى الخسارة.</para
+></listitem>
+				<listitem
+><para
+>لجعل لعبتك أسهل، احتفظ دائمًا بأكثر من خط واحد من نفس الكرات جاهزًا للإزالة. يمكن تحقيق ذلك من خلال بناء خطوط متتالية من نفس الكرات في كل مكان ممكن، بدلًا من التركيز على خط واحد في كل مرة.</para
+></listitem>
+				<listitem
+><para
+>حاول إبقاء أكثر من ثلاثة خطوط شبه مكتملة على لوحة اللعبة في جميع الأوقات. شبه مكتملة تعني أنها بطول أربع كرات متماثلة، وتبقى كرة واحدة فقط حتى اكتمالها.</para
+></listitem>
+			</itemizedlist>
+			<note
+><title
+>مثال:</title
+><para
+>إذا كان لديك خط شبه مكتمل وأصبح المسار إليه مسدودًا فجأة بكرة أخرى، فلا تكتفِ بتحريك تلك الكرة فقط. حاول العثور على تسلسل من الكرات من نفس النوع يمكنك إكماله بالكرة المنقولة. إذا كان هذا التسلسل موجودًا ويمكن الوصول إليه - فحرك الكرة التي تسد الطريق إلى هناك.</para
+></note>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>نظرة عامة على الواجهة</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+<sect1 id="klines-mainwindow">
+<title
+>نافذة الخطوط الملونة ك الرئيسة</title>
+<screenshot>
+				<screeninfo
+>لقطة شاشة للخطوط الملونة ك</screeninfo>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="gamescreen.png" format="PNG"/>
+					</imageobject>
+					<textobject
+><phrase
+>لقطة شاشة</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+<para
+>في الجزء العلوي من نافذة اللعبة يوجد شريط القوائم وشريط الأدوات. في وسط الشاشة توجد منطقة مربعة كبيرة مليئة بالكرات تسمى لوحة اللعبة. على الجانب الأيمن يوجد شريط يوضح الكرات الثلاث التالية التي ستسقط في الميدان (ما لم تكن ميزة <guimenuitem
+>أظهر التالي</guimenuitem
+> معطلة). يوجد أسفل ساحة اللعب شريط الحالة.</para>
+</sect1>
+<sect1 id="menu-items">
+	<title
+>عناصر القائمة</title>
+	<variablelist>
+		<varlistentry id="menu-game-new">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>جديد</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>يبدأ لعبة جديدة.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-end">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&End;</keycombo
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أنهِ اللعبة</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>ينهي اللعبة الجارية.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-game-highscore">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أظهر أعلى النتائج…</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>يعرض جدول أعلى الدرجات.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>ينهي</action
+> الخطوط الملونة ك</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-move-undo">
+			<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>حركة</guimenu
+> <guimenuitem
+>تراجع</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>سيتراجع هذا عن الحركة الأخيرة.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry  id="menu-move-endturn">
+			<term
+><menuchoice
+><guimenu
+>حركة</guimenu
+><guimenuitem
+>أنهِ الدور</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+>تخطَّ حركتك، والعب الكرات التالية فورًا دون أن تحرك أي كرة.</para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-navigation-left">
+			<term
+><menuchoice
+><shortcut
+>&Left;</shortcut
+> <guimenu
+>التنقل</guimenu
+> <guimenuitem
+>تحرك يسارًا</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>سيؤدي هذا الإجراء إلى تحريك مؤشر التحديد إلى اليسار.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-right">
+			<term
+><menuchoice
+><shortcut
+>&Right;</shortcut
+> <guimenu
+>التنقل</guimenu
+> <guimenuitem
+>تحرك يمينًا</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>سيؤدي هذا الإجراء إلى تحريك مؤشر التحديد إلى اليمين.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-up">
+			<term
+><menuchoice
+><shortcut
+>&Up;</shortcut
+> <guimenu
+>التنقل</guimenu
+> <guimenuitem
+>تحرك للأعلى</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>سيؤدي هذا الإجراء إلى تحريك مؤشر التحديد للأعلى.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-down">
+			<term
+><menuchoice
+><shortcut
+>&Down;</shortcut
+> <guimenu
+>التنقل</guimenu
+> <guimenuitem
+>تحرك للأسفل</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>سيؤدي هذا الإجراء إلى تحريك مؤشر التحديد للأسفل.</action
+></para
+></listitem>
+		</varlistentry>
+		<varlistentry id="menu-navigation-select">
+			<term
+><menuchoice
+><shortcut
+>&Space;</shortcut
+> <guimenu
+>التنقل</guimenu
+> <guimenuitem
+>حدد</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>سيؤدي هذا الإجراء إلى تحديد العنصر الموجود حاليًا تحت المؤشر.</action
+></para
+></listitem>
+		</varlistentry>
+
+		<varlistentry id="menu-settings-shownext">
+			<term
+><menuchoice
+><guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>أظهر التالي</guimenuitem
+> </menuchoice
+></term>
+			<listitem
+><para
+><action
+>يبدل عرض المعلومات حول الكرات التالية.</action
+></para
+></listitem>
+		</varlistentry>
+	</variablelist>
+
+<para
+>بالإضافة إلى ذلك، تحتوي الخطوط الملونة ك على عناصر قوائم <guimenu
+>إعدادات</guimenu
+> و <guimenu
+>مساعدة</guimenu
+> الشائعة في كيدي، لمزيد من المعلومات اقرأ الأقسام الخاصة بـ <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> و <ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> في أساسيات كيدي. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>الأسئلة الشائعة</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>أريد تغيير شكل اللعبة. هل يمكنني ذلك؟ </para
+></question>
+ <answer
+><para
+>نعم. لتغيير السمة المرئية للخطوط الملونة ك يمكنك استخدام عنصر قائمة <menuchoice
+><guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>اضبط الخطوط الملونة ك…</guimenuitem
+></menuchoice
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>لا أريد القيام بأي حركات الآن. هل يمكنني تخطي دور؟ </para
+></question>
+ <answer
+><para
+>نعم. لتخطي دور يمكنك استخدام <link linkend="menu-move-endturn"
+>اختصار لوحة المفاتيح</link
+>، أو خيار <link linkend="menu-move-endturn"
+>شريط القوائم</link
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>هل يمكنني استخدام لوحة المفاتيح للعب؟ </para
+></question>
+ <answer
+><para
+>نعم. يمكنك استخدام مفاتيح الأسهم ومفتاح &Space; لتحديد الكرات ووضعها.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>لا أعرف ماذا أفعل هنا! هل هناك تلميحات؟ </para
+></question>
+ <answer
+><para
+>لا. الخطوط الملونة ك لا تملك ميزة <quote
+>تلميح</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>يجب أن أخرج من اللعبة الآن، لكنني لم أنتهِ بعد. هل يمكنني حفظ تقدمي؟</para
+></question>
+  <answer
+><para
+>الخطوط الملونة ك لا تملك ميزة <quote
+>حفظ</quote
+> في الوقت الحالي.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>ضبط اللعبة</title
+> <!-- do not change this! -->
+  <para
+>يسمح لك حوار ضبط الخطوط الملونة ك باختيار السمات المرئية للخطوط الملونة ك.</para>
+  <para
+>لاختيار سمة جديدة، اختر السمة ببساطة من قائمة الاختيار. يعرض كل عنصر في القائمة معاينة صغيرة يسار اسم السمة. يُطبق الاختيار فورًا.</para>
+  <para
+>بمجرد رضاك عن السمة التي اخترتها، يمكنك النقر فوق زر <guibutton
+>أغلق</guibutton
+>، الموجود في الجزء السفلي من هذا الحوار.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>الحقوق والترخيص</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>الخطوط الملونة ك</para>
+
+<para
+>حقوق نشر البرنامج 2000 &Roman.Merzlyakov; &Roman.Merzlyakov.mail;</para>
+<para
+>المساهمون:</para>
+<itemizedlist>
+<listitem
+><para
+>&Roman.Razilov; &Roman.Razilov.mail; إعادة التصميم، والرسوميات، والتحريك، وإعادة كتابة جزئية. شكر خاص لزوجتي Larissa Juschkin للاختبار والمناقشات.</para>
+</listitem>
+
+</itemizedlist>
+
+<para
+>حقوق نشر الوثائق 2001 &Roman.Razilov; &Roman.Razilov.mail;</para>
+
+<!-- !!!do not change ANYTHING after this line!!!! -->
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
