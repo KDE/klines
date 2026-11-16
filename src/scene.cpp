@@ -20,9 +20,11 @@
 #include <KGamePopupItem>
 #include <KLocalizedString>
 
+#include <utility>
+
 inline uint qHash( FieldPos pos )
 {
-    return qHash( QPair<int,int>(pos.x,pos.y) );
+    return qHash( std::pair<int,int>(pos.x,pos.y) );
 }
 
 KLinesScene::KLinesScene( QObject* parent )
