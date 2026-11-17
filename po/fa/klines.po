@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:49+0000\n"
+"POT-Creation-Date: 2026-11-17 01:02+0000\n"
 "PO-Revision-Date: 2008-04-16 22:26+0330\n"
 "Last-Translator: Emil Sedgh <emilsedgh@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@lists.kde.org>\n"
@@ -165,12 +165,12 @@ msgstr "ایگوئن ترونو"
 msgid "New SVG artwork for KDE4 version of the game"
 msgstr "کار هنری SVG جدید برای نسخه KDE4 بازی"
 
-#: scene.cpp:296
+#: scene.cpp:298
 #, kde-format
 msgid "There is no path from the selected piece to this cell"
 msgstr "هیچ مسیری از قطعه انتخاب شده به این سلول نیست"
 
-#: scene.cpp:684
+#: scene.cpp:686
 #, kde-format
 msgid "<h1>Game over</h1>"
 msgstr "<h1>بازی تمام شد</h1>"

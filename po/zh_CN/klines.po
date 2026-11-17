@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:49+0000\n"
+"POT-Creation-Date: 2026-11-17 01:02+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -157,12 +157,12 @@ msgstr "Eugene Trounev"
 msgid "New SVG artwork for KDE4 version of the game"
 msgstr "KDE4 游戏版本的新 SVG 美工"
 
-#: scene.cpp:296
+#: scene.cpp:298
 #, kde-format
 msgid "There is no path from the selected piece to this cell"
 msgstr "从所选的球到此格子之间没有相连的路径"
 
-#: scene.cpp:684
+#: scene.cpp:686
 #, kde-format
 msgid "<h1>Game over</h1>"
 msgstr "<h1>游戏结束</h1>"

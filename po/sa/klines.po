@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:49+0000\n"
+"POT-Creation-Date: 2026-11-17 01:02+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -159,12 +159,12 @@ msgstr "यूजीन ट्रोनेव"
 msgid "New SVG artwork for KDE4 version of the game"
 msgstr "क्रीडायाः KDE4 संस्करणस्य कृते नूतनं SVG कलाकृतिः"
 
-#: scene.cpp:296
+#: scene.cpp:298
 #, kde-format
 msgid "There is no path from the selected piece to this cell"
 msgstr "चयनितखण्डात् अस्य कोष्ठकस्य मार्गः नास्ति"
 
-#: scene.cpp:684
+#: scene.cpp:686
 #, kde-format
 msgid "<h1>Game over</h1>"
 msgstr "<h1>गेम ओवर</h1>"

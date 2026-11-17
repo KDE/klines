@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klines\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:49+0000\n"
+"POT-Creation-Date: 2026-11-17 01:02+0000\n"
 "PO-Revision-Date: 2024-05-04 07:47+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -159,12 +159,12 @@ msgstr "Eugene Trounev"
 msgid "New SVG artwork for KDE4 version of the game"
 msgstr "Nova SVG artaĵo por la KDE4 versio de la ludo"
 
-#: scene.cpp:296
+#: scene.cpp:298
 #, kde-format
 msgid "There is no path from the selected piece to this cell"
 msgstr "Ne estas vojo de la elektita peco al ĉi tiu ĉelo"
 
-#: scene.cpp:684
+#: scene.cpp:686
 #, kde-format
 msgid "<h1>Game over</h1>"
 msgstr "<h1>Fino de ludo</h1>"
